@@ -1,0 +1,14 @@
+flickerlight2 ICEGUNSATK
+{
+    color 0.75 0.75 1.0
+    size 72
+    secondarySize 84
+    interval 1
+    offset 0 40 0
+	attenuate 1
+}
+
+object IceSGFlash
+{
+	frame TNT1A { light ICEGUNSATK }
+}

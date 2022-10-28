@@ -1,0 +1,16 @@
+weapons/iceshot		DSICESHT
+weapons/icehit		DSICEHIT
+weapons/iceshgn		DSICESGN
+
+weapons/iceshoot	"Sounds/iceshoot.wav"
+weapons/sgpump1		"Sounds/sgpump1.wav"
+weapons/sgpump2		"Sounds/sgpump2.wav"
+
+// P.F. SuperShotgun
+// All sounds here are from Touhou Koumakyou: Embodiment of Scarlet Devil (th06)
+weapons/pfshotf		"Sounds/tan00.wav"
+weapons/pfdamage	"Sounds/graze.wav"
+weapons/pfgraze		"Sounds/damage00.wav"
+weapons/pfkira0		"Sounds/kira00.wav"
+weapons/pfkira1		"Sounds/kira01.wav"
+weapons/pfkira2		"Sounds/kira02.wav"

@@ -1,0 +1,6 @@
+version "4.1.0"
+
+#include "ZScript/Player.zsc" // Player class
+
+#include "ZScript/IceShotgun.zsc" // Ice Shotgun
+#include "ZScript/PFSuperShotgun.zsc" // Perfect Freeze Super Shotgun

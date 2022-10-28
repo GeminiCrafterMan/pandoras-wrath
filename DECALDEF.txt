@@ -1,0 +1,12 @@
+// Ice
+decal FreezeBlastMelt 1
+{
+	pic BSMEAR1
+	x-scale 1.1
+	y-scale 1.1
+	shade "DD DD FF"
+	randomflipx
+	animator BloodSmearer
+}
+
+Generator ShotgunIceChunk			FreezeBlastMelt
