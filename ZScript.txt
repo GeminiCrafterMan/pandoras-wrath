@@ -2,5 +2,9 @@ version "4.1.0"
 
 #include "ZScript/Player.zsc" // Player class
 
+#include "ZScript/Generic Effects.zsc" // Generic effects
+
+#include "ZScript/Projectiles.zsc" // projectiles
+
 #include "ZScript/IceShotgun.zsc" // Ice Shotgun
 #include "ZScript/PFSuperShotgun.zsc" // Perfect Freeze Super Shotgun

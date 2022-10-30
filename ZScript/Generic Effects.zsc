@@ -1,0 +1,32 @@
+class IceSGFlash : Actor
+{
+	Default
+	{
+		+NOGRAVITY
+	}
+	States
+	{
+		Spawn:
+			TNT1 AAAAAA 1 {
+				A_Warp(AAPTR_TARGET, 0, 0, 32, 0, WARPF_COPYINTERPOLATION);
+			}
+			Stop;
+	}
+}
+
+class IceDamageEffect : Actor
+{
+	Default
+	{
+		+THRUACTORS;
+		Scale 1.75;
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 1 {if (target != null && target.Health >= 0) {target.Speed = target.Speed / 2;}}//{master.Speed = master.Speed / 2;}}
+			TNT1 A 45;
+			stop;
+	}
+}
