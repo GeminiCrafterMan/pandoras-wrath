@@ -112,11 +112,11 @@ class PerfectFreezeBullet : IceProjectile
 	action State PerfectFreezeTimerJump()
 	{
 		if (GetAge() == 3*35) {
-			A_StartSound("weapons/pfkira0");
+			A_StartSound("weapons/power1");
 			A_Stop();
 			return ResolveState("White");
 		}
-		if (GetAge() >= 13*35) {A_FadeOut();}
+		if (GetAge() >= 30*35) {A_FadeOut();}
 		return State(null);
 	}
 	Default
@@ -170,5 +170,43 @@ class PerfectFreezeBullet : IceProjectile
 		Death:
 			PFBU F 1 Bright A_FadeOut(0.1);
 			Loop;
+	}
+}
+
+class IceCubeGrenade : IceProjectile
+{
+	Default
+	{
+		BounceCount 5;
+		Damage 20;
+		Height 32;
+		Radius 32;
+		Speed 25;
+		-NOGRAVITY
+		+RANDOMIZE
+		+BOUNCEONWALLS
+		+SOLID
+		+NOEXPLODEFLOOR
+		Obituary "%o failed to catch %k's sliding ice cube.";
+	}
+	States
+	{
+		Spawn:
+			ICGP A 1 Bright;
+			Loop;
+		Death:
+			MISL B 8 Bright A_Explode;
+			MISL C 6 Bright;
+			MISL D 4 Bright;
+			Stop;
+		Grenade:
+			MISL A 1000 A_Die;
+			Wait;
+		Detonate:
+			MISL B 4 A_Scream;
+			MISL C 6 A_Detonate;
+			MISL D 10;
+			Stop;
+		// i'm not adding the fucking mushroom state there's absolutely no reason to
 	}
 }

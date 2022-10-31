@@ -8,9 +8,10 @@ weapons/sgpump2		"Sounds/sgpump2.wav"
 
 // P.F. SuperShotgun
 // All sounds here are from Touhou Koumakyou: Embodiment of Scarlet Devil (th06)
-weapons/pfshotf		"Sounds/tan00.wav"
+weapons/pfshot1		"Sounds/tan00.wav"
+weapons/pfshot2		"Sounds/tan01.wav"
 weapons/pfdamage	"Sounds/graze.wav"
 weapons/pfgraze		"Sounds/damage00.wav"
-weapons/pfkira0		"Sounds/kira00.wav"
-weapons/pfkira1		"Sounds/kira01.wav"
-weapons/pfkira2		"Sounds/kira02.wav"
+weapons/ok00		"Sounds/ok00.wav"
+weapons/power1		"Sounds/power1.wav"
+weapons/powerup		"Sounds/powerup.wav"
