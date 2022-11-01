@@ -85,18 +85,17 @@ class PFSuperShotgun : SuperShotgun
 				A_WeaponOffset(0, -12, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.125, 0, WOF_ADD);
 			}
-			PFSH A 4 A_CheckReload;
+			PFSH A 4 {A_CheckReload(); A_WeaponOffset(0, 32, WOF_INTERPOLATE); A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);}
 			Goto Reload;
 		AltFire:
 			PFSH A 1 {
 				invoker.DepleteAmmo(true); // depletes one shell
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				if (!invoker.OneBarrel) {
-					invoker.OneBarrel = true;
+				invoker.OneBarrel = !invoker.OneBarrel;
+				if (invoker.OneBarrel) {
 					A_Overlay(-2, "Flash1");
 				}
 				else {
-					invoker.OneBarrel = false;
 					A_Overlay(-3, "Flash2");
 				}
 				for (int i; i < 10; i++) {
@@ -115,7 +114,7 @@ class PFSuperShotgun : SuperShotgun
 				A_WeaponOffset(0, -6, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
 			}
-			PFSH A 4 {A_CheckReload(); if (!invoker.OneBarrel) {player.SetPSprite(OverlayID(), ResolveState("Reload"));}}
+			PFSH A 4 {A_CheckReload(); A_WeaponOffset(0, 32, WOF_INTERPOLATE); A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE); if (!invoker.OneBarrel) {player.SetPSprite(OverlayID(), ResolveState("Reload"));}}
 			Goto Ready;
 		Reload:
 			PFSH B 7;

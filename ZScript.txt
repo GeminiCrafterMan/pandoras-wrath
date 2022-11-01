@@ -7,4 +7,3 @@ version "4.1.0"
 
 #include "ZScript/Weapons/IceShotgun.zsc" // Ice Shotgun
 #include "ZScript/Weapons/PFSuperShotgun.zsc" // Perfect Freeze Super Shotgun
-#include "ZScript/Weapons/IceCubeGrenadeLauncher.zsc" // Ice Cube Grenade Launcher
