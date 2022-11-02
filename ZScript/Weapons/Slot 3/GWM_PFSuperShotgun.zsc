@@ -78,12 +78,12 @@ class GWM_PFSuperShotgun : SuperShotgun
 				A_Overlay(-3, "Flash2");
 				A_SpawnItemEx("GWM_IceFlash");
 				A_WeaponOffset(0, 24, WOF_ADD);
-				A_OverlayScale(OverlayID(), 1.25, 0, WOF_INTERPOLATE);
+				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
 			}
 			PFSH A 2;
 			PFSH AA 2 {
 				A_WeaponOffset(0, -12, WOF_ADD);
-				A_OverlayScale(OverlayID(), -0.125, 0, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
 			PFSH A 4 {A_CheckReload(); A_WeaponOffset(0, 32, WOF_INTERPOLATE); A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);}
 			Goto Reload;
@@ -107,7 +107,7 @@ class GWM_PFSuperShotgun : SuperShotgun
 				A_StartSound("weapons/pfshot2", CHAN_WEAPON);
 				A_SpawnItemEx("GWM_IceFlash");
 				A_WeaponOffset(0, 12, WOF_ADD);
-				A_OverlayScale(OverlayID(), 1.125, 0, WOF_INTERPOLATE);
+				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
 			}
 			PFSH A 2;
 			PFSH AA 2 {

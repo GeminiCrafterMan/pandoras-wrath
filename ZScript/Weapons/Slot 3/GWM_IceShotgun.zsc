@@ -25,7 +25,7 @@ class GWM_IceShotgun : Shotgun
 				A_SpawnItemEx("GWM_IceFlash");
 				A_Overlay(-2, "Flash");
 				A_WeaponOffset(0, 12, WOF_ADD);
-				A_OverlayScale(OverlayID(), 1.125, 0, WOF_INTERPOLATE);
+				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
 			}
 			ISHT A 2;
 			ISHT AA 3 {
