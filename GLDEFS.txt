@@ -8,7 +8,12 @@ flickerlight2 ICEGUNSATK
 	attenuate 1
 }
 
-object IceSGFlash
+object GWM_IceFlash
 {
 	frame TNT1A { light ICEGUNSATK }
+}
+
+object GWM_Flash
+{
+	frame TNT1A { light ZOMBIEATK }
 }

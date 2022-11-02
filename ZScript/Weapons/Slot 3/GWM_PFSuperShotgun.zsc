@@ -1,4 +1,4 @@
-class PFSuperShotgun : SuperShotgun
+class GWM_PFSuperShotgun : SuperShotgun
 {
 	bool PFShotDirected;
 	int PFCooldown;
@@ -68,7 +68,7 @@ class PFSuperShotgun : SuperShotgun
 				invoker.DepleteAmmo(false); // two shells
 
 				for (int i; i < 20; i++) {
-					actor p = A_FireProjectile("PerfectFreezeBullet", frandom(-7.5, 7.5), useammo: false, pitch: frandom(-3.55, 3.55));
+					actor p = A_FireProjectile("GWM_PerfectFreezeBullet", frandom(-7.5, 7.5), useammo: false, pitch: frandom(-3.55, 3.55));
 					if (p) {
 						invoker.projs.Push(p);
 					}
@@ -76,7 +76,7 @@ class PFSuperShotgun : SuperShotgun
 				A_StartSound("weapons/pfshot1", CHAN_WEAPON);
 				A_Overlay(-2, "Flash1");
 				A_Overlay(-3, "Flash2");
-				A_SpawnItemEx("IceSGFlash");
+				A_SpawnItemEx("GWM_IceFlash");
 				A_WeaponOffset(0, 24, WOF_ADD);
 				A_OverlayScale(OverlayID(), 1.25, 0, WOF_INTERPOLATE);
 			}
@@ -99,13 +99,13 @@ class PFSuperShotgun : SuperShotgun
 					A_Overlay(-3, "Flash2");
 				}
 				for (int i; i < 10; i++) {
-					actor p = A_FireProjectile("PerfectFreezeBullet", frandom(-7.5, 7.5), useammo: false, pitch: frandom(-3.55, 3.55));
+					actor p = A_FireProjectile("GWM_PerfectFreezeBullet", frandom(-7.5, 7.5), useammo: false, pitch: frandom(-3.55, 3.55));
 					if (p) {
 						invoker.projs.Push(p);
 					}
 				}
 				A_StartSound("weapons/pfshot2", CHAN_WEAPON);
-				A_SpawnItemEx("IceSGFlash");
+				A_SpawnItemEx("GWM_IceFlash");
 				A_WeaponOffset(0, 12, WOF_ADD);
 				A_OverlayScale(OverlayID(), 1.125, 0, WOF_INTERPOLATE);
 			}

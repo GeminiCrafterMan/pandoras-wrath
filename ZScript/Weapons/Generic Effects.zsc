@@ -1,4 +1,4 @@
-class IceSGFlash : Actor
+class GWM_Flash : Actor
 {
 	Default
 	{
@@ -14,7 +14,9 @@ class IceSGFlash : Actor
 	}
 }
 
-class IceDamageEffect : Actor
+class GWM_IceFlash : GWM_Flash {}
+
+class GWM_IceDamageEffect : Actor
 {
 	Default
 	{

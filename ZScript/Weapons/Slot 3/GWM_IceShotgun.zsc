@@ -1,4 +1,4 @@
-class IceShotgun : Shotgun
+class GWM_IceShotgun : Shotgun
 {
 	Default
 	{
@@ -20,9 +20,9 @@ class IceShotgun : Shotgun
 		Fire:
 			ISHT A 1 {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				A_FireProjectile("ShotgunIce");
+				A_FireProjectile("GWM_ShotgunIce");
 				A_StartSound("weapons/iceshgn", CHAN_WEAPON);
-				A_SpawnItemEx("IceSGFlash");
+				A_SpawnItemEx("GWM_IceFlash");
 				A_Overlay(-2, "Flash");
 				A_WeaponOffset(0, 12, WOF_ADD);
 				A_OverlayScale(OverlayID(), 1.125, 0, WOF_INTERPOLATE);

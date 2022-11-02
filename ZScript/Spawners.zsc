@@ -1,0 +1,29 @@
+class ShotgunSpawner : Actor replaces Shotgun
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 A_Jump(128, "Spawn_IceShotgun");
+			TNT1 A 0 A_Jump(128, "Spawn_Shotgun");
+			Loop;
+		Spawn_IceShotgun:
+			TNT1 A 0 A_SpawnItemEx("GWM_IceShotgun");
+			Stop;
+		Spawn_Shotgun:
+			TNT1 A 0 A_SpawnItemEx("GWM_Shotgun");
+			Stop;
+	}
+}
+
+class SuperShotgunSpawner : Actor replaces SuperShotgun
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 A_Jump(128, "Spawn_PFSuperShotgun");
+			Loop;
+		Spawn_PFSuperShotgun:
+			TNT1 A 0 A_SpawnItemEx("GWM_PFSuperShotgun");
+			Stop;
+	}
+}

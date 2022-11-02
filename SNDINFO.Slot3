@@ -1,0 +1,19 @@
+// Shotgun
+weapons/skshot		"Sounds/Slot 3/Shotgun/Fire.wav"
+weapons/skpump1		"Sounds/Slot 3/Shotgun/Pump1.wav"
+weapons/skpump2		"Sounds/Slot 3/Shotgun/Pump2.wav"
+weapons/skbutt		"Sounds/Slot 3/Shotgun/Butt.wav"
+
+// Ice Shotgun
+weapons/icehit		"Sounds/Slot 3/Ice SG/DSICEHIT.wav"
+weapons/iceshgn		"Sounds/Slot 3/Ice SG/DSICESGN.wav"
+
+// P.F. SuperShotgun
+// All sounds here are from Touhou Koumakyou: Embodiment of Scarlet Devil (th06)
+weapons/pfshot1		"Sounds/Slot 3/Perfect Freeze SSG/tan00.wav"
+weapons/pfshot2		"Sounds/Slot 3/Perfect Freeze SSG/tan01.wav"
+weapons/pfdamage	"Sounds/Slot 3/Perfect Freeze SSG/graze.wav"
+weapons/pfgraze		"Sounds/Slot 3/Perfect Freeze SSG/damage00.wav"
+weapons/ok00		"Sounds/Slot 3/Perfect Freeze SSG/ok00.wav"
+weapons/power1		"Sounds/Slot 3/Perfect Freeze SSG/power1.wav"
+weapons/powerup		"Sounds/Slot 3/Perfect Freeze SSG/powerup.wav"

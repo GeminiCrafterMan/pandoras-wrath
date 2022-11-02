@@ -1,3 +1,5 @@
+generator GWM_Shotgun					BulletChip
+
 // Ice
 decal FreezeBlastMelt 1
 {
@@ -9,4 +11,4 @@ decal FreezeBlastMelt 1
 	animator BloodSmearer
 }
 
-Generator ShotgunIceChunk			FreezeBlastMelt
+Generator GWM_ShotgunIceChunk			FreezeBlastMelt

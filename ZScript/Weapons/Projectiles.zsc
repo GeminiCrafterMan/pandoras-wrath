@@ -1,4 +1,4 @@
-class IceProjectile : Actor // the absolute most basic projectile base possible
+class GWM_IceProjectile : Actor // the absolute most basic projectile base possible
 {
 	actor victim;
 	override int SpecialMissileHit(actor victim) //thanks mengo
@@ -7,11 +7,11 @@ class IceProjectile : Actor // the absolute most basic projectile base possible
 		{
 		if (victim.health <= 90)
 			{
-			victim.A_SpawnProjectile("IceDamageEffect");
+			victim.A_SpawnProjectile("GWM_IceDamageEffect");
 			victim.A_Die("ice");
 			return 1;
 			}
-		victim.A_SpawnProjectile("IceDamageEffect");
+		victim.A_SpawnProjectile("GWM_IceDamageEffect");
 		}
         return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
     }
@@ -23,7 +23,7 @@ class IceProjectile : Actor // the absolute most basic projectile base possible
 	}
 }
 
-class ShotgunIce : IceProjectile
+class GWM_ShotgunIce : GWM_IceProjectile
 {
 	Default
 	{
@@ -33,22 +33,22 @@ class ShotgunIce : IceProjectile
 		Damage 12;
 		Scale 2;
 		+RANDOMIZE;
-		SeeSound "weapons/iceshot";
+//		SeeSound "weapons/iceshot";
 		DeathSound "weapons/icehit";
 		Obituary "%o got frozen solid by %k's Ice Shotgun.";
 	}
 	States
 	{
 		Spawn:
-			SHGI A 6 Bright A_SpawnItemEx("ShotgunIceTrail");
+			SHGI A 6 Bright A_SpawnItemEx("GWM_ShotgunIceTrail");
 			loop;
 		Death:
 			TNT1 A 1 {
-				A_SpawnItemEx("ShotgunIceChunk", 0, 0, 0, -50, 0, 0, 10);
-				A_SpawnItemEx("ShotgunIceChunk", 0, 0, 0, -50, 0, 5, 0);
-				A_SpawnItemEx("ShotgunIceChunk", 0, 0, 0, -50, 0, 0, 0);
-				A_SpawnItemEx("ShotgunIceChunk", 0, 0, 0, -50, 0, -5, 0);
-				A_SpawnItemEx("ShotgunIceChunk", 0, 0, 0, -50, 0, 0, -10);
+				A_SpawnItemEx("GWM_ShotgunIceChunk", 0, 0, 0, -50, 0, 0, 10);
+				A_SpawnItemEx("GWM_ShotgunIceChunk", 0, 0, 0, -50, 0, 5, 0);
+				A_SpawnItemEx("GWM_ShotgunIceChunk", 0, 0, 0, -50, 0, 0, 0);
+				A_SpawnItemEx("GWM_ShotgunIceChunk", 0, 0, 0, -50, 0, -5, 0);
+				A_SpawnItemEx("GWM_ShotgunIceChunk", 0, 0, 0, -50, 0, 0, -10);
 			}
 			stop;
 		XDeath:
@@ -58,7 +58,7 @@ class ShotgunIce : IceProjectile
 	}
 }
 
-class ShotgunIceChunk : ShotgunIce
+class GWM_ShotgunIceChunk : GWM_ShotgunIce
 {
 	Default
 	{
@@ -72,7 +72,7 @@ class ShotgunIceChunk : ShotgunIce
 	States
 	{
 		Spawn:
-			SHGI F 6 Bright A_SpawnItemEx("ShotgunIceTrail");
+			SHGI F 6 Bright A_SpawnItemEx("GWM_ShotgunIceTrail");
 			loop;
 		Death:
 			SHGI BCDE 4 Bright;
@@ -80,7 +80,7 @@ class ShotgunIceChunk : ShotgunIce
 	}
 }
 
-class ShotgunIceTrail : Actor
+class GWM_ShotgunIceTrail : Actor
 {
 	Default
 	{
@@ -107,7 +107,7 @@ class ShotgunIceTrail : Actor
 	}
 }
 
-class PerfectFreezeBullet : IceProjectile
+class GWM_PerfectFreezeBullet : GWM_IceProjectile
 {
 	action State PerfectFreezeTimerJump()
 	{
@@ -170,43 +170,5 @@ class PerfectFreezeBullet : IceProjectile
 		Death:
 			PFBU F 1 Bright A_FadeOut(0.1);
 			Loop;
-	}
-}
-
-class IceCubeGrenade : IceProjectile
-{
-	Default
-	{
-		BounceCount 5;
-		Damage 20;
-		Height 32;
-		Radius 32;
-		Speed 25;
-		-NOGRAVITY
-		+RANDOMIZE
-		+BOUNCEONWALLS
-		+SOLID
-		+NOEXPLODEFLOOR
-		Obituary "%o failed to catch %k's sliding ice cube.";
-	}
-	States
-	{
-		Spawn:
-			ICGP A 1 Bright;
-			Loop;
-		Death:
-			MISL B 8 Bright A_Explode;
-			MISL C 6 Bright;
-			MISL D 4 Bright;
-			Stop;
-		Grenade:
-			MISL A 1000 A_Die;
-			Wait;
-		Detonate:
-			MISL B 4 A_Scream;
-			MISL C 6 A_Detonate;
-			MISL D 10;
-			Stop;
-		// i'm not adding the fucking mushroom state there's absolutely no reason to
 	}
 }
