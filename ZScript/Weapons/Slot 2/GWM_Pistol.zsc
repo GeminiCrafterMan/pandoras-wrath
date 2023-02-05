@@ -18,24 +18,38 @@ class GWM_Pistol : Pistol
 			IBPI A 1 A_Raise;
 			Loop;
 		Fire:
-			IBPI A 3 {
+			IBPI A 2 {
+				A_OverlayPivotAlign(OverlayID(), PSPA_RIGHT, PSPA_BOTTOM);
 				A_FireBullets (5.6, 0, 1, 5, "BulletPuff");
 				A_PlaySound("weapons/ibshot", CHAN_WEAPON);
 				A_Overlay(-2, "Flash");
 			}
-			IBPI B 2;
-			IBPI C 1;
-			IBPI D 1;
-			IBPI DCB 1;
-			IBPI A 4 A_ReFire;
+			IBPI A 1 {
+				A_OverlayOffset(OverlayID(), 15, 15, WOF_ADD);	// has to be WOF_ADD because of weird BS
+				A_OverlayScale(OverlayID(), 1.25, 0, WOF_INTERPOLATE);
+				A_OverlayRotate(OverlayID(), -18, WOF_INTERPOLATE);
+			}
+			IBPI DD 2 {
+				A_OverlayOffset(OverlayID(), -6, -6, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.10, 0, WOF_ADD);
+				A_OverlayRotate(OverlayID(), 9, WOF_ADD);
+			}
+			IBPI C 1 {
+				A_OverlayOffset(OverlayID(), -3, -3, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.05, 0, WOF_ADD);
+				A_OverlayRotate(OverlayID(), 0, WOF_INTERPOLATE);
+				A_ReFire();
+			}
+			IBPI B 1;
 			Goto Ready;
 		Hold:
-			IBPI A 4;
+			IBPI B 2;
+			IBPI A 2;
 			Goto Fire;
 		Flash:
 			TNT1 A 0 A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_CENTER);
-			TNT1 A 0 A_OverlayScale(OverlayID(), 0.25, 0);
-			TNT1 A 0 A_OverlayOffset(OverlayID(), 190, 80);
+			TNT1 A 0 A_OverlayScale(OverlayID(), 0.25, 0.25);
+			TNT1 A 0 A_OverlayOffset(OverlayID(), 180, 70);
 			MISL BBBCCD 1 Bright;
 			Stop;
 	}
