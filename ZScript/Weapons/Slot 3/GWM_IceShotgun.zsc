@@ -34,13 +34,9 @@ class GWM_IceShotgun : Shotgun
 			}
 			ISHT A 2;
 			ISHT B 5;
-			ISHT C 1 A_WeaponOffset(0.75, 1.5, WOF_ADD);
-			ISHT C 1 A_WeaponOffset(1.5, 3, WOF_ADD);
-			ISHT CCC 1 A_WeaponOffset(3, 6, WOF_ADD);
+			ISHT CCC 2 A_WeaponOffset(5, 10, WOF_ADD);
 			ISHT D 4;
-			ISHT C 1 A_WeaponOffset(-0.75, -1.5, WOF_ADD);
-			ISHT C 1 A_WeaponOffset(-1.5, -3, WOF_ADD);
-			ISHT CCC 1 A_WeaponOffset(-3, -6, WOF_ADD);
+			ISHT CCC 2 A_WeaponOffset(-5, -10, WOF_ADD);
 			ISHT B 5;
 			ISHT A 3;
 			ISHT A 7 A_ReFire;
