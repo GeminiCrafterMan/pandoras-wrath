@@ -1,16 +1,9 @@
 class GWM_Shotgun : Shotgun
 {
-	action void A_ResetOverlay() {
-		A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);
-		A_OverlayPivotAlign(OverlayID(), PSPA_LEFT, PSPA_TOP);
-		A_OverlayPivot(OverlayID(), 0.5, 0.5, WOF_INTERPOLATE);
-		A_OverlayRotate(OverlayID(), 0, WOF_INTERPOLATE);
-		A_OverlayOffset(OverlayID(), 0, 32, WOF_INTERPOLATE);
-	}
 	Default
 	{
 		Tag "Slayer's Kahuna";
-		Inventory.PickupMessage "You got the Slayer's Kahuna! (Alt-fire for a melee attack.)";
+		Inventory.PickupMessage "You got the Slayer's Kahuna!";
 		Obituary "%o caught the wave (of pellets) produced by %k's Slayer's Kahuna.";
 		AttackSound "weapons/skshot";
 	}
@@ -26,54 +19,26 @@ class GWM_Shotgun : Shotgun
 			SKSG A 1 A_Raise;
 			Loop;
 		Fire:
-			TNT1 A 0 A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 			SKSG A 1 {
-				A_FireBullets(3, 3, 10, 6);
+				A_FireBullets(2.5, 0.83, 8, 6);
 				A_SpawnItemEx("GWM_Flash");
-				A_Overlay(-2, "Flash");
-				A_WeaponOffset(0, 12, WOF_ADD);
-//				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
+				A_GunFlash();
 			}
-			SKSG A 3;
-			SKSG AA 3 {
-				A_WeaponOffset(0, -6, WOF_ADD);
-//				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
-			}
-			SKSG A 3 {A_ResetOverlay(); A_WeaponOffset(0, 32, WOF_INTERPOLATE);}
+			SKSG AAAA 3;
 			SKSG B 5;
 			SKSG CCDD 1;
 			SKSG E 4 A_StartSound("weapons/skpump1");
 			SKSG DDCC 1; // These two play on CHAN_BODY because the firing sound is just too fucking long
 			SKSG B 5 A_StartSound("weapons/skpump2");
-			SKSG A 3 {
-				A_OverlayRotate(PSP_WEAPON, 0);
-				A_WeaponOffset(0, 32);
-			}
+			SKSG A 3;
 			SKSG A 7 A_ReFire;
-			Goto Ready;
-		AltFire:
-			SKSG AAA 1 {
-				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				A_OverlayRotate(OverlayID(), 15, WOF_ADD);
-				A_WeaponOffset(-48, 8, WOF_ADD);
-			}
-			SKSG FGHI 1 {
-				A_OverlayRotate(OverlayID(), 0);
-				A_WeaponOffset(0, 32);
-			}
-			SKSG J 4 A_CustomPunch(4 * random(1, 10), TRUE, meleesound: "weapons/skbutt");
-			SKSG IHGF 1;
-			SKSG FFF 1 A_WeaponOffset(0, 12, WOF_ADD);
-			SKSG AAA 1 A_WeaponOffset(0, -12, WOF_ADD);
 			Goto Ready;
 		Spawn:
 			SKSG Z -1;
 			Stop;
 		Flash:
-			TNT1 A 0 A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-			TNT1 A 0 A_OverlayScale(OverlayID(), 0.5, 0);
-			TNT1 A 0 A_OverlayOffset(OverlayID(), 160, 85);
-			MISL BBBCCD 1 Bright;
-			Stop;
+			SKSF A 4 Bright A_Light1;
+			SKSF B 3 Bright A_Light2;
+			Goto LightDone;
 	}
 }

@@ -24,19 +24,19 @@ class GWM_IceShotgun : Shotgun
 				A_StartSound("weapons/iceshgn", CHAN_WEAPON);
 				A_SpawnItemEx("GWM_IceFlash");
 				A_Overlay(-2, "Flash");
-				A_WeaponOffset(0, 12, WOF_ADD);
+				A_WeaponOffset(0, 20, WOF_ADD);
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
 			}
 			ISHT A 2;
-			ISHT AA 3 {
-				A_WeaponOffset(0, -6, WOF_ADD);
+			ISHT AA 4 {
+				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
 			}
-			ISHT A 2;
+//			ISHT A 2;
 			ISHT B 5;
-			ISHT CCC 2 A_WeaponOffset(5, 10, WOF_ADD);
+			ISHT CCC 2;// A_WeaponOffset(5, 10, WOF_ADD);
 			ISHT D 4;
-			ISHT CCC 2 A_WeaponOffset(-5, -10, WOF_ADD);
+			ISHT CCC 2;// A_WeaponOffset(-5, -10, WOF_ADD);
 			ISHT B 5;
 			ISHT A 3;
 			ISHT A 7 A_ReFire;
