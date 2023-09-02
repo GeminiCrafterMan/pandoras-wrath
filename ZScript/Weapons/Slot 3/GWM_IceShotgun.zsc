@@ -2,6 +2,7 @@ class GWM_IceShotgun : Shotgun
 {
 	Default
 	{
+		Weapon.AmmoType "IceShell";
 		Inventory.PickupMessage "You got the Ice Shotgun!";
 		Obituary "Shouldn't see this.";
 		Tag "Ice Shotgun";

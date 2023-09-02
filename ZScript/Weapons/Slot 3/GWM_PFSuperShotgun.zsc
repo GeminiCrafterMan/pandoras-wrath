@@ -47,8 +47,9 @@ class GWM_PFSuperShotgun : SuperShotgun
 		Obituary "Shouldn't see this.";
 		Tag "Perfect Freeze Super Shotgun";
 		Weapon.AmmoUse 2;
+		Weapon.AmmoType "IceShell";
 		Weapon.AmmoUse2 1;
-		Weapon.AmmoType2 "Shell";
+		Weapon.AmmoType2 "IceShell";
 	}
 	States
 	{
@@ -65,7 +66,7 @@ class GWM_PFSuperShotgun : SuperShotgun
 			TNT1 A 0 {if (invoker.OneBarrel) {player.SetPSprite(OverlayID(), ResolveState("AltFire"));}}
 			PFSH A 1 {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				invoker.DepleteAmmo(false); // two shells
+				invoker.DepleteAmmo(false); // two ice shells
 
 				for (int i; i < 20; i++) {
 					actor p = A_FireProjectile("GWM_PerfectFreezeBullet", frandom(-7.5, 7.5), useammo: false, pitch: frandom(-3.55, 3.55));
@@ -89,7 +90,7 @@ class GWM_PFSuperShotgun : SuperShotgun
 			Goto Reload;
 		AltFire:
 			PFSH A 1 {
-				invoker.DepleteAmmo(true); // depletes one shell
+				invoker.DepleteAmmo(true); // depletes one ice shell
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				invoker.OneBarrel = !invoker.OneBarrel;
 				if (invoker.OneBarrel) {

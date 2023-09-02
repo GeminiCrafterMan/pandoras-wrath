@@ -1,0 +1,33 @@
+class IceShell : Ammo
+{
+	Default
+	{
+		Inventory.PickupMessage "Picked up a handful of ice shotgun shells.";
+		Inventory.Amount 4;
+		Inventory.MaxAmount 50;
+		Ammo.BackpackAmount 4;
+		Ammo.BackpackMaxAmount 100;
+		Inventory.Icon "ISHLA0";
+	}
+	States
+	{
+		Spawn:
+			ISHL A -1;
+			Stop;
+	}
+}
+
+class IceShellBox : IceShell
+{
+	Default
+	{
+		Inventory.PickupMessage "Picked up a box of ice shotgun shells.";
+		Inventory.Amount 20;
+	}
+	States
+	{
+		Spawn:
+			ISHL B -1;
+			Stop;
+	}
+}

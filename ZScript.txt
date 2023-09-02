@@ -1,13 +1,12 @@
 version "4.1.0"
 
 #include "ZScript/Player.zsc" // Player class
-#include "ZScript/Spawners.zsc"
+#include "ZScript/Ammo.zsc" // Ammo
+#include "ZScript/Spawners.zsc" // Spawners
 
 #include "ZScript/Weapons/Generic Effects.zsc" // Generic effects
 #include "ZScript/Weapons/Projectiles.zsc" // projectiles
 
-#include "ZScript/Weapons/Slot 2/GWM_Pistol.zsc"
-
-#include "ZScript/Weapons/Slot 3/GWM_Shotgun.zsc"
+#include "ZScript/Weapons/Slot 3/GWM_Shotgun.zsc" // Slayer's Kahuna
 #include "ZScript/Weapons/Slot 3/GWM_IceShotgun.zsc" // Ice Shotgun
 #include "ZScript/Weapons/Slot 3/GWM_PFSuperShotgun.zsc" // Perfect Freeze Super Shotgun

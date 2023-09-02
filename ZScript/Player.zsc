@@ -2,11 +2,11 @@ class IceWepsModPlayer : DoomPlayer
 {
 	Default
 	{
-		Player.StartItem "GWM_Pistol";
+		Player.StartItem "Pistol";
 		Player.StartItem "Fist";
 		Player.StartItem "Clip", 50;
 		Player.WeaponSlot 1, "Fist", "Chainsaw";
-		Player.WeaponSlot 2, "GWM_Pistol";
+		Player.WeaponSlot 2, "Pistol";
 		Player.WeaponSlot 3, "GWM_Shotgun", "GWM_IceShotgun", "GWM_PFSuperShotgun";
 		Player.WeaponSlot 4, "Chaingun";
 		Player.WeaponSlot 5, "RocketLauncher";
