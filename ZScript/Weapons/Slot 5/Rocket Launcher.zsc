@@ -1,0 +1,1 @@
+class GWM_RocketLauncher : RocketLauncher {}

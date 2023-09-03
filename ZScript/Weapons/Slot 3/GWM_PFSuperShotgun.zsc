@@ -47,9 +47,9 @@ class GWM_PFSuperShotgun : SuperShotgun
 		Obituary "Shouldn't see this.";
 		Tag "Perfect Freeze Super Shotgun";
 		Weapon.AmmoUse 2;
-		Weapon.AmmoType "IceShell";
+		Weapon.AmmoType "GWM_IceShell";
 		Weapon.AmmoUse2 1;
-		Weapon.AmmoType2 "IceShell";
+		Weapon.AmmoType2 "GWM_IceShell";
 	}
 	States
 	{
@@ -141,10 +141,10 @@ class GWM_PFSuperShotgun : SuperShotgun
 			TNT1 A 0 A_FireFrozenProjectiles;
 			Goto Ready;
 		Flash1:
-			TNT1 A 0 A_OverlayOffset(OverlayID(), 148, 96);
+			TNT1 A 0 A_OverlayOffset(OverlayID(), 148, 106);
 			Goto Flash;
 		Flash2:
-			TNT1 A 0 A_OverlayOffset(OverlayID(), 168, 96);
+			TNT1 A 0 A_OverlayOffset(OverlayID(), 168, 106);
 			Goto Flash;
 		Flash:
 			SGFL ABCCDE 1 Bright A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);

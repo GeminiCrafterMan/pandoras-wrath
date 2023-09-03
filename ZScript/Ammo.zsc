@@ -1,4 +1,38 @@
-class IceShell : Ammo
+class GWM_Shell : Ammo // had to basically define my own shells so the spawner would play nice.
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTSHELLS";
+		Inventory.Amount 4;
+		Inventory.MaxAmount 50;
+		Ammo.BackpackAmount 4;
+		Ammo.BackpackMaxAmount 100;
+		Inventory.Icon "SHELA0";
+	}
+	States
+	{
+		Spawn:
+			SHEL A -1;
+			Stop;
+	}
+}
+
+class GWM_ShellBox : GWM_Shell
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTSHELLBOX";
+		Inventory.Amount 20;
+	}
+	States
+	{
+		Spawn:
+			SBOX A -1;
+			Stop;
+	}
+}
+
+class GWM_IceShell : Ammo
 {
 	Default
 	{
@@ -17,7 +51,7 @@ class IceShell : Ammo
 	}
 }
 
-class IceShellBox : IceShell
+class GWM_IceShellBox : GWM_IceShell
 {
 	Default
 	{
