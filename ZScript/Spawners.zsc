@@ -48,10 +48,12 @@ class SuperShotgunSpawner : Actor replaces SuperShotgun
 	States
 	{
 		Spawn:
-			TNT1 A 0 A_Jump(128, "Spawn_PFSuperShotgun");
-			Loop;
+			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Spawn_SuperShotgun");
 		Spawn_PFSuperShotgun:
 			TNT1 A 0 A_SpawnItemEx("GWM_PFSuperShotgun");
+			Stop;
+		Spawn_SuperShotgun:
+			TNT1 A 0 A_SpawnItemEx("GWM_SuperShotgun");
 			Stop;
 	}
 }

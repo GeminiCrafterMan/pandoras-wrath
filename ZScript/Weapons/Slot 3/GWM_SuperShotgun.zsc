@@ -1,0 +1,143 @@
+class GWM_SuperShotgun : SuperShotgun
+{
+	bool OneBarrel;
+	Default
+	{
+		Inventory.PickupMessage "Picked up the Super Shotgun! Oh, yes.";
+		Obituary "%o was turned into Swiss cheese by %k's Super Shotgun.";
+		Tag "Super Shotgun";
+		Weapon.AmmoUse 2;
+		Weapon.AmmoType "GWM_Shell";
+		Weapon.AmmoUse2 1;
+		Weapon.AmmoType2 "GWM_Shell";
+	}
+	States
+	{
+		Ready:
+			SSGG A 1 A_WeaponReady;
+			Loop;
+		Deselect:
+			SSGG A 1 A_Lower;
+			Loop;
+		Select:
+			SSGG A 1 A_Raise();
+			Loop;
+		Fire:
+			TNT1 A 0 {if (invoker.OneBarrel) {player.SetPSprite(OverlayID(), ResolveState("AltFire"));}}
+			SSGG A 1 {
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				A_FireBullets(20, 6.64, 20, 6);
+				A_StartSound("weapons/ssgshot1", CHAN_WEAPON);
+				A_Overlay(PSP_FLASH, "FlashBoth");
+				A_SpawnItemEx("GWM_Flash");
+				A_WeaponOffset(0, 24, WOF_ADD);
+				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
+			}
+			SSGG A 2;
+			SSGG AA 2 {
+				A_WeaponOffset(0, -12, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
+			}
+			TNT1 A 0 A_CheckReload;
+			SSGG A 4 {A_WeaponOffset(0, 32, WOF_INTERPOLATE); A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);}
+			Goto Reload;
+		AltFire:
+			SSGG A 1 {
+//				invoker.DepleteAmmo(true); // depletes one shell
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				invoker.OneBarrel = !invoker.OneBarrel;
+				if (invoker.OneBarrel) {
+					A_Overlay(PSP_FLASH, "FlashLeft");
+				}
+				else {
+					A_Overlay(PSP_FLASH, "FlashRight");
+				}
+				A_FireBullets(10, 3.32, 10, 6);
+				A_StartSound("weapons/ssgshot2", CHAN_WEAPON);
+				A_SpawnItemEx("GWM_Flash");
+				A_WeaponOffset(0, 12, WOF_ADD);
+				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
+			}
+			SSGG A 2;
+			SSGG AA 2 {
+				A_WeaponOffset(0, -6, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+			}
+			TNT1 A 0 A_CheckReload;
+			SSGG A 4 {A_WeaponOffset(0, 32, WOF_INTERPOLATE); A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE); if (!invoker.OneBarrel) {player.SetPSprite(OverlayID(), ResolveState("Reload"));}}
+			Goto Ready;
+		Reload:
+			SSGG DC 2;
+			SSGG B 3;
+			SSGG C 4;
+			SSGG D 3;
+			SSGG E 3 A_StartSound("weapons/ssgo", CHAN_BODY);
+			SSGG F 2;
+			SSGG FGH 2;
+			SSGG I 3 A_StartSound("weapons/ssgl", CHAN_BODY);
+			SSGG JK 2 A_OverlayPivotAlign(OverlayID(), PSPA_LEFT, PSPA_BOTTOM);
+			SSGG KKK 1 {
+				A_OverlayOffset(OverlayID(), 5, 10, WOF_ADD);
+				A_OverlayRotate(OverlayID(), 5, WOF_ADD);
+			}
+			SSGG F 3 {
+				A_OverlayRotate(OverlayID(), 0);
+				A_OverlayOffset(OverlayID(), 0);
+				invoker.OneBarrel = false;
+			}
+			SSGG L 6 A_StartSound("weapons/ssgc", CHAN_BODY);
+			SSGG A 5;
+			Goto Ready;
+		FlashBoth:
+			TNT1 A 0 A_Overlay(-2,"BothBarrelsFlash");
+			Goto Flash;
+		FlashLeft:
+			TNT1 A 0 A_Overlay(-2,"LeftBarrelFlash");
+			Goto Flash;
+		FlashRight:
+			TNT1 A 0 A_Overlay(-2,"RightBarrelFlash");
+		Flash:
+			SSGF A 1 Bright {
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
+			}
+			SSGF A 2 Bright;
+			SSGF BB 2 Bright {
+				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
+			}
+			Stop;
+		BothBarrelsFlash:
+			SSGF C 1 Bright {
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
+			}
+			SSGF C 2 Bright;
+			SSGF DD 2 Bright {
+				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
+			}
+			Stop;
+		LeftBarrelFlash:
+			SSGF E 1 Bright {
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
+			}
+			SSGF E 2 Bright;
+			SSGF FF 2 Bright {
+				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
+			}
+			Stop;
+		RightBarrelFlash:
+			SSGF G 1 Bright {
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
+			}
+			SSGF G 2 Bright;
+			SSGF HH 2 Bright {
+				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
+			}
+			Stop;
+		Spawn:
+			SSGG Z -1;
+			Stop;
+	}
+}

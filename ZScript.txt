@@ -8,6 +8,7 @@ version "4.1.0"
 #include "ZScript/Weapons/Projectiles.zsc" // projectiles
 
 #include "ZScript/Weapons/Slot 3/GWM_Shotgun.zsc" // Slayer's Kahuna
+#include "ZScript/Weapons/Slot 3/GWM_SuperShotgun.zsc" // Super Shotgun
 #include "ZScript/Weapons/Slot 3/GWM_IceShotgun.zsc" // Ice Shotgun
 #include "ZScript/Weapons/Slot 3/GWM_PFSuperShotgun.zsc" // Perfect Freeze Super Shotgun
 

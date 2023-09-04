@@ -86,7 +86,8 @@ class GWM_PFSuperShotgun : SuperShotgun
 				A_WeaponOffset(0, -12, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
-			PFSH A 4 {A_CheckReload(); A_WeaponOffset(0, 32, WOF_INTERPOLATE); A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);}
+			TNT1 A 0 A_CheckReload;
+			PFSH A 4 {A_WeaponOffset(0, 32, WOF_INTERPOLATE); A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);}
 			Goto Reload;
 		AltFire:
 			PFSH A 1 {
@@ -115,15 +116,16 @@ class GWM_PFSuperShotgun : SuperShotgun
 				A_WeaponOffset(0, -6, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
 			}
-			PFSH A 4 {A_CheckReload(); A_WeaponOffset(0, 32, WOF_INTERPOLATE); A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE); if (!invoker.OneBarrel) {player.SetPSprite(OverlayID(), ResolveState("Reload"));}}
+			TNT1 A 0 A_CheckReload;
+			PFSH A 4 {A_WeaponOffset(0, 32, WOF_INTERPOLATE); A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE); if (!invoker.OneBarrel) {player.SetPSprite(OverlayID(), ResolveState("Reload"));}}
 			Goto Ready;
 		Reload:
 			PFSH B 7;
 			PFSH C 7;
-			PFSH D 3 A_StartSound("weapons/sshoto", CHAN_WEAPON);
+			PFSH D 3 A_StartSound("weapons/ssgo", CHAN_WEAPON);
 			PFSH E 2;
 			PFSH EFG 2;
-			PFSH H 3 A_StartSound("weapons/sshotl", CHAN_WEAPON);
+			PFSH H 3 A_StartSound("weapons/ssgl", CHAN_WEAPON);
 			PFSH IJ 2 A_OverlayPivotAlign(OverlayID(), PSPA_LEFT, PSPA_BOTTOM);
 			PFSH JJJ 1 {
 				A_OverlayOffset(OverlayID(), 5, 10, WOF_ADD);
@@ -134,7 +136,7 @@ class GWM_PFSuperShotgun : SuperShotgun
 				A_OverlayOffset(OverlayID(), 0);
 				invoker.OneBarrel = false;
 			}
-			PFSH K 6 A_StartSound("weapons/sshotc", CHAN_WEAPON);
+			PFSH K 6 A_StartSound("weapons/ssgc", CHAN_WEAPON);
 			PFSH A 5;
 			Goto Ready;
 		Zoom:
