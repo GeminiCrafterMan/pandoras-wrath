@@ -1,0 +1,63 @@
+class GWM_BurstRifle : DoomWeapon
+{
+	action void A_FireRifle()
+	{
+		bool accurate;
+
+		if (player != null)
+		{
+			Weapon weap = player.ReadyWeapon;
+			if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
+			{
+				if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
+					return;
+
+//				player.SetPsprite(PSP_FLASH, weap.FindState('Flash'), true);
+			}
+			player.mo.PlayAttacking2 ();
+
+			accurate = !player.refire;
+		}
+		else
+		{
+			accurate = true;
+		}
+
+		A_StartSound("weapons/riflesht", CHAN_WEAPON);
+		GunShot (accurate, "BulletPuff", BulletSlope ());
+	}
+	Default
+	{
+		Weapon.AmmoType "Clip";
+		Tag "Burst Rifle";
+		Inventory.PickupMessage "You got the Burst Rifle!";
+		Obituary "%o was turned into Swiss cheese by %k's Burst Rifle.";
+		Weapon.AmmoUse 1;
+		Weapon.AmmoGive 20;
+	}
+	States
+	{
+		Ready:
+			RIFL A 1 A_WeaponReady;
+			Loop;
+		Deselect:
+			RIFL A 1 A_Lower;
+			Loop;
+		Select:
+			RIFL A 1 A_Raise;
+			Loop;
+		Fire:
+			RIFL B 1 A_FireRifle;
+			RIFL CA 1;
+			RIFL B 1 A_FireRifle;
+			RIFL CA 1;
+			RIFL B 1 A_FireRifle;
+			RIFL CA 1;
+			RIFL A 5;
+			RIFL A 1 A_ReFire;
+			Goto Ready;
+		Spawn:
+			RIFL Z -1;
+			Stop;
+	}
+}

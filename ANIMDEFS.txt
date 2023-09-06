@@ -1,0 +1,17 @@
+texture SSGFA0 NoTrim
+texture SSGFB0 NoTrim
+texture SSGFC0 NoTrim
+texture SSGFD0 NoTrim
+texture SSGFE0 NoTrim
+texture SSGFF0 NoTrim
+texture SSGFG0 NoTrim
+texture SSGFH0 NoTrim
+texture SSGGA0 NoTrim
+texture RLGFA0 NoTrim
+texture RLGFB0 NoTrim
+texture RLGGA0 NoTrim
+texture RLGLA0 NoTrim
+texture RLGLB0 NoTrim
+texture RLGLC0 NoTrim
+texture RLGLD0 NoTrim
+texture RLGLE0 NoTrim

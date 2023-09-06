@@ -1,0 +1,7 @@
+// Grenade Launcher
+weapons/glshot		"Sounds/Slot 5/Grenade Launcher/grenade_launcher_shoot.wav"
+weapons/gbnce1		"Sounds/Slot 5/Grenade Launcher/grenade_impact.wav"
+weapons/gbnce2		"Sounds/Slot 5/Grenade Launcher/grenade_impact2.wav"
+weapons/gbnce3		"Sounds/Slot 5/Grenade Launcher/grenade_impact3.wav"
+
+$random weapons/grbnce { weapons/gbnce1 weapons/gbnce2 weapons/gbnce3 }
