@@ -58,6 +58,21 @@ class SuperShotgunSpawner : Actor replaces SuperShotgun
 	}
 }
 
+class ChaingunSpawner : Actor replaces Chaingun
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Spawn_Chaingun");
+		Spawn_BurstRifle:
+			TNT1 A 0 A_SpawnItemEx("GWM_BurstRifle");
+			Stop;
+		Spawn_Chaingun:
+			TNT1 A 0 A_SpawnItemEx("GWM_Chaingun");
+			Stop;
+	}
+}
+
 class RocketLauncherSpawner : Actor replaces RocketLauncher
 {
 	States
@@ -69,6 +84,21 @@ class RocketLauncherSpawner : Actor replaces RocketLauncher
 			Stop;
 		Spawn_GrenadeLauncher:
 			TNT1 A 0 A_SpawnItemEx("GWM_GrenadeLauncher");
+			Stop;
+	}
+}
+
+class PlasmaRifleSpawner : Actor replaces PlasmaRifle
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Spawn_PlasmaRifle");
+		Spawn_Railgun:
+			TNT1 A 0 A_SpawnItemEx("GWM_Railgun");
+			Stop;
+		Spawn_PlasmaRifle:
+			TNT1 A 0 A_SpawnItemEx("GWM_PlasmaRifle");
 			Stop;
 	}
 }
