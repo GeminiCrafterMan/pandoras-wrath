@@ -1,0 +1,5 @@
+- pistol (at all)
+- rocket launcher
+- fix grenade launcher or merge with rocket launcher via altfire
+- somehow make railgun beam "wider" or thicker somehow, basically buff it more (damage buffs done)
+- nerf the ice shotguns a little bit

@@ -25,6 +25,7 @@ class GWM_BurstRifle : DoomWeapon
 
 		A_StartSound("weapons/riflesht", CHAN_WEAPON);
 		GunShot (accurate, "BulletPuff", BulletSlope ());
+		A_WeaponOffset(0, 6, WOF_ADD);
 	}
 	Default
 	{
@@ -47,12 +48,12 @@ class GWM_BurstRifle : DoomWeapon
 			RIFL A 1 A_Raise;
 			Loop;
 		Fire:
-			RIFL B 1 A_FireRifle;
-			RIFL CA 1;
-			RIFL B 1 A_FireRifle;
-			RIFL CA 1;
-			RIFL B 1 A_FireRifle;
-			RIFL CA 1;
+			RIFL B 1 Bright A_FireRifle;
+			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
+			RIFL B 1 Bright A_FireRifle;
+			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
+			RIFL B 1 Bright A_FireRifle;
+			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
 			RIFL A 5;
 			RIFL A 1 A_ReFire;
 			Goto Ready;

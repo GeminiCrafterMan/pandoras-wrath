@@ -6,7 +6,7 @@ class GWM_Railgun : DoomWeapon
 		Tag "Railgun";
 		Inventory.PickupMessage "You got the Railgun!";
 		Obituary "%o was put into %k's sick frag movie.";
-		Weapon.AmmoUse 10;
+		Weapon.AmmoUse 20;
 		Weapon.AmmoGive 40;
 	}
 	States
@@ -28,7 +28,7 @@ class GWM_Railgun : DoomWeapon
 			RLGG A 6 {
 				A_StartSound("weapons/railshot");
 				A_GunFlash();
-				A_RailAttack(random(80,120), color1: "ffa35b", color2: "ffe3d3", maxdiff: 2);
+				A_RailAttack(10*random(24,30), color1: "ffa35b", color2: "ffe3d3", maxdiff: 2);
 			}
 			RLGG BCCCCCBB 2;
 			Goto Ready;

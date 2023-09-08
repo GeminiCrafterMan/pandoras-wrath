@@ -1,0 +1,40 @@
+class GWM_Pistol : Pistol replaces Pistol
+{
+	Default
+	{
+		Obituary "%o was plinked to death by %k's Colt 1911.";
+		Inventory.PickupMessage "You got the Colt 1911!";
+		Tag "Colt 1911";
+	}
+	States
+	{
+		Ready:
+			191G A 1 A_WeaponReady;
+			Loop;
+		Deselect:
+			191G A 1 A_Lower;
+			Loop;
+		Select:
+			191G A 1 A_Raise;
+			Loop;
+		Fire:
+			191G B 1 {
+				A_FireBullets (5.6, 0, 1, 5, "BulletPuff");
+				A_PlaySound("weapons/coltfire", CHAN_WEAPON);
+				A_Overlay(-2, "Flash");
+				A_WeaponOffset(0, 6, WOF_ADD);
+			}
+			191G B 2;
+			191G C 3 A_WeaponOffset(0, -6, WOF_ADD);
+			191G B 2;
+			191G B 3 A_ReFire;
+			Goto Ready;
+		Flash:
+			191F A 2 Bright A_Light1;
+			191F B 2 Bright A_Light2;
+			Goto LightDone;
+		Spawn:
+			191G Z -1;
+			Stop;
+	}
+}

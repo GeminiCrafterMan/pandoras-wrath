@@ -55,7 +55,7 @@ class GWM_IceShotgun : Shotgun
 			SGFL ABCCDE 1 Bright;
 			Stop;
 		Spawn:
-			ISHT E -1;
+			ISHT Z -1;
 			Stop;
 	}
 }

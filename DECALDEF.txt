@@ -1,5 +1,8 @@
+generator GWM_Pistol					BulletChip
 generator GWM_Shotgun					BulletChip
 generator GWM_SuperShotgun				BulletChip
+generator GWM_Chaingun					BulletChip
+generator GWM_BurstRifle				BulletChip
 
 // Ice
 decal FreezeBlastMelt 1
