@@ -44,11 +44,12 @@ class GWM_IceShotgun : Shotgun
 			Goto Ready;
 		AltFire:
 		// Was going to be a kick, but I don't wanna.
-			PUNG B 4;
-			PUNG C 4 A_Punch;
-			PUNG D 5;
-			PUNG C 4;
-			PUNG B 5 A_ReFire;
+		// Update: I wanna.
+			KICK A 4;
+			KICK B 4 A_Punch;
+			KICK C 5;
+			KICK B 4;
+			KICK A 5 A_ReFire;
 			Goto Ready;
 		Flash:
 			TNT1 A 0 A_OverlayOffset(OverlayID(), 159.5, 112);
