@@ -1,3 +1,12 @@
 // Railgun
 weapons/railshot	"Sounds/Slot 6/Railgun/railgun_shoot.wav"
 weapons/railchrg	"Sounds/Slot 6/Railgun/railgun_charge.wav"
+
+// Plasma Rifle
+weapons/plasmashot	"Sounds/Slot 6/Plasma Rifle/plasma_2fire1.wav"
+weapons/plasmaf		"Sounds/Slot 6/Plasma Rifle/plasmagun_flight.wav"
+weapons/plasmax1	"Sounds/Slot 6/Plasma Rifle/plasma_impact1.wav"
+weapons/plasmax2	"Sounds/Slot 6/Plasma Rifle/plasma_impact2.wav"
+weapons/plasmax3	"Sounds/Slot 6/Plasma Rifle/plasma_impact3.wav"
+
+$random weapons/plasmax { weapons/plasmax1 weapons/plasmax2 weapons/plasmax3 }

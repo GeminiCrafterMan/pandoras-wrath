@@ -1,1 +1,19 @@
-class GWM_PlasmaRifle : PlasmaRifle {}
+class GWM_PlasmaRifle : PlasmaRifle
+{
+	States
+	{
+		Fire:
+			PLSG A 1 {
+				A_FireProjectile("PlasmaBall");
+				A_StartSound("weapons/plasmashot");
+				A_GunFlash();
+				A_WeaponOffset(0, 6, WOF_ADD);
+			}
+			PLSG A 2 A_WeaponOffset(0, -6, WOF_ADD);
+			PLSG B 20 A_ReFire;
+			Goto Ready;
+		Flash:
+			PLSF ABC 1 Bright A_Light1;
+			Goto LightDone;
+	}
+}
