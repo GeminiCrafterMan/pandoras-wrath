@@ -20,7 +20,7 @@ class GWM_Pistol : Pistol replaces Pistol
 		Fire:
 			191G B 1 {
 				A_FireBullets (5.6, 0, 1, 5, "BulletPuff");
-				A_PlaySound("weapons/coltfire", CHAN_WEAPON);
+				A_StartSound("weapons/coltfire", CHAN_WEAPON);
 				A_Overlay(-2, "Flash");
 				A_WeaponOffset(0, 6, WOF_ADD);
 			}

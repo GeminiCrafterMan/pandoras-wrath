@@ -1,1 +1,57 @@
-class GWM_Chaingun : Chaingun {}
+class GWM_Chaingun : Chaingun
+{
+	action void A_FireCGun() {
+		A_StartSound("weapons/chngun", CHAN_WEAPON);
+		A_FireBullets(5.6, 0, 1, 5, "BulletPuff");
+	}
+	States
+	{
+		Fire:
+			// rev the chaingun
+			CHGG A 1 A_StartSound("weapons/cgunup");
+			CHGG AABBBBCCCDDDEEFFGH 1;
+		Hold:
+			CHGG A 2 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashAB");}
+			CHGG B 2;
+			CHGG B 0 A_ReFire("Hold2");
+			Goto Unrev;
+		Hold2:
+			CHGG C 2 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashCD");}
+			CHGG D 2;
+			CHGG D 0 A_ReFire("Hold3");
+			Goto Unrev;
+		Hold3:
+			CHGG E 2 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashEF");}
+			CHGG F 2;
+			CHGG F 0 A_ReFire("Hold4");
+			Goto Unrev;
+		Hold4:
+			CHGG G 2 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashGH");}
+			CHGG H 2;
+			CHGG H 0 A_ReFire;
+			Goto Unrev;
+		Unrev:
+			CHGG H 1 A_StartSound("weapons/cgundn");
+			CHGG GFFEEDDDCCCBBBBAAA 1;
+			Goto Ready;
+		FlashAB:
+			CHGF A 2 Bright A_Light1;
+			CHGF B 1 Bright A_Light1;
+			Stop;
+		FlashCD:
+			CHGF C 2 Bright A_Light1;
+			CHGF D 1 Bright A_Light1;
+			Stop;
+		FlashEF:
+			CHGF E 2 Bright A_Light1;
+			CHGF F 1 Bright A_Light1;
+			Stop;
+		FlashGH:
+			CHGF G 2 Bright A_Light1;
+			CHGF H 1 Bright A_Light1;
+			Stop;
+		Spawn:
+			CHGG Z -1;
+			Stop;
+	}
+}

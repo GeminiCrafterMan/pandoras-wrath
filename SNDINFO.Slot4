@@ -1,2 +1,13 @@
 // Burst Rifle
 weapons/riflesht		"Sounds/Slot 4/assaultrifle_shoot.wav"
+
+// Chaingun
+weapons/cgunup			"Sounds/Slot 4/Chaingun/cgun_wind_up.wav"
+weapons/cgundn			"Sounds/Slot 4/Chaingun/cgun_wind_down.wav"
+
+weapons/chgnf1			"Sounds/Slot 4/Chaingun/chaingun_fire1.wav"
+weapons/chgnf2			"Sounds/Slot 4/Chaingun/chaingun_fire2.wav"
+weapons/chgnf3			"Sounds/Slot 4/Chaingun/chaingun_fire3.wav"
+weapons/chgnf4			"Sounds/Slot 4/Chaingun/chaingun_fire4.wav"
+
+$random weapons/chngun { weapons/chgnf1 weapons/chgnf2 weapons/chgnf3 weapons/chgnf4 }	
