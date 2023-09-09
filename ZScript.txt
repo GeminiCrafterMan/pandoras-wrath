@@ -7,6 +7,8 @@ version "4.1.0"
 #include "ZScript/Weapons/Generic Effects.zsc" // Generic effects
 #include "ZScript/Weapons/Projectiles.zsc" // projectiles
 
+#include "ZScript/Weapons/Slot 1/GWM_Fist.zsc" // Fist, taken from Super Skulltag and rewritten slightly.
+
 #include "ZScript/Weapons/Slot 2/GWM_Pistol.zsc" // Colt 1911
 
 #include "ZScript/Weapons/Slot 3/GWM_Shotgun.zsc" // Slayer's Kahuna

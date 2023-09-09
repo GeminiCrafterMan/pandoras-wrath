@@ -1,8 +1,10 @@
-$random punches {dspunch dspunc1 dspunc2}
-dspunch dspunch
-dspunc1 dspunc1
-dspunc2 dspunc2
+// Fists
+weapons/fistwhoosh	"Sounds/Slot 1/fist_whoosh.ogg"
+weapons/fistjab		"Sounds/Slot 1/fist_jab.ogg"
+weapons/berserkhit	"Sounds/Slot 1/berserk_hit.ogg"
 
-fistwhoosh	dsfistw
-fistjab		dsfistw2
-berserkhit	dsbpunch
+weapons/punch1		"Sounds/Slot 1/fist_punch1.ogg"
+weapons/punch2		"Sounds/Slot 1/fist_punch2.ogg"
+weapons/punch3		"Sounds/Slot 1/fist_punch3.ogg"
+
+$random weapons/punch { weapons/punch1 weapons/punch2 weapons/punch3 }
