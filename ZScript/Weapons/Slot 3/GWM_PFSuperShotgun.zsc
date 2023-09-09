@@ -60,7 +60,8 @@ class GWM_PFSuperShotgun : SuperShotgun
 			PFSH A 1 A_Lower;
 			Loop;
 		Select:
-			PFSH A 1 A_Raise();
+			PFSH A 1 A_Raise;
+			TNT1 A 0 {invoker.PFShotDirected = false;} // hacky fix
 			Loop;
 		Fire:
 			TNT1 A 0 {if (invoker.OneBarrel) {player.SetPSprite(OverlayID(), ResolveState("AltFire"));}}
@@ -120,14 +121,15 @@ class GWM_PFSuperShotgun : SuperShotgun
 			PFSH A 4 {A_WeaponOffset(0, 32, WOF_INTERPOLATE); A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE); if (!invoker.OneBarrel) {player.SetPSprite(OverlayID(), ResolveState("Reload"));}}
 			Goto Ready;
 		Reload:
-			PFSH B 7;
-			PFSH C 7;
-			PFSH D 3 A_StartSound("weapons/ssgo", CHAN_WEAPON);
-			PFSH E 2;
-			PFSH EFG 2;
-			PFSH H 3 A_StartSound("weapons/ssgl", CHAN_WEAPON);
-			PFSH IJ 2 A_OverlayPivotAlign(OverlayID(), PSPA_LEFT, PSPA_BOTTOM);
-			PFSH JJJ 1 {
+			PFSH DB 2;
+			PFSH C 3;
+			PFSH B 4;
+			PFSH D 3;
+			PFSH E 2 A_StartSound("weapons/ssgo", CHAN_WEAPON);
+			PFSH EFGH 2;
+			PFSH I 3 A_StartSound("weapons/ssgl", CHAN_WEAPON);
+			PFSH JKK 2 A_OverlayPivotAlign(OverlayID(), PSPA_LEFT, PSPA_BOTTOM);
+			PFSH KKK 1 {
 				A_OverlayOffset(OverlayID(), 5, 10, WOF_ADD);
 				A_OverlayRotate(OverlayID(), 5, WOF_ADD);
 			}
@@ -136,7 +138,7 @@ class GWM_PFSuperShotgun : SuperShotgun
 				A_OverlayOffset(OverlayID(), 0);
 				invoker.OneBarrel = false;
 			}
-			PFSH K 6 A_StartSound("weapons/ssgc", CHAN_WEAPON);
+			PFSH L 6 A_StartSound("weapons/ssgc", CHAN_WEAPON);
 			PFSH A 5;
 			Goto Ready;
 		Zoom:
