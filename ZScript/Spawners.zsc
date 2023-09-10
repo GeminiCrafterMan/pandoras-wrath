@@ -28,6 +28,36 @@ class ShellBoxSpawner : Actor replaces ShellBox
 	}
 }
 
+class RocketAmmoSpawner : Actor replaces RocketAmmo
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Spawn_RocketAmmo");
+		Spawn_VenomVial:
+			TNT1 A 0 A_SpawnItemEx("GWM_VenomVial");
+			Stop;
+		Spawn_RocketAmmo:
+			TNT1 A 0 A_SpawnItemEx("GWM_RocketAmmo");
+			Stop;
+	}
+}
+
+class RocketBoxSpawner : Actor replaces RocketBox
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Spawn_RocketBox");
+		Spawn_LargeVenomVial:
+			TNT1 A 0 A_SpawnItemEx("GWM_LargeVenomVial");
+			Stop;
+		Spawn_RocketBox:
+			TNT1 A 0 A_SpawnItemEx("GWM_RocketBox");
+			Stop;
+	}
+}
+
 class ShotgunSpawner : Actor replaces Shotgun
 {
 	States
@@ -78,12 +108,12 @@ class RocketLauncherSpawner : Actor replaces RocketLauncher
 	States
 	{
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Spawn_GrenadeLauncher");
+			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Spawn_RocketLauncher");
+		Spawn_VenomCannon:
+			TNT1 A 0 A_SpawnItemEx("GWM_VenomCannon");
+			Stop;
 		Spawn_RocketLauncher:
 			TNT1 A 0 A_SpawnItemEx("GWM_RocketLauncher");
-			Stop;
-		Spawn_GrenadeLauncher:
-			TNT1 A 0 A_SpawnItemEx("GWM_GrenadeLauncher");
 			Stop;
 	}
 }

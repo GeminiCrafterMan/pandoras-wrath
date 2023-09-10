@@ -65,3 +65,71 @@ class GWM_IceShellBox : GWM_IceShell
 			Stop;
 	}
 }
+
+class GWM_RocketAmmo : Ammo
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTROCKET"; // "Picked up a rocket."
+		Inventory.Amount 1;
+		Inventory.MaxAmount 50;
+		Ammo.BackpackAmount 1;
+		Ammo.BackpackMaxAmount 100;
+		Inventory.Icon "ROCKA0";
+	}
+	States
+	{
+		Spawn:
+			ROCK A -1;
+			Stop;
+	}
+}
+
+class GWM_RocketBox : GWM_RocketAmmo
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTROCKBOX"; // "Picked up a box of rockets."
+		Inventory.Amount 5;
+	}
+	States
+	{
+		Spawn:
+			BROK A -1;
+			Stop;
+	}
+}
+
+class GWM_VenomVial : Ammo
+{
+	Default
+	{
+		Inventory.PickupMessage "Picked up a small vial of venom.";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 50;
+		Ammo.BackpackAmount 1;
+		Ammo.BackpackMaxAmount 100;
+		Inventory.Icon "VNMVC0";
+	}
+	States
+	{
+		Spawn:
+			VNMV ABCDCB 6;
+			Loop;
+	}
+}
+
+class GWM_LargeVenomVial : GWM_VenomVial
+{
+	Default
+	{
+		Inventory.PickupMessage "Picked up a large vial of venom.";
+		Inventory.Amount 5;
+	}
+	States
+	{
+		Spawn:
+			VNMV EFGHGF 6;
+			Loop;
+	}
+}

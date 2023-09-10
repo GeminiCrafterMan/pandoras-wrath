@@ -1,1 +1,7 @@
-class GWM_RocketLauncher : RocketLauncher {}
+class GWM_RocketLauncher : RocketLauncher
+{
+	Default
+	{
+		Weapon.AmmoType "GWM_RocketAmmo";
+	}
+}
