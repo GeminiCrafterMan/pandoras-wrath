@@ -1,3 +1,4 @@
+// Super Shotgun
 texture SSGFA0 NoTrim
 texture SSGFB0 NoTrim
 texture SSGFC0 NoTrim
@@ -7,6 +8,10 @@ texture SSGFF0 NoTrim
 texture SSGFG0 NoTrim
 texture SSGFH0 NoTrim
 texture SSGGA0 NoTrim
+// Rocket Launcher
+texture RKTFA0 NoTrim
+texture RKTFB0 NoTrim
+// Railgun
 texture RLGFA0 NoTrim
 texture RLGFB0 NoTrim
 texture RLGGA0 NoTrim

@@ -1,7 +1,14 @@
 // Rocket Launcher
+weapons/rocketfire	"Sounds/Slot 5/Rocket Launcher/rocket_dm_shoot.wav"
+weapons/grenadefire	"Sounds/Slot 5/Rocket Launcher/grenade_launcher_dm_shoot.wav"
+
+weapons/grndimpact1	"Sounds/Slot 5/Rocket Launcher/grenade_dm_impact.wav"
+weapons/grndimpact2	"Sounds/Slot 5/Rocket Launcher/grenade_dm_impact2.wav"
+weapons/grndimpact3	"Sounds/Slot 5/Rocket Launcher/grenade_dm_impact3.wav"
+
+$random weapons/grndimp { weapons/grndimpact1 weapons/grndimpact2 weapons/grndimpact3 }
 
 // Venom Cannon
-
 weapons/vnmcfire1	"Sounds/Slot 5/Venom Cannon/paint_blob_inception_01.wav"
 weapons/vnmcfire2	"Sounds/Slot 5/Venom Cannon/paint_blob_inception_02.wav"
 weapons/vnmcfire3	"Sounds/Slot 5/Venom Cannon/paint_blob_inception_03.wav"
