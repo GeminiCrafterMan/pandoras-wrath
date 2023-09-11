@@ -39,4 +39,6 @@ decalgroup WallVenomPuddle
 	VenomPuddle3	1
 }
 
+Generator GWM_VenomBall					WallVenomPuddle
+
 Generator GWM_ShotgunIceChunk			FreezeBlastMelt
