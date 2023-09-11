@@ -1,10 +1,17 @@
 // Fists
-weapons/fistwhoosh	"Sounds/Slot 1/fist_whoosh.ogg"
-weapons/fistjab		"Sounds/Slot 1/fist_jab.ogg"
-weapons/berserkhit	"Sounds/Slot 1/berserk_hit.ogg"
+weapons/fistwhoosh	"Sounds/Slot 1/Fist/fist_whoosh.ogg"
+weapons/fistjab		"Sounds/Slot 1/Fist/fist_jab.ogg"
+weapons/berserkhit	"Sounds/Slot 1/Fist/berserk_hit.ogg"
 
-weapons/punch1		"Sounds/Slot 1/fist_punch1.ogg"
-weapons/punch2		"Sounds/Slot 1/fist_punch2.ogg"
-weapons/punch3		"Sounds/Slot 1/fist_punch3.ogg"
+weapons/punch1		"Sounds/Slot 1/Fist/fist_punch1.ogg"
+weapons/punch2		"Sounds/Slot 1/Fist/fist_punch2.ogg"
+weapons/punch3		"Sounds/Slot 1/Fist/fist_punch3.ogg"
 
 $random weapons/punch { weapons/punch1 weapons/punch2 weapons/punch3 }
+
+// Impactor Gauntlet
+weapons/IMGRaise	"Sounds/Slot 1/Impactor Gauntlet/IMGARAIS.ogg"
+weapons/IMGCok		"Sounds/Slot 1/Impactor Gauntlet/IMGACOK.ogg"
+weapons/IMGHit		"Sounds/Slot 1/Impactor Gauntlet/IMGAHIT.ogg"
+weapons/IMGMiss		"Sounds/Slot 1/Impactor Gauntlet/IMGAMISS.ogg"
+weapons/IMGThrust	"Sounds/Slot 1/Impactor Gauntlet/IMGATHRU.ogg"

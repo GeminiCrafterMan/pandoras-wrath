@@ -43,9 +43,11 @@ class GWM_BurstRifle : DoomWeapon
 			Loop;
 		Deselect:
 			RIFL A 1 A_Lower;
+			RIFL A 0 A_Lower;
 			Loop;
 		Select:
 			RIFL A 1 A_Raise;
+			RIFL A 0 A_Raise;
 			Loop;
 		Fire:
 			RIFL B 1 Bright A_FireRifle;

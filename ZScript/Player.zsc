@@ -5,12 +5,12 @@ class IceWepsModPlayer : DoomPlayer
 		Player.StartItem "GWM_Pistol";
 		Player.StartItem "GWM_Fist";
 		Player.StartItem "Clip", 50;
-		Player.WeaponSlot 1, "GWM_Fist", "Chainsaw";
+		Player.WeaponSlot 1, "GWM_Fist", "GWM_Impactor";
 		Player.WeaponSlot 2, "GWM_Pistol";
 		Player.WeaponSlot 3, "GWM_Shotgun", "GWM_IceShotgun", "GWM_SuperShotgun", "GWM_PFSuperShotgun";
 		Player.WeaponSlot 4, "GWM_Chaingun", "GWM_BurstRifle";
 		Player.WeaponSlot 5, "GWM_RocketLauncher", "GWM_VenomCannon";
 		Player.WeaponSlot 6, "GWM_PlasmaRifle", "GWM_Railgun";
-		Player.WeaponSlot 7, "BFG9000";
+		Player.WeaponSlot 7, "GWM_BFG9000";
 	}
 }

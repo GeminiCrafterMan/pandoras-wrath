@@ -4,4 +4,15 @@ class GWM_RocketLauncher : RocketLauncher
 	{
 		Weapon.AmmoType "GWM_RocketAmmo";
 	}
+	States
+	{
+		Deselect:
+			MISG A 1 A_Lower;
+			MISG A 0 A_Lower;
+			Loop;
+		Select:
+			MISG A 1 A_Raise;
+			MISG A 0 A_Raise;
+			Loop;
+	}
 }

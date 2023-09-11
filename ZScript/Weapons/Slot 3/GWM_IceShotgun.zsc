@@ -14,9 +14,11 @@ class GWM_IceShotgun : Shotgun
 			Loop;
 		Deselect:
 			ISHT A 1 A_Lower;
+			ISHT A 0 A_Lower;
 			Loop;
 		Select:
 			ISHT A 1 A_Raise;
+			ISHT A 0 A_Raise;
 			Loop;
 		Fire:
 			ISHT A 1 {

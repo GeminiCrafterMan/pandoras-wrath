@@ -13,9 +13,11 @@ class GWM_Pistol : Pistol replaces Pistol
 			Loop;
 		Deselect:
 			191G A 1 A_Lower;
+			191G A 0 A_Lower;
 			Loop;
 		Select:
 			191G A 1 A_Raise;
+			191G A 0 A_Raise;
 			Loop;
 		Fire:
 			191G B 2 {

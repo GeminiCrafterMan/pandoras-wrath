@@ -8,6 +8,7 @@ version "4.1.0"
 #include "ZScript/Weapons/Projectiles.zsc" // projectiles
 
 #include "ZScript/Weapons/Slot 1/GWM_Fist.zsc" // Fist, taken from Super Skulltag and rewritten slightly.
+#include "ZScript/Weapons/Slot 1/GWM_Impactor.zsc" // Impactor Gauntlet, taken from Realm667.
 
 #include "ZScript/Weapons/Slot 2/GWM_Pistol.zsc" // Colt 1911
 
@@ -19,8 +20,10 @@ version "4.1.0"
 #include "ZScript/Weapons/Slot 4/GWM_Chaingun.zsc" // Chaingun
 #include "ZScript/Weapons/Slot 4/GWM_BurstRifle.zsc" // Burst Rifle
 
-#include "ZScript/Weapons/Slot 5/GWM_RocketLauncher.zsc" // Rocket Launcher (stock Doom's right now)
+#include "ZScript/Weapons/Slot 5/GWM_RocketLauncher.zsc" // Rocket Launcher (Vanilla)
 #include "ZScript/Weapons/Slot 5/GWM_VenomCannon.zsc" // Venom Cannon (poison goop gun)
 
 #include "ZScript/Weapons/Slot 6/GWM_PlasmaRifle.zsc" // Plasma Rifle
 #include "ZScript/Weapons/Slot 6/GWM_Railgun.zsc" // Railgun
+
+#include "ZScript/Weapons/Slot 7/GWM_BFG9000.zsc" // BFG9000 (Vanilla)

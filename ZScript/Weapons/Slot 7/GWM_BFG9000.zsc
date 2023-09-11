@@ -1,0 +1,14 @@
+class GWM_BFG9000 : BFG9000 replaces BFG9000
+{
+	States
+	{
+		Deselect:
+			BFGG A 1 A_Lower;
+			BFGG A 0 A_Lower;
+			Loop;
+		Select:
+			BFGG A 1 A_Raise;
+			BFGG A 0 A_Raise;
+			Loop;
+	}
+}

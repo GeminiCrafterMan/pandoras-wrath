@@ -18,9 +18,11 @@ class GWM_SuperShotgun : SuperShotgun
 			Loop;
 		Deselect:
 			SSGG A 1 A_Lower;
+			SSGG A 0 A_Lower;
 			Loop;
 		Select:
-			SSGG A 1 A_Raise();
+			SSGG A 1 A_Raise;
+			SSGG A 0 A_Raise;
 			Loop;
 		Fire:
 			TNT1 A 0 {if (invoker.OneBarrel) {player.SetPSprite(OverlayID(), ResolveState("AltFire"));}}

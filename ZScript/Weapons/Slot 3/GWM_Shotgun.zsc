@@ -15,9 +15,11 @@ class GWM_Shotgun : Shotgun
 			Loop;
 		Deselect:
 			SKSG A 1 A_Lower;
+			SKSG A 0 A_Lower;
 			Loop;
 		Select:
 			SKSG A 1 A_Raise;
+			SKSG A 0 A_Raise;
 			Loop;
 		Fire:
 			SKSG A 1 {
