@@ -382,7 +382,7 @@ class GWM_MainBallPuddleSpawner : GWM_SmallVenomBall
 		Scale 0.25;
 		DeathSound "";
 		BounceSound "";
-		+NOINTERACTION
+//		+NOINTERACTION
 	}
 	States
 	{
@@ -401,6 +401,9 @@ class GWM_FloorVenomPuddle : GWM_PoisonProjectile
 {
 	Default
 	{
+		Height 2;
+		Radius 16;
+		-NOGRAVITY
 		+FLATSPRITE
 		Damage 1;
 	}
@@ -425,6 +428,7 @@ class GWM_WallVenomPuddle : GWM_FloorVenomPuddle
 {
 	Default
 	{
+		Height 16;
 		-FLATSPRITE
 		+NOGRAVITY
 		+WALLSPRITE
