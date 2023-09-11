@@ -28,8 +28,8 @@ class GWM_Pistol : Pistol replaces Pistol
 			}
 			191G B 2;
 			191G C 3 A_WeaponOffset(0, -6, WOF_ADD);
-			191G B 2;
-			191G B 3 A_ReFire;
+			191G B 3;
+			191G A 3 A_ReFire;
 			Goto Ready;
 		Flash:
 			191F A 2 Bright A_Light1;
