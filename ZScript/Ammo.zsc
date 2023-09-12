@@ -2,7 +2,7 @@ class GWM_Shell : Ammo // had to basically define my own shells so the spawner w
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTSHELLS";
+		Inventory.PickupMessage "$GOTSHELLS"; // Redefined in LANGUAGE -- "Picked up a small box of shotgun shells."
 		Inventory.Amount 4;
 		Inventory.MaxAmount 50;
 		Ammo.BackpackAmount 4;
@@ -21,7 +21,7 @@ class GWM_ShellBox : GWM_Shell
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTSHELLBOX";
+		Inventory.PickupMessage "$GOTSHELLBOX"; // Redefined in LANGUAGE -- "Picked up a large box of shotgun shells."
 		Inventory.Amount 20;
 	}
 	States
@@ -36,7 +36,7 @@ class GWM_IceShell : Ammo
 {
 	Default
 	{
-		Inventory.PickupMessage "Picked up a handful of ice shotgun shells.";
+		Inventory.PickupMessage "$GOTICESHELLS"; // "Picked up a small box of ice shotgun shells."
 		Inventory.Amount 4;
 		Inventory.MaxAmount 50;
 		Ammo.BackpackAmount 4;
@@ -55,7 +55,7 @@ class GWM_IceShellBox : GWM_IceShell
 {
 	Default
 	{
-		Inventory.PickupMessage "Picked up a box of ice shotgun shells.";
+		Inventory.PickupMessage "$GOTICESHELLBOX"; // "Picked up a large box of ice shotgun shells."
 		Inventory.Amount 20;
 	}
 	States
@@ -104,7 +104,7 @@ class GWM_VenomVial : Ammo
 {
 	Default
 	{
-		Inventory.PickupMessage "Picked up a small vial of venom.";
+		Inventory.PickupMessage "$GOTVENOMVIAL";// "Picked up a small vial of venom."
 		Inventory.Amount 1;
 		Inventory.MaxAmount 50;
 		Ammo.BackpackAmount 1;
@@ -123,7 +123,7 @@ class GWM_LargeVenomVial : GWM_VenomVial
 {
 	Default
 	{
-		Inventory.PickupMessage "Picked up a large vial of venom.";
+		Inventory.PickupMessage "$GOTLARGEVENOMVIAL"; // "Picked up a large vial of venom."
 		Inventory.Amount 5;
 	}
 	States

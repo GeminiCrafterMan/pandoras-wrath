@@ -23,6 +23,74 @@ class GWM_IceProjectile : Actor // the absolute most basic projectile base possi
 	}
 }
 
+class GWM_FlameProjectile : Actor // the absolute most basic projectile base possible
+{
+	actor victim;
+	override int SpecialMissileHit(actor victim) //thanks mengo
+    {
+        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
+		{
+		if (victim.health <= self.Damage)
+			{
+			victim.A_SpawnProjectile("GWM_FlameDamageEffect");
+			victim.A_Die("fire");
+			return 1;
+			}
+		victim.A_SpawnProjectile("GWM_FlameDamageEffect");
+		}
+        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
+    }
+	Default
+	{
+		Projectile;
+		DamageType "Fire";
+	}
+}
+
+class GWM_FireDamage : CustomInventory
+{
+	States
+	{
+		Pickup:
+			TNT1 A 0 A_SpawnItemEx("GWM_FlameDamageEffect",0,0,20,0,0,0,0,SXF_SETMASTER);
+			Stop;
+	}
+}
+
+class GWM_PoisonProjectile : Actor // the absolute most basic projectile base possible
+{
+	actor victim;
+	override int SpecialMissileHit(actor victim) //thanks mengo
+    {
+        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
+		{
+		if (victim.health <= self.Damage)
+			{
+			victim.A_SpawnProjectile("GWM_PoisonDamageEffect");
+			victim.A_Die("poison");
+			return 1;
+			}
+		victim.A_SpawnProjectile("GWM_PoisonDamageEffect");
+		}
+        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
+    }
+	Default
+	{
+		Projectile;
+		DamageType "Poison";
+	}
+}
+
+class GWM_PoisonDamage : CustomInventory
+{
+	States
+	{
+		Pickup:
+			TNT1 A 0 A_SpawnItemEx("GWM_PoisonDamageEffect",0,0,20,0,0,0,0,SXF_SETMASTER);
+			Stop;
+	}
+}
+
 class GWM_ShotgunIce : GWM_IceProjectile
 {
 	Default
@@ -174,71 +242,65 @@ class GWM_PerfectFreezeBullet : GWM_IceProjectile
 	}
 }
 
-class GWM_FlameProjectile : Actor // the absolute most basic projectile base possible
+class GWM_Rocket : Rocket
 {
-	actor victim;
-	override int SpecialMissileHit(actor victim) //thanks mengo
-    {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
-		{
-		if (victim.health <= self.Damage)
-			{
-			victim.A_SpawnProjectile("GWM_FlameDamageEffect");
-			victim.A_Die("fire");
-			return 1;
-			}
-		victim.A_SpawnProjectile("GWM_FlameDamageEffect");
-		}
-        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
-    }
 	Default
 	{
-		Projectile;
-		DamageType "Fire";
+		SeeSound "";
+		DeathSound "weapons/explode";
+	}
+	States
+	{
+		Spawn:
+			RCKT A 1 Bright;
+			Loop;
 	}
 }
 
-class GWM_PoisonProjectile : Actor // the absolute most basic projectile base possible
+class GWM_Grenade : Grenade
 {
-	actor victim;
-	override int SpecialMissileHit(actor victim) //thanks mengo
-    {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
-		{
-		if (victim.health <= self.Damage)
-			{
-			victim.A_SpawnProjectile("GWM_PoisonDamageEffect");
-			victim.A_Die("poison");
-			return 1;
+	bool missed;
+	int timer;
+	action State GrenadeTimerJump()
+	{
+		if (invoker.timer < 81) {
+			if (!invoker.missed) {
+				return ResolveState(null);
 			}
-		victim.A_SpawnProjectile("GWM_PoisonDamageEffect");
+			else invoker.timer++;
 		}
-        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
-    }
+		if (invoker.timer >= 81) {
+			return ResolveState("Death");
+		}
+		return State(null);
+	}
 	Default
 	{
-		Projectile;
-		DamageType "Poison";
+		+USEBOUNCESTATE
+		SeeSound "";
+		DeathSound "weapons/explode";
+		BounceSound "weapons/grndimp";
+		BounceType "Grenade";
 	}
-}
-
-class GWM_FireDamage : CustomInventory
-{
 	States
 	{
-		Pickup:
-			TNT1 A 0 A_SpawnItemEx("GWM_FlameDamageEffect",0,0,20,0,0,0,0,SXF_SETMASTER);
-			Stop;
-	}
-}
-
-class GWM_PoisonDamage : CustomInventory
-{
-	States
-	{
-		Pickup:
-			TNT1 A 0 A_SpawnItemEx("GWM_PoisonDamageEffect",0,0,20,0,0,0,0,SXF_SETMASTER);
-			Stop;
+		Spawn:
+			GNDE A 1 Bright GrenadeTimerJump;
+			Loop;
+		Bounce:
+			TNT1 A 0 {invoker.missed = true;}
+			Goto Spawn;
+		Death:
+			TNT1 A 0 {
+				bMISSILE = false;
+				bNOGRAVITY = true;
+				self.Vel.X = 0;
+				self.Vel.Y = 0;
+				self.Vel.Z = 0;
+				A_Scream();
+				A_SetRenderstyle(alpha, STYLE_Add);
+			}
+			Goto Super::Death;
 	}
 }
 

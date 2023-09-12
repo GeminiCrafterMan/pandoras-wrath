@@ -26,7 +26,7 @@ class GWM_RocketLauncher : RocketLauncher
 				A_Overlay(-2, "Flash");
 				A_WeaponOffset(0, 24, WOF_ADD);
 				A_StartSound("weapons/rocketfire", CHAN_WEAPON);
-				A_FireMissile(); // Replace with custom rocket later
+				A_FireProjectile("GWM_Rocket");
 				A_OverlayScale(OverlayID(), 1.33, 0, WOF_INTERPOLATE);
 			}
 			RKTL A 3;
@@ -42,7 +42,7 @@ class GWM_RocketLauncher : RocketLauncher
 				A_Overlay(-2, "Flash");
 				A_WeaponOffset(0, 24, WOF_ADD);
 				A_StartSound("weapons/grenadefire", CHAN_WEAPON);
-				A_FireSTGrenade(); // Replace with custom grenade later
+				A_FireProjectile("GWM_Grenade", 0, true, 0, 0, 0, -6.328125);
 				A_OverlayScale(OverlayID(), 1.33, 0, WOF_INTERPOLATE);
 			}
 			RKTL A 3;

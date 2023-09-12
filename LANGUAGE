@@ -1,2 +1,7 @@
 [enu default]
-GOTSHELLS = "Picked up a handful of shotgun shells.";
+GOTSHELLS = "Picked up a small box of shotgun shells.";
+GOTSHELLBOX = "Picked up a large box of shotgun shells.";
+GOTICESHELLS = "Picked up a small box of ice shotgun shells.";
+GOTICESHELLBOX = "Picked up a large box of ice shotgun shells.";
+GOTVENOMVIAL = "Picked up a small vial of venom.";
+GOTLARGEVENOMVIAL = "Picked up a large vial of venom.";
