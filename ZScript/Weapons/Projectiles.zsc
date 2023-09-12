@@ -246,6 +246,7 @@ class GWM_Rocket : Rocket
 {
 	Default
 	{
+		Speed 30; // faster.
 		SeeSound "";
 		DeathSound "weapons/explode";
 	}
