@@ -1,5 +1,13 @@
-class GWM_PlasmaRifle : PlasmaRifle
+class GWM_PlasmaRifle : PlasmaRifle replaces PlasmaRifle
 {
+	Default
+	{
+		Weapon.AmmoUse 1;
+		Weapon.AmmoUse2 20;
+		Weapon.AmmoType "Cell";
+		Weapon.AmmoType2 "Cell";
+		Decal "RailScorch";
+	}
 	States
 	{
 		Deselect:
@@ -18,7 +26,21 @@ class GWM_PlasmaRifle : PlasmaRifle
 				A_WeaponOffset(0, 6, WOF_ADD);
 			}
 			PLSG A 2 A_WeaponOffset(0, -6, WOF_ADD);
-			PLSG B 20 A_ReFire;
+			PLSG B 3 A_ReFire;
+			PLSG C 9;
+			PLSG B 3;
+			Goto Ready;
+		AltFire:
+			PLSG A 6 {
+				A_GunFlash();
+				A_RailAttack(10*random(24,30), color1: "1baaff", color2: "73e4ff", maxdiff: 4);
+				A_StartSound("weapons/railshot", CHAN_WEAPON);
+				A_WeaponOffset(0, 6, WOF_ADD);
+			}
+			PLSG D 10 A_WeaponOffset(0, -6, WOF_ADD);
+			PLSG E 7 A_StartSound("weapons/railchrg", CHAN_BODY);
+			PLSG CFGH 7;
+			PLSG I 5;
 			Goto Ready;
 		Flash:
 			PLSF ABC 1 Bright A_Light1;

@@ -117,18 +117,3 @@ class RocketLauncherSpawner : Actor replaces RocketLauncher
 			Stop;
 	}
 }
-
-class PlasmaRifleSpawner : Actor replaces PlasmaRifle
-{
-	States
-	{
-		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Spawn_PlasmaRifle");
-		Spawn_Railgun:
-			TNT1 A 0 A_SpawnItemEx("GWM_Railgun");
-			Stop;
-		Spawn_PlasmaRifle:
-			TNT1 A 0 A_SpawnItemEx("GWM_PlasmaRifle");
-			Stop;
-	}
-}

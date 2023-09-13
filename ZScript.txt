@@ -24,6 +24,5 @@ version "4.1.0"
 #include "ZScript/Weapons/Slot 5/GWM_VenomCannon.zsc" // Venom Cannon (poison goop gun)
 
 #include "ZScript/Weapons/Slot 6/GWM_PlasmaRifle.zsc" // Plasma Rifle
-#include "ZScript/Weapons/Slot 6/GWM_Railgun.zsc" // Railgun
 
 #include "ZScript/Weapons/Slot 7/GWM_BFG9000.zsc" // BFG9000 (Vanilla)
