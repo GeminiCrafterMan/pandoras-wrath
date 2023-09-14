@@ -1,8 +1,3 @@
-generator GWM_Pistol					BulletChip
-generator GWM_Shotgun					BulletChip
-generator GWM_SuperShotgun				BulletChip
-generator GWM_Chaingun					BulletChip
-generator GWM_BurstRifle				BulletChip
 generator GWM_Rocket					Scorch
 generator GWM_Grenade					Scorch
 

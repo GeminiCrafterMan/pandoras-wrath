@@ -1,0 +1,48 @@
+class GWM_PistolCasing : ZCasing
+{
+	Default
+	{
+		Scale 0.18;
+		BounceSound "weapons/casing1";
+	}
+	States
+	{
+		Spawn:
+			CAS2 ABCDEFGH 2;
+			Loop;
+		Death:
+			CAS2 G -1;
+			Stop;
+	}
+}
+
+class GWM_ShotgunCasing : ZCasing
+{
+	Default
+	{
+		Scale 0.24;
+		BounceSound "weapons/casing2";
+	}
+	States
+	{
+		Spawn:
+			REDC ABCDEFGH 2;
+			Loop;
+		Death:
+			REDC G -1;
+			Stop;
+	}
+}
+
+class GWM_IceShotgunCasing : GWM_ShotgunCasing
+{
+	States
+	{
+		Spawn:
+			BLUC ABCDEFGH 2;
+			Loop;
+		Death:
+			BLUC G -1;
+			Stop;
+	}
+}

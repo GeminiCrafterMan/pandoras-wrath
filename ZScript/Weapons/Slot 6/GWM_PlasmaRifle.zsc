@@ -47,5 +47,8 @@ class GWM_PlasmaRifle : PlasmaRifle replaces PlasmaRifle
 		Flash:
 			PLSF ABC 1 Bright A_Light1;
 			Goto LightDone;
+		Spawn:
+			PLSG Z -1;
+			Stop;
 	}
 }

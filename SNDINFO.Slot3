@@ -1,7 +1,11 @@
 // Shotgun (Slayer's Kahuna)
-weapons/skshot		"Sounds/Slot 3/Shotgun/Fire.wav"
+weapons/skshot1		"Sounds/Slot 3/Shotgun/Fire1.wav"
+weapons/skshot2		"Sounds/Slot 3/Shotgun/Fire2.wav"
+weapons/skshot3		"Sounds/Slot 3/Shotgun/Fire3.wav"
 weapons/skpump1		"Sounds/Slot 3/Shotgun/Pump1.wav"
 weapons/skpump2		"Sounds/Slot 3/Shotgun/Pump2.wav"
+
+$random weapons/skshot {weapons/skshot1 weapons/skshot2 weapons/skshot3}
 
 // Super Shotgun
 weapons/ssgshot1	"Sounds/Slot 3/Super Shotgun/Fire (Both Barrels).wav"

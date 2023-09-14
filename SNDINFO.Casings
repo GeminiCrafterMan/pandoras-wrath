@@ -1,0 +1,11 @@
+// Bullet Casing
+$random weapons/casing1	{ weapons/bullet1 weapons/bullet2 weapons/bullet3 }
+weapons/bullet1			dscasing
+weapons/bullet2			dscasin2
+weapons/bullet3			dscasin3
+
+// Shell Casing
+$random weapons/casing2	{ weapons/shell1 weapons/shell2 weapons/shell3 }
+weapons/shell1			dsshell1
+weapons/shell2			dsshell2
+weapons/shell3			dsshell3

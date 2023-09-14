@@ -1,4 +1,5 @@
 GameInfo
 {
 	PlayerClasses = "IceWepsModPlayer"
+    AddEventHandlers = "ZCasingKiller", "ZFlatDecalKiller"
 }

@@ -454,6 +454,7 @@ class GWM_FloorVenomPuddle : GWM_PoisonProjectile
 		Height 2;
 		Radius 16;
 		-NOGRAVITY
+		+NOTELEPORT
 		+FLATSPRITE
 		+FLOORHUGGER
 		+MOVEWITHSECTOR
