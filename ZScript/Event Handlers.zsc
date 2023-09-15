@@ -4,7 +4,7 @@ class SpawnVoiceHandler : EventHandler
 	{
 		S_StartSound("player/battlecry", CHAN_VOICE);
 	}
-	override void PlayerRespawned (PlayerEvent e)
+	override void PlayerRespawned (PlayerEvent e)	// for multiplayer respawns
 	{
 		S_StartSound("player/respawn", CHAN_VOICE);
 	}

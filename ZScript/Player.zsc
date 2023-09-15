@@ -1,5 +1,18 @@
 class GWM_Player : DoomPlayer
 {
+	int prevPlayerState;
+	override void Tick()
+	{
+		super.Tick();
+		if (player && prevPlayerState != player.playerstate)
+		{
+			if (prevPlayerState == PST_DEAD && player.playerstate == PST_LIVE)	// for singleplayer resurrects
+			{
+				A_StartSound("player/respawn", CHAN_VOICE);
+			}
+			prevPlayerState = player.playerstate;
+		}
+	}
 	Default
 	{
 		Player.SoundClass "GWM_Player";
