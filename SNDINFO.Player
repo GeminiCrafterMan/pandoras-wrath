@@ -1,0 +1,119 @@
+// Player (Uses Mercenary's voice from Open Fortress)
+$playeralias	GWM_Player	male	*pain100	player/painsharp
+$playersounddup	GWM_Player	male	*pain75		*pain100
+$playeralias	GWM_Player	male	*pain50		player/painsevere
+$playersounddup	GWM_Player	male	*pain25		*pain50
+$playeralias	GWM_Player	male	*death		player/paincriticaldeath
+$playersounddup	GWM_Player	male	*crazydeath	*death
+$playeralias	GWM_Player	male	*jump		player/jump
+$playeralias	GWM_Player	male	*usefail	player/no
+$playeralias	GWM_Player	male	*taunt		player/battlecry
+$playersounddup	GWM_Player	male	*land		*pain100
+
+$random player/painsharp {
+	player/painsharp1
+	player/painsharp2
+	player/painsharp3
+	player/painsharp4
+	player/painsharp5
+	player/painsharp6
+	player/painsharp7
+	player/painsharp8
+}
+
+$random player/painsevere {
+	player/painsevere1
+	player/painsevere2
+	player/painsevere3
+	player/painsevere4
+	player/painsevere5
+	player/painsevere6
+}
+
+$random player/paincriticaldeath {
+	player/paincriticaldeath1
+	player/paincriticaldeath2
+	player/paincriticaldeath3
+	player/paincriticaldeath4
+}
+
+$random player/jump {
+	player/jump1
+	player/jump2
+	player/jump3
+}
+
+$random player/no {
+	player/no1
+	player/no2
+	player/no3
+}
+
+$random player/battlecry {
+	player/battlecry1
+	player/battlecry2
+	player/battlecry3
+	player/battlecry4
+	player/battlecry5
+	player/battlecry6
+}
+
+$random player/respawn {
+	player/respawn1
+	player/respawn2
+	player/respawn3
+	player/respawn4
+}
+
+$random player/berserk {
+	player/berserk1
+	player/berserk2
+	player/berserk3
+	player/berserk4
+}
+
+player/painsharp1			"Sounds/Player/mercenary_painsharp01.wav"
+player/painsharp2			"Sounds/Player/mercenary_painsharp02.wav"
+player/painsharp3			"Sounds/Player/mercenary_painsharp03.wav"
+player/painsharp4			"Sounds/Player/mercenary_painsharp04.wav"
+player/painsharp5			"Sounds/Player/mercenary_painsharp05.wav"
+player/painsharp6			"Sounds/Player/mercenary_painsharp06.wav"
+player/painsharp7			"Sounds/Player/mercenary_painsharp07.wav"
+player/painsharp8			"Sounds/Player/mercenary_painsharp08.wav"
+
+player/painsevere1			"Sounds/Player/mercenary_painsevere01.wav"
+player/painsevere2			"Sounds/Player/mercenary_painsevere02.wav"
+player/painsevere3			"Sounds/Player/mercenary_painsevere03.wav"
+player/painsevere4			"Sounds/Player/mercenary_painsevere04.wav"
+player/painsevere5			"Sounds/Player/mercenary_painsevere05.wav"
+player/painsevere6			"Sounds/Player/mercenary_painsevere06.wav"
+
+player/paincriticaldeath1	"Sounds/Player/mercenary_paincriticaldeath01.wav"
+player/paincriticaldeath2	"Sounds/Player/mercenary_paincriticaldeath02.wav"
+player/paincriticaldeath3	"Sounds/Player/mercenary_paincriticaldeath03.wav"
+player/paincriticaldeath4	"Sounds/Player/mercenary_paincriticaldeath04.wav"
+
+player/jump1				"Sounds/Player/mercenary_jump01.wav"
+player/jump2				"Sounds/Player/mercenary_jump02.wav"
+player/jump3				"Sounds/Player/mercenary_jump03.wav"
+
+player/no1					"Sounds/Player/mercenary_no01.wav"
+player/no2					"Sounds/Player/mercenary_no02.wav"
+player/no3					"Sounds/Player/mercenary_no03.wav"
+
+player/battlecry1			"Sounds/Player/mercenary_battlecry01.wav"
+player/battlecry2			"Sounds/Player/mercenary_battlecry02.wav"
+player/battlecry3			"Sounds/Player/mercenary_battlecry03.wav"
+player/battlecry4			"Sounds/Player/mercenary_battlecry04.wav"
+player/battlecry5			"Sounds/Player/mercenary_battlecry05.wav"
+player/battlecry6			"Sounds/Player/mercenary_battlecry06.wav"
+
+player/respawn1				"Sounds/Player/mercenary_respawn01.wav"
+player/respawn2				"Sounds/Player/mercenary_respawn02.wav"
+player/respawn3				"Sounds/Player/mercenary_respawn03.wav"
+player/respawn4				"Sounds/Player/mercenary_respawn04.wav"
+
+player/berserk1				"Sounds/Player/mercenary_berserk01.wav"
+player/berserk2				"Sounds/Player/mercenary_berserk02.wav"
+player/berserk3				"Sounds/Player/mercenary_berserk03.wav"
+player/berserk4				"Sounds/Player/mercenary_berserk04.wav"

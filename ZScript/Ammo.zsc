@@ -1,7 +1,24 @@
+class GWM_Clip : Clip replaces Clip
+{
+	Default
+	{
+		Inventory.PickupSound "pickups/clip";
+	}
+}
+
+class GWM_ClipBox : ClipBox replaces ClipBox
+{
+	Default
+	{
+		Inventory.PickupSound "pickups/clipbox";
+	}
+}
+
 class GWM_Shell : Ammo // had to basically define my own shells so the spawner would play nice.
 {
 	Default
 	{
+		Inventory.PickupSound "pickups/shells";
 		Inventory.PickupMessage "$GOTSHELLS"; // Redefined in LANGUAGE -- "Picked up a small box of shotgun shells."
 		Inventory.Amount 4;
 		Inventory.MaxAmount 50;
@@ -36,6 +53,7 @@ class GWM_IceShell : Ammo
 {
 	Default
 	{
+		Inventory.PickupSound "pickups/shells";
 		Inventory.PickupMessage "$GOTICESHELLS"; // "Picked up a small box of ice shotgun shells."
 		Inventory.Amount 4;
 		Inventory.MaxAmount 50;

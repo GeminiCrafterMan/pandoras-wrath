@@ -1,7 +1,8 @@
-class IceWepsModPlayer : DoomPlayer
+class GWM_Player : DoomPlayer
 {
 	Default
 	{
+		Player.SoundClass "GWM_Player";
 		Player.StartItem "GWM_Pistol";
 		Player.StartItem "GWM_Fist";
 		Player.StartItem "Clip", 50;
