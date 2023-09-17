@@ -1,11 +1,16 @@
-class SpawnVoiceHandler : EventHandler
+class PlayerSpawnLines : StaticEventHandler
 {
-	override void PlayerSpawned (PlayerEvent e)
-	{
-		S_StartSound("player/battlecry", CHAN_VOICE);
-	}
-	override void PlayerRespawned (PlayerEvent e)	// for multiplayer respawns
-	{
-		S_StartSound("player/respawn", CHAN_VOICE);
-	}
+    override void WorldLoaded(WorldEvent _event)
+    {
+        if (_event.IsSaveGame) return;
+        
+        let player = players[consoleplayer].mo;
+        player.A_StartSound("player/battlecry", CHAN_VOICE);
+    }
+    
+    override void PlayerRespawned(PlayerEvent _event)
+    {
+        let player = players[_event.playernumber].mo;
+        player.A_StartSound("player/respawn", CHAN_VOICE);
+    }
 }

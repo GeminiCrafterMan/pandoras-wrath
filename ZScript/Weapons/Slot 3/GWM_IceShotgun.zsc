@@ -125,7 +125,7 @@ class GWM_IceShotgun : Shotgun
 //			ISHT A 2;
 			ISHT B 5;
 			ISHT CCC 2;// A_WeaponOffset(5, 10, WOF_ADD);
-			ISHT D 4 ZWL_EjectCasing("GWM_IceShotgunCasing");
+			ISHT D 4 {ZWL_EjectCasing("GWM_IceShotgunCasing", offset: (24, -6, -14));}
 			ISHT CCC 2;// A_WeaponOffset(-5, -10, WOF_ADD);
 			ISHT B 5;
 			ISHT A 3;

@@ -1,2 +1,5 @@
 // Pistol (Colt 1911)
 weapons/coltfire	"Sounds/Slot 2/1911_fire.wav"
+
+// MP40
+weapons/mp40fire	"Sounds/Slot 2/mp40_fire.wav"

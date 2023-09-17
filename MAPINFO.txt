@@ -1,5 +1,5 @@
 GameInfo
 {
 	PlayerClasses = "GWM_Player"
-    AddEventHandlers = "ZCasingKiller", "ZFlatDecalKiller", "SpawnVoiceHandler"
+    AddEventHandlers = "ZCasingKiller", "ZFlatDecalKiller", "PlayerSpawnLines"
 }
