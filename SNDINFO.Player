@@ -1,14 +1,15 @@
 // Player (Uses Mercenary's voice from Open Fortress)
-$playeralias	GWM_Player	male	*pain100	player/painsharp
-$playersounddup	GWM_Player	male	*pain75		*pain100
-$playeralias	GWM_Player	male	*pain50		player/painsevere
-$playersounddup	GWM_Player	male	*pain25		*pain50
-$playeralias	GWM_Player	male	*death		player/paincriticaldeath
-$playersounddup	GWM_Player	male	*crazydeath	*death
-$playeralias	GWM_Player	male	*jump		player/jump
-$playeralias	GWM_Player	male	*usefail	player/no
-$playeralias	GWM_Player	male	*taunt		player/battlecry
-$playersounddup	GWM_Player	male	*land		*pain100
+$playeralias	GWM_Player	male	*pain100		player/painsharp
+$playersounddup	GWM_Player	male	*pain75			*pain100
+$playeralias	GWM_Player	male	*pain50			player/painsevere
+$playersounddup	GWM_Player	male	*pain25			*pain50
+$playeralias	GWM_Player	male	*death			player/paincriticaldeath
+$playersounddup	GWM_Player	male	*crazydeath		*death
+$playeralias	GWM_Player	male	*jump			player/jump
+$playeralias	GWM_Player	male	*usefail		player/no
+$playeralias	GWM_Player	male	*taunt			player/battlecry
+$playersounddup	GWM_Player	male	*land			*pain100
+$playersound	GWM_Player	male	*drainhealth	"Sounds/Powerups/S_bld_suck.wav"
 
 $random player/painsharp {
 	player/painsharp1

@@ -125,3 +125,33 @@ class GWM_WolfensteinSS : WolfensteinSS replaces WolfensteinSS
 		DropItem "GWM_MP40";
 	}
 }
+
+class GWM_BlurSphereSpawner : Actor replaces BlurSphere
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Spawn_BlurSphere");
+		Spawn_DrainSphere:
+			TNT1 A 0 A_SpawnItemEx("GWM_DrainSphere");
+			Stop;
+		Spawn_BlurSphere:
+			TNT1 A 0 A_SpawnItemEx("GWM_BlurSphere");
+			Stop;
+	}
+}
+
+class GWM_InvulnerabilitySphereSpawner : Actor replaces InvulnerabilitySphere
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Spawn_InvulnerabilitySphere");
+		Spawn_ReflectSphere:
+			TNT1 A 0 A_SpawnItemEx("GWM_ReflectSphere");
+			Stop;
+		Spawn_InvulnerabilitySphere:
+			TNT1 A 0 A_SpawnItemEx("GWM_InvulnerabilitySphere");
+			Stop;
+	}
+}

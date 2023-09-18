@@ -49,3 +49,52 @@ class GWM_Berserk : Berserk replaces Berserk
 			Stop;
 	}
 }
+
+class GWM_BlurSphere : BlurSphere {}
+
+class GWM_DrainSphere : PowerupGiver
+{
+	Default
+	{
+		Inventory.PickupMessage "Life drain!";
+		Inventory.Icon "VAMPA0";
+		Powerup.Color "FF0000", 0.25;
+		Inventory.MaxAmount 0;
+		Inventory.UseSound "pickups/slowmo";
+		Powerup.Type "PowerDrain";
+		Powerup.Duration 1000;
+		+INVENTORY.AUTOACTIVATE
+		+RANDOMIZE
+	}
+	States
+	{
+		Spawn:
+			VAMP ABCD 4 Bright;
+			Loop;
+	}
+}
+
+class GWM_InvulnerabilitySphere : InvulnerabilitySphere {}
+
+class GWM_ReflectSphere : PowerupGiver
+{
+	Default
+	{
+		Inventory.PickupMessage "Reflective shots!";
+		Inventory.Icon "REFLA0";
+		Powerup.Color "0011FF", 0.25;
+		Inventory.MaxAmount 0;
+		Inventory.UseSound "pickups/slowmo";
+		Powerup.Type "PowerInvulnerable";
+		Powerup.Mode "Reflective";
+		Powerup.Duration -30; // 30 seconds
+		+INVENTORY.AUTOACTIVATE
+		+RANDOMIZE
+	}
+	States
+	{
+		Spawn:
+			REFL ABCD 4 Bright;
+			Loop;
+	}
+}
