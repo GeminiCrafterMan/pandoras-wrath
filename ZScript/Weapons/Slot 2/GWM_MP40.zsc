@@ -122,8 +122,8 @@ class GWM_MP40 : Pistol
 			Goto Ready;
 		Flash:
 			TNT1 A 0 A_OverlayOffset(OverlayID(), 0, 9, WOF_ADD);
-			191F A 2 Bright A_Light1;
-			191F B 2 Bright A_Light2;
+			MP4F A 2 Bright A_Light1;
+			MP4F B 2 Bright A_Light2;
 			Goto LightDone;
 		Spawn:
 			MP4G Z -1;

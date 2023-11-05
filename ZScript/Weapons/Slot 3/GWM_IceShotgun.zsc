@@ -111,6 +111,14 @@ class GWM_IceShotgun : Shotgun
 			ISHT A 1 {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_FireProjectile("GWM_ShotgunIce");
+// X-shaped ice chunks
+/*
+				A_FireProjectile("GWM_ShotgunIceChunk", 1.25, false, pitch: 1.25);
+				A_FireProjectile("GWM_ShotgunIceChunk", -1.25, false, pitch: 1.25);
+				A_FireProjectile("GWM_ShotgunIceChunk");
+				A_FireProjectile("GWM_ShotgunIceChunk", 1.25, false, pitch: -1.25);
+				A_FireProjectile("GWM_ShotgunIceChunk", -1.25, false, pitch: -1.25);
+*/
 				A_StartSound("weapons/iceshgn", CHAN_WEAPON);
 				A_SpawnItemEx("GWM_IceFlash");
 				A_Overlay(-2, "Flash");
