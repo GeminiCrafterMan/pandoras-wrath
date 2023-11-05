@@ -15,3 +15,9 @@ weapons/IMGCok		"Sounds/Slot 1/Impactor Gauntlet/IMGACOK.ogg"
 weapons/IMGHit		"Sounds/Slot 1/Impactor Gauntlet/IMGAHIT.ogg"
 weapons/IMGMiss		"Sounds/Slot 1/Impactor Gauntlet/IMGAMISS.ogg"
 weapons/IMGThrust	"Sounds/Slot 1/Impactor Gauntlet/IMGATHRU.ogg"
+
+// Icebreaker drill
+weapons/drillup		"Sounds/Slot 1/Icebreaker/drill_spinup.wav"
+weapons/drillloop	"Sounds/Slot 1/Icebreaker/drill_spinloop.wav"
+weapons/drillhit	"Sounds/Slot 1/Icebreaker/stabImpact.wav"
+weapons/drilldown	"Sounds/Slot 1/Icebreaker/drill_spindown.wav"

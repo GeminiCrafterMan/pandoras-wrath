@@ -58,6 +58,21 @@ class RocketBoxSpawner : Actor replaces RocketBox
 	}
 }
 
+class ChainsawSpawner : Actor replaces Chainsaw
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Spawn_Impactor");
+		Spawn_Icebreaker:
+			TNT1 A 0 A_SpawnItemEx("GWM_Icebreaker");
+			Stop;
+		Spawn_Impactor:
+			TNT1 A 0 A_SpawnItemEx("GWM_Impactor");
+			Stop;
+	}
+}
+
 class ShotgunSpawner : Actor replaces Shotgun
 {
 	States

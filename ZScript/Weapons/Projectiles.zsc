@@ -194,7 +194,7 @@ class GWM_PerfectFreezeBullet : GWM_IceProjectile
 		Radius 6;
 		Height 8;
 		Speed 20;
-		Damage 3;
+		Damage 2;
 		Projectile;
 		+RIPPER
 		+FORCEXYBILLBOARD
@@ -446,6 +446,7 @@ class GWM_SmallVenomBall : GWM_VenomBall
 			Stop;
 	}
 }
+class GWM_SmallVenomBall_Shotgun : GWM_SmallVenomBall {Default {Speed 20;}}
 
 class GWM_FloorVenomPuddle : GWM_PoisonProjectile
 {

@@ -1,0 +1,48 @@
+class GWM_Icebreaker : Weapon
+{
+	Default
+	{
+		+WEAPON.MELEEWEAPON
+		Tag "Icebreaker Drill";
+		Inventory.Icon "IBRKZ0";
+		Weapon.Kickback 0;
+// These two might not apply... I don't know. I'd assume you'd turn a drill on first to have it ready?
+//		Weapon.UpSound "weapons/DrillRaise";
+//		Weapon.ReadySound "weapons/DrillIdle";
+		Obituary "%o had their insides scrambled by %k's Icebreaker.";
+		Inventory.PickupMessage "You picked up the Icebreaker!";
+	}
+	States
+	{
+		Spawn:
+			IBRK Z -1;
+			Stop;
+		Select:
+			IBRK A 1 A_Raise;
+			IBRK A 0 A_Raise;
+			Loop;
+		Deselect:
+			IBRK A 1 A_Lower;
+			IBRK A 0 A_Lower;
+			Loop;
+		Ready:
+			IBRK A 1 A_WeaponReady;
+			Loop;
+		Fire:
+			IBRK A 2 A_StartSound("weapons/drillup", CHAN_BODY);
+			IBRK AABBBBCCCBBBAABBCB 2;
+			IBRK A 0 {A_StartSound("weapons/drillloop", CHAN_BODY, CHANF_LOOPING); A_ReFire();}
+		Hold:
+			IBRK A 2 A_Saw("", "weapons/drillhit", 2);
+			IBRK B 2;
+			IBRK C 2 A_Saw("", "weapons/drillhit", 2);
+			IBRK B 2;
+			IBRK A 0 A_ReFire;
+			Goto Release;
+		Release:
+			IBRK # 0 A_StopSound(CHAN_BODY);
+			IBRK # 2 A_StartSound("weapons/drilldown", CHAN_BODY);
+			IBRK BCBBAABBBCCCBBBBAAA 1;
+			Goto Ready;
+	}
+}

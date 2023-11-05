@@ -115,7 +115,7 @@ class GWM_SuperShotgun : SuperShotgun
 			TNT1 A 0 {if (invoker.OneBarrel) {player.SetPSprite(OverlayID(), ResolveState("AltFire"));}}
 			SSGG A 1 {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				A_FireBullets(20, 4.98, 20, 6, "ZBulletPuff");
+				A_FireBullets(15, 4, 20, 6, "ZBulletPuff");
 				A_StartSound("weapons/ssgshot1", CHAN_WEAPON);
 				A_Overlay(PSP_FLASH, "FlashBoth");
 				A_SpawnItemEx("GWM_Flash");
@@ -141,7 +141,7 @@ class GWM_SuperShotgun : SuperShotgun
 				else {
 					A_Overlay(PSP_FLASH, "FlashRight");
 				}
-				A_FireBullets(10, 2.49, 10, 6, "ZBulletPuff");
+				A_FireBullets(7.5, 2, 10, 6, "ZBulletPuff");
 				A_StartSound("weapons/ssgshot2", CHAN_WEAPON);
 				A_SpawnItemEx("GWM_Flash");
 				A_WeaponOffset(0, 12, WOF_ADD);
