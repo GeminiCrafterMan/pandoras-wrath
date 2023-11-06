@@ -33,9 +33,9 @@ class GWM_Icebreaker : Weapon
 			IBRK AABBBBCCCBBBAABBCB 2;
 			IBRK A 0 {A_StartSound("weapons/drillloop", CHAN_BODY, CHANF_LOOPING); A_ReFire();}
 		Hold:
-			IBRK A 2 A_Saw("", "weapons/drillhit", 3);
+			IBRK A 2 A_Saw("", "weapons/drillhit", 3, "ZBulletPuff");
 			IBRK B 2;
-			IBRK C 2 A_Saw("", "weapons/drillhit", 3);
+			IBRK C 2 A_Saw("", "weapons/drillhit", 3, "ZBulletPuff");
 			IBRK B 2;
 			IBRK A 0 A_ReFire;
 			Goto Release;

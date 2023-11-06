@@ -1,5 +1,6 @@
 generator GWM_Rocket					Scorch
 generator GWM_Grenade					Scorch
+generator GWM_ThrownMine				Scorch
 
 // Ice
 decal FreezeBlastMelt

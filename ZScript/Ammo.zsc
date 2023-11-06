@@ -5,7 +5,6 @@ class GWM_Clip : Clip replaces Clip
 		Inventory.PickupSound "pickups/clip";
 	}
 }
-
 class GWM_ClipBox : ClipBox replaces ClipBox
 {
 	Default
@@ -33,7 +32,6 @@ class GWM_Shell : Ammo // had to basically define my own shells so the spawner w
 			Stop;
 	}
 }
-
 class GWM_ShellBox : GWM_Shell
 {
 	Default
@@ -68,7 +66,6 @@ class GWM_IceShell : Ammo
 			Stop;
 	}
 }
-
 class GWM_IceShellBox : GWM_IceShell
 {
 	Default
@@ -102,7 +99,6 @@ class GWM_RocketAmmo : Ammo
 			Stop;
 	}
 }
-
 class GWM_RocketBox : GWM_RocketAmmo
 {
 	Default
@@ -136,7 +132,6 @@ class GWM_VenomVial : Ammo
 			Loop;
 	}
 }
-
 class GWM_LargeVenomVial : GWM_VenomVial
 {
 	Default
@@ -149,5 +144,24 @@ class GWM_LargeVenomVial : GWM_VenomVial
 		Spawn:
 			VNMV EFGHGF 6;
 			Loop;
+	}
+}
+
+class GWM_MineAmmo : Ammo
+{
+	Default
+	{
+		Inventory.PickupMessage "You really shouldn't be seeing this.";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 50;
+		Ammo.BackpackAmount 1;
+		Ammo.BackpackMaxAmount 100;
+		Inventory.Icon "MINEZ0";
+	}
+	States
+	{
+		Spawn:
+			MINE Z -1;
+			Stop;
 	}
 }

@@ -26,5 +26,6 @@ class GWM_Player : DoomPlayer
 		Player.WeaponSlot 5, "GWM_RocketLauncher", "GWM_VenomCannon";
 		Player.WeaponSlot 6, "GWM_PlasmaRifle", "GWM_Railgun";
 		Player.WeaponSlot 7, "GWM_BFG9000";
+		Player.WeaponSlot 8, "GWM_Mine";
 	}
 }
