@@ -90,8 +90,8 @@ class GWM_IceShotgun : Shotgun
 	Default
 	{
 		Weapon.AmmoType "GWM_IceShell";
-		Inventory.PickupMessage "You got the Ice Shotgun!";
-		Obituary "Shouldn't see this.";
+		Inventory.PickupMessage "$GOTICESHOTGUN";
+		Obituary "$KILLPLACEHOLDER";
 		Tag "Ice Shotgun";
 	}
 	States
@@ -168,9 +168,8 @@ class GWM_ShotgunIce : GWM_IceProjectile
 		Scale 2;
 		+RANDOMIZE
 		+FORCEXYBILLBOARD
-//		SeeSound "weapons/iceshot";
 		DeathSound "weapons/icehit";
-		Obituary "%o got frozen solid by %k's Ice Shotgun.";
+		Obituary "$KILLICESHOTGUN";
 	}
 	States
 	{
@@ -225,9 +224,8 @@ class GWM_ShotgunIceTrail : Actor
 		+RANDOMIZE;
 		RenderStyle "Add";
 		Alpha 0.75;
-	//  SeeSound "weapons/iceshot";
 		DeathSound "weapons/icehit";
-		Obituary "%o got frozen solid by %k.";
+		Obituary "$KILLICESHOTGUN";
 	}
 	States
 	{

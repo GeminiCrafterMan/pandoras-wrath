@@ -90,8 +90,8 @@ class GWM_SuperShotgun : SuperShotgun
 	bool OneBarrel;
 	Default
 	{
-		Inventory.PickupMessage "Picked up the Super Shotgun! Oh, yes.";
-		Obituary "%o was turned into Swiss cheese by %k's Super Shotgun.";
+		Inventory.PickupMessage "$GOTSUPERSHOTGUN";
+		Obituary "$KILLSUPERSHOTGUN";
 		Tag "Super Shotgun";
 		Weapon.AmmoUse 2;
 		Weapon.AmmoType "GWM_Shell";

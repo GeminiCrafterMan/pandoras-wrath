@@ -91,8 +91,8 @@ class GWM_Shotgun : Shotgun
 	{
 		Weapon.AmmoType "GWM_Shell";
 		Tag "Slayer's Kahuna";
-		Inventory.PickupMessage "You got the Slayer's Kahuna!";
-		Obituary "%o caught the wave (of pellets) produced by %k's Slayer's Kahuna.";
+		Inventory.PickupMessage "$GOTSLAYERSKAHUNA";
+		Obituary "$KILLSLAYERSKAHUNA";
 		AttackSound "weapons/skshot";
 	}
 	States

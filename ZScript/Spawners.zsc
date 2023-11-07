@@ -147,14 +147,6 @@ class RocketLauncherSpawner : GWM_WeaponSpawner replaces RocketLauncher
 	}
 }
 
-class GWM_WolfensteinSS : WolfensteinSS replaces WolfensteinSS
-{
-	Default
-	{
-		DropItem "GWM_MP40";
-	}
-}
-
 class GWM_BlurSphereSpawner : Actor replaces BlurSphere
 {
 	States

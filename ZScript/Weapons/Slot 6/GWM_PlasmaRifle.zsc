@@ -22,6 +22,7 @@ class GWM_PlasmaRifle : PlasmaRifle replaces PlasmaRifle
 			PLSG A 1 {
 				A_FireProjectile("PlasmaBall");
 				A_StartSound("weapons/plasmashot");
+				A_SpawnItemEx("GWM_PlasmaFlash");
 				A_GunFlash();
 				A_WeaponOffset(0, 6, WOF_ADD);
 			}
@@ -33,6 +34,7 @@ class GWM_PlasmaRifle : PlasmaRifle replaces PlasmaRifle
 			Goto Ready;
 		AltFire:
 			PLSG A 6 {
+				A_SpawnItemEx("GWM_PlasmaFlash");
 				A_GunFlash();
 				A_RailAttack(10*random(24,30), color1: "1baaff", color2: "73e4ff", maxdiff: 4);
 				A_StartSound("weapons/railshot", CHAN_WEAPON);

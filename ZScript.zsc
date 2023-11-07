@@ -1,0 +1,17 @@
+version "4.1.0"
+
+#include "ZScript/Event Handlers.zsc" // Event handlers. Mostly for spawn voices and berserk voices.
+#include "ZScript/Player.zsc" // Player class
+#include "ZScript/Pickups.zsc" // Pickups
+#include "ZScript/Ammo.zsc" // Ammo
+#include "ZScript/Spawners.zsc" // Spawners
+
+#include "ZScript/ZWL/zbullet_puff.zsc" // Bullet puffs
+#include "ZScript/ZWL/zcasing.zsc" // Casings
+
+#include "ZScript/Weapons/Generic Effects.zsc" // Generic effects
+#include "ZScript/Weapons/Projectiles.zsc" // Projectiles
+#include "ZScript/Weapons/Casings.zsc" // Casings
+
+#include "ZScript/Weapons.zsc"			// Weapon includes
+#include "ZScript/Monsters.zsc"			// Monster includes

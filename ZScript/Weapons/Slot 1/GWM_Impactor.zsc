@@ -6,8 +6,8 @@ class GWM_Impactor : Weapon
 		Tag "Impactor Gauntlet";
 		Inventory.Icon "IMPAZ0";
 		Weapon.UpSound "weapons/IMGRaise";
-		Inventory.PickupMessage "You picked up the Impactor Gauntlet!";
-		Obituary "%o's face was smashed in by %k's Impactor Gauntlet.";
+		Inventory.PickupMessage "$GOTIMPACTOR";
+		Obituary "$KILLIMPACTOR";
 	}
 	States
 	{

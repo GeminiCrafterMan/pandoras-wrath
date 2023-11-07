@@ -1,4 +1,29 @@
 [enu default]
+// Obituaries
+KILLPLACEHOLDER = "You shouldn't see this.";
+KILLFISTS = "%o was beaten down by %k.";
+KILLICEBREAKER = "%o had their insides scrambled by %k's Icebreaker.";
+KILLIMPACTOR = "%o's face was smashed in by %k's Impactor Gauntlet.";
+KILLMP40 = "%o was filled with lead by %k's MP40.";
+KILL92FS = "%o was plinked to death by %k's Beretta 92FS.";
+KILLICESHOTGUN = "%o got frozen solid by %k's Ice Shotgun.";
+KILLSLAYERSKAHUNA = "%o caught the wave (of pellets) produced by %k's Slayer's Kahuna.";
+KILLPFSUPERSHOTGUN = "%o was instantly turned into a popsicle by %k's Perfect Freeze Super Shotgun.";
+KILLSUPERSHOTGUN = "%o was turned into Swiss cheese by %k's Super Shotgun.";
+KILLBURSTRIFLE = "%o was perforated by %k's Burst Rifle.";
+KILLVENOMCANNON = "%o was on the receiving end of the war crimes caused by %k using %p Venom Cannon.";
+// Weapon pickup messages
+GOTICEBREAKER = "You picked up the Icebreaker!";
+GOTIMPACTOR = "You picked up the Impactor Gauntlet!";
+GOTMP40 = "You picked up the MP40!";
+GOT92FS = "You picked up the Beretta 92FS!";
+GOTICESHOTGUN = "You picked up the Ice Shotgun!";
+GOTSLAYERSKAHUNA = "You picked up the Slayer's Kahuna!";
+GOTPFSUPERSHOTGUN = "You picked up the Perfect Freeze Super Shotgun!";
+GOTSUPERSHOTGUN = "You picked up the Super Shotgun! Oh, yes.";
+GOTBURSTRIFLE = "You picked up the Burst Rifle!";
+GOTVENOMCANNON = "You picked up the Venom Cannon!";
+// Ammo pickup messages
 GOTSHELLS = "Picked up a small box of shotgun shells.";
 GOTSHELLBOX = "Picked up a large box of shotgun shells.";
 GOTICESHELLS = "Picked up a small box of ice shotgun shells.";

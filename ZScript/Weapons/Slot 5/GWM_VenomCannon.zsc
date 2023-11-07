@@ -8,7 +8,8 @@ class GWM_VenomCannon : DoomWeapon
 		Weapon.AmmoType "GWM_VenomVial";
 		Weapon.AmmoType2 "GWM_VenomVial";
 		+WEAPON.NOAUTOFIRE
-		Inventory.PickupMessage "You got the Venom Cannon!";
+		Inventory.PickupMessage "$GOTVENOMCANNON";
+		Obituary "$KILLPLACEHOLDER";
 		Tag "Venom Cannon";
 	}
 	States

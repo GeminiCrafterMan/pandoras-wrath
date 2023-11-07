@@ -6,11 +6,8 @@ class GWM_Icebreaker : Weapon
 		Tag "Icebreaker Drill";
 		Inventory.Icon "IBRKZ0";
 		Weapon.Kickback 0;
-// These two might not apply... I don't know. I'd assume you'd turn a drill on first to have it ready?
-//		Weapon.UpSound "weapons/DrillRaise";
-//		Weapon.ReadySound "weapons/DrillIdle";
-		Obituary "%o had their insides scrambled by %k's Icebreaker.";
-		Inventory.PickupMessage "You picked up the Icebreaker!";
+		Obituary "$KILLICEBREAKER";
+		Inventory.PickupMessage "$GOTICEBREAKER";
 	}
 	States
 	{

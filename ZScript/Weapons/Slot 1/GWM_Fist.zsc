@@ -7,7 +7,7 @@ class GWM_Fist : Fist replaces Fist
 		+WEAPON.NOAUTOFIRE
 		+WEAPON.NOALERT
 		+WEAPON.AXEBLOOD
-		Obituary "%o was beaten down by %k.";
+		Obituary "$KILLFISTS";
 		Tag "Fists";
 		AttackSound "weapons/punch";
 	}

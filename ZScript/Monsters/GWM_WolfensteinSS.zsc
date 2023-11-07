@@ -1,0 +1,7 @@
+class GWM_WolfensteinSS : WolfensteinSS
+{
+	Default
+	{
+		DropItem "GWM_MP40";
+	}
+}

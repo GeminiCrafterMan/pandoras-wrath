@@ -1,3 +1,7 @@
+// Mine
+weapons/minewait	"Sounds/Slot 1/Mine/mine_wait.wav"
+weapons/minedet		"Sounds/Slot 1/Mine/mine_det.wav"
+
 // Fists
 weapons/fistwhoosh	"Sounds/Slot 1/Fist/fist_whoosh.ogg"
 weapons/fistjab		"Sounds/Slot 1/Fist/fist_jab.ogg"

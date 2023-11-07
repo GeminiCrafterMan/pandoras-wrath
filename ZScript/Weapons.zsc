@@ -1,18 +1,4 @@
-version "4.1.0"
-
-#include "ZScript/Event Handlers.zsc" // Event handlers. Mostly for spawn voices and berserk voices.
-#include "ZScript/Player.zsc" // Player class
-#include "ZScript/Pickups.zsc" // Pickups
-#include "ZScript/Ammo.zsc" // Ammo
-#include "ZScript/Spawners.zsc" // Spawners
-
-#include "ZScript/ZWL/zbullet_puff.zsc" // Bullet puffs
-#include "ZScript/ZWL/zcasing.zsc" // Casings
-
-#include "ZScript/Weapons/Generic Effects.zsc" // Generic effects
-#include "ZScript/Weapons/Projectiles.zsc" // Projectiles
-#include "ZScript/Weapons/Casings.zsc" // Casings
-
+#include "ZScript/Weapons/Slot 1/GWM_Mine.zsc"		// land mine 
 #include "ZScript/Weapons/Slot 1/GWM_Fist.zsc" // Fist, taken from Super Skulltag and rewritten slightly.
 #include "ZScript/Weapons/Slot 1/GWM_Impactor.zsc" // Impactor Gauntlet, taken from Realm667.
 #include "ZScript/Weapons/Slot 1/GWM_Icebreaker.zsc" // Icebreaker drill, edited off of a nailgun by Captain J.
@@ -34,5 +20,3 @@ version "4.1.0"
 #include "ZScript/Weapons/Slot 6/GWM_PlasmaRifle.zsc" // Plasma Rifle
 
 #include "ZScript/Weapons/Slot 7/GWM_BFG9000.zsc" // BFG9000 (Vanilla)
-
-#include "ZScript/Weapons/Slot 8/GWM_Mine.zsc"		// land mine

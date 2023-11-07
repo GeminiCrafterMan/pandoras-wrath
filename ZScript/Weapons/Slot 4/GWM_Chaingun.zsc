@@ -88,6 +88,7 @@ class GWM_Chaingun : Chaingun
 		return angle, pitch;
 	}
 	action void A_FireCGun() {
+		A_SpawnItemEx("GWM_Flash");
 		A_StartSound("weapons/chngun", CHAN_WEAPON);
 		A_FireBullets(11.2, 0, 1, 5, "ZBulletPuff");
 		ZWL_EjectCasing("GWM_PistolCasing");

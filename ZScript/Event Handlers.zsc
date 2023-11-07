@@ -14,3 +14,18 @@ class PlayerSpawnLines : StaticEventHandler
         player.A_StartSound("player/respawn", CHAN_VOICE);
     }
 }
+
+class MonsterReplacer : StaticEventHandler
+{
+    override void CheckReplacement(ReplaceEvent e)
+    {
+        CVar replaceMonsters = CVar.FindCVar('gwm_replacemonsters');
+        if (replaceMonsters.GetBool())
+        {
+            if (e.Replacee == "WolfensteinSS")
+            {
+                e.Replacement = "GWM_WolfensteinSS";
+            }
+        }
+    }
+}

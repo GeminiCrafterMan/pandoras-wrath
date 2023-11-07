@@ -21,8 +21,8 @@ class GWM_Flash : Actor
 			Stop;
 	}
 }
-
 class GWM_IceFlash : GWM_Flash {}
+class GWM_PlasmaFlash : GWM_Flash {}
 
 class GWM_IceDamageEffect : Actor
 {
@@ -35,7 +35,12 @@ class GWM_IceDamageEffect : Actor
 	{
 		Spawn:
 			TNT1 A 0;
-			TNT1 A 1 {if (target != null && target.Health >= 0) {target.Speed = target.Speed / 2;}}//{master.Speed = master.Speed / 2;}}
+			TNT1 A 1 {
+				if ((target != null && target.Health >= 0) && (!target.player))
+				{
+					target.Speed = target.Speed / 2;
+				}
+			}
 			TNT1 A 45;
 			stop;
 	}

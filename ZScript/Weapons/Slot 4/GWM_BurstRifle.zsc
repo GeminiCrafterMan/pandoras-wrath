@@ -89,6 +89,7 @@ class GWM_BurstRifle : DoomWeapon
 	}
 	action void A_FireRifle()
 	{
+		A_SpawnItemEx("GWM_Flash");
 		A_StartSound("weapons/riflesht", CHAN_WEAPON);
 		A_FireBullets(5.6, 0, 1, 5, "ZBulletPuff");
 		A_WeaponOffset(0, 6, WOF_ADD);
@@ -98,8 +99,8 @@ class GWM_BurstRifle : DoomWeapon
 	{
 		Weapon.AmmoType "Clip";
 		Tag "Burst Rifle";
-		Inventory.PickupMessage "You got the Burst Rifle!";
-		Obituary "%o was turned into Swiss cheese by %k's Burst Rifle.";
+		Inventory.PickupMessage "$GOTBURSTRIFLE";
+		Obituary "$KILLBURSTRIFLE";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 20;
 	}
