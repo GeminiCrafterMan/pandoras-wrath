@@ -1,6 +1,7 @@
 [enu default]
 // Obituaries
 KILLPLACEHOLDER = "You shouldn't see this.";
+KILLMINES = "%o didn't see %k's landmine.";
 KILLFISTS = "%o was beaten down by %k.";
 KILLICEBREAKER = "%o had their insides scrambled by %k's Icebreaker.";
 KILLIMPACTOR = "%o's face was smashed in by %k's Impactor Gauntlet.";
@@ -13,6 +14,7 @@ KILLSUPERSHOTGUN = "%o was turned into Swiss cheese by %k's Super Shotgun.";
 KILLBURSTRIFLE = "%o was perforated by %k's Burst Rifle.";
 KILLVENOMCANNON = "%o was on the receiving end of the war crimes caused by %k using %p Venom Cannon.";
 // Weapon pickup messages
+GOTMINES = "You picked up some land mines!";
 GOTICEBREAKER = "You picked up the Icebreaker!";
 GOTIMPACTOR = "You picked up the Impactor Gauntlet!";
 GOTMP40 = "You picked up the MP40!";

@@ -6,8 +6,8 @@ class GWM_Mine : Weapon
 		Weapon.AmmoUse 1;
 		Weapon.AmmoType "GWM_MineAmmo";
 		Weapon.AmmoGive 2;
-		Inventory.PickupMessage "Picked up some land mines!";
-		Obituary "I fucked up somewhere. Lemme know!";
+		Inventory.PickupMessage "$GOTMINES";
+		Obituary "$KILLPLACEHOLDER";
 	}
 	States
 	{
@@ -58,7 +58,7 @@ class GWM_ThrownMine : Actor // Okay, so like, I was going to do this myself, bu
 		Height 4;
 		Health 1;
 		Speed 24;
-		Obituary "%o didn't see %k's landmine.";
+		Obituary "$KILLMINES";
 		BounceType "Hexen";
 		DeathSound "weapons/explode";
 		BounceSound "weapons/grndimp";
