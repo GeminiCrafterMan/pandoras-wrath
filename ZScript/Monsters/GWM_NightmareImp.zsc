@@ -1,0 +1,31 @@
+class GWM_NightmareImp : DoomImp
+{
+	Default
+	{
+		PainChance 128;
+		Speed 16;
+		RenderStyle "Subtract";
+		Alpha 0.7;
+		BloodColor "58 FF FF";
+		Obituary "$OB_NIGHTMAREIMPSCRATCH";
+	}
+	States
+	{
+		Melee:
+		Missile:
+			TROO EF 8 A_FaceTarget;
+			TROO G 6 A_CustomComboAttack("GWM_NightmareImpBall", 32, 3 * random(1, 8), "imp/melee");
+			Goto See;
+	}
+}
+
+class GWM_NightmareImpBall : DoomImpBall
+{
+	Default
+	{
+		Speed 20;
+		FastSpeed 40;
+		RenderStyle "Subtract";
+		Obituary "$OB_NIGHTMAREIMPFIRE";
+	}
+}

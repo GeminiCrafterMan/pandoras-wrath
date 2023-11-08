@@ -151,7 +151,7 @@ class GWM_MineAmmo : Ammo
 {
 	Default
 	{
-		Inventory.PickupMessage "Disarmed and retrieved a mine.";
+		Inventory.PickupMessage "$DISARMEDMINE";
 		Inventory.Amount 1;
 		Inventory.MaxAmount 50;
 		Ammo.BackpackAmount 1;

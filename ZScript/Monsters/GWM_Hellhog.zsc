@@ -1,0 +1,68 @@
+class GWM_Hellhog : Actor
+{
+	Default
+	{
+		BloodColor "Green";
+		Health 260;
+		PainChance 140;
+		Speed 6;
+		Radius 30;
+		Height 56;
+		Mass 600;
+		Monster;
+		+FLOORCLIP
+		SeeSound "monsters/hellhog/sight";
+		AttackSound "monsters/hellhog/melee";
+		PainSound "monsters/hellhog/pain";
+		DeathSound "monsters/hellhog/death";
+		ActiveSound "monsters/hellhog/active";
+	}
+	States
+	{
+		Spawn:
+			HHOG AB 10 A_Look;
+			Loop;
+		See:
+			HHOG AABBCCDD 2 Fast A_Chase;
+			Loop;
+		Melee:
+			HHOG EF 8 Fast A_FaceTarget;
+			HHOG G 8 Fast A_CustomMeleeAttack(6);
+			Goto See;
+		Pain:
+			HHOG H 2 Fast;
+			HHOG H 2 Fast A_Pain;
+			Goto See;
+		Death:
+			HHOG I 8;
+			HHOG J 8 {A_Scream(); A_SpawnItemEx("GWM_HellhogArm", xvel: random(2, 8), zvel: random(0, 13), angle: random(0, 359));}
+			HHOG K 4;
+			HHOG L 4 A_NoBlocking;
+			HHOG M 4;
+			HHOG N -1;
+			Stop;
+		Raise:
+			HHOG N 5;
+			HHOG MLKJI 5;
+			Goto See;
+	}
+}
+
+class GWM_HellhogArm : Actor
+{
+	Default
+	{
+		Radius 8;
+		Height 8;
+		+NOBLOCKMAP +DROPOFF +CANNOTPUSH +SKYEXPLODE +NOBLOCKMONST
+	}
+	States
+	{
+		Spawn:
+			HHOG OPQRSTUV 3 NoDelay A_CheckFloor("Hit");
+			Loop;
+		Hit:
+			HHOG W -1;
+			Stop;
+	}
+}

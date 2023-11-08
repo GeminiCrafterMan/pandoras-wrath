@@ -12,6 +12,7 @@ class GWM_WeaponSpawner : Actor
 			Stop;
 	}
 }
+
 class ShellSpawner : GWM_WeaponSpawner replaces Shell
 {
 	States
@@ -26,7 +27,6 @@ class ShellSpawner : GWM_WeaponSpawner replaces Shell
 			Stop;
 	}
 }
-
 class ShellBoxSpawner : GWM_WeaponSpawner replaces ShellBox
 {
 	States
@@ -56,7 +56,6 @@ class RocketAmmoSpawner : GWM_WeaponSpawner replaces RocketAmmo
 			Stop;
 	}
 }
-
 class RocketBoxSpawner : GWM_WeaponSpawner replaces RocketBox
 {
 	States

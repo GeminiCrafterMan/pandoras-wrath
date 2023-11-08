@@ -1,8 +1,8 @@
 // Pistol (Beretta 92FS)
-weapons/92fsfire	"Sounds/Slot 2/92fs_fire.wav"
+weapons/92fsfire	"Sounds/Weapons/Slot 2/92fs_fire.wav"
 
 // SMG
-weapons/smgfire		"Sounds/Slot 2/smg_fire.wav"
+weapons/smgfire		"Sounds/Weapons/Slot 2/smg_fire.wav"
 
 // MP40
-weapons/mp40fire	"Sounds/Slot 2/mp40_fire.wav"
+weapons/mp40fire	"Sounds/Weapons/Slot 2/mp40_fire.wav"

@@ -1,1 +1,12 @@
+#include "ZScript/Monsters/GWM_SMGGuy.zsc"			// SMG Guy
+
+#include "ZScript/Monsters/GWM_ChaingunGuy.zsc"		// Chaingun Guy
+#include "ZScript/Monsters/GWM_RifleCommando.zsc"	// Rifle Commando
+
+#include "ZScript/Monsters/GWM_NightmareImp.zsc"	// Nightmare Imp
+
+#include "ZScript/Monsters/GWM_Hellhog.zsc"			// Hellhog
+
+#include "ZScript/Monsters/GWM_BaronOfHell.zsc"		// Baron of Hell
+
 #include "ZScript/Monsters/GWM_WolfensteinSS.zsc"	// Wolfenstein SS

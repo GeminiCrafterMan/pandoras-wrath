@@ -1,0 +1,64 @@
+class GWM_SMGGuy : Actor
+{
+	Default
+	{
+		Health 40;
+		Radius 20;
+		Height 56;
+		Speed 8;
+		PainChance 150;
+		SeeSound "grunt/sight";
+		PainSound "grunt/pain";
+		DeathSound "grunt/death";
+		ActiveSound "grunt/active";
+		Obituary "$OB_SMGGUY";
+		DropItem "GWM_SMG";
+		Monster;
+		+FLOORCLIP
+	}
+	States
+	{
+		Spawn:
+			MGPO AB 10 A_Look();
+			Loop;
+		See:
+			MGPO AABBCCDD 4 A_Chase();
+			Loop;
+		Missile:
+			MGPO E 8 A_FaceTarget();
+			MGPO F 0 A_StartSound("weapons/smgfire");
+			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM);
+			MGPO E 3;
+			MGPO F 0 A_StartSound("weapons/smgfire");
+			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM);
+			MGPO E 3;
+			MGPO F 0 A_StartSound("weapons/smgfire");
+			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM);
+			MGPO E 3;
+			MGPO F 0 A_StartSound("weapons/smgfire");
+			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM);
+			MGPO E 3;
+			MGPO F 0 A_StartSound("weapons/smgfire");
+			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM);
+			MGPO E 10;
+			Goto See;
+		Pain:
+			MGPO G 3;
+			MGPO G 3 A_Pain();
+			Goto See;
+		Death:
+			MGPO H 5;
+			MGPO I 5 A_Scream();
+			MGPO J 5 A_NoBlocking();
+			MGPO K 5;
+			MGPO L -1;
+			Stop;
+		XDeath:
+			MGPO M 5;
+			MGPO N 5 A_XScream();
+			MGPO O 5 A_NoBlocking();
+			MGPO PQRST 5;
+			MGPO U -1;
+			Stop;
+	}
+}

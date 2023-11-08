@@ -22,10 +22,41 @@ class MonsterReplacer : StaticEventHandler
         CVar replaceMonsters = CVar.FindCVar('gwm_replacemonsters');
         if (replaceMonsters.GetBool())
         {
+			// Hitscanners
+			if (e.Replacee == "ZombieMan")
+			{
+				if (random(0, 1) == 1)
+					e.Replacement = "GWM_SMGGuy";
+				else
+					e.Replacement = "ZombieMan";
+			}
+			if (e.Replacee == "ChaingunGuy")
+			{
+				if (random(0, 1) == 1)
+					e.Replacement = "GWM_RifleCommando";
+				else
+					e.Replacement = "GWM_ChaingunGuy";
+			}
             if (e.Replacee == "WolfensteinSS")
-            {
                 e.Replacement = "GWM_WolfensteinSS";
-            }
+			// Imps and Bigger Imps
+			if (e.Replacee == "DoomImp")
+			{
+				if (random(0, 3) == 3)
+					e.Replacement = "GWM_NightmareImp";
+				else
+					e.Replacement = "DoomImp";
+			}
+			if (e.Replacee == "BaronOfHell")
+				e.Replacement = "GWM_BaronOfHell";
+			// Misc
+			if (e.Replacee == "Demon")
+			{
+				if (random(0, 2) == 2)
+					e.Replacement = "GWM_Hellhog";
+				else
+					e.Replacement = "Demon";
+			}
         }
     }
 }

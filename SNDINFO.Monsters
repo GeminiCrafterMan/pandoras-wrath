@@ -1,0 +1,23 @@
+// Hellhog (los zoglin but pinky)
+monsters/hellhog/sight1		"Sounds/Monsters/Hellhog/angry1.ogg"
+monsters/hellhog/sight2		"Sounds/Monsters/Hellhog/angry2.ogg"
+monsters/hellhog/sight3		"Sounds/Monsters/Hellhog/angry3.ogg"
+$random monsters/hellhog/sight	{monsters/hellhog/sight1 monsters/hellhog/sight2 monsters/hellhog/sight3}
+monsters/hellhog/melee1		"Sounds/Monsters/Hellhog/attack1.ogg"
+monsters/hellhog/melee2		"Sounds/Monsters/Hellhog/attack2.ogg"
+$random monsters/hellhog/melee	{monsters/hellhog/melee1 monsters/hellhog/melee2}
+monsters/hellhog/pain1		"Sounds/Monsters/Hellhog/hurt1.ogg"
+monsters/hellhog/pain2		"Sounds/Monsters/Hellhog/hurt2.ogg"
+monsters/hellhog/pain3		"Sounds/Monsters/Hellhog/hurt3.ogg"
+$random monsters/hellhog/pain	{monsters/hellhog/pain1 monsters/hellhog/pain2 monsters/hellhog/pain3}
+monsters/hellhog/death1		"Sounds/Monsters/Hellhog/death1.ogg"
+monsters/hellhog/death2		"Sounds/Monsters/Hellhog/death2.ogg"
+monsters/hellhog/death3		"Sounds/Monsters/Hellhog/death3.ogg"
+$random monsters/hellhog/death	{monsters/hellhog/death1 monsters/hellhog/death2 monsters/hellhog/death3}
+monsters/hellhog/active1	"Sounds/Monsters/Hellhog/idle1.ogg"
+monsters/hellhog/active2	"Sounds/Monsters/Hellhog/idle2.ogg"
+monsters/hellhog/active3	"Sounds/Monsters/Hellhog/idle3.ogg"
+monsters/hellhog/active4	"Sounds/Monsters/Hellhog/idle4.ogg"
+monsters/hellhog/active5	"Sounds/Monsters/Hellhog/idle5.ogg"
+monsters/hellhog/active6	"Sounds/Monsters/Hellhog/idle6.ogg"
+$random monsters/hellhog/active	{monsters/hellhog/active1 monsters/hellhog/active2 monsters/hellhog/active3 monsters/hellhog/active4 monsters/hellhog/active5 monsters/hellhog/active6}

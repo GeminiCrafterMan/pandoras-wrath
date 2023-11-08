@@ -1,29 +1,29 @@
 // Shotgun (Slayer's Kahuna)
-weapons/skshot1		"Sounds/Slot 3/Shotgun/Fire1.wav"
-weapons/skshot2		"Sounds/Slot 3/Shotgun/Fire2.wav"
-weapons/skshot3		"Sounds/Slot 3/Shotgun/Fire3.wav"
-weapons/skpump1		"Sounds/Slot 3/Shotgun/Pump1.wav"
-weapons/skpump2		"Sounds/Slot 3/Shotgun/Pump2.wav"
+weapons/skshot1		"Sounds/Weapons/Slot 3/Shotgun/Fire1.wav"
+weapons/skshot2		"Sounds/Weapons/Slot 3/Shotgun/Fire2.wav"
+weapons/skshot3		"Sounds/Weapons/Slot 3/Shotgun/Fire3.wav"
+weapons/skpump1		"Sounds/Weapons/Slot 3/Shotgun/Pump1.wav"
+weapons/skpump2		"Sounds/Weapons/Slot 3/Shotgun/Pump2.wav"
 
 $random weapons/skshot {weapons/skshot1 weapons/skshot2 weapons/skshot3}
 
 // Super Shotgun
-weapons/ssgshot1	"Sounds/Slot 3/Super Shotgun/Fire (Both Barrels).wav"
-weapons/ssgshot2	"Sounds/Slot 3/Super Shotgun/Fire (One Barrel).wav"
-weapons/ssgo		"Sounds/Slot 3/Super Shotgun/Open.wav"
-weapons/ssgl		"Sounds/Slot 3/Super Shotgun/Load.wav"
-weapons/ssgc		"Sounds/Slot 3/Super Shotgun/Close.wav"
+weapons/ssgshot1	"Sounds/Weapons/Slot 3/Super Shotgun/Fire (Both Barrels).wav"
+weapons/ssgshot2	"Sounds/Weapons/Slot 3/Super Shotgun/Fire (One Barrel).wav"
+weapons/ssgo		"Sounds/Weapons/Slot 3/Super Shotgun/Open.wav"
+weapons/ssgl		"Sounds/Weapons/Slot 3/Super Shotgun/Load.wav"
+weapons/ssgc		"Sounds/Weapons/Slot 3/Super Shotgun/Close.wav"
 
 // Ice Shotgun
-weapons/icehit		"Sounds/Slot 3/Ice SG/DSICEHIT.wav"
-weapons/iceshgn		"Sounds/Slot 3/Ice SG/DSICESGN.wav"
+weapons/icehit		"Sounds/Weapons/Slot 3/Ice SG/DSICEHIT.wav"
+weapons/iceshgn		"Sounds/Weapons/Slot 3/Ice SG/DSICESGN.wav"
 
 // P.F. Super Shotgun
 // All sounds here are from Touhou Koumakyou: Embodiment of Scarlet Devil (th06)
-weapons/pfshot1		"Sounds/Slot 3/Perfect Freeze SSG/tan00.wav"
-weapons/pfshot2		"Sounds/Slot 3/Perfect Freeze SSG/tan01.wav"
-weapons/pfdamage	"Sounds/Slot 3/Perfect Freeze SSG/graze.wav"
-weapons/pfgraze		"Sounds/Slot 3/Perfect Freeze SSG/damage00.wav"
-weapons/ok00		"Sounds/Slot 3/Perfect Freeze SSG/ok00.wav"
-weapons/power1		"Sounds/Slot 3/Perfect Freeze SSG/power1.wav"
-weapons/powerup		"Sounds/Slot 3/Perfect Freeze SSG/powerup.wav"
+weapons/pfshot1		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/tan00.wav"
+weapons/pfshot2		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/tan01.wav"
+weapons/pfdamage	"Sounds/Weapons/Slot 3/Perfect Freeze SSG/graze.wav"
+weapons/pfgraze		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/damage00.wav"
+weapons/ok00		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/ok00.wav"
+weapons/power1		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/power1.wav"
+weapons/powerup		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/powerup.wav"

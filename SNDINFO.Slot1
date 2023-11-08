@@ -1,27 +1,27 @@
 // Mine
-weapons/minewait	"Sounds/Slot 1/Mine/mine_wait.wav"
-weapons/minedet		"Sounds/Slot 1/Mine/mine_det.wav"
+weapons/minewait	"Sounds/Weapons/Slot 1/Mine/mine_wait.wav"
+weapons/minedet		"Sounds/Weapons/Slot 1/Mine/mine_det.wav"
 
 // Fists
-weapons/fistwhoosh	"Sounds/Slot 1/Fist/fist_whoosh.ogg"
-weapons/fistjab		"Sounds/Slot 1/Fist/fist_jab.ogg"
-weapons/berserkhit	"Sounds/Slot 1/Fist/berserk_hit.ogg"
+weapons/fistwhoosh	"Sounds/Weapons/Slot 1/Fist/fist_whoosh.ogg"
+weapons/fistjab		"Sounds/Weapons/Slot 1/Fist/fist_jab.ogg"
+weapons/berserkhit	"Sounds/Weapons/Slot 1/Fist/berserk_hit.ogg"
 
-weapons/punch1		"Sounds/Slot 1/Fist/fist_punch1.ogg"
-weapons/punch2		"Sounds/Slot 1/Fist/fist_punch2.ogg"
-weapons/punch3		"Sounds/Slot 1/Fist/fist_punch3.ogg"
+weapons/punch1		"Sounds/Weapons/Slot 1/Fist/fist_punch1.ogg"
+weapons/punch2		"Sounds/Weapons/Slot 1/Fist/fist_punch2.ogg"
+weapons/punch3		"Sounds/Weapons/Slot 1/Fist/fist_punch3.ogg"
 
 $random weapons/punch { weapons/punch1 weapons/punch2 weapons/punch3 }
 
 // Impactor Gauntlet
-weapons/IMGRaise	"Sounds/Slot 1/Impactor Gauntlet/IMGARAIS.ogg"
-weapons/IMGCok		"Sounds/Slot 1/Impactor Gauntlet/IMGACOK.ogg"
-weapons/IMGHit		"Sounds/Slot 1/Impactor Gauntlet/IMGAHIT.ogg"
-weapons/IMGMiss		"Sounds/Slot 1/Impactor Gauntlet/IMGAMISS.ogg"
-weapons/IMGThrust	"Sounds/Slot 1/Impactor Gauntlet/IMGATHRU.ogg"
+weapons/IMGRaise	"Sounds/Weapons/Slot 1/Impactor Gauntlet/IMGARAIS.ogg"
+weapons/IMGCok		"Sounds/Weapons/Slot 1/Impactor Gauntlet/IMGACOK.ogg"
+weapons/IMGHit		"Sounds/Weapons/Slot 1/Impactor Gauntlet/IMGAHIT.ogg"
+weapons/IMGMiss		"Sounds/Weapons/Slot 1/Impactor Gauntlet/IMGAMISS.ogg"
+weapons/IMGThrust	"Sounds/Weapons/Slot 1/Impactor Gauntlet/IMGATHRU.ogg"
 
 // Icebreaker drill
-weapons/drillup		"Sounds/Slot 1/Icebreaker/drill_spinup.wav"
-weapons/drillloop	"Sounds/Slot 1/Icebreaker/drill_spinloop.wav"
-weapons/drillhit	"Sounds/Slot 1/Icebreaker/stabImpact.wav"
-weapons/drilldown	"Sounds/Slot 1/Icebreaker/drill_spindown.wav"
+weapons/drillup		"Sounds/Weapons/Slot 1/Icebreaker/drill_spinup.wav"
+weapons/drillloop	"Sounds/Weapons/Slot 1/Icebreaker/drill_spinloop.wav"
+weapons/drillhit	"Sounds/Weapons/Slot 1/Icebreaker/stabImpact.wav"
+weapons/drilldown	"Sounds/Weapons/Slot 1/Icebreaker/drill_spindown.wav"

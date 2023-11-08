@@ -28,9 +28,14 @@ GOTSUPERSHOTGUN = "You picked up the Super Shotgun! Oh, yes.";
 GOTBURSTRIFLE = "You picked up the Burst Rifle!";
 GOTVENOMCANNON = "You picked up the Venom Cannon!";
 // Ammo pickup messages
+DISARMEDMINE = "Disarmed and retrieved a mine.";
 GOTSHELLS = "Picked up a small box of shotgun shells.";
 GOTSHELLBOX = "Picked up a large box of shotgun shells.";
 GOTICESHELLS = "Picked up a small box of ice shotgun shells.";
 GOTICESHELLBOX = "Picked up a large box of ice shotgun shells.";
 GOTVENOMVIAL = "Picked up a small vial of venom.";
 GOTLARGEVENOMVIAL = "Picked up a large vial of venom.";
+// Enemy kill messages
+OB_SMGGUY = "%o was riddled with bullets by a SMG zombie."; // change later. boring af
+OB_RIFLECOMMANDO = "%o was hole-punched by a Rifle Commando.";
+OB_HELLHOG = "%o was eaten whole by a Hellhog."; // los hoglin :)

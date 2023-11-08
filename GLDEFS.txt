@@ -1,4 +1,4 @@
-flickerlight2 ICEGUNSATK
+flickerlight2 GWM_ICEGUNSATK
 {
     color 0.75 0.75 1.0
     size 72
@@ -8,7 +8,7 @@ flickerlight2 ICEGUNSATK
 	attenuate 1
 }
 
-flickerlight2 PLASMAGUNATK
+flickerlight2 GWM_PLASMAGUNATK
 {
     color 0.451 0.894 1.0
     size 72
@@ -24,11 +24,11 @@ object GWM_Flash
 }
 object GWM_IceFlash
 {
-	frame TNT1A { light ICEGUNSATK }
+	frame TNT1A { light GWM_ICEGUNSATK }
 }
 object GWM_PlasmaFlash
 {
-	frame TNT1A { light PLASMAGUNATK }
+	frame TNT1A { light GWM_PLASMAGUNATK }
 }
 
 object GWM_Rocket
@@ -42,4 +42,45 @@ object GWM_Grenade
 object GWM_Mine
 {
 	frame EXPL { light ZOMBIEATK }
+}
+
+// Baron / Hell Knight fireball
+pointlight GWM_BARONBALL
+{
+    color 0.953 0.451 0.9
+    size 96
+	attenuate 1
+}
+flickerlight GWM_BARONBALL_X1
+{
+    color 0.765 0.31 0.0
+    size 120
+    secondarySize 132
+    chance 0.25
+	attenuate 1
+}
+flickerlight GWM_BARONBALL_X2
+{
+    color 0.576 0.184 0.0
+    size 144
+    secondarySize 156
+    chance 0.25
+	attenuate 1
+}
+flickerlight GWM_BARONBALL_X3
+{
+    color 0.451 0.0 0.0
+    size 168
+    secondarySize 180
+    chance 0.25
+	attenuate 1
+}
+object GWM_BaronBall
+{
+    frame BARBA {light GWM_BARONBALL}
+    frame BARBB {light GWM_BARONBALL}
+
+    frame BARBC {light GWM_BARONBALL_X1}
+    frame BARBD {light GWM_BARONBALL_X2}
+    frame BARBE {light GWM_BARONBALL_X3}
 }

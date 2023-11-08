@@ -124,7 +124,7 @@ class GWM_SMG : Pistol
 			SMGF B 1 Bright A_Light2;
 			Goto LightDone;
 		Spawn:
-			MP4G Z -1;
+			SMGG Z -1;
 			Loop;
 	}
 }

@@ -1,0 +1,50 @@
+class GWM_BaronOfHell : BaronOfHell
+{
+	Default
+	{
+		BloodColor "93 2F 00";
+	}
+	States
+	{
+		Spawn:
+			BARN AB 10 A_Look;
+			Loop;
+		See:
+			BARN AABBCCDD 3 A_Chase;
+			Loop;
+		Melee:
+		Missile:
+			BARN EF 8 A_FaceTarget;
+			BARN G 8 A_CustomComboAttack("GWM_BaronBall", 32, 10 * random(1, 8), "baron/melee");
+			Goto See;
+		Pain:
+			BARN H 2;
+			BARN H 2 A_Pain;
+			Goto See;
+		Death:
+			BARN I 8;
+			BARN J 8 A_Scream;
+			BARN K 8;
+			BARN L 8 A_NoBlocking;
+			BARN MN 8;
+			BARN O -1 A_BossDeath;
+			Stop;
+		Raise:
+			BARN O 8;
+			BARN NMLKJI 8;
+			Goto See;
+	}
+}
+
+class GWM_BaronBall : BaronBall
+{
+	States
+	{
+		Spawn:
+			BARB AB 4 BRIGHT;
+			Loop;
+		Death:
+			BARB CDE 6 BRIGHT;
+			Stop;
+	}
+}
