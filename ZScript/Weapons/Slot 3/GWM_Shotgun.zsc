@@ -90,6 +90,8 @@ class GWM_Shotgun : Shotgun
 	Default
 	{
 		Weapon.AmmoType "GWM_Shell";
+		Weapon.AmmoType2 "GWM_Shell";
+		Weapon.AmmoUse2 1;
 		Tag "Slayer's Kahuna";
 		Inventory.PickupMessage "$GOTSLAYERSKAHUNA";
 		Obituary "$KILLSLAYERSKAHUNA";
@@ -130,6 +132,30 @@ class GWM_Shotgun : Shotgun
 			}
 			SKSG DDCC 1; // These two play on CHAN_BODY because the firing sound is just too fucking long
 			SKSG B 5 A_StartSound("weapons/skpump2");
+			SKSG A 3;
+			SKSG A 7 A_ReFire;
+			Goto Ready;
+		AltFire:
+			SKSG A 1 {
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				A_FireBullets(5, 1.66, 8, 6, "ZBulletPuff");
+				A_SpawnItemEx("GWM_Flash");
+				A_GunFlash();
+				A_WeaponOffset(0, 20, WOF_ADD);
+				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
+			}
+			SKSG A 3;
+			SKSG AA 3 {
+				A_WeaponOffset(0, -10, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+			}
+			SKSG FFGG 1;
+			SKSG H 4 {
+				A_StartSound("weapons/skpump1");
+				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (20, 4, -14));
+			}
+			SKSG GGFF 1; // These two play on CHAN_BODY because the firing sound is just too fucking long
+			SKSG A 5 A_StartSound("weapons/skpump2");
 			SKSG A 3;
 			SKSG A 7 A_ReFire;
 			Goto Ready;
