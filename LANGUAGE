@@ -36,6 +36,8 @@ GOTICESHELLBOX = "Picked up a large box of ice shotgun shells.";
 GOTVENOMVIAL = "Picked up a small vial of venom.";
 GOTLARGEVENOMVIAL = "Picked up a large vial of venom.";
 // Enemy kill messages
-OB_SMGGUY = "%o was riddled with bullets by a SMG zombie."; // change later. boring af
+OB_SMGGUY = "%o was riddled with bullets by an SMG zombie."; // change later. boring af
+OB_KAHUNASHOTGUNGUY = "%o was washed ashore by a shotgun zombie's Slayer's Kahuna.";
+OB_ICESHOTGUNGUY = "%o got frozen solid by a shotgun zombie's Ice Shotgun.";
 OB_RIFLECOMMANDO = "%o was hole-punched by a Rifle Commando.";
 OB_HELLHOG = "%o was eaten whole by a Hellhog."; // los hoglin :)

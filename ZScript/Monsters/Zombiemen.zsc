@@ -1,3 +1,47 @@
+class GWM_Zombieman : Zombieman
+{
+	States
+	{
+		Spawn:
+			PZOM AB 10 A_Look;
+			Loop;
+		See:
+			PZOM AABBCCDD 4 A_Chase;
+			Loop;
+		Missile:
+			PZOM E 10 A_FaceTarget;
+			PZOM F 8
+			{
+				A_StartSound("weapons/92fsfire");
+				A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM);
+			}
+			PZOM E 8;
+			Goto See;
+		Pain:
+			PZOM G 3;
+			PZOM G 3 A_Pain;
+			Goto See;
+		Death:
+			PZOM H 5;
+			PZOM I 5 A_Scream;
+			PZOM J 5 A_NoBlocking;
+			PZOM K 5;
+			PZOM L -1;
+			Stop;
+		XDeath:
+			PZOM M 5;
+			PZOM N 5 A_XScream;
+			PZOM O 5 A_NoBlocking;
+			PZOM PQRST 5;
+			PZOM U -1;
+			Stop;
+		Raise:
+			PZOM K 5;
+			PZOM JIH 5;
+			Goto See;
+	}
+}
+
 class GWM_SMGGuy : Actor
 {
 	Default

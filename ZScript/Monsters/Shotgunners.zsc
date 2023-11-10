@@ -1,0 +1,73 @@
+class GWM_KahunaShotgunGuy : ShotgunGuy
+{
+	Default
+	{
+		AttackSound "weapons/skshot";
+		DropItem "GWM_Shotgun";
+		Obituary "$OB_KAHUNASHOTGUNGUY";
+	}
+	States
+	{
+		Missile:
+			SPOS E 10 A_FaceTarget;
+			SPOS F 10 BRIGHT A_SposAttackUseAtkSound;
+			SPOS E 8 A_StartSound("weapons/skpump1");
+			SPOS E 2 A_StartSound("weapons/skpump2");
+			Goto See;
+	}
+}
+
+class GWM_IceShotgunGuy : ShotgunGuy
+{
+	Default
+	{
+		Translation "Ice";
+		DropItem "GWM_IceShotgun";
+		Obituary "$OB_ICESHOTGUNGUY";
+		BloodColor "76 76 8D";
+	}
+	States
+	{
+		Spawn:
+			ISGZ AB 10 A_Look;
+			Loop;
+		See:
+			ISGZ AABBCCDD 3 A_Chase;
+			Loop;
+		Missile:
+			ISGZ E 10 A_FaceTarget;
+			ISGZ F 10 BRIGHT {
+				A_StartSound("weapons/iceshgn");
+				A_FatAttack3("GWM_ShotgunGuyIceChunk");
+//				SpawnMissile(target, "GWM_ShotgunGuyIceChunk");
+			}
+			ISGZ E 10;
+			Goto See;
+		Pain:
+			ISGZ G 3;
+			ISGZ G 3 A_Pain;
+			Goto See;
+		Death:
+			ISGZ H 5;
+			ISGZ I 5 A_Scream;
+			ISGZ J 5;
+			ISGZ K 5;
+			ISGZ L 10 A_Stop;
+			ISGZ L 10 A_FreezeDeathChunks;
+			Stop;
+		XDeath:
+			ISGZ M 5 A_IceGuyDie;
+			Stop;
+		Raise:
+			TNT1 A 0;	// Shouldn't exist.
+			Goto See;
+	}
+}
+class GWM_ShotgunGuyIceChunk : GWM_ShotgunIceChunk
+{
+	Default
+	{
+		Damage 2;
+		Obituary "$OB_ICESHOTGUNGUY";
+	}
+}

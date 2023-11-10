@@ -28,7 +28,14 @@ class MonsterReplacer : StaticEventHandler
 				if (random(0, 1) == 1)
 					e.Replacement = "GWM_SMGGuy";
 				else
-					e.Replacement = "ZombieMan";
+					e.Replacement = "GWM_Zombieman";
+			}
+			if (e.Replacee == "ShotgunGuy")
+			{
+				if (random(0, 3) == 3)
+					e.Replacement = "GWM_IceShotgunGuy";
+				else
+					e.Replacement = "GWM_KahunaShotgunGuy";
 			}
 			if (e.Replacee == "ChaingunGuy")
 			{

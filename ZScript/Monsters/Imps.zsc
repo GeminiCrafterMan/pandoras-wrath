@@ -4,9 +4,10 @@ class GWM_NightmareImp : DoomImp
 	{
 		PainChance 128;
 		Speed 16;
-		RenderStyle "Subtract";
+		RenderStyle "Translucent";
+		Translation "GWM_NightmareImp";
 		Alpha 0.7;
-		BloodColor "58 FF FF";
+		BloodColor "78 58 80";
 		Obituary "$OB_NIGHTMAREIMPSCRATCH";
 	}
 	States
@@ -23,9 +24,9 @@ class GWM_NightmareImpBall : DoomImpBall
 {
 	Default
 	{
+		Translation "GWM_NightmareImp";
 		Speed 20;
 		FastSpeed 40;
-		RenderStyle "Subtract";
 		Obituary "$OB_NIGHTMAREIMPFIRE";
 	}
 }

@@ -1,3 +1,12 @@
+class GWM_ChaingunGuy : ChaingunGuy
+{
+	Default
+	{
+		AttackSound "weapons/chngun";
+		DropItem "GWM_Chaingun";
+	}
+}
+
 class GWM_RifleCommando : ChaingunGuy
 {
 	Default
