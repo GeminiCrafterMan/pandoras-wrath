@@ -111,17 +111,22 @@ class GWM_Shotgun : Shotgun
 			SKSG A 0 A_Raise;
 			Loop;
 		Fire:
-			SKSG A 1 {
+			SKSG A 1 Bright {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
 				A_FireBullets(2.5, 0.83, 8, 6, "ZBulletPuff");
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
-				A_WeaponOffset(0, 20, WOF_ADD);
+				A_WeaponOffset(0, 10, WOF_ADD);
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
 			}
-			SKSG A 3;
-			SKSG AA 3 {
-				A_WeaponOffset(0, -10, WOF_ADD);
+			SKSG A 3 Bright;
+			SKSG A 3 Bright {
+				A_WeaponOffset(0, -5, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+			}
+			SKSG A 3 {
+				A_WeaponOffset(0, -5, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
 			}
 			SKSG B 5;
@@ -136,18 +141,23 @@ class GWM_Shotgun : Shotgun
 			SKSG A 7 A_ReFire;
 			Goto Ready;
 		AltFire:
-			SKSG A 1 {
+			SKSG A 1 Bright {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				A_FireBullets(5, 1.66, 8, 6, "ZBulletPuff");
+				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
+				A_FireBullets(7.5, 2.49, 8, 6, "ZBulletPuff");
 				A_SpawnItemEx("GWM_Flash");
-				A_GunFlash();
+				A_GunFlash("Flash2");
 				A_WeaponOffset(0, 20, WOF_ADD);
-				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
+				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
 			}
-			SKSG A 3;
-			SKSG AA 3 {
+			SKSG A 3 Bright;
+			SKSG A 3 Bright {
 				A_WeaponOffset(0, -10, WOF_ADD);
-				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
+			}
+			SKSG A 3 {
+				A_WeaponOffset(0, -10, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
 			SKSG FFGG 1;
 			SKSG H 4 {
@@ -156,7 +166,6 @@ class GWM_Shotgun : Shotgun
 			}
 			SKSG GGFF 1; // These two play on CHAN_BODY because the firing sound is just too fucking long
 			SKSG A 5 A_StartSound("weapons/skpump2");
-			SKSG A 3;
 			SKSG A 7 A_ReFire;
 			Goto Ready;
 		Spawn:
@@ -165,6 +174,7 @@ class GWM_Shotgun : Shotgun
 		Flash:
 			SKSF A 1 Bright {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
 				A_Light1();
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
 			}
@@ -172,6 +182,19 @@ class GWM_Shotgun : Shotgun
 			SKSF B 3 Bright {
 				A_Light2();
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+			}
+			Goto LightDone;
+		Flash2:
+			SKSF A 1 Bright {
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
+				A_Light1();
+				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
+			}
+			SKSF A 3 Bright A_Light1;
+			SKSF B 3 Bright {
+				A_Light2();
+				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
 			Goto LightDone;
 	}

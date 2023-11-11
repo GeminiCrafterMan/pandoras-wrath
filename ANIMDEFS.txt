@@ -1,3 +1,7 @@
+// Slayer's Kahuna
+texture SKSFA0 NoTrim
+texture SKSFB0 NoTrim
+texture SKSGA0 NoTrim
 // Super Shotgun
 texture SSGFA0 NoTrim
 texture SSGFB0 NoTrim
