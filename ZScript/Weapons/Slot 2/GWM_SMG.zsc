@@ -89,6 +89,7 @@ class GWM_SMG : Pistol
 	}
 	Default
 	{
+		+THRUGHOST
 		Obituary "$KILLSMG";
 		Inventory.PickupMessage "$GOTSMG";
 		Tag "SMG";

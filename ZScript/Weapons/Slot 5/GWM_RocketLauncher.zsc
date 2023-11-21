@@ -78,6 +78,7 @@ class GWM_Rocket : Actor
 		Projectile;
 		+RANDOMIZE
 		+ROCKETTRAIL
+		+THRUGHOST
 		SeeSound "";
 		DeathSound "weapons/explode";
 		Obituary "$OB_MPROCKET";
@@ -130,6 +131,7 @@ class GWM_Grenade : Actor
 		+RANDOMIZE
 		+GRENADETRAIL
 		+USEBOUNCESTATE
+		+THRUGHOST
 		BounceType "Grenade";
 		Gravity 0.25;
 		SeeSound "";

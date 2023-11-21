@@ -74,6 +74,7 @@ class GWM_VenomBall : GWM_PoisonProjectile
 		+USEBOUNCESTATE
 		+FORCEXYBILLBOARD
 		+RANDOMIZE
+		+THRUGHOST
 		BounceSound "weapons/vnmcsplt";
 		DeathSound "weapons/vnmcbomb";
 		Obituary "%o drank %k's toxic goop.";

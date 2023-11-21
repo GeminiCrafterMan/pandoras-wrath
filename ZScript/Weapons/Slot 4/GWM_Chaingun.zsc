@@ -93,6 +93,10 @@ class GWM_Chaingun : Chaingun
 		A_FireBullets(11.2, 0, 1, 5, "ZBulletPuff");
 		ZWL_EjectCasing("GWM_PistolCasing");
 	}
+	Default
+	{
+		+THRUGHOST
+	}
 	States
 	{
 		Deselect:

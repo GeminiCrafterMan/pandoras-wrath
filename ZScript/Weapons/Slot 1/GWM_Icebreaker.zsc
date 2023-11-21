@@ -3,6 +3,7 @@ class GWM_Icebreaker : Weapon
 	Default
 	{
 		+WEAPON.MELEEWEAPON
+		+THRUGHOST
 		Tag "Icebreaker Drill";
 		Inventory.Icon "IBRKZ0";
 		Weapon.Kickback 0;

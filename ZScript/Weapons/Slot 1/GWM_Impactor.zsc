@@ -3,6 +3,7 @@ class GWM_Impactor : Weapon
 	Default
 	{
 		+WEAPON.MELEEWEAPON
+		+THRUGHOST
 		Tag "Impactor Gauntlet";
 		Inventory.Icon "IMPAZ0";
 		Weapon.UpSound "weapons/IMGRaise";

@@ -89,6 +89,7 @@ class GWM_Pistol : Pistol replaces Pistol
 	}
 	Default
 	{
+		+THRUGHOST
 		Obituary "$KILL92FS";
 		Inventory.PickupMessage "$GOT92FS";
 		Tag "Beretta 92FS";

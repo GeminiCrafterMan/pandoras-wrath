@@ -97,6 +97,7 @@ class GWM_BurstRifle : DoomWeapon
 	}
 	Default
 	{
+		+THRUGHOST
 		Weapon.AmmoType "Clip";
 		Tag "Burst Rifle";
 		Inventory.PickupMessage "$GOTBURSTRIFLE";

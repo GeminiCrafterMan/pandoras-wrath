@@ -89,6 +89,7 @@ class GWM_Shotgun : Shotgun
 	}
 	Default
 	{
+		+THRUGHOST
 		Weapon.AmmoType "GWM_Shell";
 		Weapon.AmmoType2 "GWM_Shell";
 		Weapon.AmmoUse2 1;

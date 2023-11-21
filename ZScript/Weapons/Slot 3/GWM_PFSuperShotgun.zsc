@@ -130,6 +130,7 @@ class GWM_PFSuperShotgun : SuperShotgun
 	}
 	Default
 	{
+		+THRUGHOST
 		Inventory.PickupMessage "$GOTPFSUPERSHOTGUN";
 		Obituary "$KILLPLACEHOLDER";
 		Tag "Perfect Freeze Super Shotgun";
@@ -313,6 +314,7 @@ class GWM_PerfectFreezeBullet : GWM_IceProjectile
 		+FORCEXYBILLBOARD
 		+NOBLOCKMAP
 		+NOGRAVITY
+		+THRUGHOST
 		DamageType "Ice";
 		+ICESHATTER;
 		BounceType "Doom";

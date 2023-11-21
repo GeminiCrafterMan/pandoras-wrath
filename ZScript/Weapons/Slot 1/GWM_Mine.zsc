@@ -23,24 +23,14 @@ class GWM_Mine : Weapon
 			MINE A 0 A_Lower;
 			Loop;
 		Select:
-//			TNT1 A 0 A_Overlay(-2, "LeftHand");
 			MINE A 1 A_Raise;
 			MINE A 0 A_Raise;
-			Loop;
-		LeftHand: // Only visual, leave the regular one alone.
-			MINE E 1;
 			Loop;
 		Fire:
 		// Toss a mine!
 			MINE B 4 A_FireProjectile("GWM_ThrownMine");
 			FIST B 4 A_CheckReload;
 			Goto Select;
-//		AltFire:
-//			MINE A 4 A_Overlay(-2, "Detonate");
-//			Goto Ready;
-		Detonate:
-			MINE F 4 A_StartSound("misc/chat");
-			Goto LeftHand;
 	}
 }
 class GWM_ThrownMine : Actor // Okay, so like, I was going to do this myself, but then I saw there was a better mine on the wiki, so fuck it

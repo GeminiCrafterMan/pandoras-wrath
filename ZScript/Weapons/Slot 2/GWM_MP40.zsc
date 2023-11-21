@@ -89,6 +89,7 @@ class GWM_MP40 : Pistol
 	}
 	Default
 	{
+		+THRUGHOST
 		Obituary "$KILLMP40";
 		Inventory.PickupMessage "$GOTMP40";
 		Tag "MP40";

@@ -109,8 +109,8 @@ class GWM_IceShotgun : Shotgun
 			Loop;
 		Fire:
 			TNT1 A 0 {
-				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.5, 0.5, 0);
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);
 				A_OverlayRotate(OverlayID(), 0, WOF_INTERPOLATE);
 			}
@@ -166,7 +166,7 @@ class GWM_IceShotgun : Shotgun
 			KICK A 5;
 			Stop;
 		Flash:
-			TNT1 A 0 A_OverlayOffset(OverlayID(), 159.5, 112);
+			TNT1 A 0 A_OverlayOffset(OverlayID(), 159, 92);
 			SGFL ABCCDE 1 Bright;
 			Stop;
 		Spawn:
@@ -182,7 +182,8 @@ class GWM_ShotgunIce : GWM_IceProjectile
 		Height 13;
 		Speed 50;
 		Damage 30;
-		Scale 2;
+		Scale 0.33;
+		+THRUGHOST
 		+RANDOMIZE
 		+FORCEXYBILLBOARD
 		DeathSound "weapons/icehit";

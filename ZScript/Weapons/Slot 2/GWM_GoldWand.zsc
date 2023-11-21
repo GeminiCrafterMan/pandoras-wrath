@@ -1,0 +1,60 @@
+class GWM_GoldWand : GoldWand replaces GoldWand
+{
+	Default
+	{
+		Weapon.SisterWeapon "GWM_GoldWandPowered";
+	}
+	States
+	{
+		Spawn:
+			WNDW Z -1;
+			Stop;
+		Ready:
+			WNDW A 1 A_WeaponReady;
+			Loop;
+		Select:
+			WNDW A 1 A_Raise;
+			WNDW A 0 A_Raise;
+			Loop;
+		Deselect:
+			WNDW A 1 A_Lower;
+			WNDW A 0 A_Lower;
+			Loop;
+		Fire:
+			WNDW B 3 ;
+			WNDW C 5 A_FireGoldWandPL1;
+			WNDW D 3;
+			WNDW D 0 A_ReFire;
+			Goto Ready;
+	}
+}
+class GWM_GoldWandPowered : GoldWandPowered
+{
+	Default
+	{
+		Weapon.SisterWeapon "GWM_GoldWand";
+	}
+	States
+	{
+		Spawn:
+			WNDW Z -1;
+			Stop;
+		Ready:
+			WNDW A 1 A_WeaponReady;
+			Loop;
+		Select:
+			WNDW A 1 A_Raise;
+			WNDW A 0 A_Raise;
+			Loop;
+		Deselect:
+			WNDW A 1 A_Lower;
+			WNDW A 0 A_Lower;
+			Loop;
+		Fire:
+			WNDW B 3;
+			WNDW C 4 A_FireGoldWandPL2;
+			WNDW D 3;
+			WNDW D 0 A_ReFire;
+			Goto Ready;
+	}
+}

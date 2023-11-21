@@ -6,3 +6,6 @@ weapons/smgfire		"Sounds/Weapons/Slot 2/smg_fire.wav"
 
 // MP40
 weapons/mp40fire	"Sounds/Weapons/Slot 2/mp40_fire.wav"
+
+// Gold Wand
+weapons/wandhit		"Sounds/Weapons/Slot 2/wand_fire.wav"

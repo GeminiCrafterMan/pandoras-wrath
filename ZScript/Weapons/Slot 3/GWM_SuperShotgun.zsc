@@ -90,6 +90,7 @@ class GWM_SuperShotgun : SuperShotgun
 	bool OneBarrel;
 	Default
 	{
+		+THRUGHOST
 		Inventory.PickupMessage "$GOTSUPERSHOTGUN";
 		Obituary "$KILLSUPERSHOTGUN";
 		Tag "Super Shotgun";
