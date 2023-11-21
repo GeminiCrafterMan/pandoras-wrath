@@ -1,0 +1,28 @@
+class GWM_HereticPuff : BulletPuff replaces BulletPuff
+{
+	States
+	{
+		Spawn:
+			NLPJ BC 3 Bright;
+			NLPJ D 3;
+		Melee:
+			NLPJ EFG 3;
+			Stop;
+	}
+}
+class GWM_ZHereticPuff : ZBulletPuff replaces ZBulletPuff
+{
+	States
+	{
+		Spawn:
+			NLPJ BC 3 Bright;
+			NLPJ D 3;
+		Melee:
+			NLPJ EFG 3;
+			Stop;
+		Crash:
+			NLPJ BC 3 Bright A_SpawnItemEx("ZBulletChip");
+			NLPJ DEFG 3;
+			Stop;
+	}
+}

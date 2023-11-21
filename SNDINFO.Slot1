@@ -25,3 +25,11 @@ weapons/drillup		"Sounds/Weapons/Slot 1/Icebreaker/drill_spinup.wav"
 weapons/drillloop	"Sounds/Weapons/Slot 1/Icebreaker/drill_spinloop.wav"
 weapons/drillhit	"Sounds/Weapons/Slot 1/Icebreaker/stabImpact.wav"
 weapons/drilldown	"Sounds/Weapons/Slot 1/Icebreaker/drill_spindown.wav"
+
+// Levenbrech sword
+weapons/swordslash1	"Sounds/Weapons/Slot 1/Levenbrech/slash1.mp3"
+weapons/swordslash2	"Sounds/Weapons/Slot 1/Levenbrech/slash2.mp3"
+weapons/swordhit	"Sounds/Weapons/Slot 1/Levenbrech/hit.mp3"
+weapons/swordup		"Sounds/Weapons/Slot 1/Levenbrech/draw.mp3"
+
+$random weapons/swordslash { weapons/swordslash1 weapons/swordslash2 }

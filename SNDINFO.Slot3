@@ -27,3 +27,14 @@ weapons/pfgraze		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/damage00.wav"
 weapons/ok00		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/ok00.wav"
 weapons/power1		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/power1.wav"
 weapons/powerup		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/powerup.wav"
+
+// Impaler Crossbow
+weapons/xbowrelease	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_release.wav"
+weapons/xbowfire1	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_shot1.wav"
+weapons/xbowfire2	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_shot2.wav"
+weapons/xbowfire3	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_shot3.wav"
+weapons/xbowfire4	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_shot4.wav"
+weapons/xbowdraw	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_draw.wav"
+weapons/XBowHit NAILHIT
+
+$random weapons/xbowfire { weapons/xbowfire1 weapons/xbowfire2 weapons/xbowfire3 weapons/xbowfire4 }

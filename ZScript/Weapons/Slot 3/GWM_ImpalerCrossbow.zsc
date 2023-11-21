@@ -1,0 +1,102 @@
+class GWM_ImpalerCrossbow : Weapon
+{
+	Default
+	{
+		Inventory.PickupMessage "Impaler Crossbow";
+		Tag "Impaler Crossbow";
+		Weapon.AmmoGive 15;
+		Weapon.AmmoType "ImpalerBolts";
+		Weapon.AmmoUse 1;
+		Weapon.UpSound "weapons/xbowdraw";
+		Weapon.KickBack 20;
+	}
+	States
+	{
+		Spawn:
+			CBOW Z -1;
+			Stop;
+		Select:
+			CBOW E 1 A_Raise;
+			CBOW E 0 A_Raise;
+			Loop;
+		Deselect:
+			CBOW E 1 A_Lower;
+			CBOW E 0 A_Lower;
+			Loop;
+		Ready:
+			CBOW E 0 A_JumpIfNoAmmo("FakeReady");
+			CBOW EF 8;
+		RealReady:
+			CBOW A 1 A_WeaponReady;
+			Loop;
+		FakeReady:
+			CBOW E 1 A_WeaponReady;
+			Loop;
+		Fire:
+			CBOW B 6 
+			{
+				A_StartSound("weapons/xbowrelease");
+				A_FireProjectile("ImpalerMissile",0,1);
+				A_Recoil(1);
+			}
+			CBOW C 8 A_StartSound("weapons/xbowdraw", CHAN_WEAPON);
+			CBOW D 5;
+			CBOW E 8 A_CheckReload;
+			CBOW F 8;
+			CBOW A 12;
+			Goto RealReady;
+	}
+}
+
+class ImpalerMissile : FastProjectile
+{
+	Default
+	{
+		Decal "BulletChip";
+		PROJECTILE;
+		+BLOODSPLATTER
+		+PIERCEARMOR
+		+RIPPER
+		Radius 4;
+		Height 8;
+		Damage 6;
+		Speed 80;
+		SeeSound "weapons/xbowfire";
+	}
+	States
+	{
+		Spawn:
+			ARRW A 1;
+			Loop;
+		Death:
+		Crash:
+			TNT1 A 0 {
+				A_StartSound("weapons/XBowHit");
+				A_SpawnItemEx("BulletPuff");
+				A_SpawnItemEx("ZBulletChip");
+			}
+			Stop;
+		XDeath:
+			TNT1 A 10 A_StartSound("weapons/drillhit");
+			Stop;
+	}
+}
+
+class ImpalerBolts : Ammo
+{
+	Default
+	{
+		Inventory.PickupMessage "Steel bolts";
+		Inventory.Amount 10;
+		Inventory.MaxAmount 40;
+		Inventory.Icon "CBWAA0";
+		Ammo.BackpackAmount 5;
+		Ammo.BackpackMaxAmount 80;
+	}
+	States
+	{
+		Spawn:
+			CBWA A -1;
+			Stop;
+	}
+}

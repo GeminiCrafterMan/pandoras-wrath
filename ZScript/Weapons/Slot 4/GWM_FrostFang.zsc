@@ -1,0 +1,174 @@
+Class GWM_FrostFang : Weapon replaces Blaster
+{
+	Default
+	{
+		Obituary "%o was chilled by %k's Frost Fang";
+		Radius 20;
+		Height 12;
+		Tag "Frost Fang";
+		Inventory.PickupMessage "Frost Fang";
+		Weapon.SelectionOrder 500;
+		Weapon.AmmoType "EverIce";
+		Weapon.AmmoUse 1;
+		Weapon.AmmoGive 20;
+		Weapon.SisterWeapon "GWM_FrostFangPowered";
+	}
+	States
+	{
+		Ready:
+			FSTF B 0 A_Jump(1, "Glow"); //Just a decorative glow
+			FSTF B 1 A_WeaponReady;
+			Loop;
+		Glow:
+			FSTF CCCCCCCCCC 1 A_WeaponReady;
+			FSTF CCCCCCCCC 1 A_WeaponReady;
+			FSTF CCCCCCCC 1 A_WeaponReady;
+			Goto Ready;
+		Select:
+			FSTF B 1 A_Raise;
+			FSTF B 0 A_Raise;
+			Loop;
+		Deselect:
+			FSTF B 1 A_Lower;
+			FSTF B 0 A_Lower;
+			Loop;
+		Fire:
+			FSTF B 3 Bright;
+			FSTF C 4 Bright;
+			FSTF D 5 Bright;
+		Hold:
+			FSTF E 2 Bright
+			{
+				A_PlaySound("FrostFang/Fire1", CHAN_WEAPON);
+				A_SpawnItemEx("IceFog2", 16, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-50, 50), SXF_CLIENTSIDE);
+				A_SpawnItemEx("IceFog2", 16, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-50, 50), SXF_CLIENTSIDE);
+				A_SpawnItemEx("IceFog2", 16, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-50, 50), SXF_CLIENTSIDE);
+				A_SpawnItemEx("IceFog2", 16, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-50, 50), SXF_CLIENTSIDE);
+				A_FireProjectile("FrostFangShard", 0, 1, Random(-5, 5), Random(-5, 5));
+			}
+			FSTF D 3 Bright A_Jump(12, 3); //Slight rare delay, for flavor
+			FSTF C 5 Bright A_ReFire;
+			FSTF B 4 Bright;
+			Goto Ready;
+			FSTF D 12 Bright;
+			FSTF C 5 Bright A_ReFire;
+			FSTF B 4 Bright;
+			Goto Ready;
+		Spawn:
+			FSTF A -1;
+			Loop;
+	 }
+}
+
+Class GWM_FrostFangPowered : GWM_FrostFang
+{
+	Default
+	{
+		Obituary "%o was horribly chilled by %k's Frost Fang";
+		Weapon.AmmoUse 8;
+		Weapon.SisterWeapon "GWM_FrostFang";
+		+Weapon.Powered_Up
+	}
+
+	States
+	{
+		Fire:
+			FSTF B 3 Bright;
+			FSTF C 4 Bright;
+		Hold:
+			FSTF D 5 Bright;
+			FSTF E 6 Bright
+			{
+				A_SpawnItemEx("IceFog2", 16, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-50, 50), SXF_CLIENTSIDE);
+				A_SpawnItemEx("IceFog2", 16, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-50, 50), SXF_CLIENTSIDE);
+				A_SpawnItemEx("IceFog2", 16, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-50, 50), SXF_CLIENTSIDE);
+				A_SpawnItemEx("IceFog2", 16, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-50, 50), SXF_CLIENTSIDE);
+				A_PlaySound("FrostFang/Fire2", CHAN_WEAPON);
+				A_FireProjectile("FrostFangBall");
+			}
+			FSTF D 6 Bright;
+			FSTF C 5 Bright A_ReFire;
+			FSTF B 4 Bright;
+			Goto Ready;
+	 }
+}
+
+Class FrostFangShard : Actor
+{
+	Default
+	{
+		Speed 40;
+		Radius 6;
+		Height 6;
+		DamageFunction (4*Random(3, 5));
+		DamageType "Ice";
+		DeathSound "FrostFang/Hit1";
+		Scale 0.75;
+		RenderStyle "Translucent";
+		Alpha 0.8;
+		Projectile;
+	}
+
+	States
+	{
+		Spawn:
+			FFSD AAABBBCCC 1 Bright A_SpawnItemEx("IceFog", -(Vel.X/1.4), -(Vel.Y/1.4), (Vel.Z/1.4*-1), (Vel.X/1.4), (Vel.Y/1.4), (Vel.Z/1.4), -Angle, SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEVELOCITY | SXF_CLIENTSIDE);
+			Loop;
+		Death:
+			FFSD DEFGH 5 Bright;
+			Stop;
+	}
+}
+
+Class FrostFangBall : Actor
+{
+	Default
+	{
+		Radius 10;
+		Height 16;
+		DamageFunction (10*Random(2, 4));
+		Speed 20;
+		RenderStyle "Add";
+		Alpha 1.0;
+		Scale 2.0;
+		DamageType "Ice";
+		DeathSound "FrostFang/Hit2";
+		Projectile;
+	}
+
+	states
+	{
+		Spawn:
+			TNT1 A 1
+			{
+				A_SpawnItemEx("IceFog2", 0, 0, 0, Random(1, 2), 0, Random(-1, 1), Random(-30, 30), SXF_CLIENTSIDE);
+				A_SpawnItemEx("FrostFangBallParticle", 0, 0, 0, Random(3, 4), 0, FRandom(-0.5, 0.5), Random(-15, 15), SXF_CLIENTSIDE);
+			}
+			Loop;
+		Death:
+			FFBL C 0 Bright A_Explode(60, 128, 0);
+			FFBL CDEFG 4 Bright;
+			Stop;
+	}
+}
+
+Class FrostFangBallParticle : Actor
+{
+	Default
+	{
+		Radius 1;
+		Height 1;
+		RenderStyle "Add";
+		Alpha 0.8;
+		Scale 0.6;
+		+NoGravity
+		+NoClip
+	}
+
+	States
+	{
+		Spawn:
+			IFOG A 4 A_FadeOut(0.2);
+			Loop;
+	}
+}

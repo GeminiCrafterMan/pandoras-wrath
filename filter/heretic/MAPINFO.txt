@@ -1,0 +1,5 @@
+GameInfo
+{
+	PlayerClasses = "GWM_HereticPlayer"
+    AddEventHandlers = "PlayerSpawnLines"//, "MonsterReplacer"
+}

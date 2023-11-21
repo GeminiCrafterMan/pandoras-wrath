@@ -1,5 +1,5 @@
 GameInfo
 {
-	PlayerClasses = "GWM_Player"
+	PlayerClasses = "GWM_DoomPlayer"
     AddEventHandlers = "ZCasingKiller", "ZFlatDecalKiller", "PlayerSpawnLines", "MonsterReplacer"
 }

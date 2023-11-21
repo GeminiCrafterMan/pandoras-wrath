@@ -101,3 +101,46 @@ class GWM_PoisonDamageEffect : Actor
 			Stop;
 	}
 }
+
+Class IceFog : Actor
+{
+	Default
+	{
+		Radius 1;
+		Height 1;
+		RenderStyle "Add";
+		Alpha 0.2;
+		XScale 0.4;
+		YScale 0.2;
+		+NoGravity
+		+NoClip
+	}
+
+	States
+	{
+	Spawn:
+		IFOG A 4 A_FadeOut(0.1);
+		Loop;
+	}
+}
+Class IceFog2 : Actor
+{
+	Default
+	{
+		Radius 1;
+		Height 1;
+		RenderStyle "Add";
+		Alpha 0.2;
+		XScale 0.6;
+		YScale 0.4;
+		+NoGravity
+		+NoClip
+	}
+
+	States
+	{
+	Spawn:
+		IFOG A 4 A_FadeOut(0.03);
+		Loop;
+	}
+}

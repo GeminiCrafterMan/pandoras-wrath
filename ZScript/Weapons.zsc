@@ -1,3 +1,4 @@
+// Doom
 #include "ZScript/Weapons/Slot 1/GWM_Mine.zsc"		// land mine 
 #include "ZScript/Weapons/Slot 1/GWM_Fist.zsc" // Fist, taken from Super Skulltag and rewritten slightly.
 #include "ZScript/Weapons/Slot 1/GWM_Impactor.zsc" // Impactor Gauntlet, taken from Realm667.
@@ -21,3 +22,10 @@
 #include "ZScript/Weapons/Slot 6/GWM_PlasmaRifle.zsc" // Plasma Rifle
 
 #include "ZScript/Weapons/Slot 7/GWM_BFG9000.zsc" // BFG9000 (Vanilla)
+
+// Heretic
+#include "ZScript/Weapons/Slot 1/GWM_Levenbrech.zsc" // Levenbrech
+
+#include "ZScript/Weapons/Slot 3/GWM_ImpalerCrossbow.zsc"	// Impaler Crossbow
+
+#include "ZScript/Weapons/Slot 4/GWM_FrostFang.zsc"	// Frost Fang

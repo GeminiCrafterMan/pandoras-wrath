@@ -165,3 +165,40 @@ class GWM_MineAmmo : Ammo
 			Stop;
 	}
 }
+
+Class EverIce : Ammo replaces BlasterAmmo
+{
+	Default
+	{
+		Inventory.PickupMessage "EverIce Chunk";
+		Inventory.Amount 25;
+		Inventory.MaxAmount 200;
+		Ammo.BackpackAmount 25;
+		Ammo.BackpackMaxAmount 400;
+		Inventory.Icon "EICEI0";
+		Scale 0.4;
+	}
+
+	States
+	{
+		Spawn:
+			EICE ABCD 6;
+			Loop;
+	}
+}
+Class EverIceHefty : EverIce replaces BlasterHefty
+{
+	Default
+	{
+		Inventory.PickupMessage "EverIce Cluster";
+		Inventory.Amount 50;
+		Scale 0.4;
+	}
+
+	States
+	{
+		Spawn:
+			EICE EFGH 6;
+			Loop;
+	}
+}

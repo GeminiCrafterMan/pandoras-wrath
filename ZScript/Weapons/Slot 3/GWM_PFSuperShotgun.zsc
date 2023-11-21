@@ -167,6 +167,14 @@ class GWM_PFSuperShotgun : SuperShotgun
 				A_StartSound("weapons/pfshot1", CHAN_WEAPON);
 				A_Overlay(-2, "Flash1");
 				A_Overlay(-3, "Flash2");
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-24, 24));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-24, 24));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-24, 24));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-24, 24));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-24, 24));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-24, 24));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-24, 24));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-24, 24));
 				A_SpawnItemEx("GWM_IceFlash");
 				A_WeaponOffset(0, 24, WOF_ADD);
 				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
@@ -200,6 +208,10 @@ class GWM_PFSuperShotgun : SuperShotgun
 				A_SpawnItemEx("GWM_IceFlash");
 				A_WeaponOffset(0, 12, WOF_ADD);
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-24, 24));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-24, 24));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-24, 24));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-24, 24));
 			}
 			PFSH A 2;
 			PFSH AA 2 {

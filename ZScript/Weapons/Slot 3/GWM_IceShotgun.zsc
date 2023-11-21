@@ -119,6 +119,10 @@ class GWM_IceShotgun : Shotgun
 				A_StartSound("weapons/iceshgn", CHAN_WEAPON);
 				A_SpawnItemEx("GWM_IceFlash");
 				A_Overlay(-2, "Flash");
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
 				A_WeaponOffset(0, 20, WOF_ADD);
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
 			}

@@ -12,3 +12,9 @@ weapons/chgnf3			"Sounds/Weapons/Slot 4/Chaingun/chaingun_fire3.wav"
 weapons/chgnf4			"Sounds/Weapons/Slot 4/Chaingun/chaingun_fire4.wav"
 
 $random weapons/chngun { weapons/chgnf1 weapons/chgnf2 weapons/chgnf3 weapons/chgnf4 }	
+
+// Frost Fang
+FrostFang/Fire1	FSTFFIR1
+FrostFang/Hit1	FSTFHIT1
+FrostFang/Fire2 FSTFFIR2
+FrostFang/Hit2	FSTFHIT2
