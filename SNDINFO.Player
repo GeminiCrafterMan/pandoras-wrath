@@ -8,7 +8,8 @@ $playersounddup	GWM_Player	male	*crazydeath		*death
 $playeralias	GWM_Player	male	*jump			player/jump
 $playeralias	GWM_Player	male	*usefail		player/no
 $playeralias	GWM_Player	male	*taunt			player/battlecry
-$playersounddup	GWM_Player	male	*land			*pain100
+$playersound	GWM_Player	male	*land			"Sounds/Player/land.wav"
+$playersounddup	GWM_Player	male	*grunt			*pain100
 $playersound	GWM_Player	male	*drainhealth	"Sounds/Powerups/S_bld_suck.wav"
 
 $random player/painsharp {
