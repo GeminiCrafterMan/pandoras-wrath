@@ -1,4 +1,4 @@
-class GWM_ImpalerCrossbow : Weapon
+class GWM_ImpalerCrossbow : Weapon replaces Crossbow
 {
 	Default
 	{

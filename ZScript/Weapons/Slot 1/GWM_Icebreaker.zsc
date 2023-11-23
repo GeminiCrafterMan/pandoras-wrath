@@ -20,6 +20,7 @@ class GWM_Icebreaker : Weapon
 			IBRK A 0 A_Raise;
 			Loop;
 		Deselect:
+			TNT1 A 0 A_StopSound(CHAN_BODY);
 			IBRK A 1 A_Lower;
 			IBRK A 0 A_Lower;
 			Loop;

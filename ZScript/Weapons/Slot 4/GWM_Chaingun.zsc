@@ -104,15 +104,16 @@ class GWM_Chaingun : Chaingun
 			CHGG A 0 A_Lower;
 			Loop;
 		Select:
+			TNT1 A 0 A_StopSound(CHAN_BODY);
 			CHGG A 1 A_Raise;
 			CHGG A 0 A_Raise;
 			Loop;
 		Fire:
 			// rev the chaingun
-			CHGG A 1 A_StartSound("weapons/cgunup");
+			CHGG A 1 A_StartSound("weapons/cgunup", CHAN_BODY);
 			CHGG AABBBBCCCDDDEEFFGH 1;
+			CHGG A 0 A_StartSound("weapons/cgunloop", CHAN_BODY, CHANF_LOOPING);
 		Hold:
-			CHGG A 0 A_StartSound("weapons/cgunloop");
 			CHGG A 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashAB");}
 			CHGG B 1;
 			CHGG C 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashCD");}
@@ -127,7 +128,7 @@ class GWM_Chaingun : Chaingun
 			CHGG H 0 A_ReFire;
 			Goto Unrev;
 		Unrev:
-			CHGG H 1 A_StartSound("weapons/cgundn");
+			CHGG H 1 A_StartSound("weapons/cgundn", CHAN_BODY);
 			CHGG GFFEEDDDCCCBBBBAAA 1;
 			Goto Ready;
 		FlashAB:

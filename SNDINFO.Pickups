@@ -1,9 +1,12 @@
 // Pickups
-pickups/healthbonus	"Sounds/Pickups/Health Bonus.wav"
-pickups/armorbonus	"Sounds/Pickups/Armor Bonus.wav"
+pickups/healthbonus		"Sounds/Pickups/Health Bonus.wav"
+pickups/armorbonus		"Sounds/Pickups/Armor Bonus.wav"
 
 // Ammo
-pickups/clip		"Sounds/Pickups/Clip.wav"
-pickups/clipbox		"Sounds/Pickups/Clip Box.wav"
-pickups/shells		"Sounds/Pickups/Shells.wav"
-pickups/backpack	"Sounds/Pickups/Backpack.wav"
+pickups/clip			"Sounds/Pickups/Clip.wav"
+pickups/clipbox			"Sounds/Pickups/Clip Box.wav"
+pickups/shells			"Sounds/Pickups/Shells.wav"
+pickups/backpack		"Sounds/Pickups/Backpack.wav"
+
+// Weapons
+misc/w_pkup				"Sounds/Pickups/Weapon.wav"
