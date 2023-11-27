@@ -154,21 +154,35 @@ class GWM_ImpalerArrowPowered : GWM_ImpalerArrow
 	}
 }
 
-class GWM_ImpalerBolts : Ammo
+class GWM_ImpalerBolts : Ammo replaces CrossbowAmmo
 {
 	Default
 	{
 		Inventory.PickupMessage "Steel bolts";
-		Inventory.Amount 10;
+		Inventory.Amount 4;
 		Inventory.MaxAmount 40;
 		Inventory.Icon "CBWAA0";
-		Ammo.BackpackAmount 5;
+		Ammo.BackpackAmount 2;
 		Ammo.BackpackMaxAmount 80;
 	}
 	States
 	{
 		Spawn:
 			CBWA A -1;
+			Stop;
+	}
+}
+class GWM_ImpalerBoltsHefty : GWM_ImpalerBolts replaces CrossbowHefty
+{
+	Default
+	{
+		Inventory.PickupMessage "Quiver of steel bolts";
+		Inventory.Amount 8;
+	}
+	States
+	{
+		Spawn:
+			CBWA B -1;
 			Stop;
 	}
 }

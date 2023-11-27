@@ -109,7 +109,7 @@ class GWM_SMG : Pistol
 			Loop;
 		Fire:
 			SMGG A 1 {
-				A_FireBullets(8.9, 0, 1, 7, "ZBulletPuff");
+				A_FireBullets(8.9, 0, 1, 7, "ZBulletPuff", missile: "GWM_Tracer", spawnheight: 0);
 				A_StartSound("weapons/smgfire", CHAN_WEAPON);
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();

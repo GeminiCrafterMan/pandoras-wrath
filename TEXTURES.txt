@@ -1,0 +1,35 @@
+Sprite WPUFA0, 5, 5
+{
+	Offset 3, 3
+	Patch PUFFA0, 0, 0
+	{
+		Blend "#FFFFFF", 0.7
+	}
+}
+
+Sprite WPUFB0, 5, 5
+{
+	Offset 3, 3
+	Patch PUFFA0, 0, 0
+	{
+		Blend "#FFFF00", 0.7
+	}
+}
+
+Sprite WPUFC0, 5, 5
+{
+	Offset 3, 3
+	Patch PUFFA0, 0, 0
+	{
+		Blend "#FF8040", 0.7
+	}
+}
+
+Sprite WPUFD0, 5, 5
+{
+	Offset 3, 3
+	Patch PUFFA0, 0, 0
+	{
+		Blend "#FF0000", 0.7
+	}
+}

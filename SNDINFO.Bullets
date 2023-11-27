@@ -1,0 +1,28 @@
+$random bullet/ricochet
+{
+	bullet/ricochet1
+	bullet/ricochet2
+	bullet/ricochet3
+	bullet/ricochet4
+	bullet/ricochet5
+}
+$random bullet/hitFlesh
+{
+	bullet/hitFlesh1
+	bullet/hitFlesh2
+	bullet/hitFlesh3
+	bullet/hitFlesh4
+	bullet/hitFlesh5
+}
+
+bullet/ricochet1	"Sounds/Weapons/Bullets/ric1.wav"
+bullet/ricochet2	"Sounds/Weapons/Bullets/ric2.wav"
+bullet/ricochet3	"Sounds/Weapons/Bullets/ric3.wav"
+bullet/ricochet4	"Sounds/Weapons/Bullets/ric4.wav"
+bullet/ricochet5	"Sounds/Weapons/Bullets/ric5.wav"
+
+bullet/hitFlesh1	"Sounds/Weapons/Bullets/hit1.wav"
+bullet/hitFlesh2	"Sounds/Weapons/Bullets/hit2.wav"
+bullet/hitFlesh3	"Sounds/Weapons/Bullets/hit3.wav"
+bullet/hitFlesh4	"Sounds/Weapons/Bullets/hit4.wav"
+bullet/hitFlesh5	"Sounds/Weapons/Bullets/hit5.wav"
