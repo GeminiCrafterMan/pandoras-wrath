@@ -1,5 +1,9 @@
 class GWM_Zombieman : Zombieman
 {
+	Default
+	{
+		AttackSound "weapons/92fsfire";
+	}
 	States
 	{
 		Spawn:
@@ -10,11 +14,7 @@ class GWM_Zombieman : Zombieman
 			Loop;
 		Missile:
 			PZOM E 10 A_FaceTarget;
-			PZOM F 8
-			{
-				A_StartSound("weapons/92fsfire");
-				A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM);
-			}
+			PZOM F 8 Bright A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 46, spawnofs_xy: 0);
 			PZOM E 8;
 			Goto See;
 		Pain:
@@ -55,6 +55,7 @@ class GWM_SMGGuy : Actor
 		PainSound "grunt/pain";
 		DeathSound "grunt/death";
 		ActiveSound "grunt/active";
+		AttackSound "weapons/smgfire";
 		Obituary "$OB_SMGGUY";
 		DropItem "GWM_SMG";
 		Monster;
@@ -70,19 +71,14 @@ class GWM_SMGGuy : Actor
 			Loop;
 		Missile:
 			MGPO E 8 A_FaceTarget();
-			MGPO F 0 A_StartSound("weapons/smgfire");
 			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM);
 			MGPO E 3;
-			MGPO F 0 A_StartSound("weapons/smgfire");
 			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM);
 			MGPO E 3;
-			MGPO F 0 A_StartSound("weapons/smgfire");
 			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM);
 			MGPO E 3;
-			MGPO F 0 A_StartSound("weapons/smgfire");
 			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM);
 			MGPO E 3;
-			MGPO F 0 A_StartSound("weapons/smgfire");
 			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM);
 			MGPO E 10;
 			Goto See;

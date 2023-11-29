@@ -40,3 +40,77 @@ decalgroup WallVenomPuddle
 Generator GWM_VenomBall					WallVenomPuddle
 
 Generator GWM_ShotgunIceChunk			FreezeBlastMelt
+
+fader MeltFade
+{
+   DecayStart 0.0
+   DecayTime 2.0
+}
+
+stretcher MeltStretch
+{
+   GoalX 0.4
+   GoalY 0.4
+   StretchStart 0.0
+   StretchTime 2.0
+}
+
+Combiner MeltAnim
+{
+	MeltFade
+	MeltStretch
+}
+
+decal MeltBurn1
+{
+	pic CBALSCR1
+	shade "FF 50 00"
+	x-scale 0.2
+	y-scale 0.2
+	randomflipx
+	randomflipy
+	fullbright
+	animator MeltAnim
+}
+
+decal MeltBurn2
+{
+	pic CBALSCR2 
+	shade "FF 50 00"
+	x-scale 0.2
+	y-scale 0.2
+	randomflipx
+	randomflipy
+	fullbright
+	animator MeltAnim
+}
+
+decal MeltScorch1
+{
+	pic CBALSCR1
+	shade "00 00 00"
+	x-scale 0.21
+	y-scale 0.21
+	randomflipx
+	randomflipy
+	animator MeltStretch
+	lowerdecal MeltBurn1
+}
+
+decal MeltScorch2
+{
+	pic CBALSCR2
+	shade "00 00 00"
+	x-scale 0.21
+	y-scale 0.21
+	randomflipx
+	randomflipy
+	animator MeltStretch
+	lowerdecal MeltBurn2
+}
+
+decalgroup MeltScorch
+{
+	MeltScorch1	1
+	MeltScorch2	1
+}

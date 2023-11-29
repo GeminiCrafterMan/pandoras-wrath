@@ -1,12 +1,25 @@
-// Railgun
-weapons/railshot	"Sounds/Weapons/Slot 6/railgun_shoot.wav"
-weapons/railchrg	"Sounds/Weapons/Slot 6/railgun_charge.wav"
-
 // Plasma Rifle
-weapons/plasmashot	"Sounds/Weapons/Slot 6/plasma_2fire1.wav"
-weapons/plasmaf		"Sounds/Weapons/Slot 6/plasmagun_flight.wav"
-weapons/plasmax1	"Sounds/Weapons/Slot 6/plasma_impact1.wav"
-weapons/plasmax2	"Sounds/Weapons/Slot 6/plasma_impact2.wav"
-weapons/plasmax3	"Sounds/Weapons/Slot 6/plasma_impact3.wav"
+weapons/railshot	"Sounds/Weapons/Slot 6/Plasma Rifle/railgun_shoot.wav"
+weapons/railchrg	"Sounds/Weapons/Slot 6/Plasma Rifle/railgun_charge.wav"
+weapons/plasmashot	"Sounds/Weapons/Slot 6/Plasma Rifle/plasma_2fire1.wav"
+weapons/plasmaf		"Sounds/Weapons/Slot 6/Plasma Rifle/plasmagun_flight.wav"
+weapons/plasmax1	"Sounds/Weapons/Slot 6/Plasma Rifle/plasma_impact1.wav"
+weapons/plasmax2	"Sounds/Weapons/Slot 6/Plasma Rifle/plasma_impact2.wav"
+weapons/plasmax3	"Sounds/Weapons/Slot 6/Plasma Rifle/plasma_impact3.wav"
 
 $random weapons/plasmax { weapons/plasmax1 weapons/plasmax2 weapons/plasmax3 }
+
+// Melter
+Melter/fire	VMELTER
+Melter/cooldown VMELTCD
+Melter/warning VMELTWRN
+Melter/heatsink VMELTHS
+$pitchset Melter/warning 1.7
+$volume Melter/warning 0.5
+$random Melter/melt	{ melt1 melt2 }
+$limit Melter/melt 0
+$volume Melter/melt 0.1
+$pitchset Melter/melt 0.8 1.2
+$attenuation Melter/melt 1.5
+melt1 VMELT1
+melt2 VMELT2

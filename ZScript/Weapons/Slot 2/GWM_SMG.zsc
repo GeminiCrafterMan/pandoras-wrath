@@ -100,12 +100,10 @@ class GWM_SMG : Pistol
 			SMGG A 1 A_WeaponReady;
 			Loop;
 		Deselect:
-			SMGG A 1 A_Lower;
-			SMGG A 0 A_Lower;
+			SMGG A 1 A_Lower(12);
 			Loop;
 		Select:
-			SMGG A 1 A_Raise;
-			SMGG A 0 A_Raise;
+			SMGG A 1 A_Raise(12);
 			Loop;
 		Fire:
 			SMGG A 1 {

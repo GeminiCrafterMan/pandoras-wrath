@@ -10,7 +10,7 @@ class GWM_KahunaShotgunGuy : ShotgunGuy
 	{
 		Missile:
 			SPOS E 10 A_FaceTarget;
-			SPOS F 10 BRIGHT A_SposAttackUseAtkSound;
+			SPOS F 10 BRIGHT A_CustomBulletAttack(22.5, 0, 3, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
 			SPOS E 8 A_StartSound("weapons/skpump1");
 			SPOS E 2 A_StartSound("weapons/skpump2");
 			Goto See;

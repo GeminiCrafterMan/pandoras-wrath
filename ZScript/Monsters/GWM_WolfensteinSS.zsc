@@ -2,6 +2,18 @@ class GWM_WolfensteinSS : WolfensteinSS
 {
 	Default
 	{
+		AttackSound "weapons/mp40fire";
 		DropItem "GWM_MP40";
+	}
+	States
+	{
+		Missile:
+			SSWV E 10 A_FaceTarget;
+			SSWV F 10 A_FaceTarget;
+			SSWV G 4 BRIGHT A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			SSWV F 6 A_FaceTarget;
+			SSWV G 4 BRIGHT A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			SSWV F 1 A_CPosRefire;
+			Goto Missile+1;
 	}
 }

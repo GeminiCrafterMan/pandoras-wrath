@@ -1,0 +1,25 @@
+class GWM_ExplosiveBarrel : ExplosiveBarrel replaces ExplosiveBarrel
+{
+	Default
+	{
+		+PUSHABLE
+		Friction 0.8;
+		DeathSound "objects/barrel_explode";
+	}
+	States
+	{
+		Spawn:
+			XBAR A -1;
+			Stop;
+		Death:
+			XBAR B 10 Bright;
+			TNT1 A 0 {
+				A_Scream();
+				A_Explode();
+			}
+			XBAR CDEFGHIJKL 2 Bright;
+			TNT1 A 1050 Bright A_BarrelDestroy;
+			TNT1 A 5 A_Respawn;
+			Wait;
+	}
+}

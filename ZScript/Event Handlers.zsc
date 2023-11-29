@@ -59,7 +59,7 @@ class MonsterReplacer : StaticEventHandler
 			// Misc
 			if (e.Replacee == "Demon")
 			{
-				if (random(0, 2) == 2)
+				if (random(0, 4) == 4)
 					e.Replacement = "GWM_Hellhog";
 				else
 					e.Replacement = "Demon";

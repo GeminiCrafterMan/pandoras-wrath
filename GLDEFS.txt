@@ -167,3 +167,29 @@ Frame FFBLE { Light FrostFangBall4 }
 Frame FFBLF { Light FrostFangBall5 }
 Frame FFBLG { Light FrostFangBall6 }
 }
+
+Flickerlight MelterBeamLight
+{
+	color 1.0 0.7 0.2
+	size 24
+	secondarysize 28
+	chance 0.5
+	offset 0 0 0
+	dontlightself 1
+}
+
+Object MelterBeam
+{
+	Frame VMLP {Light MelterBeamLight}
+}
+
+BrightMap Sprite VMLTA0 { Map VMLTA0 DisableFullBright }
+BrightMap Sprite VMLTB0 { Map VMLTB0 DisableFullBright }
+BrightMap Sprite VMLTC0 { Map VMLTC0 DisableFullBright }
+BrightMap Sprite VMLTD0 { Map VMLTD0 DisableFullBright }
+BrightMap Sprite VMLTE0 { Map VMLTE0 DisableFullBright }
+BrightMap Sprite VMLTF0 { Map VMLTF0 DisableFullBright }
+BrightMap Sprite VMLTG0 { Map VMLTG0 DisableFullBright }
+BrightMap Sprite VMLTH0 { Map VMLTH0 DisableFullBright }
+BrightMap Sprite VMLTI0 { Map VMLTI0 DisableFullBright }
+BrightMap Sprite VMLTJ0 { Map VMLTJ0 DisableFullBright }

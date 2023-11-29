@@ -166,6 +166,8 @@ class GWM_MineAmmo : Ammo
 	}
 }
 
+class GWM_CellPack : CellPack {} // solely exists to prevent an infinite loop
+
 Class EverIce : Ammo replaces BlasterAmmo
 {
 	Default

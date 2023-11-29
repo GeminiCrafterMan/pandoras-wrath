@@ -18,12 +18,10 @@ class GWM_Levenbrech : Weapon replaces Gauntlets
 			LBRE Z -1;
 			Stop;
 		Select:
-			LBRE A 1 A_Raise;
-			LBRE A 0 A_Raise;
+			LBRE A 1 A_Raise(12);
 			Loop;
 		Deselect:
-			LBRE A 1 A_Lower;
-			LBRE A 0 A_Lower;
+			LBRE A 1 A_Lower(12);
 			Loop;
 		Ready:
 			LBRE A 1 A_WeaponReady;

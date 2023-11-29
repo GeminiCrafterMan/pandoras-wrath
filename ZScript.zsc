@@ -15,3 +15,4 @@ version "4.1.0"
 
 #include "ZScript/Weapons.zsc"			// Weapon includes
 #include "ZScript/Monsters.zsc"			// Monster includes
+#include "ZScript/Objects.zsc"			// Objects

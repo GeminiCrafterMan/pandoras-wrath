@@ -13,7 +13,7 @@ class GWM_WeaponSpawner : Actor
 	}
 }
 
-class ShellSpawner : GWM_WeaponSpawner replaces Shell
+class GWM_ShellSpawner : GWM_WeaponSpawner replaces Shell
 {
 	States
 	{
@@ -27,7 +27,7 @@ class ShellSpawner : GWM_WeaponSpawner replaces Shell
 			Stop;
 	}
 }
-class ShellBoxSpawner : GWM_WeaponSpawner replaces ShellBox
+class GWM_ShellBoxSpawner : GWM_WeaponSpawner replaces ShellBox
 {
 	States
 	{
@@ -42,7 +42,7 @@ class ShellBoxSpawner : GWM_WeaponSpawner replaces ShellBox
 	}
 }
 
-class RocketAmmoSpawner : GWM_WeaponSpawner replaces RocketAmmo
+class GWM_RocketAmmoSpawner : GWM_WeaponSpawner replaces RocketAmmo
 {
 	States
 	{
@@ -56,7 +56,7 @@ class RocketAmmoSpawner : GWM_WeaponSpawner replaces RocketAmmo
 			Stop;
 	}
 }
-class RocketBoxSpawner : GWM_WeaponSpawner replaces RocketBox
+class GWM_RocketBoxSpawner : GWM_WeaponSpawner replaces RocketBox
 {
 	States
 	{
@@ -71,7 +71,21 @@ class RocketBoxSpawner : GWM_WeaponSpawner replaces RocketBox
 	}
 }
 
-class ChainsawSpawner : GWM_WeaponSpawner replaces Chainsaw
+class GWM_CellPackSpawner : Actor replaces CellPack
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf((random(0, 8)%8), "Spawn2");
+		Spawn_Heatsink:
+			TNT1 A 0 A_SpawnItemEx("GWM_MelterHeatsink");
+		Spawn2:
+			TNT1 A 0 A_SpawnItemEx("GWM_CellPack");
+			Stop;
+	}
+}
+
+class GWM_ChainsawSpawner : GWM_WeaponSpawner replaces Chainsaw
 {
 	States
 	{
@@ -86,7 +100,7 @@ class ChainsawSpawner : GWM_WeaponSpawner replaces Chainsaw
 	}
 }
 
-class ShotgunSpawner : GWM_WeaponSpawner replaces Shotgun
+class GWM_ShotgunSpawner : GWM_WeaponSpawner replaces Shotgun
 {
 	States
 	{
@@ -101,7 +115,7 @@ class ShotgunSpawner : GWM_WeaponSpawner replaces Shotgun
 	}
 }
 
-class SuperShotgunSpawner : GWM_WeaponSpawner replaces SuperShotgun
+class GWM_SuperShotgunSpawner : GWM_WeaponSpawner replaces SuperShotgun
 {
 	States
 	{
@@ -116,7 +130,7 @@ class SuperShotgunSpawner : GWM_WeaponSpawner replaces SuperShotgun
 	}
 }
 
-class ChaingunSpawner : GWM_WeaponSpawner replaces Chaingun
+class GWM_ChaingunSpawner : GWM_WeaponSpawner replaces Chaingun
 {
 	States
 	{
@@ -131,7 +145,7 @@ class ChaingunSpawner : GWM_WeaponSpawner replaces Chaingun
 	}
 }
 
-class RocketLauncherSpawner : GWM_WeaponSpawner replaces RocketLauncher
+class GWM_RocketLauncherSpawner : GWM_WeaponSpawner replaces RocketLauncher
 {
 	States
 	{
@@ -142,6 +156,21 @@ class RocketLauncherSpawner : GWM_WeaponSpawner replaces RocketLauncher
 			Stop;
 		Spawn_RocketLauncher:
 			TNT1 A 0 A_SpawnItemEx("GWM_RocketLauncher");
+			Stop;
+	}
+}
+
+class GWM_PlasmaRifleSpawner : GWM_WeaponSpawner replaces PlasmaRifle
+{
+	States
+	{
+		Spawn2:
+			TNT1 A 0 A_JumpIf(random(0, 1), "Spawn_PlasmaRifle");
+		Spawn_Melter:
+			TNT1 A 0 A_SpawnItemEx("GWM_Melter");
+			Stop;
+		Spawn_PlasmaRifle:
+			TNT1 A 0 A_SpawnItemEx("GWM_PlasmaRifle");
 			Stop;
 	}
 }

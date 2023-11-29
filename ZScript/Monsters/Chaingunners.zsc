@@ -5,6 +5,14 @@ class GWM_ChaingunGuy : ChaingunGuy
 		AttackSound "weapons/chngun";
 		DropItem "GWM_Chaingun";
 	}
+	States
+	{
+		Missile:
+			CPOS E 10 A_FaceTarget;
+			CPOS FE 4 BRIGHT A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 12);
+			CPOS F 1 A_CPosRefire;
+			Goto Missile+1;
+	}
 }
 
 class GWM_RifleCommando : ChaingunGuy
@@ -25,11 +33,11 @@ class GWM_RifleCommando : ChaingunGuy
 			Loop;
 		Missile:
 			ACPS E 2 A_FaceTarget;
-			ACPS F 1 Bright A_CPosAttack;
+			ACPS F 1 Bright A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
 			ACPS E 2 A_FaceTarget;
-			ACPS F 1 Bright A_CPosAttack;
+			ACPS F 1 Bright A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
 			ACPS E 2 A_FaceTarget;
-			ACPS F 1 Bright A_CPosAttack;
+			ACPS F 1 Bright A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
 			ACPS E 5 A_CPosRefire;
 			Goto Missile;
 		Pain:

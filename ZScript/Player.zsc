@@ -21,7 +21,7 @@ class GWM_Player : DoomPlayer
 		Player.WeaponSlot 3, "GWM_Shotgun", "GWM_IceShotgun", "GWM_SuperShotgun", "GWM_PFSuperShotgun", "GWM_ImpalerCrossbow";
 		Player.WeaponSlot 4, "GWM_Chaingun", "GWM_BurstRifle", "GWM_FrostFang";
 		Player.WeaponSlot 5, "GWM_RocketLauncher", "GWM_VenomCannon";
-		Player.WeaponSlot 6, "GWM_PlasmaRifle", "GWM_Railgun";
+		Player.WeaponSlot 6, "GWM_PlasmaRifle", "GWM_Melter";
 		Player.WeaponSlot 7, "GWM_BFG9000";
 	}
 }

@@ -145,12 +145,10 @@ class GWM_PFSuperShotgun : SuperShotgun
 			PFSH A 1 A_WeaponReady(WRF_ALLOWZOOM);
 			Loop;
 		Deselect:
-			PFSH A 1 A_Lower;
-			PFSH A 0 A_Lower;
+			PFSH A 1 A_Lower(12);
 			Loop;
 		Select:
-			PFSH A 1 A_Raise;
-			PFSH A 0 A_Raise;
+			PFSH A 1 A_Raise(12);
 			TNT1 A 0 {invoker.PFShotDirected = false;} // hacky fix
 			Loop;
 		Fire:

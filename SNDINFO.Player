@@ -74,6 +74,12 @@ $random player/berserk {
 	player/berserk4
 }
 
+$random player/hot {
+	player/hot1
+	player/hot2
+	player/hot3
+}
+
 player/painsharp1			"Sounds/Player/mercenary_painsharp01.wav"
 player/painsharp2			"Sounds/Player/mercenary_painsharp02.wav"
 player/painsharp3			"Sounds/Player/mercenary_painsharp03.wav"
@@ -119,3 +125,7 @@ player/berserk1				"Sounds/Player/mercenary_berserk01.wav"
 player/berserk2				"Sounds/Player/mercenary_berserk02.wav"
 player/berserk3				"Sounds/Player/mercenary_berserk03.wav"
 player/berserk4				"Sounds/Player/mercenary_berserk04.wav"
+
+player/hot1					"Sounds/Player/mercenary_autoonfire01.wav"
+player/hot2					"Sounds/Player/mercenary_autoonfire02.wav"
+player/hot3					"Sounds/Player/mercenary_autoonfire03.wav"

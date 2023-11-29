@@ -25,12 +25,10 @@ Class GWM_FrostFang : Weapon replaces Blaster
 			FSTF CCCCCCCC 1 A_WeaponReady;
 			Goto Ready;
 		Select:
-			FSTF B 1 A_Raise;
-			FSTF B 0 A_Raise;
+			FSTF B 1 A_Raise(12);
 			Loop;
 		Deselect:
-			FSTF B 1 A_Lower;
-			FSTF B 0 A_Lower;
+			FSTF B 1 A_Lower(12);
 			Loop;
 		Fire:
 			FSTF B 3 Bright;
