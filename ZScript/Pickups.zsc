@@ -98,3 +98,50 @@ class GWM_ReflectSphere : PowerupGiver
 			Loop;
 	}
 }
+
+class GWM_Stopwatch : CustomInventory
+{
+	Default
+	{
+		+NOGRAVITY
+		+FLOATBOB
+		+INVENTORY.INVBAR
+		Inventory.Icon "WTCHA0";
+		Tag "Stopwatch";
+		Inventory.MaxAmount 4;
+		Inventory.PickupMessage "Stopwatch!";
+	}
+	States
+	{
+		Spawn:
+			WTCH A -1 Bright;
+			Loop;
+		Use:
+			TNT1 A 0 A_Overlay(PSP_WEAPON, "TimeStop");
+			Wait;
+		TimeStop:
+			TNT1 A 0;
+			WTCH B 35 A_StartSound("powerups/time_stop_start");
+			TNT1 A 0 A_GiveInventory("GWM_StopwatchStopper");
+			WTCH B 7;
+			TNT1 A 0 A_StartSound("powerups/time_stop_end");
+			WTCH B 7;
+			TNT1 A 0 A_TakeInventory("GWM_Stopwatch");
+			Stop;
+	}
+}
+
+class GWM_StopwatchStopper : PowerupGiver
+{
+	Default
+	{
+		-INVENTORY.INVBAR
+		+INVENTORY.QUIET
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.UNDROPPABLE
+		Powerup.Type "PowerTimeFreezer";
+		Powerup.Color "888888", 0.25;
+		Powerup.Colormap 0.5, 0.5, 0.5;
+		Powerup.Duration -12; // 12 seconds
+	}
+}

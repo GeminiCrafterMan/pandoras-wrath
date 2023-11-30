@@ -65,5 +65,12 @@ class MonsterReplacer : StaticEventHandler
 					e.Replacement = "Demon";
 			}
         }
+
+        CVar replaceObjects = CVar.FindCVar('gwm_replaceobjects');
+		if (replaceObjects.getBool())
+		{
+			if (e.Replacee == "ExplosiveBarrel")
+				e.Replacement = "GWM_ExplosiveBarrel";
+		}
     }
 }

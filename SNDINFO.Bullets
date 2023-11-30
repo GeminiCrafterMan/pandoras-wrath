@@ -1,3 +1,4 @@
+// Bullets, be it ricochet or hit.
 $random bullet/ricochet
 {
 	bullet/ricochet1

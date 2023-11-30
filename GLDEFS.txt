@@ -44,10 +44,10 @@ object GWM_Mine
 	frame EXPL { light ZOMBIEATK }
 }
 
-// Baron / Hell Knight fireball
+// Baron fireball
 pointlight GWM_BARONBALL
 {
-    color 0.953 0.451 0.9
+    color 0.953 0.451 0.09
     size 96
 	attenuate 1
 }
@@ -183,13 +183,333 @@ Object MelterBeam
 	Frame VMLP {Light MelterBeamLight}
 }
 
-BrightMap Sprite VMLTA0 { Map VMLTA0 DisableFullBright }
-BrightMap Sprite VMLTB0 { Map VMLTB0 DisableFullBright }
-BrightMap Sprite VMLTC0 { Map VMLTC0 DisableFullBright }
-BrightMap Sprite VMLTD0 { Map VMLTD0 DisableFullBright }
-BrightMap Sprite VMLTE0 { Map VMLTE0 DisableFullBright }
-BrightMap Sprite VMLTF0 { Map VMLTF0 DisableFullBright }
-BrightMap Sprite VMLTG0 { Map VMLTG0 DisableFullBright }
-BrightMap Sprite VMLTH0 { Map VMLTH0 DisableFullBright }
-BrightMap Sprite VMLTI0 { Map VMLTI0 DisableFullBright }
-BrightMap Sprite VMLTJ0 { Map VMLTJ0 DisableFullBright }
+// Explosive barrel
+Brightmap Sprite XBARB1 { Map XBARB0 DisableFullbright }
+Brightmap Sprite XBARB2 { Map XBARB0 DisableFullbright }
+Brightmap Sprite XBARB3 { Map XBARB0 DisableFullbright }
+Brightmap Sprite XBARB4 { Map XBARB0 DisableFullbright }
+Brightmap Sprite XBARB5 { Map XBARB0 DisableFullbright }
+Brightmap Sprite XBARB6 { Map XBARB0 DisableFullbright }
+Brightmap Sprite XBARB7 { Map XBARB0 DisableFullbright }
+Brightmap Sprite XBARB8 { Map XBARB0 DisableFullbright }
+// Baron of Hell
+Brightmap sprite BARNA1 { map BARNa1 }
+Brightmap sprite BARNA2A8 { map BARNa2a8 }
+Brightmap sprite BARNA3A7 { map BARNa3a7 }
+Brightmap sprite BARNA4A6 { map BARNa4a6 }
+Brightmap sprite BARNA5 { map BARNa5 }
+Brightmap sprite BARNb1 { map BARNb1 }
+Brightmap sprite BARNB2B8 { map BARNb2b8 }
+Brightmap sprite BARNB3B7 { map BARNb3b7 }
+Brightmap sprite BARNB4B6 { map BARNb4b6 }
+Brightmap sprite BARNB5 { map BARNb5 }
+Brightmap sprite BARNC1 { map BARNc1 }
+Brightmap sprite BARNC2C8 { map BARNc2c8 }
+Brightmap sprite BARNC3C7 { map BARNc3c7 }
+Brightmap sprite BARNC4C6 { map BARNc4c6 }
+Brightmap sprite BARNC5 { map BARNc5 }
+Brightmap sprite BARND1 { map BARNd1 }
+Brightmap sprite BARND2D8 { map BARNd2d8 }
+Brightmap sprite BARND3D7 { map BARNd3d7 }
+Brightmap sprite BARND4D6 { map BARNd4d6 }
+Brightmap sprite BARND5 { map BARNd5 }
+Brightmap sprite BARNE1 { map BARNe1 }
+Brightmap sprite BARNE2 { map BARNe2 }
+Brightmap sprite BARNE3 { map BARNe3 }
+Brightmap sprite BARNE4 { map BARNe4 }
+Brightmap sprite BARNE5 { map BARNe5 }
+Brightmap sprite BARNE6 { map BARNe6 }
+Brightmap sprite BARNE7 { map BARNe7 }
+Brightmap sprite BARNE8 { map BARNe8 }
+Brightmap sprite BARNF1 { map BARNF1 }
+Brightmap sprite BARNF2 { map BARNF2 }
+Brightmap sprite BARNF3 { map BARNF3 }
+Brightmap sprite BARNF4 { map BARNF4 }
+Brightmap sprite BARNF5 { map BARNF5 }
+Brightmap sprite BARNF6 { map BARNF6 }
+Brightmap sprite BARNF7 { map BARNF7 }
+Brightmap sprite BARNF8 { map BARNF8 }
+Brightmap sprite BARNG1 { map BARNG1 }
+Brightmap sprite BARNG2 { map BARNG2 }
+Brightmap sprite BARNG3 { map BARNG3 }
+Brightmap sprite BARNG4 { map BARNG4 }
+Brightmap sprite BARNG5 { map BARNG5 }
+Brightmap sprite BARNG6 { map BARNG6 }
+Brightmap sprite BARNG7 { map BARNG7 }
+Brightmap sprite BARNG8 { map BARNG8 }
+Brightmap sprite BARNH1 { map BARNH1 }
+Brightmap sprite BARNH2 { map BARNH2 }
+Brightmap sprite BARNH3 { map BARNH3 }
+Brightmap sprite BARNH4 { map BARNH4 }
+Brightmap sprite BARNH5 { map BARNH5 }
+Brightmap sprite BARNH6 { map BARNH6 }
+Brightmap sprite BARNH7 { map BARNH7 }
+Brightmap sprite BARNH8 { map BARNH8 }
+Brightmap sprite BARNI0 { map BARNI0 }
+Brightmap sprite BARNJ0 { map BARNJ0 }
+Brightmap sprite BARNK0 { map BARNK0 }
+Brightmap sprite BARNL0 { map BARNL0 }
+Brightmap sprite BARNM0 { map BARNM0 }
+
+Object GWM_RifleCommando
+{
+Frame ACPSF { Light ZOMBIEATK }
+}
+
+Brightmap Sprite ACPSE1
+{
+Map ACPFTRE1
+DisableFullbright
+}
+
+Brightmap Sprite ACPSE2E8
+{
+Map ACPFTRE2
+DisableFullbright
+}
+
+Brightmap Sprite ACPSE3E7
+{
+Map ACPFTRE3
+DisableFullbright
+}
+
+Brightmap Sprite ACPSE4E6
+{
+Map BMBLACK
+DisableFullbright
+}
+
+Brightmap Sprite ACPSE5
+{
+Map BMBLACK
+DisableFullbright
+}
+
+Brightmap Sprite ACPSF1
+{
+Map ACPFTRF1
+DisableFullbright
+}
+
+Brightmap Sprite ACPSF2F8
+{
+Map ACPFTRF2
+DisableFullbright
+}
+
+Brightmap Sprite ACPSF3F7
+{
+Map ACPFTRF3
+DisableFullbright
+}
+
+Brightmap Sprite ACPSF4F6
+{
+Map ACPFTRF4
+DisableFullbright
+}
+
+Brightmap Sprite ACPSF5
+{
+Map ACPFTRF5
+DisableFullbright
+}
+
+Brightmap Sprite MGPOF1
+{
+    Map BMMGPOF1
+	DisableFullbright
+}
+Brightmap Sprite MGPOF2F8
+{
+    Map BMMGPOF2
+	DisableFullbright
+}
+Brightmap Sprite MGPOF3F7
+{
+    Map BMMGPOF3
+	DisableFullbright
+}
+Brightmap Sprite MGPOF4F6
+{
+    Map BMMGPOF4
+	DisableFullbright
+}
+Brightmap Sprite MGPOF5
+{
+    Map BMMGPOF5
+	DisableFullbright
+}
+
+Object GWM_SMGGuy
+{
+Frame MGPOF { Light ZOMBIEATK }
+}
+
+Brightmap Sprite ISGZE1
+{
+Map BMISGZE1
+DisableFullbright
+}
+
+Brightmap Sprite ISGZE2E8
+{
+Map BMISGZE2
+DisableFullbright
+}
+
+Brightmap Sprite ISGZE3E7
+{
+Map BMISGZE3
+DisableFullbright
+}
+
+Brightmap Sprite ISGZF1
+{
+Map BMISGZF1
+DisableFullbright
+}
+
+Brightmap Sprite ISGZF2F8
+{
+Map BMISGZF2
+DisableFullbright
+}
+
+Brightmap Sprite ISGZF3F7
+{
+Map BMISGZF3
+DisableFullbright
+}
+
+Brightmap Sprite ISGZF4F6
+{
+Map BMISGZF4
+DisableFullbright
+}
+
+Brightmap Sprite ISGZF5
+{
+Map BMISGZF5
+DisableFullbright
+}
+
+Object GWM_IceShotgunGuy
+{
+Frame ISGZF { Light GWM_ICEGUNSATK }
+}
+
+// Weapons
+// Instagibber(?) (Sentinel's Lexicon... The Votegun has no Brightmaps.)
+Brightmap Sprite INKLA0 { Map INKLA0 DisableFullbright }
+Brightmap Sprite INKLB0 { Map INKLB0 DisableFullbright }
+// Levenbrech
+Brightmap Sprite LBREH0 { Map LBREH0 DisableFullbright }
+Brightmap Sprite LBREI0 { Map LBREI0 DisableFullbright }
+Brightmap Sprite LBREJ0 { Map LBREJ0 DisableFullbright }
+Brightmap Sprite LBREK0 { Map LBREK0 DisableFullbright }
+Brightmap Sprite LBREL0 { Map LBREL0 DisableFullbright }
+Brightmap Sprite LBREM0 { Map LBREM0 DisableFullbright }
+Brightmap Sprite LBREN0 { Map LBREN0 DisableFullbright }
+Brightmap Sprite LBREO0 { Map LBREO0 DisableFullbright }
+Brightmap Sprite LBREP0 { Map LBREP0 DisableFullbright }
+// Mines
+Brightmap Sprite MINEA0 { Map MINEA0 DisableFullbright }
+Brightmap Sprite MINEC1 { Map MINEC1 DisableFullbright }
+Brightmap Sprite MINEC2C8 { Map MINED1 DisableFullbright }
+Brightmap Sprite MINEC3C7 { Map MINEC1 DisableFullbright }
+Brightmap Sprite MINEC4C6 { Map MINED1 DisableFullbright }
+Brightmap Sprite MINEC5 { Map MINEC1 DisableFullbright }
+Brightmap Sprite MINED1 { Map MINED1 DisableFullbright }
+Brightmap Sprite MINED2D8 { Map MINEC1 DisableFullbright }
+Brightmap Sprite MINED3D7 { Map MINED1 DisableFullbright }
+Brightmap Sprite MINED4D6 { Map MINEC1 DisableFullbright }
+Brightmap Sprite MINED5 { Map MINED1 DisableFullbright }
+Brightmap Sprite MINEZ0 { Map MINEZ0 DisableFullbright }
+// Pistol
+Brightmap Sprite 92FFA0 { Map 92FFA0 DisableFullbright }
+Brightmap Sprite 92FFB0 { Map 92FFB0 DisableFullbright }
+// SMG
+Brightmap Sprite SMGGA0 { Map SMGGA0 DisableFullbright }
+Brightmap Sprite SMGFA0 { Map SMGFA0 DisableFullbright }
+Brightmap Sprite SMGFB0 { Map SMGFB0 DisableFullbright }
+Brightmap Sprite SMGGZ0 { Map SMGGZ0 DisableFullbright }
+// Gold Wand
+Brightmap Sprite WNDWA0 { Map WNDWA0 DisableFullbright }
+Brightmap Sprite WNDWB0 { Map WNDWB0 DisableFullbright }
+Brightmap Sprite WNDWC0 { Map WNDWC0 DisableFullbright }
+Brightmap Sprite WNDWD0 { Map WNDWD0 DisableFullbright }
+Brightmap Sprite WNDWZ0 { Map WNDWZ0 DisableFullbright }
+// Impaler Crossbow
+// P.F. Super Shotgun
+Brightmap Sprite PFSHA0 { Map PFSHA0 DisableFullbright }
+Brightmap Sprite PFSHB0 { Map PFSHB0L0 DisableFullbright }
+Brightmap Sprite PFSHC0 { Map PFSHC0 DisableFullbright }
+Brightmap Sprite PFSHD0 { Map PFSHD0 DisableFullbright }
+Brightmap Sprite PFSHE0 { Map PFSHE0 DisableFullbright }
+Brightmap Sprite PFSHF0 { Map PFSHF0 DisableFullbright }
+Brightmap Sprite PFSHG0 { Map PFSHG0 DisableFullbright }
+Brightmap Sprite PFSHH0 { Map PFSHH0 DisableFullbright }
+Brightmap Sprite PFSHI0 { Map PFSHI0 DisableFullbright }
+Brightmap Sprite PFSHJ0 { Map PFSHJ0 DisableFullbright }
+Brightmap Sprite PFSHK0 { Map PFSHK0 DisableFullbright }
+Brightmap Sprite PFSHL0 { Map PFSHB0L0 DisableFullbright }
+Brightmap Sprite PFSHM0 { Map PFSHM0 DisableFullbright }
+Brightmap Sprite PFSHZ0 { Map PFSHZ0 DisableFullbright }
+// Slayer's Kahuna
+Brightmap Sprite SKSFA0 { Map SKSFA0 DisableFullbright }
+Brightmap Sprite SKSFB0 { Map SKSFB0 DisableFullbright }
+Brightmap Sprite SKSGA0 { Map SKSGA0 DisableFullbright }
+Brightmap Sprite SKSGB0 { Map SKSGB0 DisableFullbright }
+Brightmap Sprite SKSGC0 { Map SKSGC0 DisableFullbright }
+Brightmap Sprite SKSGD0 { Map SKSGD0 DisableFullbright }
+Brightmap Sprite SKSGE0 { Map SKSGE0 DisableFullbright }
+Brightmap Sprite SKSGF0 { Map SKSGPUMP DisableFullbright }
+Brightmap Sprite SKSGG0 { Map SKSGPUMP DisableFullbright }
+Brightmap Sprite SKSGH0 { Map SKSGPUMP DisableFullbright }
+Brightmap Sprite SKSGZ0 { Map SKSGZ0 DisableFullbright }
+// Super Shotgun
+Brightmap Sprite SSGFA0 { Map SSGFA0 DisableFullbright }
+Brightmap Sprite SSGFB0 { Map SSGFB0 DisableFullbright }
+Brightmap Sprite SSGGA0 { Map SSGGA0 DisableFullbright }
+Brightmap Sprite SSGGZ0 { Map SSGGZ0 DisableFullbright }
+// Burst Rifle
+Brightmap Sprite RIFLA0 { Map RIFLA0 DisableFullbright }
+Brightmap Sprite RIFLB0 { Map RIFLB0 DisableFullbright }
+Brightmap Sprite RIFLC0 { Map RIFLC0 DisableFullbright }
+Brightmap Sprite RIFLZ0 { Map RIFLZ0 DisableFullbright }
+// Chaingun
+Brightmap Sprite CHGFA0 { Map CHGFA0 DisableFullbright }
+Brightmap Sprite CHGFB0 { Map CHGFB0 DisableFullbright }
+Brightmap Sprite CHGFC0 { Map CHGFC0 DisableFullbright }
+Brightmap Sprite CHGFD0 { Map CHGFD0 DisableFullbright }
+Brightmap Sprite CHGFE0 { Map CHGFE0 DisableFullbright }
+Brightmap Sprite CHGFF0 { Map CHGFF0 DisableFullbright }
+Brightmap Sprite CHGFG0 { Map CHGFG0 DisableFullbright }
+Brightmap Sprite CHGFH0 { Map CHGFH0 DisableFullbright }
+// Frost Fang
+// Rocket Launcher
+Brightmap Sprite RKTLA0 { Map RKTLA0 DisableFullbright }
+Brightmap Sprite RKTLZ0 { Map RKTLZ0 DisableFullbright }
+// Venom Cannon
+Brightmap Sprite VNMGA0 { Map VNMGA0 DisableFullbright }
+Brightmap Sprite VNMGB0 { Map VNMGB0 DisableFullbright }
+Brightmap Sprite VNMGZ0 { Map VNMGZ0 DisableFullbright }
+// Melter
+Brightmap Sprite VMLTA0 { Map VMLTA0 DisableFullbright }
+Brightmap Sprite VMLTB0 { Map VMLTB0 DisableFullbright }
+Brightmap Sprite VMLTC0 { Map VMLTC0 DisableFullbright }
+Brightmap Sprite VMLTD0 { Map VMLTD0 DisableFullbright }
+Brightmap Sprite VMLTE0 { Map VMLTE0 DisableFullbright }
+Brightmap Sprite VMLTF0 { Map VMLTF0 DisableFullbright }
+Brightmap Sprite VMLTG0 { Map VMLTG0 DisableFullbright }
+Brightmap Sprite VMLTH0 { Map VMLTH0 DisableFullbright }
+Brightmap Sprite VMLTI0 { Map VMLTI0 DisableFullbright }
+Brightmap Sprite VMLTJ0 { Map VMLTJ0 DisableFullbright }
+// Plasma Rifle
+// BFG9000
+Brightmap Sprite BFUGA0 { Map BFUGA0 DisableFullbright }
+Brightmap Sprite BFUGB0 { Map BFUGB0 DisableFullbright }
+Brightmap Sprite BFUGC0 { Map BFUGC0 DisableFullbright }
+Brightmap Sprite BFUGZ0 { Map BFUGZ0 DisableFullbright }

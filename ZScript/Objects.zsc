@@ -1,4 +1,4 @@
-class GWM_ExplosiveBarrel : ExplosiveBarrel replaces ExplosiveBarrel
+class GWM_ExplosiveBarrel : ExplosiveBarrel
 {
 	Default
 	{
@@ -12,7 +12,7 @@ class GWM_ExplosiveBarrel : ExplosiveBarrel replaces ExplosiveBarrel
 			XBAR A -1;
 			Stop;
 		Death:
-			XBAR B 10 Bright;
+			XBAR B 10;
 			TNT1 A 0 {
 				A_Scream();
 				A_Explode();

@@ -27,19 +27,22 @@ class GWM_Icebreaker : Weapon
 			Loop;
 		Fire:
 			IBRK A 2 A_StartSound("weapons/drillup", CHAN_BODY);
-			IBRK AABBBBCCCBBBAABBCB 2;
+			IBRK AABBBBCCCDDDAABBCD 2;
 			IBRK A 0 {A_StartSound("weapons/drillloop", CHAN_BODY, CHANF_LOOPING); A_ReFire();}
 		Hold:
 			IBRK A 2 A_Saw("", "weapons/drillhit", 3, "ZBulletPuff");
 			IBRK B 2;
+			IBRK A 0 A_ReFire("Hold2");
+			Goto Release;
+		Hold2:
 			IBRK C 2 A_Saw("", "weapons/drillhit", 3, "ZBulletPuff");
-			IBRK B 2;
-			IBRK A 0 A_ReFire;
+			IBRK D 2;
+			IBRK A 0 A_ReFire("Hold");
 			Goto Release;
 		Release:
 			IBRK # 0 A_StopSound(CHAN_BODY);
 			IBRK # 2 A_StartSound("weapons/drilldown", CHAN_BODY);
-			IBRK BCBBAABBBCCCBBBBAAA 1;
+			IBRK BCDDAABBBCCCDDDDAAA 1;
 			Goto Ready;
 	}
 }
