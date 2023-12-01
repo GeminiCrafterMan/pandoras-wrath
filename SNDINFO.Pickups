@@ -13,4 +13,4 @@ misc/w_pkup					"Sounds/Pickups/Weapon.wav"
 
 // Powerups
 powerups/time_stop_start	"Sounds/Powerups/time_stop_start.wav"
-powerups/time_stop_end		"Sounds/Powerups/time_stop_start.wav"
+powerups/time_stop_end		"Sounds/Powerups/time_stop_end.wav"

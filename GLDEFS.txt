@@ -324,6 +324,24 @@ Brightmap Sprite WNDWC0 { Map WNDWC0 DisableFullbright }
 Brightmap Sprite WNDWD0 { Map WNDWD0 DisableFullbright }
 Brightmap Sprite WNDWZ0 { Map WNDWZ0 DisableFullbright }
 // Impaler Crossbow
+Brightmap Sprite ARRWB1 { Map ARRWB1 DisableFullbright }
+Brightmap Sprite ARRWB2B8 { Map ARRWB2B8 DisableFullbright }
+Brightmap Sprite ARRWB3B7 { Map ARRWB3B7 DisableFullbright }
+Brightmap Sprite ARRWB4B6 { Map ARRWB4B6 DisableFullbright }
+Brightmap Sprite ARRWB5 { Map ARRWB5 DisableFullbright }
+Brightmap Sprite CBOWA0 { Map CBOWA0 DisableFullbright }
+Brightmap Sprite CBOWB0 { Map CBOWB0 DisableFullbright }
+Brightmap Sprite CBOWC0 { Map CBOWC0 DisableFullbright }
+Brightmap Sprite CBOWD0 { Map CBOWD0 DisableFullbright }
+Brightmap Sprite CBOWE0 { Map CBOWE0 DisableFullbright }
+Brightmap Sprite CBOWF0 { Map CBOWF0 DisableFullbright }
+Brightmap Sprite CBOWG0 { Map CBOWG0 DisableFullbright }
+Brightmap Sprite CBOWH0 { Map CBOWH0 DisableFullbright }
+Brightmap Sprite CBOWI0 { Map CBOWI0 DisableFullbright }
+Brightmap Sprite CBOWJ0 { Map CBOWJ0 DisableFullbright }
+Brightmap Sprite CBOWK0 { Map CBOWK0 DisableFullbright }
+Brightmap Sprite CBOWL0 { Map CBOWL0 DisableFullbright }
+Brightmap Sprite CBOWZ0 { Map CBOWZ0 DisableFullbright }
 // P.F. Super Shotgun
 Brightmap Sprite PFSHA0 { Map PFSHA0 DisableFullbright }
 Brightmap Sprite PFSHB0 { Map PFSHB0L0 DisableFullbright }
@@ -371,6 +389,11 @@ Brightmap Sprite CHGFF0 { Map CHGFF0 DisableFullbright }
 Brightmap Sprite CHGFG0 { Map CHGFG0 DisableFullbright }
 Brightmap Sprite CHGFH0 { Map CHGFH0 DisableFullbright }
 // Frost Fang
+Brightmap Sprite FSTFA0 { Map FSTFA0 DisableFullbright }
+Brightmap Sprite FSTFB0 { Map FSTFB0 DisableFullbright }
+Brightmap Sprite FSTFC0 { Map FSTFC0 DisableFullbright }
+Brightmap Sprite FSTFD0 { Map FSTFD0 DisableFullbright }
+Brightmap Sprite FSTFE0 { Map FSTFE0 DisableFullbright }
 // Rocket Launcher
 Brightmap Sprite RKTLA0 { Map RKTLA0 DisableFullbright }
 Brightmap Sprite RKTLZ0 { Map RKTLZ0 DisableFullbright }
