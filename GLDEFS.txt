@@ -1,171 +1,164 @@
 flickerlight2 GWM_ICEGUNSATK
 {
-    color 0.75 0.75 1.0
-    size 72
-    secondarySize 84
-    interval 1
-    offset 0 40 0
+	color 0.75 0.75 1.0
+	size 72
+	secondarySize 84
+	interval 1
+	offset 0 40 0
 	attenuate 1
 }
 
 flickerlight2 GWM_PLASMAGUNATK
 {
-    color 0.451 0.894 1.0
-    size 72
-    secondarySize 84
-    interval 1
-    offset 0 40 0
+	color 0.451 0.894 1.0
+	size 72
+	secondarySize 84
+	interval 1
+	offset 0 40 0
 	attenuate 1
 }
 
-object GWM_Flash
-{
+object GWM_Flash {
 	frame TNT1A { light ZOMBIEATK }
 }
-object GWM_IceFlash
-{
+object GWM_IceFlash {
 	frame TNT1A { light GWM_ICEGUNSATK }
 }
-object GWM_PlasmaFlash
-{
+object GWM_PlasmaFlash {
 	frame TNT1A { light GWM_PLASMAGUNATK }
 }
 
-object GWM_Rocket
-{
+object GWM_Rocket {
 	frame EXPL { light ZOMBIEATK }
 }
-object GWM_Grenade
-{
+object GWM_Grenade {
 	frame EXPL { light ZOMBIEATK }
 }
-object GWM_Mine
-{
+object GWM_Mine {
 	frame EXPL { light ZOMBIEATK }
 }
 
 // Baron fireball
 pointlight GWM_BARONBALL
 {
-    color 0.953 0.451 0.09
-    size 96
+	color 0.953 0.451 0.09
+	size 96
 	attenuate 1
 }
 flickerlight GWM_BARONBALL_X1
 {
-    color 0.765 0.31 0.0
-    size 120
-    secondarySize 132
-    chance 0.25
+	color 0.765 0.31 0.0
+	size 120
+	secondarySize 132
+	chance 0.25
 	attenuate 1
 }
 flickerlight GWM_BARONBALL_X2
 {
-    color 0.576 0.184 0.0
-    size 144
-    secondarySize 156
-    chance 0.25
+	color 0.576 0.184 0.0
+	size 144
+	secondarySize 156
+	chance 0.25
 	attenuate 1
 }
 flickerlight GWM_BARONBALL_X3
 {
-    color 0.451 0.0 0.0
-    size 168
-    secondarySize 180
-    chance 0.25
+	color 0.451 0.0 0.0
+	size 168
+	secondarySize 180
+	chance 0.25
 	attenuate 1
 }
 object GWM_BaronBall
 {
-    frame BARBA {light GWM_BARONBALL}
-    frame BARBB {light GWM_BARONBALL}
-
-    frame BARBC {light GWM_BARONBALL_X1}
-    frame BARBD {light GWM_BARONBALL_X2}
-    frame BARBE {light GWM_BARONBALL_X3}
+	frame BARBA {light GWM_BARONBALL}
+	frame BARBB {light GWM_BARONBALL}
+	frame BARBC {light GWM_BARONBALL_X1}
+	frame BARBD {light GWM_BARONBALL_X2}
+	frame BARBE {light GWM_BARONBALL_X3}
 }
 
 PulseLight FrostFangShard1
 {
-Color 0.0 0.0 0.4
-Size 24
-SecondarySize 32
-Interval 3.0
+	Color 0.0 0.0 0.4
+	Size 24
+	SecondarySize 32
+	Interval 3.0
 }
 PointLight FrostFangShard2
 {
-Color 0.0 0.0 0.5
-Size 32
+	Color 0.0 0.0 0.5
+	Size 32
 }
 PointLight FrostFangShard3
 {
-Color 0.0 0.0 0.7
-Size 40
+	Color 0.0 0.0 0.7
+	Size 40
 }
 PointLight FrostFangShard4
 {
-Color 0.0 0.0 0.55
-Size 44
+	Color 0.0 0.0 0.55
+	Size 44
 }
 PointLight FrostFangShard5
 {
-Color 0.0 0.0 0.3
-Size 28
+	Color 0.0 0.0 0.3
+	Size 28
 }
 PointLight FrostFangShard6
 {
-Color 0.0 0.0 0.1
-Size 16
+	Color 0.0 0.0 0.1
+	Size 16
 }
 PointLight FrostFangBall1
 {
-Color 0.5 0.5 1.0
-Size 64
+	Color 0.5 0.5 1.0
+	Size 64
 }
 PointLight FrostFangBall2
 {
-Color 0.7 0.7 1.0
-Size 64
+	Color 0.7 0.7 1.0
+	Size 64
 }
 PointLight FrostFangBall3
 {
-Color 0.7 0.7 1.0
-Size 72
+	Color 0.7 0.7 1.0
+	Size 72
 }
 PointLight FrostFangBall4
 {
-Color 0.4 0.4 1.0
-Size 64
+	Color 0.4 0.4 1.0
+	Size 64
 }
 PointLight FrostFangBall5
 {
-Color 0.3 0.3 0.5
-Size 48
+	Color 0.3 0.3 0.5
+	Size 48
 }
 PointLight FrostFangBall6
 {
-Color 0.1 0.1 0.3
-Size 32
+	Color 0.1 0.1 0.3
+	Size 32
 }
 Object FrostFangShard
 {
-Frame FFSDA { Light FrostFangShard1 }
-Frame FFSDB { Light FrostFangShard1 }
-Frame FFSDC { Light FrostFangShard1 }
-Frame FFSDD { Light FrostFangShard2 }
-Frame FFSDE { Light FrostFangShard3 }
-Frame FFSDF { Light FrostFangShard4 }
-Frame FFSDG { Light FrostFangShard5 }
-Frame FFSDH { Light FrostFangShard6 }
+	Frame FFSDA { Light FrostFangShard1 }
+	Frame FFSDB { Light FrostFangShard1 }
+	Frame FFSDC { Light FrostFangShard1 }
+	Frame FFSDD { Light FrostFangShard2 }
+	Frame FFSDE { Light FrostFangShard3 }
+	Frame FFSDF { Light FrostFangShard4 }
+	Frame FFSDG { Light FrostFangShard5 }
+	Frame FFSDH { Light FrostFangShard6 }
 }
 Object FrostFangBall
 {
-Frame TNT1 { Light FrostFangBall1 }
-Frame FFBLC { Light FrostFangBall2 }
-Frame FFBLD { Light FrostFangBall3 }
-Frame FFBLE { Light FrostFangBall4 }
-Frame FFBLF { Light FrostFangBall5 }
-Frame FFBLG { Light FrostFangBall6 }
+	Frame TNT1 { Light FrostFangBall1 }
+	Frame FFBLC { Light FrostFangBall2 }
+	Frame FFBLD { Light FrostFangBall3 }
+	Frame FFBLE { Light FrostFangBall4 }
+	Frame FFBLF { Light FrostFangBall5 }
+	Frame FFBLG { Light FrostFangBall6 }
 }
 
 Flickerlight MelterBeamLight
@@ -253,152 +246,41 @@ Brightmap sprite BARNM0 { map BARNM0 }
 
 Object GWM_RifleCommando
 {
-Frame ACPSF { Light ZOMBIEATK }
+	Frame ACPSF { Light ZOMBIEATK }
 }
-
-Brightmap Sprite ACPSE1
-{
-Map ACPFTRE1
-DisableFullbright
-}
-
-Brightmap Sprite ACPSE2E8
-{
-Map ACPFTRE2
-DisableFullbright
-}
-
-Brightmap Sprite ACPSE3E7
-{
-Map ACPFTRE3
-DisableFullbright
-}
-
-Brightmap Sprite ACPSE4E6
-{
-Map BMBLACK
-DisableFullbright
-}
-
-Brightmap Sprite ACPSE5
-{
-Map BMBLACK
-DisableFullbright
-}
-
-Brightmap Sprite ACPSF1
-{
-Map ACPFTRF1
-DisableFullbright
-}
-
-Brightmap Sprite ACPSF2F8
-{
-Map ACPFTRF2
-DisableFullbright
-}
-
-Brightmap Sprite ACPSF3F7
-{
-Map ACPFTRF3
-DisableFullbright
-}
-
-Brightmap Sprite ACPSF4F6
-{
-Map ACPFTRF4
-DisableFullbright
-}
-
-Brightmap Sprite ACPSF5
-{
-Map ACPFTRF5
-DisableFullbright
-}
-
-Brightmap Sprite MGPOF1
-{
-    Map BMMGPOF1
-	DisableFullbright
-}
-Brightmap Sprite MGPOF2F8
-{
-    Map BMMGPOF2
-	DisableFullbright
-}
-Brightmap Sprite MGPOF3F7
-{
-    Map BMMGPOF3
-	DisableFullbright
-}
-Brightmap Sprite MGPOF4F6
-{
-    Map BMMGPOF4
-	DisableFullbright
-}
-Brightmap Sprite MGPOF5
-{
-    Map BMMGPOF5
-	DisableFullbright
-}
+Brightmap Sprite ACPSE1 { Map ACPFTRE1 DisableFullbright }
+Brightmap Sprite ACPSE2E8 { Map ACPFTRE2 DisableFullbright }
+Brightmap Sprite ACPSE3E7 { Map ACPFTRE3 DisableFullbright }
+Brightmap Sprite ACPSE4E6 { Map BMBLACK DisableFullbright }
+Brightmap Sprite ACPSE5 { Map BMBLACK DisableFullbright }
+Brightmap Sprite ACPSF1 { Map ACPFTRF1 DisableFullbright }
+Brightmap Sprite ACPSF2F8 { Map ACPFTRF2 DisableFullbright }
+Brightmap Sprite ACPSF3F7 { Map ACPFTRF3 DisableFullbright }
+Brightmap Sprite ACPSF4F6 { Map ACPFTRF4 DisableFullbright }
+Brightmap Sprite ACPSF5 { Map ACPFTRF5 DisableFullbright }
 
 Object GWM_SMGGuy
 {
-Frame MGPOF { Light ZOMBIEATK }
+	Frame MGPOF { Light ZOMBIEATK }
 }
-
-Brightmap Sprite ISGZE1
-{
-Map BMISGZE1
-DisableFullbright
-}
-
-Brightmap Sprite ISGZE2E8
-{
-Map BMISGZE2
-DisableFullbright
-}
-
-Brightmap Sprite ISGZE3E7
-{
-Map BMISGZE3
-DisableFullbright
-}
-
-Brightmap Sprite ISGZF1
-{
-Map BMISGZF1
-DisableFullbright
-}
-
-Brightmap Sprite ISGZF2F8
-{
-Map BMISGZF2
-DisableFullbright
-}
-
-Brightmap Sprite ISGZF3F7
-{
-Map BMISGZF3
-DisableFullbright
-}
-
-Brightmap Sprite ISGZF4F6
-{
-Map BMISGZF4
-DisableFullbright
-}
-
-Brightmap Sprite ISGZF5
-{
-Map BMISGZF5
-DisableFullbright
-}
+Brightmap Sprite MGPOF1 { Map BMMGPOF1 DisableFullbright }
+Brightmap Sprite MGPOF2F8 { Map BMMGPOF2 DisableFullbright }
+Brightmap Sprite MGPOF3F7 { Map BMMGPOF3 DisableFullbright }
+Brightmap Sprite MGPOF4F6 { Map BMMGPOF4 DisableFullbright }
+Brightmap Sprite MGPOF5 { Map BMMGPOF5 DisableFullbright }
 
 Object GWM_IceShotgunGuy
 {
-Frame ISGZF { Light GWM_ICEGUNSATK }
+	Frame ISGZF { Light GWM_ICEGUNSATK }
 }
+Brightmap Sprite ISGZE1 { Map BMISGZE1 DisableFullbright }
+Brightmap Sprite ISGZE2E8 { Map BMISGZE2 DisableFullbright }
+Brightmap Sprite ISGZE3E7 { Map BMISGZE3 DisableFullbright }
+Brightmap Sprite ISGZF1 { Map BMISGZF1 DisableFullbright }
+Brightmap Sprite ISGZF2F8 { Map BMISGZF2 DisableFullbright }
+Brightmap Sprite ISGZF3F7 { Map BMISGZF3 DisableFullbright }
+Brightmap Sprite ISGZF4F6 { Map BMISGZF4 DisableFullbright }
+Brightmap Sprite ISGZF5 { Map BMISGZF5 DisableFullbright }
 
 // Weapons
 // Instagibber(?) (Sentinel's Lexicon... The Votegun has no Brightmaps.)
@@ -426,7 +308,7 @@ Brightmap Sprite MINED2D8 { Map MINEC1 DisableFullbright }
 Brightmap Sprite MINED3D7 { Map MINED1 DisableFullbright }
 Brightmap Sprite MINED4D6 { Map MINEC1 DisableFullbright }
 Brightmap Sprite MINED5 { Map MINED1 DisableFullbright }
-Brightmap Sprite MINEZ0 { Map MINEZ0 DisableFullbright }
+Brightmap Sprite MINEZ0 { Map BMMINEZ0 DisableFullbright }
 // Pistol
 Brightmap Sprite 92FFA0 { Map 92FFA0 DisableFullbright }
 Brightmap Sprite 92FFB0 { Map 92FFB0 DisableFullbright }
@@ -508,6 +390,19 @@ Brightmap Sprite VMLTH0 { Map VMLTH0 DisableFullbright }
 Brightmap Sprite VMLTI0 { Map VMLTI0 DisableFullbright }
 Brightmap Sprite VMLTJ0 { Map VMLTJ0 DisableFullbright }
 // Plasma Rifle
+Brightmap Sprite PLSFA0 { Map PLSFA0 DisableFullbright }
+Brightmap Sprite PLSFB0 { Map PLSFB0 DisableFullbright }
+Brightmap Sprite PLSFC0 { Map PLSFC0 DisableFullbright }
+Brightmap Sprite PLSGA0 { Map PLSGA0 DisableFullbright }
+Brightmap Sprite PLSGB0 { Map PLSGB0 DisableFullbright }
+Brightmap Sprite PLSGC0 { Map PLSGC0 DisableFullbright }
+Brightmap Sprite PLSGD0 { Map PLSGD0 DisableFullbright }
+Brightmap Sprite PLSGE0 { Map PLSGE0 DisableFullbright }
+Brightmap Sprite PLSGF0 { Map PLSGF0 DisableFullbright }
+Brightmap Sprite PLSGG0 { Map PLSGG0 DisableFullbright }
+Brightmap Sprite PLSGH0 { Map PLSGH0 DisableFullbright }
+Brightmap Sprite PLSGI0 { Map PLSGI0 DisableFullbright }
+Brightmap Sprite PLSGZ0 { Map PLSGZ0 DisableFullbright }
 // BFG9000
 Brightmap Sprite BFUGA0 { Map BFUGA0 DisableFullbright }
 Brightmap Sprite BFUGB0 { Map BFUGB0 DisableFullbright }

@@ -101,6 +101,7 @@ class GWM_ReflectSphere : PowerupGiver
 
 class GWM_Stopwatch : CustomInventory
 {
+	Weapon prevweapon;
 	Default
 	{
 		+NOGRAVITY
@@ -108,7 +109,7 @@ class GWM_Stopwatch : CustomInventory
 		+INVENTORY.INVBAR
 		Inventory.Icon "WTCHA0";
 		Tag "Stopwatch";
-		Inventory.MaxAmount 4;
+		Inventory.MaxAmount 1;
 		Inventory.PickupMessage "Stopwatch!";
 	}
 	States
@@ -117,20 +118,48 @@ class GWM_Stopwatch : CustomInventory
 			WTCH A -1 Bright;
 			Loop;
 		Use:
-			TNT1 A 0 A_Overlay(PSP_WEAPON, "TimeStop");
-			Wait;
-		TimeStop:
-			TNT1 A 0;
-			WTCH B 35 A_StartSound("powerups/time_stop_start");
-			TNT1 A 0 A_GiveInventory("GWM_StopwatchStopper");
-			WTCH B 7;
-			TNT1 A 0 A_StartSound("powerups/time_stop_end");
-			WTCH B 7;
-			TNT1 A 0 A_TakeInventory("GWM_Stopwatch");
+			WTCH A 0 {
+				invoker.prevweapon = player.readyweapon;
+				A_GiveInventory("GWM_StopwatchAnimation");
+			}
+			WTCH A 0 A_SelectWeapon("GWM_StopwatchAnimation");
+			WTCH B 35;
+			WTCH A 7;
+			WTCH A 7;
+			WTCH A 0;
+			Goto Exit;
+		Exit:
+			WTCH A 0;
 			Stop;
 	}
 }
-
+class GWM_StopwatchAnimation : Weapon
+{
+	Default
+	{
+		Tag "Stopwatch";
+	}
+	States
+	{
+		Select:
+			WTCH B 1 A_Raise(12);
+			Loop; // goes to Ready
+		Ready:
+		Fire:
+			WTCH B 35 A_StartSound("powerups/time_stop_start");
+			TNT1 A 0 A_GiveInventory("GWM_StopwatchStopper");
+			WTCH B 7;
+			TNT1 A 0 {
+				A_StartSound("powerups/time_stop_end");
+				A_TakeInventory("GWM_StopwatchAnimation");
+//				player.pendingweapon = invoker.prevweapon;
+			}
+			Stop;
+		Deselect:
+			WTCH B 1 A_Lower(12);
+			Loop;
+	}
+}
 class GWM_StopwatchStopper : PowerupGiver
 {
 	Default
@@ -140,8 +169,8 @@ class GWM_StopwatchStopper : PowerupGiver
 		+INVENTORY.AUTOACTIVATE
 		+INVENTORY.UNDROPPABLE
 		Powerup.Type "PowerTimeFreezer";
-		Powerup.Color "888888", 0.25;
-		Powerup.Colormap 0.5, 0.5, 0.5;
-		Powerup.Duration -12; // 12 seconds
+//		Powerup.Color "888888", 0.5;
+		Powerup.Colormap 0.0, 0.0, 0.0, 0.5, 0.5, 0.5;
+		Powerup.Duration -15; // 12 seconds
 	}
 }

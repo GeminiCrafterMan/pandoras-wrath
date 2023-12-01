@@ -110,6 +110,7 @@ class GWM_ThrownMine : Actor // Okay, so like, I was going to do this myself, bu
 			MINE ### 2 A_StartSound("weapons/minedet");
 		Bounce.Actor:
 		Death:
+			EXPL A 1 Bright; // so it won't explode in timestop
 			TNT1 A 0 {
 				bSPECIAL = false;
 				bMISSILE = true;
@@ -121,7 +122,7 @@ class GWM_ThrownMine : Actor // Okay, so like, I was going to do this myself, bu
 				A_SetRenderstyle(alpha, STYLE_Add);
 				A_Explode();
 			}
-			EXPL ABCDEFGHIJ 1 Bright;
+			EXPL BCDEFGHIJ 1 Bright;
 			Stop;
 		Disarm:
 			TNT1 A 0 A_SpawnItemEx("GWM_MineAmmo");
