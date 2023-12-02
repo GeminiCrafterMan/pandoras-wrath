@@ -15,10 +15,11 @@ class PlayerSpawnLines : StaticEventHandler
     }
 }
 
-class MonsterReplacer : StaticEventHandler
+class ThingReplacer : StaticEventHandler
 {
     override void CheckReplacement(ReplaceEvent e)
     {
+		// Monsters
         CVar replaceMonsters = CVar.FindCVar('gwm_replacemonsters');
         if (replaceMonsters.GetBool())
         {
@@ -66,6 +67,7 @@ class MonsterReplacer : StaticEventHandler
 			}
         }
 
+		// Objects
         CVar replaceObjects = CVar.FindCVar('gwm_replaceobjects');
 		if (replaceObjects.getBool())
 		{

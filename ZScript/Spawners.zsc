@@ -1,211 +1,130 @@
-class GWM_WeaponSpawner : Actor
+class GWM_WeaponSpawner : RandomSpawner
 {
-	States
+	override void BeginPlay()
 	{
-		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf((random(0, 2)%2), "Spawn_Mine");
-			TNT1 A 0 {return ResolveState("Spawn2");}
-		Spawn_Mine:
-			TNT1 A 0 A_SpawnItemEx("GWM_Mine");
-			TNT1 A 0 {return ResolveState("Spawn2");}
-		Spawn2:
-			Stop;
+		Super.BeginPlay();
+		if (random(0,2) == 2)
+			Spawn("GWM_Mine", self.pos);
 	}
 }
 
 class GWM_ShellSpawner : GWM_WeaponSpawner replaces Shell
 {
-	States
+	Default
 	{
-		Spawn2:
-			TNT1 A 0 A_JumpIf(random(0, 1), "Spawn_Shell");
-		Spawn_IceShell:
-			TNT1 A 0 A_SpawnItemEx("GWM_IceShell");
-			Stop;
-		Spawn_Shell:
-			TNT1 A 0 A_SpawnItemEx("GWM_Shell");
-			Stop;
+		DropItem "GWM_Shell";
+		DropItem "GWM_IceShell";
 	}
 }
 class GWM_ShellBoxSpawner : GWM_WeaponSpawner replaces ShellBox
 {
-	States
+	Default
 	{
-		Spawn2:
-			TNT1 A 0 A_JumpIf(random(0, 1), "Spawn_ShellBox");
-		Spawn_IceShellBox:
-			TNT1 A 0 A_SpawnItemEx("GWM_IceShellBox");
-			Stop;
-		Spawn_ShellBox:
-			TNT1 A 0 A_SpawnItemEx("GWM_ShellBox");
-			Stop;
+		DropItem "GWM_ShellBox";
+		DropItem "GWM_IceShellBox";
 	}
 }
 
 class GWM_RocketAmmoSpawner : GWM_WeaponSpawner replaces RocketAmmo
 {
-	States
+	Default
 	{
-		Spawn2:
-			TNT1 A 0 A_JumpIf(random(0, 1), "Spawn_RocketAmmo");
-		Spawn_VenomVial:
-			TNT1 A 0 A_SpawnItemEx("GWM_VenomVial");
-			Stop;
-		Spawn_RocketAmmo:
-			TNT1 A 0 A_SpawnItemEx("GWM_RocketAmmo");
-			Stop;
+		DropItem "GWM_RocketAmmo";
+		DropItem "GWM_VenomVial";
 	}
 }
 class GWM_RocketBoxSpawner : GWM_WeaponSpawner replaces RocketBox
 {
-	States
+	Default
 	{
-		Spawn2:
-			TNT1 A 0 A_JumpIf(random(0, 1), "Spawn_RocketBox");
-		Spawn_LargeVenomVial:
-			TNT1 A 0 A_SpawnItemEx("GWM_LargeVenomVial");
-			Stop;
-		Spawn_RocketBox:
-			TNT1 A 0 A_SpawnItemEx("GWM_RocketBox");
-			Stop;
+		DropItem "GWM_RocketBox";
+		DropItem "GWM_LargeVenomVial";
 	}
 }
 
-class GWM_CellPackSpawner : Actor replaces CellPack
+class GWM_CellPackSpawner : RandomSpawner replaces CellPack
 {
-	States
+	override void BeginPlay()
 	{
-		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf((random(0, 8)%8), "Spawn2");
-		Spawn_Heatsink:
-			TNT1 A 0 A_SpawnItemEx("GWM_MelterHeatsink");
-		Spawn2:
-			TNT1 A 0 A_SpawnItemEx("GWM_CellPack");
-			Stop;
+		Super.BeginPlay();
+		if (random(0,4) == 4)
+			Spawn("GWM_MelterHeatsink", self.pos);
+	}
+	Default
+	{
+		DropItem "GWM_CellPack";
 	}
 }
 
 class GWM_ChainsawSpawner : GWM_WeaponSpawner replaces Chainsaw
 {
-	States
+	Default
 	{
-		Spawn2:
-			TNT1 A 0 A_JumpIf(random(0, 1), "Spawn_Impactor");
-		Spawn_Icebreaker:
-			TNT1 A 0 A_SpawnItemEx("GWM_Icebreaker");
-			Stop;
-		Spawn_Impactor:
-			TNT1 A 0 A_SpawnItemEx("GWM_Impactor");
-			Stop;
+		DropItem "GWM_Impactor";
+		DropItem "GWM_Icebreaker";
 	}
 }
 
 class GWM_ShotgunSpawner : GWM_WeaponSpawner replaces Shotgun
 {
-	States
+	Default
 	{
-		Spawn2:
-			TNT1 A 0 A_JumpIf(random(0, 1), "Spawn_Shotgun");
-		Spawn_IceShotgun:
-			TNT1 A 0 A_SpawnItemEx("GWM_IceShotgun");
-			Stop;
-		Spawn_Shotgun:
-			TNT1 A 0 A_SpawnItemEx("GWM_Shotgun");
-			Stop;
+		DropItem "GWM_Shotgun";
+		DropItem "GWM_IceShotgun";
 	}
 }
 
 class GWM_SuperShotgunSpawner : GWM_WeaponSpawner replaces SuperShotgun
 {
-	States
+	Default
 	{
-		Spawn2:
-			TNT1 A 0 A_JumpIf(random(0, 1), "Spawn_SuperShotgun");
-		Spawn_PFSuperShotgun:
-			TNT1 A 0 A_SpawnItemEx("GWM_PFSuperShotgun");
-			Stop;
-		Spawn_SuperShotgun:
-			TNT1 A 0 A_SpawnItemEx("GWM_SuperShotgun");
-			Stop;
+		DropItem "GWM_SuperShotgun";
+		DropItem "GWM_PFSuperShotgun";
 	}
 }
 
 class GWM_ChaingunSpawner : GWM_WeaponSpawner replaces Chaingun
 {
-	States
+	Default
 	{
-		Spawn2:
-			TNT1 A 0 A_JumpIf(random(0, 1), "Spawn_Chaingun");
-		Spawn_BurstRifle:
-			TNT1 A 0 A_SpawnItemEx("GWM_BurstRifle");
-			Stop;
-		Spawn_Chaingun:
-			TNT1 A 0 A_SpawnItemEx("GWM_Chaingun");
-			Stop;
+		DropItem "GWM_Chaingun";
+		DropItem "GWM_BurstRifle";
 	}
 }
 
 class GWM_RocketLauncherSpawner : GWM_WeaponSpawner replaces RocketLauncher
 {
-	States
+	Default
 	{
-		Spawn2:
-			TNT1 A 0 A_JumpIf(random(0, 1), "Spawn_RocketLauncher");
-		Spawn_VenomCannon:
-			TNT1 A 0 A_SpawnItemEx("GWM_VenomCannon");
-			Stop;
-		Spawn_RocketLauncher:
-			TNT1 A 0 A_SpawnItemEx("GWM_RocketLauncher");
-			Stop;
+		DropItem "GWM_RocketLauncher";
+		DropItem "GWM_VenomCannon";
 	}
 }
 
 class GWM_PlasmaRifleSpawner : GWM_WeaponSpawner replaces PlasmaRifle
 {
-	States
+	Default
 	{
-		Spawn2:
-			TNT1 A 0 A_JumpIf(random(0, 1), "Spawn_PlasmaRifle");
-		Spawn_Melter:
-			TNT1 A 0 A_SpawnItemEx("GWM_Melter");
-			Stop;
-		Spawn_PlasmaRifle:
-			TNT1 A 0 A_SpawnItemEx("GWM_PlasmaRifle");
-			Stop;
+		DropItem "GWM_PlasmaRifle";
+		DropItem "GWM_Melter";
 	}
 }
 
-class GWM_BlurSphereSpawner : Actor replaces BlurSphere
+class GWM_BlurSphereSpawner : RandomSpawner replaces BlurSphere
 {
-	States
+	Default
 	{
-		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf((random(0, 3) == 3), "Spawn_DrainSphere");
-			TNT1 A 0 A_JumpIf((random(0, 3) == 1 || random(0, 3) == 2), "Spawn_BlurSphere");
-			TNT1 A 0 A_JumpIf((random(0, 3) == 0), "Spawn_Stopwatch");
-		Spawn_DrainSphere:
-			TNT1 A 0 A_SpawnItemEx("GWM_DrainSphere");
-			Stop;
-		Spawn_Stopwatch:
-			TNT1 A 0 A_SpawnItemEx("GWM_Stopwatch");
-			Stop;
-		Spawn_BlurSphere:
-			TNT1 A 0 A_SpawnItemEx("GWM_BlurSphere");
-			Stop;
+		DropItem "GWM_BlurSphere", 255, 2;
+		DropItem "GWM_DrainSphere", 255, 1;
+		DropItem "GWM_Stopwatch", 255, 1;
 	}
 }
 
-class GWM_InvulnerabilitySphereSpawner : Actor replaces InvulnerabilitySphere
+class GWM_InvulnerabilitySphereSpawner : RandomSpawner replaces InvulnerabilitySphere
 {
-	States
+	Default
 	{
-		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Spawn_InvulnerabilitySphere");
-		Spawn_ReflectSphere:
-			TNT1 A 0 A_SpawnItemEx("GWM_ReflectSphere");
-			Stop;
-		Spawn_InvulnerabilitySphere:
-			TNT1 A 0 A_SpawnItemEx("GWM_InvulnerabilitySphere");
-			Stop;
+		DropItem "GWM_InvulnerabilitySphere";
+		DropItem "GWM_ReflectSphere";
 	}
 }
