@@ -8,7 +8,7 @@ class GWM_NightmareImp : DoomImp
 		Translation "GWM_NightmareImp";
 		Alpha 0.7;
 		BloodColor "78 58 80";
-		Obituary "$OB_NIGHTMAREIMPSCRATCH";
+		Obituary "$OB_NIGHTMAREIMP_SCRATCH";
 	}
 	States
 	{
@@ -27,6 +27,88 @@ class GWM_NightmareImpBall : DoomImpBall
 		Translation "GWM_NightmareImp";
 		Speed 20;
 		FastSpeed 40;
-		Obituary "$OB_NIGHTMAREIMPFIRE";
+		Obituary "$OB_NIGHTMAREIMP_FIRE";
+	}
+}
+
+class GWM_CyberImp : Actor
+{
+	Default
+	{
+		Health 120;
+		Radius 20;
+		Height 56;
+		Mass 200;
+		Speed 8;
+		PainChance 150;
+		Monster;
+		+FLOORCLIP
+		SeeSound "monsters/cyberimp/sight";
+		PainSound "monsters/cyberimp/pain";
+		DeathSound "monsters/cyberimp/death";
+		ActiveSound "monsters/cyberimp/active";
+		HitObituary "$OB_CYBERIMP_SCRATCH";
+		Obituary "$OB_CYBERIMP_PLASMA";
+	}
+	States
+	{
+		Spawn:
+			CIMP AB 10 A_Look;
+			Loop;
+		See:
+			CIMP AABBCCDD 3 A_Chase;
+			Loop;
+		Melee:
+			CIMP EF 8 A_FaceTarget;
+			CIMP F 6 A_CustomMeleeAttack(3 * random(3, 10), "imp/melee");
+			Goto See;
+		Missile:
+			CIMP EF 8 A_FaceTarget;
+			CIMP G 6 A_SpawnProjectile("ArachnotronPlasma",36,4);
+			Goto See;
+		Pain:
+			CIMP H 2;
+			CIMP H 2 A_Pain;
+			Goto See;
+		Death:
+			CIMP I 8;
+			CIMP J 8 A_Scream;
+			CIMP K 6;
+			CIMP L 6 A_NoBlocking;
+			CIMP M -1;
+			Stop;
+		XDeath:
+			CIMP N 5 A_SpawnProjectile("GWM_CyberImpArm",32,-10,270);
+			CIMP O 5 A_XScream;
+			CIMP P 5;
+			CIMP Q 5 A_NoBlocking;
+			CIMP RST 5;
+			CIMP U -1;
+			Stop;
+		Raise:
+			CIMP MLKJI 8;
+			Goto See;
+	}
+}
+class GWM_CyberImpArm : Cell
+{
+	Default
+	{
+		Radius 8;
+		Height 8;
+		Speed 4;
+		+DOOMBOUNCE
+		+DROPOFF
+		+Missile
+		Inventory.PickupMessage "$GOTCYBERIMPARM";
+	}
+	States
+	{
+		Spawn:
+			CARM ABCDE 3;
+			Loop;
+		Death:
+			CARM F -1;
+			Loop;
 	}
 }

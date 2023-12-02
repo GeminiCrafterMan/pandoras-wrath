@@ -168,11 +168,44 @@ class GWM_MineAmmo : Ammo
 
 class GWM_CellPack : CellPack {} // solely exists to prevent an infinite loop
 
+class GWM_ImpalerBolts : Ammo replaces CrossbowAmmo
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTBOLTS";
+		Inventory.Amount 4;
+		Inventory.MaxAmount 40;
+		Inventory.Icon "CBWAA0";
+		Ammo.BackpackAmount 2;
+		Ammo.BackpackMaxAmount 80;
+	}
+	States
+	{
+		Spawn:
+			CBWA A -1;
+			Stop;
+	}
+}
+class GWM_ImpalerBoltsHefty : GWM_ImpalerBolts replaces CrossbowHefty
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTBOLTSHEFTY";
+		Inventory.Amount 8;
+	}
+	States
+	{
+		Spawn:
+			CBWA B -1;
+			Stop;
+	}
+}
+
 Class EverIce : Ammo replaces BlasterAmmo
 {
 	Default
 	{
-		Inventory.PickupMessage "EverIce Chunk";
+		Inventory.PickupMessage "$GOTEVERICE";
 		Inventory.Amount 25;
 		Inventory.MaxAmount 200;
 		Ammo.BackpackAmount 25;
@@ -192,7 +225,7 @@ Class EverIceHefty : EverIce replaces BlasterHefty
 {
 	Default
 	{
-		Inventory.PickupMessage "EverIce Cluster";
+		Inventory.PickupMessage "$GOTEVERICEHEFTY";
 		Inventory.Amount 50;
 		Scale 0.4;
 	}

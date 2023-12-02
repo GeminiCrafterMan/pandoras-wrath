@@ -21,6 +21,27 @@ class ZBulletPuff : BulletPuff
         Stop;
 	}
 }
+class ZBulletPuff_SSG : ZBulletPuff
+{
+    Default
+    {
+        +PUFFGETSOWNER
+        +PUFFONACTORS
+        +HITTRACER
+    }
+    States
+    {
+    XDeath:
+        TNT1 A 1
+        {
+            if (tracer && target && target.Distance3D(tracer) < 80)
+            {
+                bExtremeDeath = true;
+            }
+        }
+        Stop;
+    }
+}
 
 class ZFlatDecal : Actor
 {

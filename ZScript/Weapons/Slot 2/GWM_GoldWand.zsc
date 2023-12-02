@@ -2,6 +2,8 @@ class GWM_GoldWand : GoldWand replaces GoldWand
 {
 	Default
 	{
+		Inventory.PickupMessage "$GOTWAND";
+		Obituary "$KILLWAND";
 		Weapon.SisterWeapon "GWM_GoldWandPowered";
 	}
 	States
@@ -30,6 +32,7 @@ class GWM_GoldWandPowered : GoldWandPowered
 {
 	Default
 	{
+		Obituary "$KILLWAND_POWERED";
 		Weapon.SisterWeapon "GWM_GoldWand";
 	}
 	States

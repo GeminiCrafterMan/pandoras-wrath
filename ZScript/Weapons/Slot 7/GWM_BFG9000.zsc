@@ -1,5 +1,10 @@
 class GWM_BFG9000 : BFG9000 replaces BFG9000
 {
+	Default
+	{
+		Inventory.PickupMessage "$GOTBFG9000";
+		Obituary "$KILLBFG9000";
+	}
 	States
 	{
 		Ready:

@@ -21,3 +21,13 @@ monsters/hellhog/active4	"Sounds/Monsters/Hellhog/idle4.ogg"
 monsters/hellhog/active5	"Sounds/Monsters/Hellhog/idle5.ogg"
 monsters/hellhog/active6	"Sounds/Monsters/Hellhog/idle6.ogg"
 $random monsters/hellhog/active	{monsters/hellhog/active1 monsters/hellhog/active2 monsters/hellhog/active3 monsters/hellhog/active4 monsters/hellhog/active5 monsters/hellhog/active6}
+
+// Cyber-Imp
+$random monsters/cyberimp/sight { monsters/cyberimp/sight1 monsters/cyberimp/sight2 }
+monsters/cyberimp/sight1	"Sounds/Monsters/Cyber-Imp/sight1.wav"
+monsters/cyberimp/sight2	"Sounds/Monsters/Cyber-Imp/sight2.wav"
+$random monsters/cyberimp/death { monsters/cyberimp/death1 monsters/cyberimp/death2 }
+monsters/cyberimp/death1	"Sounds/Monsters/Cyber-Imp/death1.wav"
+monsters/cyberimp/death2	"Sounds/Monsters/Cyber-Imp/death2.wav"
+monsters/cyberimp/pain		"Sounds/Monsters/Cyber-Imp/pain.wav"
+monsters/cyberimp/active	"Sounds/Monsters/Cyber-Imp/active.wav"

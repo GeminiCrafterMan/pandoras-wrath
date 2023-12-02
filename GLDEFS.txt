@@ -393,7 +393,7 @@ Brightmap Sprite FSTFA0 { Map FSTFA0 DisableFullbright }
 Brightmap Sprite FSTFB0 { Map FSTFB0 DisableFullbright }
 Brightmap Sprite FSTFC0 { Map FSTFC0 DisableFullbright }
 Brightmap Sprite FSTFD0 { Map FSTFD0 DisableFullbright }
-Brightmap Sprite FSTFE0 { Map FSTFE0 DisableFullbright }
+Brightmap Sprite FSTFZ0 { Map FSTFZ0 DisableFullbright }
 // Rocket Launcher
 Brightmap Sprite RKTLA0 { Map RKTLA0 DisableFullbright }
 Brightmap Sprite RKTLZ0 { Map RKTLZ0 DisableFullbright }

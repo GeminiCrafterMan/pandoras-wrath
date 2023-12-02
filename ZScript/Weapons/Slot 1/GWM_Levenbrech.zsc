@@ -6,8 +6,8 @@ class GWM_Levenbrech : Weapon replaces Gauntlets
 		+THRUGHOST
 		Tag "Levenbrech";
 		Inventory.Icon "LBREZ0";
-		Obituary "%o had their life broken by %k's Levenbrech."; // hehe lifebreaker
-		Inventory.PickupMessage "Levenbrech";
+		Obituary "$KILLLEVENBRECH"; // hehe lifebreaker
+		Inventory.PickupMessage "$GOTLEVENBRECH";
 		Weapon.SisterWeapon "GWM_LevenbrechPowered";
 		Weapon.UpSound "weapons/swordup";
 		AttackSound "weapons/swordhit";
@@ -44,6 +44,7 @@ class GWM_LevenbrechPowered : GWM_Levenbrech
 		Weapon.SisterWeapon "GWM_Levenbrech";
 		-THRUGHOST
 		+WEAPON.POWERED_UP
+		Obituary "$KILLLEVENBRECH_POWERED";
 	}
 	States
 	{

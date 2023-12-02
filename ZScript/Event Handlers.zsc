@@ -50,10 +50,17 @@ class ThingReplacer : StaticEventHandler
 			// Imps and Bigger Imps
 			if (e.Replacee == "DoomImp")
 			{
-				if (random(0, 4) == 4)
-					e.Replacement = "GWM_NightmareImp";
-				else
-					e.Replacement = "DoomImp";
+				switch (random(0,4))
+				{
+					case 4:
+						e.Replacement = "GWM_NightmareImp";
+						break;
+					case 3:
+						e.Replacement = "GWM_CyberImp";
+						break;
+					default:
+						e.Replacement = "DoomImp";
+				}
 			}
 			if (e.Replacee == "BaronOfHell")
 				e.Replacement = "GWM_BaronOfHell";

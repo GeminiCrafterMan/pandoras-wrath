@@ -75,7 +75,7 @@ class GWM_VenomBall : GWM_PoisonProjectile
 		+THRUGHOST
 		BounceSound "weapons/vnmcsplt";
 		DeathSound "weapons/vnmcbomb";
-		Obituary "%o drank %k's toxic goop.";
+		Obituary "$KILLVENOMCANNONBALL";
 	}
 	States
 	{
@@ -207,6 +207,7 @@ class GWM_FloorVenomPuddle : GWM_PoisonProjectile
 		+FLOORHUGGER
 		+MOVEWITHSECTOR
 		Damage 1;
+		Obituary "$KILLVENOMCANNONPUDDLE";
 	}
 	States
 	{

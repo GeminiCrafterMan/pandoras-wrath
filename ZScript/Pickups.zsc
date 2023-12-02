@@ -56,7 +56,7 @@ class GWM_DrainSphere : PowerupGiver
 {
 	Default
 	{
-		Inventory.PickupMessage "Life drain!";
+		Inventory.PickupMessage "$GOTLIFEDRAIN";
 		Inventory.Icon "VAMPA0";
 		Powerup.Color "FF0000", 0.25;
 		Inventory.MaxAmount 0;
@@ -80,7 +80,7 @@ class GWM_ReflectSphere : PowerupGiver
 {
 	Default
 	{
-		Inventory.PickupMessage "Reflective shots!";
+		Inventory.PickupMessage "$GOTREFLECTIVE";
 		Inventory.Icon "REFLA0";
 		Powerup.Color "0011FF", 0.25;
 		Inventory.MaxAmount 0;
@@ -110,7 +110,7 @@ Class GWM_Stopwatch : inventory
 		Inventory.Icon "WTCHA0";
 		Tag "Stopwatch";
 		Inventory.MaxAmount 4;
-		Inventory.PickupMessage "Stopwatch!";
+		Inventory.PickupMessage "$GOTSTOPWATCH";
 	}
 	states
 	{

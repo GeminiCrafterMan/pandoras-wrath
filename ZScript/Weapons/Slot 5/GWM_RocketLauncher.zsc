@@ -6,6 +6,7 @@ class GWM_RocketLauncher : RocketLauncher
 		Weapon.AmmoUse2 1;
 		Weapon.AmmoType "GWM_RocketAmmo";
 		Weapon.AmmoType2 "GWM_RocketAmmo";
+		Inventory.PickupMessage "$GOTROCKETLAUNCHER";
 	}
 	States
 	{
@@ -79,7 +80,7 @@ class GWM_Rocket : Actor
 		+THRUGHOST
 		SeeSound "";
 		DeathSound "weapons/explode";
-		Obituary "$OB_MPROCKET";
+		Obituary "$KILLROCKET";
 	}
 	States
 	{
@@ -135,7 +136,7 @@ class GWM_Grenade : Actor
 		SeeSound "";
 		DeathSound "weapons/explode";
 		BounceSound "weapons/grndimp";
-		Obituary "$OB_GRENADE";
+		Obituary "$KILLGRENADE";
 		DamageType "Grenade";
 	}
 	States

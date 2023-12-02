@@ -18,9 +18,9 @@ Class GWM_Melter : Weapon
 		Weapon.SlotNumber 6;
 		//Weapon.SlotPriority 0;
 		//Weapon.SelectionOrder 500;
-		Inventory.PickupMessage "You got the Melter!";
+		Inventory.PickupMessage "$GOTMELTER";
 		Inventory.PickupSound "misc/w_pkup";
-		Obituary "%o was melted by %k.";
+		Obituary "$KILLMELTER";
 		Tag "Melter";
 		+WEAPON.NOAUTOAIM;
 		+FLOORCLIP;	
