@@ -25,7 +25,7 @@ class MonsterReplacer : StaticEventHandler
 			// Hitscanners
 			if (e.Replacee == "ZombieMan")
 			{
-				if (random(0, 2) == 2)
+				if (random(0, 3) == 3)
 					e.Replacement = "GWM_SMGGuy";
 				else
 					e.Replacement = "GWM_Zombieman";
@@ -44,12 +44,12 @@ class MonsterReplacer : StaticEventHandler
 				else
 					e.Replacement = "GWM_ChaingunGuy";
 			}
-            if (e.Replacee == "WolfensteinSS")
+            if (e.Replacee == "WolfensteinSS" && !e.Replacement)
                 e.Replacement = "GWM_WolfensteinSS";
 			// Imps and Bigger Imps
 			if (e.Replacee == "DoomImp")
 			{
-				if (random(0, 3) == 3)
+				if (random(0, 4) == 4)
 					e.Replacement = "GWM_NightmareImp";
 				else
 					e.Replacement = "DoomImp";

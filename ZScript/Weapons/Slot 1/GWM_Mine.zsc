@@ -9,6 +9,7 @@ class GWM_Mine : Weapon
 		Inventory.PickupMessage "$GOTMINES";
 		Obituary "$KILLPLACEHOLDER";
 		+WEAPON.NOAUTOFIRE
+		+WEAPON.NOAUTOSWITCHTO
 	}
 	States
 	{
