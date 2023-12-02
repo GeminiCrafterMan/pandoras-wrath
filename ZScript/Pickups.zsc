@@ -115,8 +115,8 @@ Class GWM_Stopwatch : inventory
 	states
 	{
 		Spawn:
-			WTCH A -1 Bright;
-			stop;
+			WTCH A 1 Bright A_SpawnItemEx("GWM_StopwatchSparkle", 12, xvel: 0.5, zvel: 1, angle: random(0, 359), flags: SXF_NOCHECKPOSITION);
+			Loop;
 	}
 	
 	override Bool Use(bool pickup)
@@ -139,7 +139,6 @@ Class GWM_Stopwatch : inventory
 		owner.player.readyweapon = null;
 		owner.player.pendingweapon = watch;
 		return true;
-		
 	}
 }
 class GWM_StopwatchAnimation : Weapon
@@ -156,12 +155,8 @@ class GWM_StopwatchAnimation : Weapon
 			Loop; // goes to Ready
 		Ready:
 		Fire:
-			WTCH B 35 A_StartSound("powerups/time_stop_start");
-			TNT1 A 0 {
-				A_GiveInventory("GWM_StopwatchStopper",1);
-				A_StartSound("powerups/time_stop_end");
-			}
-			WTCH B 7;
+			WTCH B 40 A_StartSound("powerups/time_stop_start");
+			WTCH B 7 A_GiveInventory("GWM_StopwatchStopper",1);
 			TNT1 A 0 {
 				player.pendingweapon = invoker.prevweapon;
 				A_TakeInventory("GWM_StopwatchAnimation");
@@ -180,9 +175,31 @@ class GWM_StopwatchStopper : PowerupGiver
 		+INVENTORY.QUIET
 		+INVENTORY.AUTOACTIVATE
 		+INVENTORY.UNDROPPABLE
-		Powerup.Type "PowerTimeFreezer";
+		Powerup.Type "GWM_PowerTimeFreezer";
 //		Powerup.Color "888888", 0.5;
 		Powerup.Colormap 0.0, 0.0, 0.0, 0.5, 0.5, 0.5;
 		Powerup.Duration -15; // 15 seconds
+	}
+}
+class GWM_PowerTimeFreezer : PowerTimeFreezer
+{
+	override void EndEffect()
+	{
+		Super.EndEffect();
+		if(owner)
+			owner.A_StartSound("powerups/time_stop_end");
+	}
+}
+class GWM_StopwatchSparkle : Actor
+{
+	Default
+	{
+		+NOINTERACTION
+	}
+	States
+	{
+		Spawn:
+			WTCH DEFGH 2 Bright;
+			Stop;
 	}
 }
