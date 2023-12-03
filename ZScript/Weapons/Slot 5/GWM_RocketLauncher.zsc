@@ -1,12 +1,17 @@
-class GWM_RocketLauncher : RocketLauncher
+class GWM_RocketLauncher : GWM_WeaponBase
 {
 	Default
 	{
+		Weapon.SelectionOrder 2500; // Don't blow yourself up!!
+		Weapon.UpSound "weapons/draw_primary";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoUse2 1;
+		Weapon.AmmoGive 2;
 		Weapon.AmmoType "GWM_RocketAmmo";
 		Weapon.AmmoType2 "GWM_RocketAmmo";
+		+WEAPON.NOAUTOFIRE
 		Inventory.PickupMessage "$GOTROCKETLAUNCHER";
+		Tag "Rocket Launcher";
 	}
 	States
 	{

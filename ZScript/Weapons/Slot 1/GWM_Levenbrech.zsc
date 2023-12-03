@@ -1,15 +1,15 @@
-class GWM_Levenbrech : Weapon replaces Gauntlets
+class GWM_Levenbrech : GWM_WeaponBase replaces Gauntlets // not that it needs to be this way...
 {
 	Default
 	{
+		Weapon.SelectionOrder 2200;
 		+WEAPON.MELEEWEAPON
-		+THRUGHOST
 		Tag "Levenbrech";
 		Inventory.Icon "LBREZ0";
 		Obituary "$KILLLEVENBRECH"; // hehe lifebreaker
 		Inventory.PickupMessage "$GOTLEVENBRECH";
 		Weapon.SisterWeapon "GWM_LevenbrechPowered";
-		Weapon.UpSound "weapons/swordup";
+		Weapon.UpSound "weapons/draw_sword";
 		AttackSound "weapons/swordhit";
 	}
 	States

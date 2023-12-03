@@ -1,13 +1,17 @@
 // Super Skulltag's fist weapon rewritten in ZScript.
-class GWM_Fist : Fist replaces Fist
+class GWM_Fist : GWM_WeaponBase replaces Fist
 {
 	Default
 	{
+		Weapon.SelectionOrder 3700;
+		Weapon.UpSound "weapons/draw_fist";
 		+INVENTORY.UNDROPPABLE
 		+WEAPON.NOAUTOFIRE
 		+WEAPON.NOALERT
 		+WEAPON.AXEBLOOD
-		+THRUGHOST
+		+WEAPON.WIMPY_WEAPON
+		+WEAPON.MELEEWEAPON
+		+WEAPON.NOAUTOSWITCHTO
 		Obituary "$KILLFISTS";
 		Tag "Fists";
 		AttackSound "weapons/punch";

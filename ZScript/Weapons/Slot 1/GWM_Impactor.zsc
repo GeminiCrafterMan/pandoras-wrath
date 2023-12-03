@@ -1,9 +1,9 @@
-class GWM_Impactor : Weapon
+class GWM_Impactor : GWM_WeaponBase // not that it needs to be this way...
 {
 	Default
 	{
+		Weapon.SelectionOrder 2200;
 		+WEAPON.MELEEWEAPON
-		+THRUGHOST
 		Tag "Impactor Gauntlet";
 		Inventory.Icon "IMPAZ0";
 		Weapon.UpSound "weapons/IMGRaise";

@@ -1,15 +1,24 @@
-class GWM_PlasmaRifle : PlasmaRifle
+class GWM_PlasmaRifle : GWM_WeaponBase
 {
 	Default
 	{
+		Weapon.UpSound "weapons/draw_primary";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoUse2 20;
+		Weapon.AmmoGive 40;
+		Weapon.SelectionOrder 100;
 		Weapon.AmmoType "Cell";
 		Weapon.AmmoType2 "Cell";
 		Decal "RailScorch";
+		Tag "Plasma Rifle";
+		Inventory.PickupMessage "$GOTPLASMARIFLE";
+		Obituary "$KILLPLASMARIFLE_RAIL";
 	}
 	States
 	{
+		Ready:
+			PLSG A 1 A_WeaponReady;
+			Loop;
 		Deselect:
 			PLSG A 1 A_Lower(12);
 			Loop;

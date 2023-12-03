@@ -107,6 +107,7 @@ Class GWM_Stopwatch : inventory
 		+NOGRAVITY
 		+FLOATBOB
 		+INVENTORY.INVBAR
+		+NOTIMEFREEZE
 		Inventory.Icon "WTCHA0";
 		Tag "Stopwatch";
 		Inventory.MaxAmount 4;
@@ -145,6 +146,7 @@ class GWM_StopwatchAnimation : Weapon
 {
 	Default
 	{
+		+NOTIMEFREEZE
 		Tag "Stopwatch";
 	}
 	weapon prevweapon;
@@ -171,6 +173,7 @@ class GWM_StopwatchStopper : PowerupGiver
 {
 	Default
 	{
+		+NOTIMEFREEZE
 		-INVENTORY.INVBAR
 		+INVENTORY.QUIET
 		+INVENTORY.AUTOACTIVATE
@@ -194,6 +197,7 @@ class GWM_StopwatchSparkle : Actor
 {
 	Default
 	{
+		+NOTIMEFREEZE
 		+NOINTERACTION
 	}
 	States

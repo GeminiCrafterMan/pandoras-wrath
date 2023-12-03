@@ -33,7 +33,6 @@ class GWM_ShotgunCasing : ZCasing
 			Stop;
 	}
 }
-
 class GWM_IceShotgunCasing : GWM_ShotgunCasing
 {
 	States
@@ -43,6 +42,25 @@ class GWM_IceShotgunCasing : GWM_ShotgunCasing
 			Loop;
 		Death:
 			BLUC G -1;
+			Stop;
+	}
+}
+
+
+class GWM_CellCasing : ZCasing
+{
+	Default
+	{
+		Scale 0.5;
+		BounceSound "weapons/casing3";
+	}
+	States
+	{
+		Spawn:
+			CELC CDEFGHAB 2;
+			Loop;
+		Death:
+			CELC A -1;
 			Stop;
 	}
 }

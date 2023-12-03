@@ -1,8 +1,9 @@
-class GWM_ImpalerCrossbow : Weapon replaces Crossbow
+class GWM_ImpalerCrossbow : GWM_WeaponBase replaces Crossbow
 {
 	Default
 	{
-		Inventory.PickupMessage "Impaler Crossbow";
+		Weapon.SelectionOrder 1300;
+		Inventory.PickupMessage "$GOTIMPALERCROSSBOW";
 		Tag "Impaler Crossbow";
 		Weapon.AmmoGive 15;
 		Weapon.AmmoType "GWM_ImpalerBolts";

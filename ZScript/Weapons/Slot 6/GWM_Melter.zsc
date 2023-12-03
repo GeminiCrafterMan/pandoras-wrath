@@ -1,7 +1,7 @@
 //See Ready state to change display temperature unit.
 //See Fire state to configure damage and beam length.
 
-Class GWM_Melter : Weapon
+Class GWM_Melter : GWM_WeaponBase
 {
 	int tmp;
 	int cd;
@@ -15,11 +15,9 @@ Class GWM_Melter : Weapon
 		Weapon.AmmoGive 40;
 		Weapon.AmmoUse 2;
 		Weapon.AmmoType "Cell";
-		Weapon.SlotNumber 6;
-		//Weapon.SlotPriority 0;
-		//Weapon.SelectionOrder 500;
+		Weapon.SelectionOrder 400; // I mean, it came reccommended like this... but I'll take 100 off for being a plasma weapon.
+		Weapon.UpSound "weapons/draw_primary";
 		Inventory.PickupMessage "$GOTMELTER";
-		Inventory.PickupSound "misc/w_pkup";
 		Obituary "$KILLMELTER";
 		Tag "Melter";
 		+WEAPON.NOAUTOAIM;

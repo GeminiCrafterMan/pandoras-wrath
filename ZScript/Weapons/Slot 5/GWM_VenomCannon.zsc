@@ -1,7 +1,9 @@
-class GWM_VenomCannon : DoomWeapon
+class GWM_VenomCannon : GWM_WeaponBase
 {
 	Default
 	{
+		Weapon.SelectionOrder 600; // Actually really good!! Kills shit really well, with no self-damage.
+		Weapon.UpSound "weapons/draw_primary";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoUse2 1;
 		Weapon.AmmoGive 2;
@@ -9,7 +11,6 @@ class GWM_VenomCannon : DoomWeapon
 		Weapon.AmmoType2 "GWM_VenomVial";
 		+WEAPON.NOAUTOFIRE
 		Inventory.PickupMessage "$GOTVENOMCANNON";
-		Obituary "$KILLPLACEHOLDER";
 		Tag "Venom Cannon";
 	}
 	States

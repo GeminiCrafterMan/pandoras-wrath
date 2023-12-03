@@ -1,0 +1,76 @@
+// Weapon draw sounds (not attributed to any specific weapons)
+weapons/draw_default	"Sounds/Weapons/draw_default.wav"
+weapons/draw_primary	"Sounds/Weapons/draw_primary.wav"
+weapons/draw_secondary	"Sounds/Weapons/draw_secondary.wav"
+
+// Bullet Casing
+$random weapons/casing1	{ weapons/bullet1 weapons/bullet2 weapons/bullet3 }
+weapons/bullet1			dscasing
+weapons/bullet2			dscasin2
+weapons/bullet3			dscasin3
+
+// Shell Casing
+$random weapons/casing2	{ weapons/shell1 weapons/shell2 weapons/shell3 }
+weapons/shell1			dsshell1
+weapons/shell2			dsshell2
+weapons/shell3			dsshell3
+
+// Cell Casing
+weapons/casing3			"Sounds/Weapons/Casings/cell.mp3"
+
+// Bullets, be it ricochet or hit.
+$random bullet/ricochet
+{
+	bullet/ricochet1
+	bullet/ricochet2
+	bullet/ricochet3
+	bullet/ricochet4
+	bullet/ricochet5
+}
+$random bullet/hitFlesh
+{
+	bullet/hitFlesh1
+	bullet/hitFlesh2
+	bullet/hitFlesh3
+	bullet/hitFlesh4
+	bullet/hitFlesh5
+}
+
+bullet/ricochet1	"Sounds/Weapons/Bullets/ric1.wav"
+bullet/ricochet2	"Sounds/Weapons/Bullets/ric2.wav"
+bullet/ricochet3	"Sounds/Weapons/Bullets/ric3.wav"
+bullet/ricochet4	"Sounds/Weapons/Bullets/ric4.wav"
+bullet/ricochet5	"Sounds/Weapons/Bullets/ric5.wav"
+
+bullet/hitFlesh1	"Sounds/Weapons/Bullets/hit1.wav"
+bullet/hitFlesh2	"Sounds/Weapons/Bullets/hit2.wav"
+bullet/hitFlesh3	"Sounds/Weapons/Bullets/hit3.wav"
+bullet/hitFlesh4	"Sounds/Weapons/Bullets/hit4.wav"
+bullet/hitFlesh5	"Sounds/Weapons/Bullets/hit5.wav"
+
+// Explosive barrel
+objects/barrel_explode		"Sounds/Objects/barrel_explode.wav"
+
+// Pickups
+pickups/healthbonus			"Sounds/Pickups/Health Bonus.wav"
+pickups/armorbonus			"Sounds/Pickups/Armor Bonus.wav"
+
+// Ammo
+pickups/clip				"Sounds/Pickups/Clip.wav"
+pickups/clipbox				"Sounds/Pickups/Clip Box.wav"
+pickups/shells				"Sounds/Pickups/Shells.wav"
+pickups/backpack			"Sounds/Pickups/Backpack.wav"
+
+// Weapons
+misc/w_pkup					"Sounds/Pickups/Weapon.wav"
+
+// Powerups
+powerups/time_stop_start	"Sounds/Powerups/time_stop_start.wav"
+powerups/time_stop_end		"Sounds/Powerups/time_stop_end.wav"
+
+// Keys
+$random misc/k_pkup	{ misc/k_pkup1 misc/k_pkup2 misc/k_pkup3 misc/k_pkup4 }
+misc/k_pkup1				"Sounds/Pickups/Key1.wav"
+misc/k_pkup2				"Sounds/Pickups/Key2.wav"
+misc/k_pkup3				"Sounds/Pickups/Key3.wav"
+misc/k_pkup4				"Sounds/Pickups/Key4.wav"

@@ -1,7 +1,14 @@
-class GWM_BFG9000 : BFG9000 replaces BFG9000
+class GWM_BFG9000 : GWM_WeaponBase replaces BFG9000
 {
 	Default
 	{
+		Weapon.SelectionOrder 2800; // Don't waste ammo!! But also, big green ball of death, SAVE ME!!!
+		Weapon.UpSound "weapons/draw_primary";
+		Weapon.AmmoUse 40;
+		Weapon.AmmoGive 40;
+		Weapon.AmmoType "Cell";
+		+WEAPON.NOAUTOFIRE
+		Tag "BFG9000";
 		Inventory.PickupMessage "$GOTBFG9000";
 		Obituary "$KILLBFG9000";
 	}
@@ -23,6 +30,9 @@ class GWM_BFG9000 : BFG9000 replaces BFG9000
 			BFUG C 5;
 			BFUG C 5 {
 				A_FireBFG();
+				// since the BFG uses two whole cell items to fire...
+				ZWL_EjectCasing("GWM_CellCasing");
+				ZWL_EjectCasing("GWM_CellCasing", true, offset: (24, 0, -10));
 				A_WeaponOffset(0, 63, flags: WOF_ADD);
 				A_OverlayScale(OverlayID(), 1.60, 0, WOF_INTERPOLATE);
 			}
@@ -48,5 +58,12 @@ class GWM_BFG9000 : BFG9000 replaces BFG9000
 		Spawn:
 			BFUG Z -1;
 			Stop;
+	}
+}
+class GWM_BFGBall : BFGBall
+{
+	Default
+	{
+		Obituary "$KILLBFGBALL";
 	}
 }

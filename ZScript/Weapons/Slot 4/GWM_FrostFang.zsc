@@ -1,12 +1,11 @@
-Class GWM_FrostFang : Weapon replaces Blaster
+Class GWM_FrostFang : GWM_WeaponBase replaces Blaster
 {
 	Default
 	{
-		Radius 20;
-		Height 12;
+		Weapon.SelectionOrder 700;
+		Weapon.UpSound "weapons/draw_primary";
 		Tag "Frost Fang";
 		Inventory.PickupMessage "$GOTFROSTFANG";
-		Weapon.SelectionOrder 500;
 		Weapon.AmmoType "EverIce";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 20;

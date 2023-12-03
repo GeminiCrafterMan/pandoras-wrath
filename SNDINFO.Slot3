@@ -4,6 +4,7 @@ weapons/skshot2		"Sounds/Weapons/Slot 3/Shotgun/Fire2.wav"
 weapons/skshot3		"Sounds/Weapons/Slot 3/Shotgun/Fire3.wav"
 weapons/skpump1		"Sounds/Weapons/Slot 3/Shotgun/Pump1.wav"
 weapons/skpump2		"Sounds/Weapons/Slot 3/Shotgun/Pump2.wav"
+weapons/skpickup	"Sounds/Weapons/Slot 3/Shotgun/pickup.wav"
 
 $random weapons/skshot {weapons/skshot1 weapons/skshot2 weapons/skshot3}
 
@@ -13,10 +14,12 @@ weapons/ssgshot2	"Sounds/Weapons/Slot 3/Super Shotgun/Fire (One Barrel).wav"
 weapons/ssgo		"Sounds/Weapons/Slot 3/Super Shotgun/Open.wav"
 weapons/ssgl		"Sounds/Weapons/Slot 3/Super Shotgun/Load.wav"
 weapons/ssgc		"Sounds/Weapons/Slot 3/Super Shotgun/Close.wav"
+weapons/ssgpickup	"Sounds/Weapons/Slot 3/Super Shotgun/pickup.wav"
 
 // Ice Shotgun
 weapons/icehit		"Sounds/Weapons/Slot 3/Ice SG/DSICEHIT.wav"
 weapons/iceshgn		"Sounds/Weapons/Slot 3/Ice SG/DSICESGN.wav"
+weapons/icepickup	"Sounds/Weapons/Slot 3/Ice SG/pickup.wav"
 
 // P.F. Super Shotgun
 // All sounds here are from Touhou Koumakyou: Embodiment of Scarlet Devil (th06)
