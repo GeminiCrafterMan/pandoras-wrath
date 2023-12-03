@@ -1,6 +1,7 @@
 class GWM_Chaingun : GWM_WeaponBase
 {
-	action void A_FireCGun() {
+	action void A_FireCGun()
+	{
 		A_SpawnItemEx("GWM_Flash");
 		A_StartSound("weapons/chngun", CHAN_WEAPON);
 		A_FireBullets(11.2, 0, 1, 5, "ZBulletPuff", missile: "GWM_Tracer", spawnheight: 0);
@@ -38,16 +39,16 @@ class GWM_Chaingun : GWM_WeaponBase
 			Goto Release;
 		Hold:
 			CHGG A 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashAB");}
-			CHGG B 1;
+			CHGG B 1 A_CheckReload;
 			CHGG C 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashCD");}
-			CHGG D 1;
+			CHGG D 1 A_CheckReload;
 			CHGG D 0 A_ReFire("Hold2");
 			Goto Release;
 		Hold2:
 			CHGG E 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashEF");}
-			CHGG F 1;
+			CHGG F 1 A_CheckReload;
 			CHGG G 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashGH");}
-			CHGG H 1;
+			CHGG H 1 A_CheckReload;
 			CHGG H 0 A_ReFire;
 			Goto Release;
 		Release:

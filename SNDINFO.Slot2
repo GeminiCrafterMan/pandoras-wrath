@@ -1,6 +1,11 @@
 // Pistol (Beretta 92FS)
-weapons/92fsfire	"Sounds/Weapons/Slot 2/92fs_fire.wav"
-weapons/92fspickup	"Sounds/Weapons/Slot 2/92fs_pickup.wav"
+weapons/92fsfire		"Sounds/Weapons/Slot 2/92fs_fire.wav"
+weapons/92fspickup		"Sounds/Weapons/Slot 2/92fs_pickup.wav"
+weapons/92fsdryfire		"Sounds/Weapons/Slot 2/92fs_dryfire.wav"
+weapons/92fsclipout		"Sounds/Weapons/Slot 2/92fs_clipout.wav"
+weapons/92fsclipin		"Sounds/Weapons/Slot 2/92fs_clipin.wav"
+weapons/92fsslidefwd	"Sounds/Weapons/Slot 2/92fs_slideforward.wav"
+weapons/92fsslideback	"Sounds/Weapons/Slot 2/92fs_slideback.wav"
 
 // SMG
 weapons/smgfire		"Sounds/Weapons/Slot 2/smg_fire.wav"

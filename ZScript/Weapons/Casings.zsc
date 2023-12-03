@@ -15,6 +15,22 @@ class GWM_PistolCasing : ZCasing
 			Stop;
 	}
 }
+class GWM_PistolEmptyMag : ZCasing
+{
+    Default
+    {
+        Scale 0.5;
+        BounceSound "weapons/emptyMagazine";
+	}
+    States
+    {
+		Spawn:
+			CLP1 ABCDEF 3;
+		Death:
+			CLP1 A -1;
+			Stop;
+	}
+}
 
 class GWM_ShotgunCasing : ZCasing
 {

@@ -6,10 +6,13 @@ class GWM_Shotgun : GWM_WeaponBase
 		Inventory.PickupSound "weapons/skpickup";
 		Weapon.UpSound "weapons/draw_secondary";
 		Weapon.AmmoType "GWM_Shell";
-		Weapon.AmmoType2 "GWM_Shell";
 		Weapon.AmmoUse 1;
-		Weapon.AmmoUse2 1;
 		Weapon.AmmoGive 8;
+
+		ZWeapon.MagazineSize 8;
+		ZWeapon.ReloadSound "weapons/shell_load";
+		ZWeapon.ClickSound "weapons/skempty";
+
 		Tag "Slayer's Kahuna";
 		Inventory.PickupMessage "$GOTSLAYERSKAHUNA";
 		Obituary "$KILLSLAYERSKAHUNA";
@@ -18,7 +21,7 @@ class GWM_Shotgun : GWM_WeaponBase
 	States
 	{
 		Ready:
-			SKSG A 1 A_WeaponReady;
+			SKSG A 1 ZWL_WeaponReady(ZRF_ExtraRound);
 			Loop;
 		Deselect:
 			SKSG A 1 A_Lower(12);
@@ -30,7 +33,7 @@ class GWM_Shotgun : GWM_WeaponBase
 			SKSG A 1 Bright {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				A_FireBullets(2.5, 0.83, 8, 6, "ZBulletPuff", missile: "GWM_Tracer", spawnheight: 0);
+				ZWL_FireHitscan(0, 6*Random(1,3), pellets: 8, spread: 3, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
 				A_WeaponOffset(0, 10, WOF_ADD);
@@ -45,6 +48,7 @@ class GWM_Shotgun : GWM_WeaponBase
 				A_WeaponOffset(0, -5, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
 			}
+			TNT1 A 0 ZWL_CheckReload();
 			SKSG B 5;
 			SKSG CCDD 1;
 			SKSG E 4 {
@@ -54,13 +58,20 @@ class GWM_Shotgun : GWM_WeaponBase
 			SKSG DDCC 1; // These two play on CHAN_BODY because the firing sound is just too fucking long
 			SKSG B 5 A_StartSound("weapons/skpump2");
 			SKSG A 3;
-			SKSG A 7 A_ReFire;
+			SKSG A 7 ZWL_ReFire();
 			Goto Ready;
 		AltFire:
+			TNT1 A 0 {
+				if (!invoker.DepleteAmmo(false, true))
+				{
+					A_PlaySound(invoker.clickSound, CHAN_Auto);
+					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Weird, fucked-up way of making it click instead.
+				}
+			}
 			SKSG A 1 Bright {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				A_FireBullets(7.5, 2.49, 8, 6, "ZBulletPuff", missile: "GWM_Tracer", spawnheight: 0);
+				ZWL_FireHitscan(0, 6*Random(1,3), pellets: 8, spread: 6, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash("Flash2");
 				A_WeaponOffset(0, 20, WOF_ADD);
@@ -75,6 +86,7 @@ class GWM_Shotgun : GWM_WeaponBase
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
+			TNT1 A 0 ZWL_CheckReload();
 			SKSG FFGG 1;
 			SKSG H 4 {
 				A_StartSound("weapons/skpump1");
@@ -82,7 +94,7 @@ class GWM_Shotgun : GWM_WeaponBase
 			}
 			SKSG GGFF 1; // These two play on CHAN_BODY because the firing sound is just too fucking long
 			SKSG A 5 A_StartSound("weapons/skpump2");
-			SKSG A 7 A_ReFire;
+			SKSG A 7 ZWL_ReFire();
 			Goto Ready;
 		Spawn:
 			SKSG Z -1;
@@ -113,5 +125,47 @@ class GWM_Shotgun : GWM_WeaponBase
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
 			Goto LightDone;
+		Reload:
+			TNT1 A 0 {
+				if (!invoker.CheckAmmo(PrimaryFire, false, true))
+					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
+			}
+			TNT1 A 0 ZWL_JumpIfEmpty("Reload.Empty"); // I'm pretty sure that, for a shotgun, reloading while empty would be the same...
+			SKSG B 5;
+			SKSG CD 2;
+			SKSG E 2 {
+				A_StartSound("weapons/skpump1");
+				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, -6, -14));
+			}
+			// Fallthrough
+		Reload.Loop:
+			SKSG IJK 2;
+			TNT1 A 0 ZWL_Reload(1);
+			SKSG LIE 2;
+			SKSG E 0 ZWL_JumpIfReloaded("Reload.End", true, true);
+			Loop;
+		Reload.End:
+			SKSG DC 2;
+			SKSG B 5 A_StartSound("weapons/skpump2");
+			Goto Ready;
+
+		Reload.Empty:
+			SKSG B 5;
+			SKSG CD 2;
+			SKSG E 2 {
+				A_StartSound("weapons/skpump1");
+				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, -6, -14));
+			}
+			// Fallthrough
+		Reload.Empty.Loop:
+			SKSG IJK 2;
+			TNT1 A 0 ZWL_Reload(1);
+			SKSG LIE 2;
+			SKSG E 0 ZWL_JumpIfReloaded("Reload.Empty.End", true);
+			Loop;
+		Reload.Empty.End:
+			SKSG DC 2;
+			SKSG B 5 A_StartSound("weapons/skpump2");
+			Goto Ready;
 	}
 }

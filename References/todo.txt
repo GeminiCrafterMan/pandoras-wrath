@@ -1,3 +1,0 @@
-- bfg9k
-- bfg10k
-- somehow make railgun beam "wider" or thicker somehow, basically buff it more (damage buffs done)

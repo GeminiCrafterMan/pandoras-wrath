@@ -13,6 +13,7 @@ KILLMP40 = "%o was filled with lead by %k's MP40.";
 KILLWAND = "%o was majyyk'd away by %k's Gold Wand.";
 KILLWAND_POWERED = "%o was magic'd to death by %k's powered-up Gold Wand.";
 KILLICESHOTGUN = "%o got frozen solid by %k's Ice Shotgun.";
+KILLKICK = "%o got %p ass kicked by %k.";
 KILLSLAYERSKAHUNA = "%o caught the wave (of pellets) produced by %k's Slayer's Kahuna.";
 KILLPFSUPERSHOTGUN = "%o was instantly turned into a popsicle by %k's Perfect Freeze Super Shotgun.";
 KILLSUPERSHOTGUN = "%o was splattered by %k's Super Shotgun.";

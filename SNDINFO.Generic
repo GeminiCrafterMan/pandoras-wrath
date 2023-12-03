@@ -18,6 +18,9 @@ weapons/shell3			dsshell3
 // Cell Casing
 weapons/casing3			"Sounds/Weapons/Casings/cell.mp3"
 
+// Empty magazine
+weapons/emptyMagazine   DSCLIP
+
 // Bullets, be it ricochet or hit.
 $random bullet/ricochet
 {
