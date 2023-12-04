@@ -136,9 +136,19 @@ Brightmap Sprite MINEZ0 { Map BMMINEZ0 DisableFullbright }
 Brightmap Sprite 92FFA0 { Map 92FFA0 DisableFullbright }
 Brightmap Sprite 92FFB0 { Map 92FFB0 DisableFullbright }
 // SMG
-Brightmap Sprite SMGGA0 { Map SMGGA0 DisableFullbright }
 Brightmap Sprite SMGFA0 { Map SMGFA0 DisableFullbright }
 Brightmap Sprite SMGFB0 { Map SMGFB0 DisableFullbright }
+Brightmap Sprite SMGGA0 { Map SMGGA0 DisableFullbright }
+Brightmap Sprite SMGGB0 { Map SMGGB0 DisableFullbright }
+Brightmap Sprite SMGGC0 { Map SMGGC0 DisableFullbright }
+Brightmap Sprite SMGGD0 { Map SMGGD0 DisableFullbright }
+Brightmap Sprite SMGGE0 { Map SMGGE0 DisableFullbright }
+Brightmap Sprite SMGGF0 { Map SMGGF0 DisableFullbright }
+Brightmap Sprite SMGGG0 { Map SMGGG0 DisableFullbright }
+Brightmap Sprite SMGGH0 { Map SMGGH0 DisableFullbright }
+Brightmap Sprite SMGGI0 { Map SMGGI0 DisableFullbright }
+Brightmap Sprite SMGGJ0 { Map SMGGJ0 DisableFullbright }
+Brightmap Sprite SMGGK0 { Map SMGGK0 DisableFullbright }
 Brightmap Sprite SMGGZ0 { Map SMGGZ0 DisableFullbright }
 // Gold Wand
 Brightmap Sprite WNDWA0 { Map WNDWA0 DisableFullbright }

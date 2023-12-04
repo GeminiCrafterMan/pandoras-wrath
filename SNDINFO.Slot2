@@ -10,6 +10,9 @@ weapons/92fsslideback	"Sounds/Weapons/Slot 2/92fs_slideback.wav"
 // SMG
 weapons/smgfire		"Sounds/Weapons/Slot 2/smg_fire.wav"
 weapons/draw_smg	"Sounds/Weapons/Slot 2/smg_draw.wav"
+weapons/smgclipout	"Sounds/Weapons/Slot 2/smg_clip_out.wav"
+weapons/smgclipin	"Sounds/Weapons/Slot 2/smg_clip_in.wav"
+weapons/smgpickup	"Sounds/Weapons/Slot 2/smg_pickup.wav"
 
 // MP40
 weapons/mp40fire	"Sounds/Weapons/Slot 2/mp40_fire.wav"
