@@ -7,7 +7,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 		Weapon.UpSound "weapons/draw_secondary";
 		Weapon.AmmoType "GWM_IceShell";
 		Weapon.AmmoUse 1;
-		Weapon.AmmoGive 5;
+		Weapon.AmmoGive 6;
 
 		ZWeapon.MagazineSize 5;
 		ZWeapon.ReloadSound "weapons/shell_load";

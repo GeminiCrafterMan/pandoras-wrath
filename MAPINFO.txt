@@ -1,0 +1,4 @@
+GameInfo
+{
+    StatusBarClass = "GWM_StatusBar"
+}

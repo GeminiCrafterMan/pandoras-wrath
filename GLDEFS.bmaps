@@ -179,6 +179,10 @@ Brightmap Sprite PFSHJ0 { Map PFSHJ0 DisableFullbright }
 Brightmap Sprite PFSHK0 { Map PFSHK0 DisableFullbright }
 Brightmap Sprite PFSHL0 { Map PFSHB0L0 DisableFullbright }
 Brightmap Sprite PFSHM0 { Map PFSHM0 DisableFullbright }
+Brightmap Sprite PFSHN0 { Map PFSHN0 DisableFullbright }
+Brightmap Sprite PFSHO0 { Map PFSHO0 DisableFullbright }
+Brightmap Sprite PFSHP0 { Map PFSHP0 DisableFullbright }
+Brightmap Sprite PFSHQ0 { Map PFSHQ0 DisableFullbright }
 Brightmap Sprite PFSHZ0 { Map PFSHZ0 DisableFullbright }
 // Slayer's Kahuna
 Brightmap Sprite SKSFA0 { Map SKSFA0 DisableFullbright }
@@ -188,9 +192,13 @@ Brightmap Sprite SKSGB0 { Map SKSGB0 DisableFullbright }
 Brightmap Sprite SKSGC0 { Map SKSGC0 DisableFullbright }
 Brightmap Sprite SKSGD0 { Map SKSGD0 DisableFullbright }
 Brightmap Sprite SKSGE0 { Map SKSGE0 DisableFullbright }
-Brightmap Sprite SKSGF0 { Map SKSGPUMP DisableFullbright }
-Brightmap Sprite SKSGG0 { Map SKSGPUMP DisableFullbright }
-Brightmap Sprite SKSGH0 { Map SKSGPUMP DisableFullbright }
+Brightmap Sprite SKSGF0 { Map SKSGSLAM DisableFullbright }
+Brightmap Sprite SKSGG0 { Map SKSGSLAM DisableFullbright }
+Brightmap Sprite SKSGH0 { Map SKSGSLAM DisableFullbright }
+Brightmap Sprite SKSGI0 { Map SKSGI0 DisableFullbright }
+Brightmap Sprite SKSGJ0 { Map SKSGJ0 DisableFullbright }
+Brightmap Sprite SKSGK0 { Map SKSGK0 DisableFullbright }
+Brightmap Sprite SKSGL0 { Map SKSGL0 DisableFullbright }
 Brightmap Sprite SKSGZ0 { Map SKSGZ0 DisableFullbright }
 // Super Shotgun
 Brightmap Sprite SSGFA0 { Map SSGFA0 DisableFullbright }
@@ -201,6 +209,16 @@ Brightmap Sprite SSGGZ0 { Map SSGGZ0 DisableFullbright }
 Brightmap Sprite RIFLA0 { Map RIFLA0 DisableFullbright }
 Brightmap Sprite RIFLB0 { Map RIFLB0 DisableFullbright }
 Brightmap Sprite RIFLC0 { Map RIFLC0 DisableFullbright }
+Brightmap Sprite RIFLD0 { Map RIFLD0 DisableFullbright }
+Brightmap Sprite RIFLE0 { Map RIFLE0 DisableFullbright }
+Brightmap Sprite RIFLF0 { Map RIFLF0 DisableFullbright }
+Brightmap Sprite RIFLG0 { Map RIFLG0 DisableFullbright }
+Brightmap Sprite RIFLH0 { Map RIFLH0 DisableFullbright }
+Brightmap Sprite RIFLI0 { Map RIFLI0 DisableFullbright }
+Brightmap Sprite RIFLJ0 { Map RIFLJ0 DisableFullbright }
+Brightmap Sprite RIFLK0 { Map RIFLK0 DisableFullbright }
+Brightmap Sprite RIFLL0 { Map RIFLL0 DisableFullbright }
+Brightmap Sprite RIFLM0 { Map RIFLM0 DisableFullbright }
 Brightmap Sprite RIFLZ0 { Map RIFLZ0 DisableFullbright }
 // Chaingun
 Brightmap Sprite CHGFA0 { Map CHGFA0 DisableFullbright }
