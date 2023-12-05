@@ -15,59 +15,54 @@ class GWM_ChaingunGuy : ChaingunGuy
 	}
 }
 
-class GWM_RifleCommando : ChaingunGuy
+class GWM_HeavyRifleman : ChaingunGuy
 {
 	Default
 	{
 		AttackSound "weapons/riflesht";
-		Obituary "$OB_RIFLECOMMANDO";
+		Obituary "$OB_HEAVYRIFLEMAN";
 		DropItem "GWM_BurstRifle";
 	}
 	States
 	{
 		Spawn:
-			ACPS AB 10 A_Look;
+			HEVY AB 10 A_Look;
 			Loop;
 		See:
-			ACPS AABBCCDD 4 A_Chase;
+			HEVY AABBCCDD 4 A_Chase;
 			Loop;
 		Missile:
-			ACPS E 2 A_FaceTarget;
-			ACPS F 1 Bright A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
-			ACPS E 2 A_FaceTarget;
-			ACPS F 1 Bright A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
-			ACPS E 2 A_FaceTarget;
-			ACPS F 1 Bright A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
-			ACPS E 5 A_CPosRefire;
+			HEVY E 2 A_FaceTarget;
+			HEVY F 1 Bright A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			HEVY G 2 A_FaceTarget;
+			HEVY F 1 Bright A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			HEVY G 2 A_FaceTarget;
+			HEVY F 1 Bright A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			HEVY G 2;
+			HEVY E 3 A_CPosRefire;
 			Goto Missile;
 		Pain:
-			ACPS G 3;
-			ACPS G 3 A_Pain;
+			HEVY H 3;
+			HEVY H 3 A_Pain;
 			Goto See;
 		Death:
-			TNT1 A 0 A_Jump (125, "AltDeath");
-			ACPS H 5;
-			ACPS I 5 A_Scream;
-			ACPS J 5 A_NoBlocking;
-			ACPS KLM 5;
-			ACPS N -1;
-			Stop;
-		AltDeath:
-			ACPS V 5 A_Scream;
-			ACPS W 5;
-			ACPS X 5 A_NoBlocking;
-			ACPS Y 5;
-			ACPS Z -1;
+			HEVY I 5;
+			HEVY J 5 A_Scream;
+			HEVY K 5 A_NoBlocking;
+			HEVY L 5;
+			HEVY M 5;
+			HEVY N -1;
 			Stop;
 		XDeath:
-			ACPS O 5;
-			ACPS P 5 A_XScream;
-			ACPS Q 5 A_NoBlocking;
-			ACPS RS 5;
-			ACPS T -1;
+			HEVY O 5;
+			HEVY P 5 A_XScream;
+			HEVY Q 5 A_NoBlocking;
+			HEVY RS 5;
+			HEVY T -1;
 			Stop;
 		Raise:
-			ACPS NMLKJIH 5;
+			HEVY M 5;
+			HEVY LKJI 5;
 			Goto See;
 	}
 }

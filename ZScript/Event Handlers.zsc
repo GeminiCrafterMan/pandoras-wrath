@@ -41,12 +41,10 @@ class ThingReplacer : StaticEventHandler
 			if (e.Replacee == "ChaingunGuy")
 			{
 				if (random(0, 1) == 1)
-					e.Replacement = "GWM_RifleCommando";
+					e.Replacement = "GWM_HeavyRifleman";
 				else
 					e.Replacement = "GWM_ChaingunGuy";
 			}
-            if (e.Replacee == "WolfensteinSS" && !e.Replacement)
-                e.Replacement = "GWM_WolfensteinSS";
 			// Imps and Bigger Imps
 			if (e.Replacee == "DoomImp")
 			{

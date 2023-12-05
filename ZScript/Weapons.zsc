@@ -6,7 +6,6 @@
 
 #include "ZScript/Weapons/Slot 2/GWM_Pistol.zsc"			// Beretta 92FS
 #include "ZScript/Weapons/Slot 2/GWM_SMG.zsc"				// SMG
-#include "ZScript/Weapons/Slot 2/GWM_MP40.zsc"				// MP40
 
 #include "ZScript/Weapons/Slot 3/GWM_Shotgun.zsc"			// Slayer's Kahuna
 #include "ZScript/Weapons/Slot 3/GWM_SuperShotgun.zsc"		// Super Shotgun

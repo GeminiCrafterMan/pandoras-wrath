@@ -67,17 +67,35 @@ Brightmap sprite BARNK0 { map BARNK0 }
 Brightmap sprite BARNL0 { map BARNL0 }
 Brightmap sprite BARNM0 { map BARNM0 }
 
-// Rifle Commando
-Brightmap Sprite ACPSE1 { Map ACPFTRE1 DisableFullbright }
-Brightmap Sprite ACPSE2E8 { Map ACPFTRE2 DisableFullbright }
-Brightmap Sprite ACPSE3E7 { Map ACPFTRE3 DisableFullbright }
-Brightmap Sprite ACPSE4E6 { Map BMBLACK DisableFullbright }
-Brightmap Sprite ACPSE5 { Map BMBLACK DisableFullbright }
-Brightmap Sprite ACPSF1 { Map ACPFTRF1 DisableFullbright }
-Brightmap Sprite ACPSF2F8 { Map ACPFTRF2 DisableFullbright }
-Brightmap Sprite ACPSF3F7 { Map ACPFTRF3 DisableFullbright }
-Brightmap Sprite ACPSF4F6 { Map ACPFTRF4 DisableFullbright }
-Brightmap Sprite ACPSF5 { Map ACPFTRF5 DisableFullbright }
+// Heavy Rifleman
+Brightmap Sprite HEVYA1 { Map HEVYA1 DisableFullbright }
+Brightmap Sprite HEVYA2A8 { Map HEVYA2A8 DisableFullbright }
+Brightmap Sprite HEVYA3A7 { Map HEVYA3A7 DisableFullbright }
+Brightmap Sprite HEVYB1 { Map HEVYB1 DisableFullbright }
+Brightmap Sprite HEVYB2B8 { Map HEVYB2B8 DisableFullbright }
+Brightmap Sprite HEVYB3B7 { Map HEVYB3B7 DisableFullbright }
+Brightmap Sprite HEVYC1 { Map HEVYC1 DisableFullbright }
+Brightmap Sprite HEVYC2C8 { Map HEVYC2C8 DisableFullbright }
+Brightmap Sprite HEVYC3C7 { Map HEVYC3C7 DisableFullbright }
+Brightmap Sprite HEVYD1 { Map HEVYD1 DisableFullbright }
+Brightmap Sprite HEVYD2D8 { Map HEVYD2D8 DisableFullbright }
+Brightmap Sprite HEVYD3D7 { Map HEVYD3D7 DisableFullbright }
+Brightmap Sprite HEVYE1 { Map HEVYE1 DisableFullbright }
+Brightmap Sprite HEVYE2E8 { Map HEVYE2E8 DisableFullbright }
+Brightmap Sprite HEVYE3E7 { Map HEVYE3E7 DisableFullbright }
+Brightmap Sprite HEVYF1 { Map HEVYF1 DisableFullbright }
+Brightmap Sprite HEVYF2F8 { Map HEVYF2F8 DisableFullbright }
+Brightmap Sprite HEVYF3F7 { Map HEVYF3F7 DisableFullbright }
+Brightmap Sprite HEVYF4F6 { Map HEVYF4F6 DisableFullbright }
+Brightmap Sprite HEVYF5 { Map HEVYF5 DisableFullbright }
+Brightmap Sprite HEVYH1 { Map HEVYH1 DisableFullbright }
+Brightmap Sprite HEVYH2H8 { Map HEVYH2H8 DisableFullbright }
+Brightmap Sprite HEVYH3H7 { Map HEVYH3H7 DisableFullbright }
+Brightmap Sprite HEVYI0 { Map HEVYI0 DisableFullbright }
+Brightmap Sprite HEVYJ0 { Map HEVYJ0 DisableFullbright }
+Brightmap Sprite HEVYK0 { Map HEVYK0 DisableFullbright }
+Brightmap Sprite HEVYO0 { Map HEVYO0 DisableFullbright }
+
 
 // SMG Guy
 Brightmap Sprite MGPOF1 { Map BMMGPOF1 DisableFullbright }

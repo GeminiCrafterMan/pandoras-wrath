@@ -174,9 +174,29 @@ Object MelterBeam
 	Frame VMLP {Light MelterBeamLight}
 }
 
-Object GWM_RifleCommando
+Object GWM_HeavyRifleman
 {
-	Frame ACPSF { Light ZOMBIEATK }
+	Frame HEVYF { Light HeavyGuyAttack1 }
+	Frame HEVYG { Light HeavyGuyAttack2 }
+}
+FlickerLight2 HeavyGuyAttack1
+{
+	color 1.0 0.8 0.2
+	size 96
+	secondarySize 112
+	interval 1
+	offset 0 40 0
+	attenuate 1
+}
+
+FlickerLight2 HeavyGuyAttack2
+{
+	color 1.0 0.6 0.1
+	size 96
+	secondarySize 112
+	interval 1
+	offset 0 40 0
+	attenuate 1
 }
 
 Object GWM_SMGGuy

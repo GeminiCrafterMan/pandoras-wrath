@@ -152,9 +152,10 @@ class GWM_Tracer : FastProjectile
 		RenderStyle "Add";
 		Radius 2;
 		Height 2;
-		Speed 360;
+		Speed 240;
 		//+BLOODSPLATTER
 		+HITTRACER
+		+NOINTERACTION
 		Scale .3;
 		MissileType "GWM_TracerTrail";
 		MissileHeight 8;
