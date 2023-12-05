@@ -36,12 +36,23 @@ class GWM_IceShotgunGuy : ShotgunGuy
 			Loop;
 		Missile:
 			ISGZ E 10 A_FaceTarget;
-			ISGZ F 10 BRIGHT {
-				A_StartSound("weapons/iceshgn");
+			ISGZ F 10 BRIGHT
+			{
+				A_StartSound("weapons/iceshot", CHAN_WEAPON);
 				A_FatAttack3("GWM_ShotgunGuyIceChunk");
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
 //				SpawnMissile(target, "GWM_ShotgunGuyIceChunk");
 			}
-			ISGZ E 10;
+			ISGZ E 9;
+			ISGZ E 4 {
+				A_StartSound("weapons/icepump1", CHAN_BODY);
+				A_StartSound("weapons/icehiss", CHAN_AUTO);
+			}
+			ISGZ E 4;
+			ISGZ E 5 A_StartSound("weapons/icepump2", CHAN_BODY);
 			Goto See;
 		Pain:
 			ISGZ G 3;

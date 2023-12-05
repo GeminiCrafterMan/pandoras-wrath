@@ -46,5 +46,8 @@ class GWM_WeaponBase : ZWeapon
 		Obituary "$KILLPLACEHOLDER";
 		Tag "Weapon base";
 		Weapon.BobStyle "Smooth";
+		Weapon.BobRangeX 1.0;
+		Weapon.BobRangeY 1.0;
+		Weapon.BobSpeed 1.0;
 	}
 }
