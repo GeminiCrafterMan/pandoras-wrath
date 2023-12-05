@@ -16,7 +16,7 @@ class GWM_ArmorBonus : ArmorBonus replaces ArmorBonus
 	}
 }
 
-class GWM_Soulsphere : Soulsphere replaces Soulsphere
+class GWM_Soulsphere : Soulsphere
 {
 	Default
 	{
@@ -204,6 +204,47 @@ class GWM_StopwatchSparkle : Actor
 	{
 		Spawn:
 			WTCH DEFGH 2 Bright;
+			Stop;
+	}
+}
+class GWM_PortableMedkit : Inventory
+{
+    override bool Use (bool pickup)
+    {
+		int firstAidAmount;
+		firstAidAmount = owner.CountInv("GWM_PortableMedkit");
+
+		if (!owner || !owner.player || owner.player.Health > 100 || !owner.FindInventory("GWM_PortableMedkit"))
+		return false;
+
+		if (owner.player.Health < 100 && firstAidAmount != 0)
+		{
+			owner.A_StartSound("powerups/portable_medkit", CHAN_ITEM); 
+			int toheal = 100 - owner.player.health; //Check how much to heal
+
+			If(toheal > firstAidAmount)  //If that amount is larger than the amount of charge, set it to be equal
+			{
+				toheal = firstAidAmount;
+			}
+			owner.GiveBody(toheal); //Heal the player that amount
+			owner.A_TakeInventory("GWM_PortableMedkit", toheal); //Take that amount of charge
+		}
+		return Super.Use(pickup);
+	}
+	Default
+	{
+		+INVENTORY.INVBAR;
+		Inventory.Amount 100;
+		Inventory.MaxAmount 100;
+		Inventory.InterHubAmount 100;
+		Inventory.PickUpMessage "$GOTPORTABLEMEDKIT";
+		Inventory.Icon "PKITA0";
+		Tag "Portable Medkit";
+	}
+	States
+	{
+		Spawn:
+			PKIT A -1;
 			Stop;
 	}
 }

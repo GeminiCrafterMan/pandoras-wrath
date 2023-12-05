@@ -128,3 +128,12 @@ class GWM_InvulnerabilitySphereSpawner : RandomSpawner replaces InvulnerabilityS
 		DropItem "GWM_ReflectSphere";
 	}
 }
+
+class GWM_SoulsphereSpawner : RandomSpawner replaces Soulsphere
+{
+	Default
+	{
+		DropItem "GWM_Soulsphere";
+		DropItem "GWM_PortableMedkit";
+	}
+}

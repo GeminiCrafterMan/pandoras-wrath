@@ -37,6 +37,7 @@ GOTCYBERIMPARM = "Pulled the power cell out of a Cyber Imp's severed arm.";
 GOTLIFEDRAIN = "Life drain!";
 GOTREFLECTIVE = "Reflective shots!";
 GOTSTOPWATCH = "Stopwatch!";
+GOTPORTABLEMEDKIT = "Portable medkit!";
 // Obituaries
 KILLPLACEHOLDER = "You shouldn't see this.";
 KILLMINES = "%o didn't see %k's land mine.";
