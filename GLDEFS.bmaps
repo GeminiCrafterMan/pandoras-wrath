@@ -1,3 +1,4 @@
+// Objects //
 // Explosive barrel
 Brightmap Sprite XBARB1 { Map XBARB0 DisableFullbright }
 Brightmap Sprite XBARB2 { Map XBARB0 DisableFullbright }
@@ -8,6 +9,7 @@ Brightmap Sprite XBARB6 { Map XBARB0 DisableFullbright }
 Brightmap Sprite XBARB7 { Map XBARB0 DisableFullbright }
 Brightmap Sprite XBARB8 { Map XBARB0 DisableFullbright }
 
+// Monsters //
 // Baron of Hell
 Brightmap sprite BARNA1 { map BARNa1 }
 Brightmap sprite BARNA2A8 { map BARNa2a8 }
@@ -66,7 +68,6 @@ Brightmap sprite BARNJ0 { map BARNJ0 }
 Brightmap sprite BARNK0 { map BARNK0 }
 Brightmap sprite BARNL0 { map BARNL0 }
 Brightmap sprite BARNM0 { map BARNM0 }
-
 // Heavy Rifleman
 Brightmap Sprite HEVYA1 { Map HEVYA1 DisableFullbright }
 Brightmap Sprite HEVYA2A8 { Map HEVYA2A8 DisableFullbright }
@@ -95,15 +96,12 @@ Brightmap Sprite HEVYI0 { Map HEVYI0 DisableFullbright }
 Brightmap Sprite HEVYJ0 { Map HEVYJ0 DisableFullbright }
 Brightmap Sprite HEVYK0 { Map HEVYK0 DisableFullbright }
 Brightmap Sprite HEVYO0 { Map HEVYO0 DisableFullbright }
-
-
 // SMG Guy
 Brightmap Sprite MGPOF1 { Map BMMGPOF1 DisableFullbright }
 Brightmap Sprite MGPOF2F8 { Map BMMGPOF2 DisableFullbright }
 Brightmap Sprite MGPOF3F7 { Map BMMGPOF3 DisableFullbright }
 Brightmap Sprite MGPOF4F6 { Map BMMGPOF4 DisableFullbright }
 Brightmap Sprite MGPOF5 { Map BMMGPOF5 DisableFullbright }
-
 // Ice Shotgun Guy
 Brightmap Sprite ISGZE1 { Map BMISGZE1 DisableFullbright }
 Brightmap Sprite ISGZE2E8 { Map BMISGZE2 DisableFullbright }
@@ -113,7 +111,6 @@ Brightmap Sprite ISGZF2F8 { Map BMISGZF2 DisableFullbright }
 Brightmap Sprite ISGZF3F7 { Map BMISGZF3 DisableFullbright }
 Brightmap Sprite ISGZF4F6 { Map BMISGZF4 DisableFullbright }
 Brightmap Sprite ISGZF5 { Map BMISGZF5 DisableFullbright }
-
 // Cyber Imp
 Brightmap Sprite CIMPG1 { Map CIMPG1 DisableFullbright }
 Brightmap Sprite CIMPG2 { Map CIMPG2 DisableFullbright }
@@ -122,8 +119,48 @@ Brightmap Sprite CIMPG4 { Map CIMPG4 DisableFullbright }
 Brightmap Sprite CIMPG6 { Map CIMPG6 DisableFullbright }
 Brightmap Sprite CIMPG7 { Map CIMPG7 DisableFullbright }
 Brightmap Sprite CIMPG8 { Map CIMPG8 DisableFullbright }
+// Superdemon
+Brightmap Sprite SUPRE1 { Map SUPRE1 DisableFullbright }
+Brightmap Sprite SUPRE2E8 { Map SUPRE2E8 DisableFullbright }
+Brightmap Sprite SUPRE3E7 { Map SUPRE3E7 DisableFullbright }
+Brightmap Sprite SUPRE4E6 { Map SUPRE4E6 DisableFullbright }
+Brightmap Sprite SUPRE5 { Map SUPRE5 DisableFullbright }
+Brightmap Sprite SUPRF1 { Map SUPRF1 DisableFullbright }
+Brightmap Sprite SUPRF2F8 { Map SUPRF2F8 DisableFullbright }
+Brightmap Sprite SUPRF3F7 { Map SUPRF3F7 DisableFullbright }
+Brightmap Sprite SUPRF4F6 { Map SUPRF4F6 DisableFullbright }
+Brightmap Sprite SUPRF5 { Map SUPRF5 DisableFullbright }
+Brightmap Sprite SUPRG1 { Map SUPRG1 DisableFullbright }
+Brightmap Sprite SUPRG2G8 { Map SUPRG2G8 DisableFullbright }
+Brightmap Sprite SUPRG3G7 { Map SUPRG3G7 DisableFullbright }
+Brightmap Sprite SUPRG4G6 { Map SUPRG4G6 DisableFullbright }
+Brightmap Sprite SUPRG5 { Map SUPRG5 DisableFullbright }
+Brightmap Sprite SUPRQ1 { Map SUPRQ1 DisableFullbright }
+Brightmap Sprite SUPRQ2 { Map SUPRQ2 DisableFullbright }
+Brightmap Sprite SUPRQ3 { Map SUPRQ3 DisableFullbright }
+Brightmap Sprite SUPRQ4 { Map SUPRQ4 DisableFullbright }
+Brightmap Sprite SUPRQ5 { Map SUPRQ5 DisableFullbright }
+Brightmap Sprite SUPRQ6 { Map SUPRQ6 DisableFullbright }
+Brightmap Sprite SUPRQ7 { Map SUPRQ7 DisableFullbright }
+Brightmap Sprite SUPRQ8 { Map SUPRQ8 DisableFullbright }
+Brightmap Sprite SUPRR1 { Map SUPRR1 DisableFullbright }
+Brightmap Sprite SUPRR2 { Map SUPRR2 DisableFullbright }
+Brightmap Sprite SUPRR3 { Map SUPRR3 DisableFullbright }
+Brightmap Sprite SUPRR4 { Map SUPRR4 DisableFullbright }
+Brightmap Sprite SUPRR5 { Map SUPRR5 DisableFullbright }
+Brightmap Sprite SUPRR6 { Map SUPRR6 DisableFullbright }
+Brightmap Sprite SUPRR7 { Map SUPRR7 DisableFullbright }
+Brightmap Sprite SUPRR8 { Map SUPRR8 DisableFullbright }
+Brightmap Sprite SUPRS1 { Map SUPRS1 DisableFullbright }
+Brightmap Sprite SUPRS2 { Map SUPRS2 DisableFullbright }
+Brightmap Sprite SUPRS3 { Map SUPRS3 DisableFullbright }
+Brightmap Sprite SUPRS4 { Map SUPRS4 DisableFullbright }
+Brightmap Sprite SUPRS5 { Map SUPRS5 DisableFullbright }
+Brightmap Sprite SUPRS6 { Map SUPRS6 DisableFullbright }
+Brightmap Sprite SUPRS7 { Map SUPRS7 DisableFullbright }
+Brightmap Sprite SUPRS8 { Map SUPRS8 DisableFullbright } 
 
-// Weapons
+// Weapons //
 // Instagibber(?) (Sentinel's Lexicon... The Votegun has no Brightmaps.)
 Brightmap Sprite INKLA0 { Map INKLA0 DisableFullbright }
 Brightmap Sprite INKLB0 { Map INKLB0 DisableFullbright }

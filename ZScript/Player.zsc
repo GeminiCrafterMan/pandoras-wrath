@@ -16,7 +16,7 @@ class GWM_Player : DoomPlayer
 	Default
 	{
 		Player.SoundClass "GWM_Player";
-		Player.WeaponSlot 1, "GWM_Mine", "GWM_Fist", "GWM_Impactor", "GWM_Icebreaker", "GWM_Levenbrech";
+		Player.WeaponSlot 1, "GWM_Mine", "GWM_Fist", "GWM_Lumberjack", "GWM_Impactor", "GWM_Levenbrech";
 		Player.WeaponSlot 2, "GWM_Pistol", "GWM_SMG", "GWM_MP40", "GWM_GoldWand";
 		Player.WeaponSlot 3, "GWM_IceShotgun", "GWM_PFSuperShotgun", "GWM_Shotgun", "GWM_SuperShotgun", "GWM_ImpalerCrossbow";
 		Player.WeaponSlot 4, "GWM_Chaingun", "GWM_BurstRifle", "GWM_FrostFang";
@@ -32,6 +32,7 @@ class GWM_DoomPlayer : GWM_Player
 	{
 		Player.StartItem "GWM_Pistol";
 		Player.StartItem "GWM_Fist";
+		Player.StartItem "GWM_Mine";
 		Player.StartItem "Clip", 50;
 	}
 }

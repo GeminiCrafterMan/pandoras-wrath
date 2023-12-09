@@ -1,7 +1,7 @@
 [enu default]
 // Weapon pickup messages
 GOTMINES = "You picked up some land mines!";
-GOTICEBREAKER = "You picked up the Icebreaker!";
+GOTLUMBERJACK = "You picked up the Lumberjack!";
 GOTIMPACTOR = "You picked up the Impactor Gauntlet!";
 GOTLEVENBRECH = "You picked up the Levenbrech!";
 GOT92FS = "You picked up the Beretta 92FS!";
@@ -42,7 +42,7 @@ GOTPORTABLEMEDKIT = "Portable medkit!";
 KILLPLACEHOLDER = "You shouldn't see this.";
 KILLMINES = "%o didn't see %k's land mine.";
 KILLFISTS = "%o was punched in the snout by %k to establish %h's superiority.";
-KILLICEBREAKER = "%o had their insides scrambled by %k's Icebreaker.";
+KILLLUMBERJACK = "%o had their insides shredded by %k's Lumberjack.";
 KILLIMPACTOR = "%o's face was smashed in by %k's Impactor Gauntlet.";
 KILLLEVENBRECH = "%o had their life broken by %k's Levenbrech.";
 KILLLEVENBRECH_POWERED = "%o had their soul destroyed by %k's powered-up Levenbrech.";

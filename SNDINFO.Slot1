@@ -21,11 +21,13 @@ weapons/IMGHit		"Sounds/Weapons/Slot 1/Impactor Gauntlet/IMGAHIT.ogg"
 weapons/IMGMiss		"Sounds/Weapons/Slot 1/Impactor Gauntlet/IMGAMISS.ogg"
 weapons/IMGThrust	"Sounds/Weapons/Slot 1/Impactor Gauntlet/IMGATHRU.ogg"
 
-// Icebreaker drill
-weapons/drillup		"Sounds/Weapons/Slot 1/Icebreaker/drill_spinup.wav"
-weapons/drillloop	"Sounds/Weapons/Slot 1/Icebreaker/drill_spinloop.wav"
-weapons/drillhit	"Sounds/Weapons/Slot 1/Icebreaker/stabImpact.wav"
-weapons/drilldown	"Sounds/Weapons/Slot 1/Icebreaker/drill_spindown.wav"
+// Chainsaw
+weapons/csawup		"Sounds/Weapons/Slot 1/Chainsaw/chainsaw_windup.wav"
+weapons/csawloop	"Sounds/Weapons/Slot 1/Chainsaw/chainsaw_attack_loop.wav"
+weapons/csawdown	"Sounds/Weapons/Slot 1/Chainsaw/chainsaw_winddown.wav"
+weapons/csawidle	"Sounds/Weapons/Slot 1/Chainsaw/chainsaw_idle.wav"
+weapons/draw_csaw	"Sounds/Weapons/Slot 1/Chainsaw/chainsaw_draw.wav"
+weapons/csawhit		"Sounds/Weapons/Slot 1/Chainsaw/stabImpact.wav"
 
 // Levenbrech sword
 weapons/swordslash1	"Sounds/Weapons/Slot 1/Levenbrech/slash1.mp3"

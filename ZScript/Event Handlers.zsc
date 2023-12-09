@@ -70,6 +70,20 @@ class ThingReplacer : StaticEventHandler
 				else
 					e.Replacement = "Demon";
 			}
+			if (e.Replacee == "Cyberdemon")
+			{
+				if (random(0,1) == 1)
+					e.Replacement = "GWM_Superdemon";
+				else
+					e.Replacement = "Cyberdemon";
+			}
+/*			if (e.Replacee == "Cacodemon")
+			{
+				if (SystemTime.Format("%B", SystemTime.Now()) == "October")
+					e.Replacement = "GWM_Cacolantern";
+				else
+					e.Replacement = "Cacodemon";
+			}*/
         }
 
 		// Objects
@@ -80,4 +94,11 @@ class ThingReplacer : StaticEventHandler
 				e.Replacement = "GWM_ExplosiveBarrel";
 		}
     }
+	override void CheckReplacee(ReplacedEvent e)
+	{
+		if (e.Replacement == "GWM_Superdemon")
+			e.Replacee = "Cyberdemon";
+		if (e.Replacement == "GWM_BaronOfHell")
+			e.Replacee = "BaronOfHell";
+	}
 }

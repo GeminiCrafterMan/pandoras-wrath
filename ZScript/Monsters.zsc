@@ -4,3 +4,5 @@
 #include "ZScript/Monsters/Imps.zsc"
 #include "ZScript/Monsters/Pinkies.zsc"
 #include "ZScript/Monsters/Barons.zsc"
+#include "ZScript/Monsters/Cacodemons.zsc"
+#include "ZScript/Monsters/Cyberdemons.zsc"

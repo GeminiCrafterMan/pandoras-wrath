@@ -208,3 +208,44 @@ Object GWM_IceShotgunGuy
 {
 	Frame ISGZF { Light GWM_ICEGUNSATK }
 }
+
+// Superdemon fireball
+pointlight SDEMONBALL
+{
+    color 1.0 0.0 0.0
+    size 64
+}
+
+flickerlight SDEMONBALL_X1
+{
+    color 7.0 0.0 0.0
+    size 80
+    secondarySize 88
+    chance 0.25
+}
+
+flickerlight SDEMONBALL_X2
+{
+    color 0.4 0.0 0.0
+    size 96
+    secondarySize 104
+    chance 0.25
+}
+
+flickerlight SDEMONBALL_X3
+{
+    color 0.2 0.0 0.0
+    size 112
+    secondarySize 120
+    chance 0.25
+}
+
+object GWM_SuperDemonBall
+{
+    frame BAL9A { light SDEMONBALL    }
+    frame BAL9B { light SDEMONBALL    }
+
+    frame BAL9C { light SDEMONBALL_X1 }
+    frame BAL9D { light SDEMONBALL_X2 }
+    frame BAL9E { light SDEMONBALL_X3 }
+}

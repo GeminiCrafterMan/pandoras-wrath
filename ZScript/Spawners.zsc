@@ -61,7 +61,7 @@ class GWM_ChainsawSpawner : GWM_WeaponSpawner replaces Chainsaw
 	Default
 	{
 		DropItem "GWM_Impactor";
-		DropItem "GWM_Icebreaker";
+		DropItem "GWM_Lumberjack";
 	}
 }
 

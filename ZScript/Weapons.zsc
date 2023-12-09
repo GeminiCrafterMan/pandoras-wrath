@@ -1,8 +1,8 @@
 // Doom
-#include "ZScript/Weapons/Slot 1/GWM_Mine.zsc"				// land mine 
+#include "ZScript/Weapons/Slot 1/GWM_Mine.zsc"				// Land mine 
 #include "ZScript/Weapons/Slot 1/GWM_Fist.zsc"				// Fist, taken from Super Skulltag and rewritten slightly.
 #include "ZScript/Weapons/Slot 1/GWM_Impactor.zsc"			// Impactor Gauntlet, taken from Realm667.
-#include "ZScript/Weapons/Slot 1/GWM_Icebreaker.zsc"		// Icebreaker drill, edited off of a nailgun by Captain J.
+#include "ZScript/Weapons/Slot 1/GWM_Lumberjack.zsc"		// "Lumberjack" Chainsaw, sprites by Captain J
 
 #include "ZScript/Weapons/Slot 2/GWM_Pistol.zsc"			// Beretta 92FS
 #include "ZScript/Weapons/Slot 2/GWM_SMG.zsc"				// SMG
