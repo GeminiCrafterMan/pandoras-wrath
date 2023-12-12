@@ -24,7 +24,10 @@ weapons/iceshot		"Sounds/Weapons/Slot 3/Ice SG/Shot.wav"
 weapons/icepickup	"Sounds/Weapons/Slot 3/Ice SG/pickup.wav"
 weapons/icepump1	"Sounds/Weapons/Slot 3/Ice SG/Pump1.wav"
 weapons/icepump2	"Sounds/Weapons/Slot 3/Ice SG/Pump2.wav"
-weapons/icehiss		"Sounds/Weapons/Slot 3/Ice SG/Hiss.wav"
+weapons/icehiss1	"Sounds/Weapons/Slot 3/Ice SG/Hiss1.wav"
+weapons/icehiss2	"Sounds/Weapons/Slot 3/Ice SG/Hiss2.mp3"
+
+$random weapons/icehiss {weapons/icehiss1 weapons/icehiss2}
 
 // P.F. Super Shotgun
 // All sounds here are from Touhou Koumakyou: Embodiment of Scarlet Devil (th06)

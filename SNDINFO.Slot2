@@ -14,8 +14,5 @@ weapons/smgclipout	"Sounds/Weapons/Slot 2/smg_clip_out.wav"
 weapons/smgclipin	"Sounds/Weapons/Slot 2/smg_clip_in.wav"
 weapons/smgpickup	"Sounds/Weapons/Slot 2/smg_pickup.wav"
 
-// MP40
-weapons/mp40fire	"Sounds/Weapons/Slot 2/mp40_fire.wav"
-
 // Gold Wand
 weapons/wandhit		"Sounds/Weapons/Slot 2/wand_fire.wav"
