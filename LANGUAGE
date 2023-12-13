@@ -19,6 +19,7 @@ GOTROCKETLAUNCHER = "You picked up the Rocket Launcher!";
 GOTVENOMCANNON = "You picked up the Venom Cannon!";
 GOTPLASMARIFLE = "You picked up the Plasma Rifle!";
 GOTMELTER = "You picked up the Melter!";
+GOTNOISECRUSHER = "You picked up the Noise Crusher!";
 GOTBFG9000 = "You picked up the BFG9000!! Oh yeah!";
 // Ammo pickup messages
 DISARMEDMINE = "Disarmed and retrieved a mine.";
@@ -67,6 +68,7 @@ KILLVENOMCANNONPUDDLE = "%o was on the receiving end of the war crimes caused by
 //KILLPLASMARIFLE = "%o was melted by %k's Plasma Rifle."; // Unnecessary at the moment. If I change the plasma ball to do something else, sure.
 KILLPLASMARIFLE_RAIL = "%o found out %g had a hole in %p chest thanks to %k's Plasma Rifle.";
 KILLMELTER = "%o was turned to ash by %k's Melter.";
+KILLNOISECRUSHER = "%o had %p eardrums blown out by %k's Noise Crusher.";
 KILLBFG9000 = "%o was reduced to atoms by %k's BFG9000.";
 KILLBFGBALL = "%o was turned to dust by %k's BFG9000.";
 // Enemy kill messages

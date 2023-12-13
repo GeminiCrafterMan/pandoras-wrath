@@ -107,6 +107,7 @@ class GWM_PlasmaRifleSpawner : GWM_WeaponSpawner replaces PlasmaRifle
 	{
 		DropItem "GWM_PlasmaRifle";
 		DropItem "GWM_Melter";
+		DropItem "GWM_NoiseCrusher";
 	}
 }
 

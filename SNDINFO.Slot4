@@ -11,12 +11,12 @@ weapons/cgunup			"Sounds/Weapons/Slot 4/Chaingun/chaingun_cg_windup_mix_01.wav"
 weapons/cgunloop		"Sounds/Weapons/Slot 4/Chaingun/chaingun_cg_motor_loop_01.wav"
 weapons/cgundn			"Sounds/Weapons/Slot 4/Chaingun/chaingun_cg_winddown_mix_01.wav"
 
-weapons/chgnf1			"Sounds/Weapons/Slot 4/Chaingun/chaingun_fire1.wav"
-weapons/chgnf2			"Sounds/Weapons/Slot 4/Chaingun/chaingun_fire2.wav"
-weapons/chgnf3			"Sounds/Weapons/Slot 4/Chaingun/chaingun_fire3.wav"
-weapons/chgnf4			"Sounds/Weapons/Slot 4/Chaingun/chaingun_fire4.wav"
+weapons/chainfire1		"Sounds/Weapons/Slot 4/Chaingun/chaingun_fire1.wav"
+weapons/chainfire2		"Sounds/Weapons/Slot 4/Chaingun/chaingun_fire2.wav"
+weapons/chainfire3		"Sounds/Weapons/Slot 4/Chaingun/chaingun_fire3.wav"
+weapons/chainfire4		"Sounds/Weapons/Slot 4/Chaingun/chaingun_fire4.wav"
 
-$random weapons/chngun { weapons/chgnf1 weapons/chgnf2 weapons/chgnf3 weapons/chgnf4 }	
+$random weapons/chainfire { weapons/chainfire1 weapons/chainfire2 weapons/chainfire3 weapons/chainfire4 }	
 
 // Frost Fang
 FrostFang/Fire1	FSTFFIR1

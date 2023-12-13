@@ -23,3 +23,9 @@ $pitchset Melter/melt 0.8 1.2
 $attenuation Melter/melt 1.5
 melt1 VMELT1
 melt2 VMELT2
+
+// Noise Crusher
+weapons/noisecharge	"Sounds/Weapons/Slot 6/Noise Crusher/charge.wav"
+weapons/noisebounce	"Sounds/Weapons/Slot 6/Noise Crusher/tingle.wav"
+weapons/noisefire	"Sounds/Weapons/Slot 6/Noise Crusher/tingle_down.wav"
+weapons/noisecfire	"Sounds/Weapons/Slot 6/Noise Crusher/tingle_big.wav"

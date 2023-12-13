@@ -160,7 +160,8 @@ class ZWeapon : Weapon
 	action State ZWL_JumpIfReloaded(StateLabel st, bool allowCancel = true, bool extraRound = false)
 	{
 		if (!invoker.CheckAmmo(PrimaryFire, false, true) || invoker.IsFull(extraRound)
-				|| allowCancel && invoker.WasPressed(BT_Reload))
+				|| allowCancel && invoker.WasPressed(BT_Reload)
+				|| allowCancel && (invoker.WasPressed(BT_Attack) || invoker.WasPressed(BT_AltAttack))) // G: so you can panic attack more effectively
 			return ResolveState(st);
 
 		return ResolveState(null);

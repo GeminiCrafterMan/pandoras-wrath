@@ -1,0 +1,326 @@
+class GWM_NoiseCrusher : GWM_WeaponBase
+{
+	bool CrushCaught;
+	Default
+	{
+		Weapon.AmmoUse 10;
+		Weapon.AmmoGive 40;
+		Inventory.PickupMessage "$GOTNOISECRUSHER";
+		Obituary "$KILLNOISECRUSHER";
+		Tag "Noise Crusher";
+		Weapon.AmmoType "Cell";
+		Inventory.Icon "NCRGZ0";
+	}
+	States
+	{
+		Spawn:
+			NCRG Z -1;
+			Stop;
+		Select:
+			NCRG A 1 {
+				A_Raise(12);
+				invoker.CrushCaught = false;
+			}
+			Loop;
+		Deselect:
+			NCRG A 1 {
+				A_Lower(12);
+				invoker.CrushCaught = false;
+			}
+			Loop;
+		Ready:
+			TNT1 A 0 {
+				if (invoker.CrushCaught) {
+					A_StartSound("weapons/noisecharge", CHAN_WEAPON);
+					player.SetPSprite(OverlayID(), ResolveState("Ready.Charged"));
+				}
+			}
+			NCRG A 1 A_WeaponReady;
+			Loop;
+		Ready.Charged:
+			NCRG B 1 A_WeaponReady;
+			Loop;
+		Fire:
+			TNT1 A 0 {
+				if (invoker.CrushCaught) {
+					player.SetPSprite(OverlayID(), ResolveState("Fire.Charged"));
+				}
+			}
+			NCRG A 8 {
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				A_Overlay(-2, "Flash");
+				A_WeaponOffset(0, 12, WOF_ADD);
+				A_StartSound("weapons/noisefire", CHAN_WEAPON);
+				A_FireProjectile("GWM_NoiseCrush");
+				A_OverlayScale(OverlayID(), 1.165, 0, WOF_INTERPOLATE);
+			}
+			NCRG A 3;
+			NCRG AAA 3 {
+				A_WeaponOffset(0, -4, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.055, 0, WOF_ADD);
+			}
+			NCRG A 0 A_ReFire;
+			Goto Ready;
+		Fire.Charged:
+			TNT1 A 0 {invoker.CrushCaught = false;}
+			NCRG A 16 {
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				A_Overlay(-2, "Flash.Charged");
+				A_WeaponOffset(0, 24, WOF_ADD);
+				A_StartSound("weapons/noisecfire", CHAN_WEAPON);
+				A_FireProjectile("GWM_NoiseCrush2", useammo: false);
+				A_OverlayScale(OverlayID(), 1.33, 0, WOF_INTERPOLATE);
+			}
+			NCRG A 6;
+			NCRG AAAAAA 3 {
+				A_WeaponOffset(0, -4, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.055, 0, WOF_ADD);
+			}
+			NCRG A 0 A_ReFire;
+			Goto Ready;
+		Flash:
+			TNT1 A 0 {
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_CENTER);
+				A_OverlayScale(OverlayID(), 0.10, 0);
+			}
+			NCRF AAAA 1 {
+				A_OverlayScale(OverlayID(), 0.15, 0, WOF_ADD);
+			}
+			Stop;
+		Flash.Charged:
+			TNT1 A 0 {
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_CENTER);
+				A_OverlayScale(OverlayID(), 0.20, 0);
+			}
+			NCRF AAAA 1 {
+				A_OverlayScale(OverlayID(), 0.30, 0, WOF_ADD);
+			}
+			Stop;
+	}
+}
+
+class GWM_NoiseCrush : Actor
+{
+	Default
+	{
+		+BOUNCEONFLOORS
+		+BOUNCEONWALLS
+		+BOUNCEONCEILINGS
+		+CANBOUNCEWATER
+		Radius 5;
+		Height 5;
+		damage (27);
+		BounceSound "weapons/noisebounce";
+//		damagetype "NoiseCrush1";
+		Obituary "$KILLNOISECRUSHER";
+		speed 28;
+		+FORCEXYBILLBOARD
+		BounceFactor 1.0;
+		bouncecount 2;
+		reactiontime 150;
+		Projectile;
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 1;
+			TNT1 A 0 A_SpawnItemEx("GWM_NoiseCrushTrail1E",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_CountDown;
+			TNT1 A 0 A_SpawnItemEx("GWM_NoiseCrushTrail1B",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_CountDown;
+			TNT1 A 0 A_SpawnItemEx("GWM_NoiseCrushTrail1A",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_CountDown;
+			TNT1 A 0 A_SpawnItemEx("GWM_NoiseCrushTrail1F",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_CountDown;
+			Goto Look;
+		Look:
+			TNT1 A 0 A_JumpIfCloser(40, "Give");
+			TNT1 A 0 A_SpawnItemEx("GWM_NoiseCrushTrail1D",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_CountDown;
+			TNT1 A 0 A_JumpIfCloser(40, "Give");
+			TNT1 A 0 A_SpawnItemEx("GWM_NoiseCrushTrail1C",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_CountDown;
+			TNT1 A 0 A_JumpIfCloser(40, "Give");
+			TNT1 A 0 A_SpawnItemEx("GWM_NoiseCrushTrail1B",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_CountDown;
+			TNT1 A 0 A_JumpIfCloser(40, "Give");
+			TNT1 A 0 A_SpawnItemEx("GWM_NoiseCrushTrail1A",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_CountDown;
+			TNT1 A 0 A_JumpIfCloser(40, "Give");
+			TNT1 A 0 A_SpawnItemEx("GWM_NoiseCrushTrail1A",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_CountDown;
+			loop;
+		Give:
+			TNT1 A 2 {
+				if (target && target.player)
+				{
+					let weap = GWM_NoiseCrusher(target.player.readyweapon);
+					if (weap)
+					{
+						weap.CrushCaught = true;
+					}
+				}
+			}
+			stop;
+	}
+}
+
+class GWM_NoiseCrush2 : Actor
+{
+	Default
+	{
+		Radius 20;
+		Height 10;
+		damage (60);
+//		damagetype "NoiseCrush2";
+		Obituary "$KILLNOISECRUSHER";
+		+FORCEXYBILLBOARD
+		Projectile;
+		speed 50;
+		reactiontime 150;
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 1 A_SpawnItemEx("GWM_NoiseCrushTrail2E",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_SpawnItemEx("GWM_NoiseCrushTrail2B",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_SpawnItemEx("GWM_NoiseCrushTrail2A",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_SpawnItemEx("GWM_NoiseCrushTrail2F",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+		SpawnLoop:
+			TNT1 A 1 A_SpawnItemEx("GWM_NoiseCrushTrail2D",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_SpawnItemEx("GWM_NoiseCrushTrail2C",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_SpawnItemEx("GWM_NoiseCrushTrail2B",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_SpawnItemEx("GWM_NoiseCrushTrail2A",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			TNT1 A 1 A_SpawnItemEx("GWM_NoiseCrushTrail2A",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
+			loop;
+	}
+}
+
+class GWM_NoiseCrushTrail1A : Actor
+{
+	Default
+	{
+		+FORCEXYBILLBOARD
+		+BRIGHT
+		Speed 60;
+		+CLIENTSIDEONLY
+		+NOINTERACTION
+		+NOGRAVITY
+		-SOLID
+		+MISSILE
+		+DONTBLAST
+		renderstyle "Translucent";
+		alpha 1.0;
+		radius 2;
+		height 2;
+	}
+    States
+    {
+		Spawn:
+			NCRP CDDCC 1;
+			stop;
+    }
+}
+
+class GWM_NoiseCrushTrail1B : GWM_NoiseCrushTrail1A
+{
+	States
+	{
+		Spawn:
+			NCRP BCCBB 1;
+			stop;
+	}
+}
+class GWM_NoiseCrushTrail1C : GWM_NoiseCrushTrail1A
+{
+	States
+	{
+		Spawn:
+			NCRP CBBCC 1;
+			stop;
+	}
+}
+class GWM_NoiseCrushTrail1D : GWM_NoiseCrushTrail1A
+{
+	States
+	{
+		Spawn:
+			NCRP BAABB 1;
+			stop;
+	}
+}
+class GWM_NoiseCrushTrail1E : GWM_NoiseCrushTrail1A
+{
+	States
+	{
+		Spawn:
+			NCRP ABBAA 1;
+			stop;
+	}
+}
+class GWM_NoiseCrushTrail1F : GWM_NoiseCrushTrail1A
+{
+	States
+	{
+		Spawn:
+			NCRP DCCDD 1;
+			stop;
+	}
+}
+
+class GWM_NoiseCrushTrail2A : GWM_NoiseCrushTrail1A
+{
+	States
+	{
+		Spawn:
+			NCRP HGGHHHH 1;
+			stop;
+	}
+}
+class GWM_NoiseCrushTrail2B : GWM_NoiseCrushTrail1A
+{
+	States
+	{
+		Spawn:
+			NCRP GHHGGGG 1;
+			stop;
+	}
+}
+class GWM_NoiseCrushTrail2C : GWM_NoiseCrushTrail1A
+{
+	States
+	{
+		Spawn:
+			NCRP FGGFFFF 1;
+			stop;
+	}
+}
+class GWM_NoiseCrushTrail2D : GWM_NoiseCrushTrail1A
+{
+	States
+	{
+		Spawn:
+			NCRP FEEFFFF 1;
+			stop;
+	}
+}
+class GWM_NoiseCrushTrail2E : GWM_NoiseCrushTrail1A
+{
+	States
+	{
+		Spawn:
+			NCRP EFFEEEE 1;
+			stop;
+	}
+}
+class GWM_NoiseCrushTrail2F : GWM_NoiseCrushTrail1A
+{
+	States
+	{
+		Spawn:
+			NCRP HGGHHHH 1;
+			stop;
+	}
+}
