@@ -10,6 +10,7 @@ $playeralias	GWM_Player	male	*usefail		player/no
 $playeralias	GWM_Player	male	*taunt			player/battlecry
 $playersound	GWM_Player	male	*land			"Sounds/Player/land.wav"
 $playersounddup	GWM_Player	male	*grunt			*pain100
+$playeralias	GWM_Player	male	*gibbed			misc/gibbed
 $playersound	GWM_Player	male	*drainhealth	"Sounds/Powerups/S_bld_suck.wav"
 
 $random player/painsharp {

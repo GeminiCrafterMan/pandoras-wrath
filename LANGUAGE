@@ -21,6 +21,7 @@ GOTPLASMARIFLE = "You picked up the Plasma Rifle!";
 GOTMELTER = "You picked up the Melter!";
 GOTNOISECRUSHER = "You picked up the Noise Crusher!";
 GOTBFG9000 = "You picked up the BFG9000!! Oh yeah!";
+GOTNAPALMLAUNCHER = "You picked up the Napalm Launcher!! Burn, baby, burn!!";
 // Ammo pickup messages
 DISARMEDMINE = "Disarmed and retrieved a mine.";
 GOTSHELLS = "Picked up a small box of shotgun shells.";
@@ -71,6 +72,8 @@ KILLMELTER = "%o was turned to ash by %k's Melter.";
 KILLNOISECRUSHER = "%o had %p eardrums blown out by %k's Noise Crusher.";
 KILLBFG9000 = "%o was reduced to atoms by %k's BFG9000.";
 KILLBFGBALL = "%o was turned to dust by %k's BFG9000.";
+KILLNAPALMBALL = "%o got a concussion from %k's Napalm Launcher ball.";
+KILLNAPALMFIRE = "%o was burnt to a crisp by %k's Napalm Launcher."; 
 // Enemy kill messages
 OB_SMGGUY = "%o was riddled with bullets by an SMG zombie."; // change later. boring af
 OB_KAHUNASHOTGUNGUY = "%o was washed ashore by a shotgun zombie's Slayer's Kahuna.";

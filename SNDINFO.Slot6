@@ -25,6 +25,7 @@ melt1 VMELT1
 melt2 VMELT2
 
 // Noise Crusher
+weapons/noisehit	"Sounds/Weapons/Slot 6/Noise Crusher/shot_d.wav"
 weapons/noisecharge	"Sounds/Weapons/Slot 6/Noise Crusher/charge.wav"
 weapons/noisebounce	"Sounds/Weapons/Slot 6/Noise Crusher/tingle.wav"
 weapons/noisefire	"Sounds/Weapons/Slot 6/Noise Crusher/tingle_down.wav"

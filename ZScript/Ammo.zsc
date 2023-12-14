@@ -166,7 +166,49 @@ class GWM_MineAmmo : Ammo
 	}
 }
 
-class GWM_CellPack : CellPack {} // solely exists to prevent an infinite loop
+class GWM_Cell : Cell {} // solely exists to prevent an infinite loop
+class GWM_CellPack : CellPack // solely exists to prevent an infinite loop
+{
+	override void BeginPlay()
+	{
+		Super.BeginPlay();
+		if (random(0,4) == 4)
+			Spawn("GWM_MelterHeatsink", self.pos);
+	}
+}
+
+class GWM_NapalmAmmo : Ammo
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTNAPALMAMMO";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 50;
+		Ammo.BackpackAmount 3;
+		Ammo.BackpackMaxAmount 100;
+		Inventory.Icon "NLAAA0";
+	}
+	States
+	{
+		Spawn:
+			NLAA A -1;
+			Loop;
+	}
+}
+class GWM_NapalmStack : GWM_NapalmAmmo
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTNAPALMSTACK";
+		Inventory.Amount 5;
+	}
+	States
+	{
+		Spawn:
+			NLAA B -1;
+			Stop;
+	}
+}
 
 class GWM_ImpalerBolts : Ammo replaces CrossbowAmmo
 {

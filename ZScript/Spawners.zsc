@@ -3,7 +3,7 @@ class GWM_WeaponSpawner : RandomSpawner
 	override void BeginPlay()
 	{
 		Super.BeginPlay();
-		if (random(0,2) == 2)
+		if (random(0,3) == 3)
 			Spawn("GWM_Mine", self.pos);
 	}
 }
@@ -42,17 +42,21 @@ class GWM_RocketBoxSpawner : GWM_WeaponSpawner replaces RocketBox
 	}
 }
 
+class GWM_CellSpawner : GWM_WeaponSpawner replaces Cell
+{
+	Default
+	{
+		DropItem "GWM_Cell";
+		DropItem "GWM_NapalmAmmo";
+	}
+}
+
 class GWM_CellPackSpawner : RandomSpawner replaces CellPack
 {
-	override void BeginPlay()
-	{
-		Super.BeginPlay();
-		if (random(0,4) == 4)
-			Spawn("GWM_MelterHeatsink", self.pos);
-	}
 	Default
 	{
 		DropItem "GWM_CellPack";
+		DropItem "GWM_NapalmStack";
 	}
 }
 
@@ -108,6 +112,15 @@ class GWM_PlasmaRifleSpawner : GWM_WeaponSpawner replaces PlasmaRifle
 		DropItem "GWM_PlasmaRifle";
 		DropItem "GWM_Melter";
 		DropItem "GWM_NoiseCrusher";
+	}
+}
+
+class GWM_BFG9000Spawner : GWM_WeaponSpawner replaces BFG9000
+{
+	Default
+	{
+		DropItem "GWM_BFG9000";
+		DropItem "GWM_NapalmLauncher";
 	}
 }
 

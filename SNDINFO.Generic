@@ -78,3 +78,8 @@ misc/k_pkup1				"Sounds/Pickups/Key1.wav"
 misc/k_pkup2				"Sounds/Pickups/Key2.wav"
 misc/k_pkup3				"Sounds/Pickups/Key3.wav"
 misc/k_pkup4				"Sounds/Pickups/Key4.wav"
+
+$random misc/gibbed { misc/gibbed1 misc/gibbed2 misc/gibbed3 }
+misc/gibbed1				"Sounds/gib1.wav"
+misc/gibbed2				"Sounds/gib2.wav"
+misc/gibbed3				"Sounds/gib3.wav"

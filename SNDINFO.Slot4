@@ -1,5 +1,5 @@
 // Burst Rifle
-weapons/riflesht		"Sounds/Weapons/Slot 4/Burst Rifle/tommy_shoot.wav"
+weapons/riflesht		"Sounds/Weapons/Slot 4/Burst Rifle/assaultrifle_shoot.wav"
 weapons/riflein			"Sounds/Weapons/Slot 4/Burst Rifle/assaultrifle_clip_in.wav"
 weapons/rifleout		"Sounds/Weapons/Slot 4/Burst Rifle/assaultrifle_clip_out.wav"
 weapons/riflefwd		"Sounds/Weapons/Slot 4/Burst Rifle/assaultrifle_boltforward.wav"

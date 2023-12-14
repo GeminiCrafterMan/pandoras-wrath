@@ -4,7 +4,7 @@ class GWM_Chaingun : GWM_WeaponBase
 	{
 		A_SpawnItemEx("GWM_Flash");
 		A_StartSound("weapons/chainfire", CHAN_WEAPON);
-		A_FireBullets(11.2, 0, 1, 5, "ZBulletPuff", missile: "GWM_Tracer", spawnheight: 0);
+		A_FireBullets(11.2, 0, 1, 7*Random(2,3), "ZBulletPuff", FBF_USEAMMO|FBF_NORANDOM, missile: "GWM_Tracer", spawnheight: 0);
 		ZWL_EjectCasing("GWM_PistolCasing");
 	}
 	Default

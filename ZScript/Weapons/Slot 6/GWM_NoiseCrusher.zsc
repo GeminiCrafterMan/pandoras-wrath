@@ -3,7 +3,8 @@ class GWM_NoiseCrusher : GWM_WeaponBase
 	bool CrushCaught;
 	Default
 	{
-		Weapon.AmmoUse 10;
+		Weapon.UpSound "weapons/draw_primary";
+		Weapon.AmmoUse 5;
 		Weapon.AmmoGive 40;
 		Inventory.PickupMessage "$GOTNOISECRUSHER";
 		Obituary "$KILLNOISECRUSHER";
@@ -101,6 +102,14 @@ class GWM_NoiseCrusher : GWM_WeaponBase
 
 class GWM_NoiseCrush : Actor
 {
+	override int SpecialMissileHit(Actor victim)
+	{
+		if (victim && (!target || victim != target) && victim.Findstate("Pain") && victim.health > 0 )
+		{
+			victim.SetStateLabel("pain");
+		}
+		return Super.SpecialMissileHit(victim);
+	}
 	Default
 	{
 		+BOUNCEONFLOORS
@@ -111,6 +120,7 @@ class GWM_NoiseCrush : Actor
 		Height 5;
 		damage (27);
 		BounceSound "weapons/noisebounce";
+		DeathSound "weapons/noisehit";
 //		damagetype "NoiseCrush1";
 		Obituary "$KILLNOISECRUSHER";
 		speed 28;
@@ -150,7 +160,7 @@ class GWM_NoiseCrush : Actor
 			TNT1 A 0 A_JumpIfCloser(40, "Give");
 			TNT1 A 0 A_SpawnItemEx("GWM_NoiseCrushTrail1A",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
 			TNT1 A 1 A_CountDown;
-			loop;
+			Loop;
 		Give:
 			TNT1 A 2 {
 				if (target && target.player)
@@ -162,18 +172,27 @@ class GWM_NoiseCrush : Actor
 					}
 				}
 			}
-			stop;
+			Stop;
 	}
 }
 
 class GWM_NoiseCrush2 : Actor
 {
+	override int SpecialMissileHit(Actor victim)
+	{
+		if (victim && (!target || victim != target) && victim.Findstate("Pain") && victim.health > 0 )
+		{
+			victim.SetStateLabel("pain");
+		}
+		return Super.SpecialMissileHit(victim);
+	}
 	Default
 	{
 		Radius 20;
 		Height 10;
 		damage (60);
 //		damagetype "NoiseCrush2";
+		DeathSound "weapons/noisehit";
 		Obituary "$KILLNOISECRUSHER";
 		+FORCEXYBILLBOARD
 		Projectile;
@@ -194,7 +213,7 @@ class GWM_NoiseCrush2 : Actor
 			TNT1 A 1 A_SpawnItemEx("GWM_NoiseCrushTrail2B",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
 			TNT1 A 1 A_SpawnItemEx("GWM_NoiseCrushTrail2A",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
 			TNT1 A 1 A_SpawnItemEx("GWM_NoiseCrushTrail2A",0,0,0,0,0,0,0/*,SXF_WEPFXCOLOR*/);
-			loop;
+			Loop;
 	}
 }
 
@@ -220,7 +239,7 @@ class GWM_NoiseCrushTrail1A : Actor
     {
 		Spawn:
 			NCRP CDDCC 1;
-			stop;
+			Stop;
     }
 }
 
@@ -230,7 +249,7 @@ class GWM_NoiseCrushTrail1B : GWM_NoiseCrushTrail1A
 	{
 		Spawn:
 			NCRP BCCBB 1;
-			stop;
+			Stop;
 	}
 }
 class GWM_NoiseCrushTrail1C : GWM_NoiseCrushTrail1A
@@ -239,7 +258,7 @@ class GWM_NoiseCrushTrail1C : GWM_NoiseCrushTrail1A
 	{
 		Spawn:
 			NCRP CBBCC 1;
-			stop;
+			Stop;
 	}
 }
 class GWM_NoiseCrushTrail1D : GWM_NoiseCrushTrail1A
@@ -248,7 +267,7 @@ class GWM_NoiseCrushTrail1D : GWM_NoiseCrushTrail1A
 	{
 		Spawn:
 			NCRP BAABB 1;
-			stop;
+			Stop;
 	}
 }
 class GWM_NoiseCrushTrail1E : GWM_NoiseCrushTrail1A
@@ -257,7 +276,7 @@ class GWM_NoiseCrushTrail1E : GWM_NoiseCrushTrail1A
 	{
 		Spawn:
 			NCRP ABBAA 1;
-			stop;
+			Stop;
 	}
 }
 class GWM_NoiseCrushTrail1F : GWM_NoiseCrushTrail1A
@@ -266,7 +285,7 @@ class GWM_NoiseCrushTrail1F : GWM_NoiseCrushTrail1A
 	{
 		Spawn:
 			NCRP DCCDD 1;
-			stop;
+			Stop;
 	}
 }
 
@@ -276,7 +295,7 @@ class GWM_NoiseCrushTrail2A : GWM_NoiseCrushTrail1A
 	{
 		Spawn:
 			NCRP HGGHHHH 1;
-			stop;
+			Stop;
 	}
 }
 class GWM_NoiseCrushTrail2B : GWM_NoiseCrushTrail1A
@@ -285,7 +304,7 @@ class GWM_NoiseCrushTrail2B : GWM_NoiseCrushTrail1A
 	{
 		Spawn:
 			NCRP GHHGGGG 1;
-			stop;
+			Stop;
 	}
 }
 class GWM_NoiseCrushTrail2C : GWM_NoiseCrushTrail1A
@@ -294,7 +313,7 @@ class GWM_NoiseCrushTrail2C : GWM_NoiseCrushTrail1A
 	{
 		Spawn:
 			NCRP FGGFFFF 1;
-			stop;
+			Stop;
 	}
 }
 class GWM_NoiseCrushTrail2D : GWM_NoiseCrushTrail1A
@@ -303,7 +322,7 @@ class GWM_NoiseCrushTrail2D : GWM_NoiseCrushTrail1A
 	{
 		Spawn:
 			NCRP FEEFFFF 1;
-			stop;
+			Stop;
 	}
 }
 class GWM_NoiseCrushTrail2E : GWM_NoiseCrushTrail1A
@@ -312,7 +331,7 @@ class GWM_NoiseCrushTrail2E : GWM_NoiseCrushTrail1A
 	{
 		Spawn:
 			NCRP EFFEEEE 1;
-			stop;
+			Stop;
 	}
 }
 class GWM_NoiseCrushTrail2F : GWM_NoiseCrushTrail1A
@@ -321,6 +340,6 @@ class GWM_NoiseCrushTrail2F : GWM_NoiseCrushTrail1A
 	{
 		Spawn:
 			NCRP HGGHHHH 1;
-			stop;
+			Stop;
 	}
 }

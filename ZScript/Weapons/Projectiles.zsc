@@ -58,33 +58,11 @@ class GWM_FireDamage : CustomInventory
 
 class GWM_PoisonProjectile : Actor // the absolute most basic projectile base possible
 {
-	actor victim;
-	override int SpecialMissileHit(actor victim) //thanks mengo
-    {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
-		{
-		if (victim.health <= self.Damage)
-			{
-			victim.A_SpawnProjectile("GWM_PoisonDamageEffect");
-			victim.A_Die("poison");
-			return 1;
-			}
-		victim.A_SpawnProjectile("GWM_PoisonDamageEffect");
-		}
-        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
-    }
 	Default
 	{
 		Projectile;
 		DamageType "Poison";
-	}
-}
-class GWM_PoisonDamage : CustomInventory
-{
-	States
-	{
-		Pickup:
-			TNT1 A 0 A_SpawnItemEx("GWM_PoisonDamageEffect",0,0,20,0,0,0,0,SXF_SETMASTER);
-			Stop;
+		PoisonDamage 12, 123;
+		+ADDITIVEPOISONDAMAGE
 	}
 }

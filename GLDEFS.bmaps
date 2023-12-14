@@ -307,17 +307,6 @@ Brightmap Sprite RKTLZ0 { Map RKTLZ0 DisableFullbright }
 Brightmap Sprite VNMGA0 { Map VNMGA0 DisableFullbright }
 Brightmap Sprite VNMGB0 { Map VNMGB0 DisableFullbright }
 Brightmap Sprite VNMGZ0 { Map VNMGZ0 DisableFullbright }
-// Melter
-Brightmap Sprite VMLTA0 { Map VMLTA0 DisableFullbright }
-Brightmap Sprite VMLTB0 { Map VMLTB0 DisableFullbright }
-Brightmap Sprite VMLTC0 { Map VMLTC0 DisableFullbright }
-Brightmap Sprite VMLTD0 { Map VMLTD0 DisableFullbright }
-Brightmap Sprite VMLTE0 { Map VMLTE0 DisableFullbright }
-Brightmap Sprite VMLTF0 { Map VMLTF0 DisableFullbright }
-Brightmap Sprite VMLTG0 { Map VMLTG0 DisableFullbright }
-Brightmap Sprite VMLTH0 { Map VMLTH0 DisableFullbright }
-Brightmap Sprite VMLTI0 { Map VMLTI0 DisableFullbright }
-Brightmap Sprite VMLTJ0 { Map VMLTJ0 DisableFullbright }
 // Plasma Rifle
 Brightmap Sprite PLSFA0 { Map PLSFA0 DisableFullbright }
 Brightmap Sprite PLSFB0 { Map PLSFB0 DisableFullbright }
@@ -332,6 +321,21 @@ Brightmap Sprite PLSGG0 { Map PLSGG0 DisableFullbright }
 Brightmap Sprite PLSGH0 { Map PLSGH0 DisableFullbright }
 Brightmap Sprite PLSGI0 { Map PLSGI0 DisableFullbright }
 Brightmap Sprite PLSGZ0 { Map PLSGZ0 DisableFullbright }
+// Melter
+Brightmap Sprite VMLTA0 { Map VMLTA0 DisableFullbright }
+Brightmap Sprite VMLTB0 { Map VMLTB0 DisableFullbright }
+Brightmap Sprite VMLTC0 { Map VMLTC0 DisableFullbright }
+Brightmap Sprite VMLTD0 { Map VMLTD0 DisableFullbright }
+Brightmap Sprite VMLTE0 { Map VMLTE0 DisableFullbright }
+Brightmap Sprite VMLTF0 { Map VMLTF0 DisableFullbright }
+Brightmap Sprite VMLTG0 { Map VMLTG0 DisableFullbright }
+Brightmap Sprite VMLTH0 { Map VMLTH0 DisableFullbright }
+Brightmap Sprite VMLTI0 { Map VMLTI0 DisableFullbright }
+Brightmap Sprite VMLTJ0 { Map VMLTJ0 DisableFullbright }
+// Noise Crusher
+Brightmap Sprite NCRGA0 { Map NCRGA0 DisableFullbright }
+Brightmap Sprite NCRGB0 { Map NCRGB0 DisableFullbright }
+Brightmap Sprite NCRGZ0 { Map NCRGZ0 DisableFullbright }
 // BFG9000
 Brightmap Sprite BFUGA0 { Map BFUGA0 DisableFullbright }
 Brightmap Sprite BFUGB0 { Map BFUGB0 DisableFullbright }

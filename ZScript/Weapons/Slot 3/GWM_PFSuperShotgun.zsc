@@ -58,7 +58,7 @@ class GWM_PFSuperShotgun : GWM_WeaponBase
 	States
 	{
 		Ready:
-			PFSH A 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_ALLOWRELOAD);
+			PFSH A 1 A_WeaponReady(WRF_ALLOWUSER1|WRF_ALLOWRELOAD);
 			Loop;
 		Deselect:
 			PFSH A 1 A_Lower(12);
@@ -197,7 +197,7 @@ class GWM_PFSuperShotgun : GWM_WeaponBase
 			PFSH L 6 A_StartSound("weapons/ssgc", CHAN_WEAPON);
 			PFSH A 5;
 			Goto Ready;
-		Zoom:
+		User1:
 			TNT1 A 0 A_FireFrozenProjectiles;
 			Goto Ready;
 		Flash1:

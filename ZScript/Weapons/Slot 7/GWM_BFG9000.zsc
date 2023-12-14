@@ -1,4 +1,4 @@
-class GWM_BFG9000 : GWM_WeaponBase replaces BFG9000
+class GWM_BFG9000 : GWM_WeaponBase
 {
 	Default
 	{
