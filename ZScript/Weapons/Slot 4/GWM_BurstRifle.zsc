@@ -4,14 +4,15 @@ class GWM_BurstRifle : GWM_WeaponBase
 	{
 		A_SpawnItemEx("GWM_Flash");
 		A_FireBullets(5.6, 0, 1, 7*Random(2,3), "ZBulletPuff", FBF_USEAMMO|FBF_NORANDOM, missile: "GWM_Tracer", spawnheight: 0);
-		ZWL_EjectCasing("GWM_PistolCasing");
+		ZWL_EjectCasing("GWM_RifleCasing");
 		A_WeaponOffset(0, 6, WOF_ADD);
+		A_SetPitch(pitch-0.5);
 	}
 	Default
 	{
 		Weapon.SelectionOrder 700;
 		Weapon.AmmoUse 1;
-		Weapon.AmmoType "Clip";
+		Weapon.AmmoType "GWM_HighCaliberClip";
 		Weapon.AmmoGive 31;
 		Weapon.UpSound "weapons/draw_primary";
 
@@ -39,13 +40,22 @@ class GWM_BurstRifle : GWM_WeaponBase
 		Fire:
 			TNT1 A 0 ZWL_CheckReload();
 			RIFL B 1 Bright A_FireRifle;
-			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
+			RIFL CA 1 {
+				A_WeaponOffset(0, -3, WOF_ADD);
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
+			}
 			TNT1 A 0 ZWL_CheckReload();
 			RIFL B 1 Bright A_FireRifle;
-			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
+			RIFL CA 1 {
+				A_WeaponOffset(0, -3, WOF_ADD);
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
+			}
 			TNT1 A 0 ZWL_CheckReload();
 			RIFL B 1 Bright A_FireRifle;
-			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
+			RIFL CA 1 {
+				A_WeaponOffset(0, -3, WOF_ADD);
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
+			}
 			RIFL A 9;
 			RIFL A 0 ZWL_ReFire(null, true);
 			Goto Ready;

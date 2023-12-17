@@ -5,7 +5,7 @@ class GWM_Pistol : GWM_WeaponBase replaces Pistol
 		Weapon.SelectionOrder 1900;
 		Weapon.UpSound "weapons/draw_secondary";
 		Weapon.AmmoUse1 1;
-		Weapon.AmmoType1 "Clip";
+		Weapon.AmmoType1 "GWM_LowCaliberClip";
 		Weapon.AmmoGive 16;
 
 		ZWeapon.MagazineSize 15;
@@ -22,26 +22,35 @@ class GWM_Pistol : GWM_WeaponBase replaces Pistol
 	}
 	States
 	{
+		Spawn:
+			92FG Z -1;
+			Stop;
+		Select:
+			92FG A 1 A_Raise(12);
+			Loop;
 		Ready:
 			92FG A 1 ZWL_WeaponReady(ZRF_ExtraRound);
 			Loop;
 		Deselect:
 			92FG A 1 A_Lower(12);
 			Loop;
-		Select:
-			92FG A 1 A_Raise(12);
-			Loop;
 		Fire:
+			TNT1 A 0 {return ZWL_JumpIfEmpty("Fire.Empty");}
 			92FG B 2 {
 				ZWL_FireHitscan(2, 8*Random(2,3), tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
+				A_SetPitch(pitch-0.75);
 			}
 			92FG C 1 {
 				ZWL_EjectCasing("GWM_PistolCasing", offset: (24, 0, -6));
-				return ZWL_JumpIfEmpty("Fire.Empty");
+				A_SetPitch(pitch+0.25);
 			}
-			92FG DEEEDDCCBB 1 ZWL_WeaponReady(ZRF_ExtraRound);
+			92FG DE 1 {
+				A_SetPitch(pitch+0.25);
+				ZWL_WeaponReady(ZRF_ExtraRound|ZRF_NoBob);
+			}
+			92FG EEDDCCBB 1 ZWL_WeaponReady(ZRF_ExtraRound|ZRF_NoBob);
 			TNT1 A 0 ZWL_ReFire(null, true);
 			Goto Ready;
 		Fire.Empty:
@@ -83,8 +92,5 @@ class GWM_Pistol : GWM_WeaponBase replaces Pistol
 			92FF A 1 Bright A_Light2;
 			92FF B 1 Bright A_Light1;
 			Goto LightDone;
-		Spawn:
-			92FG Z -1;
-			Stop;
 	}
 }

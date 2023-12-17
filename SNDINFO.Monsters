@@ -36,11 +36,3 @@ monsters/cyberimp/active	"Sounds/Monsters/Cyber-Imp/active.wav"
 monsters/superdemon/death	"Sounds/Monsters/Superdemon/DSSUPDTH.ogg"
 monsters/superdemon/snarl	"Sounds/Monsters/Superdemon/DSSUPSNA.ogg"
 monsters/superdemon/crash	"Sounds/Monsters/Superdemon/DSSUPLND.ogg"
-
-// Cacolantern
-monsters/cacolantern/sight		"Sounds/Monsters/Cacolantern/DSLNTSIT"
-monsters/cacolantern/death		"Sounds/Monsters/Cacolantern/DSLNTDIE"
-monsters/cacolantern/prepare	"Sounds/Monsters/Cacolantern/DSS3K95"
-monsters/cacolantern/shoot		"Sounds/Monsters/Cacolantern/DSS3K70"
-monsters/cacolantern/explode	"Sounds/Monsters/Cacolantern/DSS3K4E"
-monsters/cacolantern/shatter	"Sounds/Monsters/Cacolantern/DSPUMPKN"

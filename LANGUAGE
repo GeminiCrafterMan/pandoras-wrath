@@ -23,6 +23,10 @@ GOTNOISECRUSHER = "You picked up the Noise Crusher!";
 GOTBFG9000 = "You picked up the BFG9000!! Oh yeah!";
 GOTNAPALMLAUNCHER = "You picked up the Napalm Launcher!! Burn, baby, burn!!";
 // Ammo pickup messages
+GOTLOWCALCLIP = "Picked up a clip of low-caliber bullets.";
+GOTHIGHCALCLIP = "Picked up a clip of high-caliber bullets.";
+GOTLOWCALBOX = "Picked up a box of low-caliber bullets.";
+GOTHIGHCALBELT = "Picked up a belt of high-caliber bullets.";
 DISARMEDMINE = "Disarmed and retrieved a mine.";
 GOTSHELLS = "Picked up a small box of shotgun shells.";
 GOTSHELLBOX = "Picked up a large box of shotgun shells.";
@@ -34,6 +38,8 @@ GOTEVERICE = "Picked up a chunk of Ever Ice.";
 GOTEVERICEHEFTY = "Picked up a cluster of Ever Ice.";
 GOTVENOMVIAL = "Picked up a small vial of venom.";
 GOTLARGEVENOMVIAL = "Picked up a large vial of venom.";
+GOTNAPALMAMMO = "Picked up a Napalm Launcher round.";
+GOTNAPALMSTACK = "Picked up a stack of Napalm Launcher rounds.";
 GOTCYBERIMPARM = "Pulled the power cell out of a Cyber Imp's severed arm.";
 // Powerup messages
 GOTLIFEDRAIN = "Life drain!";

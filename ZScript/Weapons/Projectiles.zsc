@@ -26,17 +26,17 @@ class GWM_IceProjectile : Actor // the absolute most basic projectile base possi
 class GWM_FlameProjectile : Actor // the absolute most basic projectile base possible
 {
 	actor victim;
-	override int SpecialMissileHit(actor victim) //thanks mengo
+	override int SpecialMissileHit(Actor victim) //thanks mengo
     {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
+        if (!self.victim && victim.bSHOOTABLE /*&& victim != target*/ && victim.bDORMANT == 0)
 		{
-		if (victim.health <= self.Damage)
+			if (victim.health <= self.Damage)
 			{
-			victim.A_SpawnProjectile("GWM_FlameDamageEffect");
-			victim.A_Die("fire");
-			return 1;
+				victim.A_SpawnProjectile("GWM_FlameDamageEffect");
+				victim.A_Die("fire");
+				return 1;
 			}
-		victim.A_SpawnProjectile("GWM_FlameDamageEffect");
+			victim.A_SpawnProjectile("GWM_FlameDamageEffect");
 		}
         return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
     }

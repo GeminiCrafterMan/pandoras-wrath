@@ -3,6 +3,7 @@ class GWM_Superdemon : Actor
 	Default
 	{
 		//$Category Monsters;
+		Tag "Superdemon";
 		Obituary "%o was crushed by a superdemon.";
 		Health 3500;
 		Radius 40;

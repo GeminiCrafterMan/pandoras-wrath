@@ -38,8 +38,13 @@ class GWM_ImpalerCrossbow : GWM_WeaponBase replaces Crossbow
 				A_StartSound("weapons/xbowrelease");
 				A_FireProjectile("GWM_ImpalerArrow");
 				A_Recoil(1);
+				A_SetPitch(pitch-1);
 			}
-			CBOW C 8 A_StartSound("weapons/xbowdraw", CHAN_WEAPON);
+			CBOW C 1 {
+				A_StartSound("weapons/xbowdraw", CHAN_WEAPON);
+				A_SetPitch(pitch+0.125);
+			}
+			CBOW CCCCCCC 1 A_SetPitch(pitch+0.125);
 			CBOW D 5;
 			CBOW E 8 A_CheckReload;
 			CBOW F 8;

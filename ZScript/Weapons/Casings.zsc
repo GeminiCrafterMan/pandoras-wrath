@@ -32,6 +32,41 @@ class GWM_PistolEmptyMag : ZCasing
 	}
 }
 
+class GWM_RifleCasing : ZCasing
+{
+    Default
+    {
+        Scale 0.18;
+        BounceSound "weapons/casing1";
+	}
+	States
+	{
+		Spawn:
+			CAS7 ABCDEFGH 2;
+			Loop;
+		Death:
+			CAS7 G -1;
+			Stop;
+	}
+}
+
+class GWM_ChaingunLink : ZCasing
+{
+    Default
+    {
+        Scale 0.07;
+    }
+    States
+    {
+		Spawn:
+			BULN ABCDE 2;
+			Loop;
+		Death:
+			BULN E -1;
+			Stop;
+    }
+}
+
 class GWM_ShotgunCasing : ZCasing
 {
 	Default

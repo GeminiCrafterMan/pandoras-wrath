@@ -1,15 +1,70 @@
-class GWM_Clip : Clip replaces Clip
+class GWM_LowCaliberClip : Ammo
 {
 	Default
 	{
+		Inventory.PickupMessage "$GOTLOWCALCLIP"; // "Picked up a clip of low-caliber bullets."
+		Inventory.Amount 10;
+		Inventory.MaxAmount 200;
+		Ammo.BackpackAmount 10;
+		Ammo.BackpackMaxAmount 400;
+		Inventory.Icon "CLIPA0";
 		Inventory.PickupSound "pickups/clip";
 	}
+	States
+	{
+		Spawn:
+			CLIP A -1;
+			Stop;
+	}
 }
-class GWM_ClipBox : ClipBox replaces ClipBox
+class GWM_LowCaliberBox : GWM_LowCaliberClip
 {
 	Default
 	{
+		Inventory.PickupMessage "$GOTLOWCALBOX"; // "Picked up a box of low-caliber bullets."
+		Inventory.Amount 50;
 		Inventory.PickupSound "pickups/clipbox";
+	}
+	States
+	{
+		Spawn:
+			AMMO A -1;
+			Stop;
+	}
+}
+
+class GWM_HighCaliberClip : Ammo
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTHIGHCALCLIP"; // "Picked up a clip of high-caliber bullets."
+		Inventory.Amount 10;
+		Inventory.MaxAmount 200;
+		Ammo.BackpackAmount 10;
+		Ammo.BackpackMaxAmount 400;
+		Inventory.Icon "CLIPB0";
+		Inventory.PickupSound "pickups/clip";
+	}
+	States
+	{
+		Spawn:
+			CLIP B -1;
+			Stop;
+	}
+}
+class GWM_HighCaliberBelt : GWM_HighCaliberClip
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTHIGHCALBELT"; // "Picked up a belt of high-caliber bullets."
+		Inventory.Amount 50;
+		Inventory.PickupSound "pickups/belt";
+	}
+	States
+	{
+		Spawn:
+			AMMO B -1;
+			Stop;
 	}
 }
 

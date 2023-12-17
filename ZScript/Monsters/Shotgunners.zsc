@@ -5,6 +5,7 @@ class GWM_KahunaShotgunGuy : ShotgunGuy
 		AttackSound "weapons/skshot";
 		DropItem "GWM_Shotgun";
 		Obituary "$OB_KAHUNASHOTGUNGUY";
+		Tag "\"Slayer's Kahuna\" Shotgun Zombie";
 	}
 	States
 	{
@@ -25,6 +26,7 @@ class GWM_IceShotgunGuy : ShotgunGuy
 		DropItem "GWM_IceShotgun";
 		Obituary "$OB_ICESHOTGUNGUY";
 		BloodColor "76 76 8D";
+		Tag "Ice Shotgun Zombie";
 	}
 	States
 	{

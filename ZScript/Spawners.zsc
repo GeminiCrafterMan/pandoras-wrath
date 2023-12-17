@@ -8,6 +8,23 @@ class GWM_WeaponSpawner : RandomSpawner
 	}
 }
 
+class GWM_ClipSpawner : GWM_WeaponSpawner replaces Clip
+{
+	Default
+	{
+		DropItem "GWM_LowCaliberClip";
+		DropItem "GWM_HighCaliberClip";
+	}
+}
+class GWM_ClipBoxSpawner : GWM_WeaponSpawner replaces ClipBox
+{
+	Default
+	{
+		DropItem "GWM_LowCaliberBox";
+		DropItem "GWM_HighCaliberBelt";
+	}
+}
+
 class GWM_ShellSpawner : GWM_WeaponSpawner replaces Shell
 {
 	Default
@@ -75,6 +92,7 @@ class GWM_ShotgunSpawner : GWM_WeaponSpawner replaces Shotgun
 	{
 		DropItem "GWM_Shotgun";
 		DropItem "GWM_IceShotgun";
+		Dropitem "GWM_Revolver"; // me when project brutality
 	}
 }
 

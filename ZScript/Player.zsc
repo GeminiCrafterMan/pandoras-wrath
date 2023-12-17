@@ -13,6 +13,8 @@ class GWM_Player : DoomPlayer
 			}
 			prevPlayerState = player.playerstate;
 		}
+	// Until I figure out what's wrong and why this breaks on random mapsets, this will be commented out.
+
 		int buttons = GetPlayerInput(AAPTR_DEFAULT, MODINPUT_BUTTONS);
 		if ((player && (player.cmd.buttons & BT_ZOOM && !(player.playerstate == PST_DEAD)) && (!(self.defaultFOV) || self.defaultFOV == 0)))
 		{
@@ -25,12 +27,13 @@ class GWM_Player : DoomPlayer
 			player.desiredFOV = self.defaultFOV;
 			self.defaultFOV = 0;
 		}
+
 	}
 	Default
 	{
 		Player.SoundClass "GWM_Player";
 		Player.WeaponSlot 1, "GWM_Mine", "GWM_Fist", "GWM_Lumberjack", "GWM_Impactor", "GWM_Levenbrech";
-		Player.WeaponSlot 2, "GWM_Pistol", "GWM_SMG", "GWM_MP40", "GWM_GoldWand";
+		Player.WeaponSlot 2, "GWM_Pistol", "GWM_SMG", "GWM_Revolver", "GWM_GoldWand";
 		Player.WeaponSlot 3, "GWM_IceShotgun", "GWM_PFSuperShotgun", "GWM_Shotgun", "GWM_SuperShotgun", "GWM_ImpalerCrossbow";
 		Player.WeaponSlot 4, "GWM_Chaingun", "GWM_BurstRifle", "GWM_FrostFang";
 		Player.WeaponSlot 5, "GWM_RocketLauncher", "GWM_VenomCannon";
@@ -46,7 +49,7 @@ class GWM_DoomPlayer : GWM_Player
 		Player.StartItem "GWM_Pistol";
 		Player.StartItem "GWM_Fist";
 		Player.StartItem "GWM_Mine";
-		Player.StartItem "Clip", 50;
+		Player.StartItem "GWM_LowCaliberClip", 50;
 	}
 }
 
@@ -57,6 +60,6 @@ class GWM_HereticPlayer : GWM_Player
 		Player.StartItem "GWM_GoldWand";
 		Player.StartItem "GWM_Fist";
 		Player.StartItem "GoldWandAmmo", 50;
-		Player.ColorRange 225, 240;
+		Player.ColorRange 224, 209;
 	}
 }

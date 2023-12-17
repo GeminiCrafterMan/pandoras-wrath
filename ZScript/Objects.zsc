@@ -2,6 +2,7 @@ class GWM_ExplosiveBarrel : ExplosiveBarrel
 {
 	Default
 	{
+		Tag "Explosive Barrel";
 		+PUSHABLE
 		Friction 0.8;
 		DeathSound "objects/barrel_explode";

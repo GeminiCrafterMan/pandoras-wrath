@@ -253,18 +253,6 @@ Brightmap Sprite PFSHZ0 { Map PFSHZ0 DisableFullbright }
 Brightmap Sprite SKSFA0 { Map SKSFA0 DisableFullbright }
 Brightmap Sprite SKSFB0 { Map SKSFB0 DisableFullbright }
 Brightmap Sprite SKSGA0 { Map SKSGA0 DisableFullbright }
-Brightmap Sprite SKSGB0 { Map SKSGB0 DisableFullbright }
-Brightmap Sprite SKSGC0 { Map SKSGC0 DisableFullbright }
-Brightmap Sprite SKSGD0 { Map SKSGD0 DisableFullbright }
-Brightmap Sprite SKSGE0 { Map SKSGE0 DisableFullbright }
-Brightmap Sprite SKSGF0 { Map SKSGSLAM DisableFullbright }
-Brightmap Sprite SKSGG0 { Map SKSGSLAM DisableFullbright }
-Brightmap Sprite SKSGH0 { Map SKSGSLAM DisableFullbright }
-Brightmap Sprite SKSGI0 { Map SKSGI0 DisableFullbright }
-Brightmap Sprite SKSGJ0 { Map SKSGJ0 DisableFullbright }
-Brightmap Sprite SKSGK0 { Map SKSGK0 DisableFullbright }
-Brightmap Sprite SKSGL0 { Map SKSGL0 DisableFullbright }
-Brightmap Sprite SKSGZ0 { Map SKSGZ0 DisableFullbright }
 // Super Shotgun
 Brightmap Sprite SSGFA0 { Map SSGFA0 DisableFullbright }
 Brightmap Sprite SSGFB0 { Map SSGFB0 DisableFullbright }

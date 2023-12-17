@@ -6,6 +6,7 @@ class GWM_NightmareImp : DoomImp
 		Speed 16;
 		RenderStyle "Translucent";
 		Translation "GWM_NightmareImp";
+		Tag "Nightmare Imp";
 		Alpha 0.7;
 		BloodColor "78 58 80";
 		Obituary "$OB_NIGHTMAREIMP_SCRATCH";
@@ -35,6 +36,7 @@ class GWM_CyberImp : Actor
 {
 	Default
 	{
+		Tag "Cyber Imp";
 		Health 120;
 		Radius 20;
 		Height 56;

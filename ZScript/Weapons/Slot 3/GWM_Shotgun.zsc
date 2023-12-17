@@ -13,7 +13,7 @@ class GWM_Shotgun : GWM_WeaponBase
 		ZWeapon.ReloadSound "weapons/shell_load";
 		ZWeapon.ClickSound "weapons/skempty";
 
-		Tag "Slayer's Kahuna";
+		Tag "\"Slayer's Kahuna\" Shotgun";
 		Inventory.PickupMessage "$GOTSLAYERSKAHUNA";
 		Obituary "$KILLSLAYERSKAHUNA";
 		AttackSound "weapons/skshot";
@@ -36,17 +36,26 @@ class GWM_Shotgun : GWM_WeaponBase
 				ZWL_FireHitscan(0, 6*Random(2,3), pellets: 8, spread: 3, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
-				A_WeaponOffset(0, 10, WOF_ADD);
+				A_WeaponOffset(0, 42, WOF_INTERPOLATE);
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
+				A_SetPitch(pitch-1.5);
 			}
 			SKSG A 3 Bright;
-			SKSG A 3 Bright {
+			SKSG A 1 Bright {
 				A_WeaponOffset(0, -5, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
 			}
-			SKSG A 3 {
+			SKSG AA 1 Bright {
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
+			}
+			SKSG A 1 {
 				A_WeaponOffset(0, -5, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
+			}
+			SKSG AA 1 {
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
 			}
 			TNT1 A 0 ZWL_CheckReload();
 			SKSG B 5;
@@ -74,17 +83,26 @@ class GWM_Shotgun : GWM_WeaponBase
 				ZWL_FireHitscan(0, 6*Random(2,3), pellets: 8, spread: 6, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash("Flash2");
-				A_WeaponOffset(0, 20, WOF_ADD);
+				A_WeaponOffset(0, 52, WOF_INTERPOLATE);
 				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
+				A_SetPitch(pitch-1.5);
 			}
 			SKSG A 3 Bright;
-			SKSG A 3 Bright {
+			SKSG A 1 Bright {
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
 			}
-			SKSG A 3 {
+			SKSG AA 1 Bright {
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
+			}
+			SKSG A 1 {
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
+			}
+			SKSG AA 1 {
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
 			}
 			TNT1 A 0 ZWL_CheckReload();
 			SKSG FFGG 1;

@@ -19,6 +19,7 @@ class GWM_HeavyRifleman : ChaingunGuy
 {
 	Default
 	{
+		Tag "Heavy Rifleman";
 		AttackSound "weapons/riflesht";
 		Obituary "$OB_HEAVYRIFLEMAN";
 		DropItem "GWM_BurstRifle";

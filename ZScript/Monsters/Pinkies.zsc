@@ -17,6 +17,7 @@ class GWM_Hellhog : Actor
 		DeathSound "monsters/hellhog/death";
 		ActiveSound "monsters/hellhog/active";
 		Obituary "$OB_HELLHOG";
+		Tag "Hellhog";
 	}
 	States
 	{

@@ -46,11 +46,24 @@ class GWM_IceShotgun : GWM_WeaponBase
 				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
 				A_WeaponOffset(0, 20, WOF_ADD);
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
+				A_SetPitch(pitch-1.5);
 			}
 			ISHT A 3;
-			ISHT AA 3 {
+			ISHT A 1 {
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
+			}
+			ISHT AA 1 {
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
+			}
+			ISHT A 1 {
+				A_WeaponOffset(0, -10, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
+			}
+			ISHT AA 1 {
+				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
 			}
 			TNT1 A 0 ZWL_CheckReload();
 			ISHT B 5;
