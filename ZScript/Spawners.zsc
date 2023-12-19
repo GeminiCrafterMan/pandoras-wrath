@@ -92,7 +92,6 @@ class GWM_ShotgunSpawner : GWM_WeaponSpawner replaces Shotgun
 	{
 		DropItem "GWM_Shotgun";
 		DropItem "GWM_IceShotgun";
-		Dropitem "GWM_Revolver"; // me when project brutality
 	}
 }
 

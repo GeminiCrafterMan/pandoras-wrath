@@ -36,3 +36,25 @@ monsters/cyberimp/active	"Sounds/Monsters/Cyber-Imp/active.wav"
 monsters/superdemon/death	"Sounds/Monsters/Superdemon/DSSUPDTH.ogg"
 monsters/superdemon/snarl	"Sounds/Monsters/Superdemon/DSSUPSNA.ogg"
 monsters/superdemon/crash	"Sounds/Monsters/Superdemon/DSSUPLND.ogg"
+
+// Shadow Hunter
+$random monsters/shadowhunter/idle { monsters/shadowhunter/idle1 monsters/shadowhunter/idle2}
+monsters/shadowhunter/idle1	"Sounds/Monsters/Shadow Hunter/SHADIDL1.ogg"
+monsters/shadowhunter/idle2	"Sounds/Monsters/Shadow Hunter/SHADIDL2.ogg"
+monsters/shadowhunter/death	"Sounds/Monsters/Shadow Hunter/SHADDEAD.ogg"
+monsters/shadowhunter/pain	"Sounds/Monsters/Shadow Hunter/SHADPAIN.ogg"
+monsters/shadowhunter/sight	"Sounds/Monsters/Shadow Hunter/SHADSIGH.ogg"
+
+// Blot
+monsters/blot/death			"Sounds/Monsters/Blot/DSBLOTDI.ogg"
+monsters/blot/attack		"Sounds/Monsters/Blot/DSBLOTAT.ogg"
+
+// Nightshade
+$random monsters/nightshade/sight	{ monsters/nightshade/sight1  monsters/nightshade/sight2 }
+monsters/nightshade/sight1	"Sounds/Monsters/Nightshade/dsnshsi1.ogg"
+monsters/nightshade/sight2	"Sounds/Monsters/Nightshade/dsnshsi2.ogg"
+monsters/nightshade/active	"Sounds/Monsters/Nightshade/dsnshact.ogg"
+monsters/nightshade/pain	"Sounds/Monsters/Nightshade/dsnshpai.ogg"
+monsters/nightshade/death	"Sounds/Monsters/Nightshade/dsnshdth.ogg"
+monsters/nightshade/attack	"Sounds/Monsters/Nightshade/dsnshatk.ogg"
+monsters/nightshade/explode	"Sounds/Monsters/Nightshade/dsnshexp.ogg"

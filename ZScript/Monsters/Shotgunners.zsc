@@ -1,3 +1,19 @@
+class GWM_KahunaShotgunGuySpawner : RandomSpawner
+{
+	override void BeginPlay()
+	{
+		if (self.curSector.lightlevel <= 112 && random(0,4) == 4)
+		{
+			Spawn("GWM_ShadowHunter", self.Pos);
+			self.Destroy();
+		}
+		else Super.BeginPlay();
+	}
+	Default
+	{
+		DropItem "GWM_KahunaShotgunGuy";
+	}
+}
 class GWM_KahunaShotgunGuy : ShotgunGuy
 {
 	Default
@@ -82,5 +98,267 @@ class GWM_ShotgunGuyIceChunk : GWM_ShotgunIceChunk
 	{
 		Damage 2;
 		Obituary "$OB_ICESHOTGUNGUY";
+	}
+}
+
+class GWM_ShadowHunter : Actor
+{
+	Default
+	{
+		Tag "Shadow Hunter";
+		DropItem "GWM_Revolver";
+		Health 180;
+		Radius 16;
+		Height 56;
+		Speed 5;
+		PainChance 50;
+		+FLOORCLIP
+		+CANTSEEK
+		+SEEINVISIBLE
+		+AVOIDMELEE
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		Monster;
+		SeeSound "monsters/shadowhunter/sight";
+		DeathSound "monsters/shadowhunter/death";
+		ActiveSound "monsters/shadowhunter/idle";
+		PainSound "monsters/shadowhunter/pain";
+		Obituary "$OB_SHADOWHUNTER";
+		GibHealth 30;
+	}
+	States
+	{
+		Spawn:
+			SHAH AB 10 A_Look;
+			Loop;
+		See:
+			SHAH AAAA 2 A_Chase;
+			TNT1 A 0 {
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+			}
+			SHAH BBBB 2 A_Chase;
+			TNT1 A 0 {
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+			}
+			SHAH CCCC 2 A_Chase;
+			TNT1 A 0 {
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+			}
+			SHAH DDDD 2 A_Chase;
+			TNT1 A 0 {
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+			}
+			TNT1 A 0 A_JumpIfInTargetLOS("Dodge", 0, JLOSF_DEADNOJUMP, 0, 0);
+			Loop;
+		Dodge:
+			SHAH A 1 A_FaceTarget;
+			TNT1 A 0 A_Jump(256, "DodgeRight", "DodgeLeft");
+		DodgeLeft:
+			TNT1 A 0 {
+				ThrustThing(angle*256/360+192, 12, 0, 0);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+			}
+			Goto See;
+		DodgeRight:
+			TNT1 A 0 {
+				ThrustThing(angle*256/360+64, 12, 0, 0);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+			}
+			Goto See;
+		Missile:
+			SHAG A 20 A_FaceTarget;
+			SHAG A 1 A_FaceTarget;
+			SHAG B 1 {
+				A_SpawnProjectile("GWM_ShadowBullet", 32, 0, 0, CMF_OFFSETPITCH, 0);
+				A_StartSound("weapons/rvlvfire");
+			}
+			SHAG B 5 Bright;
+			SHAG A 10;
+			TNT1 A 0 A_Jump(256, "See", "DodgeRight", "DodgeLeft", "Vanish");
+		Vanish:
+			TNT1 A 0 {
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDouble",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SetInvulnerable();
+				bSOLID = false;
+			}
+			SHAG A 5 A_FadeOut(0.1,0);
+			SHAG A 5 A_FadeOut(0.2,0);
+			SHAG A 5 A_FadeOut(0.3,0);
+			SHAG A 5 A_FadeOut(0.4,0);
+			SHAG A 5 A_FadeOut(0.5,0);
+			SHAG A 5 A_FadeOut(0.6,0);
+			SHAG A 5 A_FadeOut(0.7,0);
+			SHAG A 5 A_FadeOut(0.8,0);
+			SHAG A 5 A_FadeOut(0.9,0);
+			SHAG A 5 A_FadeOut(1,0);
+			SHAH A 0 {bNOTAUTOAIMED = true;}
+			SHAH A 0 A_SetSpeed(20);
+			SHAH AAAAAAAAAAAAAAAAAAAA 0 A_Wander;
+			SHAH A 50;
+			SHAH A 3 A_FadeIn(1,0);
+			SHAH A 3 A_FadeIn(0.9,0);
+			SHAH A 3 A_FadeIn(0.8,0);
+			SHAH A 3 A_FadeIn(0.7,0);
+			SHAH A 3 A_FadeIn(0.6,0);
+			SHAH A 3 A_FadeIn(0.5,0);
+			SHAH A 3 A_FadeIn(0.4,0);
+			SHAH A 3 A_FadeIn(0.3,0);
+			SHAH A 3 A_FadeIn(0.2,0);
+			SHAH A 3 A_FadeIn(0.1,0);
+			SHAH A 3 A_FadeIn(0,0);
+			SHAH A 0 {
+				A_SetTranslucent(0.5,0);
+				A_SetSpeed(5);
+				bNOTAUTOAIMED = false;
+				bSOLID = true;
+				A_UnSetInvulnerable();
+			}
+			Goto See;
+		Pain:
+			SHAP A 4 A_Pain;
+			TNT1 A 0 {
+				A_SpawnItemEx("GWM_HuntersDoubleP",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDoubleP",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDoubleP",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDoubleP",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SpawnItemEx("GWM_HuntersDoubleP",0,0,0,random(-10,10),random(-10,10),0,0, SXF_NOCHECKPOSITION);
+				A_SetInvulnerable();
+				bSOLID = false;
+			}
+			SHAP A 5 A_FadeOut(0.1,0);
+			SHAP A 5 A_FadeOut(0.2,0);
+			SHAP A 5 A_FadeOut(0.3,0);
+			SHAP A 5 A_FadeOut(0.4,0);
+			SHAP A 5 A_FadeOut(0.5,0);
+			SHAP A 5 A_FadeOut(0.6,0);
+			SHAP A 5 A_FadeOut(0.7,0);
+			SHAP A 5 A_FadeOut(0.8,0);
+			SHAP A 5 A_FadeOut(0.9,0);
+			SHAP A 5 A_FadeOut(1,0);
+			SHAP A 0 {bNOTAUTOAIMED = true;}
+			SHAP A 0 A_SetSpeed(30);
+			SHAP AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Wander;
+			SHAH A 50;
+			SHAH A 3 A_FadeIn(1,0);
+			SHAH A 3 A_FadeIn(0.9,0);
+			SHAH A 3 A_FadeIn(0.8,0);
+			SHAH A 3 A_FadeIn(0.7,0);
+			SHAH A 3 A_FadeIn(0.6,0);
+			SHAH A 3 A_FadeIn(0.5,0);
+			SHAH A 3 A_FadeIn(0.4,0);
+			SHAH A 3 A_FadeIn(0.3,0);
+			SHAH A 3 A_FadeIn(0.2,0);
+			SHAH A 3 A_FadeIn(0.1,0);
+			SHAH A 3 A_FadeIn(0,0);
+			SHAH A 0 {
+				A_SetTranslucent(0.5,0);
+				A_SetSpeed(5);
+				bNOTAUTOAIMED = false;
+				bSOLID = true;
+				A_UnSetInvulnerable();
+			}
+			Goto See;
+		Death:
+			TNT1 A 0 A_Scream;
+			SHAD AB 5;
+			TNT1 A 0 A_NoBlocking;
+			SHAD CDE 5;
+			SHAD E -1;
+			Stop;
+		XDeath:
+			TNT1 A 0 A_Scream;
+			SHXD ABCD 4;
+			TNT1 A 0 A_NoBlocking;
+			SHXD EFGH 4;
+			SHXD I -1;
+			Stop;
+	}
+}
+class GWM_HuntersDouble : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 56;
+		+FLOORCLIP
+		RenderStyle "Translucent";
+		Alpha 0.3;
+	}
+	States
+	{
+		Spawn:
+			SHAH A 10 A_FadeOut(0.1,0);
+			SHAH B 10 A_FadeOut(0.2,0);
+			SHAH C 10 A_FadeOut(0.3,0);
+			SHAH D 10 A_FadeOut(0.4,0);
+			SHAH A 10 A_FadeOut(0.5,0);
+			SHAH B 10 A_FadeOut(0.6,0);
+			SHAH C 10 A_FadeOut(0.7,0);
+			SHAH D 10 A_FadeOut(0.8,0);
+			SHAH A 10 A_FadeOut(0.9,0);
+			SHAH B 10 A_FadeOut(1,0);
+			Stop;
+	}
+}
+class GWM_HuntersDoubleP : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 56;
+		+FLOORCLIP
+		RenderStyle "Translucent";
+		Alpha 0.3;
+	}
+	States
+	{
+		Spawn:
+			SHAP A 10 A_FadeOut(0.1,0);
+			SHAP A 10 A_FadeOut(0.2,0);
+			SHAP A 10 A_FadeOut(0.3,0);
+			SHAP A 10 A_FadeOut(0.4,0);
+			SHAP A 10 A_FadeOut(0.5,0);
+			SHAP A 10 A_FadeOut(0.6,0);
+			SHAP A 10 A_FadeOut(0.7,0);
+			SHAP A 10 A_FadeOut(0.8,0);
+			SHAP A 10 A_FadeOut(0.9,0);
+			SHAP A 10 A_FadeOut(1,0);
+			Stop;
+	}
+}
+class GWM_ShadowBullet : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 56;
+		Damage 4;
+		Speed 50;
+		Projectile;
+	}
+	States
+	{
+		Spawn:
+			SSHO A 1;
+			Loop;
+		Death:
+			SSHO A 1;
+			Stop;
 	}
 }

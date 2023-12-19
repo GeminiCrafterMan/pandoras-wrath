@@ -36,7 +36,7 @@ class ThingReplacer : StaticEventHandler
 				if (random(0, 3) == 3)
 					e.Replacement = "GWM_IceShotgunGuy";
 				else
-					e.Replacement = "GWM_KahunaShotgunGuy";
+					e.Replacement = "GWM_KahunaShotgunGuySpawner"; // to spawn a Kahuna Shotgun Guy or a Shadow Hunter
 			}
 			if (e.Replacee == "ChaingunGuy")
 			{
@@ -51,7 +51,7 @@ class ThingReplacer : StaticEventHandler
 				switch (random(0,4))
 				{
 					case 4:
-						e.Replacement = "GWM_NightmareImp";
+						e.Replacement = "GWM_NightmareImpSpawner"; // to spawn a Nightmare Imp or a Nightshade
 						break;
 					case 3:
 						e.Replacement = "GWM_CyberImp";
@@ -84,6 +84,10 @@ class ThingReplacer : StaticEventHandler
 				else
 					e.Replacement = "Cacodemon";
 			}*/
+			if (e.Replacee == "LostSoul")
+			{
+				e.Replacement = "GWM_LostSoulSpawner"; // to spawn a Lost Soul or a Blot
+			}
         }
 
 		// Objects
