@@ -1,3 +1,5 @@
+class GWM_DoomImp : DoomImp {} // literally just a normal imp
+
 class GWM_NightmareImpSpawner : RandomSpawner
 {
 	override void BeginPlay()

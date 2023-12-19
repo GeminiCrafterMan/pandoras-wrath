@@ -57,9 +57,11 @@ class ThingReplacer : StaticEventHandler
 						e.Replacement = "GWM_CyberImp";
 						break;
 					default:
-						e.Replacement = "DoomImp";
+						e.Replacement = "GWM_DoomImp";
 				}
 			}
+			if (e.Replacee == "HellKnight")
+				e.Replacement = "GWM_HellKnight";
 			if (e.Replacee == "BaronOfHell")
 				e.Replacement = "GWM_BaronOfHell";
 			// Misc
@@ -68,26 +70,19 @@ class ThingReplacer : StaticEventHandler
 				if (random(0, 4) == 4)
 					e.Replacement = "GWM_Hellhog";
 				else
-					e.Replacement = "Demon";
+					e.Replacement = "GWM_Pinky";
 			}
 			if (e.Replacee == "Cyberdemon")
 			{
 				if (random(0,1) == 1)
 					e.Replacement = "GWM_Superdemon";
 				else
-					e.Replacement = "Cyberdemon";
+					e.Replacement = "GWM_Cyberdemon";
 			}
-/*			if (e.Replacee == "Cacodemon")
-			{
-				if (SystemTime.Format("%B", SystemTime.Now()) == "October")
-					e.Replacement = "GWM_Cacolantern";
-				else
-					e.Replacement = "Cacodemon";
-			}*/
+			if (e.Replacee == "Cacodemon")
+				e.Replacement = "GWM_Cacodemon";
 			if (e.Replacee == "LostSoul")
-			{
 				e.Replacement = "GWM_LostSoulSpawner"; // to spawn a Lost Soul or a Blot
-			}
         }
 
 		// Objects
@@ -100,9 +95,11 @@ class ThingReplacer : StaticEventHandler
     }
 	override void CheckReplacee(ReplacedEvent e)
 	{
-		if (e.Replacement == "GWM_Superdemon")
-			e.Replacee = "Cyberdemon";
 		if (e.Replacement == "GWM_BaronOfHell")
 			e.Replacee = "BaronOfHell";
+		if (e.Replacement == "GWM_Cyberdemon")
+			e.Replacee = "Cyberdemon";
+		if (e.Replacement == "GWM_Superdemon")
+			e.Replacee = "Cyberdemon";
 	}
 }

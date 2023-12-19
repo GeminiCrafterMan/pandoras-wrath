@@ -1,3 +1,5 @@
+class GWM_Cyberdemon : Cyberdemon {}
+
 class GWM_Superdemon : Actor
 {
 	Default

@@ -67,8 +67,6 @@ class GWM_NapalmBall : Actor
 		+RANDOMIZE
 		+USEBOUNCESTATE
 		+THRUGHOST
-		+ALLOWBOUNCEONACTORS
-		+BOUNCEONACTORS
 		BounceType "Grenade";
 		Gravity 0.5;
 		SeeSound "";

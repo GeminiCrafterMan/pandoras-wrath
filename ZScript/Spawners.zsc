@@ -72,7 +72,7 @@ class GWM_CellPackSpawner : RandomSpawner replaces CellPack
 {
 	Default
 	{
-		DropItem "GWM_CellPack";
+		DropItem "GWM_CellPack_SpawnHeatsink";
 		DropItem "GWM_NapalmStack";
 	}
 }

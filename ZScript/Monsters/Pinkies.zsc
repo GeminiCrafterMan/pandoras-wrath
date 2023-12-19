@@ -1,3 +1,5 @@
+class GWM_Pinky : Demon {}
+
 class GWM_Hellhog : Actor
 {
 	Default

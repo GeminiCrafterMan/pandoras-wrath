@@ -222,7 +222,8 @@ class GWM_MineAmmo : Ammo
 }
 
 class GWM_Cell : Cell {} // solely exists to prevent an infinite loop
-class GWM_CellPack : CellPack // solely exists to prevent an infinite loop
+class GWM_CellPack : CellPack {} // exists for mapset
+class GWM_CellPack_SpawnHeatsink : CellPack // optionally spawns a Melter heatsink
 {
 	override void BeginPlay()
 	{
