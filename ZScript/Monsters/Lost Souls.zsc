@@ -15,7 +15,14 @@ class GWM_LostSoulSpawner : RandomSpawner
 	}
 }
 
-class GWM_LostSoul : LostSoul {} // to prevent recursion, i guess
+class GWM_LostSoul : LostSoul // to prevent recursion, i guess
+{
+	Default
+	{
+		Tag "Lost Soul";
+		//$Category Monsters
+	}
+}
 
 class GWM_BlotSmoke : Actor
 {
@@ -51,7 +58,6 @@ class GWM_Blot : Actor
 {
 	Default
 	{
-		//$Title Blot
 		//$Category Monsters
 		//$Angled
 		//$Sprite BLOPA0
@@ -125,7 +131,6 @@ class GWM_Blot : Actor
 			Stop;
 	}
 }
-
 class GWM_BlotDamage : Actor
 {
 	Default

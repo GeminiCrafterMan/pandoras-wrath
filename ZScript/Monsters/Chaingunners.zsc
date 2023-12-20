@@ -2,6 +2,8 @@ class GWM_ChaingunGuy : ChaingunGuy
 {
 	Default
 	{
+		//$Category Monsters
+		Tag "Chaingunner";
 		AttackSound "weapons/chngun";
 		DropItem "GWM_Chaingun";
 	}
@@ -19,6 +21,7 @@ class GWM_HeavyRifleman : ChaingunGuy
 {
 	Default
 	{
+		//$Category Monsters
 		Tag "Heavy Rifleman";
 		AttackSound "weapons/riflesht";
 		Obituary "$OB_HEAVYRIFLEMAN";

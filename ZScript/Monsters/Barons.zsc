@@ -2,6 +2,8 @@ class GWM_BaronOfHell : BaronOfHell
 {
 	Default
 	{
+		//$Category Monsters
+		Tag "Baron of Hell";
 		BloodColor "93 2F 00";
 	}
 	States
@@ -35,7 +37,6 @@ class GWM_BaronOfHell : BaronOfHell
 			Goto See;
 	}
 }
-
 class GWM_BaronBall : BaronBall
 {
 	States

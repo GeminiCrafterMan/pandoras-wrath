@@ -18,6 +18,9 @@ class GWM_KahunaShotgunGuy : ShotgunGuy
 {
 	Default
 	{
+		//$Category Monsters
+		//$Title Shotgun Zombie
+		// ^ that's so UDB shows it right
 		AttackSound "weapons/skshot";
 		DropItem "GWM_Shotgun";
 		Obituary "$OB_KAHUNASHOTGUNGUY";
@@ -38,6 +41,7 @@ class GWM_IceShotgunGuy : ShotgunGuy
 {
 	Default
 	{
+		//$Category Monsters
 		Translation "Ice";
 		DropItem "GWM_IceShotgun";
 		Obituary "$OB_ICESHOTGUNGUY";
@@ -105,6 +109,7 @@ class GWM_ShadowHunter : Actor
 {
 	Default
 	{
+		//$Category Monsters
 		Tag "Shadow Hunter";
 		DropItem "GWM_Revolver";
 		Health 180;

@@ -1,1 +1,8 @@
-class GWM_Cacodemon : Cacodemon {}
+class GWM_Cacodemon : Cacodemon
+{
+	Default
+	{
+		//$Category Monsters
+		Tag "Cacodemon";
+	}
+}

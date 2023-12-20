@@ -1,9 +1,17 @@
-class GWM_Pinky : Demon {}
+class GWM_Pinky : Demon
+{
+	Default
+	{
+		//$Category Monsters
+		Tag "Pinky";
+	}
+}
 
 class GWM_Hellhog : Actor
 {
 	Default
 	{
+		//$Category Monsters
 		BloodColor "Green";
 		Health 260;
 		PainChance 140;
@@ -51,7 +59,6 @@ class GWM_Hellhog : Actor
 			Goto See;
 	}
 }
-
 class GWM_HellhogArm : Actor
 {
 	Default

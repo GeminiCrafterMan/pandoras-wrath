@@ -1,4 +1,11 @@
-class GWM_DoomImp : DoomImp {} // literally just a normal imp
+class GWM_DoomImp : DoomImp // literally just a normal imp
+{
+	Default
+	{
+		//$Category Monsters
+		Tag "Imp";
+	}
+}
 
 class GWM_NightmareImpSpawner : RandomSpawner
 {
@@ -21,6 +28,7 @@ class GWM_NightmareImp : DoomImp
 {
 	Default
 	{
+		//$Category Monsters
 		PainChance 128;
 		Speed 16;
 		RenderStyle "Translucent";
@@ -55,6 +63,7 @@ class GWM_CyberImp : Actor
 {
 	Default
 	{
+		//$Category Monsters
 		Tag "Cyber Imp";
 		Health 120;
 		Radius 20;
@@ -138,6 +147,7 @@ class GWM_Nightshade : Actor
 {
 	Default
 	{
+		//$Category Monsters
 		Tag "Nightshade";
 		Obituary "$OB_NIGHTSHADE";
 		Health 80;

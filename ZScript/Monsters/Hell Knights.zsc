@@ -1,1 +1,8 @@
-class GWM_HellKnight : HellKnight {}
+class GWM_HellKnight : HellKnight
+{
+	Default
+	{
+		//$Category Monsters
+		Tag "Hell Knight";
+	}
+}

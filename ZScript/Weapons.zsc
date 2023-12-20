@@ -41,6 +41,7 @@ class GWM_WeaponBase : ZWeapon
 {
 	Default
 	{
+		//$Category Weapons
 		+THRUGHOST
 		+WEAPON.NOAUTOSWITCHTO
 		Weapon.Kickback 100;
