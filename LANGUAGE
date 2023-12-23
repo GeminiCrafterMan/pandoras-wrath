@@ -50,7 +50,7 @@ GOTPORTABLEMEDKIT = "Portable medkit!";
 // Obituaries
 KILLPLACEHOLDER = "You shouldn't see this.";
 KILLMINES = "%o didn't see %k's land mine.";
-KILLFISTS = "%o was punched in the snout by %k to establish %h's superiority.";
+KILLFISTS = "%o was punched in %p snout by %k to establish superiority.";
 KILLLUMBERJACK = "%o had their insides shredded by %k's Lumberjack.";
 KILLIMPACTOR = "%o's face was smashed in by %k's Impactor Gauntlet.";
 KILLLEVENBRECH = "%o had their life broken by %k's Levenbrech.";
