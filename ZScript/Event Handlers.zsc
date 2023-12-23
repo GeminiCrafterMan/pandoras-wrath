@@ -92,6 +92,16 @@ class ThingReplacer : StaticEventHandler
 			if (e.Replacee == "ExplosiveBarrel")
 				e.Replacement = "GWM_ExplosiveBarrel";
 		}
+
+		// Weapons from other mapsets... The only thing here right now is from Eviternity II.
+		// check if the class exists first
+		string ev2perfstr = "Perforator";
+		class<Actor> ev2perf = ev2perfstr;
+		if (ev2perf) // check if it exists for real
+		{
+			if (e.Replacee == "Chainsaw" && e.Replacement == ev2perf)
+				e.Replacement == "GWM_Perforator";
+		}
     }
 	override void CheckReplacee(ReplacedEvent e)
 	{

@@ -1,7 +1,6 @@
 class GWM_Player : DoomPlayer
 {
 	int prevPlayerState;
-	float defaultFOV;
 	override void Tick()
 	{
 		super.Tick();
@@ -13,24 +12,24 @@ class GWM_Player : DoomPlayer
 			}
 			prevPlayerState = player.playerstate;
 		}
-	// Until I figure out what's wrong and why this breaks on random mapsets, this will be commented out.
-/*
-		int buttons = GetPlayerInput(AAPTR_DEFAULT, MODINPUT_BUTTONS);
-		if ((player && (player.cmd.buttons & BT_ZOOM && !(player.playerstate == PST_DEAD)) && (!(self.defaultFOV) || self.defaultFOV == 0)))
+
+		if(!player || !player.ReadyWeapon) return;
+		if(player.playerstate == PST_DEAD)
 		{
-			self.defaultFOV = player.desiredFOV;
-			player.desiredFOV = self.defaultFOV/2;
+			player.ReadyWeapon.FOVScale = 0.0;
 		}
-		else if ((player && (!(player.cmd.buttons & BT_ZOOM) || (player.playerstate == PST_DEAD)) && ((self.defaultFOV) || self.defaultFOV != 0)))
+		else if(player.cmd.buttons & BT_ZOOM)
 		{
-			// edit this later to work with freeze death
-			player.desiredFOV = self.defaultFOV;
-			self.defaultFOV = 0;
+			player.ReadyWeapon.FOVScale = 0.5;
 		}
-*/
+		else
+		{
+			player.ReadyWeapon.FOVScale = 0.0;
+		}
 	}
 	Default
 	{
+		Player.DisplayName "Mercenary";
 		Player.SoundClass "GWM_Player";
 		Player.WeaponSlot 1, "GWM_Mine", "GWM_Fist", "GWM_Lumberjack", "GWM_Impactor", "GWM_Levenbrech";
 		Player.WeaponSlot 2, "GWM_Pistol", "GWM_SMG", "GWM_Revolver", "GWM_GoldWand";
@@ -39,6 +38,7 @@ class GWM_Player : DoomPlayer
 		Player.WeaponSlot 5, "GWM_RocketLauncher", "GWM_VenomCannon";
 		Player.WeaponSlot 6, "GWM_PlasmaRifle", "GWM_Melter", "GWM_NoiseCrusher";
 		Player.WeaponSlot 7, "GWM_BFG9000", "GWM_NapalmLauncher";
+		Player.WeaponSlot 8, "GWM_Perforator"; // Eviternity II's Perforator, but a little different
 	}
 }
 

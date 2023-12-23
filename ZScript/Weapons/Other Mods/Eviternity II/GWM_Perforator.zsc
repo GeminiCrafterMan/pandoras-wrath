@@ -1,0 +1,63 @@
+class GWM_Perforator : GWM_WeaponBase
+{
+	Default
+	{
+		Weapon.SelectionOrder 2800;
+		Weapon.AmmoGive 20;
+		Weapon.AmmoUse 25;
+		Weapon.AmmoType "Clip";
+
+		Tag "Perforator";
+		Obituary "%o was shredded by %k's Perforator.";
+		Inventory.Icon "PRFGZ0";
+		Inventory.PickupMessage "You got the Perforator!";
+	}
+	States
+	{
+		Ready:
+			PRFG A 1 A_WeaponReady;
+			Loop;
+		Deselect:
+			PRFG A 1 A_Lower(12);
+			Loop;
+		Select:
+			PRFG A 1 A_Raise(12);
+			Loop;
+		Flash:
+			PRFF A 3 Bright A_Light2;
+			TNT1 A 2 A_Light1;
+			Goto LightDone;
+		Flash2:
+			PRFF A 3 Bright A_Light2;
+			PRFF B 6 Bright A_Light1;
+			Goto LightDone;
+		Fire:
+			PRFG A 2;
+			PRFG A 0 A_StartSound("weapon/gibditcher",1);
+			PRFG A 0 A_GunFlash("Flash");
+//			PRFG A 0 A_FireProjectile("_Rail Shot 1",0.0,0);
+			PRFG A 0 A_FireBullets(0.0, 0.0, 3, 141, "ZBulletPuff", FBF_USEAMMO, missile: "GWM_Tracer", spawnheight: 0);
+			PRFG A 2;
+			PRFG A 2;
+			PRFG A 0 A_StartSound("weapon/gibditcher",1);
+			PRFG A 0 A_GunFlash("Flash");
+//			PRFG A 0 A_FireProjectile("_Rail Shot 2",0.0,0);
+			PRFG A 0 A_FireBullets(2.0, 0.5, 8, 40, "ZBulletPuff", 0, missile: "GWM_Tracer", spawnheight: 0);
+			PRFG A 2;
+			PRFG A 2;
+			PRFG A 0 A_StartSound("weapon/gibditcher",1);
+			PRFG A 0 A_GunFlash("Flash2");
+//			PRFG A 0 A_FireProjectile("_Rail Shot 3",0.0,0);
+			PRFG A 0 A_FireBullets(4.0, 1.0, 20, 15, "ZBulletPuff", 0, missile: "GWM_Tracer", spawnheight: 0);
+			PRFG A 3;
+			PRFG A 6;
+			PRFG B 5 A_CheckReload;
+			PRFG C 30;
+			PRFG B 5;
+			PRFG A 0 A_ReFire;
+			Goto Ready;
+		Spawn:
+			PRFG Z -1;
+			Stop;
+	}
+}

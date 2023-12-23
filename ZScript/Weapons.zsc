@@ -35,6 +35,8 @@
 
 #include "ZScript/Weapons/Slot 4/GWM_FrostFang.zsc"			// Frost Fang
 
+// Other mods
+#include "ZScript/Weapons/Other Mods/Eviternity II/GWM_Perforator.zsc"	// Perforator
 
 // Base weapon class
 class GWM_WeaponBase : ZWeapon
