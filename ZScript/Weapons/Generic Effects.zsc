@@ -105,7 +105,7 @@ Class IceFog : Actor
 	States
 	{
 	Spawn:
-		IFOG A 4 A_FadeOut(0.1);
+		SGFL F 4 A_FadeOut(0.1);
 		Loop;
 	}
 }
@@ -126,7 +126,7 @@ Class IceFog2 : Actor
 	States
 	{
 	Spawn:
-		IFOG A 4 A_FadeOut(0.03);
+		SGFL F 4 A_FadeOut(0.03);
 		Loop;
 	}
 }

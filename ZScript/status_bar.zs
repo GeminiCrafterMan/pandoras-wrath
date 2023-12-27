@@ -12,8 +12,8 @@ class GWM_StatusBar : BaseStatusBar
 		SetSize(32, 320, 200);
 
 		// Create the font used for the fullscreen HUD
-		Font fnt = "HUDFONT_DOOM";
-		mHUDFont = HUDFont.Create(fnt, fnt.GetCharWidth("0"), Mono_CellLeft, 1, 1);
+		Font fnt = "BigUpper";
+		mHUDFont = HUDFont.Create(fnt, 2, false, 2, 2);
 		fnt = "INDEXFONT_DOOM";
 		mIndexFont = HUDFont.Create(fnt, fnt.GetCharWidth("0"), Mono_CellLeft);
 		mAmountFont = HUDFont.Create("INDEXFONT");
@@ -39,20 +39,20 @@ class GWM_StatusBar : BaseStatusBar
 	protected void DrawMainBar (double TicFrac)
 	{
 		DrawImage("STBAR", (0, 168), DI_ITEM_OFFSETS);
-		DrawImage("STTPRCNT", (90, 171), DI_ITEM_OFFSETS);
-		DrawImage("STTPRCNT", (221, 171), DI_ITEM_OFFSETS);
+		DrawString(mHUDFont, "%", (90, 171), DI_ITEM_OFFSETS, translation: Font.CR_Sapphire);
+		DrawString(mHUDFont, "%", (221, 171), DI_ITEM_OFFSETS, translation: Font.CR_Sapphire);
 		
 		Inventory a1 = GetCurrentAmmo();
-		if (a1 != null) DrawString(mHUDFont, FormatNumber(a1.Amount, 3), (44, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
-		DrawString(mHUDFont, FormatNumber(CPlayer.health, 3), (90, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
-		DrawString(mHUDFont, FormatNumber(GetArmorAmount(), 3), (221, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
+		if (a1 != null) DrawString(mHUDFont, FormatNumber(a1.Amount, 3), (44, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, translation: Font.CR_Sapphire);
+		DrawString(mHUDFont, FormatNumber(CPlayer.health, 3), (90, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, translation: Font.CR_Sapphire);
+		DrawString(mHUDFont, FormatNumber(GetArmorAmount(), 3), (221, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, translation: Font.CR_Sapphire);
 
 		DrawBarKeys();
 		DrawBarAmmo();
 		
 		if (deathmatch || teamplay)
 		{
-			DrawString(mHUDFont, FormatNumber(CPlayer.FragCount, 3), (138, 171), DI_TEXT_ALIGN_RIGHT);
+			DrawString(mHUDFont, FormatNumber(CPlayer.FragCount, 3), (138, 171), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
 		}
 		else
 		{
@@ -69,7 +69,7 @@ class GWM_StatusBar : BaseStatusBar
 			DrawInventoryIcon(CPlayer.mo.InvSel, (160, 198), DI_DIMDEPLETED);
 			if (CPlayer.mo.InvSel.Amount > 1)
 			{
-				DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.Amount), (175, 198-mIndexFont.mFont.GetHeight()), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
+				DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.Amount), (175, 198-mIndexFont.mFont.GetHeight()), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_GOLD);
 			}
 		}
 		else
@@ -144,13 +144,21 @@ class GWM_StatusBar : BaseStatusBar
 		// Draw health
 		let berserk = CPlayer.mo.FindInventory("PowerStrength");
 		DrawImage(berserk? "PSTRA0" : "MEDIA0", (20, -2));
-		DrawString(mHUDFont, FormatNumber(CPlayer.health, 3), (44, -20));
+/*		if (CPlayer.Health == 0)
+			DrawBar("STBAROFF", "STBAROFF", CPlayer.Health, 0, (44, -20), 0, 0);
+		else if (CPlayer.Health > 0 && CPlayer.Health <= 100)
+			DrawBar("STBARON", "STBAROFF", CPlayer.Health, 100, (44, -20), 0, 0);
+		else if (CPlayer.Health > 100 && CPlayer.Health <= 200)
+			DrawBar("STBAR200", "STBARON", CPlayer.Health-100, 100, (44, -20), 0, 0);
+		else if (CPlayer.Health > 200)
+			DrawBar("STBAR300", "STBAR200", CPlayer.Health-200, 100, (44, -20), 0, 0);*/
+		DrawString(mHUDFont, FormatNumber(CPlayer.health, 3), (44, -20), translation: Font.CR_Sapphire);
 		
 		let armor = CPlayer.mo.FindInventory("BasicArmor");
 		if (armor != null && armor.Amount > 0)
 		{
 			DrawInventoryIcon(armor, (20, -22));
-			DrawString(mHUDFont, FormatNumber(armor.Amount, 3), (44, -40));
+			DrawString(mHUDFont, FormatNumber(armor.Amount, 3), (44, -40), translation: Font.CR_Sapphire);
 		}
 		DrawTexture(GetMugShot(5), (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
 		Inventory ammotype1, ammotype2;
@@ -162,31 +170,32 @@ class GWM_StatusBar : BaseStatusBar
 			if (ammotype1 && weapon && weapon.magazineSize > 0)
 			{
 				DrawInventoryIcon(ammotype1, (-14, -4));
-				DrawString(mHUDFont, StringStruct.Format("%d %d", weapon.ammoCount, ammoType1.amount), (-30, -20),
-						   DI_TEXT_ALIGN_RIGHT);
+//				DrawImage("STTSLASH", (-65, -4), DI_SCREEN_RIGHT_BOTTOM);
+				DrawString(mHUDFont, StringStruct.Format("%d/%d", weapon.ammoCount, ammoType1.amount), (-30, -20),
+						   DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
 				invY -= 20;
 			}
 			else
 			{
 				DrawInventoryIcon(ammotype1, (-14, -4));
-				DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-30, -20), DI_TEXT_ALIGN_RIGHT);
+				DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-30, -20), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
 				invY -= 20;
 			}
 		}
 		if (ammotype2 != null && ammotype2 != ammotype1)
 		{
 			DrawInventoryIcon(ammotype2, (-14, invY + 17));
-			DrawString(mHUDFont, FormatNumber(ammotype2.Amount, 3), (-30, invY), DI_TEXT_ALIGN_RIGHT);
+			DrawString(mHUDFont, FormatNumber(ammotype2.Amount, 3), (-30, invY), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
 			invY -= 20;
 		}
 		if (!isInventoryBarVisible() && !Level.NoInventoryBar && CPlayer.mo.InvSel != null)
 		{
 			DrawInventoryIcon(CPlayer.mo.InvSel, (-14, invY + 17), DI_DIMDEPLETED);
-			DrawString(mHUDFont, FormatNumber(CPlayer.mo.InvSel.Amount, 3), (-30, invY), DI_TEXT_ALIGN_RIGHT);
+			DrawString(mHUDFont, FormatNumber(CPlayer.mo.InvSel.Amount, 3), (-30, invY), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
 		}
 		if (deathmatch)
 		{
-			DrawString(mHUDFont, FormatNumber(CPlayer.FragCount, 3), (-3, 1), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
+			DrawString(mHUDFont, FormatNumber(CPlayer.FragCount, 3), (-3, 1), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_GOLD);
 		}
 		else
 		{

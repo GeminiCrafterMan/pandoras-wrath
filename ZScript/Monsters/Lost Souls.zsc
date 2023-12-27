@@ -19,8 +19,9 @@ class GWM_LostSoul : LostSoul // to prevent recursion, i guess
 {
 	Default
 	{
-		Tag "Lost Soul";
 		//$Category Monsters
+		+NOBLOOD
+		Tag "Lost Soul";
 	}
 }
 

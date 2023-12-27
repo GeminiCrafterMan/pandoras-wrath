@@ -12,7 +12,7 @@ class GWM_Hellhog : Actor
 	Default
 	{
 		//$Category Monsters
-		BloodColor "Green";
+		BloodColor "30 67 23";
 		Health 260;
 		PainChance 140;
 		Speed 6;

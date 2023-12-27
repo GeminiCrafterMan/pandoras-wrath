@@ -4,5 +4,6 @@ class GWM_Cacodemon : Cacodemon
 	{
 		//$Category Monsters
 		Tag "Cacodemon";
+		BloodColor "00 00 F9";
 	}
 }

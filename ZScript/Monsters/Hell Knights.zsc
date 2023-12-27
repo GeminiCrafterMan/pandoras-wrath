@@ -4,5 +4,48 @@ class GWM_HellKnight : HellKnight
 	{
 		//$Category Monsters
 		Tag "Hell Knight";
+		BloodColor "30 67 23";
+	}
+	States
+	{
+		Spawn:
+			HKNI AB 10 A_Look;
+			Loop;
+		See:
+			HKNI AABBCCDD 3 A_Chase;
+			Loop;
+		Melee:
+		Missile:
+			HKNI EF 8 A_FaceTarget;
+			HKNI G 8 A_CustomComboAttack("GWM_KnightBall", 32, 10 * random(1, 8), "baron/melee");
+			Goto See;
+		Pain:
+			HKNI H  2;
+			HKNI H  2 A_Pain;
+			Goto See;
+		Death:
+			HKNI I  8;
+			HKNI J  8 A_Scream;
+			HKNI K  8;
+			HKNI L  8 A_NoBlocking;
+			HKNI MN 8;
+			HKNI O -1;
+			Stop;
+		Raise:
+			HKNI O 8;
+			HKNI NMLKJI  8;
+			Goto See;
+	}
+}
+class GWM_KnightBall : BaronBall
+{
+	States
+	{
+		Spawn:
+			HBAL AB 4 BRIGHT;
+			Loop;
+		Death:
+			HBAL CDE 6 BRIGHT;
+			Stop;
 	}
 }
