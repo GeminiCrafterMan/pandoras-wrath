@@ -42,7 +42,7 @@ class GWM_HeavyRifleman : ChaingunGuy
 			HEVY F 1 Bright A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
 			HEVY G 2 A_FaceTarget;
 			HEVY F 1 Bright A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
-			HEVY G 2;
+			HEVY G 6; // nerfed and also matches actual burst rifle now
 			HEVY E 3 A_CPosRefire;
 			Goto Missile;
 		Pain:

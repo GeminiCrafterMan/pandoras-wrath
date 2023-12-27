@@ -24,94 +24,110 @@ class ThingReplacer : StaticEventHandler
 		CVar noAltReplacements = CVar.FindCVar('gwm_noaltreplacements');
         if (replaceMonsters.GetBool())
         {
+			let cls = e.Replacee.GetClassName(); //Although not necessary, it helps out for simplification.
 			if (noAltReplacements.GetBool())
 			{
-				// Hitscanners
-				if (e.Replacee == "ZombieMan")
-					e.Replacement = "GWM_Zombieman";
-				if (e.Replacee == "ShotgunGuy")
-					e.Replacement = "GWM_KahunaShotgunGuy";
-				if (e.Replacee == "ChaingunGuy")
-					e.Replacement = "GWM_ChaingunGuy";
-				// Imps and Bigger Imps
-				if (e.Replacee == "DoomImp")
-					e.Replacement = "GWM_DoomImp";
-				if (e.Replacee == "HellKnight")
-					e.Replacement = "GWM_HellKnight";
-				if (e.Replacee == "BaronOfHell")
-					e.Replacement = "GWM_BaronOfHell";
-				// Misc
-				if (e.Replacee == "Demon")
-					e.Replacement = "GWM_Pinky";
-				if (e.Replacee == "Cyberdemon")
-					e.Replacement = "GWM_Cyberdemon";
-				if (e.Replacee == "Cacodemon")
-					e.Replacement = "GWM_Cacodemon";
-				if (e.Replacee == "LostSoul")
-					e.Replacement = "GWM_LostSoul";
+				switch(cls)
+				{
+					// Hitscanners
+					case 'Zombieman':
+						e.Replacement = "GWM_Zombieman";
+						break;
+					case 'ShotgunGuy':
+						e.Replacement = "GWM_KahunaShotgunGuy";
+						break;
+					case 'ChaingunGuy':
+						e.Replacement = "GWM_ChaingunGuy";
+						break;
+					// Imps and variants
+					case 'DoomImp':
+						e.Replacement = "GWM_DoomImp";
+						break;
+					case 'HellKnight':
+						e.Replacement = "GWM_HellKnight";
+						break;
+					case 'BaronOfHell':
+						e.Replacement = "GWM_BaronOfHell";
+						break;
+					case 'Cacodemon':
+						e.Replacement = "GWM_Cacodemon";
+						break;
+					// Other monsters
+					case 'Demon':
+						e.Replacement = "GWM_Pinky";
+						break;
+					case 'Cyberdemon':
+						e.Replacement = "GWM_Cyberdemon";
+						break;
+					case 'LostSoul':
+						e.Replacement = "GWM_LostSoul";
+						break;
+				}
 			}
 			else
 			{
-				// Hitscanners
-				if (e.Replacee == "ZombieMan")
+				switch(cls)
 				{
-					if (random(0, 3) == 3)
-						e.Replacement = "GWM_SMGGuy";
-					else
-						e.Replacement = "GWM_Zombieman";
+					// Hitscanners
+					case 'Zombieman':
+						if (random(0, 3) == 3)
+							e.Replacement = "GWM_SMGGuy";
+						else
+							e.Replacement = "GWM_Zombieman";
+						break;
+					case 'ShotgunGuy':
+						if (random(0, 3) == 3)
+							e.Replacement = "GWM_IceShotgunGuy";
+						else
+							e.Replacement = "GWM_KahunaShotgunGuySpawner"; // to spawn a Kahuna Shotgun Guy or a Shadow Hunter
+						break;
+					case 'ChaingunGuy':
+						if (random(0, 1) == 1)
+							e.Replacement = "GWM_HeavyRifleman";
+						else
+							e.Replacement = "GWM_ChaingunGuy";
+						break;
+					// Imps and Variants
+					case 'DoomImp':
+						switch (random(0,4))
+						{
+							case 4:
+								e.Replacement = "GWM_NightmareImpSpawner"; // to spawn a Nightmare Imp or a Nightshade
+								break;
+							case 3:
+								e.Replacement = "GWM_CyberImp";
+								break;
+							default:
+								e.Replacement = "GWM_DoomImp";
+								break;
+						}
+						break;
+					case 'HellKnight':
+						e.Replacement = "GWM_HellKnight";
+						break;
+					case 'BaronOfHell':
+						e.Replacement = "GWM_BaronOfHell";
+						break;
+					case 'Cacodemon':
+						e.Replacement = "GWM_Cacodemon";
+						break;
+					// Other monsters
+					case 'Demon':
+						if (random(0, 4) == 4)
+							e.Replacement = "GWM_Hellhog";
+						else
+							e.Replacement = "GWM_Pinky";
+						break;
+					case 'Cyberdemon':
+						if (random(0,1) == 1)
+							e.Replacement = "GWM_Superdemon";
+						else
+							e.Replacement = "GWM_Cyberdemon";
+						break;
+					case 'LostSoul':
+						e.Replacement = "GWM_LostSoulSpawner"; // to spawn a Lost Soul or a Blot
+						break;
 				}
-				if (e.Replacee == "ShotgunGuy")
-				{
-					if (random(0, 3) == 3)
-						e.Replacement = "GWM_IceShotgunGuy";
-					else
-						e.Replacement = "GWM_KahunaShotgunGuySpawner"; // to spawn a Kahuna Shotgun Guy or a Shadow Hunter
-				}
-				if (e.Replacee == "ChaingunGuy")
-				{
-					if (random(0, 1) == 1)
-						e.Replacement = "GWM_HeavyRifleman";
-					else
-						e.Replacement = "GWM_ChaingunGuy";
-				}
-				// Imps and Bigger Imps
-				if (e.Replacee == "DoomImp")
-				{
-					switch (random(0,4))
-					{
-						case 4:
-							e.Replacement = "GWM_NightmareImpSpawner"; // to spawn a Nightmare Imp or a Nightshade
-							break;
-						case 3:
-							e.Replacement = "GWM_CyberImp";
-							break;
-						default:
-							e.Replacement = "GWM_DoomImp";
-					}
-				}
-				if (e.Replacee == "HellKnight")
-					e.Replacement = "GWM_HellKnight";
-				if (e.Replacee == "BaronOfHell")
-					e.Replacement = "GWM_BaronOfHell";
-				// Misc
-				if (e.Replacee == "Demon")
-				{
-					if (random(0, 4) == 4)
-						e.Replacement = "GWM_Hellhog";
-					else
-						e.Replacement = "GWM_Pinky";
-				}
-				if (e.Replacee == "Cyberdemon")
-				{
-					if (random(0,1) == 1)
-						e.Replacement = "GWM_Superdemon";
-					else
-						e.Replacement = "GWM_Cyberdemon";
-				}
-				if (e.Replacee == "Cacodemon")
-					e.Replacement = "GWM_Cacodemon";
-				if (e.Replacee == "LostSoul")
-					e.Replacement = "GWM_LostSoulSpawner"; // to spawn a Lost Soul or a Blot
 			}
         }
 
@@ -126,39 +142,65 @@ class ThingReplacer : StaticEventHandler
 		// Weapons & Ammo
 		if (noAltReplacements.GetBool())
 		{
-			if (e.Replacee == "Chainsaw")
-				e.Replacement = "GWM_Lumberjack";
-			if (e.Replacee == "Pistol")
-				e.Replacement = "GWM_Pistol";
-			if (e.Replacee == "Shotgun")
-				e.Replacement = "GWM_Shotgun";
-			if (e.Replacee == "SuperShotgun")
-				e.Replacement = "GWM_SuperShotgun";
-			if (e.Replacee == "Chaingun")
-				e.Replacement = "GWM_Chaingun";
-			if (e.Replacee == "RocketLauncher")
-				e.Replacement = "GWM_RocketLauncher";
-			if (e.Replacee == "PlasmaRifle")
-				e.Replacement = "GWM_PlasmaRifle";
-			if (e.Replacee == "BFG9000")
-				e.Replacement = "GWM_BFG9000";
+			let cls = e.Replacee.GetClassName(); //Although not necessary, it helps out for simplification.
+			switch(cls)
+			{
+				case 'Chainsaw':
+					e.Replacement = "GWM_Lumberjack"; 
+					break;
+				case 'Pistol':
+					e.Replacement = "GWM_Pistol";
+					break;
+				case 'Shotgun':
+					e.Replacement = "GWM_Shotgun";
+					break;
+				case 'SuperShotgun':
+					e.Replacement = "GWM_SuperShotgun";
+					break;
+				case 'Chaingun':
+					e.Replacement = "GWM_Chaingun";
+					break;
+				case 'RocketLauncher':
+					e.Replacement = "GWM_RocketLauncher";
+					break;
+				case 'PlasmaRifle':
+					e.Replacement = "GWM_PlasmaRifle";
+					break;
+				case 'BFG9000':
+					e.Replacement = "GWM_BFG9000";
+					break;
 			// No Clip replacement because the chaingun requires high-cal, but the pistol requires low-cal
-			if (e.Replacee == "Shell")
-				e.Replacement = "GWM_Shell";
-			if (e.Replacee == "ShellBox")
-				e.Replacement = "GWM_ShellBox";
-			if (e.Replacee == "RocketAmmo")
-				e.Replacement = "GWM_RocketAmmo";
-			if (e.Replacee == "RocketBox")
-				e.Replacement = "GWM_RocketBox";
-			if (e.Replacee == "Cell")
-				e.Replacement = "GWM_Cell";
-			if (e.Replacee == "CellPack")
-				e.Replacement = "GWM_CellPack";
+				case 'Shell':
+					e.Replacement = "GWM_Shell";
+					break;
+				case 'ShellBox':
+					e.Replacement = "GWM_ShellBox";
+					break;
+				case 'RocketAmmo':
+					e.Replacement = "GWM_RocketAmmo";
+					break;
+				case 'RocketBox':
+					e.Replacement = "GWM_RocketBox";
+					break;
+				case 'Cell':
+					e.Replacement = "GWM_Cell";
+					break;
+				case 'CellPack':
+					e.Replacement = "GWM_CellPack";
+					break;
+			}
 		}
 
 		// Weapons from other mapsets... The only thing here right now is from Eviternity II.
 		// check if the class exists first
+		let cls = e.Replacee.GetClassName(); //Although not necessary, it helps out for simplification.
+		switch(cls)
+		{
+			case 'Perforator':
+				e.Replacement = "GWM_Perforator";
+				break;
+		}
+		/*
 		string ev2perfstr = "Perforator";
 		class<Actor> ev2perf = ev2perfstr;
 		if (ev2perf) // check if it exists for real
@@ -166,14 +208,22 @@ class ThingReplacer : StaticEventHandler
 			if (e.Replacee == ev2perf)
 				e.Replacement = "GWM_Perforator";
 		}
+		*/
     }
 	override void CheckReplacee(ReplacedEvent e)
 	{
-		if (e.Replacement == "GWM_BaronOfHell")
-			e.Replacee = "BaronOfHell";
-		if (e.Replacement == "GWM_Cyberdemon")
-			e.Replacee = "Cyberdemon";
-		if (e.Replacement == "GWM_Superdemon")
-			e.Replacee = "Cyberdemon";
+		let cls = e.Replacement.GetClassName(); //Although not necessary, it helps out for simplification.
+		switch(cls)
+		{
+			case 'GWM_BaronOfHell':
+				e.Replacee = "BaronOfHell";
+				break;
+			case 'GWM_Cyberdemon':
+				e.Replacee = "Cyberdemon";
+				break;
+			case 'GWM_Superdemon':
+				e.Replacee = "Cyberdemon";
+				break;
+		}
 	}
 }
