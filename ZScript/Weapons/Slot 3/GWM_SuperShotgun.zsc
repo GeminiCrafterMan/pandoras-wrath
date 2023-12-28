@@ -31,7 +31,7 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			TNT1 A 0 {if (invoker.OneBarrel) {player.SetPSprite(OverlayID(), ResolveState("AltFire"));}}
 			SSGG A 1 {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				ZWL_FireHitscan(0, 6*Random(2,3), pellets: 20, spread: 8, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_Tracer");
+				ZWL_FireHitscan(0, 6*Random(2,3), pellets: 20, spread: 7, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_Tracer");
 				A_StartSound("weapons/ssgshot1", CHAN_WEAPON);
 				A_Overlay(PSP_FLASH, "FlashBoth");
 				A_SpawnItemEx("GWM_Flash");
@@ -64,7 +64,7 @@ class GWM_SuperShotgun : GWM_WeaponBase
 				else {
 					A_Overlay(PSP_FLASH, "FlashRight");
 				}
-				ZWL_FireHitscan(0, 6*Random(2,3), pellets: 10, spread: 4, tracertype: "GWM_Tracer");
+				ZWL_FireHitscan(0, 6*Random(2,3), pellets: 10, spread: 3.5, tracertype: "GWM_Tracer");
 				A_StartSound("weapons/ssgshot2", CHAN_WEAPON);
 				A_SpawnItemEx("GWM_Flash");
 				A_WeaponOffset(0, 12, WOF_ADD);
