@@ -14,6 +14,20 @@ class GWM_ChaingunGuy : ChaingunGuy
 			CPOS FE 4 BRIGHT A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 12);
 			CPOS F 1 A_CPosRefire;
 			Goto Missile+1;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			CPOS O 5;
+			CPOS P 5 A_StartSound("monsters/burndeath");
+			CPOS Q 5 A_NoBlocking;
+			CPOS RS 5;
+			CPOS T -1;
+			Stop;
+		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
+			Goto Super::Raise;
 	}
 }
 
@@ -64,7 +78,19 @@ class GWM_HeavyRifleman : ChaingunGuy
 			HEVY RS 5;
 			HEVY T -1;
 			Stop;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			HEVY O 5;
+			HEVY P 5 A_StartSound("monsters/burndeath");
+			HEVY Q 5 A_NoBlocking;
+			HEVY RS 5;
+			HEVY T -1;
+			Stop;
 		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
 			HEVY M 5;
 			HEVY LKJI 5;
 			Goto See;

@@ -5,6 +5,24 @@ class GWM_DoomImp : DoomImp // literally just a normal imp
 		//$Category Monsters
 		Tag "Imp";
 	}
+	States
+	{
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			TROO N 5;
+			TROO O 5 A_StartSound("monsters/burndeath");
+			TROO P 5;
+			TROO Q 5 A_NoBlocking;
+			TROO RST 5;
+			TROO U -1;
+			Stop;
+		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
+			Goto Super::Raise;
+	}
 }
 
 class GWM_NightmareImpSpawner : RandomSpawner
@@ -23,8 +41,7 @@ class GWM_NightmareImpSpawner : RandomSpawner
 		DropItem "GWM_NightmareImp";
 	}
 }
-
-class GWM_NightmareImp : DoomImp
+class GWM_NightmareImp : GWM_DoomImp
 {
 	Default
 	{
@@ -47,7 +64,6 @@ class GWM_NightmareImp : DoomImp
 			Goto See;
 	}
 }
-
 class GWM_NightmareImpBall : DoomImpBall
 {
 	Default
@@ -115,7 +131,20 @@ class GWM_CyberImp : Actor
 			CIMP RST 5;
 			CIMP U -1;
 			Stop;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			CIMP N 5 A_SpawnProjectile("GWM_CyberImpArm",32,-10,270);
+			CIMP O 5 A_StartSound("monsters/burndeath");
+			CIMP P 5;
+			CIMP Q 5 A_NoBlocking;
+			CIMP RST 5;
+			CIMP U -1;
+			Stop;
 		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
 			CIMP MLKJI 8;
 			Goto See;
 	}
@@ -196,6 +225,8 @@ class GWM_Nightshade : Actor
 			NSHA O 4 A_SetTranslucent(0.3,0);
 			NSHA P 4 A_SetTranslucent(0.2,0);
 			stop;
+		// No Death.Fire here since the regular death is sufficient.
+		// No Raise here because it kind of disappears instead of leaving a corpse.
 	}
 }
 Class GWM_ShadeMissile : CacodemonBall

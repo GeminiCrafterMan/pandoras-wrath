@@ -1,3 +1,25 @@
+// Burnt death
+$random monsters/burndeath {
+	monsters/burndeath1
+	monsters/burndeath2
+	monsters/burndeath3
+	monsters/burndeath4
+	monsters/burndeath5
+	monsters/burndeath6
+	monsters/burndeath7
+	monsters/burndeath8
+	monsters/burndeath9
+}
+monsters/burndeath1	"Sounds/Monsters/Burnt/break1.ogg"
+monsters/burndeath2	"Sounds/Monsters/Burnt/break2.ogg"
+monsters/burndeath3	"Sounds/Monsters/Burnt/break3.ogg"
+monsters/burndeath4	"Sounds/Monsters/Burnt/break4.ogg"
+monsters/burndeath5	"Sounds/Monsters/Burnt/break5.ogg"
+monsters/burndeath6	"Sounds/Monsters/Burnt/break6.ogg"
+monsters/burndeath7	"Sounds/Monsters/Burnt/break7.ogg"
+monsters/burndeath8	"Sounds/Monsters/Burnt/break8.ogg"
+monsters/burndeath9	"Sounds/Monsters/Burnt/break9.ogg"
+
 // Hellhog (los zoglin but pinky)
 monsters/hellhog/sight1		"Sounds/Monsters/Hellhog/angry1.ogg"
 monsters/hellhog/sight2		"Sounds/Monsters/Hellhog/angry2.ogg"

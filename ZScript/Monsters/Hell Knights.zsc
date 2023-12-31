@@ -20,20 +20,33 @@ class GWM_HellKnight : HellKnight
 			HKNI G 8 A_CustomComboAttack("GWM_KnightBall", 32, 10 * random(1, 8), "baron/melee");
 			Goto See;
 		Pain:
-			HKNI H  2;
-			HKNI H  2 A_Pain;
+			HKNI H 2;
+			HKNI H 2 A_Pain;
 			Goto See;
 		Death:
-			HKNI I  8;
-			HKNI J  8 A_Scream;
-			HKNI K  8;
-			HKNI L  8 A_NoBlocking;
+			HKNI I 8;
+			HKNI J 8 A_Scream;
+			HKNI K 8;
+			HKNI L 8 A_NoBlocking;
+			HKNI MN 8;
+			HKNI O -1;
+			Stop;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			HKNI I 8;
+			HKNI J 8 A_StartSound("monsters/burndeath");
+			HKNI K 8;
+			HKNI L 8 A_NoBlocking;
 			HKNI MN 8;
 			HKNI O -1;
 			Stop;
 		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
 			HKNI O 8;
-			HKNI NMLKJI  8;
+			HKNI NMLKJI 8;
 			Goto See;
 	}
 }

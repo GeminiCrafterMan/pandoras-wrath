@@ -31,7 +31,20 @@ class GWM_BaronOfHell : BaronOfHell
 			BARN MN 8;
 			BARN O -1 A_BossDeath;
 			Stop;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			BARN I 8;
+			BARN J 8 A_StartSound("monsters/burndeath");
+			BARN K 8;
+			BARN L 8 A_NoBlocking;
+			BARN MN 8;
+			BARN O -1 A_BossDeath;
+			Stop;
 		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
 			BARN O 8;
 			BARN NMLKJI 8;
 			Goto See;

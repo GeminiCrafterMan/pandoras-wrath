@@ -6,4 +6,21 @@ class GWM_Cacodemon : Cacodemon
 		Tag "Cacodemon";
 		BloodColor "00 00 F9";
 	}
+	States
+	{
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			HEAD G 8;
+			HEAD H 8 A_StartSound("monsters/burndeath");
+			HEAD IJ 8;
+			HEAD K 8 A_NoBlocking;
+			HEAD L -1 A_SetFloorClip;
+			Stop;
+		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
+			Goto Super::Raise;
+	}
 }

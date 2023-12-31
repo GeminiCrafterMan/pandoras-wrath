@@ -20,7 +20,7 @@ class GWM_KahunaShotgunGuy : ShotgunGuy
 	{
 		//$Category Monsters
 		//$Title Shotgun Zombie
-		// ^ that's so UDB shows it right
+		// ^ that's so UDB shows it right (it still didn't...?)
 		AttackSound "weapons/skshot";
 		DropItem "GWM_Shotgun";
 		Obituary "$OB_KAHUNASHOTGUNGUY";
@@ -34,6 +34,20 @@ class GWM_KahunaShotgunGuy : ShotgunGuy
 			SPOS E 8 A_StartSound("weapons/skpump1");
 			SPOS E 2 A_StartSound("weapons/skpump2");
 			Goto See;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			SPOS M 5;
+			SPOS N 5 A_StartSound("monsters/burndeath");
+			SPOS O 5 A_NoBlocking;
+			SPOS PQRST 5;
+			SPOS U -1;
+			Stop;
+		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
+			Goto Super::Raise;
 	}
 }
 
@@ -89,11 +103,19 @@ class GWM_IceShotgunGuy : ShotgunGuy
 			ISGZ L 10 A_FreezeDeathChunks;
 			Stop;
 		XDeath:
-			ISGZ M 5 A_IceGuyDie;
+			ISGZ L 5 A_IceGuyDie;
+			Stop;
+		Death.Fire:
+			ISGZ HIJK 5;
+			TNT1 A 0 A_NoBlocking;
+			ISGZ L 5;
+			TNT1 A 0 {
+				bNOBLOOD = true;
+			}
+			ISGZ M -1;
 			Stop;
 		Raise:
-			TNT1 A 0;	// Shouldn't exist.
-			Goto See;
+			Stop;
 	}
 }
 class GWM_ShotgunGuyIceChunk : GWM_ShotgunIceChunk
@@ -288,6 +310,16 @@ class GWM_ShadowHunter : Actor
 			Stop;
 		XDeath:
 			TNT1 A 0 A_Scream;
+			SHXD ABCD 4;
+			TNT1 A 0 A_NoBlocking;
+			SHXD EFGH 4;
+			SHXD I -1;
+			Stop;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
 			SHXD ABCD 4;
 			TNT1 A 0 A_NoBlocking;
 			SHXD EFGH 4;

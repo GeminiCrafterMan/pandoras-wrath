@@ -249,3 +249,22 @@ object GWM_SuperDemonBall
     frame BAL9D { light SDEMONBALL_X2 }
     frame BAL9E { light SDEMONBALL_X3 }
 }
+
+FlickerLight2 GWM_FlameThrowerFire
+{
+	Offset 0 2 0
+	Color 0.56 0.56 1.0
+	Size 40
+	SecondarySize 60
+	Interval 2.0
+}
+Object GWM_FTFire { Frame FRFX { Light GWM_FlameThrowerFire } }
+FlickerLight2 GWM_DropFlame
+{
+	Offset 0 0 0
+	Color 0.68 0.68 1.0
+	Size 30
+	SecondarySize 36
+	Interval 2.0
+}
+Object GWM_DropFire { Frame FLME { Light GWM_DropFlame } }

@@ -64,7 +64,7 @@ class GWM_CellSpawner : GWM_WeaponSpawner replaces Cell
 	Default
 	{
 		DropItem "GWM_Cell";
-		DropItem "GWM_NapalmAmmo";
+		DropItem "GWM_Gas";
 	}
 }
 
@@ -73,7 +73,7 @@ class GWM_CellPackSpawner : RandomSpawner replaces CellPack
 	Default
 	{
 		DropItem "GWM_CellPack_SpawnHeatsink";
-		DropItem "GWM_NapalmStack";
+		DropItem "GWM_BigGas";
 	}
 }
 
@@ -137,7 +137,7 @@ class GWM_BFG9000Spawner : GWM_WeaponSpawner replaces BFG9000
 	Default
 	{
 		DropItem "GWM_BFG9000";
-		DropItem "GWM_NapalmLauncher";
+		DropItem "GWM_Flamethrower";
 	}
 }
 

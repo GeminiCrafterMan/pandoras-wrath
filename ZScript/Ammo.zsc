@@ -233,35 +233,36 @@ class GWM_CellPack_SpawnHeatsink : CellPack // optionally spawns a Melter heatsi
 	}
 }
 
-class GWM_NapalmAmmo : Ammo
+class GWM_Gas : Ammo
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTNAPALMAMMO";
-		Inventory.Amount 1;
-		Inventory.MaxAmount 50;
-		Ammo.BackpackAmount 3;
-		Ammo.BackpackMaxAmount 100;
-		Inventory.Icon "NLAAA0";
+		Inventory.PickupSound "pickups/gas";
+		Inventory.Amount 24;
+		Inventory.MaxAmount 240;
+		Ammo.BackpackAmount 24;
+		Ammo.BackpackMaxAmount 480;
+		Inventory.PickupMessage "You picked up a gasoline cannister";
+		Inventory.Icon "AGASA0";
 	}
 	States
 	{
 		Spawn:
-			NLAA A -1;
-			Loop;
+			AGAS A -1;
+			Stop;
 	}
 }
-class GWM_NapalmStack : GWM_NapalmAmmo
+class GWM_BigGas : GWM_Gas
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTNAPALMSTACK";
-		Inventory.Amount 5;
+		Inventory.Amount 48;
+		Inventory.PickupMessage "You picked up a gasoline pack";
 	}
 	States
 	{
 		Spawn:
-			NLAA B -1;
+			AGAS B -1;
 			Stop;
 	}
 }

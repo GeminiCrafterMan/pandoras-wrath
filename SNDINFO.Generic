@@ -63,6 +63,7 @@ pickups/clip				"Sounds/Pickups/Clip.wav"
 pickups/clipbox				"Sounds/Pickups/Clip Box.wav"
 pickups/belt				"Sounds/Pickups/Belt.wav"
 pickups/shells				"Sounds/Pickups/Shells.wav"
+pickups/gas					"Sounds/Pickups/Gas.wav"
 pickups/backpack			"Sounds/Pickups/Backpack.wav"
 
 // Weapons

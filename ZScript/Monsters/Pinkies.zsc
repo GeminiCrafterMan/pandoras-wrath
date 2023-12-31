@@ -5,6 +5,71 @@ class GWM_Pinky : Demon
 		//$Category Monsters
 		Tag "Pinky";
 	}
+	States
+	{
+		Spawn:
+			PNKY AB 10 A_Look;
+			Loop;
+		See:
+			PNKY AABBCCDD 2 Fast A_Chase;
+			Loop;
+		Melee:
+			PNKY EF 8 Fast A_FaceTarget;
+			PNKY G 8 Fast A_SargAttack;
+			Goto See;
+		Pain:
+			PNKY H 2 Fast;
+			PNKY H 2 Fast A_Pain;
+			Goto See;
+		Death:
+			PNKY I 8;
+			PNKY J 8 A_Scream;
+			PNKY K 4;
+			PNKY L 4 A_NoBlocking;
+			PNKY M 4;
+			PNKY N -1;
+			Stop;
+		XDeath:
+			PNKY O 5;
+			PNKY P 5 A_XScream;
+			PNKY Q 5 A_NoBlocking;
+			PNKY RSTUV 5;
+			PNKY W -1;
+			Stop;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			PNKY O 5;
+			PNKY P 5 A_StartSound("monsters/burndeath");
+			PNKY Q 5 A_NoBlocking;
+			PNKY RSTUV 5;
+			PNKY W -1;
+			Stop;
+		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
+			PNKY N 5;
+			PNKY MLKJI 5;
+			Goto See;
+	}
+}
+class GWM_Spectre : GWM_Pinky
+{
+	Default
+	{
+		//$Category Monsters
+		+SHADOW
+		RenderStyle "OptFuzzy";
+		Alpha 0.5;
+		SeeSound "spectre/sight";
+		AttackSound "spectre/melee";
+		PainSound "spectre/pain";
+		DeathSound "spectre/death";
+		ActiveSound "spectre/active";
+		Obituary "$OB_SPECTREHIT";
+		Tag "Spectre";
+	}
 }
 
 class GWM_Hellhog : Actor
@@ -53,7 +118,20 @@ class GWM_Hellhog : Actor
 			HHOG M 4;
 			HHOG N -1;
 			Stop;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			HHOG I 8;
+			HHOG J 8 A_StartSound("monsters/burndeath");
+			HHOG K 4;
+			HHOG L 4 A_NoBlocking;
+			HHOG M 4;
+			HHOG N -1;
+			Stop;
 		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
 			HHOG N 5;
 			HHOG MLKJI 5;
 			Goto See;
