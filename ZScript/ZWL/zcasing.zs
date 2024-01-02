@@ -4,6 +4,7 @@ class ZCasing : Actor
     {
         Height 4;
         Radius 2;
+        Mass 9;
 
         BounceType "Doom";
         BounceFactor 0.5;
