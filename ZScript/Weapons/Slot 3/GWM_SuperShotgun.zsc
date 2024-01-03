@@ -92,17 +92,13 @@ class GWM_SuperShotgun : GWM_WeaponBase
 		Reload:
 			TNT1 A 0 {if (!invoker.Fired) {player.SetPSPrite(OverlayID(), ResolveState("Ready"));}}
 			TNT1 A 0 {if (!invoker.OneBarrel) {player.SetPSprite(OverlayID(), ResolveState("Reload.Empty"));}}
-			SSGG DC 2;
+			SSGG C 2;
 			SSGG B 3;
 			SSGG C 4;
 			SSGG D 3;
-			SSGG P 3 {
-				A_StartSound("weapons/ssgo", CHAN_BODY);
-				ZWL_EjectCasing("GWM_ShotgunCasing", true);
-//				ZWL_EjectCasing("GWM_ShotgunCasing", true, offset: (24, 4, -10));
-			}
-			SSGG Q 2;
-			SSGG QRST 2;
+			SSGG E 3 A_StartSound("weapons/ssgo", CHAN_BODY);
+			SSGG P 2 ZWL_EjectCasing("GWM_ShotgunCasing", true);
+			SSGG PQRS 2;
 			SSGG J 3 A_StartSound("weapons/ssgl", CHAN_BODY);
 			SSGG KLL 2 A_OverlayPivotAlign(OverlayID(), PSPA_LEFT, PSPA_BOTTOM);
 			SSGG MMM 1 {
@@ -119,16 +115,15 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			SSGG O 5;
 			Goto Ready;
 		Reload.Empty:
-			SSGG DC 2;
+			SSGG C 2;
 			SSGG B 3;
 			SSGG C 4;
 			SSGG D 3;
-			SSGG E 3 {
-				A_StartSound("weapons/ssgo", CHAN_BODY);
+			SSGG E 3 A_StartSound("weapons/ssgo", CHAN_BODY);
+			SSGG F 2 {
 				ZWL_EjectCasing("GWM_ShotgunCasing", true);
 				ZWL_EjectCasing("GWM_ShotgunCasing", true, offset: (24, 4, -10));
 			}
-			SSGG F 2;
 			SSGG FGHI 2;
 			SSGG J 3 A_StartSound("weapons/ssgl", CHAN_BODY);
 			SSGG KLL 2 A_OverlayPivotAlign(OverlayID(), PSPA_LEFT, PSPA_BOTTOM);

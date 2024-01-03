@@ -4,7 +4,7 @@ class GWM_ChaingunGuy : ChaingunGuy
 	{
 		//$Category Monsters
 		Tag "Chaingunner";
-		AttackSound "weapons/chngun";
+		AttackSound "weapons/chainfire";
 		DropItem "GWM_Chaingun";
 	}
 	States

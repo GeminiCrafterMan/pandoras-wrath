@@ -240,9 +240,9 @@ class GWM_Gas : Ammo
 		Inventory.PickupSound "pickups/gas";
 		Inventory.Amount 24;
 		Inventory.MaxAmount 240;
-		Ammo.BackpackAmount 24;
+		Ammo.BackpackAmount 12;
 		Ammo.BackpackMaxAmount 480;
-		Inventory.PickupMessage "You picked up a gasoline cannister";
+		Inventory.PickupMessage "$GOTGASCANISTER";
 		Inventory.Icon "AGASA0";
 	}
 	States
@@ -257,7 +257,7 @@ class GWM_BigGas : GWM_Gas
 	Default
 	{
 		Inventory.Amount 48;
-		Inventory.PickupMessage "You picked up a gasoline pack";
+		Inventory.PickupMessage "$GOTGASPACK";
 	}
 	States
 	{

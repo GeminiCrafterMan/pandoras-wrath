@@ -7,8 +7,8 @@ class GWM_Flamethrower : GWM_WeaponBase
 		Tag "Flamethrower";
 		Weapon.UpSound "weapons/draw_primary";
 		Inventory.PickupSound "misc/w_pkup";
-		Inventory.PickupMessage "You got the Flamethrower! Burn, baby, burn!";
-		Obituary "%o got %p buns thoroughly toasted by %k's Flamethrower.";
+		Inventory.PickupMessage "$GOTFLAMETHROWER";
+		Obituary "$KILLFLAMETHROWER";
 		Weapon.AmmoType "GWM_Gas";
 		Weapon.AmmoGive 48;
 		Weapon.AmmoUse 1;
@@ -68,6 +68,7 @@ class GWM_FTFire : GWM_FlameProjectile
 		DamageType "Fire";
 		Alpha 0.67;
 		Scale 0.67;
+		Obituary "$KILLFLAMETHROWER";
 	}
 	States
 	{
@@ -102,6 +103,7 @@ class GWM_DropFire : GWM_FlameProjectile
 	{
 		-NOGRAVITY
 		+USEBOUNCESTATE
+		+NODAMAGETHRUST
 		Damage 1;
 		BounceType "Classic";
 		Radius 8;
@@ -111,7 +113,7 @@ class GWM_DropFire : GWM_FlameProjectile
 		DamageType "Fire";
 		Alpha 0.90;
 		Gravity 0.125;
-		+NODAMAGETHRUST
+		Obituary "$KILLFLAMETHROWER";
 	}
 	States
 	{

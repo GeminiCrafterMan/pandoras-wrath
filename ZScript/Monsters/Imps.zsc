@@ -7,6 +7,11 @@ class GWM_DoomImp : DoomImp // literally just a normal imp
 	}
 	States
 	{
+		Melee:
+		Missile:
+			TROO EF 8 A_FaceTarget;
+			TROO G 6 A_CustomComboAttack("GWM_ImpBall", 32, 3 * random(1, 8), "imp/melee");
+			Goto See;
 		Death.Fire:
 			TNT1 A 0 {
 				bNOBLOOD = true;
@@ -22,6 +27,13 @@ class GWM_DoomImp : DoomImp // literally just a normal imp
 		Raise:
 			TNT1 A 0 {bNOBLOOD = false;}
 			Goto Super::Raise;
+	}
+}
+class GWM_ImpBall : DoomImpBall
+{
+	Default
+	{
+		DamageType "Fire";
 	}
 }
 
@@ -64,7 +76,7 @@ class GWM_NightmareImp : GWM_DoomImp
 			Goto See;
 	}
 }
-class GWM_NightmareImpBall : DoomImpBall
+class GWM_NightmareImpBall : GWM_ImpBall
 {
 	Default
 	{

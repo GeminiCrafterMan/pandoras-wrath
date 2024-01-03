@@ -22,7 +22,7 @@ GOTPLASMARIFLE = "You picked up the Plasma Rifle!";
 GOTMELTER = "You picked up the Melter!";
 GOTNOISECRUSHER = "You picked up the Noise Crusher!";
 GOTBFG9000 = "You picked up the BFG9000!! Oh yeah!";
-GOTNAPALMLAUNCHER = "You picked up the Napalm Launcher!! Burn, baby, burn!!";
+GOTFLAMETHROWER = "You picked up the Flamethrower! Burn, baby, burn!!";
 // Ammo pickup messages
 GOTLOWCALCLIP = "Picked up a clip of low-caliber bullets.";
 GOTHIGHCALCLIP = "Picked up a clip of high-caliber bullets.";
@@ -39,8 +39,8 @@ GOTEVERICE = "Picked up a chunk of Ever Ice.";
 GOTEVERICEHEFTY = "Picked up a cluster of Ever Ice.";
 GOTVENOMVIAL = "Picked up a small vial of venom.";
 GOTLARGEVENOMVIAL = "Picked up a large vial of venom.";
-GOTNAPALMAMMO = "Picked up a Napalm Launcher round.";
-GOTNAPALMSTACK = "Picked up a stack of Napalm Launcher rounds.";
+GOTGASCANISTER = "Picked up a gasoline canister.";
+GOTGASPACK = "Picked up a pack of gasoline canisters.";
 GOTCYBERIMPARM = "Pulled the power cell out of a Cyber Imp's severed arm.";
 // Powerup messages
 GOTLIFEDRAIN = "Life drain!";
@@ -80,8 +80,7 @@ KILLMELTER = "%o was turned to ash by %k's Melter.";
 KILLNOISECRUSHER = "%o had %p eardrums blown out by %k's Noise Crusher.";
 KILLBFG9000 = "%o was reduced to atoms by %k's BFG9000.";
 KILLBFGBALL = "%o was turned to dust by %k's BFG9000.";
-KILLNAPALMBALL = "%o got a concussion from %k's Napalm Launcher ball.";
-KILLNAPALMFIRE = "%o was burnt to a crisp by %k's Napalm Launcher."; 
+KILLFLAMETHROWER = "%o got %p buns thoroughly toasted by %k's Flamethrower.";
 // Enemy kill messages
 OB_SMGGUY = "%o was riddled with bullets by an SMG zombie."; // change later. boring af
 OB_KAHUNASHOTGUNGUY = "%o was washed ashore by a shotgun zombie's Slayer's Kahuna.";
