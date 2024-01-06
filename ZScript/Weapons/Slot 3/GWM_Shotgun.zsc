@@ -23,6 +23,28 @@ class GWM_Shotgun : GWM_WeaponBase
 		Ready:
 			SKSG A 1 ZWL_WeaponReady(ZRF_ExtraRound);
 			Loop;
+// WIP alternate select/deselect animations made entirely in ZScript
+/*
+		Deselect:
+			TNT1 A 0 {
+				A_OverlayPivotAlign(OverlayID(), PSPA_RIGHT, PSPA_BOTTOM);
+				A_OverlayPivot(OverlayID(), 0.5, 0.5);
+			}
+			SKSG BC 1;
+			SKSG CCCCCC 1 A_OverlayRotate(OverlayID(), 8, WOF_ADD);
+			SKSG A 0 ZWL_QuickLower;
+			Stop;
+		Select:
+			TNT1 A 0 {
+				ZWL_QuickRaise();
+				A_OverlayPivotAlign(OverlayID(), PSPA_RIGHT, PSPA_BOTTOM);
+				A_OverlayPivot(OverlayID(), 0, 0.5);
+				A_OverlayRotate(OverlayID(), 56);
+			}
+			SKSG CCCCCC 1 A_OverlayRotate(OverlayID(), -8, WOF_ADD);
+			SKSG CB 1 A_OverlayRotate(OverlayID(), 0, WOF_INTERPOLATE);
+			Goto Ready;
+*/
 		Deselect:
 			SKSG A 1 A_Lower(12);
 			Loop;

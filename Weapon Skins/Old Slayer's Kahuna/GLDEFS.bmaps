@@ -1,4 +1,5 @@
 // Slayer's Kahuna
+Brightmap Sprite SKSGA0 { Map SKSGA0 DisableFullbright }
 Brightmap Sprite SKSGB0 { Map SKSGB0 DisableFullbright }
 Brightmap Sprite SKSGC0 { Map SKSGC0 DisableFullbright }
 Brightmap Sprite SKSGD0 { Map SKSGD0 DisableFullbright }
