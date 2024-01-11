@@ -22,10 +22,10 @@ class GWM_Lumberjack : GWM_WeaponBase
 			LJAK ABAB 4 A_WeaponReady;
 			Loop;
 		Deselect:
-			LJAK AAAABBBB 1 A_Lower(12);
+			LJAK AAAABBBB 1 A_Lower(18);
 			Loop;
 		Select:
-			LJAK AAAABBBB 1 A_Raise(12);
+			LJAK AAAABBBB 1 A_Raise(18);
 			Loop;
 		Fire:
 			LJAK C 3 A_StartSound("weapons/csawup", CHAN_BODY);

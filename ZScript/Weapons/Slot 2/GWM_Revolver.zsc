@@ -25,13 +25,13 @@ class GWM_Revolver : GWM_WeaponBase
 			RVLG Z -1;
 			Stop;
 		Select:
-			RVLG A 1 A_Raise(12);
+			RVLG A 1 A_Raise(18);
+			Loop;
+		Deselect:
+			RVLG A 1 A_Lower(18);
 			Loop;
 		Ready:
 			RVLG A 1 ZWL_WeaponReady();
-			Loop;
-		Deselect:
-			RVLG A 1 A_Lower(12);
 			Loop;
 		Fire:
 			TNT1 A 0 {return ZWL_JumpIfEmpty("Fire.Empty");}
@@ -39,10 +39,8 @@ class GWM_Revolver : GWM_WeaponBase
 				ZWL_FireHitscan(3, 14*Random(2,3), tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
-				A_SetPitch(pitch-0.33);
 			}
-			RVLG CCD 1 A_SetPitch(pitch-0.11);
-			RVLG DCA 2 A_SetPitch(pitch+0.22);
+			RVLG CDDCA 2;
 			TNT1 A 0 ZWL_ReFire(null, true);
 			Goto Ready;
 		Fire.Empty:

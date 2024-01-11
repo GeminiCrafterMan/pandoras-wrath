@@ -19,10 +19,10 @@ class GWM_RocketLauncher : GWM_WeaponBase
 			RKTL A 1 A_WeaponReady;
 			Loop;
 		Deselect:
-			RKTL A 1 A_Lower(12);
+			RKTL A 1 A_Lower(18);
 			Loop;
 		Select:
-			RKTL A 1 A_Raise(12);
+			RKTL A 1 A_Raise(18);
 			Loop;
 		Fire:
 			RKTL A 8 {

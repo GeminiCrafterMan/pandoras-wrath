@@ -85,7 +85,7 @@ Class GWM_Melter : GWM_WeaponBase
 			A_Stopsound(13320);
 			A_Overlay(2,"StopOverlay");
 			A_Overlay(3,"StopOverlay");
-			A_Lower(12);
+			A_Lower(18);
 			player.mo.viewbob = player.mo.default.viewbob; // fixes for when you run out of ammo
 			if (invoker.tmp > 0) invoker.tmp -= 2;
 		}
@@ -93,7 +93,7 @@ Class GWM_Melter : GWM_WeaponBase
 	Select:
 		VMLT A 1 
 		{
-			A_Raise(12);
+			A_Raise(18);
 			if (invoker.tmp > 0) invoker.tmp -= 2;
 		}
 		Loop;

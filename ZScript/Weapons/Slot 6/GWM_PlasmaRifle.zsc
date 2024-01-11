@@ -20,10 +20,10 @@ class GWM_PlasmaRifle : GWM_WeaponBase
 			PLSG A 1 A_WeaponReady;
 			Loop;
 		Deselect:
-			PLSG A 1 A_Lower(12);
+			PLSG A 1 A_Lower(18);
 			Loop;
 		Select:
-			PLSG A 1 A_Raise(12);
+			PLSG A 1 A_Raise(18);
 			Loop;
 		Fire:
 			PLSG A 1 {

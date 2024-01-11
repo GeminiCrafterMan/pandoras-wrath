@@ -19,10 +19,10 @@ class GWM_VenomCannon : GWM_WeaponBase
 			VNMG A 1 A_WeaponReady;
 			Loop;
 		Deselect:
-			VNMG A 1 A_Lower(12);
+			VNMG A 1 A_Lower(18);
 			Loop;
 		Select:
-			VNMG A 1 A_Raise(12);
+			VNMG A 1 A_Raise(18);
 			Loop;
 		Fire:
 			VNMG B 4 A_Overlay(-2, "Flash");

@@ -25,27 +25,21 @@ class GWM_SMG : GWM_WeaponBase
 			SMGG A 1 ZWL_WeaponReady(ZRF_ExtraRound);
 			Loop;
 		Deselect:
-			SMGG A 1 A_Lower(12);
+			SMGG A 1 A_Lower(18);
 			Loop;
 		Select:
-			SMGG A 1 A_Raise(12);
+			SMGG A 1 A_Raise(18);
 			Loop;
 		Fire:
 			SMGG A 1 {
 				ZWL_FireHitscan(6, 6*Random(2,3), tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
-				A_SetPitch(pitch-0.3);
 				A_WeaponOffset(0, 2, WOF_ADD);
 				ZWL_EjectCasing("GWM_PistolCasing");
 			}
-			SMGG AA 1 {
-				A_WeaponOffset(0, -1, WOF_ADD);
-				A_SetPitch(pitch+0.15);
-			}
-			SMGG A 1 {
-				return ZWL_JumpIfEmpty("Fire.Empty");
-			}
+			SMGG AA 1 A_WeaponOffset(0, -1, WOF_ADD);
+			SMGG A 1 { return ZWL_JumpIfEmpty("Fire.Empty"); }
 			SMGG A 2 ZWL_ReFire(null, true);
 			Goto Ready;
 		Fire.Empty:

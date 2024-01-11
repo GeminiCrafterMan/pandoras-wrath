@@ -26,10 +26,10 @@ class GWM_Chaingun : GWM_WeaponBase
 			Loop;
 		Deselect:
 			TNT1 A 0 A_StopSound(CHAN_BODY);
-			CHGG A 1 A_Lower(12);
+			CHGG A 1 A_Lower(18);
 			Loop;
 		Select:
-			CHGG A 1 A_Raise(12);
+			CHGG A 1 A_Raise(18);
 			Loop;
 		Fire:
 			// rev the chaingun

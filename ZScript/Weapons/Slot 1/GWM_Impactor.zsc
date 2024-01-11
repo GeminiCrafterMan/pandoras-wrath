@@ -16,10 +16,10 @@ class GWM_Impactor : GWM_WeaponBase // not that it needs to be this way...
 			IMPA Z -1;
 			Stop;
 		Select:
-			IMPA A 1 A_Raise(12);
+			IMPA A 1 A_Raise(18);
 			Loop;
 		Deselect:
-			IMPA A 1 A_Lower(12);
+			IMPA A 1 A_Lower(18);
 			Loop;
 		Ready:
 			IMPA A 1 A_WeaponReady;

@@ -1,6 +1,6 @@
 // Doom
 #include "ZScript/Weapons/Slot 1/GWM_Mine.zsc"				// Land mine 
-#include "ZScript/Weapons/Slot 1/GWM_Fist.zsc"				// Fist, taken from Super Skulltag and rewritten slightly.
+#include "ZScript/Weapons/Slot 1/GWM_Fists.zsc"				// Fists, taken from Super Skulltag and rewritten slightly, then modified heavily.
 #include "ZScript/Weapons/Slot 1/GWM_Impactor.zsc"			// Impactor Gauntlet, taken from Realm667.
 #include "ZScript/Weapons/Slot 1/GWM_Lumberjack.zsc"		// "Lumberjack" Chainsaw, sprites by Captain J
 

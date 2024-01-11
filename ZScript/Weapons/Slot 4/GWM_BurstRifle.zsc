@@ -6,7 +6,6 @@ class GWM_BurstRifle : GWM_WeaponBase
 		ZWL_FireHitscan(1, 6*Random(2,3), tracerType: "GWM_Tracer");
 		ZWL_EjectCasing("GWM_RifleCasing");
 		A_WeaponOffset(0, 6, WOF_ADD);
-		A_SetPitch(pitch-0.5);
 	}
 	Default
 	{
@@ -32,30 +31,21 @@ class GWM_BurstRifle : GWM_WeaponBase
 			RIFL A 1 ZWL_WeaponReady(ZRF_ExtraRound);
 			Loop;
 		Deselect:
-			RIFL A 1 A_Lower(12);
+			RIFL A 1 A_Lower(18);
 			Loop;
 		Select:
-			RIFL A 1 A_Raise(12);
+			RIFL A 1 A_Raise(18);
 			Loop;
 		Fire:
 			TNT1 A 0 ZWL_CheckReload();
 			RIFL B 1 Bright A_FireRifle;
-			RIFL CA 1 {
-				A_WeaponOffset(0, -3, WOF_ADD);
-				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
-			}
+			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
 			TNT1 A 0 ZWL_CheckReload();
 			RIFL B 1 Bright A_FireRifle;
-			RIFL CA 1 {
-				A_WeaponOffset(0, -3, WOF_ADD);
-				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
-			}
+			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
 			TNT1 A 0 ZWL_CheckReload();
 			RIFL B 1 Bright A_FireRifle;
-			RIFL CA 1 {
-				A_WeaponOffset(0, -3, WOF_ADD);
-				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
-			}
+			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
 			RIFL A 9;
 			RIFL A 0 ZWL_ReFire(null, true);
 			Goto Ready;

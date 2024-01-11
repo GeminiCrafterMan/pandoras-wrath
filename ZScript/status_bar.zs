@@ -170,7 +170,6 @@ class GWM_StatusBar : BaseStatusBar
 			if (ammotype1 && weapon && weapon.magazineSize > 0)
 			{
 				DrawInventoryIcon(ammotype1, (-14, -4));
-//				DrawImage("STTSLASH", (-65, -4), DI_SCREEN_RIGHT_BOTTOM);
 				DrawString(mHUDFont, StringStruct.Format("%d/%d", weapon.ammoCount, ammoType1.amount), (-30, -20),
 						   DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
 				invY -= 20;

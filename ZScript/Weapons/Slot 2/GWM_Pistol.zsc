@@ -26,13 +26,13 @@ class GWM_Pistol : GWM_WeaponBase replaces Pistol
 			92FG Z -1;
 			Stop;
 		Select:
-			92FG A 1 A_Raise(12);
+			92FG A 1 A_Raise(18);
+			Loop;
+		Deselect:
+			92FG A 1 A_Lower(18);
 			Loop;
 		Ready:
 			92FG A 1 ZWL_WeaponReady(ZRF_ExtraRound);
-			Loop;
-		Deselect:
-			92FG A 1 A_Lower(12);
 			Loop;
 		Fire:
 			TNT1 A 0 {return ZWL_JumpIfEmpty("Fire.Empty");}
@@ -40,17 +40,11 @@ class GWM_Pistol : GWM_WeaponBase replaces Pistol
 				ZWL_FireHitscan(2, 8*Random(2,3), tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
-				A_SetPitch(pitch-0.75);
 			}
 			92FG C 1 {
 				ZWL_EjectCasing("GWM_PistolCasing", offset: (24, 0, -6));
-				A_SetPitch(pitch+0.25);
 			}
-			92FG DE 1 {
-				A_SetPitch(pitch+0.25);
-				ZWL_WeaponReady(ZRF_ExtraRound|ZRF_NoBob);
-			}
-			92FG EEDDCCBB 1 ZWL_WeaponReady(ZRF_ExtraRound|ZRF_NoBob);
+			92FG DEEEDDCCBB 1 ZWL_WeaponReady(ZRF_ExtraRound|ZRF_NoBob);
 			TNT1 A 0 ZWL_ReFire(null, true);
 			Goto Ready;
 		Fire.Empty:

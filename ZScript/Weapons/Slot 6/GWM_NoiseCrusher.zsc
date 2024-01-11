@@ -19,13 +19,13 @@ class GWM_NoiseCrusher : GWM_WeaponBase
 			Stop;
 		Select:
 			NCRG A 1 {
-				A_Raise(12);
+				A_Raise(18);
 				invoker.CrushCaught = false;
 			}
 			Loop;
 		Deselect:
 			NCRG A 1 {
-				A_Lower(12);
+				A_Lower(18);
 				invoker.CrushCaught = false;
 			}
 			Loop;

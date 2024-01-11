@@ -1,5 +1,4 @@
-// Super Skulltag's fist weapon rewritten in ZScript.
-class GWM_Fist : GWM_WeaponBase replaces Fist
+class GWM_Fists : GWM_WeaponBase replaces Fist
 {
 	Default
 	{
@@ -21,10 +20,10 @@ class GWM_Fist : GWM_WeaponBase replaces Fist
 			FIST B 1 A_WeaponReady;
 			Loop;
 		Deselect:
-			FIST B 1 A_Lower(12);
+			FIST B 1 A_Lower(18);
 			Loop;
 		Select:
-			FIST B 1 A_Raise(12);
+			FIST B 1 A_Raise(18);
 			Loop;
 		Fire:
 			FIST C 0 A_JumpIfInventory("PowerStrength", 1, "Fire.Berserk");
@@ -51,7 +50,7 @@ class GWM_Fist : GWM_WeaponBase replaces Fist
 		Fire.Berserk:
 			FIST TC 1;
 			FIST D 0 A_StartSound("weapons/fistjab", CHAN_WEAPON);
-			FIST G 1 A_CustomPunch(2*random(25,100), 1, 0, "BerserkPuff");
+			FIST G 1 A_CustomPunch(2*random(25,100), 1, 0, "GWM_BerserkPuff");
 		Hold.Berserk:
 			PLA3 A 0 A_JumpIf((Vel.X+Vel.Y+Vel.Z > 10) || (Vel.X+Vel.Y+Vel.Z < -10), "RunningBerserk");
 			FIST G 1;
@@ -61,7 +60,7 @@ class GWM_Fist : GWM_WeaponBase replaces Fist
 			FIST CC 35 A_WeaponReady;
 			Goto Ready;
 		RunningBerserk:
-			FIST G 3 A_CustomPunch(2*random(25,100), 1, 0, "BerserkPuff");
+			FIST G 3 A_CustomPunch(2*random(25,100), 1, 0, "GWM_BerserkPuff");
 			FIST G 0 A_ReFire;
 			FIST FE 1;
 			FIST D 1 A_WeaponReady;
@@ -81,7 +80,7 @@ class GWM_Fist : GWM_WeaponBase replaces Fist
 			Goto Ready;
 		SlugBerserk:
 			FIST CDE 1;
-			FIST F 1 A_CustomPunch(200, 1, 0, "BerserkPuff");
+			FIST F 1 A_CustomPunch(200, 1, 0, "GWM_BerserkPuff");
 			FIST HIJKLMNOP 1;
 			FIST CC 35 A_WeaponReady;
 			Goto Ready;
@@ -91,7 +90,7 @@ class GWM_Fist : GWM_WeaponBase replaces Fist
 	}
 }
 
-class BerserkPuff : Actor
+class GWM_BerserkPuff : Actor
 {
 	Default
 	{

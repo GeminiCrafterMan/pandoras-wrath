@@ -18,10 +18,10 @@ class GWM_Perforator : GWM_WeaponBase
 			PRFG A 1 A_WeaponReady;
 			Loop;
 		Deselect:
-			PRFG A 1 A_Lower(12);
+			PRFG A 1 A_Lower(18);
 			Loop;
 		Select:
-			PRFG A 1 A_Raise(12);
+			PRFG A 1 A_Raise(18);
 			Loop;
 		Flash:
 			PRFF A 3 Bright A_Light2;

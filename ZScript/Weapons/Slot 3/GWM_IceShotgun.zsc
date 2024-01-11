@@ -23,10 +23,10 @@ class GWM_IceShotgun : GWM_WeaponBase
 			ISHT A 1 ZWL_WeaponReady(ZRF_ExtraRound);
 			Loop;
 		Deselect:
-			ISHT A 1 A_Lower(12);
+			ISHT A 1 A_Lower(18);
 			Loop;
 		Select:
-			ISHT A 1 A_Raise(12);
+			ISHT A 1 A_Raise(18);
 			Loop;
 		Fire:
 			TNT1 A 0 {
@@ -46,29 +46,22 @@ class GWM_IceShotgun : GWM_WeaponBase
 				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
 				A_WeaponOffset(0, 20, WOF_ADD);
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
-				A_SetPitch(pitch-1.5);
 			}
 			ISHT A 3;
 			ISHT A 1 {
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
-				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
 			}
-			ISHT AA 1 {
-				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
-			}
+			ISHT AA 1;
 			ISHT A 1 {
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
-				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
 			}
-			ISHT AA 1 {
-				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
-			}
+			ISHT AA 1;
 			TNT1 A 0 ZWL_CheckReload();
 			ISHT B 5;
 			ISHT C 4;
-			ISHT D 4 {
+			ISHT D 5 {
 				ZWL_EjectCasing("GWM_IceShotgunCasing", offset: (24, -6, -14));
 				A_StartSound("weapons/icepump1", CHAN_BODY);
 				A_StartSound("weapons/icehiss", CHAN_AUTO);
@@ -116,7 +109,6 @@ class GWM_IceShotgun : GWM_WeaponBase
 				if (!invoker.CheckAmmo(PrimaryFire, false, true))
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
 			}
-			TNT1 A 0 ZWL_JumpIfEmpty("Reload.Empty"); // I'm pretty sure that, for a shotgun, reloading while empty would be the same...{
 			ISHT B 5;
 			ISHT C 4;
 			ISHT D 2 {
@@ -133,26 +125,6 @@ class GWM_IceShotgun : GWM_WeaponBase
 			Loop;
 		Reload.End:
 			ISHT C 4;
-			ISHT B 5 A_StartSound("weapons/icepump2");
-			Goto Ready;
-
-		Reload.Empty:
-			ISHT B 5;
-			ISHT C 4;
-			ISHT D 2 {
-				A_StartSound("weapons/icepump1", CHAN_BODY);
-				A_StartSound("weapons/icehiss", CHAN_AUTO);
-				ZWL_EjectCasing("GWM_IceShotgunCasing", offset: (24, -6, -14));
-			}
-			// Fallthrough
-		Reload.Empty.Loop:
-			ISHT EFG 2;
-			TNT1 A 0 ZWL_Reload(1);
-			ISHT HED 2;
-			ISHT D 0 ZWL_JumpIfReloaded("Reload.Empty.End", true);
-			Loop;
-		Reload.Empty.End:
-			ISHT DC 2;
 			ISHT B 5 A_StartSound("weapons/icepump2");
 			Goto Ready;
 	}

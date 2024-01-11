@@ -18,10 +18,10 @@ class GWM_BFG9000 : GWM_WeaponBase
 			BFUG A 1 A_WeaponReady;
 			Loop;
 		Deselect:
-			BFUG A 1 A_Lower(12);
+			BFUG A 1 A_Lower(18);
 			Loop;
 		Select:
-			BFUG A 1 A_Raise(12);
+			BFUG A 1 A_Raise(18);
 			Loop;
 		Fire:
 			TNT1 A 0 A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);

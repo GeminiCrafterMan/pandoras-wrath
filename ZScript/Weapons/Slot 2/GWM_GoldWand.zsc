@@ -17,10 +17,10 @@ class GWM_GoldWand : GoldWand replaces GoldWand // Okay, this DOES actually need
 			WNDW A 1 A_WeaponReady;
 			Loop;
 		Select:
-			WNDW A 1 A_Raise(12);
+			WNDW A 1 A_Raise(18);
 			Loop;
 		Deselect:
-			WNDW A 1 A_Lower(12);
+			WNDW A 1 A_Lower(18);
 			Loop;
 		Fire:
 			WNDW B 3 ;
