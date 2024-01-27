@@ -55,7 +55,7 @@ class GWM_Revolver : GWM_WeaponBase
 			RVLG D 1;
 			RVLG E 1 A_StartSound("weapons/rvlvreload1", CHAN_BODY);
 			RVLG FGHIJK 1;
-			RVLG L 5 {
+			RVLG L 4 {
 				ZWL_EjectCasing("GWM_PistolCasing", true, 45, offset: (22, -2, -12));
 				ZWL_EjectCasing("GWM_PistolCasing", true, 45, offset: (22, 2, -12));
 				ZWL_EjectCasing("GWM_PistolCasing", true, 45, offset: (24, -4, -12));
@@ -63,12 +63,12 @@ class GWM_Revolver : GWM_WeaponBase
 				ZWL_EjectCasing("GWM_PistolCasing", true, 45, offset: (26, 2, -12));
 				ZWL_EjectCasing("GWM_PistolCasing", true, 45, offset: (24, 4, -12));
 			}
-			RVLG MNOPQ 2;
-			RVLG R 4 ZWL_Reload();
-			RVLG STUVWX 2;
-			RVLG HGFE 2;
+			RVLG MNOPQ 1;
+			RVLG R 3 ZWL_Reload();
+			RVLG STUVWX 1;
+			RVLG HGFE 1;
 			TNT1 A 0 A_StartSound("weapons/rvlvreload3", CHAN_BODY);
-			RVLG D 4;
+			RVLG D 3;
 			Goto Ready;
 		Flash:
 			RVLF A 1 Bright A_Light2;

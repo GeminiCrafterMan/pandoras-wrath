@@ -10,35 +10,118 @@ Brightmap Sprite XBARB7 { Map XBARB0 DisableFullbright }
 Brightmap Sprite XBARB8 { Map XBARB0 DisableFullbright }
 
 // Monsters //
+// SMG Guy
+Brightmap Sprite MGPOF1 { Map BMMGPOF1 DisableFullbright }
+Brightmap Sprite MGPOF2F8 { Map BMMGPOF2 DisableFullbright }
+Brightmap Sprite MGPOF3F7 { Map BMMGPOF3 DisableFullbright }
+Brightmap Sprite MGPOF4F6 { Map BMMGPOF4 DisableFullbright }
+Brightmap Sprite MGPOF5 { Map BMMGPOF5 DisableFullbright }
+// Ice Shotgun Guy
+Brightmap Sprite ISGZE1 { Map BMISGZE1 DisableFullbright }
+Brightmap Sprite ISGZE2E8 { Map BMISGZE2 DisableFullbright }
+Brightmap Sprite ISGZE3E7 { Map BMISGZE3 DisableFullbright }
+Brightmap Sprite ISGZF1 { Map BMISGZF1 DisableFullbright }
+Brightmap Sprite ISGZF2F8 { Map BMISGZF2 DisableFullbright }
+Brightmap Sprite ISGZF3F7 { Map BMISGZF3 DisableFullbright }
+Brightmap Sprite ISGZF4F6 { Map BMISGZF4 DisableFullbright }
+Brightmap Sprite ISGZF5 { Map BMISGZF5 DisableFullbright }
+// Heavy Rifleman
+Brightmap Sprite HEVYA1 { Map HEVYA1 DisableFullbright }
+Brightmap Sprite HEVYA2A8 { Map HEVYA2A8 DisableFullbright }
+Brightmap Sprite HEVYA3A7 { Map HEVYA3A7 DisableFullbright }
+Brightmap Sprite HEVYB1 { Map HEVYB1 DisableFullbright }
+Brightmap Sprite HEVYB2B8 { Map HEVYB2B8 DisableFullbright }
+Brightmap Sprite HEVYB3B7 { Map HEVYB3B7 DisableFullbright }
+Brightmap Sprite HEVYC1 { Map HEVYC1 DisableFullbright }
+Brightmap Sprite HEVYC2C8 { Map HEVYC2C8 DisableFullbright }
+Brightmap Sprite HEVYC3C7 { Map HEVYC3C7 DisableFullbright }
+Brightmap Sprite HEVYD1 { Map HEVYD1 DisableFullbright }
+Brightmap Sprite HEVYD2D8 { Map HEVYD2D8 DisableFullbright }
+Brightmap Sprite HEVYD3D7 { Map HEVYD3D7 DisableFullbright }
+Brightmap Sprite HEVYE1 { Map HEVYE1 DisableFullbright }
+Brightmap Sprite HEVYE2E8 { Map HEVYE2E8 DisableFullbright }
+Brightmap Sprite HEVYE3E7 { Map HEVYE3E7 DisableFullbright }
+Brightmap Sprite HEVYF1 { Map HEVYF1 DisableFullbright }
+Brightmap Sprite HEVYF2F8 { Map HEVYF2F8 DisableFullbright }
+Brightmap Sprite HEVYF3F7 { Map HEVYF3F7 DisableFullbright }
+Brightmap Sprite HEVYF4F6 { Map HEVYF4F6 DisableFullbright }
+Brightmap Sprite HEVYF5 { Map HEVYF5 DisableFullbright }
+Brightmap Sprite HEVYH1 { Map HEVYH1 DisableFullbright }
+Brightmap Sprite HEVYH2H8 { Map HEVYH2H8 DisableFullbright }
+Brightmap Sprite HEVYH3H7 { Map HEVYH3H7 DisableFullbright }
+Brightmap Sprite HEVYI0 { Map HEVYI0 DisableFullbright }
+Brightmap Sprite HEVYJ0 { Map HEVYJ0 DisableFullbright }
+Brightmap Sprite HEVYK0 { Map HEVYK0 DisableFullbright }
+Brightmap Sprite HEVYO0 { Map HEVYO0 DisableFullbright }
+// Cyber Imp
+Brightmap Sprite CIMPG1 { Map CIMPG1 DisableFullbright }
+Brightmap Sprite CIMPG2 { Map CIMPG2 DisableFullbright }
+Brightmap Sprite CIMPG3 { Map CIMPG3 DisableFullbright }
+Brightmap Sprite CIMPG4 { Map CIMPG4 DisableFullbright }
+Brightmap Sprite CIMPG6 { Map CIMPG6 DisableFullbright }
+Brightmap Sprite CIMPG7 { Map CIMPG7 DisableFullbright }
+Brightmap Sprite CIMPG8 { Map CIMPG8 DisableFullbright }
+// Devil
+Brightmap Sprite TRO2A1C1 { Map TRO2A1C1 DisableFullbright }
+Brightmap Sprite TRO2A2C8 { Map TRO2A2C8 DisableFullbright }
+Brightmap Sprite TRO2A3C7 { Map TRO2A3C7 DisableFullbright }
+Brightmap Sprite TRO2A7C3 { Map TRO2A7C3 DisableFullbright }
+Brightmap Sprite TRO2A8C2 { Map TRO2A8C2 DisableFullbright }
+Brightmap Sprite TRO2B1D1 { Map TRO2B1D1 DisableFullbright }
+Brightmap Sprite TRO2B2D8 { Map TRO2B2D8 DisableFullbright }
+Brightmap Sprite TRO2B3D7 { Map TRO2B3D7 DisableFullbright }
+Brightmap Sprite TRO2B7D3 { Map TRO2B7D3 DisableFullbright }
+Brightmap Sprite TRO2B8D2 { Map TRO2B8D2 DisableFullbright }
+Brightmap Sprite TRO2E1H1 { Map TRO2E1H1 DisableFullbright }
+Brightmap Sprite TRO2E2H8 { Map TRO2E2H8 DisableFullbright }
+Brightmap Sprite TRO2E3H7 { Map TRO2E3H7 DisableFullbright }
+Brightmap Sprite TRO2E7H3 { Map TRO2E7H3 DisableFullbright }
+Brightmap Sprite TRO2E8H2 { Map TRO2E8H2 DisableFullbright }
+Brightmap Sprite TRO2F1I1 { Map TRO2F1I1 DisableFullbright }
+Brightmap Sprite TRO2F2I8 { Map TRO2F2I8 DisableFullbright }
+Brightmap Sprite TRO2F3I7 { Map TRO2F3I7 DisableFullbright }
+Brightmap Sprite TRO2F7I3 { Map TRO2F7I3 DisableFullbright }
+Brightmap Sprite TRO2F8I2 { Map TRO2F8I2 DisableFullbright }
+Brightmap Sprite TRO2G1X1 { Map TRO2G1X1 DisableFullbright }
+Brightmap Sprite TRO2G2X8 { Map TRO2G2X8 DisableFullbright }
+Brightmap Sprite TRO2G3X7 { Map TRO2G3X7 DisableFullbright }
+Brightmap Sprite TRO2G7X3 { Map TRO2G7X3 DisableFullbright }
+Brightmap Sprite TRO2G8X2 { Map TRO2G8X2 DisableFullbright }
+Brightmap Sprite TRO2H1 { Map TRO2H1 DisableFullbright }
+Brightmap Sprite TRO2H2 { Map TRO2H2 DisableFullbright }
+Brightmap Sprite TRO2H3 { Map TRO2H3 DisableFullbright }
+Brightmap Sprite TRO2H7 { Map TRO2H7 DisableFullbright }
+Brightmap Sprite TRO2H8 { Map TRO2H8 DisableFullbright }
+
 // Baron of Hell
-Brightmap sprite BARNA1 { map BARNa1 }
-Brightmap sprite BARNA2A8 { map BARNa2a8 }
-Brightmap sprite BARNA3A7 { map BARNa3a7 }
-Brightmap sprite BARNA4A6 { map BARNa4a6 }
-Brightmap sprite BARNA5 { map BARNa5 }
-Brightmap sprite BARNb1 { map BARNb1 }
-Brightmap sprite BARNB2B8 { map BARNb2b8 }
-Brightmap sprite BARNB3B7 { map BARNb3b7 }
-Brightmap sprite BARNB4B6 { map BARNb4b6 }
-Brightmap sprite BARNB5 { map BARNb5 }
-Brightmap sprite BARNC1 { map BARNc1 }
-Brightmap sprite BARNC2C8 { map BARNc2c8 }
-Brightmap sprite BARNC3C7 { map BARNc3c7 }
-Brightmap sprite BARNC4C6 { map BARNc4c6 }
-Brightmap sprite BARNC5 { map BARNc5 }
-Brightmap sprite BARND1 { map BARNd1 }
-Brightmap sprite BARND2D8 { map BARNd2d8 }
-Brightmap sprite BARND3D7 { map BARNd3d7 }
-Brightmap sprite BARND4D6 { map BARNd4d6 }
-Brightmap sprite BARND5 { map BARNd5 }
-Brightmap sprite BARNE1 { map BARNe1 }
-Brightmap sprite BARNE2 { map BARNe2 }
-Brightmap sprite BARNE3 { map BARNe3 }
-Brightmap sprite BARNE4 { map BARNe4 }
-Brightmap sprite BARNE5 { map BARNe5 }
-Brightmap sprite BARNE6 { map BARNe6 }
-Brightmap sprite BARNE7 { map BARNe7 }
-Brightmap sprite BARNE8 { map BARNe8 }
+Brightmap sprite BARNA1 { map BARNA1 }
+Brightmap sprite BARNA2A8 { map BARNA2A8 }
+Brightmap sprite BARNA3A7 { map BARNA3A7 }
+Brightmap sprite BARNA4A6 { map BARNA4A6 }
+Brightmap sprite BARNA5 { map BARNA5 }
+Brightmap sprite BARNB1 { map BARNB1 }
+Brightmap sprite BARNB2B8 { map BARNB2B8 }
+Brightmap sprite BARNB3B7 { map BARNB3B7 }
+Brightmap sprite BARNB4B6 { map BARNB4B6 }
+Brightmap sprite BARNB5 { map BARNB5 }
+Brightmap sprite BARNC1 { map BARNC1 }
+Brightmap sprite BARNC2C8 { map BARNC2C8 }
+Brightmap sprite BARNC3C7 { map BARNC3C7 }
+Brightmap sprite BARNC4C6 { map BARNC4C6 }
+Brightmap sprite BARNC5 { map BARNC5 }
+Brightmap sprite BARND1 { map BARND1 }
+Brightmap sprite BARND2D8 { map BARND2D8 }
+Brightmap sprite BARND3D7 { map BARND3D7 }
+Brightmap sprite BARND4D6 { map BARND4D6 }
+Brightmap sprite BARND5 { map BARND5 }
+Brightmap sprite BARNE1 { map BARNE1 }
+Brightmap sprite BARNE2 { map BARNE2 }
+Brightmap sprite BARNE3 { map BARNE3 }
+Brightmap sprite BARNE4 { map BARNE4 }
+Brightmap sprite BARNE5 { map BARNE5 }
+Brightmap sprite BARNE6 { map BARNE6 }
+Brightmap sprite BARNE7 { map BARNE7 }
+Brightmap sprite BARNE8 { map BARNE8 }
 Brightmap sprite BARNF1 { map BARNF1 }
 Brightmap sprite BARNF2 { map BARNF2 }
 Brightmap sprite BARNF3 { map BARNF3 }
@@ -68,57 +151,6 @@ Brightmap sprite BARNJ0 { map BARNJ0 }
 Brightmap sprite BARNK0 { map BARNK0 }
 Brightmap sprite BARNL0 { map BARNL0 }
 Brightmap sprite BARNM0 { map BARNM0 }
-// Heavy Rifleman
-Brightmap Sprite HEVYA1 { Map HEVYA1 DisableFullbright }
-Brightmap Sprite HEVYA2A8 { Map HEVYA2A8 DisableFullbright }
-Brightmap Sprite HEVYA3A7 { Map HEVYA3A7 DisableFullbright }
-Brightmap Sprite HEVYB1 { Map HEVYB1 DisableFullbright }
-Brightmap Sprite HEVYB2B8 { Map HEVYB2B8 DisableFullbright }
-Brightmap Sprite HEVYB3B7 { Map HEVYB3B7 DisableFullbright }
-Brightmap Sprite HEVYC1 { Map HEVYC1 DisableFullbright }
-Brightmap Sprite HEVYC2C8 { Map HEVYC2C8 DisableFullbright }
-Brightmap Sprite HEVYC3C7 { Map HEVYC3C7 DisableFullbright }
-Brightmap Sprite HEVYD1 { Map HEVYD1 DisableFullbright }
-Brightmap Sprite HEVYD2D8 { Map HEVYD2D8 DisableFullbright }
-Brightmap Sprite HEVYD3D7 { Map HEVYD3D7 DisableFullbright }
-Brightmap Sprite HEVYE1 { Map HEVYE1 DisableFullbright }
-Brightmap Sprite HEVYE2E8 { Map HEVYE2E8 DisableFullbright }
-Brightmap Sprite HEVYE3E7 { Map HEVYE3E7 DisableFullbright }
-Brightmap Sprite HEVYF1 { Map HEVYF1 DisableFullbright }
-Brightmap Sprite HEVYF2F8 { Map HEVYF2F8 DisableFullbright }
-Brightmap Sprite HEVYF3F7 { Map HEVYF3F7 DisableFullbright }
-Brightmap Sprite HEVYF4F6 { Map HEVYF4F6 DisableFullbright }
-Brightmap Sprite HEVYF5 { Map HEVYF5 DisableFullbright }
-Brightmap Sprite HEVYH1 { Map HEVYH1 DisableFullbright }
-Brightmap Sprite HEVYH2H8 { Map HEVYH2H8 DisableFullbright }
-Brightmap Sprite HEVYH3H7 { Map HEVYH3H7 DisableFullbright }
-Brightmap Sprite HEVYI0 { Map HEVYI0 DisableFullbright }
-Brightmap Sprite HEVYJ0 { Map HEVYJ0 DisableFullbright }
-Brightmap Sprite HEVYK0 { Map HEVYK0 DisableFullbright }
-Brightmap Sprite HEVYO0 { Map HEVYO0 DisableFullbright }
-// SMG Guy
-Brightmap Sprite MGPOF1 { Map BMMGPOF1 DisableFullbright }
-Brightmap Sprite MGPOF2F8 { Map BMMGPOF2 DisableFullbright }
-Brightmap Sprite MGPOF3F7 { Map BMMGPOF3 DisableFullbright }
-Brightmap Sprite MGPOF4F6 { Map BMMGPOF4 DisableFullbright }
-Brightmap Sprite MGPOF5 { Map BMMGPOF5 DisableFullbright }
-// Ice Shotgun Guy
-Brightmap Sprite ISGZE1 { Map BMISGZE1 DisableFullbright }
-Brightmap Sprite ISGZE2E8 { Map BMISGZE2 DisableFullbright }
-Brightmap Sprite ISGZE3E7 { Map BMISGZE3 DisableFullbright }
-Brightmap Sprite ISGZF1 { Map BMISGZF1 DisableFullbright }
-Brightmap Sprite ISGZF2F8 { Map BMISGZF2 DisableFullbright }
-Brightmap Sprite ISGZF3F7 { Map BMISGZF3 DisableFullbright }
-Brightmap Sprite ISGZF4F6 { Map BMISGZF4 DisableFullbright }
-Brightmap Sprite ISGZF5 { Map BMISGZF5 DisableFullbright }
-// Cyber Imp
-Brightmap Sprite CIMPG1 { Map CIMPG1 DisableFullbright }
-Brightmap Sprite CIMPG2 { Map CIMPG2 DisableFullbright }
-Brightmap Sprite CIMPG3 { Map CIMPG3 DisableFullbright }
-Brightmap Sprite CIMPG4 { Map CIMPG4 DisableFullbright }
-Brightmap Sprite CIMPG6 { Map CIMPG6 DisableFullbright }
-Brightmap Sprite CIMPG7 { Map CIMPG7 DisableFullbright }
-Brightmap Sprite CIMPG8 { Map CIMPG8 DisableFullbright }
 // Superdemon
 Brightmap Sprite SUPRE1 { Map SUPRE1 DisableFullbright }
 Brightmap Sprite SUPRE2E8 { Map SUPRE2E8 DisableFullbright }

@@ -3,8 +3,7 @@ class GWM_Chaingun : GWM_WeaponBase
 	action void A_FireCGun()
 	{
 		A_SpawnItemEx("GWM_Flash");
-		A_StartSound("weapons/chainfire", CHAN_WEAPON);
-		A_FireBullets(11.2, 0, 1, 7*Random(2,3), "ZBulletPuff", FBF_USEAMMO|FBF_NORANDOM, missile: "GWM_Tracer", spawnheight: 0);
+		ZWL_FireHitscan(4, 7*Random(2,3), tracerType: "GWM_Tracer");
 		ZWL_EjectCasing("GWM_RifleCasing", true, -23, 8, 16, (24, 0, -16));
 		A_SetPitch(pitch-0.5);
 	}
@@ -15,6 +14,7 @@ class GWM_Chaingun : GWM_WeaponBase
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 20;
 		Weapon.AmmoType "GWM_HighCaliberClip";
+		AttackSound "weapons/chainfire";
 		Inventory.PickupMessage "$GOTCHAINGUN";
 		Obituary "$KILLCHAINGUN";
 		Tag "$TAG_CHAINGUN";

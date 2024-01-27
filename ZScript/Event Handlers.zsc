@@ -92,24 +92,35 @@ class ThingReplacer : StaticEventHandler
 						break;
 					// Imps and Variants
 					case 'DoomImp':
-						switch (random(0,4))
+						switch (random(0,5))
 						{
-							case 4:
-								e.Replacement = "GWM_NightmareImpSpawner"; // to spawn a Nightmare Imp or a Nightshade
-								break;
-							case 3:
+							case 5:
 								e.Replacement = "GWM_CyberImp";
 								break;
+							case 4:
+								e.Replacement = "GWM_Devil";
+								break;
+						/*
+							case 3:
+								e.Replacement = "GWM_Catharsi";
+								break;
+						*/
 							default:
-								e.Replacement = "GWM_DoomImp";
+								e.Replacement = "GWM_DoomImpSpawner";
 								break;
 						}
 						break;
 					case 'HellKnight':
-						e.Replacement = "GWM_HellKnight";
+						if (random(0, 4) == 4)
+							e.Replacement = "GWM_CyberHellKnight";
+						else
+							e.Replacement = "GWM_HellKnight";
 						break;
 					case 'BaronOfHell':
-						e.Replacement = "GWM_BaronOfHell";
+						if (random(0, 4) == 4)
+							e.Replacement = "GWM_CyberBaron";
+						else
+							e.Replacement = "GWM_BaronOfHell";
 						break;
 					case 'Cacodemon':
 						e.Replacement = "GWM_Cacodemon";
@@ -141,8 +152,32 @@ class ThingReplacer : StaticEventHandler
         CVar replaceObjects = CVar.FindCVar('gwm_replaceobjects');
 		if (replaceObjects.getBool())
 		{
-			if (e.Replacee == "ExplosiveBarrel")
-				e.Replacement = "GWM_ExplosiveBarrel";
+			let cls = e.Replacee.GetClassName(); //Although not necessary, it helps out for simplification.
+			switch(cls)
+			{
+				case 'ExplosiveBarrel':
+					e.Replacement = "GWM_ExplosiveBarrel";
+					break;
+				case 'DeadStick':
+					if (random(0,2) == 2)
+					{
+						if (replaceMonsters.getBool())
+						{
+							e.Replacement = "GWM_DeadBaronStick";
+							break;
+						}
+						else
+						{
+							e.Replacement = "GWM_DeadBaronStickGreenBlood";
+							break;
+						}
+					}
+					else if (random(0,2) == 1)
+					{
+						e.Replacement = "GWM_DeadHellKnightStick";
+						break;
+					}
+			}
 		}
 
 		// Weapons & Ammo

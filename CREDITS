@@ -16,16 +16,21 @@ Sonik.O.Fan:
 - Classic Super Shotgun Resprite ("Weapon Skin: Classic Super Shotgun")
 - Doom Eternal Plasma Rifle ("Weapon Skin: Classic Plasma Rifle")
 
-TheDoomedArchvile:
-- Impactor Gauntlet (Realm667)
-DoomedArchvileDemon (same guy...?)
-- Shadow Hunter (Realm667)
+Realm667:
+- Impactor Gauntlet
+- Shadow Hunter
+- Frost Fang
+- Impaler Crossbow
+- Superdemon
+- Devil
+- Nightshade
+- Blot
+- Cyber Imp
+- Cyber Baron
+- Cyber Hell Knight
 
 dodopod:
 - ZScript Weapons Library v0.3.0 (Floor decals + casing ejection)
-
-ElectricPulse:
-- MP40
 
 Captain J & Zrrion the Insect:
 - Jackie Hammer (edited for Icebreaker drill) [UNUSED]
@@ -45,12 +50,6 @@ TheUndeadSoldier:
 Scalliano:
 - Auto Shotgun Guy
 
-Ghastly_dragon:
-- Frost Fang (R667 Weapon)
-
-ETTiNGRiNDER:
-- Impaler Crossbow (R667 Weapon)
-
 Eriance/Amuscaria:
 - Vorpal Blade (Levenbrech)
 
@@ -63,7 +62,7 @@ ZUN:
 - Touhou 6: EoSD sounds (PFSSG sounds)
 
 Ænima:
-- Super Skulltag (Fist)
+- Super Skulltag (Fist, heavily edited)
 
 WildWeasel:
 - ww-terror (Bullet tracers)
@@ -74,11 +73,11 @@ FreeDoom:
 Laskow:
 - Portable Medkit (First-Aid Kit)
 
-Xim & Molten Ice:
-- Superdemon
-
 CutmanMike:
 - Mega Man 8-Bit Deathmatch (Noise Crusher projectile code)
 
 CyberMonday:
 - High-caliber clip and belt sprites
+
+JekyllGrim (Agent-Ash):
+- Easy-Dual-Wield

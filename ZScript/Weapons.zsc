@@ -38,6 +38,9 @@
 // Other mods
 #include "ZScript/Weapons/Other Mods/Eviternity II/GWM_Perforator.zsc"	// Perforator
 
+// Morph weapons
+#include "ZScript/Weapons/GWM_HellKnightClaws.zsc"	// Hell Knight's claws
+
 // Base weapon class
 class GWM_WeaponBase : ZWeapon
 {

@@ -32,7 +32,7 @@ class GWM_Mine : GWM_WeaponBase // not that it needs to be this way...
 			Goto Select;
 	}
 }
-class GWM_ThrownMine : ZExplosive // Okay, so like, I was going to do this myself, but then I saw there was a better mine on the wiki, so fuck it
+class GWM_ThrownMine : Actor // Okay, so like, I was going to do this myself, but then I saw there was a better mine on the wiki, so fuck it
 {
 	override bool Used(Actor user)
 	{
@@ -54,7 +54,6 @@ class GWM_ThrownMine : ZExplosive // Okay, so like, I was going to do this mysel
 		BounceType "Hexen";
 		DeathSound "weapons/explode";
 		BounceSound "weapons/grndimp";
-		Damage 128;
 		Projectile;
 		+USEBOUNCESTATE +NOBLOOD +SHOOTABLE -NOGRAVITY -NOBLOCKMAP
 	}
@@ -124,8 +123,8 @@ class GWM_ThrownMine : ZExplosive // Okay, so like, I was going to do this mysel
 				self.Vel.Z = 0;
 				A_Scream();
 				A_SetRenderstyle(alpha, STYLE_Add);
-				ZWL_Explode(self.Damage, self.Damage);
-				A_QuakeEx(4, 4, 4, 10, 0, 256, flags: QF_SHAKEONLY);
+				A_Explode();
+				A_QuakeEx(4, 4, 4, 10, 0, 512, flags: QF_SHAKEONLY);
 			}
 			EXPL BCDEFGHIJ 1 Bright;
 			Stop;

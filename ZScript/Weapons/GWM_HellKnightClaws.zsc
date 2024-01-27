@@ -1,0 +1,32 @@
+class GWM_HellKnightClaws : GWM_WeaponBase
+{
+	Default
+	{
+		Tag "Hell Knight claws";
+		HitObituary "$OB_KNIGHTHIT";
+		Obituary "$OB_KNIGHT";
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+			Stop;
+		Select:
+			HKNI A 1 A_Raise(18);
+			Loop;
+		Deselect:
+			HKNI A 1 A_Lower(18);
+			Loop;
+		Ready:
+			HKNI A 1 A_WeaponReady;
+			Loop;
+		Fire:
+			HKNI EF 8;
+			HKNI G 8 A_CustomPunch(10*Random(1,8), true, meleeRange+32, meleeSound: "baron/melee");
+			Goto Ready;
+		AltFire:
+			HKNI EF 8;
+			HKNI G 8 A_FireProjectile("GWM_KnightBall", spawnheight: 12);
+			Goto Ready;
+	}
+}

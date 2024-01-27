@@ -22,6 +22,29 @@ class GWM_IceShotgun : GWM_WeaponBase
 		Ready:
 			ISHT A 1 ZWL_WeaponReady(ZRF_ExtraRound);
 			Loop;
+		/*
+		Deselect:
+			TNT1 A 0 {
+				A_OverlayPivotAlign(OverlayID(), PSPA_RIGHT, PSPA_BOTTOM);
+				A_OverlayPivot(OverlayID(), 0.5, 0.5);
+			}
+			ISHT BC 1;
+			ISHT CCCCCC 1 A_OverlayRotate(OverlayID(), 8, WOF_ADD);
+			ISHT A 0 ZWL_QuickLower;
+			Stop;
+		Select:
+			TNT1 A 0 {
+				ZWL_QuickRaise();
+				A_OverlayPivotAlign(OverlayID(), PSPA_RIGHT, PSPA_BOTTOM);
+				A_OverlayPivot(OverlayID(), 0, 0.5);
+				A_OverlayRotate(OverlayID(), 56);
+			}
+			ISHT CCCCCC 1 A_OverlayRotate(OverlayID(), -8, WOF_ADD);
+			ISHT CB 1 A_OverlayRotate(OverlayID(), 0, WOF_INTERPOLATE);
+			TNT1 A 0 {
+				A_Overlay(OverlayID(), "Ready");
+			}
+		*/
 		Deselect:
 			ISHT A 1 A_Lower(18);
 			Loop;

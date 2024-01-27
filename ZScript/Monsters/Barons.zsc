@@ -62,3 +62,67 @@ class GWM_BaronBall : BaronBall
 			Stop;
 	}
 }
+
+class GWM_CyberBaron : GWM_BaronOfHell
+{
+	Default
+	{
+		obituary "%o was splayed by a cyber baron";
+		hitobituary "%o was ripped to shreds by a cyber baron";
+		health 1200;
+		radius 24;
+		height 64;
+		mass 1000;
+		speed 8;
+		painchance 40;
+		seesound "cbaron/sight";
+		painsound "cbaron/pain";
+		deathsound "cbaron/death";
+		activesound "cbaron/active";
+		MONSTER;
+		+NORADIUSDMG
+	}
+	states
+	{
+		Spawn:
+			CBOS AB 10 A_Look;
+			loop;
+		See:
+			CBOS A 3 A_chase;
+			CBOS A 3 A_chase;
+			CBOS B 0 A_playsound("cbaron/metal");
+			CBOS BB 3 A_chase;
+			CBOS CC 3 A_chase;		
+			CBOS D 3 A_chase;
+			CBOS D 3 A_hoof;
+			loop;
+		Melee:
+			CBOS PQ 8 A_FaceTarget;
+			CBOS R 8 A_CustomComboAttack("GWM_BaronBall", 32, 10 * random(1, 8), "baron/melee");
+			Goto See;
+		Missile:
+			CBOS E 0 A_jump(80,"Missile2");
+			CBOS E 10 A_FaceTarget;
+			CBOS E 10 A_FaceTarget;
+			CBOS F 10 Bright A_SpawnProjectile("Rocket",27,16,0);
+			CBOS E 10 A_FaceTarget;
+			goto See;
+		Missile2:
+			CBOS PQ 8 A_FaceTarget;
+			CBOS R 8 A_CustomComboAttack("GWM_BaronBall", 32, 10 * random(1, 8), "baron/melee");
+			Goto See;
+		Pain:
+			CBOS H 2;
+			CBOS H 2 A_Pain;
+			goto See;
+		Death:
+			CBOS I 8;
+			CBOS J 8 A_Scream;
+			CBOS K 8 bright A_Playsound("world/barrelx");
+			CBOS L 8 bright A_NoBlocking;
+			CBOS M 8 bright;
+			CBOS N 8 bright;
+			CBOS O -1;
+			stop;
+	}
+}

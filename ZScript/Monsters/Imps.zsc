@@ -37,7 +37,7 @@ class GWM_ImpBall : DoomImpBall
 	}
 }
 
-class GWM_NightmareImpSpawner : RandomSpawner
+class GWM_DoomImpSpawner : RandomSpawner
 {
 	override void BeginPlay()
 	{
@@ -50,40 +50,7 @@ class GWM_NightmareImpSpawner : RandomSpawner
 	}
 	Default
 	{
-		DropItem "GWM_NightmareImp";
-	}
-}
-class GWM_NightmareImp : GWM_DoomImp
-{
-	Default
-	{
-		//$Category Monsters
-		PainChance 128;
-		Speed 16;
-		RenderStyle "Translucent";
-		Translation "GWM_NightmareImp";
-		Tag "Nightmare Imp";
-		Alpha 0.7;
-		BloodColor "78 58 80";
-		Obituary "$OB_NIGHTMAREIMP_SCRATCH";
-	}
-	States
-	{
-		Melee:
-		Missile:
-			TROO EF 8 A_FaceTarget;
-			TROO G 6 A_CustomComboAttack("GWM_NightmareImpBall", 32, 3 * random(1, 8), "imp/melee");
-			Goto See;
-	}
-}
-class GWM_NightmareImpBall : GWM_ImpBall
-{
-	Default
-	{
-		Translation "GWM_NightmareImp";
-		Speed 20;
-		FastSpeed 40;
-		Obituary "$OB_NIGHTMAREIMP_FIRE";
+		DropItem "GWM_DoomImp";
 	}
 }
 
@@ -287,5 +254,85 @@ Class GWM_ShadePuff : Actor
 			TNT1 A 3 Bright;
 			NBAL CDEFG 3 BRIGHT;
 			Stop;
+	}
+}
+
+Class GWM_Devil : DoomImp
+{
+	Default
+	{
+		obituary "$OB_DEVIL_FIREBALL";
+		hitobituary "$OB_DEVIL_SCRATCH";
+		Tag "Devil";
+		health 120;
+		radius 20;
+		height 56;
+		mass 120;
+		speed 10;
+		painchance 160;
+		seesound "monster/dvlsit";
+		painsound "monster/dvlpai";
+		deathsound "monster/dvldth";
+		activesound "monster/dvlact";
+		MONSTER;
+		+FLOORCLIP
+	}
+ 	States
+	{
+		Spawn:
+			TRO2 AB 10 A_Look;
+			loop;
+		See:
+			TRO2 AABBCCDD 3 A_Chase;
+			loop;
+		Melee:
+		Missile:
+			TRO2 EF 6 A_FaceTarget;
+			TRO2 G 4 A_CustomComboAttack("GWM_ImpBall", 32, 3 * random(1, 8), "imp/melee");
+			TRO2 B 2;
+			TRO2 HI 6 A_FaceTarget;
+			TRO2 J 4 A_CustomComboAttack("GWM_ImpBall", 32, 3 * random(1, 8), "imp/melee");		
+			TRO2 B 2;
+			goto See;
+		Pain:
+			TRO2 K 2;
+			TRO2 K 2 A_Pain;
+			goto See;
+		Pain.wepkick:
+			TRO2 K 2;
+			TRO2 K 50 A_Pain;
+			goto See;
+		Death:
+			TRO2 L 8;
+			TRO2 M 8 A_Scream;
+			TRO2 N 6;
+			TRO2 O 6 A_NoBlocking;
+			TRO2 P -1;
+			stop;
+		XDeath:
+			TRO2 Q 5;
+			TRO2 R 5 A_XScream;
+			TRO2 S 5;
+			TRO2 T 5 A_NoBlocking;
+			TRO2 UVW 5;
+			TRO2 X -1;
+			stop;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			TRO2 Q 5;
+			TRO2 R 5 A_StartSound("monsters/burndeath");
+			TRO2 S 5;
+			TRO2 T 5 A_NoBlocking;
+			TRO2 UVW 5;
+			TRO2 X -1;
+			stop;
+		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
+			TRO2 PO 8;
+			TRO2 NML 6;
+			goto See;
 	}
 }

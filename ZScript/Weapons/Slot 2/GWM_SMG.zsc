@@ -44,7 +44,7 @@ class GWM_SMG : GWM_WeaponBase
 			Goto Ready;
 		Fire.Empty:
 			TNT1 A 0 ZWL_CheckReload();
-			Goto Reload.Empty;
+			Goto Reload;
 		Flash:
 			SMGF A 1 Bright A_Light1;
 			SMGF B 1 Bright A_Light2;
@@ -57,22 +57,12 @@ class GWM_SMG : GWM_WeaponBase
 				if (!invoker.CheckAmmo(PrimaryFire, false, true))
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
 			}
-			TNT1 A 0 ZWL_JumpIfEmpty("Reload.Empty");
 			SMGG BCDEF 2;
 			SMGG G 2 A_StartSound("weapons/smgclipout");
 			SMGG HIJK 2;
 			SMGG K 2 ZWL_EjectCasing("GWM_PistolEmptyMag", true, 45, 2, 16, (24, 0, -24));
 			SMGG KJIH 2;
 			SMGG G 2 ZWL_Reload(-1);
-			SMGG FEDCB 2;
-			Goto Ready;
-		Reload.Empty:
-			SMGG BCDEF 2;
-			SMGG G 2 A_StartSound("weapons/smgclipout");
-			SMGG HIJK 2;
-			SMGG K 2 ZWL_EjectCasing("GWM_PistolEmptyMag", true, 45, 2, 16, (24, 0, -24));
-			SMGG KJIH 2;
-			SMGG G 2 ZWL_Reload;
 			SMGG FEDCB 2;
 			Goto Ready;
 	}
