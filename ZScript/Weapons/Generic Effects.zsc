@@ -155,7 +155,7 @@ class GWM_Tracer : FastProjectile
 		RenderStyle "Add";
 		Radius 2;
 		Height 2;
-		Speed 240;
+		Speed 180;
 		//+BLOODSPLATTER
 		+HITTRACER
 		+NOINTERACTION
@@ -165,8 +165,11 @@ class GWM_Tracer : FastProjectile
 	}
 	States
 	{
+		Dummy:
+			TRAC A 1 Bright;
+			Loop;
 		Spawn:
-			WPUF B 1 BRIGHT;
+			TRAC A 1 BRIGHT;
 			Loop;
 		Crash:
 			TNT1 A 0 A_Jump(256,"Death");
