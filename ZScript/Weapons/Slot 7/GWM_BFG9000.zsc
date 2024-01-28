@@ -1,4 +1,4 @@
-class GWM_BFG9000 : GWM_WeaponBase
+class GWM_BFG9000 : GWM_WeaponBase // dude this thing's gonna be gone anyway. i'm not fixing this
 {
 	Default
 	{

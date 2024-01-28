@@ -81,6 +81,7 @@ class GWM_Rocket : Actor
 		SeeSound "";
 		DeathSound "weapons/explode";
 		Obituary "$KILLROCKET";
+		DamageType "Rocket";
 	}
 	States
 	{

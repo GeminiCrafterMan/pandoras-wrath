@@ -116,7 +116,7 @@ class GWM_NoiseCrush : Actor
 		+CANBOUNCEWATER
 		Radius 5;
 		Height 5;
-		damage (27);
+		DamageFunction (27);
 		BounceSound "weapons/noisebounce";
 		DeathSound "weapons/noisehit";
 //		damagetype "NoiseCrush1";
@@ -188,7 +188,7 @@ class GWM_NoiseCrush2 : Actor
 	{
 		Radius 20;
 		Height 10;
-		damage (60);
+		DamageFunction (80);
 //		damagetype "NoiseCrush2";
 		DeathSound "weapons/noisehit";
 		Obituary "$KILLNOISECRUSHER";

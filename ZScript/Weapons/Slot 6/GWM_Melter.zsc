@@ -107,7 +107,7 @@ Class GWM_Melter : GWM_WeaponBase
 		}
 		VMLT BBBEEEDDDCCC 1 bright
 		{	
-			int damage = random(7,14);	//damage per tic
+			int damage = 11;	//damage per tic
 			int length = 768;			//beam length
 			A_MelterBeam(damage,length);
 			A_WeaponOffset(random(-1,1),random(32,34),WOF_INTERPOLATE);

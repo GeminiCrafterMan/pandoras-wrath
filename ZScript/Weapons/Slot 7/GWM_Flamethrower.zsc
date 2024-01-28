@@ -63,7 +63,7 @@ class GWM_FTFire : GWM_FlameProjectile
 		Radius 2;
 		Height 4;
 		Speed 16;
-		Damage 1;
+		DamageFunction (5);
 		RenderStyle "Add";
 		DamageType "Fire";
 		Alpha 0.67;
@@ -104,7 +104,7 @@ class GWM_DropFire : GWM_FlameProjectile
 		-NOGRAVITY
 		+USEBOUNCESTATE
 		+NODAMAGETHRUST
-		Damage 1;
+		DamageFunction (5);
 		BounceType "Classic";
 		Radius 8;
 		Height 40;

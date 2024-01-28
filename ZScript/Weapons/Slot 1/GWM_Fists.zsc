@@ -227,12 +227,12 @@ class GWM_Fists : GWM_WeaponBase replaces Fist
 		is consumed.
 	*/
 	//A_CustomPunch
-	action void Right_CustomPunch(int damage, bool norandom = false, int flags = CPF_USEAMMO, class<Actor> pufftype = "BulletPuff", double range = 0, double lifesteal = 0, int lifestealmax = 0, class<BasicArmorBonus> armorbonustype = "ArmorBonus", sound MeleeSound = 0, sound MissSound = "")
+	action void Right_CustomPunch(int damage, bool norandom = false, int flags = CPF_USEAMMO, class<Actor> pufftype = "GWM_FistPuff", double range = 0, double lifesteal = 0, int lifestealmax = 0, class<BasicArmorBonus> armorbonustype = "ArmorBonus", sound MeleeSound = 0, sound MissSound = "")
 	{
 		invoker.bAltFire = false;
 		A_CustomPunch(damage, norandom, flags, pufftype, range, lifesteal, lifestealmax, armorbonustype, MeleeSound, MissSound);
 	}
-	action void Left_CustomPunch(int damage, bool norandom = false, int flags = CPF_USEAMMO, class<Actor> pufftype = "BulletPuff", double range = 0, double lifesteal = 0, int lifestealmax = 0, class<BasicArmorBonus> armorbonustype = "ArmorBonus", sound MeleeSound = 0, sound MissSound = "")
+	action void Left_CustomPunch(int damage, bool norandom = false, int flags = CPF_USEAMMO, class<Actor> pufftype = "GWM_FistPuff", double range = 0, double lifesteal = 0, int lifestealmax = 0, class<BasicArmorBonus> armorbonustype = "ArmorBonus", sound MeleeSound = 0, sound MissSound = "")
 	{
 		invoker.bAltFire = true;
 		A_CustomPunch(damage, norandom, flags, pufftype, range, lifesteal, lifestealmax, armorbonustype, MeleeSound, MissSound);
@@ -272,7 +272,7 @@ class GWM_Fists : GWM_WeaponBase replaces Fist
 		GWM_Fists.lowerspeed 18;
 		Obituary "$KILLFISTS";
 		Tag "$TAG_FISTS";
-		AttackSound "weapons/punch";
+		AttackSound "weapons/fist_hit";
 	}
 	States
 	{
@@ -338,15 +338,15 @@ class GWM_Fists : GWM_WeaponBase replaces Fist
 			FIST C 0 A_JumpIfInventory("PowerStrength", 1, "Fire.Left.Berserk");
 			FIST TC 1;
 			FIST D 0 A_StartSound("weapons/fistjab", CHAN_LEFTGUN);
-			FIST G 2 A_CustomPunch(2*random(1,10), 1, 0, "BulletPuff");
+			FIST G 2 Left_CustomPunch(11, 1, 0);
 			FIST FEDDCCC 2;
 			TNT1 A 0 Left_ReFire();
 			Goto Ready.Left;
 		Fire.Left.Berserk:
 			FIST TC 1;
 			FIST D 0 A_StartSound("weapons/fistjab", CHAN_LEFTGUN);
-			FIST G 2 A_CustomPunch(2*random(25,100), 1, 0, "GWM_BerserkPuff");
-			FIST FEDCC 2;
+			FIST G 2 Left_CustomPunch(125, 1, 0, "GWM_BerserkPuff");
+			FIST FEDDCCC 2;
 			TNT1 A 0 Left_ReFire();
 			Goto Ready.Left;
 		/*////////////////////////
@@ -365,20 +365,41 @@ class GWM_Fists : GWM_WeaponBase replaces Fist
 			FIST C 0 A_JumpIfInventory("PowerStrength", 1, "Fire.Right.Berserk");
 			FIST TC 1;
 			FIST D 0 A_StartSound("weapons/fistjab", CHAN_RIGHTGUN);
-			FIST G 2 A_CustomPunch(2*random(1,10), 1, 0, "BulletPuff");
+			FIST G 2 Right_CustomPunch(11, 1, 0);
 			FIST FEDDCCC 2;
 			TNT1 A 0 Right_ReFire();
 			Goto Ready.Right;
 		Fire.Right.Berserk:
 			FIST TC 1;
 			FIST D 0 A_StartSound("weapons/fistjab", CHAN_RIGHTGUN);
-			FIST G 2 A_CustomPunch(2*random(25,100), 1, 0, "GWM_BerserkPuff");
-			FIST FEDCC 2;
+			FIST G 2 Right_CustomPunch(125, 1, 0, "GWM_BerserkPuff");
+			FIST FEDDCCC 2;
 			TNT1 A 0 Right_ReFire();
 			Goto Ready.Right;
 	}
 }
-
+class GWM_FistPuff : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		-ALLOWPARTICLES
+		-RANDOMIZE
+		+ZDOOMTRANS
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+	}
+	States
+	{
+		Melee:
+			TNT1 A 0 A_StartSound("weapons/fist_hit_world", 6);
+			PUFF CD 4;
+			Stop;
+	}
+}
 class GWM_BerserkPuff : Actor
 {
 	Default
@@ -402,10 +423,16 @@ class GWM_BerserkPuff : Actor
 			PUFF BCD 4;
 			Stop;
 		Melee:
+			TNT1 A 0 {
+				Radius_Quake(6, random(8,16), 0, 3, 0);
+				A_StartSound("weapons/berserk_hit_world", 6);
+			}
+			EXPL ABCDEFGHIJ 1 Bright A_FadeOut(0.05);
+			Stop;
 		XDeath:
 			TNT1 A 0 {
 				Radius_Quake(6, random(8,16), 0, 3, 0);
-				A_StartSound("weapons/berserkhit", 6);
+				A_StartSound("weapons/berserk_hitbod", 6);
 			}
 			EXPL ABCDEFGHIJ 1 Bright A_FadeOut(0.05);
 			Stop;

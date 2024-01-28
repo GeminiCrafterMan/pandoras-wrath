@@ -103,7 +103,7 @@ class GWM_ImpalerArrow : FastProjectile
 		+RIPPER
 		Radius 4;
 		Height 8;
-		Damage 6;
+		DamageFunction (27);
 		Speed 80;
 		SeeSound "weapons/xbowfire";
 		Obituary "$KILLIMPALER";
@@ -134,7 +134,7 @@ class GWM_ImpalerArrowPowered : GWM_ImpalerArrow
 	Default
 	{
 		-THRUGHOST
-		Damage 8;
+		DamageFunction (36);
 	}
 	States
 	{

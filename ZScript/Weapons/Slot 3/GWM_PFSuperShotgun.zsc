@@ -244,7 +244,7 @@ class GWM_PerfectFreezeBullet : GWM_IceProjectile
 		Radius 6;
 		Height 8;
 		Speed 20;
-		Damage 2;
+		DamageFunction (9);
 		Projectile;
 		+RIPPER
 		+FORCEXYBILLBOARD

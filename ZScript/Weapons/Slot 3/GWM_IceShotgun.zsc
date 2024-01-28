@@ -115,7 +115,15 @@ class GWM_IceShotgun : GWM_WeaponBase
 			Goto Ready;
 		AltFireUnderlay:
 			KICK A 4;
-			KICK B 4 A_Punch;
+			KICK B 4 {
+				// redo this shit later
+				int dmg = 11;
+				if (FindInventory("PowerStrength"))
+				{
+					dmg *= 10;
+				}
+				A_CustomPunch(dmg, norandom:true, range: meleeRange + 20, meleesound: "*fist");
+			}
 			KICK C 5;
 			KICK B 4;
 			KICK A 5;

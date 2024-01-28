@@ -22,7 +22,7 @@ class GWM_HellKnightClaws : GWM_WeaponBase
 			Loop;
 		Fire:
 			HKNI EF 8;
-			HKNI G 8 A_CustomPunch(10*Random(1,8), true, meleeRange+32, meleeSound: "baron/melee");
+			HKNI G 8 A_CustomPunch(45, true, meleeRange+32, meleeSound: "baron/melee");
 			Goto Ready;
 		AltFire:
 			HKNI EF 8;

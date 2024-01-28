@@ -36,7 +36,7 @@ class GWM_Revolver : GWM_WeaponBase
 		Fire:
 			TNT1 A 0 {return ZWL_JumpIfEmpty("Fire.Empty");}
 			RVLG B 2 {
-				ZWL_FireHitscan(3, 14*Random(2,3), tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(3, 28, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
 			}

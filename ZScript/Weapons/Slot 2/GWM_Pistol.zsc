@@ -37,7 +37,7 @@ class GWM_Pistol : GWM_WeaponBase replaces Pistol
 		Fire:
 			TNT1 A 0 {return ZWL_JumpIfEmpty("Fire.Empty");}
 			92FG B 2 {
-				ZWL_FireHitscan(2, 8*Random(2,3), tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(2, 16, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
 			}

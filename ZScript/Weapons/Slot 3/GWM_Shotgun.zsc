@@ -56,7 +56,7 @@ class GWM_Shotgun : GWM_WeaponBase
 			SKSG A 1 Bright {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 6*Random(2,3), pellets: 8, spread: 3, tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(0, 12, pellets: 8, spread: 3, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
 				A_WeaponOffset(0, 42, WOF_INTERPOLATE);
@@ -96,7 +96,7 @@ class GWM_Shotgun : GWM_WeaponBase
 			SKSG A 1 Bright {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 6*Random(2,3), pellets: 8, spread: 6, tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(0, 12, pellets: 8, spread: 6, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash("Flash2");
 				A_WeaponOffset(0, 52, WOF_INTERPOLATE);
