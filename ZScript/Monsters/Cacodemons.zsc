@@ -8,6 +8,10 @@ class GWM_Cacodemon : Cacodemon
 	}
 	States
 	{
+		Missile:
+			HEAD BC 5 A_FaceTarget;
+			HEAD D 5 A_CustomComboAttack("GWM_CacodemonBall", 32, 35);
+			Goto See;
 		Death.Fire:
 			TNT1 A 0 {
 				bNOBLOOD = true;
@@ -22,5 +26,13 @@ class GWM_Cacodemon : Cacodemon
 		Raise:
 			TNT1 A 0 {bNOBLOOD = false;}
 			Goto Super::Raise;
+	}
+}
+
+class GWM_CacodemonBall : CacodemonBall
+{
+	Default
+	{
+		DamageFunction (23);
 	}
 }

@@ -1,0 +1,34 @@
+class GWM_WolfensteinSS : WolfensteinSS
+{
+	Default
+	{
+		Tag "$TAG_WOLFENSTEINSS";
+		AttackSound "weapons/smgfire";
+		DropItem "GWM_LowCaliberClip";
+	}
+	States
+	{
+		Missile:
+			SSWV E 10 A_FaceTarget;
+			SSWV F 10 A_FaceTarget;
+			SSWV G 4 Bright A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 8);
+			SSWV F 6 A_FaceTarget;
+			SSWV G 4 Bright A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 8);
+			SSWV F 1 A_CPosRefire;
+			Goto Missile+1;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			SSWV N 5;
+			SSWV O 5 A_StartSound("monsters/burndeath");
+			SSWV P 5 A_NoBlocking;
+			SSWV QRSTU 5;
+			SSWV V -1;
+			Stop;
+		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
+			Goto Super::Raise;
+	}
+}

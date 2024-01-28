@@ -77,87 +77,87 @@ object GWM_BaronBall
 	frame BARBE {light GWM_BARONBALL_X3}
 }
 
-PulseLight FrostFangShard1
+PulseLight GWM_FrostFangShard1
 {
 	Color 0.0 0.0 0.4
 	Size 24
 	SecondarySize 32
 	Interval 3.0
 }
-PointLight FrostFangShard2
+PointLight GWM_FrostFangShard2
 {
 	Color 0.0 0.0 0.5
 	Size 32
 }
-PointLight FrostFangShard3
+PointLight GWM_FrostFangShard3
 {
 	Color 0.0 0.0 0.7
 	Size 40
 }
-PointLight FrostFangShard4
+PointLight GWM_FrostFangShard4
 {
 	Color 0.0 0.0 0.55
 	Size 44
 }
-PointLight FrostFangShard5
+PointLight GWM_FrostFangShard5
 {
 	Color 0.0 0.0 0.3
 	Size 28
 }
-PointLight FrostFangShard6
+PointLight GWM_FrostFangShard6
 {
 	Color 0.0 0.0 0.1
 	Size 16
 }
-PointLight FrostFangBall1
+PointLight GWM_FrostFangBall1
 {
 	Color 0.5 0.5 1.0
 	Size 64
 }
-PointLight FrostFangBall2
+PointLight GWM_FrostFangBall2
 {
 	Color 0.7 0.7 1.0
 	Size 64
 }
-PointLight FrostFangBall3
+PointLight GWM_FrostFangBall3
 {
 	Color 0.7 0.7 1.0
 	Size 72
 }
-PointLight FrostFangBall4
+PointLight GWM_FrostFangBall4
 {
 	Color 0.4 0.4 1.0
 	Size 64
 }
-PointLight FrostFangBall5
+PointLight GWM_FrostFangBall5
 {
 	Color 0.3 0.3 0.5
 	Size 48
 }
-PointLight FrostFangBall6
+PointLight GWM_FrostFangBall6
 {
 	Color 0.1 0.1 0.3
 	Size 32
 }
-Object FrostFangShard
+Object GWM_FrostFangShard
 {
-	Frame FFSDA { Light FrostFangShard1 }
-	Frame FFSDB { Light FrostFangShard1 }
-	Frame FFSDC { Light FrostFangShard1 }
-	Frame FFSDD { Light FrostFangShard2 }
-	Frame FFSDE { Light FrostFangShard3 }
-	Frame FFSDF { Light FrostFangShard4 }
-	Frame FFSDG { Light FrostFangShard5 }
-	Frame FFSDH { Light FrostFangShard6 }
+	Frame FFSDA { Light GWM_FrostFangShard1 }
+	Frame FFSDB { Light GWM_FrostFangShard1 }
+	Frame FFSDC { Light GWM_FrostFangShard1 }
+	Frame FFSDD { Light GWM_FrostFangShard2 }
+	Frame FFSDE { Light GWM_FrostFangShard3 }
+	Frame FFSDF { Light GWM_FrostFangShard4 }
+	Frame FFSDG { Light GWM_FrostFangShard5 }
+	Frame FFSDH { Light GWM_FrostFangShard6 }
 }
-Object FrostFangBall
+Object GWM_FrostFangBall
 {
-	Frame TNT1 { Light FrostFangBall1 }
-	Frame FFBLC { Light FrostFangBall2 }
-	Frame FFBLD { Light FrostFangBall3 }
-	Frame FFBLE { Light FrostFangBall4 }
-	Frame FFBLF { Light FrostFangBall5 }
-	Frame FFBLG { Light FrostFangBall6 }
+	Frame TNT1 { Light GWM_FrostFangBall1 }
+	Frame FFBLC { Light GWM_FrostFangBall2 }
+	Frame FFBLD { Light GWM_FrostFangBall3 }
+	Frame FFBLE { Light GWM_FrostFangBall4 }
+	Frame FFBLF { Light GWM_FrostFangBall5 }
+	Frame FFBLG { Light GWM_FrostFangBall6 }
 }
 
 Flickerlight MelterBeamLight

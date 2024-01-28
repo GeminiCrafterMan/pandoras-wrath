@@ -103,12 +103,12 @@ OB_CYBERIMP_PLASMA = "%o was fried by a Cyber Imp's plasma.";
 OB_BLOT = "%o was engulfed by a Blot.";
 OB_CYBERBARON_FIREBALL = "%o was splayed by a Cyber Baron.";
 OB_CYBERBARON_SCRATCH = "%o was ripped to shreds by a Cyber Baron.";
-OB_SUPERDEMON_SCRATCH = "%o was crushed by a Superdemon.";
-OB_SUPERDEMON_FIREBALL = "%o was burned to the ground by a Superdemon.";
+OB_SUPERDEMON = "%o was crushed by a Superdemon.";
 OB_CYBERHELLKNIGHT_FIREBALL = "%o was splayed by a Cyber Hell Knight.";
 OB_CYBERHELLKNIGHT_SCRATCH = "%o was ripped to shreds by a Cyber Hell Knight.";
 
 // Enemy tags
+TAG_ARACHNOTRON = "Arachnotron";
 TAG_BARON = "Baron of Hell";
 TAG_CYBERBARON = "Cyber Baron";
 TAG_CACODEMON = "Cacodemon";
@@ -132,6 +132,10 @@ TAG_ICESHOTGUNGUY = "Ice Shotgun Zombie";
 TAG_SHADOWHUNTER = "Shadow Hunter";
 TAG_ZOMBIEMAN = "Pistol Zombie";
 TAG_SMGGUY = "SMG Zombie";
+TAG_MANCUBUS = "Mancubus";
+TAG_REVENANT = "Revenant";
+TAG_WOLFENSTEINSS = "Nazi";
+TAG_SPIDERMASTERMIND = "Spider Mastermind";
 
 // Weapon tags
 TAG_FISTS = "Fists";

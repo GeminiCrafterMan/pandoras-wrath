@@ -17,7 +17,7 @@ class GWM_Zombieman : Zombieman
 			Loop;
 		Missile:
 			PZOM E 10 A_FaceTarget;
-			PZOM F 8 Bright A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 46, spawnofs_xy: 0);
+			PZOM F 8 Bright A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 46, spawnofs_xy: 0);
 			PZOM E 8;
 			Goto See;
 		Pain:
@@ -87,15 +87,15 @@ class GWM_SMGGuy : Actor
 			Loop;
 		Missile:
 			MGPO E 8 A_FaceTarget;
-			MGPO F 3 Bright A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
 			MGPO E 3;
-			MGPO F 3 Bright A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
 			MGPO E 3;
-			MGPO F 3 Bright A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
 			MGPO E 3;
-			MGPO F 3 Bright A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
 			MGPO E 3;
-			MGPO F 3 Bright A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
 			MGPO E 10;
 			Goto See;
 		Pain:

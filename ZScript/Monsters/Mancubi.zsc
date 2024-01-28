@@ -1,0 +1,40 @@
+class GWM_Mancubus : Fatso
+{
+	Default
+	{
+		Tag "$TAG_MANCUBUS";
+	}
+	States
+	{
+		Missile:
+			FATT G 20 A_FatRaise;
+			FATT H 10 BRIGHT A_FatAttack1("GWM_MancubusFireball");
+			FATT IG 5 A_FaceTarget;
+			FATT H 10 BRIGHT A_FatAttack2("GWM_MancubusFireball");
+			FATT IG 5 A_FaceTarget;
+			FATT H 10 BRIGHT A_FatAttack3("GWM_MancubusFireball");
+			FATT IG 5 A_FaceTarget;
+			Goto See;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			FATT K 6;
+			FATT L 6 A_StartSound("monsters/burndeath");
+			FATT M 6 A_NoBlocking;
+			FATT NOPQRS 6;
+			FATT T -1 A_BossDeath;
+			Stop;
+		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
+			Goto Super::Raise;
+	}
+}
+class GWM_MancubusFireball : FatShot
+{
+	Default
+	{
+		DamageFunction (36);
+	}
+}

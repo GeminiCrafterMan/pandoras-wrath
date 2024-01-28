@@ -13,3 +13,6 @@ texture SSGGA0 NoTrim
 // Rocket Launcher
 texture RKTFA0 NoTrim
 texture RKTFB0 NoTrim
+texture RKTFC0 NoTrim
+texture RKTFD0 NoTrim
+texture RKTFE0 NoTrim

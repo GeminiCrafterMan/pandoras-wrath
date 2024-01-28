@@ -17,7 +17,7 @@ class GWM_BaronOfHell : BaronOfHell
 		Melee:
 		Missile:
 			BARN EF 8 A_FaceTarget;
-			BARN G 8 A_CustomComboAttack("GWM_BaronBall", 32, 10 * random(1, 8), "baron/melee");
+			BARN G 8 A_CustomComboAttack("GWM_BaronBall", 32, 45, "baron/melee");
 			Goto See;
 		Pain:
 			BARN H 2;
@@ -52,6 +52,10 @@ class GWM_BaronOfHell : BaronOfHell
 }
 class GWM_BaronBall : BaronBall
 {
+	Default
+	{
+		DamageFunction 36;
+	}
 	States
 	{
 		Spawn:
@@ -96,13 +100,13 @@ class GWM_CyberBaron : GWM_BaronOfHell
 			CBOS E 0 A_Jump(80,"Missile2");
 			CBOS E 10 A_FaceTarget;
 			CBOS E 10 A_FaceTarget;
-			CBOS F 10 Bright A_SpawnProjectile("Rocket",27,16,0);
+			CBOS F 10 Bright A_SpawnProjectile("GWM_EnemyRocket",27,16,0);
 			CBOS E 10 A_FaceTarget;
 			Goto See;
 		Melee:
 		Missile2:
 			CBOS PQ 8 A_FaceTarget;
-			CBOS R 8 A_CustomComboAttack("GWM_BaronBall", 32, 10 * random(1, 8), "baron/melee");
+			CBOS R 8 A_CustomComboAttack("GWM_BaronBall", 32, 45, "baron/melee");
 			Goto See;
 		Pain:
 			CBOS H 2;

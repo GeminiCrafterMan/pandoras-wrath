@@ -65,6 +65,21 @@ class ThingReplacer : StaticEventHandler
 					case 'LostSoul':
 						e.Replacement = "GWM_LostSoul";
 						break;
+					case 'Arachnotron':
+						e.Replacement = "GWM_Arachnotron";
+						break;
+					case 'Fatso':
+						e.Replacement = "GWM_Mancubus";
+						break;
+					case 'Revenant':
+						e.Replacement = "GWM_Revenant";
+						break;
+					case 'SpiderMastermind':
+						e.Replacement = "GWM_SpiderMastermind";
+						break;
+					case 'WolfensteinSS':
+						e.Replacement = "GWM_WolfensteinSS";
+						break;
 				}
 			}
 			else
@@ -100,11 +115,6 @@ class ThingReplacer : StaticEventHandler
 							case 4:
 								e.Replacement = "GWM_Devil";
 								break;
-						/*
-							case 3:
-								e.Replacement = "GWM_Catharsi";
-								break;
-						*/
 							default:
 								e.Replacement = "GWM_DoomImpSpawner";
 								break;
@@ -143,6 +153,21 @@ class ThingReplacer : StaticEventHandler
 						break;
 					case 'LostSoul':
 						e.Replacement = "GWM_LostSoulSpawner"; // to spawn a Lost Soul or a Blot
+						break;
+					case 'Arachnotron':
+						e.Replacement = "GWM_Arachnotron";
+						break;
+					case 'Fatso':
+						e.Replacement = "GWM_Mancubus";
+						break;
+					case 'Revenant':
+						e.Replacement = "GWM_Revenant";
+						break;
+					case 'SpiderMastermind':
+						e.Replacement = "GWM_SpiderMastermind";
+						break;
+					case 'WolfensteinSS':
+						e.Replacement = "GWM_WolfensteinSS";
 						break;
 				}
 			}
@@ -241,15 +266,6 @@ class ThingReplacer : StaticEventHandler
 				e.Replacement = "GWM_Perforator";
 				break;
 		}
-		/*
-		string ev2perfstr = "Perforator";
-		class<Actor> ev2perf = ev2perfstr;
-		if (ev2perf) // check if it exists for real
-		{
-			if (e.Replacee == ev2perf)
-				e.Replacement = "GWM_Perforator";
-		}
-		*/
     }
 	override void CheckReplacee(ReplacedEvent e)
 	{
@@ -259,11 +275,23 @@ class ThingReplacer : StaticEventHandler
 			case 'GWM_BaronOfHell':
 				e.Replacee = "BaronOfHell";
 				break;
+			case 'GWM_CyberBaron':
+				e.Replacee = "BaronOfHell";
+				break;
 			case 'GWM_Cyberdemon':
 				e.Replacee = "Cyberdemon";
 				break;
 			case 'GWM_Superdemon':
 				e.Replacee = "Cyberdemon";
+				break;
+			case 'GWM_SpiderMastermind':
+				e.Replacee = "SpiderMastermind";
+				break;
+			case 'GWM_Arachnotron':
+				e.Replacee = "Arachnotron";
+				break;
+			case 'GWM_Mancubus':
+				e.Replacee = "Fatso";
 				break;
 		}
 	}

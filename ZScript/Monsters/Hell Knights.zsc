@@ -17,7 +17,7 @@ class GWM_HellKnight : HellKnight
 		Melee:
 		Missile:
 			HKNI EF 8 A_FaceTarget;
-			HKNI G 8 A_CustomComboAttack("GWM_KnightBall", 32, 10 * random(1, 8), "baron/melee");
+			HKNI G 8 A_CustomComboAttack("GWM_KnightBall", 32, 45, "baron/melee");
 			Goto See;
 		Pain:
 			HKNI H 2;
@@ -52,6 +52,10 @@ class GWM_HellKnight : HellKnight
 }
 class GWM_KnightBall : BaronBall
 {
+	Default
+	{
+		DamageFunction 36;
+	}
 	States
 	{
 		Spawn:
@@ -96,13 +100,13 @@ class GWM_CyberHellKnight : GWM_HellKnight
 			CBO2 E 0 A_Jump(80,"Missile2");
 			CBO2 E 10 A_FaceTarget;
 			CBO2 E 10 A_FaceTarget;
-			CBO2 F 10 Bright A_SpawnProjectile("Rocket",27,16,0);
+			CBO2 F 10 Bright A_SpawnProjectile("GWM_EnemyRocket",27,16,0);
 			CBO2 E 10 A_FaceTarget;
 			Goto See;
 		Melee:
 		Missile2:
 			CBO2 PQ 8 A_FaceTarget;
-			CBO2 R 8 A_CustomComboAttack("GWM_KnightBall", 32, 10 * random(1, 8), "baron/melee");
+			CBO2 R 8 A_CustomComboAttack("GWM_KnightBall", 32, 45, "baron/melee");
 			Goto See;
 		Pain:
 			CBO2 H 2;

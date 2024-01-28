@@ -5,6 +5,17 @@ class GWM_Cyberdemon : Cyberdemon
 		//$Category Monsters
 		Tag "$TAG_CYBERDEMON";
 	}
+	States
+	{
+		Missile:
+			CYBR E 6 A_FaceTarget;
+			CYBR F 12 A_SpawnProjectile("GWM_EnemyRocket",50,-24,0);
+			CYBR E 12 A_FaceTarget;
+			CYBR F 12 A_SpawnProjectile("GWM_EnemyRocket",50,-24,0);
+			CYBR E 12 A_FaceTarget;
+			CYBR F 12 A_SpawnProjectile("GWM_EnemyRocket",50,-24,0);
+			Goto See;
+	}
 }
 
 class GWM_Superdemon : Actor
@@ -13,8 +24,7 @@ class GWM_Superdemon : Actor
 	{
 		//$Category Monsters
 		Tag "$TAG_SUPERDEMON";
-		Obituary "$OB_SUPERDEMON_FIREBALL";
-		HitObituary "$OB_SUPERDEMON_SCRATCH";
+		Obituary "$OB_SUPERDEMON";
 		Health 3500;
 		Radius 40;
 		Height 110;
@@ -89,7 +99,7 @@ class GWM_SuperDemonBall : Actor
 		Radius 6;
 		Height 16;
 		Speed 16;
-		Damage 15;
+		DamageFactor (68);
 		Scale 1.5;
 		Renderstyle "Add";
 		SeeSound "baron/attack";

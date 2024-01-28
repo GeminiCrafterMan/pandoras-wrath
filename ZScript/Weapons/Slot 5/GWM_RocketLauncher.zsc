@@ -29,7 +29,7 @@ class GWM_RocketLauncher : GWM_WeaponBase
 				A_OverlayPivot(OverlayID(), 0.66, 1);
 				A_Overlay(-2, "Flash");
 				A_SpawnItemEx("GWM_Flash");
-				A_WeaponOffset(0, 16, WOF_ADD);
+				A_WeaponOffset(0, 18, WOF_ADD);
 				A_StartSound("weapons/rocketfire", CHAN_WEAPON);
 				A_FireProjectile("GWM_Rocket");
 				A_OverlayScale(OverlayID(), 1.33, 0, WOF_INTERPOLATE);
@@ -37,8 +37,8 @@ class GWM_RocketLauncher : GWM_WeaponBase
 			Goto Fire.Done;
 		Fire.Done:
 			RKTL A 3;
-			RKTL AA 5 {
-				A_WeaponOffset(0, -8, WOF_ADD);
+			RKTL AAA 3 {
+				A_WeaponOffset(0, -6, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.11, 0, WOF_ADD);
 			}
 			RTKL A 0 A_ReFire;
@@ -48,19 +48,19 @@ class GWM_RocketLauncher : GWM_WeaponBase
 				A_OverlayPivot(OverlayID(), 0.66, 1);
 				A_Overlay(-2, "Flash");
 				A_SpawnItemEx("GWM_Flash");
-				A_WeaponOffset(0, 16, WOF_ADD);
+				A_WeaponOffset(0, 18, WOF_ADD);
 				A_StartSound("weapons/grenadefire", CHAN_WEAPON);
 				A_FireProjectile("GWM_Grenade", 0, true, 0, 0, 0, -6.328125);
 				A_OverlayScale(OverlayID(), 1.33, 0, WOF_INTERPOLATE);
 			}
 			Goto Fire.Done;
 		Flash:
-			RKTF A 3 Bright {
+			RKTF ABC 2 Bright {
 				A_Light1();
 				A_OverlayPivot(OverlayID(), 0.66, 1);
-				A_OverlayScale(OverlayID(), 1.33, 0, WOF_INTERPOLATE);
+				A_OverlayScale(OverlayID(), 0.11, 0, WOF_ADD);
 			}
-			RKTF B 3 Bright A_Light2;
+			RKTF DE 2 Bright A_Light2;
 			Stop;
 		Spawn:
 			RKTL Z -1;
@@ -74,10 +74,9 @@ class GWM_Rocket : Actor
 		Radius 11;
 		Height 8;
 		Speed 30; // faster.
-		Damage 20;
+		DamageFunction (90);
 		Projectile;
 		+RANDOMIZE
-		+ROCKETTRAIL
 		+THRUGHOST
 		SeeSound "";
 		DeathSound "weapons/explode";
@@ -86,7 +85,7 @@ class GWM_Rocket : Actor
 	States
 	{
 		Spawn:
-			RCKT A 1 Bright;
+			RCKT A 2 Bright A_SpawnItemEx("GWM_RocketTrail", -20);
 			Loop;
 		Death:
 			TNT1 A 0 {
@@ -98,7 +97,7 @@ class GWM_Rocket : Actor
 				A_Scream();
 				A_SetRenderstyle(alpha, STYLE_Add);
 				A_Explode();
-				A_QuakeEx(4, 4, 4, 10, 0, 512, flags: QF_SHAKEONLY);
+				A_QuakeEx(3, 3, 3, 10, 0, 512, flags: QF_SHAKEONLY);
 			}
 			EXPL ABCDEFGHIJ 1 Bright;
 			Stop;
@@ -126,11 +125,10 @@ class GWM_Grenade : Actor
 		Radius 8;
 		Height 8;
 		Speed 25;
-		Damage 20;
+		DamageFunction (90);
 		Projectile;
 		-NOGRAVITY
 		+RANDOMIZE
-		+GRENADETRAIL
 		+USEBOUNCESTATE
 		+THRUGHOST
 		BounceType "Grenade";
@@ -144,6 +142,10 @@ class GWM_Grenade : Actor
 	States
 	{
 		Spawn:
+			GNDE A 1 Bright {
+				GrenadeTimerJump();
+				A_SpawnItemEx("GWM_RocketTrail", -20);
+			}
 			GNDE A 1 Bright GrenadeTimerJump;
 			Loop;
 		Bounce:
@@ -160,9 +162,22 @@ class GWM_Grenade : Actor
 				A_Scream();
 				A_SetRenderstyle(alpha, STYLE_Add);
 				A_Explode();
-				A_QuakeEx(4, 4, 4, 10, 0, 512, flags: QF_SHAKEONLY);
+				A_QuakeEx(3, 3, 3, 10, 0, 512, flags: QF_SHAKEONLY);
 			}
 			EXPL ABCDEFGHIJ 1 Bright;
+			Stop;
+	}
+}
+class GWM_RocketTrail : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP +NOGRAVITY +NOTELEPORT +NOINTERACTION
+	}
+	States
+	{
+		Spawn:
+			RCKT BCDEF 2 Bright;
 			Stop;
 	}
 }

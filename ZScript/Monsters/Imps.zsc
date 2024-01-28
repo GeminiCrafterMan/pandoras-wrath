@@ -10,7 +10,7 @@ class GWM_DoomImp : DoomImp // literally just a normal imp
 		Melee:
 		Missile:
 			TROO EF 8 A_FaceTarget;
-			TROO G 6 A_CustomComboAttack("GWM_ImpBall", 32, 3 * random(1, 8), "imp/melee");
+			TROO G 6 A_CustomComboAttack("GWM_ImpBall", 32, 14, "imp/melee");
 			Goto See;
 		Death.Fire:
 			TNT1 A 0 {
@@ -34,6 +34,7 @@ class GWM_ImpBall : DoomImpBall
 	Default
 	{
 		DamageType "Fire";
+		DamageFunction (14);
 	}
 }
 
@@ -85,11 +86,11 @@ class GWM_CyberImp : Actor
 			Loop;
 		Melee:
 			CIMP EF 8 A_FaceTarget;
-			CIMP F 6 A_CustomMeleeAttack(3 * random(3, 10), "imp/melee");
+			CIMP F 6 A_CustomMeleeAttack(17, "imp/melee");
 			Goto See;
 		Missile:
 			CIMP EF 8 A_FaceTarget;
-			CIMP G 6 A_SpawnProjectile("ArachnotronPlasma",36,4);
+			CIMP G 6 A_SpawnProjectile("GWM_EnemyPlasma",36,4);
 			Goto See;
 		Pain:
 			CIMP H 2;
@@ -212,7 +213,7 @@ Class GWM_ShadeMissile : CacodemonBall
 {
 	Default
 	{
-		Damage 4;
+		DamageFunction (18);
 		Speed 10;
 		Alpha 0.80;
 		SeeSound "monsters/nightshade/attack";
@@ -292,10 +293,10 @@ Class GWM_Devil : DoomImp
 		Melee:
 		Missile:
 			TRO2 EF 6 A_FaceTarget;
-			TRO2 G 4 A_CustomComboAttack("GWM_ImpBall", 32, 3 * random(1, 8), "imp/melee");
+			TRO2 G 4 A_CustomComboAttack("GWM_ImpBall", 32, 14, "imp/melee");
 			TRO2 B 2;
 			TRO2 HI 6 A_FaceTarget;
-			TRO2 J 4 A_CustomComboAttack("GWM_ImpBall", 32, 3 * random(1, 8), "imp/melee");		
+			TRO2 J 4 A_CustomComboAttack("GWM_ImpBall", 32, 14, "imp/melee");		
 			TRO2 B 2;
 			Goto See;
 		Pain:

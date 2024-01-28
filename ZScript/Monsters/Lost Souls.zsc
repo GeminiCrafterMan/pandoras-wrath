@@ -22,6 +22,7 @@ class GWM_LostSoul : LostSoul // to prevent recursion, i guess
 		//$Category Monsters
 		+NOBLOOD
 		Tag "$TAG_LOSTSOUL";
+		DamageFunction (14);
 	}
 }
 
