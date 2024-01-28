@@ -21,7 +21,7 @@ class GWM_BurstRifle : GWM_WeaponBase
 
 		Inventory.PickupMessage "$GOTBURSTRIFLE";
 
-		Tag "Burst Rifle";
+		Tag "$TAG_BURSTRIFLE";
 		AttackSound "weapons/riflesht";
 		Obituary "$KILLBURSTRIFLE";
 	}

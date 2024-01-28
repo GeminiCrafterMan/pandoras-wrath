@@ -3,7 +3,7 @@ class GWM_Mine : GWM_WeaponBase // not that it needs to be this way...
 	Default
 	{
 		Weapon.SelectionOrder 2500; // Don't blow yourself up!!
-		Tag "Mine";
+		Tag "$TAG_MINE";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoType "GWM_MineAmmo";
 		Weapon.AmmoGive 2;

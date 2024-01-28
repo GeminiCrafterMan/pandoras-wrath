@@ -4,7 +4,7 @@ class GWM_Impactor : GWM_WeaponBase // not that it needs to be this way...
 	{
 		Weapon.SelectionOrder 2200;
 		+WEAPON.MELEEWEAPON
-		Tag "Impactor Gauntlet";
+		Tag "$TAG_IMPACTOR";
 		Inventory.Icon "IMPAZ0";
 		Weapon.UpSound "weapons/IMGRaise";
 		Inventory.PickupMessage "$GOTIMPACTOR";

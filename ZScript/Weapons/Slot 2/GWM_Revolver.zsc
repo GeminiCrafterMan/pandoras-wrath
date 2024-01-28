@@ -17,7 +17,7 @@ class GWM_Revolver : GWM_WeaponBase
 		Inventory.PickupMessage "$GOTREVOLVER";
 		AttackSound "weapons/rvlvfire";
 		Obituary "$KILLREVOLVER";
-		Tag "Revolver";
+		Tag "$TAG_REVOLVER";
 	}
 	States
 	{

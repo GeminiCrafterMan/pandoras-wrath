@@ -17,7 +17,7 @@ class GWM_SMG : GWM_WeaponBase
 		Obituary "$KILLSMG";
 		Inventory.PickupSound "weapons/smgpickup";
 		Inventory.PickupMessage "$GOTSMG";
-		Tag "SMG";
+		Tag "$TAG_SMG";
 	}
 	States
 	{

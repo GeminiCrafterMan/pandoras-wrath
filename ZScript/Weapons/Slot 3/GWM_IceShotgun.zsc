@@ -13,7 +13,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 		ZWeapon.ReloadSound "weapons/shell_load";
 		ZWeapon.ClickSound "weapons/skempty";
 
-		Tag "Ice Shotgun";
+		Tag "$TAG_ICESHOTGUN";
 		Inventory.PickupMessage "$GOTICESHOTGUN";
 		Obituary "$KILLKICK";
 	}

@@ -6,6 +6,7 @@ class GWM_GoldWand : GoldWand replaces GoldWand // Okay, this DOES actually need
 		Weapon.UpSound "weapons/draw_secondary";
 		Inventory.PickupMessage "$GOTWAND";
 		Obituary "$KILLWAND";
+		Tag "$TAG_WAND";
 		Weapon.SisterWeapon "GWM_GoldWandPowered";
 	}
 	States

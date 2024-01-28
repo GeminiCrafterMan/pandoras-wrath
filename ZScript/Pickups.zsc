@@ -179,7 +179,7 @@ class GWM_StopwatchAnimation : Weapon
 	States
 	{
 		Select:
-			WTCH B 1 A_Raise(12);
+			WTCH B 1 A_Raise(18);
 			Loop; // goes to Ready
 		Ready:
 		Fire:
@@ -191,7 +191,7 @@ class GWM_StopwatchAnimation : Weapon
 			}
 			Stop;
 		Deselect:
-			WTCH B 1 A_Lower(12);
+			WTCH B 1 A_Lower(18);
 			Loop;
 	}
 }

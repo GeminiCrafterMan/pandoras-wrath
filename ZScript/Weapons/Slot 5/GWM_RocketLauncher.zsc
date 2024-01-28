@@ -11,7 +11,7 @@ class GWM_RocketLauncher : GWM_WeaponBase
 		Weapon.AmmoType2 "GWM_RocketAmmo";
 		+WEAPON.NOAUTOFIRE
 		Inventory.PickupMessage "$GOTROCKETLAUNCHER";
-		Tag "Rocket Launcher";
+		Tag "$TAG_ROCKETLAUNCHER";
 	}
 	States
 	{

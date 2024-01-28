@@ -8,7 +8,7 @@ class GWM_NoiseCrusher : GWM_WeaponBase
 		Weapon.AmmoGive 40;
 		Inventory.PickupMessage "$GOTNOISECRUSHER";
 		Obituary "$KILLNOISECRUSHER";
-		Tag "Noise Crusher";
+		Tag "$TAG_NOISECRUSHER";
 		Weapon.AmmoType "Cell";
 		Inventory.Icon "NCRGZ0";
 	}

@@ -13,7 +13,7 @@ class GWM_Shotgun : GWM_WeaponBase
 		ZWeapon.ReloadSound "weapons/shell_load";
 		ZWeapon.ClickSound "weapons/skempty";
 
-		Tag "\"Slayer's Kahuna\" Shotgun";
+		Tag "$TAG_SLAYERSKAHUNA";
 		Inventory.PickupMessage "$GOTSLAYERSKAHUNA";
 		Obituary "$KILLSLAYERSKAHUNA";
 		AttackSound "weapons/skshot";

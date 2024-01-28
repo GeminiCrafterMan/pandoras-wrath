@@ -11,7 +11,7 @@ class GWM_Lumberjack : GWM_WeaponBase
 		Obituary "$KILLLUMBERJACK";
 		Inventory.PickupMessage "$GOTLUMBERJACK";
 		Inventory.Icon "LJAKZ0";
-		Tag "\"Lumberjack\" Chainsaw";
+		Tag "$TAG_LUMBERJACK";
 	}
 	States
 	{

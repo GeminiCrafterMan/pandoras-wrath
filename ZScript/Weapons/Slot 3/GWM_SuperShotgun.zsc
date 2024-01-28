@@ -9,7 +9,7 @@ class GWM_SuperShotgun : GWM_WeaponBase
 		Weapon.UpSound "weapons/draw_primary";
 		Inventory.PickupMessage "$GOTSUPERSHOTGUN";
 		Obituary "$KILLSUPERSHOTGUN";
-		Tag "Super Shotgun";
+		Tag "$TAG_SUPERSHOTGUN";
 		Weapon.AmmoUse 2;
 		Weapon.AmmoGive 8;
 		Weapon.AmmoType "GWM_Shell";

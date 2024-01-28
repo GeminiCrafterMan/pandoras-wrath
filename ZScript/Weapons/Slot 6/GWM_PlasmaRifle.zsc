@@ -10,7 +10,7 @@ class GWM_PlasmaRifle : GWM_WeaponBase
 		Weapon.AmmoType "Cell";
 		Weapon.AmmoType2 "Cell";
 		Decal "RailScorch";
-		Tag "Plasma Rifle";
+		Tag "$TAG_PLASMARIFLE";
 		Inventory.PickupMessage "$GOTPLASMARIFLE";
 		Obituary "$KILLPLASMARIFLE_RAIL";
 	}

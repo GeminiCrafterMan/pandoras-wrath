@@ -271,7 +271,7 @@ class GWM_Fists : GWM_WeaponBase replaces Fist
 		GWM_Fists.raisespeed 18;
 		GWM_Fists.lowerspeed 18;
 		Obituary "$KILLFISTS";
-		Tag "Fists";
+		Tag "$TAG_FISTS";
 		AttackSound "weapons/punch";
 	}
 	States

@@ -1,4 +1,4 @@
-class GWM_VenomCannon : GWM_WeaponBase
+class GWM_VenomCannon : GWM_WeaponBase // desperately in need of a nerf
 {
 	Default
 	{
@@ -11,7 +11,7 @@ class GWM_VenomCannon : GWM_WeaponBase
 		Weapon.AmmoType2 "GWM_VenomVial";
 		+WEAPON.NOAUTOFIRE
 		Inventory.PickupMessage "$GOTVENOMCANNON";
-		Tag "Venom Cannon";
+		Tag "$TAG_VENOMCANNON";
 	}
 	States
 	{

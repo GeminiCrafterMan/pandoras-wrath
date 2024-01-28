@@ -2,13 +2,13 @@ class GWM_HellKnightClaws : GWM_WeaponBase
 {
 	Default
 	{
-		Tag "Hell Knight claws";
+		Tag "$TAG_HELLKNIGHTCLAWS";
 		HitObituary "$OB_KNIGHTHIT";
 		Obituary "$OB_KNIGHT";
 	}
 	States
 	{
-		Spawn:
+		Spawn: // No spawn state, because you're not meant to pick these up.
 			TNT1 A 0;
 			Stop;
 		Select:

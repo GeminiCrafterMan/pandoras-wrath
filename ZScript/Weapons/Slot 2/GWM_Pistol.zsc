@@ -18,7 +18,7 @@ class GWM_Pistol : GWM_WeaponBase replaces Pistol
 		Inventory.PickupMessage "$GOT92FS";
 		AttackSound "weapons/92fsfire";
 		Obituary "$KILL92FS";
-		Tag "Beretta 92FS";
+		Tag "$TAG_92FS";
 	}
 	States
 	{

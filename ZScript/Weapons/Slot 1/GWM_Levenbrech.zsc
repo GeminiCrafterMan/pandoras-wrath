@@ -5,7 +5,7 @@ class GWM_Levenbrech : GWM_WeaponBase replaces Gauntlets // not that it needs to
 		Weapon.SelectionOrder 2200;
 		+WEAPON.MELEEWEAPON
 		+WEAPON.AXEBLOOD
-		Tag "Levenbrech";
+		Tag "$TAG_LEVENBRECH";
 		Inventory.Icon "LBREZ0";
 		Obituary "$KILLLEVENBRECH"; // hehe lifebreaker
 		Inventory.PickupMessage "$GOTLEVENBRECH";

@@ -11,4 +11,4 @@ Brightmap Sprite SKSGI0 { Map SKSGI0 DisableFullbright }
 Brightmap Sprite SKSGJ0 { Map SKSGJ0 DisableFullbright }
 Brightmap Sprite SKSGK0 { Map SKSGK0 DisableFullbright }
 Brightmap Sprite SKSGL0 { Map SKSGL0 DisableFullbright }
-Brightmap Sprite SKSGZ0 { Map SKSGZ0 DisableFullbright }
+Brightmap Sprite SKSGZ0 { Map BMSKSGZ0 DisableFullbright }

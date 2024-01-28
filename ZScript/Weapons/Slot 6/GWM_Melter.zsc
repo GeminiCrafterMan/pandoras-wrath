@@ -19,7 +19,7 @@ Class GWM_Melter : GWM_WeaponBase
 		Weapon.UpSound "weapons/draw_primary";
 		Inventory.PickupMessage "$GOTMELTER";
 		Obituary "$KILLMELTER";
-		Tag "Melter";
+		Tag "$TAG_MELTER";
 		+WEAPON.NOAUTOAIM;
 		+FLOORCLIP;	
 	}

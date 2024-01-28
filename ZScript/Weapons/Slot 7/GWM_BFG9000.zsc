@@ -8,7 +8,7 @@ class GWM_BFG9000 : GWM_WeaponBase
 		Weapon.AmmoGive 40;
 		Weapon.AmmoType "Cell";
 		+WEAPON.NOAUTOFIRE
-		Tag "BFG9000";
+		Tag "$TAG_BFG9000";
 		Inventory.PickupMessage "$GOTBFG9000";
 		Obituary "$KILLBFG9000";
 	}

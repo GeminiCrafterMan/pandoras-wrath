@@ -7,10 +7,10 @@ class GWM_Perforator : GWM_WeaponBase
 		Weapon.AmmoUse 25;
 		Weapon.AmmoType "GWM_LowCaliberClip";
 
-		Tag "Perforator";
-		Obituary "%o was shredded by %k's Perforator.";
+		Tag "$TAG_PERFORATOR";
+		Obituary "$KILLPERFORATOR";
 		Inventory.Icon "PRFGZ0";
-		Inventory.PickupMessage "You got the Perforator!";
+		Inventory.PickupMessage "$GOTPERFORATOR";
 	}
 	States
 	{

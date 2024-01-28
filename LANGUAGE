@@ -23,6 +23,8 @@ GOTMELTER = "You picked up the Melter!";
 GOTNOISECRUSHER = "You picked up the Noise Crusher!";
 GOTBFG9000 = "You picked up the BFG9000!! Oh yeah!";
 GOTFLAMETHROWER = "You picked up the Flamethrower! Burn, baby, burn!!";
+GOTPERFORATOR = "You got the Perforator!";
+
 // Ammo pickup messages
 GOTLOWCALCLIP = "Picked up a clip of low-caliber bullets.";
 GOTHIGHCALCLIP = "Picked up a clip of high-caliber bullets.";
@@ -42,11 +44,14 @@ GOTLARGEVENOMVIAL = "Picked up a large vial of venom.";
 GOTGASCANISTER = "Picked up a gasoline canister.";
 GOTGASPACK = "Picked up a pack of gasoline canisters.";
 GOTCYBERIMPARM = "Pulled the power cell out of a Cyber Imp's severed arm.";
+
 // Powerup messages
 GOTLIFEDRAIN = "Life drain!";
 GOTREFLECTIVE = "Reflective shots!";
 GOTSTOPWATCH = "Stopwatch!";
 GOTPORTABLEMEDKIT = "Portable medkit!";
+GOTKNIGHTSPHERE = "Knightsphere!";
+
 // Obituaries
 KILLPLACEHOLDER = "You shouldn't see this.";
 KILLMINES = "%o didn't see %k's land mine.";
@@ -81,6 +86,8 @@ KILLNOISECRUSHER = "%o had %p eardrums blown out by %k's Noise Crusher.";
 KILLBFG9000 = "%o was reduced to atoms by %k's BFG9000.";
 KILLBFGBALL = "%o was turned to dust by %k's BFG9000.";
 KILLFLAMETHROWER = "%o got %p buns thoroughly toasted by %k's Flamethrower.";
+KILLPERFORATOR = "%o was shredded by %k's Perforator.";
+
 // Enemy kill messages
 OB_SMGGUY = "%o was riddled with bullets by an SMG zombie."; // change later. boring af
 OB_KAHUNASHOTGUNGUY = "%o was washed ashore by a shotgun zombie's Slayer's Kahuna.";
@@ -100,6 +107,7 @@ OB_SUPERDEMON_SCRATCH = "%o was crushed by a Superdemon.";
 OB_SUPERDEMON_FIREBALL = "%o was burned to the ground by a Superdemon.";
 OB_CYBERHELLKNIGHT_FIREBALL = "%o was splayed by a Cyber Hell Knight.";
 OB_CYBERHELLKNIGHT_SCRATCH = "%o was ripped to shreds by a Cyber Hell Knight.";
+
 // Enemy tags
 TAG_BARON = "Baron of Hell";
 TAG_CYBERBARON = "Cyber Baron";
@@ -124,4 +132,33 @@ TAG_ICESHOTGUNGUY = "Ice Shotgun Zombie";
 TAG_SHADOWHUNTER = "Shadow Hunter";
 TAG_ZOMBIEMAN = "Pistol Zombie";
 TAG_SMGGUY = "SMG Zombie";
+
 // Weapon tags
+TAG_FISTS = "Fists";
+TAG_IMPACTOR = "Impactor Gauntlet";
+TAG_LEVENBRECH = "Levenbrech";
+TAG_LUMBERJACK = "\"Lumberjack\" Chainsaw";
+TAG_MINE = "Mine";
+TAG_WAND = "Gold Wand";
+TAG_92FS = "Beretta 92FS";
+TAG_REVOLVER = "Revolver";
+TAG_SMG = "SMG";
+TAG_ICESHOTGUN = "Ice Shotgun";
+TAG_IMPALERCROSSBOW = "Impaler Crossbow";
+TAG_PFSUPERSHOTGUN = "Perfect Freeze Super Shotgun";
+TAG_SLAYERSKAHUNA = "\"Slayer's Kahuna\" Shotgun";
+TAG_SUPERSHOTGUN = "Super Shotgun";
+TAG_BURSTRIFLE = "Burst Rifle";
+TAG_CHAINGUN = "Chaingun";
+TAG_FROSTFANG = "Frost Fang";
+TAG_ROCKETLAUNCHER = "Rocket Launcher";
+TAG_VENOMCANNON = "Venom Cannon";
+TAG_MELTER = "Melter";
+TAG_NOISECRUSHER = "Noise Crusher";
+TAG_PLASMARIFLE = "Plasma Rifle";
+TAG_BFG9000 = "BFG9000";
+TAG_FLAMETHROWER = "Flamethrower";
+TAG_HELLKNIGHTCLAWS = "Hell Knight claws";
+
+// Other mods' weapons
+TAG_PERFORATOR = "Perforator";

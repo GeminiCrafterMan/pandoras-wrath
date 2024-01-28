@@ -48,7 +48,7 @@ class GWM_PFSuperShotgun : GWM_WeaponBase
 		Inventory.PickupSound "weapons/ssgpickup";
 		Weapon.UpSound "weapons/draw_primary";
 		Inventory.PickupMessage "$GOTPFSUPERSHOTGUN";
-		Tag "Perfect Freeze Super Shotgun";
+		Tag "$TAG_PFSUPERSHOTGUN";
 		Weapon.AmmoGive 8;
 		Weapon.AmmoUse 2;
 		Weapon.AmmoType "GWM_IceShell";
