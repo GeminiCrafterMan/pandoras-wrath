@@ -33,6 +33,7 @@ class GWM_SMG : GWM_WeaponBase
 		Fire:
 			SMGG A 1 {
 				ZWL_FireHitscan(6, 6*Random(2,3), tracerType: "GWM_Tracer");
+				A_FireProjectile("GWM_Tracer",frandom(-3,3),false,0,-2,0,frandom(-6,6));
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
 				A_SetPitch(pitch-0.3);

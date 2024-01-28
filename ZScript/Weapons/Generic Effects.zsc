@@ -155,18 +155,18 @@ class GWM_Tracer : FastProjectile
 		RenderStyle "Add";
 		Radius 2;
 		Height 2;
-		Speed 240;
+		Speed 100;
 		//+BLOODSPLATTER
 		+HITTRACER
 		+NOINTERACTION
 		Scale .3;
-		MissileType "GWM_TracerTrail";
-		MissileHeight 8;
+		//MissileType "GWM_TracerTrail";
+		//MissileHeight 8;
 	}
 	States
 	{
 		Spawn:
-			WPUF B 1 BRIGHT;
+			TRAC A 1 BRIGHT;
 			Loop;
 		Crash:
 			TNT1 A 0 A_Jump(256,"Death");
