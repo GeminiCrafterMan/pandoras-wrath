@@ -3,7 +3,7 @@ class GWM_Cacodemon : Cacodemon
 	Default
 	{
 		//$Category Monsters
-		Tag "Cacodemon";
+		Tag "$TAG_CACODEMON";
 		BloodColor "00 00 F9";
 	}
 	States

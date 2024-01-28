@@ -3,7 +3,7 @@ class GWM_Zombieman : Zombieman
 	Default
 	{
 		//$Category Monsters
-		Tag "Pistol Zombie";
+		Tag "$TAG_ZOMBIEMAN";
 		DropItem "GWM_LowCaliberClip";
 		AttackSound "weapons/92fsfire";
 	}
@@ -61,7 +61,7 @@ class GWM_SMGGuy : Actor
 	Default
 	{
 		//$Category Monsters
-		Tag "SMG Zombie";
+		Tag "$TAG_SMGGUY";
 		Health 40;
 		Radius 20;
 		Height 56;
@@ -87,15 +87,15 @@ class GWM_SMGGuy : Actor
 			Loop;
 		Missile:
 			MGPO E 8 A_FaceTarget;
-			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
 			MGPO E 3;
-			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
 			MGPO E 3;
-			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
 			MGPO E 3;
-			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
 			MGPO E 3;
-			MGPO F 3 BRIGHT A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright A_CustomBulletAttack(12,0,1,random(1,5)* 3,"ZBulletPuff",0,CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
 			MGPO E 10;
 			Goto See;
 		Pain:

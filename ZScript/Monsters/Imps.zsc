@@ -3,7 +3,7 @@ class GWM_DoomImp : DoomImp // literally just a normal imp
 	Default
 	{
 		//$Category Monsters
-		Tag "Imp";
+		Tag "$TAG_DOOMIMP";
 	}
 	States
 	{
@@ -59,7 +59,7 @@ class GWM_CyberImp : Actor
 	Default
 	{
 		//$Category Monsters
-		Tag "Cyber Imp";
+		Tag "$TAG_CYBERIMP";
 		Health 120;
 		Radius 20;
 		Height 56;
@@ -156,7 +156,7 @@ class GWM_Nightshade : Actor
 	Default
 	{
 		//$Category Monsters
-		Tag "Nightshade";
+		Tag "$TAG_NIGHTSHADE";
 		Obituary "$OB_NIGHTSHADE";
 		Health 80;
 		Radius 20;
@@ -175,22 +175,22 @@ class GWM_Nightshade : Actor
 	{
 		Spawn:
 			NSHA AB 10 A_Look();
-			loop;
+			Loop;
 		See:
 			NSHA A 0 A_SetTranslucent(0.75,0);
 			NSHA AABBCCDD 3 A_Chase();
-			goto See+1;
+			Goto See+1;
 		Missile:
 			NSHA E 0 A_SetTranslucent(1.0,0);
 			NSHA EE 4 Bright A_FaceTarget();
 			NSHA F 8 Bright A_SpawnProjectile("GWM_ShadeMissile",32,0,0,0,0);
 			NSHA B 4 A_SetTranslucent(0.87,0);
-			goto See;
+			Goto See;
 		Pain:
 			NSHA G 0 A_SetTranslucent(1.0,0);
 			NSHA G 2;
 			NSHA G 2 A_Pain();
-			goto See;
+			Goto See;
 		Death:
 			NSHA H 4 A_SetTranslucent(1.0,0);
 			NSHA I 4 A_SetTranslucent(0.9,0);
@@ -203,7 +203,7 @@ class GWM_Nightshade : Actor
 			NSHA N 4 A_SetTranslucent(0.4,0);
 			NSHA O 4 A_SetTranslucent(0.3,0);
 			NSHA P 4 A_SetTranslucent(0.2,0);
-			stop;
+			Stop;
 		// No Death.Fire here since the regular death is sufficient.
 		// No Raise here because it kind of disappears instead of leaving a corpse.
 	}
@@ -225,14 +225,18 @@ Class GWM_ShadeMissile : CacodemonBall
 	States
 	{
 		Spawn:
-			NBAL A 5 bright A_SpawnItemEx("GWM_ShadePuff", 0,0,0, 0,0,0, 0, SXF_CLIENTSIDE);
-			NBAL A 0 bright A_Seekermissile(5,7);
-			NBAL B 5 bright A_SpawnItemEx("GWM_ShadePuff", 0,0,0, 0,0,0, 0, SXF_CLIENTSIDE);
-			NBAL B 0 bright A_Seekermissile(5,7);
-			loop;
+			NBAL A 5 Bright {
+				A_SpawnItemEx("GWM_ShadePuff", 0,0,0, 0,0,0, 0, SXF_CLIENTSIDE);
+				A_SeekerMissile(5,7);
+			}
+			NBAL B 5 Bright {
+				A_SpawnItemEx("GWM_ShadePuff", 0,0,0, 0,0,0, 0, SXF_CLIENTSIDE);
+				A_SeekerMissile(5,7);
+			}
+			Loop;
 		Death:
-			NBAL HIJKLM 3 bright;
-			stop;
+			NBAL HIJKLM 3 Bright;
+			Stop;
 	}
 }
 Class GWM_ShadePuff : Actor
@@ -252,7 +256,7 @@ Class GWM_ShadePuff : Actor
 	{
 		Spawn:
 			TNT1 A 3 Bright;
-			NBAL CDEFG 3 BRIGHT;
+			NBAL CDEFG 3 Bright;
 			Stop;
 	}
 }
@@ -261,19 +265,19 @@ Class GWM_Devil : DoomImp
 {
 	Default
 	{
-		obituary "$OB_DEVIL_FIREBALL";
-		hitobituary "$OB_DEVIL_SCRATCH";
-		Tag "Devil";
-		health 120;
-		radius 20;
-		height 56;
-		mass 120;
-		speed 10;
-		painchance 160;
-		seesound "monster/dvlsit";
-		painsound "monster/dvlpai";
-		deathsound "monster/dvldth";
-		activesound "monster/dvlact";
+		Obituary "$OB_DEVIL_FIREBALL";
+		HitObituary "$OB_DEVIL_SCRATCH";
+		Tag "$TAG_DEVIL";
+		Health 120;
+		Radius 20;
+		Height 56;
+		Mass 120;
+		Speed 10;
+		PainChance 160;
+		SeeSound "monsters/devil/sight";
+		PainSound "monsters/devil/pain";
+		DeathSound "monsters/devil/death";
+		ActiveSound "monsters/devil/active";
 		MONSTER;
 		+FLOORCLIP
 	}
@@ -281,10 +285,10 @@ Class GWM_Devil : DoomImp
 	{
 		Spawn:
 			TRO2 AB 10 A_Look;
-			loop;
+			Loop;
 		See:
 			TRO2 AABBCCDD 3 A_Chase;
-			loop;
+			Loop;
 		Melee:
 		Missile:
 			TRO2 EF 6 A_FaceTarget;
@@ -293,22 +297,18 @@ Class GWM_Devil : DoomImp
 			TRO2 HI 6 A_FaceTarget;
 			TRO2 J 4 A_CustomComboAttack("GWM_ImpBall", 32, 3 * random(1, 8), "imp/melee");		
 			TRO2 B 2;
-			goto See;
+			Goto See;
 		Pain:
 			TRO2 K 2;
 			TRO2 K 2 A_Pain;
-			goto See;
-		Pain.wepkick:
-			TRO2 K 2;
-			TRO2 K 50 A_Pain;
-			goto See;
+			Goto See;
 		Death:
 			TRO2 L 8;
 			TRO2 M 8 A_Scream;
 			TRO2 N 6;
 			TRO2 O 6 A_NoBlocking;
 			TRO2 P -1;
-			stop;
+			Stop;
 		XDeath:
 			TRO2 Q 5;
 			TRO2 R 5 A_XScream;
@@ -316,7 +316,7 @@ Class GWM_Devil : DoomImp
 			TRO2 T 5 A_NoBlocking;
 			TRO2 UVW 5;
 			TRO2 X -1;
-			stop;
+			Stop;
 		Death.Fire:
 			TNT1 A 0 {
 				bNOBLOOD = true;
@@ -328,11 +328,11 @@ Class GWM_Devil : DoomImp
 			TRO2 T 5 A_NoBlocking;
 			TRO2 UVW 5;
 			TRO2 X -1;
-			stop;
+			Stop;
 		Raise:
 			TNT1 A 0 {bNOBLOOD = false;}
 			TRO2 PO 8;
 			TRO2 NML 6;
-			goto See;
+			Goto See;
 	}
 }

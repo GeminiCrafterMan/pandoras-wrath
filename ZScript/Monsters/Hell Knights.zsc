@@ -3,7 +3,7 @@ class GWM_HellKnight : HellKnight
 	Default
 	{
 		//$Category Monsters
-		Tag "Hell Knight";
+		Tag "$TAG_HELLKNIGHT";
 		BloodColor "30 67 23";
 	}
 	States
@@ -55,10 +55,10 @@ class GWM_KnightBall : BaronBall
 	States
 	{
 		Spawn:
-			HBAL AB 4 BRIGHT;
+			HBAL AB 4 Bright;
 			Loop;
 		Death:
-			HBAL CDE 6 BRIGHT;
+			HBAL CDE 6 Bright;
 			Stop;
 	}
 }
@@ -67,61 +67,62 @@ class GWM_CyberHellKnight : GWM_HellKnight
 {
 	Default
 	{
-		Tag "Cyber Hell Knight";
-		obituary "%o was splayed by a Cyber Hell Knight";
-		hitobituary "%o was ripped to shreds by a Cyber Hell Knight";
-		health 600;
-		radius 24;
-		height 64;
-		mass 1000;
-		speed 8;
-		painchance 40;
-		seesound "chknight/sight";
-		painsound "chknight/pain";
-		deathsound "chknight/death";
-		activesound "chknight/active";
-		+NORADIUSDMG
+		Tag "$TAG_CYBERHELLKNIGHT";
+		Obituary "$OB_CYBERHELLKNIGHT_FIREBALL";
+		HitObituary "$OB_CYBERHELLKNIGHT_SCRATCH";
+		Health 600;
+		PainChance 40;
+		SeeSound "monsters/chknight/sight";
+		PainSound "monsters/chknight/pain";
+		DeathSound "monsters/chknight/death";
+		ActiveSound "monsters/chknight/active";
+		+NORADIUSDMG // Might remove this later.
 	}
 	States
 	{
 		Spawn:
 			CBO2 AB 10 A_Look;
-			loop;
+			Loop;
 		See:
-			CBO2 A 3 A_chase;
-			CBO2 A 3 A_chase;
-			CBO2 B 0 A_StartSound("cbaron/metal");
-			CBO2 BB 3 A_chase;
-			CBO2 CC 3 A_chase;
-			CBO2 D 3 A_chase;
-			CBO2 D 3 A_hoof;
-			loop;
-		Melee:
-			CBO2 PQ 8 A_FaceTarget;
-			CBO2 R 8 A_BruisAttack;
-			Goto See;
+			CBO2 A 3 A_Chase;
+			CBO2 A 3 A_Chase;
+			CBO2 B 0 A_StartSound("monsters/cbaron/metal");
+			CBO2 BB 3 A_Chase;
+			CBO2 CC 3 A_Chase;		
+			CBO2 D 3 A_Chase;
+			CBO2 D 3 A_Hoof;
+			Loop;
 		Missile:
-			CBO2 E 0 A_jump(80,5);
+			CBO2 E 0 A_Jump(80,"Missile2");
 			CBO2 E 10 A_FaceTarget;
 			CBO2 E 10 A_FaceTarget;
 			CBO2 F 10 Bright A_SpawnProjectile("Rocket",27,16,0);
 			CBO2 E 10 A_FaceTarget;
-			goto See;
+			Goto See;
+		Melee:
+		Missile2:
 			CBO2 PQ 8 A_FaceTarget;
 			CBO2 R 8 A_CustomComboAttack("GWM_KnightBall", 32, 10 * random(1, 8), "baron/melee");
 			Goto See;
 		Pain:
 			CBO2 H 2;
 			CBO2 H 2 A_Pain;
-			goto See;
+			Goto See;
 		Death:
 			CBO2 I 8;
 			CBO2 J 8 A_Scream;
-			CBO2 K 8 bright A_StartSound("world/barrelx");
-			CBO2 L 8 bright A_NoBlocking;
-			CBO2 M 8 bright;
-			CBO2 N 8 bright;
-			CBO2 O -1;
-			stop;
+			CBO2 K 8 Bright A_StartSound("world/barrelx");
+			CBO2 L 8 Bright A_NoBlocking;
+			CBO2 MN 8 Bright;
+			CBO2 O -1 A_BossDeath;
+			Stop;
+		Death.Fire:
+			Goto Death;
+		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
+			CBO2 O 8;
+			CBO2 NMLK 8 Bright;
+			CBO2 JI 8;
+			Goto See;
 	}
 }

@@ -55,16 +55,16 @@ monsters/cyberimp/pain		"Sounds/Monsters/Cyber-Imp/pain.wav"
 monsters/cyberimp/active	"Sounds/Monsters/Cyber-Imp/active.wav"
 
 // Devil
-$RANDOM monster/dvlsit { monster/dvlsi1 monster/dvlsi2 }
-monster/dvlsi1 dsdvlsi1
-monster/dvlsi2 dsdvlsi2
+$RANDOM monsters/devil/sight { monsters/devil/sight1 monsters/devil/sight2 }
+monsters/devil/sight1 "Sounds/Monsters/Devil/sight1.ogg"
+monsters/devil/sight2 "Sounds/Monsters/Devil/sight2.ogg"
 
-monster/dvlpai dsdvlpai
-$RANDOM monster/dvldth { monster/dvldt1 monster/dvldt2 }
-monster/dvldt1 dsdvldt1
-monster/dvldt2 dsdvldt2
+monsters/devil/pain "Sounds/Monsters/Devil/pain.ogg"
+$RANDOM monsters/devil/death { monsters/devil/death1 monsters/devil/death2 }
+monsters/devil/death1 "Sounds/Monsters/Devil/death1.ogg"
+monsters/devil/death2 "Sounds/Monsters/Devil/death2.ogg"
 
-monster/dvlact dsdvlact
+monsters/devil/active "Sounds/Monsters/Devil/active.ogg"
 
 // Nightshade
 $random monsters/nightshade/sight	{ monsters/nightshade/sight1 monsters/nightshade/sight2 }
@@ -94,12 +94,12 @@ monsters/superdemon/snarl	"Sounds/Monsters/Superdemon/DSSUPSNA.ogg"
 monsters/superdemon/crash	"Sounds/Monsters/Superdemon/DSSUPLND.ogg"
 
 // Cyber Knight & Cyber Baron
-chknight/sight	chkntsit
-chknight/active	chkntact
-chknight/pain	chkntpai
-chknight/death	chkntdth
-cbaron/sight	cbarnsit
-cbaron/pain		cbarnpai
-cbaron/death	cbarndth
-cbaron/active	cbarnact
-cbaron/metal	cmetal
+monsters/chknight/sight		"Sounds/Monsters/Bruisers/CHKNTSIT.ogg"
+monsters/chknight/active	"Sounds/Monsters/Bruisers/CHKNTACT.ogg"
+monsters/chknight/pain		"Sounds/Monsters/Bruisers/CHKNTPAI.ogg"
+monsters/chknight/death		"Sounds/Monsters/Bruisers/CHKNTDTH.ogg"
+monsters/cbaron/sight		"Sounds/Monsters/Bruisers/CBARNSIT.wav"
+monsters/cbaron/pain		"Sounds/Monsters/Bruisers/CBARNPAI.wav"
+monsters/cbaron/death		"Sounds/Monsters/Bruisers/CBARNDTH.wav"
+monsters/cbaron/active		"Sounds/Monsters/Bruisers/CBARNACT.wav"
+monsters/cbaron/metal		"Sounds/Monsters/Bruisers/CMETAL.ogg"

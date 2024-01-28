@@ -3,7 +3,7 @@ class GWM_Pinky : Demon
 	Default
 	{
 		//$Category Monsters
-		Tag "Pinky";
+		Tag "$TAG_PINKY";
 	}
 	States
 	{
@@ -68,7 +68,7 @@ class GWM_Spectre : GWM_Pinky
 		DeathSound "spectre/death";
 		ActiveSound "spectre/active";
 		Obituary "$OB_SPECTREHIT";
-		Tag "Spectre";
+		Tag "$TAG_SPECTRE";
 	}
 }
 
@@ -92,7 +92,7 @@ class GWM_Hellhog : Actor
 		DeathSound "monsters/hellhog/death";
 		ActiveSound "monsters/hellhog/active";
 		Obituary "$OB_HELLHOG";
-		Tag "Hellhog";
+		Tag "$TAG_HELLHOG";
 	}
 	States
 	{
