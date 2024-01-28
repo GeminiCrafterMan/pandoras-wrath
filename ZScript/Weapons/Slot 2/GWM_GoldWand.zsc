@@ -25,7 +25,7 @@ class GWM_GoldWand : GoldWand replaces GoldWand // Okay, this DOES actually need
 			Loop;
 		Fire:
 			WNDW B 3 ;
-			WNDW C 5 A_FireBullets(random(5, 6), 0, 1, 5.5, "GoldWandPuff1"); // Add a tracer or something later, it's 3AM and I'm tired.
+			WNDW C 5 A_FireBullets(random(5, 6), 0, 1, 6, "GoldWandPuff1", FBF_USEAMMO|FBF_NORANDOM); // Add a tracer or something later, it's 3AM and I'm tired.
 			WNDW D 3;
 			WNDW D 0 A_ReFire;
 			Goto Ready;
