@@ -17,6 +17,10 @@ class ZWeapon : Weapon
 		ZRF_NoReload        = 1 << 6,   // Changed from WRF_AllowReload.
 		ZRF_NoPartialReload = 1 << 7,   // Weapon can't reload, until completely empty (like Marathon).
 		ZRF_ExtraRound      = 1 << 8,   // Weapon can reload when full.
+		ZRF_AllowUser1		= 1 << 9,	// Weapon allows USER1 key
+		ZRF_AllowUser2		= 1 << 10,	// Weapon allows USER2 key
+		ZRF_AllowUser3		= 1 << 11,	// Weapon allows USER3 key
+		ZRF_AllowUser4		= 1 << 12,	// Weapon allows USER4 key
 
 		ZRF_NoFire = ZRF_NoPrimary | ZRF_NoSecondary
 	}
@@ -100,6 +104,10 @@ class ZWeapon : Weapon
 		int wrf = 0;
 		wrf |= flags & ZRF_NoSwitch ? WRF_NoSwitch : 0;
 		wrf |= flags & ZRF_DisableSwitch ? WRF_DisableSwitch : 0;
+		wrf |= flags & ZRF_AllowUser1 ? WRF_AllowUser1 : 0;
+		wrf |= flags & ZRF_AllowUser2 ? WRF_AllowUser2 : 0;
+		wrf |= flags & ZRF_AllowUser3 ? WRF_AllowUser3 : 0;
+		wrf |= flags & ZRF_AllowUser4 ? WRF_AllowUser4 : 0;
 
 		// If NoAutofire
 		wrf |= flags & ZRF_NoPrimary || !invoker.CheckMagazine(false) && !invoker.Default.bAmmo_Optional || !invoker.JustPressed(BT_Attack) && !invoker.bNoAutofire ? WRF_NoPrimary : 0;

@@ -50,7 +50,7 @@ class GWM_RocketLauncher : GWM_WeaponBase
 				A_SpawnItemEx("GWM_Flash");
 				A_WeaponOffset(0, 18, WOF_ADD);
 				A_StartSound("weapons/grenadefire", CHAN_WEAPON);
-				A_FireProjectile("GWM_Grenade", 0, true, 0, 0, 0, -6.328125);
+				A_FireProjectile("GWM_Grenade", 0, true);
 				A_OverlayScale(OverlayID(), 1.33, 0, WOF_INTERPOLATE);
 			}
 			Goto Fire.Done;
@@ -138,7 +138,7 @@ class GWM_Grenade : Actor
 		DeathSound "weapons/explode";
 		BounceSound "weapons/grndimp";
 		Obituary "$KILLGRENADE";
-		DamageType "Grenade";
+		DamageType "Rocket";
 	}
 	States
 	{
