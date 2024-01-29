@@ -76,7 +76,7 @@ class GWM_Shotgun : GWM_WeaponBase
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
 				A_QuakeEx(1.5, 1.5, 1.5, 4, 0, 1, "", QF_SHAKEONLY);
 			}
-			SKSG A 3 Bright;
+			SKSG A 2 Bright;
 			SKSG A 1 Bright {
 				A_WeaponOffset(0, -5, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
