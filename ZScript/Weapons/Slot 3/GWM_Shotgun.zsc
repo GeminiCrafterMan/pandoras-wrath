@@ -117,6 +117,10 @@ class GWM_Shotgun : GWM_WeaponBase
 				A_WeaponOffset(0, 52, WOF_INTERPOLATE);
 				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
 				A_QuakeEx(1.5, 1.5, 1.5, 4, 0, 1, "", QF_SHAKEONLY);
+				if (invoker.kahunaspread < 15)
+				{
+					invoker.kahunaspread = invoker.kahunaspread + 2;
+				}
 			}
 			SKSG A 3 Bright;
 			SKSG A 1 Bright {
