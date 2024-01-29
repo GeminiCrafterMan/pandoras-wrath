@@ -3,8 +3,7 @@ class GWM_Chaingun : GWM_WeaponBase
 	action void A_FireCGun()
 	{
 		A_SpawnItemEx("GWM_Flash");
-		A_StartSound("weapons/chainfire", CHAN_WEAPON);
-		A_FireBullets(11.2, 0, 1, 7*Random(2,3), "ZBulletPuff", FBF_USEAMMO|FBF_NORANDOM, missile: "GWM_Tracer", spawnheight: 0);
+		ZWL_FireHitscan(4, 18, tracerType: "GWM_Tracer");
 		ZWL_EjectCasing("GWM_RifleCasing", true, -23, 8, 16, (24, 0, -16));
 		A_SetPitch(pitch-0.5);
 	}
@@ -15,6 +14,7 @@ class GWM_Chaingun : GWM_WeaponBase
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 20;
 		Weapon.AmmoType "GWM_HighCaliberClip";
+		AttackSound "weapons/chainfire";
 		Inventory.PickupMessage "$GOTCHAINGUN";
 		Obituary "$KILLCHAINGUN";
 		Tag "$TAG_CHAINGUN";
@@ -26,10 +26,10 @@ class GWM_Chaingun : GWM_WeaponBase
 			Loop;
 		Deselect:
 			TNT1 A 0 A_StopSound(CHAN_BODY);
-			CHGG A 1 A_Lower(12);
+			CHGG A 1 A_Lower(18);
 			Loop;
 		Select:
-			CHGG A 1 A_Raise(12);
+			CHGG A 1 A_Raise(18);
 			Loop;
 		Fire:
 			// rev the chaingun
@@ -39,22 +39,22 @@ class GWM_Chaingun : GWM_WeaponBase
 			CHGG A 0 A_ReFire("Hold");
 			Goto Release;
 		Hold:
-			CHGG A 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashAB");}
+			CHGG A 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashAB");A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
 			CHGG B 1 {
 				return ZWL_JumpIfEmpty("Release");
 			}
-			CHGG C 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashCD");}
+			CHGG C 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashCD"); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
 			CHGG D 1 {
 				return ZWL_JumpIfEmpty("Release");
 			}
 			CHGG D 0 A_ReFire("Hold2");
 			Goto Release;
 		Hold2:
-			CHGG E 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashEF");}
+			CHGG E 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashEF"); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
 			CHGG F 1 {
 				return ZWL_JumpIfEmpty("Release");
 			}
-			CHGG G 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashGH");}
+			CHGG G 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashGH"); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
 			CHGG H 1 {
 				ZWL_EjectCasing("GWM_ChaingunLink", true, -23, 8, 16, (24, 0, -16));
 				return ZWL_JumpIfEmpty("Release");

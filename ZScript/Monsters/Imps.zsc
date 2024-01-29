@@ -3,14 +3,14 @@ class GWM_DoomImp : DoomImp // literally just a normal imp
 	Default
 	{
 		//$Category Monsters
-		Tag "Imp";
+		Tag "$TAG_DOOMIMP";
 	}
 	States
 	{
 		Melee:
 		Missile:
 			TROO EF 8 A_FaceTarget;
-			TROO G 6 A_CustomComboAttack("GWM_ImpBall", 32, 3 * random(1, 8), "imp/melee");
+			TROO G 6 A_CustomComboAttack("GWM_ImpBall", 32, 14, "imp/melee");
 			Goto See;
 		Death.Fire:
 			TNT1 A 0 {
@@ -24,6 +24,22 @@ class GWM_DoomImp : DoomImp // literally just a normal imp
 			TROO RST 5;
 			TROO U -1;
 			Stop;
+		Death:
+			TNT1 A 0 A_Jump(120,"Death2");
+			TROO I 8;
+			TROO J 8 A_Scream;
+			TROO K 6;
+			TROO L 6 A_NoBlocking;
+			TROO M -1;
+			Stop;
+			
+		Death2:
+			DIMP A 8;
+			DIMP B 6 A_Scream;
+			DIMP C 5;
+			DIMP D 4 A_NoBlocking;
+			DIMP E -1;
+			Stop;
 		Raise:
 			TNT1 A 0 {bNOBLOOD = false;}
 			Goto Super::Raise;
@@ -34,10 +50,11 @@ class GWM_ImpBall : DoomImpBall
 	Default
 	{
 		DamageType "Fire";
+		DamageFunction (14);
 	}
 }
 
-class GWM_NightmareImpSpawner : RandomSpawner
+class GWM_DoomImpSpawner : RandomSpawner
 {
 	override void BeginPlay()
 	{
@@ -50,40 +67,7 @@ class GWM_NightmareImpSpawner : RandomSpawner
 	}
 	Default
 	{
-		DropItem "GWM_NightmareImp";
-	}
-}
-class GWM_NightmareImp : GWM_DoomImp
-{
-	Default
-	{
-		//$Category Monsters
-		PainChance 128;
-		Speed 16;
-		RenderStyle "Translucent";
-		Translation "GWM_NightmareImp";
-		Tag "Nightmare Imp";
-		Alpha 0.7;
-		BloodColor "78 58 80";
-		Obituary "$OB_NIGHTMAREIMP_SCRATCH";
-	}
-	States
-	{
-		Melee:
-		Missile:
-			TROO EF 8 A_FaceTarget;
-			TROO G 6 A_CustomComboAttack("GWM_NightmareImpBall", 32, 3 * random(1, 8), "imp/melee");
-			Goto See;
-	}
-}
-class GWM_NightmareImpBall : GWM_ImpBall
-{
-	Default
-	{
-		Translation "GWM_NightmareImp";
-		Speed 20;
-		FastSpeed 40;
-		Obituary "$OB_NIGHTMAREIMP_FIRE";
+		DropItem "GWM_DoomImp";
 	}
 }
 
@@ -92,7 +76,7 @@ class GWM_CyberImp : Actor
 	Default
 	{
 		//$Category Monsters
-		Tag "Cyber Imp";
+		Tag "$TAG_CYBERIMP";
 		Health 120;
 		Radius 20;
 		Height 56;
@@ -118,11 +102,11 @@ class GWM_CyberImp : Actor
 			Loop;
 		Melee:
 			CIMP EF 8 A_FaceTarget;
-			CIMP F 6 A_CustomMeleeAttack(3 * random(3, 10), "imp/melee");
+			CIMP F 6 A_CustomMeleeAttack(17, "imp/melee");
 			Goto See;
 		Missile:
 			CIMP EF 8 A_FaceTarget;
-			CIMP G 6 A_SpawnProjectile("ArachnotronPlasma",36,4);
+			CIMP G 6 A_SpawnProjectile("GWM_EnemyPlasma",36,4);
 			Goto See;
 		Pain:
 			CIMP H 2;
@@ -189,7 +173,7 @@ class GWM_Nightshade : Actor
 	Default
 	{
 		//$Category Monsters
-		Tag "Nightshade";
+		Tag "$TAG_NIGHTSHADE";
 		Obituary "$OB_NIGHTSHADE";
 		Health 80;
 		Radius 20;
@@ -208,22 +192,22 @@ class GWM_Nightshade : Actor
 	{
 		Spawn:
 			NSHA AB 10 A_Look();
-			loop;
+			Loop;
 		See:
 			NSHA A 0 A_SetTranslucent(0.75,0);
 			NSHA AABBCCDD 3 A_Chase();
-			goto See+1;
+			Goto See+1;
 		Missile:
 			NSHA E 0 A_SetTranslucent(1.0,0);
 			NSHA EE 4 Bright A_FaceTarget();
 			NSHA F 8 Bright A_SpawnProjectile("GWM_ShadeMissile",32,0,0,0,0);
 			NSHA B 4 A_SetTranslucent(0.87,0);
-			goto See;
+			Goto See;
 		Pain:
 			NSHA G 0 A_SetTranslucent(1.0,0);
 			NSHA G 2;
 			NSHA G 2 A_Pain();
-			goto See;
+			Goto See;
 		Death:
 			NSHA H 4 A_SetTranslucent(1.0,0);
 			NSHA I 4 A_SetTranslucent(0.9,0);
@@ -236,7 +220,7 @@ class GWM_Nightshade : Actor
 			NSHA N 4 A_SetTranslucent(0.4,0);
 			NSHA O 4 A_SetTranslucent(0.3,0);
 			NSHA P 4 A_SetTranslucent(0.2,0);
-			stop;
+			Stop;
 		// No Death.Fire here since the regular death is sufficient.
 		// No Raise here because it kind of disappears instead of leaving a corpse.
 	}
@@ -245,7 +229,7 @@ Class GWM_ShadeMissile : CacodemonBall
 {
 	Default
 	{
-		Damage 4;
+		DamageFunction (18);
 		Speed 10;
 		Alpha 0.80;
 		SeeSound "monsters/nightshade/attack";
@@ -258,14 +242,18 @@ Class GWM_ShadeMissile : CacodemonBall
 	States
 	{
 		Spawn:
-			NBAL A 5 bright A_SpawnItemEx("GWM_ShadePuff", 0,0,0, 0,0,0, 0, SXF_CLIENTSIDE);
-			NBAL A 0 bright A_Seekermissile(5,7);
-			NBAL B 5 bright A_SpawnItemEx("GWM_ShadePuff", 0,0,0, 0,0,0, 0, SXF_CLIENTSIDE);
-			NBAL B 0 bright A_Seekermissile(5,7);
-			loop;
+			NBAL A 5 Bright {
+				A_SpawnItemEx("GWM_ShadePuff", 0,0,0, 0,0,0, 0, SXF_CLIENTSIDE);
+				A_SeekerMissile(5,7);
+			}
+			NBAL B 5 Bright {
+				A_SpawnItemEx("GWM_ShadePuff", 0,0,0, 0,0,0, 0, SXF_CLIENTSIDE);
+				A_SeekerMissile(5,7);
+			}
+			Loop;
 		Death:
-			NBAL HIJKLM 3 bright;
-			stop;
+			NBAL HIJKLM 3 Bright;
+			Stop;
 	}
 }
 Class GWM_ShadePuff : Actor
@@ -285,7 +273,83 @@ Class GWM_ShadePuff : Actor
 	{
 		Spawn:
 			TNT1 A 3 Bright;
-			NBAL CDEFG 3 BRIGHT;
+			NBAL CDEFG 3 Bright;
 			Stop;
+	}
+}
+
+Class GWM_Devil : DoomImp
+{
+	Default
+	{
+		Obituary "$OB_DEVIL_FIREBALL";
+		HitObituary "$OB_DEVIL_SCRATCH";
+		Tag "$TAG_DEVIL";
+		Health 120;
+		Radius 20;
+		Height 56;
+		Mass 120;
+		Speed 10;
+		PainChance 160;
+		SeeSound "monsters/devil/sight";
+		PainSound "monsters/devil/pain";
+		DeathSound "monsters/devil/death";
+		ActiveSound "monsters/devil/active";
+		MONSTER;
+		+FLOORCLIP
+	}
+ 	States
+	{
+		Spawn:
+			TRO2 AB 10 A_Look;
+			Loop;
+		See:
+			TRO2 AABBCCDD 3 A_Chase;
+			Loop;
+		Melee:
+		Missile:
+			TRO2 EF 6 A_FaceTarget;
+			TRO2 G 4 A_CustomComboAttack("GWM_ImpBall", 32, 14, "imp/melee");
+			TRO2 B 2;
+			TRO2 HI 6 A_FaceTarget;
+			TRO2 J 4 A_CustomComboAttack("GWM_ImpBall", 32, 14, "imp/melee");		
+			TRO2 B 2;
+			Goto See;
+		Pain:
+			TRO2 K 2;
+			TRO2 K 2 A_Pain;
+			Goto See;
+		Death:
+			TRO2 L 8;
+			TRO2 M 8 A_Scream;
+			TRO2 N 6;
+			TRO2 O 6 A_NoBlocking;
+			TRO2 P -1;
+			Stop;
+		XDeath:
+			TRO2 Q 5;
+			TRO2 R 5 A_XScream;
+			TRO2 S 5;
+			TRO2 T 5 A_NoBlocking;
+			TRO2 UVW 5;
+			TRO2 X -1;
+			Stop;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			TRO2 Q 5;
+			TRO2 R 5 A_StartSound("monsters/burndeath");
+			TRO2 S 5;
+			TRO2 T 5 A_NoBlocking;
+			TRO2 UVW 5;
+			TRO2 X -1;
+			Stop;
+		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
+			TRO2 PO 8;
+			TRO2 NML 6;
+			Goto See;
 	}
 }

@@ -1,0 +1,29 @@
+class GWM_Arachnotron : Arachnotron
+{
+	Default
+	{
+		Tag "$TAG_ARACHNOTRON";
+	}
+	States
+	{
+		Missile:
+			BSPI A 20 BRIGHT A_FaceTarget;
+			BSPI G 4 BRIGHT A_SpawnProjectile("GWM_EnemyPlasma", 20, 4);
+			BSPI H 4 BRIGHT;
+			BSPI H 1 BRIGHT A_SpidRefire;
+			Goto Missile+1;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			BSPI J 20 A_StartSound("monsters/burndeath");
+			BSPI K 7 A_NoBlocking;
+			BSPI LMNO 7;
+			BSPI P -1 A_BossDeath;
+			Stop;
+		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
+			Goto Super::Raise;
+	}
+}

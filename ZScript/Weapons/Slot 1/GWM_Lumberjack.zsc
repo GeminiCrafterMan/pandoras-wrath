@@ -11,7 +11,7 @@ class GWM_Lumberjack : GWM_WeaponBase
 		Obituary "$KILLLUMBERJACK";
 		Inventory.PickupMessage "$GOTLUMBERJACK";
 		Inventory.Icon "LJAKZ0";
-		Tag "\"Lumberjack\" Chainsaw";
+		Tag "$TAG_LUMBERJACK";
 	}
 	States
 	{
@@ -22,10 +22,10 @@ class GWM_Lumberjack : GWM_WeaponBase
 			LJAK ABAB 4 A_WeaponReady;
 			Loop;
 		Deselect:
-			LJAK AAAABBBB 1 A_Lower(12);
+			LJAK AAAABBBB 1 A_Lower(18);
 			Loop;
 		Select:
-			LJAK AAAABBBB 1 A_Raise(12);
+			LJAK AAAABBBB 1 A_Raise(18);
 			Loop;
 		Fire:
 			LJAK C 3 A_StartSound("weapons/csawup", CHAN_BODY);
@@ -33,7 +33,7 @@ class GWM_Lumberjack : GWM_WeaponBase
 			TNT1 A 0 {A_StartSound("weapons/csawloop", CHAN_BODY, CHANF_LOOPING); A_ReFire();}
 			Goto Release;
 		Hold:
-			LJAK C 2 A_Saw("", "weapons/csawhit", 4, "ZBulletPuff");
+			LJAK C 2 A_Saw("", "weapons/csawhit", 22, "ZBulletPuff", SF_NORANDOM);
 			LJAK D 2;
 			TNT1 A 0 A_ReFire;
 			Goto Release;

@@ -1,4 +1,4 @@
-class GWM_VenomCannon : GWM_WeaponBase
+class GWM_VenomCannon : GWM_WeaponBase // desperately in need of a nerf
 {
 	Default
 	{
@@ -11,7 +11,7 @@ class GWM_VenomCannon : GWM_WeaponBase
 		Weapon.AmmoType2 "GWM_VenomVial";
 		+WEAPON.NOAUTOFIRE
 		Inventory.PickupMessage "$GOTVENOMCANNON";
-		Tag "Venom Cannon";
+		Tag "$TAG_VENOMCANNON";
 	}
 	States
 	{
@@ -19,10 +19,10 @@ class GWM_VenomCannon : GWM_WeaponBase
 			VNMG A 1 A_WeaponReady;
 			Loop;
 		Deselect:
-			VNMG A 1 A_Lower(12);
+			VNMG A 1 A_Lower(18);
 			Loop;
 		Select:
-			VNMG A 1 A_Raise(12);
+			VNMG A 1 A_Raise(18);
 			Loop;
 		Fire:
 			VNMG B 4 A_Overlay(-2, "Flash");
@@ -60,7 +60,7 @@ class GWM_VenomBall : GWM_PoisonProjectile
 	Default
 	{
 		Speed 20;
-		Damage 80;
+		DamageFunction (80);
 		Height 24;
 		Radius 24;
 		BounceCount 11;
@@ -141,7 +141,7 @@ class GWM_SmallVenomBall : GWM_VenomBall
 	Default
 	{
 		Speed 0;
-		Damage 16;
+		DamageFunction (16);
 		Height 12;
 		Radius 12;
 		Scale 0.125;
@@ -208,7 +208,7 @@ class GWM_FloorVenomPuddle : GWM_PoisonProjectile
 		+FLATSPRITE
 		+FLOORHUGGER
 		+MOVEWITHSECTOR
-		Damage 1;
+		DamageFunction (1);
 		Obituary "$KILLVENOMCANNONPUDDLE";
 	}
 	States

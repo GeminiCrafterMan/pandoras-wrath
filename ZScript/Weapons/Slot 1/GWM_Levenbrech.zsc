@@ -5,7 +5,7 @@ class GWM_Levenbrech : GWM_WeaponBase replaces Gauntlets // not that it needs to
 		Weapon.SelectionOrder 2200;
 		+WEAPON.MELEEWEAPON
 		+WEAPON.AXEBLOOD
-		Tag "Levenbrech";
+		Tag "$TAG_LEVENBRECH";
 		Inventory.Icon "LBREZ0";
 		Obituary "$KILLLEVENBRECH"; // hehe lifebreaker
 		Inventory.PickupMessage "$GOTLEVENBRECH";
@@ -19,10 +19,10 @@ class GWM_Levenbrech : GWM_WeaponBase replaces Gauntlets // not that it needs to
 			LBRE Z -1;
 			Stop;
 		Select:
-			LBRE A 1 A_Raise(12);
+			LBRE A 1 A_Raise(18);
 			Loop;
 		Deselect:
-			LBRE A 1 A_Lower(12);
+			LBRE A 1 A_Lower(18);
 			Loop;
 		Ready:
 			LBRE A 1 A_WeaponReady;
@@ -31,7 +31,7 @@ class GWM_Levenbrech : GWM_WeaponBase replaces Gauntlets // not that it needs to
 			LBRE BCD 2;
 			TNT1 A 0 {
 				A_StartSound("weapons/swordslash");
-				A_CustomPunch(4*random(1, 10), true, pufftype: "ZBulletPuff");
+				A_CustomPunch(22, true, pufftype: "ZBulletPuff");
 			}
 			LBRE EFG 2;
 			LBRE A 1;
@@ -50,12 +50,10 @@ class GWM_LevenbrechPowered : GWM_Levenbrech
 	States
 	{
 		Select:
-			LBRE H 1 Bright A_Raise;
-			LBRE H 0 A_Raise;
+			LBRE H 1 Bright A_Raise(18);
 			Loop;
 		Deselect:
-			LBRE H 1 Bright A_Lower;
-			LBRE H 0 A_Lower;
+			LBRE H 1 Bright A_Lower(18);
 			Loop;
 		Ready:
 			LBRE HHHHIIIIJJJJ 1 Bright A_WeaponReady;
@@ -64,7 +62,7 @@ class GWM_LevenbrechPowered : GWM_Levenbrech
 			LBRE KLM 2 Bright;
 			TNT1 A 0 {
 				A_StartSound("weapons/swordslash");
-				A_CustomPunch(8*random(1, 10), true, pufftype: "ZBulletPuff", lifesteal: 0.5);
+				A_CustomPunch(44, true, pufftype: "ZBulletPuff", lifesteal: 0.5);
 			}
 			LBRE NOP 2 Bright;
 			LBRE H 1 Bright;

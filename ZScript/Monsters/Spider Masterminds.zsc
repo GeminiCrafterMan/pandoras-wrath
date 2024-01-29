@@ -1,0 +1,17 @@
+class GWM_SpiderMastermind : SpiderMastermind
+{
+	Default
+	{
+		Tag "$TAG_SPIDERMASTERMIND";
+		AttackSound "weapons/skshot";
+	}
+	States
+	{
+		Missile:
+			SPID A 20 BRIGHT A_FaceTarget;
+			SPID G 4 BRIGHT A_CustomBulletAttack(22.5, 0, 3, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 40, spawnofs_xy: 4);
+			SPID H 4 BRIGHT A_CustomBulletAttack(22.5, 0, 3, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 40, spawnofs_xy: 4);
+			SPID H 1 BRIGHT A_SpidRefire;
+			Goto Missile+1;
+	}
+}

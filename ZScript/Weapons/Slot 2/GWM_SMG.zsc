@@ -17,7 +17,7 @@ class GWM_SMG : GWM_WeaponBase
 		Obituary "$KILLSMG";
 		Inventory.PickupSound "weapons/smgpickup";
 		Inventory.PickupMessage "$GOTSMG";
-		Tag "SMG";
+		Tag "$TAG_SMG";
 	}
 	States
 	{
@@ -25,33 +25,27 @@ class GWM_SMG : GWM_WeaponBase
 			SMGG A 1 ZWL_WeaponReady(ZRF_ExtraRound);
 			Loop;
 		Deselect:
-			SMGG A 1 A_Lower(12);
+			SMGG A 1 A_Lower(18);
 			Loop;
 		Select:
-			SMGG A 1 A_Raise(12);
+			SMGG A 1 A_Raise(18);
 			Loop;
 		Fire:
 			SMGG A 1 {
-				ZWL_FireHitscan(6, 6*Random(2,3), tracerType: "GWM_Tracer");
-				A_FireProjectile("GWM_Tracer",frandom(-3,3),false,0,-2,0,frandom(-6,6));
+				ZWL_FireHitscan(6, 12, tracerType: "GWM_Tracer");
+				A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,5);
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
-				A_SetPitch(pitch-0.3);
 				A_WeaponOffset(0, 2, WOF_ADD);
 				ZWL_EjectCasing("GWM_PistolCasing");
 			}
-			SMGG AA 1 {
-				A_WeaponOffset(0, -1, WOF_ADD);
-				A_SetPitch(pitch+0.15);
-			}
-			SMGG A 1 {
-				return ZWL_JumpIfEmpty("Fire.Empty");
-			}
+			SMGG AA 1 A_WeaponOffset(0, -1, WOF_ADD);
+			SMGG A 1 { return ZWL_JumpIfEmpty("Fire.Empty"); }
 			SMGG A 2 ZWL_ReFire(null, true);
 			Goto Ready;
 		Fire.Empty:
 			TNT1 A 0 ZWL_CheckReload();
-			Goto Reload.Empty;
+			Goto Reload;
 		Flash:
 			SMGF A 1 Bright A_Light1;
 			SMGF B 1 Bright A_Light2;
@@ -64,22 +58,12 @@ class GWM_SMG : GWM_WeaponBase
 				if (!invoker.CheckAmmo(PrimaryFire, false, true))
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
 			}
-			TNT1 A 0 ZWL_JumpIfEmpty("Reload.Empty");
 			SMGG BCDEF 2;
 			SMGG G 2 A_StartSound("weapons/smgclipout");
 			SMGG HIJK 2;
 			SMGG K 2 ZWL_EjectCasing("GWM_PistolEmptyMag", true, 45, 2, 16, (24, 0, -24));
 			SMGG KJIH 2;
 			SMGG G 2 ZWL_Reload(-1);
-			SMGG FEDCB 2;
-			Goto Ready;
-		Reload.Empty:
-			SMGG BCDEF 2;
-			SMGG G 2 A_StartSound("weapons/smgclipout");
-			SMGG HIJK 2;
-			SMGG K 2 ZWL_EjectCasing("GWM_PistolEmptyMag", true, 45, 2, 16, (24, 0, -24));
-			SMGG KJIH 2;
-			SMGG G 2 ZWL_Reload;
 			SMGG FEDCB 2;
 			Goto Ready;
 	}

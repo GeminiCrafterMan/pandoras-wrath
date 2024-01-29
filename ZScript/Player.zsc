@@ -31,7 +31,7 @@ class GWM_Player : DoomPlayer
 	{
 		Player.DisplayName "Mercenary";
 		Player.SoundClass "GWM_Player";
-		Player.WeaponSlot 1, "GWM_Mine", "GWM_Fist", "GWM_Lumberjack", "GWM_Impactor", "GWM_Levenbrech";
+		Player.WeaponSlot 1, "GWM_Mine", "GWM_Fists", "GWM_Lumberjack", "GWM_Impactor", "GWM_Levenbrech";
 		Player.WeaponSlot 2, "GWM_Pistol", "GWM_SMG", "GWM_Revolver", "GWM_GoldWand";
 		Player.WeaponSlot 3, "GWM_IceShotgun", "GWM_PFSuperShotgun", "GWM_Shotgun", "GWM_SuperShotgun", "GWM_ImpalerCrossbow";
 		Player.WeaponSlot 4, "GWM_Chaingun", "GWM_BurstRifle", "GWM_FrostFang";
@@ -47,7 +47,7 @@ class GWM_DoomPlayer : GWM_Player
 	Default
 	{
 		Player.StartItem "GWM_Pistol";
-		Player.StartItem "GWM_Fist";
+		Player.StartItem "GWM_Fists";
 		Player.StartItem "GWM_Mine";
 		Player.StartItem "GWM_LowCaliberClip", 50;
 	}
@@ -58,8 +58,57 @@ class GWM_HereticPlayer : GWM_Player
 	Default
 	{
 		Player.StartItem "GWM_GoldWand";
-		Player.StartItem "GWM_Fist";
+		Player.StartItem "GWM_Fists";
 		Player.StartItem "GoldWandAmmo", 50;
 		Player.ColorRange 224, 209;
+	}
+}
+
+class GWM_HellKnightPlayer : PlayerPawn
+{
+	Default
+	{
+		Health 500;
+		ReactionTime 0;
+		PainChance 255;
+		Radius 24;
+		Height 64;
+		Speed 0.88;
+		Gravity 1.5;
+		Mass 1000;
+		+NOSKIN
+		PainSound "knight/pain";
+		DeathSound "knight/death";
+		Player.JumpZ 8;
+		Player.ViewHeight 60;
+		Player.SoundClass "GWM_HKPlayer";
+		Player.DisplayName "Hell Knight";
+		Player.Face "HKN";
+		Player.MorphWeapon "GWM_HellKnightClaws";
+	}
+	States
+	{
+		Spawn:
+			HKNI A -1;
+			Stop;
+		See:
+			HKNI ABCD 6;
+			Loop;
+		Melee:
+		Missile:
+			HKNI EFG 8;
+			Goto Spawn;
+		Pain:
+			HKNI H 2;
+			HKNI H 2 A_Pain;
+			Goto Spawn;
+		Death:
+			HKNI I 8;
+			HKNI J 8 A_Scream;
+			HKNI K 8;
+			HKNI L 8 A_NoBlocking;
+			HKNI MN 8;
+			HKNI O -1;
+			Stop;
 	}
 }

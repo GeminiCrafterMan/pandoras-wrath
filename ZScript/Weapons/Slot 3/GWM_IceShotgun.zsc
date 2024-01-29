@@ -13,7 +13,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 		ZWeapon.ReloadSound "weapons/shell_load";
 		ZWeapon.ClickSound "weapons/skempty";
 
-		Tag "Ice Shotgun";
+		Tag "$TAG_ICESHOTGUN";
 		Inventory.PickupMessage "$GOTICESHOTGUN";
 		Obituary "$KILLKICK";
 	}
@@ -22,11 +22,34 @@ class GWM_IceShotgun : GWM_WeaponBase
 		Ready:
 			ISHT A 1 ZWL_WeaponReady(ZRF_ExtraRound);
 			Loop;
+		/*
 		Deselect:
-			ISHT A 1 A_Lower(12);
+			TNT1 A 0 {
+				A_OverlayPivotAlign(OverlayID(), PSPA_RIGHT, PSPA_BOTTOM);
+				A_OverlayPivot(OverlayID(), 0.5, 0.5);
+			}
+			ISHT BC 1;
+			ISHT CCCCCC 1 A_OverlayRotate(OverlayID(), 8, WOF_ADD);
+			ISHT A 0 ZWL_QuickLower;
+			Stop;
+		Select:
+			TNT1 A 0 {
+				ZWL_QuickRaise();
+				A_OverlayPivotAlign(OverlayID(), PSPA_RIGHT, PSPA_BOTTOM);
+				A_OverlayPivot(OverlayID(), 0, 0.5);
+				A_OverlayRotate(OverlayID(), 56);
+			}
+			ISHT CCCCCC 1 A_OverlayRotate(OverlayID(), -8, WOF_ADD);
+			ISHT CB 1 A_OverlayRotate(OverlayID(), 0, WOF_INTERPOLATE);
+			TNT1 A 0 {
+				A_Overlay(OverlayID(), "Ready");
+			}
+		*/
+		Deselect:
+			ISHT A 1 A_Lower(18);
 			Loop;
 		Select:
-			ISHT A 1 A_Raise(12);
+			ISHT A 1 A_Raise(18);
 			Loop;
 		Fire:
 			TNT1 A 0 {
@@ -46,29 +69,22 @@ class GWM_IceShotgun : GWM_WeaponBase
 				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
 				A_WeaponOffset(0, 20, WOF_ADD);
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
-				A_SetPitch(pitch-1.5);
 			}
 			ISHT A 3;
 			ISHT A 1 {
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
-				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
 			}
-			ISHT AA 1 {
-				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
-			}
+			ISHT AA 1;
 			ISHT A 1 {
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
-				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
 			}
-			ISHT AA 1 {
-				A_SetPitch(pitch+0.25, SPF_INTERPOLATE);
-			}
+			ISHT AA 1;
 			TNT1 A 0 ZWL_CheckReload();
 			ISHT B 5;
 			ISHT C 4;
-			ISHT D 4 {
+			ISHT D 5 {
 				ZWL_EjectCasing("GWM_IceShotgunCasing", offset: (24, -6, -14));
 				A_StartSound("weapons/icepump1", CHAN_BODY);
 				A_StartSound("weapons/icehiss", CHAN_AUTO);
@@ -99,7 +115,15 @@ class GWM_IceShotgun : GWM_WeaponBase
 			Goto Ready;
 		AltFireUnderlay:
 			KICK A 4;
-			KICK B 4 A_Punch;
+			KICK B 4 {
+				// redo this shit later
+				int dmg = 11;
+				if (FindInventory("PowerStrength"))
+				{
+					dmg *= 10;
+				}
+				A_CustomPunch(dmg, norandom:true, range: meleeRange + 20, meleesound: "*fist");
+			}
 			KICK C 5;
 			KICK B 4;
 			KICK A 5;
@@ -116,7 +140,6 @@ class GWM_IceShotgun : GWM_WeaponBase
 				if (!invoker.CheckAmmo(PrimaryFire, false, true))
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
 			}
-			TNT1 A 0 ZWL_JumpIfEmpty("Reload.Empty"); // I'm pretty sure that, for a shotgun, reloading while empty would be the same...{
 			ISHT B 5;
 			ISHT C 4;
 			ISHT D 2 {
@@ -133,26 +156,6 @@ class GWM_IceShotgun : GWM_WeaponBase
 			Loop;
 		Reload.End:
 			ISHT C 4;
-			ISHT B 5 A_StartSound("weapons/icepump2");
-			Goto Ready;
-
-		Reload.Empty:
-			ISHT B 5;
-			ISHT C 4;
-			ISHT D 2 {
-				A_StartSound("weapons/icepump1", CHAN_BODY);
-				A_StartSound("weapons/icehiss", CHAN_AUTO);
-				ZWL_EjectCasing("GWM_IceShotgunCasing", offset: (24, -6, -14));
-			}
-			// Fallthrough
-		Reload.Empty.Loop:
-			ISHT EFG 2;
-			TNT1 A 0 ZWL_Reload(1);
-			ISHT HED 2;
-			ISHT D 0 ZWL_JumpIfReloaded("Reload.Empty.End", true);
-			Loop;
-		Reload.Empty.End:
-			ISHT DC 2;
 			ISHT B 5 A_StartSound("weapons/icepump2");
 			Goto Ready;
 	}

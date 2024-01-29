@@ -168,3 +168,12 @@ class GWM_SoulsphereSpawner : RandomSpawner replaces Soulsphere
 		DropItem "GWM_PortableMedkit";
 	}
 }
+
+class GWM_BerserkSpawner : RandomSpawner replaces Berserk
+{
+	Default
+	{
+		DropItem "GWM_Berserk";
+//		DropItem "GWM_KnightSphere";
+	}
+}

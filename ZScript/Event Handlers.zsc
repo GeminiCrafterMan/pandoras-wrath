@@ -65,6 +65,21 @@ class ThingReplacer : StaticEventHandler
 					case 'LostSoul':
 						e.Replacement = "GWM_LostSoul";
 						break;
+					case 'Arachnotron':
+						e.Replacement = "GWM_Arachnotron";
+						break;
+					case 'Fatso':
+						e.Replacement = "GWM_Mancubus";
+						break;
+					case 'Revenant':
+						e.Replacement = "GWM_Revenant";
+						break;
+					case 'SpiderMastermind':
+						e.Replacement = "GWM_SpiderMastermind";
+						break;
+					case 'WolfensteinSS':
+						e.Replacement = "GWM_WolfensteinSS";
+						break;
 				}
 			}
 			else
@@ -92,24 +107,30 @@ class ThingReplacer : StaticEventHandler
 						break;
 					// Imps and Variants
 					case 'DoomImp':
-						switch (random(0,4))
+						switch (random(0,5))
 						{
-							case 4:
-								e.Replacement = "GWM_NightmareImpSpawner"; // to spawn a Nightmare Imp or a Nightshade
-								break;
-							case 3:
+							case 5:
 								e.Replacement = "GWM_CyberImp";
 								break;
+							case 4:
+								e.Replacement = "GWM_Devil";
+								break;
 							default:
-								e.Replacement = "GWM_DoomImp";
+								e.Replacement = "GWM_DoomImpSpawner";
 								break;
 						}
 						break;
 					case 'HellKnight':
-						e.Replacement = "GWM_HellKnight";
+						if (random(0, 4) == 4)
+							e.Replacement = "GWM_CyberHellKnight";
+						else
+							e.Replacement = "GWM_HellKnight";
 						break;
 					case 'BaronOfHell':
-						e.Replacement = "GWM_BaronOfHell";
+						if (random(0, 4) == 4)
+							e.Replacement = "GWM_CyberBaron";
+						else
+							e.Replacement = "GWM_BaronOfHell";
 						break;
 					case 'Cacodemon':
 						e.Replacement = "GWM_Cacodemon";
@@ -133,6 +154,21 @@ class ThingReplacer : StaticEventHandler
 					case 'LostSoul':
 						e.Replacement = "GWM_LostSoulSpawner"; // to spawn a Lost Soul or a Blot
 						break;
+					case 'Arachnotron':
+						e.Replacement = "GWM_Arachnotron";
+						break;
+					case 'Fatso':
+						e.Replacement = "GWM_Mancubus";
+						break;
+					case 'Revenant':
+						e.Replacement = "GWM_Revenant";
+						break;
+					case 'SpiderMastermind':
+						e.Replacement = "GWM_SpiderMastermind";
+						break;
+					case 'WolfensteinSS':
+						e.Replacement = "GWM_WolfensteinSS";
+						break;
 				}
 			}
         }
@@ -141,8 +177,32 @@ class ThingReplacer : StaticEventHandler
         CVar replaceObjects = CVar.FindCVar('gwm_replaceobjects');
 		if (replaceObjects.getBool())
 		{
-			if (e.Replacee == "ExplosiveBarrel")
-				e.Replacement = "GWM_ExplosiveBarrel";
+			let cls = e.Replacee.GetClassName(); //Although not necessary, it helps out for simplification.
+			switch(cls)
+			{
+				case 'ExplosiveBarrel':
+					e.Replacement = "GWM_ExplosiveBarrel";
+					break;
+				case 'DeadStick':
+					if (random(0,2) == 2)
+					{
+						if (replaceMonsters.getBool())
+						{
+							e.Replacement = "GWM_DeadBaronStick";
+							break;
+						}
+						else
+						{
+							e.Replacement = "GWM_DeadBaronStickGreenBlood";
+							break;
+						}
+					}
+					else if (random(0,2) == 1)
+					{
+						e.Replacement = "GWM_DeadHellKnightStick";
+						break;
+					}
+			}
 		}
 
 		// Weapons & Ammo
@@ -206,15 +266,6 @@ class ThingReplacer : StaticEventHandler
 				e.Replacement = "GWM_Perforator";
 				break;
 		}
-		/*
-		string ev2perfstr = "Perforator";
-		class<Actor> ev2perf = ev2perfstr;
-		if (ev2perf) // check if it exists for real
-		{
-			if (e.Replacee == ev2perf)
-				e.Replacement = "GWM_Perforator";
-		}
-		*/
     }
 	override void CheckReplacee(ReplacedEvent e)
 	{
@@ -224,11 +275,23 @@ class ThingReplacer : StaticEventHandler
 			case 'GWM_BaronOfHell':
 				e.Replacee = "BaronOfHell";
 				break;
+			case 'GWM_CyberBaron':
+				e.Replacee = "BaronOfHell";
+				break;
 			case 'GWM_Cyberdemon':
 				e.Replacee = "Cyberdemon";
 				break;
 			case 'GWM_Superdemon':
 				e.Replacee = "Cyberdemon";
+				break;
+			case 'GWM_SpiderMastermind':
+				e.Replacee = "SpiderMastermind";
+				break;
+			case 'GWM_Arachnotron':
+				e.Replacee = "Arachnotron";
+				break;
+			case 'GWM_Mancubus':
+				e.Replacee = "Fatso";
 				break;
 		}
 	}

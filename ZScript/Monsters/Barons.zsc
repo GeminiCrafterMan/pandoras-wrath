@@ -3,7 +3,7 @@ class GWM_BaronOfHell : BaronOfHell
 	Default
 	{
 		//$Category Monsters
-		Tag "Baron of Hell";
+		Tag "$TAG_BARON";
 		BloodColor "93 2F 00";
 	}
 	States
@@ -17,7 +17,7 @@ class GWM_BaronOfHell : BaronOfHell
 		Melee:
 		Missile:
 			BARN EF 8 A_FaceTarget;
-			BARN G 8 A_CustomComboAttack("GWM_BaronBall", 32, 10 * random(1, 8), "baron/melee");
+			BARN G 8 A_CustomComboAttack("GWM_BaronBall", 32, 45, "baron/melee");
 			Goto See;
 		Pain:
 			BARN H 2;
@@ -52,13 +52,81 @@ class GWM_BaronOfHell : BaronOfHell
 }
 class GWM_BaronBall : BaronBall
 {
+	Default
+	{
+		DamageFunction 36;
+	}
 	States
 	{
 		Spawn:
-			BARB AB 4 BRIGHT;
+			BARB AB 4 Bright;
 			Loop;
 		Death:
-			BARB CDE 6 BRIGHT;
+			BARB CDE 6 Bright;
 			Stop;
+	}
+}
+
+class GWM_CyberBaron : GWM_BaronOfHell
+{
+	Default
+	{
+		Tag "$TAG_CYBERBARON";
+		Obituary "$OB_CYBERBARON_FIREBALL";
+		HitObituary "$OB_CYBERBARON_SCRATCH";
+		Health 1200;
+		PainChance 40;
+		SeeSound "monsters/cbaron/sight";
+		PainSound "monsters/cbaron/pain";
+		DeathSound "monsters/cbaron/death";
+		ActiveSound "monsters/cbaron/active";
+		+NORADIUSDMG // Might remove this later.
+	}
+	states
+	{
+		Spawn:
+			CBOS AB 10 A_Look;
+			Loop;
+		See:
+			CBOS A 3 A_Chase;
+			CBOS A 3 A_Chase;
+			CBOS B 0 A_StartSound("monsters/cbaron/metal");
+			CBOS BB 3 A_Chase;
+			CBOS CC 3 A_Chase;		
+			CBOS D 3 A_Chase;
+			CBOS D 3 A_Hoof;
+			Loop;
+		Missile:
+			CBOS E 0 A_Jump(80,"Missile2");
+			CBOS E 10 A_FaceTarget;
+			CBOS E 10 A_FaceTarget;
+			CBOS F 10 Bright A_SpawnProjectile("GWM_EnemyRocket",27,16,0);
+			CBOS E 10 A_FaceTarget;
+			Goto See;
+		Melee:
+		Missile2:
+			CBOS PQ 8 A_FaceTarget;
+			CBOS R 8 A_CustomComboAttack("GWM_BaronBall", 32, 45, "baron/melee");
+			Goto See;
+		Pain:
+			CBOS H 2;
+			CBOS H 2 A_Pain;
+			Goto See;
+		Death:
+			CBOS I 8;
+			CBOS J 8 A_Scream;
+			CBOS K 8 Bright A_StartSound("world/barrelx");
+			CBOS L 8 Bright A_NoBlocking;
+			CBOS MN 8 Bright;
+			CBOS O -1 A_BossDeath;
+			Stop;
+		Death.Fire:
+			Goto Death;
+		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
+			CBOS O 8;
+			CBOS NMLK 8 Bright;
+			CBOS JI 8;
+			Goto See;
 	}
 }

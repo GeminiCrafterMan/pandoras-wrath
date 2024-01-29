@@ -4,7 +4,7 @@ Class GWM_FrostFang : GWM_WeaponBase replaces Blaster
 	{
 		Weapon.SelectionOrder 700;
 		Weapon.UpSound "weapons/draw_primary";
-		Tag "Frost Fang";
+		Tag "$TAG_FROSTFANG";
 		Inventory.PickupMessage "$GOTFROSTFANG";
 		Weapon.AmmoType "EverIce";
 		Weapon.AmmoUse 1;
@@ -23,10 +23,10 @@ Class GWM_FrostFang : GWM_WeaponBase replaces Blaster
 			FSTF BBBBBBBB 1 A_WeaponReady;
 			Goto Ready;
 		Select:
-			FSTF A 1 A_Raise(12);
+			FSTF A 1 A_Raise(18);
 			Loop;
 		Deselect:
-			FSTF A 1 A_Lower(12);
+			FSTF A 1 A_Lower(18);
 			Loop;
 		Fire:
 			FSTF A 3 Bright;
@@ -40,7 +40,7 @@ Class GWM_FrostFang : GWM_WeaponBase replaces Blaster
 				A_SpawnItemEx("IceFog2", 16, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-50, 50), SXF_CLIENTSIDE);
 				A_SpawnItemEx("IceFog2", 16, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-50, 50), SXF_CLIENTSIDE);
 				A_SpawnItemEx("IceFog2", 16, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-50, 50), SXF_CLIENTSIDE);
-				A_FireProjectile("FrostFangShard", 0, 1, Random(-5, 5), Random(-5, 5));
+				A_FireProjectile("GWM_FrostFangShard", 0, 1, Random(-5, 5), Random(-5, 5));
 			}
 			FSTF C 3 Bright A_Jump(12, 3); //Slight rare delay, for flavor
 			FSTF B 5 Bright A_ReFire;
@@ -79,7 +79,7 @@ Class GWM_FrostFangPowered : GWM_FrostFang
 				A_SpawnItemEx("IceFog2", 16, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-50, 50), SXF_CLIENTSIDE);
 				A_SpawnItemEx("IceFog2", 16, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-50, 50), SXF_CLIENTSIDE);
 				A_PlaySound("FrostFang/Fire2", CHAN_WEAPON);
-				A_FireProjectile("FrostFangBall");
+				A_FireProjectile("GWM_FrostFangBall");
 			}
 			FSTF C 6 Bright;
 			FSTF B 5 Bright A_ReFire;
@@ -88,14 +88,14 @@ Class GWM_FrostFangPowered : GWM_FrostFang
 	 }
 }
 
-Class FrostFangShard : Actor
+Class GWM_FrostFangShard : Actor
 {
 	Default
 	{
 		Speed 40;
 		Radius 6;
 		Height 6;
-		DamageFunction (4*Random(3, 5));
+		DamageFunction (16);
 		DamageType "Ice";
 		DeathSound "FrostFang/Hit1";
 		Scale 0.75;
@@ -116,13 +116,13 @@ Class FrostFangShard : Actor
 	}
 }
 
-Class FrostFangBall : Actor
+Class GWM_FrostFangBall : Actor
 {
 	Default
 	{
 		Radius 10;
 		Height 16;
-		DamageFunction (10*Random(2, 4));
+		DamageFunction (30);
 		Speed 20;
 		RenderStyle "Add";
 		Alpha 1.0;
@@ -139,7 +139,7 @@ Class FrostFangBall : Actor
 			TNT1 A 1
 			{
 				A_SpawnItemEx("IceFog2", 0, 0, 0, Random(1, 2), 0, Random(-1, 1), Random(-30, 30), SXF_CLIENTSIDE);
-				A_SpawnItemEx("FrostFangBallParticle", 0, 0, 0, Random(3, 4), 0, FRandom(-0.5, 0.5), Random(-15, 15), SXF_CLIENTSIDE);
+				A_SpawnItemEx("GWM_FrostFangBallParticle", 0, 0, 0, Random(3, 4), 0, FRandom(-0.5, 0.5), Random(-15, 15), SXF_CLIENTSIDE);
 			}
 			Loop;
 		Death:
@@ -149,7 +149,7 @@ Class FrostFangBall : Actor
 	}
 }
 
-Class FrostFangBallParticle : Actor
+Class GWM_FrostFangBallParticle : Actor
 {
 	Default
 	{
@@ -165,7 +165,7 @@ Class FrostFangBallParticle : Actor
 	States
 	{
 		Spawn:
-			IFOG A 4 A_FadeOut(0.2);
+			SGFL F 4 A_FadeOut(0.2);
 			Loop;
 	}
 }

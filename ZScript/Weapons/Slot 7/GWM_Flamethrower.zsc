@@ -4,7 +4,7 @@ class GWM_Flamethrower : GWM_WeaponBase
 	Default
 	{
 		// $Category Weapons
-		Tag "Flamethrower";
+		Tag "$TAG_FLAMETHROWER";
 		Weapon.UpSound "weapons/draw_primary";
 		Inventory.PickupSound "misc/w_pkup";
 		Inventory.PickupMessage "$GOTFLAMETHROWER";
@@ -25,10 +25,10 @@ class GWM_Flamethrower : GWM_WeaponBase
 			FLMG BCD 3 A_WeaponReady;
 			Loop;
 		Deselect:
-			FLMG A 1 A_Lower(12);
+			FLMG A 1 A_Lower(18);
 			Loop;
 		Select:
-			FLMG A 1 A_Raise(12);
+			FLMG A 1 A_Raise(18);
 			Loop;
 		Fire:
 			TNT1 A 0 A_StartSound("weapons/ftfiring", CHAN_WEAPON, CHANF_LOOPING);
@@ -63,7 +63,7 @@ class GWM_FTFire : GWM_FlameProjectile
 		Radius 2;
 		Height 4;
 		Speed 16;
-		Damage 1;
+		DamageFunction (5);
 		RenderStyle "Add";
 		DamageType "Fire";
 		Alpha 0.67;
@@ -104,7 +104,7 @@ class GWM_DropFire : GWM_FlameProjectile
 		-NOGRAVITY
 		+USEBOUNCESTATE
 		+NODAMAGETHRUST
-		Damage 1;
+		DamageFunction (5);
 		BounceType "Classic";
 		Radius 8;
 		Height 40;

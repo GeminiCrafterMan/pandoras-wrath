@@ -23,6 +23,8 @@ GOTMELTER = "You picked up the Melter!";
 GOTNOISECRUSHER = "You picked up the Noise Crusher!";
 GOTBFG9000 = "You picked up the BFG9000!! Oh yeah!";
 GOTFLAMETHROWER = "You picked up the Flamethrower! Burn, baby, burn!!";
+GOTPERFORATOR = "You got the Perforator!";
+
 // Ammo pickup messages
 GOTLOWCALCLIP = "Picked up a clip of low-caliber bullets.";
 GOTHIGHCALCLIP = "Picked up a clip of high-caliber bullets.";
@@ -42,11 +44,14 @@ GOTLARGEVENOMVIAL = "Picked up a large vial of venom.";
 GOTGASCANISTER = "Picked up a gasoline canister.";
 GOTGASPACK = "Picked up a pack of gasoline canisters.";
 GOTCYBERIMPARM = "Pulled the power cell out of a Cyber Imp's severed arm.";
+
 // Powerup messages
 GOTLIFEDRAIN = "Life drain!";
 GOTREFLECTIVE = "Reflective shots!";
 GOTSTOPWATCH = "Stopwatch!";
 GOTPORTABLEMEDKIT = "Portable medkit!";
+GOTKNIGHTSPHERE = "Knightsphere!";
+
 // Obituaries
 KILLPLACEHOLDER = "You shouldn't see this.";
 KILLMINES = "%o didn't see %k's land mine.";
@@ -74,13 +79,15 @@ KILLROCKET = "%o rode %k's rocket.";
 KILLGRENADE = "%o swallowed %k's grenade.";
 KILLVENOMCANNONBALL = "%o drank %k's toxic goop.";
 KILLVENOMCANNONPUDDLE = "%o was on the receiving end of the war crimes caused by %k's Venom Cannon.";
-//KILLPLASMARIFLE = "%o was melted by %k's Plasma Rifle."; // Unnecessary at the moment. If I change the plasma ball to do something else, sure.
+KILLPLASMARIFLE = "%o was melted by %k's Plasma Rifle.";
 KILLPLASMARIFLE_RAIL = "%o found out %g had a hole in %p chest thanks to %k's Plasma Rifle.";
 KILLMELTER = "%o was turned to ash by %k's Melter.";
 KILLNOISECRUSHER = "%o had %p eardrums blown out by %k's Noise Crusher.";
 KILLBFG9000 = "%o was reduced to atoms by %k's BFG9000.";
 KILLBFGBALL = "%o was turned to dust by %k's BFG9000.";
 KILLFLAMETHROWER = "%o got %p buns thoroughly toasted by %k's Flamethrower.";
+KILLPERFORATOR = "%o was shredded by %k's Perforator.";
+
 // Enemy kill messages
 OB_SMGGUY = "%o was riddled with bullets by an SMG zombie."; // change later. boring af
 OB_KAHUNASHOTGUNGUY = "%o was washed ashore by a shotgun zombie's Slayer's Kahuna.";
@@ -88,9 +95,74 @@ OB_ICESHOTGUNGUY = "%o got frozen solid by a shotgun zombie's Ice Shotgun.";
 OB_SHADOWHUNTER = "%o didn't see the Shadow Hunter's bullet.";
 OB_HEAVYRIFLEMAN = "%o was hole-punched by a Heavy Rifleman.";
 OB_HELLHOG = "%o was eaten whole by a Hellhog."; // los hoglin :)
-OB_NIGHTMAREIMP_SCRATCH = "%o was clawed open by a Nightmare Imp.";
-OB_NIGHTMAREIMP_FIRE = "%o was charred by a Nightmare Imp's fireball."; // fr, that shit's hard to see!!
+OB_DEVIL_SCRATCH = "%o was flayed by a Devil.";
+OB_DEVIL_FIREBALL = "%o was fried by a Devil.";
 OB_NIGHTSHADE = "%o couldn't escape the Nightshade.";
 OB_CYBERIMP_SCRATCH = "%o was dissected by a Cyber Imp.";
 OB_CYBERIMP_PLASMA = "%o was fried by a Cyber Imp's plasma.";
 OB_BLOT = "%o was engulfed by a Blot.";
+OB_CYBERBARON_FIREBALL = "%o was splayed by a Cyber Baron.";
+OB_CYBERBARON_SCRATCH = "%o was ripped to shreds by a Cyber Baron.";
+OB_SUPERDEMON = "%o was crushed by a Superdemon.";
+OB_CYBERHELLKNIGHT_FIREBALL = "%o was splayed by a Cyber Hell Knight.";
+OB_CYBERHELLKNIGHT_SCRATCH = "%o was ripped to shreds by a Cyber Hell Knight.";
+
+// Enemy tags
+TAG_ARACHNOTRON = "Arachnotron";
+TAG_BARON = "Baron of Hell";
+TAG_CYBERBARON = "Cyber Baron";
+TAG_CACODEMON = "Cacodemon";
+TAG_CHAINGUNNER = "Chaingunner";
+TAG_HEAVYRIFLEMAN = "Heavy Rifleman";
+TAG_CYBERDEMON = "Cyberdemon";
+TAG_SUPERDEMON = "Superdemon";
+TAG_HELLKNIGHT = "Hell Knight";
+TAG_CYBERHELLKNIGHT = "Cyber Hell Knight";
+TAG_DOOMIMP = "Imp";
+TAG_CYBERIMP = "Cyber Imp";
+TAG_NIGHTSHADE = "Nightshade";
+TAG_DEVIL = "Devil";
+TAG_LOSTSOUL = "Lost Soul";
+TAG_BLOT = "Blot";
+TAG_PINKY = "Pinky";
+TAG_SPECTRE = "Spectre";
+TAG_HELLHOG = "Hellhog";
+TAG_KAHUNASHOTGUNGUY = "\"Slayer's Kahuna\" Shotgun Zombie";
+TAG_ICESHOTGUNGUY = "Ice Shotgun Zombie";
+TAG_SHADOWHUNTER = "Shadow Hunter";
+TAG_ZOMBIEMAN = "Pistol Zombie";
+TAG_SMGGUY = "SMG Zombie";
+TAG_MANCUBUS = "Mancubus";
+TAG_REVENANT = "Revenant";
+TAG_WOLFENSTEINSS = "Nazi";
+TAG_SPIDERMASTERMIND = "Spider Mastermind";
+
+// Weapon tags
+TAG_FISTS = "Fists";
+TAG_IMPACTOR = "Impactor Gauntlet";
+TAG_LEVENBRECH = "Levenbrech";
+TAG_LUMBERJACK = "\"Lumberjack\" Chainsaw";
+TAG_MINE = "Mine";
+TAG_WAND = "Gold Wand";
+TAG_92FS = "Beretta 92FS";
+TAG_REVOLVER = "Revolver";
+TAG_SMG = "SMG";
+TAG_ICESHOTGUN = "Ice Shotgun";
+TAG_IMPALERCROSSBOW = "Impaler Crossbow";
+TAG_PFSUPERSHOTGUN = "Perfect Freeze Super Shotgun";
+TAG_SLAYERSKAHUNA = "\"Slayer's Kahuna\" Shotgun";
+TAG_SUPERSHOTGUN = "Super Shotgun";
+TAG_BURSTRIFLE = "Burst Rifle";
+TAG_CHAINGUN = "Chaingun";
+TAG_FROSTFANG = "Frost Fang";
+TAG_ROCKETLAUNCHER = "Rocket Launcher";
+TAG_VENOMCANNON = "Venom Cannon";
+TAG_MELTER = "Melter";
+TAG_NOISECRUSHER = "Noise Crusher";
+TAG_PLASMARIFLE = "Plasma Rifle";
+TAG_BFG9000 = "BFG9000";
+TAG_FLAMETHROWER = "Flamethrower";
+TAG_HELLKNIGHTCLAWS = "Hell Knight claws";
+
+// Other mods' weapons
+TAG_PERFORATOR = "Perforator";

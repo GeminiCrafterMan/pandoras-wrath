@@ -8,3 +8,34 @@
 #include "ZScript/Monsters/Cacodemons.zsc"
 #include "ZScript/Monsters/Lost Souls.zsc"
 #include "ZScript/Monsters/Cyberdemons.zsc"
+#include "ZScript/Monsters/Arachnotrons.zsc"
+#include "ZScript/Monsters/Mancubi.zsc"
+#include "ZScript/Monsters/Revenants.zsc"
+#include "ZScript/Monsters/Spider Masterminds.zsc"
+#include "ZScript/Monsters/Wolfenstein SS.zsc"
+
+class GWM_EnemyRocket : Rocket
+{
+	Default
+	{
+		-ROCKETTRAIL // I have my own rocket trails, thanks.
+		DamageFunction (90); // Derandomized damage
+	}
+	States
+	{
+		Spawn:
+			MISL A 2 Bright A_SpawnItemEx("GWM_RocketTrail", -20);
+			Loop;
+		Death:
+			TNT1 A 0 A_QuakeEx(3, 3, 3, 10, 0, 512, flags: QF_SHAKEONLY);
+			Goto Super::Death;
+	}
+}
+
+class GWM_EnemyPlasma : ArachnotronPlasma
+{
+	Default
+	{
+		DamageFunction (23);
+	}
+}

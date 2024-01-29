@@ -9,9 +9,10 @@ texture SSGFC0 NoTrim
 texture SSGFD0 NoTrim
 texture SSGFE0 NoTrim
 texture SSGFF0 NoTrim
-texture SSGFG0 NoTrim
-texture SSGFH0 NoTrim
 texture SSGGA0 NoTrim
 // Rocket Launcher
 texture RKTFA0 NoTrim
 texture RKTFB0 NoTrim
+texture RKTFC0 NoTrim
+texture RKTFD0 NoTrim
+texture RKTFE0 NoTrim

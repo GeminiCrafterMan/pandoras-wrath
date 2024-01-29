@@ -7,10 +7,10 @@ class GWM_Perforator : GWM_WeaponBase
 		Weapon.AmmoUse 25;
 		Weapon.AmmoType "GWM_LowCaliberClip";
 
-		Tag "Perforator";
-		Obituary "%o was shredded by %k's Perforator.";
+		Tag "$TAG_PERFORATOR";
+		Obituary "$KILLPERFORATOR";
 		Inventory.Icon "PRFGZ0";
-		Inventory.PickupMessage "You got the Perforator!";
+		Inventory.PickupMessage "$GOTPERFORATOR";
 	}
 	States
 	{
@@ -18,10 +18,10 @@ class GWM_Perforator : GWM_WeaponBase
 			PRFG A 1 A_WeaponReady;
 			Loop;
 		Deselect:
-			PRFG A 1 A_Lower(12);
+			PRFG A 1 A_Lower(18);
 			Loop;
 		Select:
-			PRFG A 1 A_Raise(12);
+			PRFG A 1 A_Raise(18);
 			Loop;
 		Flash:
 			PRFF A 3 Bright A_Light2;
@@ -36,19 +36,19 @@ class GWM_Perforator : GWM_WeaponBase
 			PRFG A 0 A_StartSound("weapon/gibditcher",1);
 			PRFG A 0 A_GunFlash("Flash");
 //			PRFG A 0 A_FireProjectile("_Rail Shot 1",0.0,0);
-			PRFG A 0 A_FireBullets(0.0, 0.0, 3, 141, "ZBulletPuff", FBF_USEAMMO, missile: "GWM_Tracer", spawnheight: 0);
+			PRFG A 0 A_FireBullets(0.0, 0.0, 3, 282, "ZBulletPuff", FBF_USEAMMO|FBF_NORANDOM, missile: "GWM_Tracer", spawnheight: 0); // holy FUCKING SHIT no wonder it's called the perforator
 			PRFG A 2;
 			PRFG A 2;
 			PRFG A 0 A_StartSound("weapon/gibditcher",1);
 			PRFG A 0 A_GunFlash("Flash");
 //			PRFG A 0 A_FireProjectile("_Rail Shot 2",0.0,0);
-			PRFG A 0 A_FireBullets(2.0, 0.5, 8, 40, "ZBulletPuff", 0, missile: "GWM_Tracer", spawnheight: 0);
+			PRFG A 0 A_FireBullets(2.0, 0.5, 8, 80, "ZBulletPuff", FBF_NORANDOM, missile: "GWM_Tracer", spawnheight: 0);
 			PRFG A 2;
 			PRFG A 2;
 			PRFG A 0 A_StartSound("weapon/gibditcher",1);
 			PRFG A 0 A_GunFlash("Flash2");
 //			PRFG A 0 A_FireProjectile("_Rail Shot 3",0.0,0);
-			PRFG A 0 A_FireBullets(4.0, 1.0, 20, 15, "ZBulletPuff", 0, missile: "GWM_Tracer", spawnheight: 0);
+			PRFG A 0 A_FireBullets(4.0, 1.0, 20, 30, "ZBulletPuff", FBF_NORANDOM, missile: "GWM_Tracer", spawnheight: 0);
 			PRFG A 3;
 			PRFG A 6;
 			PRFG B 5 A_CheckReload;

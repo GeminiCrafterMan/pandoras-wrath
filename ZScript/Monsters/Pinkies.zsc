@@ -3,7 +3,7 @@ class GWM_Pinky : Demon
 	Default
 	{
 		//$Category Monsters
-		Tag "Pinky";
+		Tag "$TAG_PINKY";
 	}
 	States
 	{
@@ -15,7 +15,7 @@ class GWM_Pinky : Demon
 			Loop;
 		Melee:
 			PNKY EF 8 Fast A_FaceTarget;
-			PNKY G 8 Fast A_SargAttack;
+			PNKY G 8 Fast A_CustomMeleeAttack(22);
 			Goto See;
 		Pain:
 			PNKY H 2 Fast;
@@ -68,7 +68,7 @@ class GWM_Spectre : GWM_Pinky
 		DeathSound "spectre/death";
 		ActiveSound "spectre/active";
 		Obituary "$OB_SPECTREHIT";
-		Tag "Spectre";
+		Tag "$TAG_SPECTRE";
 	}
 }
 
@@ -92,7 +92,7 @@ class GWM_Hellhog : Actor
 		DeathSound "monsters/hellhog/death";
 		ActiveSound "monsters/hellhog/active";
 		Obituary "$OB_HELLHOG";
-		Tag "Hellhog";
+		Tag "$TAG_HELLHOG";
 	}
 	States
 	{
@@ -104,7 +104,7 @@ class GWM_Hellhog : Actor
 			Loop;
 		Melee:
 			HHOG EF 8 Fast A_FaceTarget;
-			HHOG G 8 Fast A_CustomMeleeAttack(6);
+			HHOG G 8 Fast A_CustomMeleeAttack(33); // This was set to *6* for some reason...!?
 			Goto See;
 		Pain:
 			HHOG H 2 Fast;
