@@ -38,6 +38,7 @@ class GWM_Revolver : GWM_WeaponBase
 			RVLG B 2 {
 				ZWL_FireHitscan(3, 28, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
+				A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,5);
 				A_GunFlash();
 			}
 			RVLG CDDCA 2;

@@ -70,6 +70,7 @@ class GWM_Shotgun : GWM_WeaponBase
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
 				ZWL_FireHitscan(0, 12, pellets: 8, spread: 3, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
+				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 				A_GunFlash();
 				A_WeaponOffset(0, 42, WOF_INTERPOLATE);
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
@@ -111,6 +112,7 @@ class GWM_Shotgun : GWM_WeaponBase
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
 				ZWL_FireHitscan(0, 12, pellets: 8, spread: 6+(invoker.kahunaspread*0.75), tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
+				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 				A_GunFlash("Flash2");
 				A_WeaponOffset(0, 52, WOF_INTERPOLATE);
 				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);

@@ -17,7 +17,11 @@ class GWM_Zombieman : Zombieman
 			Loop;
 		Missile:
 			PZOM E 10 A_FaceTarget;
-			PZOM F 8 Bright A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 46, spawnofs_xy: 0);
+			PZOM F 8 Bright 
+			{
+			A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 46, spawnofs_xy: 0);
+			A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,15);	
+			}
 			PZOM E 8;
 			Goto See;
 		Pain:
@@ -25,11 +29,20 @@ class GWM_Zombieman : Zombieman
 			PZOM G 3 A_Pain;
 			Goto See;
 		Death:
+			TNT1 A 0 A_Jump(120,"Death2");
 			PZOM H 5;
 			PZOM I 5 A_Scream;
 			PZOM J 5 A_NoBlocking;
 			PZOM K 5;
 			PZOM L -1;
+			Stop;
+		Death2:
+			ZMAN A 5;
+			ZMAN B 5 A_Scream;
+			ZMAN C 5 A_NoBlocking;
+			ZMAN D 5;
+			ZMAN E 5;
+			ZMAN F -1;
 			Stop;
 		XDeath:
 			PZOM M 5;
@@ -87,15 +100,35 @@ class GWM_SMGGuy : Actor
 			Loop;
 		Missile:
 			MGPO E 8 A_FaceTarget;
-			MGPO F 3 Bright A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright 
+			{
+			A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,15);	
+			}
 			MGPO E 3;
-			MGPO F 3 Bright A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright 
+			{
+			A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,15);	
+			}
 			MGPO E 3;
-			MGPO F 3 Bright A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright 
+			{
+			A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,15);	
+			}
 			MGPO E 3;
-			MGPO F 3 Bright A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright
+			{
+			A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,15);	
+			}
 			MGPO E 3;
-			MGPO F 3 Bright A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			MGPO F 3 Bright 
+			{
+			A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,15);	
+			}
 			MGPO E 10;
 			Goto See;
 		Pain:

@@ -159,8 +159,8 @@ class GWM_Tracer : FastProjectile
 		//+BLOODSPLATTER
 		+HITTRACER
 		+NOINTERACTION
-		Scale .3;
-		MissileType "GWM_TracerTrail";
+		Scale .5;
+		//MissileType "GWM_TracerTrail";
 		MissileHeight 8;
 	}
 	States
@@ -228,6 +228,50 @@ class GWM_TracerSpark : Actor
 			WPUF B 6 BRIGHT A_SetTranslucent(.6,1);
 			WPUF C 8 BRIGHT A_SetTranslucent(.4,1);
 			WPUF D 10 BRIGHT A_SetTranslucent(.2,1);
+			Stop;
+	}
+}
+
+
+class GWM_MuzzleFlashLight : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	}
+	States
+	{
+		Spawn:
+			TNT1 AB 2 nodelay;
+			Stop;
+	}
+}
+
+
+class GWM_MuzzleFlashLight2 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	}
+	States
+	{
+		Spawn:
+			TNT1 AABC 2 nodelay;
+			Stop;
+	}
+}
+
+class GWM_MuzzleFlashLight3 : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	}
+	States
+	{
+		Spawn:
+			TNT1 AABCDE 2 nodelay;
 			Stop;
 	}
 }

@@ -1,0 +1,64 @@
+object GWM_MuzzleFlashLight {
+	frame TNT1A { light GWM_FLASH1 }
+	frame TNT1B { light GWM_FLASH2 }
+}
+
+object GWM_MuzzleFlashLight2 {
+	frame TNT1A { light GWM_FLASHSG1 }
+	frame TNT1B { light GWM_FLASHSG2 }
+	frame TNT1C { light GWM_FLASHSG3 }
+}
+
+object GWM_MuzzleFlashLight3 {
+	frame TNT1A { light GWM_FLASHSSG1 }
+	frame TNT1B { light GWM_FLASHSSG2 }
+	frame TNT1C { light GWM_FLASHSG1 }
+	frame TNT1D { light GWM_FLASHSG2 }
+	frame TNT1E { light GWM_FLASHSG3 }
+}
+
+pointlight GWM_FLASH1
+{
+	color 1 0.5 0.1
+	size 100
+	attenuate 1
+}
+
+pointlight GWM_FLASH2
+{
+	color 0.8 0.3 0.0
+	size 80
+	attenuate 1
+}
+
+pointlight GWM_FLASHSG1
+{
+	color 1 0.5 0.1
+	size 140
+	attenuate 1
+}
+pointlight GWM_FLASHSG2
+{
+	color 0.8 0.3 0.0
+	size 120
+	attenuate 1
+}
+pointlight GWM_FLASHSG3
+{
+	color 0.6 0.15 0.0
+	size 90
+	attenuate 1
+}
+
+pointlight GWM_FLASHSSG1
+{
+	color 1 0.7 0.2
+	size 180
+	attenuate 1
+}
+pointlight GWM_FLASHSSG2
+{
+	color 1 0.7 0.2
+	size 160
+	attenuate 1
+}

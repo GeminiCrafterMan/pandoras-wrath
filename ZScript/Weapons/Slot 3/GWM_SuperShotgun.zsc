@@ -27,6 +27,16 @@ class GWM_SuperShotgun : GWM_WeaponBase
 		Select:
 			SSGG A 1 A_Raise(18);
 			Loop;
+			
+		Recoil:
+			TNT1 AAA 1 A_SetPitch(pitch+1);
+			TNT1 AAAAAA 1 A_SetPitch(pitch-0.50);
+			Stop;
+			
+		Recoil2:
+			TNT1 AA 1 A_SetPitch(pitch+0.80);
+			TNT1 AAAAAA 1 A_SetPitch(pitch-0.40);
+			Stop;
 		Fire:
 			TNT1 A 0 {if (invoker.OneBarrel) {player.SetPSprite(OverlayID(), ResolveState("AltFire"));}}
 			SSGG A 2 {
@@ -35,7 +45,10 @@ class GWM_SuperShotgun : GWM_WeaponBase
 				ZWL_FireHitscan(0, 12, pellets: 20, spread: 7, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_Tracer");
 				A_StartSound("weapons/ssgshot1", CHAN_WEAPON);
 				A_GunFlash();
+				A_SpawnItemEx("GWM_MuzzleFlashLight3",0,0,5);
 				A_SpawnItemEx("GWM_Flash");
+				A_Overlay(55,"Recoil");
+				A_ChangeVelocity(-Cos(pitch)*2, 0, sin(pitch)*2,CVF_RELATIVE);
 				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
 				A_QuakeEx(3, 3, 3, 4, 0, 1, "", QF_SHAKEONLY);
 				invoker.Fired = true;
@@ -58,6 +71,8 @@ class GWM_SuperShotgun : GWM_WeaponBase
 				}
 				ZWL_FireHitscan(0, 12, pellets: 10, spread: 3.5, tracertype: "GWM_Tracer");
 				A_StartSound("weapons/ssgshot2", CHAN_WEAPON);
+				A_Overlay(55,"Recoil2");
+				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 				A_SpawnItemEx("GWM_Flash");
 				A_WeaponOffset(0, 12, WOF_ADD);
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);

@@ -56,6 +56,7 @@ class GWM_FireDamage : CustomInventory
 	}
 }
 
+
 class GWM_PoisonProjectile : Actor // the absolute most basic projectile base possible
 {
 	Default

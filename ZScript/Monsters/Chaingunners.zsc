@@ -11,7 +11,11 @@ class GWM_ChaingunGuy : ChaingunGuy
 	{
 		Missile:
 			CPOS E 10 A_FaceTarget;
-			CPOS FE 4 Bright A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 12);
+			CPOS FE 4 Bright 
+			{
+			A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 12);
+			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
+			}
 			CPOS F 1 A_CPosRefire;
 			Goto Missile+1;
 		Death.Fire:
@@ -51,11 +55,23 @@ class GWM_HeavyRifleman : ChaingunGuy
 			Loop;
 		Missile:
 			HEVY E 2 A_FaceTarget;
-			HEVY F 1 Bright A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			HEVY F 1 Bright 
+			{
+			A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
+			}
 			HEVY G 2 A_FaceTarget;
-			HEVY F 1 Bright A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			HEVY F 1 Bright 
+			{
+			A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
+			}
 			HEVY G 2 A_FaceTarget;
-			HEVY F 1 Bright A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			HEVY F 1 Bright 
+			{
+			A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
+			}
 			HEVY G 6; // nerfed and also matches actual burst rifle now
 			HEVY E 3 A_CPosRefire;
 			Goto Missile;
