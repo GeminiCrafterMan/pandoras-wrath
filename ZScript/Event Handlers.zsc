@@ -257,14 +257,89 @@ class ThingReplacer : StaticEventHandler
 			}
 		}
 
-		// Weapons from other mapsets... The only thing here right now is from Eviternity II.
+		// Weapons from other mapsets
 		// check if the class exists first
 		let cls = e.Replacee.GetClassName(); //Although not necessary, it helps out for simplification.
 		switch(cls)
 		{
+		// Eviternity II
 			case 'Perforator':
 				e.Replacement = "GWM_Perforator";
 				break;
+		// Godless Night
+			// weapons
+			case 'TangoPistol':
+				e.Replacement = "GWM_Pistol";
+				break;
+			case 'TangoShotgun':
+				e.Replacement = "GWM_ShotgunSpawner"; // Spawns either a Shotgun or an Ice Shotgun.
+				break;
+			case 'TangoAssaultRifle':
+				e.Replacement = "GWM_BurstRifle";
+				break;
+			case 'TangoChainsaw':
+				e.Replacement = "GWM_Lumberjack";
+				break;
+			case 'TangoMinigun':
+				e.Replacement = "GWM_Chaingun";
+				break;
+			case 'TangoPlasmaRifle':
+				e.Replacement = "GWM_PlasmaRifleSpawner";
+				break;
+			case 'TangoSuperShotgun':
+				e.Replacement = "GWM_SuperShotgunSpawner";
+				break;
+			case 'TangoRocketLauncher':
+				e.Replacement = "GWM_RocketLauncher";
+				break;
+			case 'TangoStomper':
+				e.Replacement = "GWM_VenomCannon";
+				break;
+			case 'TangoScrapgun':
+				e.Replacement = "GWM_Flamethrower";
+				break;
+			case 'TangoBFG9000': // tango's is way fucking better but i have no choice
+				e.Replacement = "GWM_BFG9000";
+				break;
+			// Nailgun seems to be unused and inaccessible
+			// Ammo
+			case 'TangoBulletClip':
+				e.Replacement = "GWM_ClipSpawner";
+				break;
+			case 'TangoBulletBox':
+				e.Replacement = "GWM_ClipBoxSpawner";
+				break;
+			case 'TangoShell':
+				e.Replacement = "GWM_ShellSpawner";
+				break;
+			case 'TangoShellBox':
+				e.Replacement = "GWM_ShellBoxSpawner";
+				break;
+			case 'TangoRocketAmmo':
+				e.Replacement = "GWM_RocketAmmo";
+				break;
+			case 'TangoRocketBox':
+				e.Replacement = "GWM_RocketBox";
+				break;
+			case 'TangoScrapDrum':
+				e.Replacement = "GWM_Gas";
+				break;
+			case 'TangoScrapDrumPack':
+				e.Replacement = "GWM_BigGas";
+				break;
+			case 'TangoCell':
+				e.Replacement = "GWM_Cell";
+				break;
+			case 'TangoCellPack':
+				e.Replacement = "GWM_CellPack";
+				break;
+			case 'TangoStomperAmmo':
+				e.Replacement = "GWM_VenomVial";
+				break;
+			case 'TangoStomperBox':
+				e.Replacement = "GWM_LargeVenomVial";
+				break;
+			// Nailgun seems to be unused and inaccessible
 		}
     }
 	override void CheckReplacee(ReplacedEvent e)
