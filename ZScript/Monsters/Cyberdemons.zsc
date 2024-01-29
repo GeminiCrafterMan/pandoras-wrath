@@ -99,7 +99,7 @@ class GWM_SuperDemonBall : Actor
 		Radius 6;
 		Height 16;
 		Speed 16;
-		DamageFactor (68);
+		DamageFunction (68);
 		Scale 1.5;
 		Renderstyle "Add";
 		SeeSound "baron/attack";

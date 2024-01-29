@@ -37,12 +37,11 @@ class GWM_Zombieman : Zombieman
 			PZOM L -1;
 			Stop;
 		Death2:
-			ZMAN A 5;
-			ZMAN B 5 A_Scream;
-			ZMAN C 5 A_NoBlocking;
-			ZMAN D 5;
-			ZMAN E 5;
-			ZMAN F -1;
+			PZOM V 5;
+			PZOM W 5 A_Scream;
+			PZOM X 5 A_NoBlocking;
+			PZOM YZ 5;
+			PZOM [ -1;
 			Stop;
 		XDeath:
 			PZOM M 5;
