@@ -165,7 +165,7 @@ Class GWM_FrostFangBallParticle : Actor
 	States
 	{
 		Spawn:
-			IFOG A 4 A_FadeOut(0.2);
+			SGFL F 4 A_FadeOut(0.2);
 			Loop;
 	}
 }
