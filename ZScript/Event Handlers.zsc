@@ -304,10 +304,10 @@ class ThingReplacer : StaticEventHandler
 			// Nailgun seems to be unused and inaccessible
 			// Ammo
 			case 'TangoBulletClip':
-				e.Replacement = "GWM_ClipSpawner";
+				e.Replacement = "GWM_MagazineSpawner";
 				break;
 			case 'TangoBulletBox':
-				e.Replacement = "GWM_ClipBoxSpawner";
+				e.Replacement = "GWM_MagazineBoxSpawner";
 				break;
 			case 'TangoShell':
 				e.Replacement = "GWM_ShellSpawner";

@@ -4,7 +4,7 @@ class GWM_Zombieman : Zombieman
 	{
 		//$Category Monsters
 		Tag "$TAG_ZOMBIEMAN";
-		DropItem "GWM_LowCaliberClip";
+		DropItem "GWM_LowCaliberMagazine";
 		AttackSound "weapons/92fsfire";
 	}
 	States

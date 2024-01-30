@@ -6,7 +6,7 @@ class GWM_BFG9000 : GWM_WeaponBase // dude this thing's gonna be gone anyway. i'
 		Weapon.UpSound "weapons/draw_primary";
 		Weapon.AmmoUse 40;
 		Weapon.AmmoGive 40;
-		Weapon.AmmoType "Cell";
+		Weapon.AmmoType "GWM_Cell";
 		+WEAPON.NOAUTOFIRE
 		Tag "$TAG_BFG9000";
 		Inventory.PickupMessage "$GOTBFG9000";

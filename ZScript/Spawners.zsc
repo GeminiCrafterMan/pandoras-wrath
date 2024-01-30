@@ -8,15 +8,15 @@ class GWM_WeaponSpawner : RandomSpawner
 	}
 }
 
-class GWM_ClipSpawner : GWM_WeaponSpawner replaces Clip
+class GWM_MagazineSpawner : GWM_WeaponSpawner replaces Clip
 {
 	Default
 	{
-		DropItem "GWM_LowCaliberClip";
-		DropItem "GWM_HighCaliberClip";
+		DropItem "GWM_LowCaliberMagazine";
+		DropItem "GWM_HighCaliberMagazine";
 	}
 }
-class GWM_ClipBoxSpawner : GWM_WeaponSpawner replaces ClipBox
+class GWM_MagazineBoxSpawner : GWM_WeaponSpawner replaces ClipBox
 {
 	Default
 	{

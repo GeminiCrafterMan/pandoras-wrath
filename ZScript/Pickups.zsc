@@ -4,6 +4,7 @@ class GWM_HealthBonus : HealthBonus replaces HealthBonus
 	{
 		Inventory.MaxAmount 300;
 		Inventory.PickupSound "pickups/healthbonus";
+		Inventory.PickupMessage "$GOTHEALTHBONUS";
 	}
 }
 
@@ -13,6 +14,7 @@ class GWM_ArmorBonus : ArmorBonus replaces ArmorBonus
 	{
 		Armor.MaxSaveAmount 300;
 		Inventory.PickupSound "pickups/armorbonus";
+		Inventory.PickupMessage "$GOTARMORBONUS";
 	}
 }
 

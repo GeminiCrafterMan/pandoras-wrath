@@ -5,7 +5,7 @@ class GWM_SMG : GWM_WeaponBase
 		Weapon.SelectionOrder 1800;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 50;
-		Weapon.AmmoType "GWM_LowCaliberClip";
+		Weapon.AmmoType "GWM_LowCaliberMagazine";
 
 		ZWeapon.MagazineSize 50;
 		ZWeapon.ReloadSound "weapons/smgclipin";

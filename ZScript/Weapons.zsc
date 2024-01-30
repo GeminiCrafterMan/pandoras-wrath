@@ -7,7 +7,6 @@
 #include "ZScript/Weapons/Slot 2/GWM_Pistol.zsc"			// Beretta 92FS
 #include "ZScript/Weapons/Slot 2/GWM_SMG.zsc"				// SMG
 #include "ZScript/Weapons/Slot 2/GWM_Revolver.zsc"			// Revolver
-#include "ZScript/Weapons/Slot 2/GWM_MP40.zsc"				// MP40
 
 #include "ZScript/Weapons/Slot 3/GWM_Shotgun.zsc"			// Slayer's Kahuna
 #include "ZScript/Weapons/Slot 3/GWM_SuperShotgun.zsc"		// Super Shotgun
@@ -16,6 +15,7 @@
 
 #include "ZScript/Weapons/Slot 4/GWM_Chaingun.zsc"			// Chaingun
 #include "ZScript/Weapons/Slot 4/GWM_BurstRifle.zsc"		// Burst Rifle
+#include "ZScript/Weapons/Slot 4/GWM_MP40.zsc"				// MP40
 
 #include "ZScript/Weapons/Slot 5/GWM_RocketLauncher.zsc"	// Rocket Launcher
 #include "ZScript/Weapons/Slot 5/GWM_VenomCannon.zsc"		// Venom Cannon (poison goop gun)

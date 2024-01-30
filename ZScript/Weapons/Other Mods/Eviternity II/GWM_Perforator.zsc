@@ -5,7 +5,7 @@ class GWM_Perforator : GWM_WeaponBase
 		Weapon.SelectionOrder 2800;
 		Weapon.AmmoGive 20;
 		Weapon.AmmoUse 25;
-		Weapon.AmmoType "GWM_LowCaliberClip";
+		Weapon.AmmoType "GWM_LowCaliberMagazine";
 
 		Tag "$TAG_PERFORATOR";
 		Obituary "$KILLPERFORATOR";

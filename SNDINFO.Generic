@@ -59,8 +59,8 @@ pickups/healthbonus			"Sounds/Pickups/Health Bonus.wav"
 pickups/armorbonus			"Sounds/Pickups/Armor Bonus.wav"
 
 // Ammo
-pickups/clip				"Sounds/Pickups/Clip.wav"
-pickups/clipbox				"Sounds/Pickups/Clip Box.wav"
+pickups/magazine			"Sounds/Pickups/Magazine.wav"
+pickups/magazinebox			"Sounds/Pickups/Magazine Box.wav"
 pickups/belt				"Sounds/Pickups/Belt.wav"
 pickups/shells				"Sounds/Pickups/Shells.wav"
 pickups/gas					"Sounds/Pickups/Gas.wav"

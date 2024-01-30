@@ -6,7 +6,7 @@ class GWM_MP40 : GWM_WeaponBase
 		Weapon.SelectionOrder 1800;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 32;
-		Weapon.AmmoType "GWM_LowCaliberClip";
+		Weapon.AmmoType "GWM_LowCaliberMagazine";
 
 		ZWeapon.MagazineSize 32;
 		ZWeapon.ReloadSound "weapons/smgclipin";
@@ -22,7 +22,7 @@ class GWM_MP40 : GWM_WeaponBase
 	States
 	{
 		Ready:
-			MP4G A 1 ZWL_WeaponReady(); // find a way to make this not have 33 rounds. maybe just reduce the mag size to 31 to compensate for zwl's wacky ass
+			MP4G A 1 ZWL_WeaponReady; // find a way to make this not have 33 rounds. maybe just reduce the mag size to 31 to compensate for zwl's wacky ass
 			Loop;
 		Deselect:
 			MP4G A 1 A_Lower(18);
@@ -31,6 +31,7 @@ class GWM_MP40 : GWM_WeaponBase
 			MP4G A 1 A_Raise(18);
 			Loop;
 		Fire:
+		// Did my best to replicate 500RPM, since the "fire rate" part of ZWL_FireHitscan is... unreliable, at best
 			MP4G A 2 {
 				ZWL_FireHitscan(3, 14, tracerType: "GWM_Tracer");
 //				A_FireBullets(7.6, 0, 1, 4, "ZBulletPuff", missile: "GWM_Tracer", spawnheight: 0);
@@ -38,19 +39,30 @@ class GWM_MP40 : GWM_WeaponBase
 				A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,5);
 				A_Overlay(-2, "Flash");
 				A_WeaponOffset(0, 4, WOF_ADD);
-				ZWL_EjectCasing("GWM_PistolCasing");//, offset: (24, 0, -10));
+				ZWL_EjectCasing("GWM_PistolCasing", left: true, offset: (24, 0, -10));
 			}
 			MP4G B 1 A_WeaponOffset(0, -1, WOF_ADD);
 			MP4G B 1 A_WeaponOffset(0, -3, WOF_ADD);
-			MP4G A 1 ZWL_ReFire;
+			MP4G A 0 { return ZWL_JumpIfEmpty("Fire.Empty"); }
+			MP4G A 1 ZWL_ReFire(null, true);
 			Goto Ready;
+		Fire.Empty:
+			TNT1 A 0 ZWL_CheckReload();
+			Goto Reload;
 		Flash:
-			MP4F A 2 Bright A_Light1;
-			MP4F B 2 Bright A_Light2;
+			MP4F A 1 Bright A_Light1;
+			MP4F B 1 Bright A_Light2;
 			Goto LightDone;
 		Reload:
+			MP4G CCDD 2;
+			MP4G E 2 {
+				A_StartSound("weapons/smgclipout");
+				ZWL_EjectCasing("GWM_PistolEmptyMag", true, 45, 2, 16, (24, 0, -24));
+			}
+			MP4G EEEE 2;
 			// todo: add reload animation
-			TNT1 A 0 ZWL_Reload(-1);
+			MP4G D 2 ZWL_Reload;
+			MP4G DCA 2;
 			Goto Ready;
 		Spawn:
 			MP4G Z -1;

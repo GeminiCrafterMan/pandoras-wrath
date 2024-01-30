@@ -13,7 +13,7 @@ class GWM_Chaingun : GWM_WeaponBase
 		Weapon.UpSound "weapons/draw_chaingun";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 20;
-		Weapon.AmmoType "GWM_HighCaliberClip";
+		Weapon.AmmoType "GWM_HighCaliberMagazine";
 		AttackSound "weapons/chainfire";
 		Inventory.PickupMessage "$GOTCHAINGUN";
 		Obituary "$KILLCHAINGUN";

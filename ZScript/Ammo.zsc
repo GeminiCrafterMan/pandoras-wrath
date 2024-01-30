@@ -1,29 +1,29 @@
-class GWM_LowCaliberClip : Ammo
+class GWM_LowCaliberMagazine : Ammo
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTLOWCALCLIP"; // "Picked up a clip of low-caliber bullets."
+		Inventory.PickupMessage "$GOTLOWCALMAG";
 		Inventory.Amount 10;
 		Inventory.MaxAmount 200;
 		Ammo.BackpackAmount 10;
 		Ammo.BackpackMaxAmount 400;
-		Inventory.Icon "CLIPA0";
-		Inventory.PickupSound "pickups/clip";
+		Inventory.Icon "MAGZA0";
+		Inventory.PickupSound "pickups/magazine";
 	}
 	States
 	{
 		Spawn:
-			CLIP A -1;
+			MAGZ A -1;
 			Stop;
 	}
 }
-class GWM_LowCaliberBox : GWM_LowCaliberClip
+class GWM_LowCaliberBox : GWM_LowCaliberMagazine
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTLOWCALBOX"; // "Picked up a box of low-caliber bullets."
+		Inventory.PickupMessage "$GOTLOWCALBOX";
 		Inventory.Amount 50;
-		Inventory.PickupSound "pickups/clipbox";
+		Inventory.PickupSound "pickups/magazinebox";
 	}
 	States
 	{
@@ -33,30 +33,30 @@ class GWM_LowCaliberBox : GWM_LowCaliberClip
 	}
 }
 
-class GWM_HighCaliberClip : Ammo
+class GWM_HighCaliberMagazine : Ammo
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTHIGHCALCLIP"; // "Picked up a clip of high-caliber bullets."
+		Inventory.PickupMessage "$GOTHIGHCALMAG";
 		Inventory.Amount 10;
 		Inventory.MaxAmount 200;
 		Ammo.BackpackAmount 10;
 		Ammo.BackpackMaxAmount 400;
-		Inventory.Icon "CLIPB0";
-		Inventory.PickupSound "pickups/clip";
+		Inventory.Icon "MAGZB0";
+		Inventory.PickupSound "pickups/magazine";
 	}
 	States
 	{
 		Spawn:
-			CLIP B -1;
+			MAGZ B -1;
 			Stop;
 	}
 }
-class GWM_HighCaliberBelt : GWM_HighCaliberClip
+class GWM_HighCaliberBelt : GWM_HighCaliberMagazine
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTHIGHCALBELT"; // "Picked up a belt of high-caliber bullets."
+		Inventory.PickupMessage "$GOTHIGHCALBELT";
 		Inventory.Amount 50;
 		Inventory.PickupSound "pickups/belt";
 	}
@@ -68,12 +68,12 @@ class GWM_HighCaliberBelt : GWM_HighCaliberClip
 	}
 }
 
-class GWM_Shell : Ammo // had to basically define my own shells so the spawner would play nice.
+class GWM_Shell : Ammo
 {
 	Default
 	{
 		Inventory.PickupSound "pickups/shells";
-		Inventory.PickupMessage "$GOTSHELLS"; // Redefined in LANGUAGE -- "Picked up a small box of shotgun shells."
+		Inventory.PickupMessage "$GOTSHELLS";
 		Inventory.Amount 4;
 		Inventory.MaxAmount 50;
 		Ammo.BackpackAmount 4;
@@ -91,7 +91,7 @@ class GWM_ShellBox : GWM_Shell
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTSHELLBOX"; // Redefined in LANGUAGE -- "Picked up a large box of shotgun shells."
+		Inventory.PickupMessage "$GOTSHELLBOX";
 		Inventory.Amount 20;
 	}
 	States
@@ -107,17 +107,17 @@ class GWM_IceShell : Ammo
 	Default
 	{
 		Inventory.PickupSound "pickups/shells";
-		Inventory.PickupMessage "$GOTICESHELLS"; // "Picked up a small box of ice shotgun shells."
+		Inventory.PickupMessage "$GOTICESHELLS";
 		Inventory.Amount 4;
 		Inventory.MaxAmount 50;
 		Ammo.BackpackAmount 4;
 		Ammo.BackpackMaxAmount 100;
-		Inventory.Icon "ISHLA0";
+		Inventory.Icon "SHELB0";
 	}
 	States
 	{
 		Spawn:
-			ISHL A -1;
+			SHEL B -1;
 			Stop;
 	}
 }
@@ -125,13 +125,13 @@ class GWM_IceShellBox : GWM_IceShell
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTICESHELLBOX"; // "Picked up a large box of ice shotgun shells."
+		Inventory.PickupMessage "$GOTICESHELLBOX";
 		Inventory.Amount 20;
 	}
 	States
 	{
 		Spawn:
-			ISHL B -1;
+			SBOX B -1;
 			Stop;
 	}
 }
@@ -140,7 +140,7 @@ class GWM_RocketAmmo : Ammo
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTROCKET"; // "Picked up a rocket."
+		Inventory.PickupMessage "$GOTROCKET";
 		Inventory.Amount 1;
 		Inventory.MaxAmount 50;
 		Ammo.BackpackAmount 1;
@@ -158,7 +158,7 @@ class GWM_RocketBox : GWM_RocketAmmo
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTROCKETBOX"; // "Picked up a box of rockets."
+		Inventory.PickupMessage "$GOTROCKETBOX";
 		Inventory.Amount 5;
 	}
 	States
@@ -173,7 +173,7 @@ class GWM_VenomVial : Ammo
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTVENOMVIAL";// "Picked up a small vial of venom."
+		Inventory.PickupMessage "$GOTVENOMVIAL";
 		Inventory.Amount 1;
 		Inventory.MaxAmount 50;
 		Ammo.BackpackAmount 1;
@@ -191,7 +191,7 @@ class GWM_LargeVenomVial : GWM_VenomVial
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTLARGEVENOMVIAL"; // "Picked up a large vial of venom."
+		Inventory.PickupMessage "$GOTLARGEVENOMVIAL";
 		Inventory.Amount 5;
 	}
 	States
