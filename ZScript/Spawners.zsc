@@ -64,7 +64,7 @@ class GWM_CellSpawner : GWM_WeaponSpawner replaces Cell
 	Default
 	{
 		DropItem "GWM_Cell";
-		DropItem "GWM_Gas";
+		DropItem "GWM_GasCanister";
 	}
 }
 
@@ -73,7 +73,7 @@ class GWM_CellPackSpawner : RandomSpawner replaces CellPack
 	Default
 	{
 		DropItem "GWM_CellPack_SpawnHeatsink";
-		DropItem "GWM_BigGas";
+		DropItem "GWM_GasPack";
 	}
 }
 

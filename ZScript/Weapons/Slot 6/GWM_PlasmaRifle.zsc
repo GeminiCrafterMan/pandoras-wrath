@@ -7,8 +7,8 @@ class GWM_PlasmaRifle : GWM_WeaponBase
 		Weapon.AmmoUse2 20;
 		Weapon.AmmoGive 40;
 		Weapon.SelectionOrder 100;
-		Weapon.AmmoType "Cell";
-		Weapon.AmmoType2 "Cell";
+		Weapon.AmmoType "GWM_Cell";
+		Weapon.AmmoType2 "GWM_Cell";
 		Decal "RailScorch";
 		Tag "$TAG_PLASMARIFLE";
 		Inventory.PickupMessage "$GOTPLASMARIFLE";

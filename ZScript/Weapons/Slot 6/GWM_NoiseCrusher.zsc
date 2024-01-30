@@ -9,7 +9,7 @@ class GWM_NoiseCrusher : GWM_WeaponBase
 		Inventory.PickupMessage "$GOTNOISECRUSHER";
 		Obituary "$KILLNOISECRUSHER";
 		Tag "$TAG_NOISECRUSHER";
-		Weapon.AmmoType "Cell";
+		Weapon.AmmoType "GWM_Cell";
 		Inventory.Icon "NCRGZ0";
 	}
 	States

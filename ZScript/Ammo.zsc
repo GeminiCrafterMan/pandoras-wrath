@@ -158,7 +158,7 @@ class GWM_RocketBox : GWM_RocketAmmo
 {
 	Default
 	{
-		Inventory.PickupMessage "$GOTROCKBOX"; // "Picked up a box of rockets."
+		Inventory.PickupMessage "$GOTROCKETBOX"; // "Picked up a box of rockets."
 		Inventory.Amount 5;
 	}
 	States
@@ -221,9 +221,39 @@ class GWM_MineAmmo : Ammo
 	}
 }
 
-class GWM_Cell : Cell {} // solely exists to prevent an infinite loop
-class GWM_CellPack : CellPack {} // exists for mapset
-class GWM_CellPack_SpawnHeatsink : CellPack // optionally spawns a Melter heatsink
+class GWM_Cell : Ammo
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTCELL";
+		Inventory.Amount 20;
+		Inventory.MaxAmount 300;
+		Ammo.BackpackAmount 20;
+		Ammo.BackpackMaxAmount 600;
+		Inventory.Icon "CELLA0";
+	}
+	States
+	{
+		Spawn:
+			CELL A -1;
+			Stop;
+	}
+}
+class GWM_CellPack : CellPack
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTCELLPACK";
+		Inventory.Amount 100;
+	}
+	States
+	{
+		Spawn:
+			CELL B -1;
+			Stop;
+	}
+}
+class GWM_CellPack_SpawnHeatsink : GWM_CellPack // optionally spawns a Melter heatsink
 {
 	override void BeginPlay()
 	{
@@ -233,7 +263,7 @@ class GWM_CellPack_SpawnHeatsink : CellPack // optionally spawns a Melter heatsi
 	}
 }
 
-class GWM_Gas : Ammo
+class GWM_GasCanister : Ammo
 {
 	Default
 	{
@@ -252,7 +282,7 @@ class GWM_Gas : Ammo
 			Stop;
 	}
 }
-class GWM_BigGas : GWM_Gas
+class GWM_GasPack : GWM_GasCanister
 {
 	Default
 	{

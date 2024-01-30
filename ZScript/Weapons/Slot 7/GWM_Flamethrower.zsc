@@ -9,7 +9,7 @@ class GWM_Flamethrower : GWM_WeaponBase
 		Inventory.PickupSound "misc/w_pkup";
 		Inventory.PickupMessage "$GOTFLAMETHROWER";
 		Obituary "$KILLFLAMETHROWER";
-		Weapon.AmmoType "GWM_Gas";
+		Weapon.AmmoType "GWM_GasCanister";
 		Weapon.AmmoGive 48;
 		Weapon.AmmoUse 1;
 		+Weapon.Explosive

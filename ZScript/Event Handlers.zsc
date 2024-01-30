@@ -322,10 +322,10 @@ class ThingReplacer : StaticEventHandler
 				e.Replacement = "GWM_RocketBox";
 				break;
 			case 'TangoScrapDrum':
-				e.Replacement = "GWM_Gas";
+				e.Replacement = "GWM_GasCanister";
 				break;
 			case 'TangoScrapDrumPack':
-				e.Replacement = "GWM_BigGas";
+				e.Replacement = "GWM_GasPack";
 				break;
 			case 'TangoCell':
 				e.Replacement = "GWM_Cell";
