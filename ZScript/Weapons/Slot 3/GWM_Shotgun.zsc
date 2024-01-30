@@ -156,7 +156,7 @@ class GWM_Shotgun : GWM_WeaponBase
 				A_Light1();
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
 			}
-			SKSF A 3 Bright A_Light1;
+			SKSF A 2 Bright A_Light1;
 			SKSF B 3 Bright {
 				A_Light2();
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
