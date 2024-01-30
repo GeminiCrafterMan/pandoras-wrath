@@ -123,7 +123,7 @@ class ZWeapon : Weapon
 		wrf |= !(flags & ZRF_NoReload) && !invoker.IsFull(flags & ZRF_ExtraRound)
 			&& (invoker.CheckMagazine(false) || !(flags & ZRF_NoPartialReload))
 			&& invoker.WasPressed(BT_Reload) ? WRF_AllowReload : 0;
-
+// G: look at this further later, it's 1:33 am somehow
 		A_WeaponReady(wrf);
 	}
 

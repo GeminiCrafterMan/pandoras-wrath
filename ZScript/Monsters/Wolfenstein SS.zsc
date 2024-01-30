@@ -3,8 +3,8 @@ class GWM_WolfensteinSS : WolfensteinSS
 	Default
 	{
 		Tag "$TAG_WOLFENSTEINSS";
-		AttackSound "weapons/smgfire";
-		DropItem "GWM_LowCaliberClip";
+		AttackSound "weapons/mp40_fire";
+		DropItem "GWM_MP40";
 	}
 	States
 	{

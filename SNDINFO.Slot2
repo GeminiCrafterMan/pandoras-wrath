@@ -21,5 +21,8 @@ weapons/rvlvreload1	"Sounds/Weapons/Slot 2/Revolver/revolver_reload_cylinder_ope
 weapons/rvlvreload2	"Sounds/Weapons/Slot 2/Revolver/revolver_reload_cylinder_arm.wav"
 weapons/rvlvreload3	"Sounds/Weapons/Slot 2/Revolver/revolver_reload_cylinder_close.wav"
 
+// MP40
+weapons/mp40fire	"Sounds/Weapons/Slot 2/mp40_fire.wav"
+
 // Gold Wand
 weapons/wandhit		"Sounds/Weapons/Slot 2/wand_fire.wav"
