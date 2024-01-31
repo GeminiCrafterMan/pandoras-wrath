@@ -80,6 +80,8 @@ class GWM_CyberHellKnight : GWM_HellKnight
 		PainSound "monsters/chknight/pain";
 		DeathSound "monsters/chknight/death";
 		ActiveSound "monsters/chknight/active";
+		DropItem "GWM_RocketAmmo";
+		DropItem "GWM_RocketAmmo";
 		+NORADIUSDMG // Might remove this later.
 	}
 	States
