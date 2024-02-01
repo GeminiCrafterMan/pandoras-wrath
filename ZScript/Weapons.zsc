@@ -1,3 +1,6 @@
+// Weapon bases
+#include "ZScript/Weapons/Weapon base classes.zsc"
+
 // Doom
 #include "ZScript/Weapons/Slot 1/GWM_Mine.zsc"				// Land mine 
 #include "ZScript/Weapons/Slot 1/GWM_Fists.zsc"				// Fists, taken from Super Skulltag and rewritten slightly, then modified heavily.
@@ -41,22 +44,3 @@
 
 // Morph weapons
 #include "ZScript/Weapons/GWM_HellKnightClaws.zsc"	// Hell Knight's claws
-
-// Base weapon class
-class GWM_WeaponBase : ZWeapon
-{
-	Default
-	{
-		//$Category Weapons
-		+THRUGHOST
-		+WEAPON.NOAUTOSWITCHTO
-		Weapon.Kickback 100;
-		Weapon.UpSound "weapons/draw_default";
-		Obituary "$KILLPLACEHOLDER";
-		Tag "Weapon base";
-		Weapon.BobStyle "Smooth";
-		Weapon.BobRangeX 1.0;
-		Weapon.BobRangeY 1.0;
-		Weapon.BobSpeed 1.0;
-	}
-}

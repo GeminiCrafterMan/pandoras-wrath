@@ -16,3 +16,7 @@ texture RKTFB0 NoTrim
 texture RKTFC0 NoTrim
 texture RKTFD0 NoTrim
 texture RKTFE0 NoTrim
+// Plasma Rifle
+texture PLSFA0 NoTrim
+texture PLSFB0 NoTrim
+texture PLSFC0 NoTrim
