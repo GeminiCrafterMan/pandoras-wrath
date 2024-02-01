@@ -33,7 +33,7 @@ class GWM_PlasmaRifle : GWM_WeaponBase
 		Fire:
 			PLSG A 1 {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				ZWL_FireProjectile("PlasmaBall", 0);
+				ZWL_FireProjectile("GWM_PlasmaBall", 0);
 				A_SpawnItemEx("GWM_PlasmaFlash");
 				A_GunFlash();
 				A_WeaponOffset(0, 4, WOF_ADD);

@@ -7,5 +7,71 @@ class GWM_TwinPlasmaCannons : GWM_AkimboWeaponBase
 		Obituary "$KILLTWINS";
 		Tag "$TAG_TWINS";
 		AttackSound "weapons/plasmashot";
+		Weapon.AmmoType1 "GWM_Cell";
+		Weapon.AmmoType2 "GWM_Cell";
+		Weapon.AmmoUse 3;
+		Weapon.AmmoUse2 3;
+		Weapon.AmmoGive 40;
+		Tag "$TAG_PLASMARIFLE";
+		Inventory.PickupMessage "$GOTPLASMARIFLE";
+		AttackSound "weapons/plasmashot";
+	}
+	States
+	{
+		Spawn:
+			PLSG Z -1;
+			Stop;
+		/*////////////////////////
+			LEFT HAND STATES
+		*/////////////////////////
+		Ready.Left:
+			TWNG B 1 Left_WeaponReady();
+			Loop;
+		Deselect.Left:
+			TWNG B 1;
+			Loop;
+		Select.Left:
+			TWNG B 1 Left_Raise();
+			Loop;
+		Fire.Left:
+			TWNG B 1 {
+				ZWL_FireProjectile("GWM_PlasmaBall", 0, offset: (0, 0, 0), angleOfs: 30, flags: ZPF_NoSound|ZPF_DontUseAmmo);
+				ZWL_FireProjectile("GWM_PlasmaBall", 0, offset: (0, 0, 0), angleOfs: 15);
+				ZWL_FireProjectile("GWM_PlasmaBall", 0, offset: (0, 0, 0), angleOfs: -0, flags: ZPF_NoSound|ZPF_DontUseAmmo);
+				Left_GunFlash();
+			}
+			TWNG B 2;
+			TNT1 A 0 A_CheckReload;
+			TWNG B 3 Left_ReFire();
+			Goto Ready.Left;
+		Flash.Left:
+			TWNF B 2 Bright A_Light1;
+			Goto LightDone;
+		/*////////////////////////
+			RIGHT HAND STATES
+		*/////////////////////////
+		Ready.Right:
+			TWNG A 1 Right_WeaponReady();
+			Loop;
+		Deselect.Right:
+			TWNG A 1;
+			Loop;
+		Select.Right:
+			TWNG A 1 Right_Raise();
+			Loop;
+		Fire.Right:
+			TWNG A 1 {
+				ZWL_FireProjectile("GWM_PlasmaBall", 0, offset: (0, 0, 0), angleOfs: -30, flags: ZPF_NoSound|ZPF_DontUseAmmo);
+				ZWL_FireProjectile("GWM_PlasmaBall", 0, offset: (0, 0, 0), angleOfs: -15);
+				ZWL_FireProjectile("GWM_PlasmaBall", 0, offset: (0, 0, 0), angleOfs: 0, flags: ZPF_NoSound|ZPF_DontUseAmmo);
+				Right_GunFlash();
+			}
+			TWNG A 2;
+			TNT1 A 0 A_CheckReload;
+			TWNG A 3 Right_ReFire();
+			Goto Ready.Right;
+		Flash.Right:
+			TWNF A 2 Bright A_Light1;
+			Goto LightDone;
 	}
 }
