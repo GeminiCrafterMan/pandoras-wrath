@@ -167,7 +167,7 @@ class GWM_ShotgunIce : GWM_IceProjectile
 		Radius 13;
 		Height 13;
 		Speed 50;
-		Damage 30;
+		DamageFunction (135);
 		Scale 0.33;
 		+THRUGHOST
 		+RANDOMIZE
@@ -201,7 +201,7 @@ class GWM_ShotgunIceChunk : GWM_ShotgunIce
 	{
 		Radius 7;
 		Height 7;
-		Damage 6;
+		DamageFunction (27);
 		+RIPPER
 		BounceType "Doom";
 		BounceCount 2;
@@ -223,13 +223,10 @@ class GWM_ShotgunIceTrail : Actor
 		Radius 13;
 		Height 8;
 		Speed 45; // parent - 5
-		Damage 0;
 		Projectile;
 		+RANDOMIZE;
 		RenderStyle "Add";
 		Alpha 0.75;
-		DeathSound "weapons/icehit";
-		Obituary "$KILLICESHOTGUN";
 	}
 	States
 	{

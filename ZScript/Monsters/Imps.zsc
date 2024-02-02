@@ -145,7 +145,7 @@ class GWM_CyberImp : Actor
 			Goto See;
 	}
 }
-class GWM_CyberImpArm : Cell
+class GWM_CyberImpArm : GWM_Cell
 {
 	Default
 	{
