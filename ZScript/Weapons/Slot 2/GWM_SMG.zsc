@@ -36,10 +36,12 @@ class GWM_SMG : GWM_WeaponBase
 				A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,5);
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
+				A_Setpitch(pitch+0.75);
 				A_WeaponOffset(0, 2, WOF_ADD);
 				ZWL_EjectCasing("GWM_PistolCasing");
 			}
-			SMGG AA 1 A_WeaponOffset(0, -1, WOF_ADD);
+			SMGG AA 1 {A_WeaponOffset(0, -1, WOF_ADD); A_Setpitch(pitch-.375);}
+				
 			SMGG A 1 { return ZWL_JumpIfEmpty("Fire.Empty"); }
 			SMGG A 2 ZWL_ReFire(null, true);
 			Goto Ready;

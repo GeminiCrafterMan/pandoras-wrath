@@ -6,6 +6,7 @@ class GWM_Chaingun : GWM_WeaponBase
 		ZWL_FireHitscan(4, 18, tracerType: "GWM_Tracer");
 		ZWL_EjectCasing("GWM_RifleCasing", true, -23, 8, 16, (24, 0, -16));
 		A_SetPitch(pitch-0.5);
+		A_Setangle(angle+frandom(-.5,.5));
 	}
 	Default
 	{

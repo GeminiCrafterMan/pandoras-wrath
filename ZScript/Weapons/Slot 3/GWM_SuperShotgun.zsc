@@ -29,8 +29,8 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			Loop;
 			
 		Recoil:
-			TNT1 AAA 1 A_SetPitch(pitch+1);
-			TNT1 AAAAAA 1 A_SetPitch(pitch-0.50);
+			TNT1 AAA 1 A_SetPitch(pitch+1.5);
+			TNT1 AAAAAA 1 A_SetPitch(pitch-0.75);
 			Stop;
 			
 		Recoil2:

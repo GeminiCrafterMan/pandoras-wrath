@@ -35,13 +35,15 @@ class GWM_Revolver : GWM_WeaponBase
 			Loop;
 		Fire:
 			TNT1 A 0 {return ZWL_JumpIfEmpty("Fire.Empty");}
-			RVLG B 2 {
-				ZWL_FireHitscan(3, 28, tracerType: "GWM_Tracer");
+			RVLG B 1 {
+				ZWL_FireHitscan(1, 32, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,5);
 				A_GunFlash();
+				A_Setpitch(pitch-2.5);
 			}
-			RVLG CDDCA 2;
+			RVLG B 1 A_Setpitch(pitch-2.5);
+			RVLG CCDDDDCCAA 1 A_Setpitch(pitch+0.5);
 			TNT1 A 0 ZWL_ReFire(null, true);
 			Goto Ready;
 		Fire.Empty:

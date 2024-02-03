@@ -6,6 +6,8 @@ class GWM_BurstRifle : GWM_WeaponBase
 		ZWL_FireHitscan(1, 12, tracerType: "GWM_Tracer");
 		ZWL_EjectCasing("GWM_RifleCasing");
 		A_WeaponOffset(0, 6, WOF_ADD);
+		A_SetPitch(pitch-0.5);
+		A_Setangle(angle+frandom(-.5,.5));
 	}
 	Default
 	{

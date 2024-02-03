@@ -38,11 +38,12 @@ class GWM_MP40 : GWM_WeaponBase
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,5);
 				A_Overlay(-2, "Flash");
+				A_Setpitch(pitch-0.5);
 				A_WeaponOffset(0, 4, WOF_ADD);
 				ZWL_EjectCasing("GWM_PistolCasing", left: true, offset: (24, 0, -10));
 			}
-			MP4G B 1 A_WeaponOffset(0, -1, WOF_ADD);
-			MP4G B 1 A_WeaponOffset(0, -3, WOF_ADD);
+			MP4G B 1 {A_WeaponOffset(0, -1, WOF_ADD); A_Setpitch(pitch+0.25);}
+			MP4G B 1 {A_WeaponOffset(0, -3, WOF_ADD); A_Setpitch(pitch+0.25);}
 			MP4G A 0 { return ZWL_JumpIfEmpty("Fire.Empty"); }
 			MP4G A 1 ZWL_ReFire(null, true);
 			Goto Ready;
