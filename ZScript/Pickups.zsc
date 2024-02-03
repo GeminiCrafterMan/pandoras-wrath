@@ -37,7 +37,8 @@ class GWM_Backpack : Backpack replaces Backpack
 class GWM_Berserk : Berserk
 {
 	override void Touch(Actor toucher) {
-		toucher.A_StartSound("player/berserk", CHAN_VOICE);
+		if (CVar.GetCVar('gwm_shutupmerc', toucher.player).GetBool() == false) 
+			toucher.A_StartSound("player/berserk", CHAN_VOICE);
 		Super.Touch(toucher);
 	}
 	States

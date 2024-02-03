@@ -6,6 +6,7 @@ OptionMenu gwm_Options
 	Option "Replace monsters"			, gwm_replacemonsters	, OnOff
 	Option "Replace objects"			, gwm_replaceobjects	, OnOff
 	Option "No alternative replacements", gwm_noaltreplacements	, OnOff
+	Option "No intro/berserk dialogue"	, gwm_shutupmerc		, OnOff
 }
 
 // Entry points

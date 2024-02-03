@@ -5,13 +5,15 @@ class PlayerSpawnLines : StaticEventHandler
         if (_event.IsSaveGame) return;
         
         let player = players[consoleplayer].mo;
-        player.A_StartSound("player/battlecry", CHAN_VOICE);
+		if (CVar.GetCVar('gwm_shutupmerc', players[consoleplayer]).GetBool() == false) 
+        	player.A_StartSound("player/battlecry", CHAN_VOICE);
     }
     
     override void PlayerRespawned(PlayerEvent _event)
     {
         let player = players[_event.playernumber].mo;
-        player.A_StartSound("player/respawn", CHAN_VOICE);
+		if (CVar.GetCVar('gwm_shutupmerc', players[_event.playernumber]).GetBool() == false) 
+        	player.A_StartSound("player/respawn", CHAN_VOICE);
     }
 }
 

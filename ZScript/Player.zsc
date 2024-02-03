@@ -4,13 +4,16 @@ class GWM_Player : DoomPlayer
 	override void Tick()
 	{
 		super.Tick();
-		if (player && prevPlayerState != player.playerstate)
+		if (CVar.GetCVar('gwm_shutupmerc', player).GetBool() == false) 
 		{
-			if (prevPlayerState == PST_DEAD && player.playerstate == PST_LIVE)	// for singleplayer resurrects
+			if (player && prevPlayerState != player.playerstate)
 			{
-				A_StartSound("player/respawn", CHAN_VOICE);
+				if (prevPlayerState == PST_DEAD && player.playerstate == PST_LIVE)	// for singleplayer resurrects
+				{
+					A_StartSound("player/respawn", CHAN_VOICE);
+				}
+				prevPlayerState = player.playerstate;
 			}
-			prevPlayerState = player.playerstate;
 		}
 
 		if(!player || !player.ReadyWeapon) return;
