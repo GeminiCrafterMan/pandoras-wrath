@@ -14,6 +14,7 @@ class GWM_Shotgun : GWM_WeaponBase
 		ZWeapon.ReloadSound "weapons/shell_load";
 		ZWeapon.ClickSound "weapons/skempty";
 
+		GWM_WeaponBase.BaseVersion "GWM_ZombieShotgun";
 		Tag "$TAG_SLAYERSKAHUNA";
 		Inventory.PickupMessage "$GOTSLAYERSKAHUNA";
 		Obituary "$KILLSLAYERSKAHUNA";

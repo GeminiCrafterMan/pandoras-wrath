@@ -4,6 +4,7 @@ class GWM_Player : DoomPlayer
 	override void Tick()
 	{
 		super.Tick();
+		if(!player || !player.ReadyWeapon) return;
 		if (CVar.GetCVar('gwm_shutupmerc', player).GetBool() == false) 
 		{
 			if (player && prevPlayerState != player.playerstate)
@@ -15,8 +16,6 @@ class GWM_Player : DoomPlayer
 				prevPlayerState = player.playerstate;
 			}
 		}
-
-		if(!player || !player.ReadyWeapon) return;
 		if(player.playerstate == PST_DEAD)
 		{
 			player.ReadyWeapon.FOVScale = 0.0;

@@ -1,6 +1,56 @@
 // Base weapon class
 class GWM_WeaponBase : ZWeapon
 {
+	class<Weapon> baseVersion;
+	property BaseVersion : baseVersion;
+	override void AttachToOwner(Actor other)
+	{
+		Super.AttachToOwner(other);
+		if (!baseVersion)
+			return;
+		// Remove base version on pickup:
+		if (owner)
+		{
+			let basever = owner.FindInventory(baseVersion);
+			if (basever)
+			{
+				basever.GoAwayAndDie();
+			}
+		}
+	}
+	override void DoEffect()
+	{
+		Super.DoEffect();
+		if (!owner || !owner.player || !baseVersion)
+			return;
+
+		// check if the player currently has base version:
+		let basever = Weapon(owner.FindInventory(baseVersion));
+		if (basever)
+		{
+			// If they do and it's currently selected, switch
+			// to self instead:
+			let rweap = owner.player.readyweapon;
+			if (rweap == basever)
+			{
+				owner.player.pendingweapon = self;
+			}
+			// And remove base version from inventory:
+			basever.GoAwayAndDie();
+		}
+	}
+	override bool HandlePickup(Inventory item)
+	{
+		// If receiving another base version for any reason,
+		// give ammo instead and remove the base version instance:
+		if (baseversion && item.GetClass() == baseVersion)
+		{
+			Weapon(item).PickupForAmmo(self);
+			item.bPickupGood = true;
+			return true;
+		}
+		return super.HandlePickup(item);
+	}
 	Default
 	{
 		//$Category Weapons

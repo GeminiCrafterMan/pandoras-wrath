@@ -123,6 +123,13 @@ class GWM_IceShotgun : GWM_WeaponBase
 			ISHT A 7 A_ReFire;
 			Goto Ready;
 		AltFire:
+			TNT1 A 0 {
+				if (!invoker.DepleteAmmo(false, true))
+				{
+					A_PlaySound(invoker.clickSound, CHAN_Auto);
+					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Weird, fucked-up way of making it click instead.
+				}
+			}
 			ISHT B 5;
 			ISHT C 4;
 			ISHT D 5 {
