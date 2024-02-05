@@ -1,3 +1,7 @@
+// Zombie shotgun
+texture ZSHFA0 NoTrim
+texture ZSHFB0 NoTrim
+texture ZSHGA0 NoTrim
 // Slayer's Kahuna
 texture SKSFA0 NoTrim
 texture SKSFB0 NoTrim

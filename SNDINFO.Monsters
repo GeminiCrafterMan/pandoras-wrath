@@ -103,3 +103,6 @@ monsters/cbaron/pain		"Sounds/Monsters/Bruisers/CBARNPAI.wav"
 monsters/cbaron/death		"Sounds/Monsters/Bruisers/CBARNDTH.wav"
 monsters/cbaron/active		"Sounds/Monsters/Bruisers/CBARNACT.wav"
 monsters/cbaron/metal		"Sounds/Monsters/Bruisers/CMETAL.ogg"
+
+// Kahuna Shotgun Guy
+monsters/skguy/warning		"Sounds/Monsters/Kahuna Shotgun Guy/PRESHOOT.wav"

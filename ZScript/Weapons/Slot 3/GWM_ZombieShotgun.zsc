@@ -1,0 +1,106 @@
+class GWM_ZombieShotgun : GWM_WeaponBase
+{
+	Default
+	{
+		Weapon.SelectionOrder 1600; // dude this thing sucks ASS but at least it's a shotgun
+		Inventory.PickupSound "weapons/zsgpickup";
+		Weapon.UpSound "weapons/draw_secondary";
+		Weapon.AmmoType "GWM_Shell";
+		Weapon.AmmoUse 1;
+		Weapon.AmmoGive 7;
+		
+		ZWeapon.MagazineSize 6;
+		ZWeapon.ReloadSound "weapons/shell_load";
+		ZWeapon.ClickSound "weapons/skempty";
+
+		Tag "$TAG_ZOMBIESHOTGUN";
+		Inventory.PickupMessage "$GOTZOMBIESHOTGUN";
+		Obituary "$KILLZOMBIESHOTGUN";
+		AttackSound "weapons/zsgshot";
+	}
+	States
+	{
+		Spawn:
+			ZSHG Z -1;
+			Stop;
+		Select:
+			ZSHG A 1 A_Raise(18);
+			Loop;
+		Deselect:
+			ZSHG A 1 A_Lower(18);
+			Loop;
+		Ready:
+			ZSHG A 1 ZWL_WeaponReady(ZRF_ExtraRound);
+			Loop;
+		Fire:
+			ZSHG A 1 Bright {
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
+				ZWL_FireHitscan(0, 10, pellets: 6, spread: 7, tracerType: "GWM_Tracer");
+				A_SpawnItemEx("GWM_Flash");
+				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
+				A_GunFlash();
+				A_WeaponOffset(0, 42, WOF_INTERPOLATE);
+				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
+				A_QuakeEx(1.5, 1.5, 1.5, 4, 0, 1, "", QF_SHAKEONLY);
+			}
+			ZSHG A 2 Bright;
+			ZSHG A 1 Bright {
+				A_WeaponOffset(0, -5, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+			}
+			ZSHG AA 1 Bright;
+			ZSHG A 1 {
+				A_WeaponOffset(0, -5, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+			}
+			TNT1 A 0 ZWL_CheckReload();
+			ZSHG BC 3;
+			ZSHG DDDEE 1;
+			ZSHG F 4 {
+				A_StartSound("weapons/zsgpump1");
+				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, -6, -14));
+			}
+			ZSHG EEDDD 1; // These two play on CHAN_BODY because the firing sound is just too fucking long
+			ZSHG C 3 A_StartSound("weapons/zsgpump2");
+			ZSHG BA 3;
+			ZSHG A 0 ZWL_ReFire();
+			Goto Ready;
+		Reload:
+			TNT1 A 0 {
+				if (!invoker.CheckAmmo(PrimaryFire, false, true))
+					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
+			}
+			ZSHG BC 3;
+			ZSHG DDDEE 1;
+			ZSHG F 2 {
+				A_StartSound("weapons/zsgpump1");
+				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, -6, -14));
+			}
+			// Fallthrough
+		Reload.Loop:
+			ZSHG GHI 2;
+			TNT1 A 0 ZWL_Reload(1);
+			ZSHG HGF 2;
+			ZSHG F 0 ZWL_JumpIfReloaded("Reload.End", true, true);
+			Loop;
+		Reload.End:
+			ZSHG EEEDD 1;
+			ZSHG C 3 A_StartSound("weapons/zsgpump2");
+			ZSHG B 3;
+			Goto Ready;
+		Flash:
+			ZSHF A 1 Bright {
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
+				A_Light1();
+				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
+			}
+			ZSHF A 2 Bright A_Light1;
+			ZSHF B 3 Bright {
+				A_Light2();
+				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+			}
+			Goto LightDone;
+	}
+}

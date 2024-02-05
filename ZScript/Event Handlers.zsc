@@ -96,10 +96,18 @@ class ThingReplacer : StaticEventHandler
 							e.Replacement = "GWM_Zombieman";
 						break;
 					case 'ShotgunGuy':
-						if (random(0, 3) == 3)
-							e.Replacement = "GWM_IceShotgunGuy";
-						else
-							e.Replacement = "GWM_KahunaShotgunGuySpawner"; // to spawn a Kahuna Shotgun Guy or a Shadow Hunter
+						switch (random(0, 5))
+						{
+							case 5:
+								e.Replacement = "GWM_IceShotgunGuy";
+								break;
+							case 4:
+								e.Replacement = "GWM_KahunaShotgunGuySpawner";
+								break;
+							default:
+								e.Replacement = "GWM_ShitShotgunGuy";
+								break;
+						}
 						break;
 					case 'ChaingunGuy':
 						if (random(0, 1) == 1)

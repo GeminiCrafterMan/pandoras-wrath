@@ -11,6 +11,7 @@
 #include "ZScript/Weapons/Slot 2/GWM_SMG.zsc"				// SMG
 #include "ZScript/Weapons/Slot 2/GWM_Revolver.zsc"			// Revolver
 
+#include "ZScript/Weapons/Slot 3/GWM_ZombieShotgun.zsc"		// Get a better shotgun ASAP
 #include "ZScript/Weapons/Slot 3/GWM_Shotgun.zsc"			// Slayer's Kahuna
 #include "ZScript/Weapons/Slot 3/GWM_SuperShotgun.zsc"		// Super Shotgun
 #include "ZScript/Weapons/Slot 3/GWM_IceShotgun.zsc"		// Ice Shotgun
