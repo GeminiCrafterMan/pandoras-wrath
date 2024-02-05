@@ -12,6 +12,7 @@ weapons/smgfire		"Sounds/Weapons/Slot 2/SMG/smg_fire.wav"
 weapons/draw_smg	"Sounds/Weapons/Slot 2/SMG/smg_draw.wav"
 weapons/smgclipout	"Sounds/Weapons/Slot 2/SMG/smg_clip_out.wav"
 weapons/smgclipin	"Sounds/Weapons/Slot 2/SMG/smg_clip_in.wav"
+weapons/smgclipend	"Sounds/Weapons/Slot 2/SMG/smg_clip_rack.wav"
 weapons/smgpickup	"Sounds/Weapons/Slot 2/SMG/smg_pickup.wav"
 
 // Revolver

@@ -66,7 +66,9 @@ class GWM_SMG : GWM_WeaponBase
 			SMGG K 2 ZWL_EjectCasing("GWM_PistolEmptyMag", true, 45, 2, 16, (24, 0, -24));
 			SMGG KJIH 2;
 			SMGG G 2 ZWL_Reload(-1);
-			SMGG FEDCB 2;
+			SMGG FE 2;
+			TNT1 A 0 A_StartSound("weapons/smgclipend");
+			SMGG DCB 2;
 			Goto Ready;
 	}
 }

@@ -190,7 +190,7 @@ class GWM_Shotgun : GWM_WeaponBase
 		Reload.Loop:
 			SKSG IJK 2;
 			TNT1 A 0 ZWL_Reload(1);
-			SKSG LIE 2;
+			SKSG LM 2;
 			SKSG E 0 ZWL_JumpIfReloaded("Reload.End", true, true);
 			Loop;
 		Reload.End:

@@ -11,7 +11,7 @@ class GWM_ChaingunGuy : ChaingunGuy
 	States
 	{		
 		Missile:
-			CPOS E 10 A_FaceTarget;
+			CPOS E 18 A_FaceTarget;
 		Shoot:
 			CPOS F 2 Bright 
 			{
