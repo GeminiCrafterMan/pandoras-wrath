@@ -10,3 +10,11 @@ $volume weapons/ftfiring 0.5
 $volume weapons/ftend 0.5
 $volume weapons/ftburn 0.5
 $volume weapons/fthit 0.5
+
+//THE BOUNCERRRRR
+weapons/bounf1	"Sounds/Weapons/Slot 7/Bouncer/BOUNCFIR"
+weapons/bounb1	"Sounds/Weapons/Slot 7/Bouncer/BOUNCBON"
+weapons/bounx1	"Sounds/Weapons/Slot 7/Bouncer/BOUNCBOM"
+weapons/bounb2	"Sounds/Weapons/Slot 7/Bouncer/BOUNCTIN"
+weapons/bounx2	"Sounds/Weapons/Slot 7/Bouncer/BOUNCBAN"
+

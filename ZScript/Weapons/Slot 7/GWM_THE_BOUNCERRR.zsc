@@ -1,0 +1,212 @@
+class GWM_Bouncer : GWM_WeaponBase
+{
+	Default
+	{
+		Weapon.SelectionOrder 2800;
+		Weapon.UpSound "weapons/draw_primary";
+		Weapon.AmmoUse 10;
+		Weapon.AmmoGive 40;
+		Weapon.AmmoType "GWM_RocketAmmo";
+		Tag "$TAG_BOUNCER";
+		Inventory.PickupMessage "$GOTBOUNCER";
+		Obituary "$KILLBOUNCER";
+	}
+	States
+	{
+		Ready:
+			BFUG A 1 A_WeaponReady;
+			Loop;
+		Deselect:
+			BFUG A 1 A_Lower(18);
+			Loop;
+		Select:
+			BFUG A 1 A_Raise(18);
+			Loop;
+		
+		Fire:
+			RKTL A 8 {
+				A_OverlayPivot(OverlayID(), 0.66, 1);
+				A_Overlay(-2, "Flash");
+				A_SpawnItemEx("GWM_Flash");
+				A_WeaponOffset(0, 18, WOF_ADD);
+				A_StartSound("weapons/bounf1", CHAN_WEAPON);
+				A_FireProjectile("GWM_BouncerShot");
+				A_OverlayScale(OverlayID(), 1.33, 0, WOF_INTERPOLATE);
+			}
+			Goto Fire.Done;
+		Fire.Done:
+			RKTL A 3;
+			RKTL AAA 3 {
+				A_WeaponOffset(0, -6, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.11, 0, WOF_ADD);
+			}
+			RTKL A 0 A_ReFire;
+			Goto Ready;
+		
+		Spawn:
+			BFUG Z -1;
+			Stop;
+	}
+}
+
+class GWM_BouncerShot : Actor
+{
+	
+	Default
+	{
+		Radius 18;
+		Height 18;
+		Speed 20;
+		DamageFunction (80);
+		Projectile;
+		-NOGRAVITY
+		+RANDOMIZE
+		+THRUGHOST
+		+USEBOUNCESTATE
+		BounceType "Hexen";
+		BounceCount 8;
+		BounceFactor 0.8;
+		Gravity 0.20;
+		SeeSound "";
+		DeathSound "weapons/bounx1";
+		BounceSound "weapons/bounb1";
+		Obituary "$KILLBOUNCE";
+		DamageType "Rocket";
+		Reactiontime 35;
+		Scale 4;
+	}
+	States
+	{
+		Spawn:
+			BONC A 1 Bright {
+				A_Countdown();
+				//A_SpawnItemEx("GWM_RocketTrail", -20);
+			}
+			BONC AAAA 1 Bright;
+			Loop;
+		Bounce:
+			BONC A 1 A_Startsound("weapons/bounb1");
+			goto Spawn;
+		Death:
+			TNT1 A 0 {
+				bMISSILE = false;
+				bNOGRAVITY = true;
+				self.Vel.X = 0;
+				self.Vel.Y = 0;
+				self.Vel.Z = 0;
+				A_Scream();
+				A_SpawnItemEX("GWM_BouncerBlast");
+				
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-7,7),frandom(-7,7),frandom(4,10),frandom(1,359));
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-7,7),frandom(-7,7),frandom(4,10),frandom(1,359));
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-7,7),frandom(-7,7),frandom(4,10),frandom(1,359));
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-7,7),frandom(-7,7),frandom(4,10),frandom(1,359));
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-7,7),frandom(-7,7),frandom(4,10),frandom(1,359));
+					
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-10,10),frandom(-10,10),frandom(6,12),frandom(1,359));
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-10,10),frandom(-10,10),frandom(6,12),frandom(1,359));
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-10,10),frandom(-10,10),frandom(6,12),frandom(1,359));
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-10,10),frandom(-10,10),frandom(6,12),frandom(1,359));
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-10,10),frandom(-10,10),frandom(6,12),frandom(1,359));
+					
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-3,3),frandom(-3,3),frandom(2,8),frandom(1,359));
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-3,3),frandom(-3,3),frandom(2,8),frandom(1,359));
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-3,3),frandom(-3,3),frandom(2,8),frandom(1,359));
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-3,3),frandom(-3,3),frandom(2,8),frandom(1,359));
+					A_SpawnItemEX("GWM_BouncerMini",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-3,3),frandom(-3,3),frandom(2,8),frandom(1,359));
+					
+				A_SetRenderstyle(alpha, STYLE_Add);
+				A_Explode(45,90);
+				A_QuakeEx(3, 3, 3, 10, 0, 512, flags: QF_SHAKEONLY);
+			}
+			Stop;
+	}
+}
+
+Class GWM_BouncerBlast : Actor
+{
+	Default
+	{
+		+NoInteraction
+	}
+
+	States
+	{
+	Spawn:
+		TNT1 A 1 nodelay A_SpawnItemEX("ShakeItBaby",0,0,5);
+		TNT1 AAA 1
+		{
+		A_SpawnItemEX("BlastFlameFX2",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-6,6),frandom(-6,6),frandom(-6,6),frandom(1,359));
+		A_SpawnItemEX("BlastFlameFX",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-10,10),frandom(-10,10),frandom(-10,10),frandom(1,359));
+		A_SpawnItemEX("BlastFlameFX",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-10,10),frandom(-10,10),frandom(-10,10),frandom(1,359));
+		A_SpawnItemEX("BlastFlameFX",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-10,10),frandom(-10,10),frandom(-10,10),frandom(1,359));
+		A_SpawnItemEX("BlastFlameFX",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-10,10),frandom(-10,10),frandom(-10,10),frandom(1,359));
+		}
+		stop;
+	}
+}
+
+class GWM_BouncerMini : GWM_BouncerShot
+{
+	
+	Default
+	{
+		Radius 8;
+		Height 8;
+		Speed 10;
+		DamageFunction (50);
+		Projectile;
+		-NOGRAVITY
+		+RANDOMIZE
+		+USEBOUNCESTATE
+		+THRUGHOST
+		BounceType "Hexen";
+		Gravity 0.40;
+		SeeSound "";
+		Scale 1.25;
+		DeathSound "weapons/bounx2";
+		BounceSound "weapons/bounb2";
+		Obituary "$KILLBOUNCE2";
+		DamageType "Rocket";
+		Reactiontime 125;
+		+SEEKERMISSILE;
+		+SCREENSEEKER;
+	}
+	States
+	{
+		Spawn:
+			BONC A 1 Bright {
+				A_Countdown();
+				//A_SpawnItemEx("GWM_RocketTrail", -20);
+			}
+			BONC AAAA 1 Bright;
+			Loop;
+		Bounce:
+			BONC AA 1 A_SeekerMissile(90,90,SMF_LOOK);
+			TNT1 AAAAA 0 
+			{
+			A_Changevelocity(8,0,6,CVF_REPLACE|CVF_RELATIVE);
+			A_Startsound("weapons/bounb2");
+			}
+			
+			Goto Spawn;
+		Bounce.Actor:
+		Death:
+			TNT1 A 0 {
+				bMISSILE = false;
+				bNOGRAVITY = true;
+				self.Vel.X = 0;
+				self.Vel.Y = 0;
+				self.Vel.Z = 0;
+				
+				A_SpawnItemEX("BlastFlameFX",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-3,3),frandom(-3,3),frandom(-3,3),frandom(1,359));
+				A_SpawnItemEX("BlastFlameFX",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-3,3),frandom(-3,3),frandom(-3,3),frandom(1,359));
+				
+				A_Scream();
+				A_SetRenderstyle(alpha, STYLE_Add);
+				A_Explode(30,45);
+				A_QuakeEx(3, 3, 3, 10, 0, 512, flags: QF_SHAKEONLY);
+			}
+			Stop;
+	}
+}

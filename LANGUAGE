@@ -25,6 +25,7 @@ GOTNOISECRUSHER = "\c[White]You picked up the \c[Cyan]Noise Crusher\c[White]! (S
 GOTBFG9000 = "\c[White]You picked up the \c[Green]BFG9000\c[White]!! Oh yeah! (Slot 7)";
 GOTFLAMETHROWER = "\c[White]You picked up the \c[Brown]Flamethrower\c[White]! Burn, baby, burn!! (Slot 7)";
 GOTPERFORATOR = "\c[White]You picked up the \c[Yellow]Perforator\c[White]! (Slot 8)";
+GOTBOUNCER = "\c[White]You picked up \c[DarkRed]The Bouncer\c[White]! (Slot 8)";
 
 // Ammo pickup messages
 GOTLOWCALMAG = "\c[White]Picked up a \c[Yellow]magazine of low-caliber bullets\c[White].";
@@ -95,10 +96,14 @@ KILLBFG9000 = "%o was reduced to atoms by %k's BFG9000.";
 KILLBFGBALL = "%o was turned to dust by %k's BFG9000.";
 KILLFLAMETHROWER = "%o got %p buns thoroughly toasted by %k's Flamethrower.";
 KILLPERFORATOR = "%o was shredded by %k's Perforator.";
+KILLBOUNCE = "%o was blasted by %k's Bouncer.";
+KILLBOUNCE2 = "%o was swarmed by %k's Bouncer bombs!.";
 
 // Enemy kill messages
-OB_SMGGUY = "%o was riddled with bullets by an SMG zombie."; // change later. boring af
-OB_KAHUNASHOTGUNGUY = "%o was washed ashore by a shotgun zombie's Slayer's Kahuna.";
+OB_SMGGUY = "%o was capped by a Zombie."; 
+OB_SMGGUY = "%o was turned to swiss cheese by an SMG Zombie."; 
+OB_SHOTGUNGUY = "%o was busted by a Shotgun Sergeant";
+OB_KAHUNASHOTGUNGUY = "%o was washed by a Zombie's Kahuna.";
 OB_ICESHOTGUNGUY = "%o got frozen solid by a shotgun zombie's Ice Shotgun.";
 OB_SHADOWHUNTER = "%o didn't see the Shadow Hunter's bullet.";
 OB_HEAVYRIFLEMAN = "%o was hole-punched by a Heavy Rifleman.";
@@ -135,6 +140,7 @@ TAG_BLOT = "Blot";
 TAG_PINKY = "Pinky";
 TAG_SPECTRE = "Spectre";
 TAG_HELLHOG = "Hellhog";
+TAG_KAHUNASHOTGUNGUY = "Shotgun Zombie";
 TAG_KAHUNASHOTGUNGUY = "\"Slayer's Kahuna\" Shotgun Zombie";
 TAG_ICESHOTGUNGUY = "Ice Shotgun Zombie";
 TAG_SHADOWHUNTER = "Shadow Hunter";
@@ -171,6 +177,7 @@ TAG_NOISECRUSHER = "Noise Crusher";
 TAG_PLASMARIFLE = "Plasma Rifle";
 TAG_BFG9000 = "BFG9000";
 TAG_FLAMETHROWER = "Flamethrower";
+TAG_BOUNCER = "The Bouncer";
 TAG_HELLKNIGHTCLAWS = "Hell Knight claws";
 
 // Other mods' weapons

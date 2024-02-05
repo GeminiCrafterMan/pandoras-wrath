@@ -2,29 +2,35 @@ class GWM_KahunaShotgunGuySpawner : RandomSpawner
 {
 	override void BeginPlay()
 	{
-		if (self.curSector.lightlevel <= 112 && random(0,4) == 4)
+		if (self.curSector.lightlevel <= 112 && random(0,7) == 7)
 		{
 			Spawn("GWM_ShadowHunter", self.Pos);
+			self.Destroy();
+		}
+		if (random(0,4) == 4)
+		{
+			Spawn("GWM_KahunaShotgunGuy", self.Pos);
 			self.Destroy();
 		}
 		else Super.BeginPlay();
 	}
 	Default
 	{
-		DropItem "GWM_KahunaShotgunGuy";
+		DropItem "GWM_ShitShotgunGuy";
 	}
 }
-class GWM_KahunaShotgunGuy : ShotgunGuy
+
+class GWM_ShitShotgunGuy : ShotgunGuy
 {
 	Default
 	{
 		//$Category Monsters
 		//$Title Shotgun Zombie
 		// ^ that's so UDB shows it right (it still didn't...?)
-		AttackSound "weapons/skshot";
+		AttackSound "weapons/sgshot";
 		DropItem "GWM_Shotgun";
-		Obituary "$OB_KAHUNASHOTGUNGUY";
-		Tag "$TAG_KAHUNASHOTGUNGUY";
+		Obituary "$OB_SHOTGUNGUY";
+		Tag "$TAG_SHOTGUNGUY";
 	}
 	States
 	{
@@ -32,11 +38,11 @@ class GWM_KahunaShotgunGuy : ShotgunGuy
 			SPOS E 10 A_FaceTarget;
 			SPOS F 10 Bright 
 			{
-			A_CustomBulletAttack(22.5, 0, 3, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			A_CustomBulletAttack(20.5, 10.5, 4, 6, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
 			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
 			}
-			SPOS E 8 A_StartSound("weapons/skpump1");
-			SPOS E 2 A_StartSound("weapons/skpump2");
+			SPOS E 3 A_StartSound("weapons/sgpump");
+			SPOS E 9 A_SpawnItemEX("GWM_ShotgunCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
 			Goto See;
 		Death.Fire:
 			TNT1 A 0 {
@@ -63,6 +69,107 @@ class GWM_KahunaShotgunGuy : ShotgunGuy
 			SMAN C 5 A_NoBlocking;
 			SMAN D 5;
 			SMAN E -1;
+			Stop;
+		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
+			Goto Super::Raise;
+	}
+}
+
+class GWM_KahunaShotgunGuy : ShotgunGuy
+{
+	Default
+	{
+		//$Category Monsters
+		//$Title Shotgun Zombie
+		// ^ that's so UDB shows it right (it still didn't...?)
+		Health 80;
+		AttackSound "weapons/skshot";
+		DropItem "GWM_Shotgun";
+		Obituary "$OB_KAHUNASHOTGUNGUY";
+		Tag "$TAG_KAHUNASHOTGUNGUY";
+	}
+	States
+	{
+	
+		Spawn:
+			KASG AB 10 A_Look;
+			Loop;
+		See:
+			KASG AABBCCDD 3 A_Chase;
+			Loop;
+		
+		Missile:
+			KASG E 10 A_FaceTarget;
+			TNT1 A 0 A_Jump(120,"Missile2");
+			KASG F 5 Bright 
+			{
+			A_CustomBulletAttack(12.5, 8.5, 5, 6, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
+			}
+			KASG E 4;
+			KASG E 2 A_StartSound("weapons/skpump1");
+			KASG E 4 A_SpawnItemEX("GWM_ShotgunCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
+			KASG E 4 A_StartSound("weapons/skpump2");
+			Goto See;
+		
+		Missile2:
+			KASG E 8 A_FaceTarget;
+			KASG F 5 Bright 
+			{A_CustomBulletAttack(12.5, 8.5, 6, 6, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);}
+			KASG E 7 A_SpawnItemEX("GWM_ShotgunCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
+			
+			KASG F 5 Bright 
+			{A_CustomBulletAttack(12.5, 8.5, 6, 7, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);}
+			KASG E 7 A_SpawnItemEX("GWM_ShotgunCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
+			
+			KASG F 5 Bright 
+			{A_CustomBulletAttack(12.5, 8.5, 6, 8, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);}
+			KASG E 7 A_SpawnItemEX("GWM_ShotgunCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
+			
+			KASG F 5 Bright 
+			{A_CustomBulletAttack(12.5, 8.5, 6, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);}
+			KASG E 7 A_SpawnItemEX("GWM_ShotgunCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
+			
+			KASG F 5 Bright 
+			{A_CustomBulletAttack(23.5, 19.5, 6, 10, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);}
+			KASG E 7 A_SpawnItemEX("GWM_ShotgunCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
+			
+			
+			KASG E 5 A_StartSound("weapons/skpump1");
+			KASG E 2 A_StartSound("weapons/skpump2");
+			Goto See;
+		
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			SPOS M 5;
+			SPOS N 5 A_StartSound("monsters/burndeath");
+			SPOS O 5 A_NoBlocking;
+			SPOS PQRST 5;
+			SPOS U -1;
+			Stop;
+		Death:
+			TNT1 A 0 A_Jump(120,"Death2");
+			KASG H 5;
+			KASG I 5 A_Scream;
+			KASG J 5 A_NoBlocking;
+			KASG K 5;
+			KASG L -1;
+			Stop;
+		Death2:
+			KASG M 5;
+			KASG N 5 A_Scream;
+			KASG O 5 A_NoBlocking;
+			KASG PQRSTU 5;
+			KASG V -1;
 			Stop;
 		Raise:
 			TNT1 A 0 {bNOBLOOD = false;}

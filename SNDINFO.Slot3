@@ -10,6 +10,10 @@ weapons/shell_load	"Sounds/Weapons/Slot 3/Shotgun/load.wav"
 
 $random weapons/skshot {weapons/skshot1 weapons/skshot2 weapons/skshot3}
 
+//Lame Shotgun
+weapons/sgshot      "Sounds/Weapons/Slot 3/LameShotgun/SGFIR"
+weapons/sgpump      "Sounds/Weapons/Slot 3/LameShotgun/SGPUMP"
+
 // Super Shotgun
 weapons/ssgshot1	"Sounds/Weapons/Slot 3/Super Shotgun/Fire (Both Barrels).wav"
 weapons/ssgshot2	"Sounds/Weapons/Slot 3/Super Shotgun/Fire (One Barrel).wav"

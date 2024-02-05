@@ -1,5 +1,6 @@
 class GWM_Zombieman : Zombieman
 {
+	int shotsfired;
 	Default
 	{
 		//$Category Monsters
@@ -17,13 +18,31 @@ class GWM_Zombieman : Zombieman
 			Loop;
 		Missile:
 			PZOM E 10 A_FaceTarget;
-			PZOM F 8 Bright 
+		Shoot:
+			PZOM F 4 Bright 
 			{
-			A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 46, spawnofs_xy: 0);
+			A_CustomBulletAttack(20.5, 8, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 46, spawnofs_xy: 0);
+			A_SpawnItemEX("GWM_PistolCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
 			A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,15);	
 			}
-			PZOM E 8;
+			PZOM E 8
+			{
+			invoker.shotsfired = invoker.shotsfired+1;
+			
+				if (invoker.shotsfired > random(3,9))
+				{
+				SetStateLabel("StopFiring");
+				}
+			}
+			TNT1 A 0 A_JumpIfinTargetLOS("Shoot");
+			
+			StopFiring:
+			PZOM E 10
+			{
+				invoker.shotsfired = 0;
+			}
 			Goto See;
+			
 		Pain:
 			PZOM G 3;
 			PZOM G 3 A_Pain;
@@ -70,6 +89,7 @@ class GWM_Zombieman : Zombieman
 
 class GWM_SMGGuy : Actor
 {
+	int shotsfired;
 	Default
 	{
 		//$Category Monsters
@@ -98,37 +118,30 @@ class GWM_SMGGuy : Actor
 			MGPO AABBCCDD 4 A_Chase;
 			Loop;
 		Missile:
-			MGPO E 8 A_FaceTarget;
-			MGPO F 3 Bright 
+			MGPO E 8 A_FaceTarget();
+		Shoot:
+			MGPO F 2 Bright 
 			{
-			A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			A_CustomBulletAttack(12, 12, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			A_SpawnItemEX("GWM_PistolCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
 			A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,15);	
 			}
-			MGPO E 3;
-			MGPO F 3 Bright 
+			MGPO E 2
 			{
-			A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
-			A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,15);	
+			invoker.shotsfired = invoker.shotsfired+1;
+			A_FaceTarget();
+				if (invoker.shotsfired > random(15,20))
+				{
+				SetStateLabel("StopFiring");
+				}
 			}
-			MGPO E 3;
-			MGPO F 3 Bright 
+			TNT1 A 0 A_JumpIfinTargetLOS("Shoot");
+			
+			StopFiring:
+			MGPO E 10
 			{
-			A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
-			A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,15);	
+				invoker.shotsfired = 0;
 			}
-			MGPO E 3;
-			MGPO F 3 Bright
-			{
-			A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
-			A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,15);	
-			}
-			MGPO E 3;
-			MGPO F 3 Bright 
-			{
-			A_CustomBulletAttack(12, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
-			A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,15);	
-			}
-			MGPO E 10;
 			Goto See;
 		Pain:
 			MGPO G 3;
