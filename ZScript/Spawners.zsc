@@ -90,8 +90,9 @@ class GWM_ShotgunSpawner : GWM_WeaponSpawner replaces Shotgun
 {
 	Default
 	{
-		DropItem "GWM_Shotgun";
-		DropItem "GWM_IceShotgun";
+		DropItem "GWM_ZombieShotgun", 255, 4;
+		DropItem "GWM_Shotgun", 255, 1;
+		DropItem "GWM_IceShotgun", 255, 1;
 	}
 }
 
