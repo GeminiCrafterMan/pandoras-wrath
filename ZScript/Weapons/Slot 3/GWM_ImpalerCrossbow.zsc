@@ -111,8 +111,8 @@ class GWM_ImpalerArrow : FastProjectile
 		Death:
 		Crash:
 			TNT1 A 0 {
-				A_StartSound("weapons/XBowHit");
-				A_SpawnItemEx("BulletPuff");
+				A_StartSound("weapons/xbowhit");
+				A_SpawnItemEx("ZBulletPuff");
 				A_SpawnItemEx("ZBulletChip");
 			}
 			ARRW A 70;
@@ -120,7 +120,7 @@ class GWM_ImpalerArrow : FastProjectile
 			ARRW A 1 A_FadeOut(0.05);
 			Loop;
 		XDeath:
-			TNT1 A 10 A_StartSound("weapons/drillhit");
+			TNT1 A 10 A_StartSound("weapons/csawhit");
 			Stop;
 	}
 }
@@ -139,8 +139,8 @@ class GWM_ImpalerArrowPowered : GWM_ImpalerArrow
 		Death:
 		Crash:
 			TNT1 A 0 {
-				A_StartSound("weapons/XBowHit");
-				A_SpawnItemEx("BulletPuff");
+				A_StartSound("weapons/xbowhit");
+				A_SpawnItemEx("ZBulletPuff");
 				A_SpawnItemEx("ZBulletChip");
 			}
 			ARRW B 70;

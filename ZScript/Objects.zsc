@@ -228,3 +228,30 @@ class GWM_DeadHellKnightStick : DeadStick
 			Stop;
 	}
 }
+class GWM_DeadChaingunGuyStick1 : DeadStick
+{
+	States
+	{
+		Spawn:
+			POL1 E -1;
+			Stop;
+	}
+}
+class GWM_DeadChaingunGuyStick2 : DeadStick
+{
+	States
+	{
+		Spawn:
+			POL1 F -1;
+			Stop;
+	}
+}
+class GWM_DeadCacodemonStick : DeadStick
+{
+	States
+	{
+		Spawn:
+			POL1 G -1;
+			Stop;
+	}
+}

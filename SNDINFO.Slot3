@@ -52,6 +52,6 @@ weapons/xbowfire2	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_shot2.wav"
 weapons/xbowfire3	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_shot3.wav"
 weapons/xbowfire4	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_shot4.wav"
 weapons/xbowdraw	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_draw.wav"
-weapons/XBowHit NAILHIT
+weapons/xbowhit		"Sounds/Weapons/Slot 3/Impaler Crossbow/NAILHIT.ogg"
 
 $random weapons/xbowfire { weapons/xbowfire1 weapons/xbowfire2 weapons/xbowfire3 weapons/xbowfire4 }

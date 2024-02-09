@@ -194,23 +194,37 @@ class ThingReplacer : StaticEventHandler
 					e.Replacement = "GWM_ExplosiveBarrel";
 					break;
 				case 'DeadStick':
-					if (random(0,2) == 2)
+					switch (random(0,4))
 					{
-						if (replaceMonsters.getBool())
-						{
-							e.Replacement = "GWM_DeadBaronStick";
+						case 4:
+							e.Replacement = "GWM_DeadCacodemonStick";
 							break;
-						}
-						else
-						{
-							e.Replacement = "GWM_DeadBaronStickGreenBlood";
+						case 3:
+							if (replaceMonsters.getBool())
+							{
+								e.Replacement = "GWM_DeadBaronStick";
+								break;
+							}
+							else
+							{
+								e.Replacement = "GWM_DeadBaronStickGreenBlood";
+								break;
+							}
 							break;
-						}
-					}
-					else if (random(0,2) == 1)
-					{
-						e.Replacement = "GWM_DeadHellKnightStick";
-						break;
+						case 2:
+							e.Replacement = "GWM_DeadHellKnightStick";
+							break;
+						case 1:
+							if (random(0,1) == 1)
+							{
+								e.Replacement = "GWM_DeadChaingunGuyStick1";
+								break;
+							}
+							else
+							{
+								e.Replacement = "GWM_DeadChaingunGuyStick2";
+								break;
+							}
 					}
 			}
 		}
