@@ -104,5 +104,37 @@ class GWM_PlasmaBall : PlasmaBall
 	{
 		Obituary "$KILLPLASMARIFLE";
 		DamageFunction (23);
+		Renderstyle "Add";
+		Alpha 1.0;
+	}
+	States
+	{
+	Spawn:
+	PLSS A 1 nodelay A_ChangeVelocity(frandom(-0.3,0.3),frandom(-0.3,0.3),frandom(-0.3,0.3));
+	Spawnloop:
+	PLSS ABADAFACAEAG 1 bright A_SpawnItemEX("GWM_PlasmaBallFlareFX");
+	loop;
+	}
+	
+}
+
+class GWM_PlasmaBallFlareFX : actor
+{
+	Default
+	{
+		+NOINTERACTION;
+		Renderstyle "add";
+		Scale 1.7;
+		Alpha 0.15;
+	}
+States
+	{
+	Spawn:
+	PLSS X 2 nodelay bright;
+	stop;
 	}
 }
+	
+	
+	
+	
