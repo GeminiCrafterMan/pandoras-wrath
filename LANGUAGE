@@ -27,6 +27,7 @@ GOTBFG9000 = "\c[White]You picked up the \c[Green]BFG9000\c[White]!! Oh yeah! (S
 GOTFLAMETHROWER = "\c[White]You picked up the \c[Brown]Flamethrower\c[White]! Burn, baby, burn!! (Slot 7)";
 GOTPERFORATOR = "\c[White]You picked up the \c[Yellow]Perforator\c[White]! (Slot 8)";
 GOTBOUNCER = "\c[White]You picked up \c[DarkRed]The Bouncer\c[White]! (Slot 8)";
+GOTANNIHILATOR = "\c[White]You found \c[Black]something you shouldn't have seen\c[White]... (Slot 8)";
 
 // Ammo pickup messages
 GOTLOWCALMAG = "\c[White]Picked up a \c[Yellow]magazine of low-caliber bullets\c[White].";
@@ -99,7 +100,8 @@ KILLBFGBALL = "%o was turned to dust by %k's BFG9000.";
 KILLFLAMETHROWER = "%o got %p buns thoroughly toasted by %k's Flamethrower.";
 KILLPERFORATOR = "%o was shredded by %k's Perforator.";
 KILLBOUNCE = "%o was blasted by %k's Bouncer.";
-KILLBOUNCE2 = "%o was swarmed by %k's Bouncer bombs!.";
+KILLBOUNCE2 = "%o was swarmed by %k's Bouncer bombs.";
+KILLANNIHILATOR = "%o was torn asunder by %k's Eldritch Annihilator.";
 
 // Enemy kill messages
 OB_SMGGUY = "%o was capped by a Zombie."; 
@@ -181,6 +183,7 @@ TAG_PLASMARIFLE = "Plasma Rifle";
 TAG_BFG9000 = "BFG9000";
 TAG_FLAMETHROWER = "Flamethrower";
 TAG_BOUNCER = "The Bouncer";
+TAG_ANNIHILATOR = "Eldritch Annihilator";
 TAG_HELLKNIGHTCLAWS = "Hell Knight claws";
 
 // Other mods' weapons

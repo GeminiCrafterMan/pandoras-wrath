@@ -366,3 +366,21 @@ Class EverIceHefty : EverIce replaces BlasterHefty
 			Loop;
 	}
 }
+
+Class GWM_ANNIHILATORAMMO : Ammo
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTANNIHILATORAMMO";
+		Inventory.Amount 5;
+		Inventory.MaxAmount 2500;
+		Scale 0.4;
+	}
+
+	States
+	{
+		Spawn:
+			EICE A 6;
+			Loop;
+	}
+}
