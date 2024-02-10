@@ -255,3 +255,12 @@ class GWM_DeadCacodemonStick : DeadStick
 			Stop;
 	}
 }
+class GWM_DeadPinkyStick : DeadStick
+{
+	States
+	{
+		Spawn:
+			POL1 H -1;
+			Stop;
+	}
+}
