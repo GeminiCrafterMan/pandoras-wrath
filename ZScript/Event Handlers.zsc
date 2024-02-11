@@ -229,6 +229,9 @@ class ThingReplacer : StaticEventHandler
 								break;
 							}
 					}
+				case 'TangoBarrel':
+					e.Replacement = "GWM_ExplosiveBarrel";
+					break;
 			}
 		}
 
@@ -365,6 +368,9 @@ class ThingReplacer : StaticEventHandler
 				break;
 			case 'TangoStomperBox':
 				e.Replacement = "GWM_LargeVenomVial";
+				break;
+			case 'TangoBerserk':
+				e.Replacement = "GWM_Berserk";
 				break;
 			// Nailgun seems to be unused and inaccessible
 		}

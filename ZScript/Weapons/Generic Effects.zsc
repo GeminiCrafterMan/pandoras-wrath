@@ -43,9 +43,9 @@ class GWM_IceDamageEffect : Actor
 			}
 			TNT1 A 45;
 			TNT1 A 0 {
-				if ((target != null && target.Health >= 0))
+				if ((target != null && target.Health >= 0 && target.bISMONSTER == false))
 				{
-					target.Speed = target.Speed * 2; // restore original speed... if they aren't *dead*
+					target.Speed = target.Speed * 2; // restore original speed... if they aren't *dead* or a monster
 				}
 			}
 			stop;
