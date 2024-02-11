@@ -32,7 +32,8 @@
 #include "ZScript/Weapons/Slot 7/GWM_Flamethrower.zsc"		// Flamethrower
 #include "ZScript/Weapons/Slot 7/GWM_TwinPlasmaCannons.zsc"	// Twin Plasma Cannons
 #include "ZScript/Weapons/Slot 7/GWM_THE_BOUNCERRR.zsc"	    //I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
-#include "ZScript/Weapons/Slot 7/GWM_ANNIHILATOR.zsc"	    //I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
+
+#include "ZScript/Weapons/Slot 8/GWM_ANNIHILATOR.zsc"	    //Shroine Tew, out now!
 // Heretic
 #include "ZScript/Weapons/Slot 1/GWM_Levenbrech.zsc"		// Levenbrech
 

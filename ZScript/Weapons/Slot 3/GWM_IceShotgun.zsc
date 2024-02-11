@@ -1,7 +1,10 @@
+class IceShotCharge : Inventory {}
+
 class GWM_IceShotgun : GWM_WeaponBase
 {
 	
 	int icespread;
+	int icecharge;
 	
 	Default
 	{
@@ -56,36 +59,45 @@ class GWM_IceShotgun : GWM_WeaponBase
 			Loop;
 		Fire:
 			TNT1 A 0 {
-				A_OverlayPivot(OverlayID(), 0.2, 0.5, 0);
+				A_OverlayPivot(OverlayID(), 0.5, 0.5, 0);
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);
 				A_OverlayRotate(OverlayID(), 0, WOF_INTERPOLATE);
 			}
+			TNT1 A 0 A_JumpIfInventory("IceShotCharge",1,"Lv2Fire");
+			TNT1 A 0 A_JumpIfInventory("IceShotCharge",2,"Lv3Fire");
+			
+				//if(invoker.icecharge == 1)
+				//{SetStateLabel("Lv2Fire");}
+				//if(invoker.icecharge == 2)
+				//{SetStateLabel("Lv3Fire");}
+			
+		Lv1Fire:
 			ISHT A 1 {
 				//ZWL_FireProjectile("GWM_ShotgunIce", 0);
 				invoker.icespread = 6;
 				
-				A_FireProjectile("GWM_FrostFangShard", 0,1,0,0,0,0);
+				A_FireProjectile("GWM_ShotgunIceShard", 0,1,0,0,0,0);
 				
-				A_FireProjectile("GWM_FrostFangShard", invoker.icespread,0,0,0,0,0);
-				A_FireProjectile("GWM_FrostFangShard", -invoker.icespread,0,0,0,0,0);
-				A_FireProjectile("GWM_FrostFangShard", 0,0,0,0,0,invoker.icespread);
-				A_FireProjectile("GWM_FrostFangShard", 0,0,0,0,0,-invoker.icespread);
+				A_FireProjectile("GWM_ShotgunIceShard", invoker.icespread,0,0,0,0,0);
+				A_FireProjectile("GWM_ShotgunIceShard", -invoker.icespread,0,0,0,0,0);
+				A_FireProjectile("GWM_ShotgunIceShard", 0,0,0,0,0,invoker.icespread);
+				A_FireProjectile("GWM_ShotgunIceShard", 0,0,0,0,0,-invoker.icespread);
 				
-				A_FireProjectile("GWM_FrostFangShard", invoker.icespread*0.8,0,0,0,0,invoker.icespread*0.8);
-				A_FireProjectile("GWM_FrostFangShard", invoker.icespread*0.8,0,0,0,0,-invoker.icespread*0.8);
-				A_FireProjectile("GWM_FrostFangShard", -invoker.icespread*0.8,0,0,0,0,invoker.icespread*0.8);
-				A_FireProjectile("GWM_FrostFangShard", -invoker.icespread*0.8,0,0,0,0,-invoker.icespread*0.8);
+				A_FireProjectile("GWM_ShotgunIceShard", invoker.icespread*0.8,0,0,0,0,invoker.icespread*0.8);
+				A_FireProjectile("GWM_ShotgunIceShard", invoker.icespread*0.8,0,0,0,0,-invoker.icespread*0.8);
+				A_FireProjectile("GWM_ShotgunIceShard", -invoker.icespread*0.8,0,0,0,0,invoker.icespread*0.8);
+				A_FireProjectile("GWM_ShotgunIceShard", -invoker.icespread*0.8,0,0,0,0,-invoker.icespread*0.8);
 				
-				A_FireProjectile("GWM_FrostFangShard", invoker.icespread*0.5,0,0,0,0,0);
-				A_FireProjectile("GWM_FrostFangShard", -invoker.icespread*0.5,0,0,0,0,0);
-				A_FireProjectile("GWM_FrostFangShard", 0,0,0,0,0,invoker.icespread*0.5);
-				A_FireProjectile("GWM_FrostFangShard", 0,0,0,0,0,-invoker.icespread*0.5);
+				A_FireProjectile("GWM_ShotgunIceShard", invoker.icespread*0.5,0,0,0,0,0);
+				A_FireProjectile("GWM_ShotgunIceShard", -invoker.icespread*0.5,0,0,0,0,0);
+				A_FireProjectile("GWM_ShotgunIceShard", 0,0,0,0,0,invoker.icespread*0.5);
+				A_FireProjectile("GWM_ShotgunIceShard", 0,0,0,0,0,-invoker.icespread*0.5);
 				
-				A_FireProjectile("GWM_FrostFangShard", invoker.icespread*0.3,0,0,0,0,invoker.icespread*0.3);
-				A_FireProjectile("GWM_FrostFangShard", invoker.icespread*0.3,0,0,0,0,-invoker.icespread*0.3);
-				A_FireProjectile("GWM_FrostFangShard", -invoker.icespread*0.3,0,0,0,0,invoker.icespread*0.3);
-				A_FireProjectile("GWM_FrostFangShard", -invoker.icespread*0.3,0,0,0,0,-invoker.icespread*0.3);
+				A_FireProjectile("GWM_ShotgunIceShard", invoker.icespread*0.3,0,0,0,0,invoker.icespread*0.3);
+				A_FireProjectile("GWM_ShotgunIceShard", invoker.icespread*0.3,0,0,0,0,-invoker.icespread*0.3);
+				A_FireProjectile("GWM_ShotgunIceShard", -invoker.icespread*0.3,0,0,0,0,invoker.icespread*0.3);
+				A_FireProjectile("GWM_ShotgunIceShard", -invoker.icespread*0.3,0,0,0,0,-invoker.icespread*0.3);
 				
 				
 				A_StartSound("weapons/iceshot", CHAN_WEAPON);
@@ -103,51 +115,39 @@ class GWM_IceShotgun : GWM_WeaponBase
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
 			}
-			ISHT AA 1 {
-				A_WeaponOffset(0, -5, WOF_ADD);
-				A_OverlayScale(OverlayID(), -0.0375, 0, WOF_ADD);
+			ISHT AA 1;
+			ISHT A 1 {
+				A_WeaponOffset(0, -10, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
 			}
 			ISHT AA 1;
+			Pump:
 			TNT1 A 0 ZWL_CheckReload();
 			ISHT B 5;
-			ISHT CD 2;
-			ISHT E 5 {
+			ISHT C 4;
+			ReleaseShells:
+			TNT1 A 0 
+			{
+			ZWL_EjectCasing("GWM_IceShotgunCasing", offset: (24, -6, -14));
+			A_TakeInventory("IceShotCharge",1);
+			}
+			TNT1 A 0 A_JumpifInventory("IceShotCharge",1,"ReleaseShells");
+			ISHT D 5 {
 				ZWL_EjectCasing("GWM_IceShotgunCasing", offset: (24, -6, -14));
 				A_StartSound("weapons/icepump1", CHAN_BODY);
 				A_StartSound("weapons/icehiss", CHAN_AUTO);
 			}
-			ISHT DC 2;
-			ISHT B 5 A_StartSound("weapons/icepump2", CHAN_BODY);
-			ISHT A 2;
-			ISHT A 3 A_ReFire;
-			Goto Ready;
-		AltFire:
-			TNT1 A 0 {
-				if (!invoker.DepleteAmmo(false, true))
-				{
-					A_PlaySound(invoker.clickSound, CHAN_Auto);
-					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Weird, fucked-up way of making it click instead.
-				}
-			}
-			TNT1 A 0 {
-				A_OverlayPivot(OverlayID(), 0.2, 0.5, 0);
-				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);
-				A_OverlayRotate(OverlayID(), 0, WOF_INTERPOLATE);
-			}
-			ISHT B 5;
-			ISHT CD 2;
-			ISHT E 5 {
-				A_StartSound("weapons/icepump1", CHAN_BODY);
-				A_StartSound("weapons/icehiss", CHAN_AUTO);
-			}
-			ISHT DC 2;
+			ISHT C 4;
 			ISHT B 5 A_StartSound("weapons/icepump2", CHAN_BODY);
 			ISHT A 3;
-			
+			ISHT A 7 A_ReFire;
+			Goto Ready;
+		
+		
+		Lv2Fire:
 			ISHT A 1 {
 				//ZWL_FireProjectile("GWM_ShotgunIce", 0);
-				A_FireProjectile("GWM_ShotgunIceBomb", 0,1,0,0,0,-5);
+				A_FireProjectile("GWM_ShotgunIceWallGenerator", 0,1,0,0,0,-5);
 				A_FireProjectile("IceFog2", 0,1,0,0,0,-5);
 				
 				A_StartSound("weapons/iceshot", CHAN_WEAPON);
@@ -166,27 +166,64 @@ class GWM_IceShotgun : GWM_WeaponBase
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
 			}
 			ISHT AA 1;
-			ISHT AA 1 {
-				A_WeaponOffset(0, -5, WOF_ADD);
-				A_OverlayScale(OverlayID(), -0.0375, 0, WOF_ADD);
+			ISHT A 1 {
+				A_WeaponOffset(0, -10, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
 			}
 			ISHT AA 3;
 			TNT1 A 0 ZWL_CheckReload();
+			goto Pump;
+		
+		
+		Lv3Fire:
+			ISHT A 1 {
+				//ZWL_FireProjectile("GWM_ShotgunIce", 0);
+				A_FireProjectile("GWM_ShotgunIceWallGenerator", 0,1,0,0,0,-5);
+				A_FireProjectile("IceFog2", 0,1,0,0,0,-5);
+				A_FireProjectile("IceFog2", 0,1,0,0,0,-5);
+				
+				A_StartSound("weapons/iceshot", CHAN_WEAPON);
+				A_SpawnItemEx("GWM_IceFlash");
+				A_Overlay(-2, "Flash");
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.9, 0, FRandom(-0.5, 0.5), Random(-12, 12));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.9, 0, FRandom(-0.5, 0.5), Random(-12, 12));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.8, 0, FRandom(-0.5, 0.5), Random(-12, 12));
+				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.8, 0, FRandom(-0.5, 0.5), Random(-12, 12));
+				A_WeaponOffset(0, 20, WOF_ADD);
+				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
+			}
+			ISHT A 3;
+			ISHT A 1 {
+				A_WeaponOffset(0, -10, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+			}
+			ISHT AA 1;
+			ISHT A 1 {
+				A_WeaponOffset(0, -10, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+			}
+			ISHT AA 3;
 			TNT1 A 0 ZWL_CheckReload();
-			ISHT B 7;
-			ISHT CD 3;
-			ISHT E 8 {
-				ZWL_EjectCasing("GWM_IceShotgunCasing", offset: (24, -6, -14));
-				ZWL_EjectCasing("GWM_IceShotgunCasing", offset: (24, -6, -14));
+			goto Pump;
+		
+		
+		AltFire:
+			ISHT B 5;
+			ISHT C 4;
+			ISHT D 5 
+			{
 				A_StartSound("weapons/icepump1", CHAN_BODY);
 				A_StartSound("weapons/icehiss", CHAN_AUTO);
+				if ( CountInv("IceShotCharge") < 2)
+				{A_GiveInventory("IceShotCharge",1);}
+				if ( CountInv("IceShotCharge") == 2)
+				{A_TakeInventory("IceShotCharge",5);}
 			}
-			ISHT DC 3;
-			ISHT B 8 A_StartSound("weapons/icepump2", CHAN_BODY);
-			ISHT A 4;
-			ISHT A 3 A_ReFire;
+			ISHT C 4;
+			ISHT B 5 A_StartSound("weapons/icepump2", CHAN_BODY);
+			ISHT A 3 A_Refire();
 			Goto Ready;
-			
+	
 		//OLD ALTFIREKICK	
 			TNT1 A 0 {
 				A_OverlayPivotAlign(OverlayID(), PSPA_RIGHT, PSPA_BOTTOM);
@@ -234,21 +271,21 @@ class GWM_IceShotgun : GWM_WeaponBase
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
 			}
 			ISHT B 5;
-			ISHT CD 2;
-			ISHT E 2 {
+			ISHT C 4;
+			ISHT D 2 {
 				A_StartSound("weapons/icepump1", CHAN_BODY);
 				A_StartSound("weapons/icehiss", CHAN_AUTO);
 				ZWL_EjectCasing("GWM_IceShotgunCasing", offset: (24, -6, -14));
 			}
 			// Fallthrough
 		Reload.Loop:
-			ISHT FGH 2;
+			ISHT EFG 2;
 			TNT1 A 0 ZWL_Reload(1);
-			ISHT IFE 2;
+			ISHT HED 2;
 			ISHT D 0 ZWL_JumpIfReloaded("Reload.End", true, true);
 			Loop;
 		Reload.End:
-			ISHT DC 2;
+			ISHT C 4;
 			ISHT B 5 A_StartSound("weapons/icepump2");
 			Goto Ready;
 	}
@@ -402,4 +439,135 @@ class GWM_ShotgunIceTrail : Actor
 			SHGI BCDE 4 Bright;
 			stop;
 	}
+}
+
+class GWM_ShotgunIceWallGenerator : GWM_IceProjectile
+{
+	Default
+	{
+		Radius 3;
+		Height 3;
+		Speed 80;
+		DamageFunction (35);
+		Scale 0.33;
+		+THRUGHOST
+		+RANDOMIZE
+		+FORCEXYBILLBOARD
+		-Nogravity
+		DeathSound "weapons/icehit";
+		Obituary "$KILLICESHOTGUN";
+	}
+	int anglecount;
+	States
+	{
+		Spawn:
+			SHGI A 6 Bright A_SpawnItemEx("GWM_ShotgunIceTrail");
+			loop;
+		Death:
+			TNT1 A 5 
+			{
+			A_SpawnItemEX("IceWallColumn",0,-22.5,00);
+			A_SpawnItemEX("IceWallColumn",0,-7.5,00);
+			A_SpawnItemEX("IceWallColumn",0,7.5,00);
+			A_SpawnItemEX("IceWallColumn",0,22.5,00);
+			A_SpawnItemEX("IceWallColumn",15,-22.5,00);
+			A_SpawnItemEX("IceWallColumn",15,-7.5,00);
+			A_SpawnItemEX("IceWallColumn",15,7.5,00);
+			A_SpawnItemEX("IceWallColumn",15,22.5,00);
+			}
+			TNT1 A 5 
+			{
+			A_SpawnItemEX("IceWallColumn",0,-22.5,20);
+			A_SpawnItemEX("IceWallColumn",0,-7.5,20);
+			A_SpawnItemEX("IceWallColumn",0,7.5,20);
+			A_SpawnItemEX("IceWallColumn",0,22.5,20);
+			A_SpawnItemEX("IceWallColumn",15,-22.5,20);
+			A_SpawnItemEX("IceWallColumn",15,-7.5,20);
+			A_SpawnItemEX("IceWallColumn",15,7.5,20);
+			A_SpawnItemEX("IceWallColumn",15,22.5,20);
+			}
+			TNT1 A 5 
+			{
+			A_SpawnItemEX("IceWallColumn",0,-22.5,40);
+			A_SpawnItemEX("IceWallColumn",0,-7.5,40);
+			A_SpawnItemEX("IceWallColumn",0,7.5,40);
+			A_SpawnItemEX("IceWallColumn",0,22.5,40);
+			A_SpawnItemEX("IceWallColumn",15,-22.5,40);
+			A_SpawnItemEX("IceWallColumn",15,-7.5,40);
+			A_SpawnItemEX("IceWallColumn",15,7.5,40);
+			A_SpawnItemEX("IceWallColumn",15,22.5,40);
+			}
+			TNT1 A 5 
+			{
+			A_SpawnItemEX("IceWallColumn",0,-22.5,60);
+			A_SpawnItemEX("IceWallColumn",0,-7.5,60);
+			A_SpawnItemEX("IceWallColumn",0,7.5,60);
+			A_SpawnItemEX("IceWallColumn",0,22.5,60);
+			A_SpawnItemEX("IceWallColumn",15,-22.5,60);
+			A_SpawnItemEX("IceWallColumn",15,-7.5,60);
+			A_SpawnItemEX("IceWallColumn",15,7.5,60);
+			A_SpawnItemEX("IceWallColumn",15,22.5,60);
+			}
+			stop;
+		XDeath:
+			SHGI FBCDE 4 Bright;
+			Stop;
+	}
+}
+class IceWallColumn : Actor
+{
+	Default
+	{
+		Radius 15;
+		Height 20;
+		Alpha 0.7;
+		Health 200;
+		Scale 0;
+		+NoDamage;
+		+SHOOTABLE;
+		+NOGRAVITY;
+		Renderstyle "Translucent";
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0 A_SetScale(1,0);
+			ICWL AAAAA 1 
+			{
+			A_Radiusgive("IceWallPushup",15,RGF_PLAYERS|RGF_MONSTERS,1);
+			A_SetScale(1,scaley+0.2);
+			}
+			
+			Spawny:
+			TNT1 A 0 A_ChangeFlag("NODamage",false);
+			TNT1 A 0 A_ChangeFlag("Solid",true);
+			TNT1 A 0 A_JumpifHealthLower(50,"Spawn4");
+			TNT1 A 0 A_JumpifHealthLower(100,"Spawn3");
+			TNT1 A 0 A_JumpifHealthLower(150,"Spawn2");
+			ICWL A 1 Bright;
+			loop;
+			Spawn2:
+			ICWL B 1 Bright;
+			goto Spawny;
+			Spawn3:
+			ICWL C 1 Bright;
+			goto Spawny;
+			Spawn4:
+			ICWL D 1 Bright;
+			goto Spawny;
+			
+		Death:
+			SHGI BCDE 4 Bright;
+			stop;
+	}
+}
+
+class IceWallPushup : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0 nodelay A_Changevelocity(momx,momy,4,CVF_REPLACE);
+stop;
+}
 }

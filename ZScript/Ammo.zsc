@@ -1,3 +1,5 @@
+
+
 class GWM_LowCaliberMagazine : Ammo
 {
 	Default
@@ -10,11 +12,17 @@ class GWM_LowCaliberMagazine : Ammo
 		Inventory.Icon "MAGZA0";
 		Inventory.PickupSound "pickups/magazine";
 	}
+	
+	
+	
+	
 	States
 	{
 		Spawn:
 			MAGZ A -1;
 			Stop;
+		
+		
 	}
 }
 class GWM_LowCaliberBox : GWM_LowCaliberMagazine
