@@ -56,7 +56,7 @@ class GWM_EldritchAnnihilator : GWM_WeaponBase
 	stop;	
 			
 		Spawn:
-			BFUG Z -1;
+			BF27 Z -1;
 			Stop;
 	}
 }
