@@ -42,12 +42,9 @@ class GWM_SMG : GWM_WeaponBase
 			}
 			SMGG AA 1 {A_WeaponOffset(0, -1, WOF_ADD); A_Setpitch(pitch-.375);}
 				
-			SMGG A 0 { return ZWL_JumpIfEmpty("Fire.Empty"); }
+			SMGG A 0 ZWL_CheckReload();
 			SMGG A 1 ZWL_ReFire(null, true);
 			Goto Ready;
-		Fire.Empty:
-			TNT1 A 0 ZWL_CheckReload();
-			Goto Reload;
 		Flash:
 			SMGF A 1 Bright A_Light1;
 			SMGF B 1 Bright A_Light2;

@@ -35,7 +35,6 @@ class GWM_Pistol : GWM_WeaponBase replaces Pistol
 			92FG A 1 ZWL_WeaponReady(ZRF_ExtraRound);
 			Loop;
 		Fire:
-			TNT1 A 0 {return ZWL_JumpIfEmpty("Fire.Empty");}
 			92FG B 2 {
 				ZWL_FireHitscan(2, 16, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
@@ -54,12 +53,6 @@ class GWM_Pistol : GWM_WeaponBase replaces Pistol
 			92FG DDCCBB 1 ZWL_WeaponReady(ZRF_ExtraRound|ZRF_NoBob);
 			TNT1 A 0 ZWL_ReFire(null, true);
 			Goto Ready;
-		Fire.Empty:
-			92FG B 2;
-			92FG C 1;
-			92FG DEEEDDCCBB 1;
-			TNT1 A 0 ZWL_CheckReload();
-			Goto Reload;
 		Reload:
 			TNT1 A 0 {
 				if (!invoker.CheckAmmo(PrimaryFire, false, true))

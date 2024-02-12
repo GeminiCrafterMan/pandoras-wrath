@@ -36,3 +36,81 @@ class GWM_CacodemonBall : CacodemonBall
 		DamageFunction (23);
 	}
 }
+
+class GWM_DisCacodemon : Actor
+{
+	Default
+	{
+		Health 400;
+		Radius 31;
+		Height 56;
+		Mass 400;
+		Speed 8;
+		PainChance 128;
+		Monster;
+		+FLOAT +NOGRAVITY
+		SeeSound "caco/sight";
+		PainSound "caco/pain";
+		DeathSound "caco/death";
+		ActiveSound "caco/active";
+		Obituary "$OB_DISCACO";
+		HitObituary "$OB_DISCACOHIT";
+		Tag "$TAG_DISCACO";
+	}
+	States
+	{
+		Spawn:
+			DISC A 10 A_Look;
+			Loop;
+		See:
+			DISC A 3 A_Chase;
+			Loop;
+		Missile:
+			DISC B 5 A_FaceTarget;
+			DISC C 5 A_FaceTarget;
+			DISC D 5 BRIGHT A_CustomComboAttack("GWM_DisCacodemonBall", 32, 35);
+			Goto See;
+		Pain:
+			DISC E 3;
+			DISC E 3 A_Pain;
+			DISC F 6;
+			Goto See;
+		Death:
+			DISC G 8;
+			DISC H 8 A_Scream;
+			DISC I 8;
+			DISC J 8;
+			DISC K 8 A_NoBlocking;
+			DISC L -1 A_SetFloorClip;
+			Stop;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			DISC G 8;
+			DISC H 8 A_StartSound("monsters/burndeath");
+			DISC IJ 8;
+			DISC K 8 A_NoBlocking;
+			DISC L -1 A_SetFloorClip;
+			Stop;
+		Raise:
+			TNT1 A 0 {bNOBLOOD = false;}
+			DISC L 8 A_UnSetFloorClip;
+			DISC KJIHG 8;
+			Goto See;
+	}
+}
+class GWM_DisCacodemonBall : GWM_CacodemonBall
+{
+	Default
+	{
+		+SEEKERMISSILE
+	}
+	States
+	{
+		Spawn:
+			BAL2 AABB 2 BRIGHT A_SeekerMissile(0, 6);
+			Loop;
+	}
+}

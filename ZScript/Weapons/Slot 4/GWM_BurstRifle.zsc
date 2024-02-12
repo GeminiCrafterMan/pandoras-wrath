@@ -62,26 +62,12 @@ class GWM_BurstRifle : GWM_WeaponBase
 				if (!invoker.CheckAmmo(PrimaryFire, false, true))
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
 			}
-			TNT1 A 0 ZWL_JumpIfEmpty("Reload.Empty");
 			RIFL D 4;
 			TNT1 A 0 A_StartSound("weapons/rifleout");
 			RIFL EF 2;
 			TNT1 A 0 ZWL_EjectCasing("GWM_PistolEmptyMag", true, 45, 2, 16, (24, 0, -24));
 			RIFL GHIJK 3;
 			RIFL L 4 ZWL_Reload(-1);
-			RIFL MD 2;
-			Goto Ready;
-		Reload.Empty:
-			TNT1 A 0 {
-				if (!invoker.CheckAmmo(PrimaryFire, false, true))
-					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
-			}
-			RIFL D 4;
-			TNT1 A 0 A_StartSound("weapons/rifleout");
-			RIFL EF 2;
-			TNT1 A 0 ZWL_EjectCasing("GWM_PistolEmptyMag", true, 45, 2, 16, (24, 0, -24));
-			RIFL GHIJK 3;
-			RIFL L 4 ZWL_Reload;
 			RIFL MD 2;
 			Goto Ready;
 	}

@@ -34,7 +34,6 @@ class GWM_Revolver : GWM_WeaponBase
 			RVLG A 1 ZWL_WeaponReady();
 			Loop;
 		Fire:
-			TNT1 A 0 {return ZWL_JumpIfEmpty("Fire.Empty");}
 			RVLG B 1 {
 				ZWL_FireHitscan(1, 32, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
@@ -46,10 +45,6 @@ class GWM_Revolver : GWM_WeaponBase
 			RVLG CCDDDDCCAA 1 A_Setpitch(pitch+0.5);
 			TNT1 A 0 ZWL_ReFire(null, true);
 			Goto Ready;
-		Fire.Empty:
-			RVLG BBCCDDCCAA 1;
-			TNT1 A 0 ZWL_CheckReload();
-			Goto Reload;
 		Reload:
 			TNT1 A 0 {
 				if (!invoker.CheckAmmo(PrimaryFire, false, true))
