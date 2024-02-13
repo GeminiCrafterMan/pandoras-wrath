@@ -228,7 +228,7 @@ class GWM_SSGShot : FastProjectile
 			TRAC A 1 Bright;
 			Loop;
 		Spawn:
-			TRAC A 2 BRIGHT;
+			TRAC A 1 BRIGHT;
 			TNT1 A 0 {bEXTREMEDEATH = false;}
 			Loop;
 		Crash:
