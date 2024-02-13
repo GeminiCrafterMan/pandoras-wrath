@@ -5,7 +5,8 @@ class GWM_ExplosiveBarrel : ExplosiveBarrel
 		Tag "Explosive Barrel";
 		+PUSHABLE
 		Friction 0.8;
-		DamageFactor "Kick", 0;
+		DamageFactor "Kick", 0.1;
+		PainChance "Kick", 256;
 		DeathSound "objects/barrel_explode";
 	}
 	States
@@ -14,7 +15,15 @@ class GWM_ExplosiveBarrel : ExplosiveBarrel
 			XBAR A -1;
 			Stop;
 		Pain.Kick:
-			TROO A 6;
+			XBAR A 1 {
+				bDontThrust = false;
+				bMissile = true;
+				bStepMissile = true;
+			}
+			BNOB A 0 A_FaceTarget;
+			Goto Rolling;
+		Rolling:
+			XBAR B 1 A_ChangeVelocity(-20, 0, 0, CVF_RELATIVE|CVF_REPLACE);
 			Loop;
 		Death:
 			XBAR BCD 1;

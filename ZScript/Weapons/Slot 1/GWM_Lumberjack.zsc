@@ -29,17 +29,26 @@ class GWM_Lumberjack : GWM_WeaponBase
 			LJAK AAAABBBB 1 A_Raise(18);
 			Loop;
 		Fire:
-			LJAK C 3 A_StartSound("weapons/csawup", CHAN_BODY);
-			LJAK D 3;
+			LJAK C 3 {
+				A_StartSound("weapons/csawup", CHAN_BODY);
+				A_WeaponOffset(frandom(-2, 2), frandom(30, 34), WOF_INTERPOLATE);
+			}
+			LJAK D 3 A_WeaponOffset(frandom(-2, 2), frandom(30, 34), WOF_INTERPOLATE);
 			TNT1 A 0 {A_StartSound("weapons/csawloop", CHAN_BODY, CHANF_LOOPING); A_ReFire();}
 			Goto Release;
 		Hold:
-			LJAK C 2 A_Saw("", "weapons/csawhit", 22, "ZBulletPuff", SF_NORANDOM);
-			LJAK D 2;
+			LJAK C 1 {
+				A_Saw("", "weapons/csawhit", 22, "ZBulletPuff", SF_NORANDOM);
+				A_WeaponOffset(frandom(-2, 2), frandom(30, 34));
+			}
+			LJAK CDD 1 A_WeaponOffset(frandom(-2, 2), frandom(30, 34));
 			TNT1 A 0 {A_StartSound("weapons/csawloop", CHAN_BODY, CHANF_LOOPING); A_ReFire();}
 			Goto Release;
 		Release:
-			LJAK C 3 A_StartSound("weapons/csawdown", CHAN_BODY);
+			LJAK C 3 {
+				A_StartSound("weapons/csawdown", CHAN_BODY);
+				A_WeaponOffset(0, 32, WOF_INTERPOLATE);
+			}
 			LJAK D 3;
 			Goto Ready;
 	}

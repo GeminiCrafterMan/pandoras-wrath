@@ -41,7 +41,6 @@ class GWM_SMG : GWM_WeaponBase
 				ZWL_EjectCasing("GWM_PistolCasing");
 			}
 			SMGG AA 1 {A_WeaponOffset(0, -1, WOF_ADD); A_Setpitch(pitch-.375);}
-				
 			SMGG A 0 ZWL_CheckReload();
 			SMGG A 1 ZWL_ReFire(null, true);
 			Goto Ready;

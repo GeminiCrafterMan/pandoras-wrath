@@ -43,6 +43,7 @@ class GWM_Revolver : GWM_WeaponBase
 			}
 			RVLG B 1 A_Setpitch(pitch-2.5);
 			RVLG CCDDDDCCAA 1 A_Setpitch(pitch+0.5);
+			TNT1 A 0 ZWL_CheckReload();
 			TNT1 A 0 ZWL_ReFire(null, true);
 			Goto Ready;
 		Reload:
