@@ -13,10 +13,10 @@ weapons/explode3	"Sounds/Weapons/Slot 5/Rocket Launcher/explode5.wav"
 $random weapons/grndimp { weapons/grndimpact1 weapons/grndimpact2 weapons/grndimpact3 }
 $random weapons/explode { weapons/explode1 weapons/explode2 weapons/explode3 }
 
-$limit weapons/explode1 0
-$limit weapons/explode2 0
-$limit weapons/explode3 0
 $limit weapons/explode 0
+
+$attenuation weapons/grndimp 0.75
+$attenuation weapons/explode 0.5
 
 // Venom Cannon
 weapons/vnmcfire1	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_inception_01.wav"

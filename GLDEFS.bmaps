@@ -360,3 +360,6 @@ Brightmap Sprite BFUGA0 { Map BFUGA0 DisableFullbright }
 Brightmap Sprite BFUGB0 { Map BFUGB0 DisableFullbright }
 Brightmap Sprite BFUGC0 { Map BFUGC0 DisableFullbright }
 Brightmap Sprite BFUGZ0 { Map BMBFUGZ0 DisableFullbright }
+// The Bouncer
+Brightmap Sprite BNCLA0 { Map BNCLA0 DisableFullbright }
+Brightmap Sprite BNCLZ0 { Map BMBNCLZ0 DisableFullbright }

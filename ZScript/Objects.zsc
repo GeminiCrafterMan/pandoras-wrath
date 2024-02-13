@@ -5,6 +5,7 @@ class GWM_ExplosiveBarrel : ExplosiveBarrel
 		Tag "Explosive Barrel";
 		+PUSHABLE
 		Friction 0.8;
+		DamageFactor "Kick", 0;
 		DeathSound "objects/barrel_explode";
 	}
 	States
@@ -12,6 +13,9 @@ class GWM_ExplosiveBarrel : ExplosiveBarrel
 		Spawn:
 			XBAR A -1;
 			Stop;
+		Pain.Kick:
+			TROO A 6;
+			Loop;
 		Death:
 			XBAR BCD 1;
 			//TNT1 A 0 {

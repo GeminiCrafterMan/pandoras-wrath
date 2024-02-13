@@ -19,7 +19,6 @@ class GWM_IceShotgun : GWM_WeaponBase
 
 		Tag "$TAG_ICESHOTGUN";
 		Inventory.PickupMessage "$GOTICESHOTGUN";
-		Obituary "$KILLKICK";
 	}
 	States
 	{
@@ -245,41 +244,6 @@ class GWM_IceShotgun : GWM_WeaponBase
 			ISHT B 5 A_StartSound("weapons/icepump2", CHAN_BODY);
 			ISHT A 3 A_Refire();
 			Goto Ready;
-	
-		//OLD ALTFIREKICK	
-			TNT1 A 0 {
-				A_OverlayPivotAlign(OverlayID(), PSPA_RIGHT, PSPA_BOTTOM);
-				A_OverlayPivot(OverlayID(), 0.5, 0.5, 0);
-				A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);
-				A_OverlayRotate(OverlayID(), 0, WOF_INTERPOLATE);
-			}
-			ISHT A 2 {
-				A_Overlay(-2, "AltFireUnderlay");
-				A_OverlayRotate(OverlayID(), 15, WOF_ADD);
-			}
-			ISHT A 2 {
-				A_OverlayRotate(OverlayID(), 15, WOF_ADD);
-			}
-			ISHT A 4;
-			ISHT A 5;
-			ISHT AA 2 A_OverlayRotate(OverlayID(), -15, WOF_ADD);
-			ISHT A 5 A_ReFire;
-			Goto Ready;
-		AltFireUnderlay:
-			KICK A 4;
-			KICK B 4 {
-				// redo this shit later
-				int dmg = 11;
-				if (FindInventory("PowerStrength"))
-				{
-					dmg *= 10;
-				}
-				A_CustomPunch(dmg, norandom:true, range: meleeRange + 20, meleesound: "*fist");
-			}
-			KICK C 5;
-			KICK B 4;
-			KICK A 5;
-			Stop;
 		Flash:
 			TNT1 A 0 A_OverlayOffset(OverlayID(), 159, 92);
 			SGFL ABCCDE 1 Bright;

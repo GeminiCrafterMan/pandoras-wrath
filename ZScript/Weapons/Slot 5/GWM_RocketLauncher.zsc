@@ -25,15 +25,17 @@ class GWM_RocketLauncher : GWM_WeaponBase
 			RKTL A 1 A_Raise(18);
 			Loop;
 		Fire:
-			RKTL A 8 {
+			RKTL A 2 {
 				A_OverlayPivot(OverlayID(), 0.66, 1);
 				A_Overlay(-2, "Flash");
 				A_SpawnItemEx("GWM_Flash");
 				A_WeaponOffset(0, 18, WOF_ADD);
 				A_StartSound("weapons/rocketfire", CHAN_WEAPON);
 				A_FireProjectile("GWM_Rocket");
-				A_OverlayScale(OverlayID(), 1.33, 0, WOF_INTERPOLATE);
+				A_OverlayScale(OverlayID(), 0.11, 0, WOF_ADD);
 			}
+			RKTL AA 2 A_OverlayScale(OverlayID(), 0.11, 0, WOF_ADD);
+			RKTL A 2;
 			Goto Fire.Done;
 		Fire.Done:
 			RKTL A 3;
@@ -44,15 +46,17 @@ class GWM_RocketLauncher : GWM_WeaponBase
 			RTKL A 0 A_ReFire;
 			Goto Ready;
 		AltFire:
-			RKTL A 8 {
+			RKTL A 2 {
 				A_OverlayPivot(OverlayID(), 0.66, 1);
 				A_Overlay(-2, "Flash");
 				A_SpawnItemEx("GWM_Flash");
 				A_WeaponOffset(0, 18, WOF_ADD);
 				A_StartSound("weapons/grenadefire", CHAN_WEAPON);
 				A_FireProjectile("GWM_Grenade", 0, true);
-				A_OverlayScale(OverlayID(), 1.33, 0, WOF_INTERPOLATE);
+				A_OverlayScale(OverlayID(), 0.11, 0, WOF_ADD);
 			}
+			RKTL AA 2 A_OverlayScale(OverlayID(), 0.11, 0, WOF_ADD);
+			RKTL A 2;
 			Goto Fire.Done;
 		Flash:
 			RKTF ABC 2 Bright {

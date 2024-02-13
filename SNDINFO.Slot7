@@ -18,6 +18,11 @@ weapons/bounx1	"Sounds/Weapons/Slot 7/Bouncer/BOUNCBOM"
 weapons/bounb2	"Sounds/Weapons/Slot 7/Bouncer/BOUNCTIN"
 weapons/bounx2	"Sounds/Weapons/Slot 7/Bouncer/BOUNCBAN"
 
+$attenuation weapons/bounb1 0.75
+$attenuation weapons/bounb2 0.75
+$attenuation weapons/bounx1 0.5
+$attenuation weapons/bounx2 0.5
+
 //BWAAAAAH
 weapons/annhc1	"Sounds/Weapons/Slot 8/Annihilator/ANNICHAR"
 weapons/annhf1	"Sounds/Weapons/Slot 8/Annihilator/ANNIFIR1.wav"

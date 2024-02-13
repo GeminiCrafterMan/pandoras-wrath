@@ -43,7 +43,6 @@ class GWM_Player : DoomPlayer
 		Player.WeaponSlot 8, "GWM_EldritchAnnihilator" ,"GWM_Perforator"; // Eviternity II's Perforator, but a little different
 	}
 }
-
 class GWM_DoomPlayer : GWM_Player
 {
 	Default
@@ -52,9 +51,9 @@ class GWM_DoomPlayer : GWM_Player
 		Player.StartItem "GWM_Fists";
 		Player.StartItem "GWM_Mine";
 		Player.StartItem "GWM_LowCaliberMagazine", 50;
+		Player.StartItem "GWM_QuickKickController";
 	}
 }
-
 class GWM_HereticPlayer : GWM_Player
 {
 	Default
@@ -62,7 +61,98 @@ class GWM_HereticPlayer : GWM_Player
 		Player.StartItem "GWM_GoldWand";
 		Player.StartItem "GWM_Fists";
 		Player.StartItem "GoldWandAmmo", 50;
+		Player.StartItem "GWM_QuickKickController";
 		Player.ColorRange 224, 209;
+	}
+}
+
+
+class GWM_QuickKickController : CustomInventory
+{
+	const KICKLAYER = -100;
+	override void DoEffect()
+	{
+		super.DoEffect();
+		if (!owner || !owner.player)
+		{
+			return;
+		}
+		let psp = owner.player.FindPSprite(KICKLAYER );
+		if (!psp)
+		{
+			psp = owner.player.GetPSprite(KICKLAYER );
+			psp.caller = self;
+			psp.bAddBob = false;
+			psp.bAddWeapon = false;
+			psp.SetState(ResolveState("ReadyKick"));
+		}
+	}
+	Default
+	{
+		+INVENTORY.UNDROPPABLE
+		+INVENTORY.UNTOSSABLE
+		+INVENTORY.PERSISTENTPOWER
+		+INVENTORY.AUTOACTIVATE //Use is called automatically
+		Obituary "$KILLKICK";
+	}
+	States 
+	{
+		Use:
+			TNT1 A 0 
+			{
+				// We're passing 'true' to the last argument, so
+				// that the layer doesn't get overridden if for
+				// some reason the item is used again:
+				A_Overlay(KICKLAYER, "ReadyKick", true);
+			}
+			fail;
+		ReadyKick:
+			TNT1 A 1
+			{
+//				Console.Printf("Did effect");
+				// Check if +user2 is pressed:
+				if (player.cmd.buttons & BT_USER2)
+				{
+					// move to DoKick if so:
+					return ResolveState("DoKick");
+				}
+				// Otherwise loop this layer
+				return ResolveState(null);
+			}
+			loop;
+		DoKick:
+			TNT1 A 0 A_OverlayOffset(OverlayID(), -20, WEAPONTOP);
+			KICK A 4;
+			KICK B 4 {
+				// redo this shit later
+				int dmg = 11;
+				if (FindInventory("PowerStrength"))
+				{
+					A_CustomPunch(dmg*10, norandom:true, flags: 0, pufftype: "GWM_BerserkPuff", range: meleeRange + 20, meleesound: "*fist");
+				}
+				else
+				{
+					A_CustomPunch(dmg, norandom:true, flags: 0, pufftype: "GWM_KickPuff", range: meleeRange + 20, meleesound: "*fist");
+				}
+			}
+			KICK C 5;
+			KICK B 4;
+			KICK A 5
+			{
+				if (player.cmd.buttons & BT_USER2 && player.oldbuttons & BT_USER2)
+				{
+					return ResolveState("DoKick");
+				}
+				return ResolveState(null);
+			}
+			goto ReadyKick; //Note that we go back to ready from here
+	}
+}
+class GWM_KickPuff : GWM_FistPuff
+{
+	Default
+	{
+		DamageType "Kick";
 	}
 }
 
