@@ -539,16 +539,16 @@ class IceWallColumn : Actor
 					return ResolveState("Spawn2");
 				return ResolveState(null);
 			}
-			ICWL A 1 Bright;
+			ICWL A 1 Bright A_Stop;
 			loop;
 			Spawn2:
-			ICWL B 1 Bright;
+			ICWL B 1 Bright A_Stop;
 			goto Spawny;
 			Spawn3:
-			ICWL C 1 Bright;
+			ICWL C 1 Bright A_Stop;
 			goto Spawny;
 			Spawn4:
-			ICWL D 1 Bright;
+			ICWL D 1 Bright A_Stop;
 			goto Spawny;
 			
 		Death:
