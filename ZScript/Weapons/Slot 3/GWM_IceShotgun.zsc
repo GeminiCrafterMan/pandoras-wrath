@@ -76,7 +76,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 			ISHT A 1 {
 				//ZWL_FireProjectile("GWM_ShotgunIce", 0);
 				invoker.icespread = 6;
-				invoker.iceCharge = 0;
+				invoker.iceCharge = 1; // Have to reset it to 1 for some reason?
 				
 				A_FireProjectile("GWM_FrostFangShard", 0,1,0,0,0,0);
 				
@@ -153,7 +153,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 		Lv2Fire:
 			ISHT A 1 {
 				//ZWL_FireProjectile("GWM_ShotgunIce", 0);
-				invoker.iceCharge = 0;
+				invoker.iceCharge = 1; // Have to reset it to 1 for some reason?
 				A_FireProjectile("GWM_ShotgunIceBomb", 0,1,0,0,0,-5);
 				A_FireProjectile("IceFog2", 0,1,0,0,0,-5);
 				
@@ -185,7 +185,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 		Lv3Fire:
 			ISHT A 1 {
 				//ZWL_FireProjectile("GWM_ShotgunIce", 0);
-				invoker.iceCharge = 0;
+				invoker.iceCharge = 1; // Have to reset it to 1 for some reason?
 				A_FireProjectile("GWM_ShotgunIceWallGenerator", 0,1,0,0,0,-5);
 				A_FireProjectile("IceFog2", 0,1,0,0,0,-5);
 				A_FireProjectile("IceFog2", 0,1,0,0,0,-5);
@@ -232,11 +232,9 @@ class GWM_IceShotgun : GWM_WeaponBase
 				{
 					case 2:
 						invoker.iceCharge = 0;
-						A_StartSound("pickups/armorbonus");
 						break;
 					default:
 						invoker.iceCharge = invoker.iceCharge + 1;
-						A_StartSound("pickups/healthbonus");
 						break;
 				}
 			}
@@ -502,6 +500,11 @@ class GWM_ShotgunIceWallGenerator : GWM_IceProjectile
 }
 class IceWallColumn : Actor
 {
+	override void Tick()
+	{
+		A_Stop();
+		super.Tick();
+	}
 	Default
 	{
 		Radius 15;
@@ -539,16 +542,16 @@ class IceWallColumn : Actor
 					return ResolveState("Spawn2");
 				return ResolveState(null);
 			}
-			ICWL A 1 Bright A_Stop;
+			ICWL A 1 Bright;
 			loop;
 			Spawn2:
-			ICWL B 1 Bright A_Stop;
+			ICWL B 1 Bright;
 			goto Spawny;
 			Spawn3:
-			ICWL C 1 Bright A_Stop;
+			ICWL C 1 Bright;
 			goto Spawny;
 			Spawn4:
-			ICWL D 1 Bright A_Stop;
+			ICWL D 1 Bright;
 			goto Spawny;
 			
 		Death:

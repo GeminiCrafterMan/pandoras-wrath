@@ -110,7 +110,7 @@ class GWM_StatusBar : BaseStatusBar
 	protected virtual void DrawBarAmmo()
 	{
 		int amt1, maxamt;
-		[amt1, maxamt] = GetAmount("Clip");
+		[amt1, maxamt] = GetAmount("GWM_LowCaliberMagazine");
 		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 173), DI_TEXT_ALIGN_RIGHT);
 		DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 173), DI_TEXT_ALIGN_RIGHT);
 		
@@ -122,7 +122,7 @@ class GWM_StatusBar : BaseStatusBar
 		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 185), DI_TEXT_ALIGN_RIGHT);
 		DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 185), DI_TEXT_ALIGN_RIGHT);
 		
-		[amt1, maxamt] = GetAmount("Cell");
+		[amt1, maxamt] = GetAmount("GWM_Cell");
 		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 191), DI_TEXT_ALIGN_RIGHT);
 		DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 191), DI_TEXT_ALIGN_RIGHT);
 	}
