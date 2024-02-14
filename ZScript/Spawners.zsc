@@ -82,8 +82,8 @@ class GWM_ChainsawSpawner : GWM_WeaponSpawner replaces Chainsaw
 	Default
 	{
 		DropItem "GWM_EldritchAnnihilator", 255, 1;
-		DropItem "GWM_Impactor", 255, 4;
-		DropItem "GWM_Lumberjack", 255, 4;
+		DropItem "GWM_Impactor", 255, 6;
+		DropItem "GWM_Lumberjack", 255, 6;
 	}
 }
 
@@ -91,9 +91,8 @@ class GWM_ShotgunSpawner : GWM_WeaponSpawner replaces Shotgun
 {
 	Default
 	{
-		DropItem "GWM_ZombieShotgun", 255, 4;
-		DropItem "GWM_Shotgun", 255, 1;
-		DropItem "GWM_IceShotgun", 255, 1;
+		DropItem "GWM_Shotgun";
+		DropItem "GWM_IceShotgun";
 	}
 }
 
