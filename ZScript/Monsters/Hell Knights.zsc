@@ -31,17 +31,23 @@ class GWM_HellKnight : HellKnight
 			HKNI MN 8;
 			HKNI O -1;
 			Stop;
+		XDeath:
+			HKNI P 5;
+			HKNI Q 5 A_XScream;
+			HKNI R 5 A_NoBlocking;
+			HKNI STUVW 5;
+			HKNI X -1;
+			Stop;
 		Death.Fire:
 			TNT1 A 0 {
 				bNOBLOOD = true;
 				A_SetTranslation("GWM_Burnt");
 			}
-			HKNI I 8;
-			HKNI J 8 A_StartSound("monsters/burndeath");
-			HKNI K 8;
-			HKNI L 8 A_NoBlocking;
-			HKNI MN 8;
-			HKNI O -1;
+			HKNI P 5;
+			HKNI Q 5 A_StartSound("monsters/burndeath");
+			HKNI R 5 A_NoBlocking;
+			HKNI STUVW 5;
+			HKNI X -1;
 			Stop;
 		Raise:
 			TNT1 A 0 {bNOBLOOD = false;}

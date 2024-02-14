@@ -15,14 +15,14 @@ class GWM_ChaingunGuy : ChaingunGuy
 		Shoot:
 			CPOS F 2 Bright 
 			{
-			A_CustomBulletAttack(18.5, 10, 2, 8, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 26, spawnofs_xy: 7);
-			A_SpawnItemEX("GWM_RifleCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
-			A_SpawnItemEX("GWM_RifleCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
-			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
+				A_CustomBulletAttack(18.5, 10, 2, 8, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 26, spawnofs_xy: 7);
+				A_SpawnItemEX("GWM_RifleCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
+				A_SpawnItemEX("GWM_RifleCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
+				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
 			}
 			CPOS E 1
 			{
-			invoker.shotsfired = invoker.shotsfired+1;
+				invoker.shotsfired = invoker.shotsfired+1;
 			
 				//if (invoker.shotsfired > random(45,59))
 				//{
@@ -30,39 +30,34 @@ class GWM_ChaingunGuy : ChaingunGuy
 				//}
 			}
 			TNT1 A 0 A_JumpIfinTargetLOS("Shoot");
-			
-			KeepFiring:
+		KeepFiring:
 			CPOS F 2 Bright 
 			{
-			A_CustomBulletAttack(20.5, 10, 2, 8, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 26, spawnofs_xy: 7);
-			A_SpawnItemEX("GWM_RifleCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
-			A_SpawnItemEX("GWM_RifleCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
-			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
+				A_CustomBulletAttack(20.5, 10, 2, 8, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 26, spawnofs_xy: 7);
+				A_SpawnItemEX("GWM_RifleCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
+				A_SpawnItemEX("GWM_RifleCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
+				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
 			}
 			CPOS E 1;
 			CPOS E 1
 			{
-			if (invoker.shotsfired > 70) {invoker.shotsfired = invoker.shotsfired-2;}
-			if (invoker.shotsfired > 30) {invoker.shotsfired = invoker.shotsfired-2;}
+				if (invoker.shotsfired > 70) {invoker.shotsfired = invoker.shotsfired-2;}
+				if (invoker.shotsfired > 30) {invoker.shotsfired = invoker.shotsfired-2;}
+					
+				invoker.shotsfired = invoker.shotsfired-2;
 				
-			invoker.shotsfired = invoker.shotsfired-2;
-			
-			if (invoker.shotsfired > 1)
-				{
-				SetStateLabel("KeepFiring");
-				}
+				if (invoker.shotsfired > 1)
+					{
+					SetStateLabel("KeepFiring");
+					}
 			}
-			Stopfiring:
+		Stopfiring:
 			CPOS E 10
 			{
 				invoker.shotsfired = 0;
 				A_JumpIfinTargetLOS("Shoot");
 			}
 			Goto See;
-			
-			
-			
-			
 		Death.Fire:
 			TNT1 A 0 {
 				bNOBLOOD = true;
@@ -79,9 +74,6 @@ class GWM_ChaingunGuy : ChaingunGuy
 			Goto Super::Raise;
 	}
 }
-
-
-
 
 class GWM_HeavyRifleman : ChaingunGuy
 {
@@ -105,20 +97,20 @@ class GWM_HeavyRifleman : ChaingunGuy
 			HEVY E 2 A_FaceTarget;
 			HEVY F 1 Bright 
 			{
-			A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
-			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
+				A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
 			}
 			HEVY G 2 A_FaceTarget;
 			HEVY F 1 Bright 
 			{
-			A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
-			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
+				A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
 			}
 			HEVY G 2 A_FaceTarget;
 			HEVY F 1 Bright 
 			{
-			A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
-			A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
+				A_CustomBulletAttack(22.5, 0, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnofs_xy: 9);
+				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
 			}
 			HEVY G 6; // nerfed and also matches actual burst rifle now
 			HEVY E 3 A_CPosRefire;

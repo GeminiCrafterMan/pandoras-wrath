@@ -14,16 +14,28 @@ class GWM_Revenant : Revenant
 			SKEL K 10 A_SpawnProjectile("GWM_RevenantTracer", 40); // change this later mayhaps
 			SKEL K 10 A_FaceTarget;
 			Goto See;
+		Raise:
+			TNT1 A 0 {
+				bNOBLOOD = false;
+			}
+			Goto Super::Raise;
+		XDeath:
+			SKEL R 5;
+			SKEL S 5 A_XScream;
+			SKEL T 5 A_NoBlocking;
+			SKEL UVWX 5;
+			SKEL Y -1;
+			Stop;
 		Death.Fire:
 			TNT1 A 0 {
 				bNOBLOOD = true;
 				A_SetTranslation("GWM_Burnt");
 			}
-			SKEL LM 7;
-			SKEL N 7 A_StartSound("monsters/burndeath");
-			SKEL O 7 A_NoBlocking;
-			SKEL P 7;
-			SKEL Q -1;
+			SKEL R 5;
+			SKEL S 5 A_StartSound("monsters/burndeath");
+			SKEL T 5 A_NoBlocking;
+			SKEL UVWX 5;
+			SKEL Y -1;
 			Stop;
 	}
 }
@@ -38,5 +50,106 @@ class GWM_RevenantTracer : RevenantTracer
 		Death:
 			TNT1 A 0 A_QuakeEx(1, 1, 1, 10, 0, 512, flags: QF_SHAKEONLY);
 			Goto Super::Death;
+	}
+}
+
+class GWM_Draugr : Actor
+{
+	Default
+	{
+		Health 300;
+		Radius 20;
+		Height 56;
+		Mass 500;
+		Speed 10;
+		PainChance 100;
+		Monster;
+		MeleeThreshold 196;
+		+MISSILEMORE 
+		+FLOORCLIP
+		// change these sounds later
+		SeeSound "skeleton/sight";
+		PainSound "skeleton/pain";
+		DeathSound "skeleton/death";
+		ActiveSound "skeleton/active";
+		MeleeSound "skeleton/melee";
+		HitObituary "$OB_DRAUGRHIT";
+		Obituary "$OB_DRAUGR";
+		Tag "$TAG_DRAUGR";
+	}
+	States
+	{
+		Spawn:
+			DRAU AB 10 A_Look;
+			Loop;
+		See:
+			DRAU AABBCCDDEEFF 2 A_Chase;
+			Loop;
+		Melee:
+			DRAU J 0 A_FaceTarget;
+			DRAU J 6 A_SkelWhoosh;
+			DRAU K 6 A_FaceTarget;
+			DRAU L 6 A_CustomMeleeAttack(33, "skeleton/melee");
+			Goto See;
+		Missile:
+			DRAU G 0 A_FaceTarget;
+			DRAU G 10 A_FaceTarget;
+			DRAU H 10 Bright {
+				A_StartSound("monsters/draugr/shoot");
+				A_SpawnProjectile("GWM_DraugrTracer", 64); // change this later mayhaps
+			}
+			DRAU I 10 A_FaceTarget;
+			Goto See;
+		Pain:
+			DRAU M 5;
+			DRAU M 5 A_Pain;
+			Goto See;
+		Death:
+			DRAU NO 7;
+			DRAU P 7 A_Scream;
+			DRAU Q 7 A_NoBlocking;
+			DRAU R 7;
+			DRAU S -1;
+			Stop;
+		Raise:
+			TNT1 A 0 {
+				bNOBLOOD = false;
+			}
+			DRAU S 5;
+			DRAU RQPON 5;
+			Goto See;
+		Death.Fire:
+			TNT1 A 0 {
+				bNOBLOOD = true;
+				A_SetTranslation("GWM_Burnt");
+			}
+			DRAU NO 7;
+			DRAU P 7 A_StartSound("monsters/burndeath");
+			DRAU Q 7 A_NoBlocking;
+			DRAU R 7;
+			DRAU S -1;
+			Stop;
+	}
+}
+class GWM_DraugrTracer : GWM_RevenantTracer
+{
+	Default
+	{
+		RenderStyle "Normal";
+		SeeSound "";
+		Alpha 1;
+		DamageFunction (45);
+	}
+	States
+	{
+		Spawn:
+			DRAF AB 2 Bright A_SeekerMissile(0, 10, SMF_PRECISE);
+			Loop;
+		Death:
+			TNT1 A 0 A_QuakeEx(1, 1, 1, 10, 0, 512, flags: QF_SHAKEONLY);
+			DRAF C 5 BRIGHT;
+			DRAF D 3 BRIGHT A_FadeOut(0.20);
+			DRAF EFGHI 3 BRIGHT A_FadeOut(0.20);
+			Stop;
 	}
 }

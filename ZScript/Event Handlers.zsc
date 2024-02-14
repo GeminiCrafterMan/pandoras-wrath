@@ -171,7 +171,10 @@ class ThingReplacer : StaticEventHandler
 						e.Replacement = "GWM_Mancubus";
 						break;
 					case 'Revenant':
-						e.Replacement = "GWM_Revenant";
+						if (random(0,1) == 1)
+							e.Replacement = "GWM_Draugr";
+						else
+							e.Replacement = "GWM_Revenant";
 						break;
 					case 'SpiderMastermind':
 						e.Replacement = "GWM_SpiderMastermind";

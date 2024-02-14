@@ -36,7 +36,7 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 			ZSHG A 1 Bright {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 10, pellets: 6, spread: 7, tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(0, 10, pellets: 7, spread: 5.6, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 				A_GunFlash();
