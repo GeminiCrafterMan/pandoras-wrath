@@ -18,7 +18,7 @@ class GWM_Dynamite : GWM_WeaponBase
 			DYNW E 1 A_Lower(18);
 			Loop;
 		Spawn:
-			REDC E -1;
+			DYNW Z -1;
 			Stop;
 		Ready:
 			DYNW E 2 A_StartSound("weapons/dynalighto");
@@ -61,9 +61,16 @@ class GWM_Dynamite : GWM_WeaponBase
 }
 class GWM_ThrownDynamiteBundle : Actor
 {
+	action void A_DynamiteFuse()
+	{
+		A_Countdown();
+		A_StartSound("weapons/dynafuse", CHAN_VOICE, CHANF_LOOPING);
+	}
 	Default
 	{
-		+BOUNCEONWALLS
+		BounceType "Doom";
+		+USEBOUNCESTATE
+		Gravity 0.75;
 		DamageFunction (100);
 		Radius 8;
 		Height 8;
@@ -72,8 +79,18 @@ class GWM_ThrownDynamiteBundle : Actor
 	}
 	States
 	{
+		Bounce.Actor:
+			TNT1 A 0 A_Stop;
+			Goto Spawn;
+		Bounce:
+		Bounce.Wall:
+			TNT1 A 0;
+			Goto Spawn;
 		Spawn:
-			PDYN AABBCCDDEEFFGGHH 1 A_Countdown;
+			PDYN AABBCCDDEEFFGGHH 1 A_DynamiteFuse;
+			Loop;
+		Bounce.Floor:
+			PYDN IIJJKK 1 A_DynamiteFuse;
 			Loop;
 		Death:
 			TNT1 A 0 {
@@ -83,6 +100,7 @@ class GWM_ThrownDynamiteBundle : Actor
 				self.Vel.Y = 0;
 				self.Vel.Z = 0;
 				self.Scale = (1, 1);
+				A_StopSound(CHAN_VOICE);
 				A_Scream();
 				A_SetRenderstyle(alpha, STYLE_Add);
 				A_Explode();
