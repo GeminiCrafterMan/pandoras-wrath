@@ -1,0 +1,21 @@
+// Mine
+weapons/minewait	"Sounds/Weapons/Slot 0/Mine/mine_wait.wav"
+weapons/minedet		"Sounds/Weapons/Slot 0/Mine/mine_det.wav"
+
+// Dynamite bundle
+weapons/dynalighto	"Sounds/Weapons/Slot 0/Dynamite/dynamite_lighter_open.wav"
+weapons/dynalightl	"Sounds/Weapons/Slot 0/Dynamite/dynamite_lighter_light.wav"
+weapons/dynalightc	"Sounds/Weapons/Slot 0/Dynamite/dynamite_lighter_close.wav"
+weapons/dynathrow	"Sounds/Weapons/Slot 0/Dynamite/dynamite_throw.wav"
+weapons/dynafuse	"Sounds/Weapons/Slot 0/Dynamite/dynamite_fuse.wav"
+
+weapons/dynabsplod1	"Sounds/Weapons/Slot 0/Dynamite/dynamite_bundle_explode1.wav"
+weapons/dynabsplod2	"Sounds/Weapons/Slot 0/Dynamite/dynamite_bundle_explode2.wav"
+weapons/dynabsplod3	"Sounds/Weapons/Slot 0/Dynamite/dynamite_bundle_explode3.wav"
+
+weapons/dynassplod1	"Sounds/Weapons/Slot 0/Dynamite/dynamite_stick_explode1.wav"
+weapons/dynassplod2	"Sounds/Weapons/Slot 0/Dynamite/dynamite_stick_explode2.wav"
+weapons/dynassplod3	"Sounds/Weapons/Slot 0/Dynamite/dynamite_stick_explode3.wav"
+
+$random weapons/dynabsplod { weapons/dynabsplod1 weapons/dynabsplod2 weapons/dynabsplod3 }
+$random weapons/dynassplod { weapons/dynassplod1 weapons/dynassplod2 weapons/dynassplod3 }

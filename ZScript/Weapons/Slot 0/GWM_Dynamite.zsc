@@ -1,0 +1,94 @@
+class GWM_Dynamite : GWM_WeaponBase
+{
+	int throwSpd;
+	Default
+	{
+		Tag "$TAG_DYNAMITE";
+		ZWeapon.MaxCharge 70;
+	}
+	States
+	{
+		Select:
+			DYNW E 1 A_Raise(18);
+			Loop;
+		Deselect:
+			DYNW F 2 A_StartSound("weapons/dynalightc");
+			Goto Closed;
+		Closed:
+			DYNW E 1 A_Lower(18);
+			Loop;
+		Spawn:
+			REDC E -1;
+			Stop;
+		Ready:
+			DYNW E 2 A_StartSound("weapons/dynalighto");
+			Goto ReallyReady;
+		ReallyReady:
+			DYNW F 1 ZWL_WeaponReady;
+			Loop;
+		Fire:
+			DYNW F 5 A_StartSound("weapons/dynalightl");
+			TNT1 A 0 ZWL_ReFire('Hold', true);
+			Goto Release;
+		Hold:
+			TNT1 A 0 A_StartSoundIfNotSame("weapons/dynafuse", "weapons/dynafuse");
+			DYNW A 2 ZWL_Charge('Overcharged');
+			TNT1 A 0 ZWL_ReFire('Hold', true);
+			Goto Release;
+		Release:
+			TNT1 A 0 {
+				if (invoker.chargeLevel > 35)
+					invoker.throwSpd = 35;
+				else
+					invoker.throwSpd = invoker.chargeLevel;
+				A_StartSound("weapons/dynathrow");
+			}
+			DYNW B 5 {
+				let dynamite = GWM_ThrownDynamiteBundle(ZWL_FireProjectile("GWM_ThrownDynamiteBundle", 0, speed: invoker.throwSpd));
+				if (dynamite)
+				{
+					dynamite.ReactionTime = invoker.maxCharge - invoker.chargeLevel;
+				}
+			}
+			TNT1 A 0 {invoker.chargeLevel = 0; invoker.throwSpd = 0;}
+			Goto ReallyReady;
+		Overcharged:
+			TNT1 A 0 A_StartSound("weapons/dynabsplod");
+			DYNW A 5 A_Explode;
+			TNT1 A 0 {invoker.chargeLevel = 0; invoker.throwSpd = 0;}
+			Goto ReallyReady;
+	}
+}
+class GWM_ThrownDynamiteBundle : Actor
+{
+	Default
+	{
+		+BOUNCEONWALLS
+		DamageFunction (100);
+		Radius 8;
+		Height 8;
+		Scale 0.5;
+		DeathSound "weapons/dynabsplod";
+	}
+	States
+	{
+		Spawn:
+			PDYN AABBCCDDEEFFGGHH 1 A_Countdown;
+			Loop;
+		Death:
+			TNT1 A 0 {
+				bMISSILE = false;
+				bNOGRAVITY = true;
+				self.Vel.X = 0;
+				self.Vel.Y = 0;
+				self.Vel.Z = 0;
+				self.Scale = (1, 1);
+				A_Scream();
+				A_SetRenderstyle(alpha, STYLE_Add);
+				A_Explode();
+				A_QuakeEx(3, 3, 3, 10, 0, 512, flags: QF_SHAKEONLY);
+			}
+			EXPL ABCDEFGHIJ 1 Bright;
+			Stop;
+	}
+}

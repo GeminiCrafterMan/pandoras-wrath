@@ -151,7 +151,8 @@ class GWM_StatusBar : BaseStatusBar
 		else if (CPlayer.Health > 100 && CPlayer.Health <= 200)
 			DrawBar("STBAR200", "STBARON", CPlayer.Health-100, 100, (44, -20), 0, 0);
 		else if (CPlayer.Health > 200)
-			DrawBar("STBAR300", "STBAR200", CPlayer.Health-200, 100, (44, -20), 0, 0);*/
+			DrawBar("STBAR300", "STBAR200", CPlayer.Health-200, 100, (44, -20), 0, 0);
+*/
 		DrawString(mHUDFont, FormatNumber(CPlayer.health, 3), (44, -20), translation: Font.CR_Sapphire);
 		
 		let armor = CPlayer.mo.FindInventory("BasicArmor");
@@ -185,6 +186,12 @@ class GWM_StatusBar : BaseStatusBar
 		{
 			DrawInventoryIcon(ammotype2, (-14, invY + 17));
 			DrawString(mHUDFont, FormatNumber(ammotype2.Amount, 3), (-30, invY), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
+			invY -= 20;
+		}
+		if (weapon && weapon.maxCharge > 0)
+		{
+			DrawString(mHUDFont, StringStruct.Format("%d/%d", weapon.chargeLevel, weapon.maxCharge), (-30, invY),
+					   DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
 			invY -= 20;
 		}
 		if (!isInventoryBarVisible() && !Level.NoInventoryBar && CPlayer.mo.InvSel != null)

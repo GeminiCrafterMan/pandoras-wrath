@@ -1,7 +1,3 @@
-// Mine
-weapons/minewait	"Sounds/Weapons/Slot 1/Mine/mine_wait.wav"
-weapons/minedet		"Sounds/Weapons/Slot 1/Mine/mine_det.wav"
-
 // Fists
 weapons/fist_hit1	"Sounds/Weapons/Slot 1/Fist/fist_hit_world1.wav"
 weapons/fist_hit2	"Sounds/Weapons/Slot 1/Fist/fist_hit_world2.wav"

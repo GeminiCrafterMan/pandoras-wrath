@@ -271,10 +271,11 @@ class ZWeapon : Weapon
 		- ZPF_DontUseAmmo: Weapon won't use ammo.
 		- ZPF_NoSound: Weapon won't play attack sound.
 	*/
-	action void ZWL_FireProjectile(class<Actor> missileType, double accuracy, double fireRate = -1,
+	action actor ZWL_FireProjectile(class<Actor> missileType, double accuracy, double fireRate = -1,
 								   class<Actor> tracerType = null, int tracerFreq = 1, Vector3 offset = (0, 0, 0),
 								   double angleOfs = 0, double pitchOfs = 0, double speed = -1, double damage = -1, int flags = 0)
 	{
+		actor missile;
 		int rounds = fireRate > 0 ? invoker.RoundCount(fireRate) : 1;
 
 		if (!(flags & ZPF_NoSound) && rounds > 0)
@@ -313,7 +314,7 @@ class ZWeapon : Weapon
 
 			double playerPitch = pitch;
 			pitch = misPitch;
-			Actor missile = SpawnPlayerMissile(type, misAngle, offset.x, offset.y, offset.z);
+			missile = SpawnPlayerMissile(type, misAngle, offset.x, offset.y, offset.z);
 			pitch = playerPitch;
 
 			if (missile)
@@ -328,6 +329,7 @@ class ZWeapon : Weapon
 					missile.vel += vel;
 			}
 		}
+		return missile;
 	}
 
 
