@@ -6,6 +6,7 @@ class GWM_Zombieman : Zombieman
 		//$Category Monsters
 		//$Title "Pistol Zombie
 		Tag "$TAG_ZOMBIEMAN";
+		Obituary "$OB_ZOMBIEMAN";
 		DropItem "GWM_LowCaliberMagazine";
 		AttackSound "weapons/92fsfire";
 	}

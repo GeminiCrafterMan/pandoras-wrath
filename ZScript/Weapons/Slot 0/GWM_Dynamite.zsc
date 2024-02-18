@@ -70,10 +70,52 @@ class GWM_Dynamite : GWM_WeaponBase
 }
 class GWM_ThrownDynamiteBundle : Actor
 {
+	override int SpecialBounceHit(Actor bounceMobj, Line bounceLine, secPlane bouncePlane)
+	{
+		if (bouncePlane)
+		{
+			self.Vel.X = self.Vel.X/1.1;
+			self.Vel.Y = self.Vel.Y/1.1;
+			return 1;
+		}
+		else if (bounceMobj)
+		{
+			self.Vel.X = 0;
+			self.Vel.Y = 0;
+			return -1;
+		}
+		else
+			return Super.SpecialBounceHit(bounceMobj, bounceLine, bouncePlane);
+	}
+	override void Tick()
+	{
+		Super.Tick();
+		if (!BlockingFloor && !Blocking3DFloor)
+		{
+			if (!InStateSequence(CurState, ResolveState('Spawn')) && !InStateSequence(CurState, ResolveState('Boom')))
+				SetStateLabel("Spawn");
+		}
+		else
+		{
+			if (!InStateSequence(CurState, ResolveState('Floor')) && !InStateSequence(CurState, ResolveState('Boom')))
+				SetStateLabel("Floor");
+		}
+		if (InStateSequence(CurState, ResolveState('Floor')))
+			self.Vel.Z = -0.1;
+	}
+	void A_Countdown()
+	{
+		self.ReactionTime--;
+		if (self.ReactionTime == 0)
+			SetStateLabel("Boom");
+	}
 	Default
 	{
+		Projectile;
+		+ALLOWBOUNCEONACTORS +BOUNCEONACTORS
+		-NOGRAVITY
+		BounceType "Hexen";
 		Gravity 0.75;
-		DamageFunction (100);
 		Radius 8;
 		Height 8;
 		Scale 0.5;
@@ -83,15 +125,12 @@ class GWM_ThrownDynamiteBundle : Actor
 	States
 	{
 		Spawn:
-			PDYN AABBCCDDEEFFGGHH 1 {
-				A_Countdown();
-				return A_CheckFloor("Floor");
-			}
+			PDYN AABBCCDDEEFFGGHH 1 A_Countdown;
 			Loop;
 		Floor:
 			PDYN IIJJKK 1 A_Countdown;
 			Loop;
-		Death:
+		Boom:
 			TNT1 A 0 A_StopSound(CHAN_VOICE);
 			TNT1 A 0 {
 				bMISSILE = false;

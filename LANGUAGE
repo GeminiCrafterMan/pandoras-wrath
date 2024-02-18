@@ -65,6 +65,7 @@ GOTARMORBONUS = "\c[White]Picked up an \c[Green]armor bonus\c[White]. (+1 armor)
 // Obituaries
 KILLPLACEHOLDER = "You shouldn't see this.";
 KILLMINES = "%o didn't see %k's land mine.";
+KILLDYNAMITE = "%o was blown to bits by %k's dynamite bundle.";
 KILLFISTS = "%o was punched in %p snout by %k to establish superiority.";
 KILLLUMBERJACK = "%o had their insides shredded by %k's Lumberjack.";
 KILLIMPACTOR = "%o's face was smashed in by %k's Impactor Gauntlet.";
@@ -104,7 +105,7 @@ KILLBOUNCE2 = "%o was swarmed by %k's Bouncer bombs.";
 KILLANNIHILATOR = "%o was torn asunder by %k's Eldritch Annihilator.";
 
 // Enemy kill messages
-OB_SMGGUY = "%o was capped by a Zombie."; 
+OB_ZOMBIEMAN = "%o was capped by a Zombie."; 
 OB_SMGGUY = "%o was turned to swiss cheese by an SMG Zombie."; 
 OB_ZOMBIESHOTGUNGUY = "%o was busted by a Shotgun Sergeant.";
 OB_KAHUNASHOTGUNGUY = "%o was washed by a Zombie's Kahuna.";
@@ -123,6 +124,7 @@ OB_CYBERBARON_SCRATCH = "%o was ripped to shreds by a Cyber Baron.";
 OB_SUPERDEMON = "%o was crushed by a Superdemon.";
 OB_CYBERHELLKNIGHT_FIREBALL = "%o was splayed by a Cyber Hell Knight.";
 OB_CYBERHELLKNIGHT_SCRATCH = "%o was ripped to shreds by a Cyber Hell Knight.";
+OB_DRAUGR = "%o couldn't avoid a Draugr's cannonball.";
 
 // Enemy tags
 TAG_ARACHNOTRON = "Arachnotron";
@@ -152,15 +154,17 @@ TAG_ZOMBIEMAN = "Pistol Zombie";
 TAG_SMGGUY = "SMG Zombie";
 TAG_MANCUBUS = "Mancubus";
 TAG_REVENANT = "Revenant";
+TAG_DRAUGR = "Draugr";
 TAG_WOLFENSTEINSS = "Nazi";
 TAG_SPIDERMASTERMIND = "Spider Mastermind";
 
 // Weapon tags
+TAG_MINE = "Mine";
+TAG_DYNAMITE = "Dynamite";
 TAG_FISTS = "Fists";
 TAG_IMPACTOR = "Impactor Gauntlet";
 TAG_LEVENBRECH = "Levenbrech";
 TAG_LUMBERJACK = "\"Lumberjack\" Chainsaw";
-TAG_MINE = "Mine";
 TAG_WAND = "Gold Wand";
 TAG_92FS = "Beretta 92FS";
 TAG_REVOLVER = "Revolver";
