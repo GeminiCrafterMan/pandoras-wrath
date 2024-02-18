@@ -9,6 +9,7 @@ version "4.1.0"
 #include "ZScript/status_bar.zs"
 #include "ZScript/ZWL/zwl.zs"
 
+#include "ZScript/Weapons/StatusEffects.zsc" // Status effects
 #include "ZScript/Weapons/Generic Effects.zsc" // Generic effects
 #include "ZScript/Weapons/Projectiles.zsc" // Projectiles
 #include "ZScript/Weapons/Casings.zsc" // Casings
