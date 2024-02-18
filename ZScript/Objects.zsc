@@ -2,6 +2,8 @@ class GWM_ExplosiveBarrel : ExplosiveBarrel // The bouncing part of this REALLY 
 {
 	Default
 	{
+		//$Category Obstacles
+		//$Title "Explosive Barrel
 		Tag "Explosive Barrel";
 		+PUSHABLE
 		+BOUNCEONFLOORS

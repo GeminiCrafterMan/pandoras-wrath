@@ -4,6 +4,7 @@ class GWM_ChaingunGuy : ChaingunGuy
 	Default
 	{
 		//$Category Monsters
+		//$Title "Mad Vulcan Zombie
 		Tag "$TAG_CHAINGUNNER";
 		AttackSound "weapons/chainfire";
 		DropItem "GWM_Chaingun";
@@ -80,6 +81,7 @@ class GWM_HeavyRifleman : ChaingunGuy
 	Default
 	{
 		//$Category Monsters
+		//$Title "Heavy Rifleman
 		Tag "$TAG_HEAVYRIFLEMAN";
 		AttackSound "weapons/riflesht";
 		Obituary "$OB_HEAVYRIFLEMAN";

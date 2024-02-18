@@ -20,8 +20,7 @@ class GWM_ShitShotgunGuy : ShotgunGuy
 	Default
 	{
 		//$Category Monsters
-		//$Title Shotgun Zombie
-		// ^ that's so UDB shows it right (it still didn't...?)
+		//$Title "Shotgun Zombie
 		AttackSound "weapons/zsgshot";
 		DropItem "GWM_ZombieShotgun";
 		Obituary "$OB_ZOMBIESHOTGUNGUY";
@@ -80,8 +79,7 @@ class GWM_KahunaShotgunGuy : ShotgunGuy
 	Default
 	{
 		//$Category Monsters
-		//$Title Shotgun Zombie
-		// ^ that's so UDB shows it right (it still didn't...?)
+		//$Title "Slayer's Kahuna Shotgun Zombie
 		Health 80;
 		AttackSound "weapons/skshot";
 		DropItem "GWM_Shotgun";
@@ -195,6 +193,7 @@ class GWM_IceShotgunGuy : ShotgunGuy
 	Default
 	{
 		//$Category Monsters
+		//$Title "Ice Shotgun Zombie
 		Translation "Ice";
 		DropItem "GWM_IceShotgun";
 		Obituary "$OB_ICESHOTGUNGUY";
@@ -271,6 +270,7 @@ class GWM_ShadowHunter : Actor
 	Default
 	{
 		//$Category Monsters
+		//$Title "Shadow Hunter
 		Tag "$TAG_SHADOWHUNTER";
 		DropItem "GWM_Revolver";
 		Health 180;

@@ -10,6 +10,8 @@ class GWM_Chaingun : GWM_WeaponBase
 	}
 	Default
 	{
+		//$Category Weapons
+		//$Title ""Mad Vulcan" Chaingun
 		Weapon.SelectionOrder 800; // Has a wind-up, so +100
 		Weapon.UpSound "weapons/draw_chaingun";
 		Weapon.AmmoUse 1;

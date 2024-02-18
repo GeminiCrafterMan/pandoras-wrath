@@ -3,6 +3,7 @@ class GWM_DoomImp : DoomImp // literally just a normal imp
 	Default
 	{
 		//$Category Monsters
+		//$Title "Imp
 		Tag "$TAG_DOOMIMP";
 	}
 	States
@@ -76,6 +77,7 @@ class GWM_CyberImp : Actor
 	Default
 	{
 		//$Category Monsters
+		//$Title "Cyber Imp
 		Tag "$TAG_CYBERIMP";
 		Health 120;
 		Radius 20;
@@ -173,6 +175,7 @@ class GWM_Nightshade : Actor
 	Default
 	{
 		//$Category Monsters
+		//$Title "Nightshade
 		Tag "$TAG_NIGHTSHADE";
 		Obituary "$OB_NIGHTSHADE";
 		Health 80;
@@ -282,6 +285,8 @@ Class GWM_Devil : DoomImp
 {
 	Default
 	{
+		//$Category Monsters
+		//$Title "Devil
 		Obituary "$OB_DEVIL_FIREBALL";
 		HitObituary "$OB_DEVIL_SCRATCH";
 		Tag "$TAG_DEVIL";

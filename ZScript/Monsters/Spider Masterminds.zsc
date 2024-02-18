@@ -2,6 +2,8 @@ class GWM_SpiderMastermind : SpiderMastermind
 {
 	Default
 	{
+		//$Category Monsters
+		//$Title "Spider Mastermind
 		Tag "$TAG_SPIDERMASTERMIND";
 		AttackSound "weapons/skshot";
 	}

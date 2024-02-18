@@ -2,6 +2,8 @@ class GWM_RocketLauncher : GWM_WeaponBase
 {
 	Default
 	{
+		//$Category Weapons
+		//$Title "Rocket Launcher
 		Weapon.SelectionOrder 2500; // Don't blow yourself up!!
 		Weapon.UpSound "weapons/draw_primary";
 		Weapon.AmmoUse 1;

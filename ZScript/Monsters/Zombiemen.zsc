@@ -4,6 +4,7 @@ class GWM_Zombieman : Zombieman
 	Default
 	{
 		//$Category Monsters
+		//$Title "Pistol Zombie
 		Tag "$TAG_ZOMBIEMAN";
 		DropItem "GWM_LowCaliberMagazine";
 		AttackSound "weapons/92fsfire";
@@ -93,6 +94,7 @@ class GWM_SMGGuy : Actor
 	Default
 	{
 		//$Category Monsters
+		//$Title "SMG Zombie
 		Tag "$TAG_SMGGUY";
 		Health 40;
 		Radius 20;

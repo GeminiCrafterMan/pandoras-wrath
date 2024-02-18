@@ -2,6 +2,8 @@ class GWM_VenomCannon : GWM_WeaponBase // desperately in need of a nerf
 {
 	Default
 	{
+		//$Category Weapons
+		//$Title "Venom Cannon
 		Weapon.SelectionOrder 600; // Actually really good!! Kills shit really well, with no self-damage.
 		Weapon.UpSound "weapons/draw_primary";
 		Weapon.AmmoUse 1;

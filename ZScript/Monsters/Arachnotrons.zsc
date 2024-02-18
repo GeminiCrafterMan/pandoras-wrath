@@ -2,6 +2,8 @@ class GWM_Arachnotron : Arachnotron
 {
 	Default
 	{
+		//$Category Monsters
+		//$Title "Arachnotron
 		Tag "$TAG_ARACHNOTRON";
 	}
 	States

@@ -2,6 +2,8 @@ class GWM_Mancubus : Fatso
 {
 	Default
 	{
+		//$Category Monsters
+		//$Title "Mancubus
 		Tag "$TAG_MANCUBUS";
 	}
 	States

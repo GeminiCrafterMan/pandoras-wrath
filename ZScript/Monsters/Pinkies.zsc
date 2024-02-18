@@ -3,6 +3,7 @@ class GWM_Pinky : Demon
 	Default
 	{
 		//$Category Monsters
+		//$Title "Pinky
 		Tag "$TAG_PINKY";
 	}
 	States
@@ -59,6 +60,7 @@ class GWM_Spectre : GWM_Pinky
 	Default
 	{
 		//$Category Monsters
+		//$Title "Spectre
 		+SHADOW
 		RenderStyle "OptFuzzy";
 		Alpha 0.5;
@@ -77,6 +79,7 @@ class GWM_Hellhog : Actor
 	Default
 	{
 		//$Category Monsters
+		//$Title "Hellhog
 		BloodColor "30 67 23";
 		Health 260;
 		PainChance 140;

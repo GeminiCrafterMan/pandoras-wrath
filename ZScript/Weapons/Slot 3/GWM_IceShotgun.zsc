@@ -6,6 +6,8 @@ class GWM_IceShotgun : GWM_WeaponBase
 	
 	Default
 	{
+		//$Category Weapons
+		//$Title "Ice Shotgun
 		Weapon.SelectionOrder 1300;
 		Inventory.PickupSound "weapons/icepickup";
 		Weapon.UpSound "weapons/draw_secondary";

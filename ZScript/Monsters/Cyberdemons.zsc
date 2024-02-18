@@ -3,6 +3,7 @@ class GWM_Cyberdemon : Cyberdemon
 	Default
 	{
 		//$Category Monsters
+		//$Title "Cyberdemon
 		Tag "$TAG_CYBERDEMON";
 	}
 	States
@@ -23,6 +24,7 @@ class GWM_Superdemon : Actor
 	Default
 	{
 		//$Category Monsters
+		//$Title "Superdemon
 		Tag "$TAG_SUPERDEMON";
 		Obituary "$OB_SUPERDEMON";
 		Health 3500;

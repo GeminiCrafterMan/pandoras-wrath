@@ -2,6 +2,8 @@ class GWM_HealthBonus : HealthBonus replaces HealthBonus
 {
 	Default
 	{
+		//$Category Pickups
+		//$Title "Health Bonus
 		Inventory.MaxAmount 300;
 		Inventory.PickupSound "pickups/healthbonus";
 		Inventory.PickupMessage "$GOTHEALTHBONUS";
@@ -12,6 +14,8 @@ class GWM_ArmorBonus : ArmorBonus replaces ArmorBonus
 {
 	Default
 	{
+		//$Category Pickups
+		//$Title "Armor Bonus
 		Armor.MaxSaveAmount 300;
 		Inventory.PickupSound "pickups/armorbonus";
 		Inventory.PickupMessage "$GOTARMORBONUS";
@@ -22,6 +26,8 @@ class GWM_Soulsphere : Soulsphere
 {
 	Default
 	{
+		//$Category Pickups
+		//$Title "Soulsphere
 		Inventory.MaxAmount 300;
 	}
 }
@@ -30,6 +36,8 @@ class GWM_Backpack : Backpack replaces Backpack
 {
 	Default
 	{
+		//$Category Pickups
+		//$Title "Backpack
 		Inventory.PickupSound "pickups/backpack";
 	}
 }
@@ -40,6 +48,11 @@ class GWM_Berserk : Berserk
 		if (CVar.GetCVar('gwm_shutupmerc', toucher.player).GetBool() == false) 
 			toucher.A_StartSound("player/berserk", CHAN_VOICE);
 		Super.Touch(toucher);
+	}
+	Default
+	{
+		//$Category Pickups
+		//$Title "Berserk
 	}
 	States
 	{
@@ -62,6 +75,8 @@ class GWM_KnightSphere : Inventory
 	}
 	Default
 	{
+		//$Category Pickups
+		//$Title "Hell Knight transformation
 		Inventory.PickupMessage "$GOTKNIGHTSPHERE";
 		Inventory.Icon "HPOWA0";
 		Inventory.MaxAmount 0;
@@ -79,12 +94,21 @@ class GWM_KnightSphere : Inventory
 	}
 }
 
-class GWM_BlurSphere : BlurSphere {}
+class GWM_BlurSphere : BlurSphere
+{
+	Default
+	{
+		//$Category Pickups
+		//$Title "Partial Invisibility
+	}
+}
 
 class GWM_DrainSphere : PowerupGiver
 {
 	Default
 	{
+		//$Category Pickups
+		//$Title "Life Drain
 		Inventory.PickupMessage "$GOTLIFEDRAIN";
 		Inventory.Icon "VAMPA0";
 		Powerup.Color "FF0000", 0.25;
@@ -103,12 +127,21 @@ class GWM_DrainSphere : PowerupGiver
 	}
 }
 
-class GWM_InvulnerabilitySphere : InvulnerabilitySphere {}
+class GWM_InvulnerabilitySphere : InvulnerabilitySphere
+{
+	Default
+	{
+		//$Category Pickups
+		//$Title "Invulnerability
+	}
+}
 
 class GWM_ReflectSphere : PowerupGiver
 {
 	Default
 	{
+		//$Category Pickups
+		//$Title "Reflective Shots
 		Inventory.PickupMessage "$GOTREFLECTIVE";
 		Inventory.Icon "REFLA0";
 		Powerup.Color "0011FF", 0.25;
@@ -133,6 +166,9 @@ Class GWM_Stopwatch : Inventory
 {
 	default
 	{
+		//$Category Pickups
+		//$Title "Stopwatch
+		//$Sprite WTCHA0
 		+NOGRAVITY
 		+FLOATBOB
 		+INVENTORY.INVBAR
@@ -263,6 +299,8 @@ class GWM_PortableMedkit : Inventory
 	}
 	Default
 	{
+		//$Category Pickups
+		//$Title "Portable Medkit
 		+INVENTORY.INVBAR;
 		Inventory.Amount 100;
 		Inventory.MaxAmount 300;

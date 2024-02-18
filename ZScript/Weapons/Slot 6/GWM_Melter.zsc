@@ -10,8 +10,7 @@ Class GWM_Melter : GWM_WeaponBase
 	Default
 	{
 		//$Category Weapons
-		//$Sprite VMLTP0
-		//$Title "Melter"
+		//$Title "Melter
 		Weapon.AmmoGive 40;
 		Weapon.AmmoUse 2;
 		Weapon.AmmoType "GWM_Cell";
@@ -415,8 +414,7 @@ class GWM_MelterHeatsink : Inventory
 	Default
 	{
 		//$Category Weapons
-		//$Sprite VMLTQ0
-		//$Title "Melter Heatsink"
+		//$Title "Melter Heatsink
 		Inventory.Amount 1;
 		Inventory.MaxAmount 3;
 		Inventory.Icon "VMLTQ0";

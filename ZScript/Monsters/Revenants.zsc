@@ -1,7 +1,16 @@
 class GWM_Revenant : Revenant
 {
+	Default
+	{
+		//$Category Monsters
+		//$Title "Revenant
+	}
 	States
 	{
+		Spawn:
+			SKEL A 10 A_Look;
+			SKEL B 10 A_Look;
+			Loop;
 		Melee:
 			SKEL G 0 A_FaceTarget;
 			SKEL G 6 A_SkelWhoosh;
@@ -57,6 +66,8 @@ class GWM_Draugr : Actor
 {
 	Default
 	{
+		//$Category Monsters
+		//$Title "Draugr
 		Health 300;
 		Radius 20;
 		Height 56;

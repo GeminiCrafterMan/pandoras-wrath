@@ -1,5 +1,9 @@
 class GWM_WeaponSpawner : RandomSpawner
 {
+	Default
+	{
+		//$GZDB_SKIP
+	}
 	override void BeginPlay()
 	{
 		Super.BeginPlay();

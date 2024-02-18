@@ -44,6 +44,8 @@ class GWM_PFSuperShotgun : GWM_WeaponBase
 	}
 	Default
 	{
+		//$Category Weapons
+		//$Title "Perfect Freeze Super Shotgun
 		Weapon.SelectionOrder 1300;
 		Inventory.PickupSound "weapons/ssgpickup";
 		Weapon.UpSound "weapons/draw_primary";

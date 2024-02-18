@@ -3,6 +3,7 @@ class GWM_Cacodemon : Cacodemon
 	Default
 	{
 		//$Category Monsters
+		//$Title "Cacodemon
 		Tag "$TAG_CACODEMON";
 		BloodColor "00 00 F9";
 	}
@@ -41,6 +42,8 @@ class GWM_DisCacodemon : Actor
 {
 	Default
 	{
+		//$Category Monsters
+		//$Title "Dis Cacodemon
 		Health 400;
 		Radius 31;
 		Height 56;

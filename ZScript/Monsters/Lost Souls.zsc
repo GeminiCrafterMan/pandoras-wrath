@@ -20,6 +20,7 @@ class GWM_LostSoul : LostSoul // to prevent recursion, i guess
 	Default
 	{
 		//$Category Monsters
+		//$Title "Lost Soul
 		+NOBLOOD
 		Tag "$TAG_LOSTSOUL";
 		DamageFunction (14);
@@ -63,7 +64,7 @@ class GWM_Blot : Actor
 		//$Category Monsters
 		//$Angled
 		//$Sprite BLOPA0
-
+		//$Title "Blot
 		Tag "$TAG_BLOT";
 		Obituary "$OB_BLOT";
 		Health 20;

@@ -2,7 +2,8 @@ class GWM_Lumberjack : GWM_WeaponBase
 {
 	Default
 	{
-		//$Title Chainsaw
+		//$Category Weapons
+		//$Title "Lumberjack
 		Weapon.Kickback 0;
 		Weapon.SelectionOrder 2200;
 		Weapon.UpSound "weapons/draw_csaw";

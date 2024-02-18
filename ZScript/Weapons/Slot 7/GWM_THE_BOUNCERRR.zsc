@@ -2,6 +2,8 @@ class GWM_Bouncer : GWM_WeaponBase
 {
 	Default
 	{
+		//$Category Weapons
+		//$Title "The Bouncer
 		Weapon.SelectionOrder 2800;
 		Weapon.UpSound "weapons/draw_primary";
 		Weapon.AmmoUse 10;

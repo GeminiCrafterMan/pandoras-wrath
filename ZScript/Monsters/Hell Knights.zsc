@@ -3,6 +3,7 @@ class GWM_HellKnight : HellKnight
 	Default
 	{
 		//$Category Monsters
+		//$Title "Hell Knight
 		Tag "$TAG_HELLKNIGHT";
 		BloodColor "30 67 23";
 	}
@@ -77,6 +78,8 @@ class GWM_CyberHellKnight : GWM_HellKnight
 {
 	Default
 	{
+		//$Category Monsters
+		//$Title "Cyber Hell Knight
 		Tag "$TAG_CYBERHELLKNIGHT";
 		Obituary "$OB_CYBERHELLKNIGHT_FIREBALL";
 		HitObituary "$OB_CYBERHELLKNIGHT_SCRATCH";

@@ -1,9 +1,9 @@
-
-
 class GWM_LowCaliberMagazine : Ammo
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "Low-caliber Magazine
 		Inventory.PickupMessage "$GOTLOWCALMAG";
 		Inventory.Amount 10;
 		Inventory.MaxAmount 200;
@@ -12,23 +12,19 @@ class GWM_LowCaliberMagazine : Ammo
 		Inventory.Icon "MAGZA0";
 		Inventory.PickupSound "pickups/magazine";
 	}
-	
-	
-	
-	
 	States
 	{
 		Spawn:
 			MAGZ A -1;
 			Stop;
-		
-		
 	}
 }
 class GWM_LowCaliberBox : GWM_LowCaliberMagazine
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "Low-caliber Box
 		Inventory.PickupMessage "$GOTLOWCALBOX";
 		Inventory.Amount 50;
 		Inventory.PickupSound "pickups/magazinebox";
@@ -45,6 +41,8 @@ class GWM_HighCaliberMagazine : Ammo
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "High-caliber Magazine
 		Inventory.PickupMessage "$GOTHIGHCALMAG";
 		Inventory.Amount 10;
 		Inventory.MaxAmount 200;
@@ -64,6 +62,8 @@ class GWM_HighCaliberBelt : GWM_HighCaliberMagazine
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "High-caliber Belt
 		Inventory.PickupMessage "$GOTHIGHCALBELT";
 		Inventory.Amount 50;
 		Inventory.PickupSound "pickups/belt";
@@ -80,6 +80,8 @@ class GWM_Shell : Ammo
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "Small Shell Box
 		Inventory.PickupSound "pickups/shells";
 		Inventory.PickupMessage "$GOTSHELLS";
 		Inventory.Amount 4;
@@ -99,6 +101,8 @@ class GWM_ShellBox : GWM_Shell
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "Large Shell Box
 		Inventory.PickupMessage "$GOTSHELLBOX";
 		Inventory.Amount 20;
 	}
@@ -114,6 +118,8 @@ class GWM_IceShell : Ammo
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "Small Ice Shell Box
 		Inventory.PickupSound "pickups/shells";
 		Inventory.PickupMessage "$GOTICESHELLS";
 		Inventory.Amount 4;
@@ -133,6 +139,8 @@ class GWM_IceShellBox : GWM_IceShell
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "Large Ice Shell Box
 		Inventory.PickupMessage "$GOTICESHELLBOX";
 		Inventory.Amount 20;
 	}
@@ -148,6 +156,8 @@ class GWM_RocketAmmo : Ammo
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "Rocket
 		Inventory.PickupMessage "$GOTROCKET";
 		Inventory.Amount 1;
 		Inventory.MaxAmount 50;
@@ -166,6 +176,8 @@ class GWM_RocketBox : GWM_RocketAmmo
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "Rocket Box
 		Inventory.PickupMessage "$GOTROCKETBOX";
 		Inventory.Amount 5;
 	}
@@ -181,6 +193,8 @@ class GWM_VenomVial : Ammo
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "Venom Vial
 		Inventory.PickupMessage "$GOTVENOMVIAL";
 		Inventory.Amount 1;
 		Inventory.MaxAmount 50;
@@ -199,6 +213,8 @@ class GWM_LargeVenomVial : GWM_VenomVial
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "Large Venom Vial
 		Inventory.PickupMessage "$GOTLARGEVENOMVIAL";
 		Inventory.Amount 5;
 	}
@@ -229,10 +245,31 @@ class GWM_MineAmmo : Ammo
 	}
 }
 
+class GWM_DynamiteAmmo : Ammo
+{
+	Default
+	{
+		Inventory.PickupMessage "$PLACEHOLDER";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 50;
+		Ammo.BackpackAmount 1;
+		Ammo.BackpackMaxAmount 100;
+		Inventory.Icon "DYNWZ0";
+	}
+	States
+	{
+		Spawn:
+			DYNW Z -1;
+			Stop;
+	}
+}
+
 class GWM_Cell : Ammo
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "Power Cell
 		Inventory.PickupMessage "$GOTCELL";
 		Inventory.Amount 20;
 		Inventory.MaxAmount 300;
@@ -251,6 +288,8 @@ class GWM_CellPack : CellPack
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "Power Cell Pack
 		Inventory.PickupMessage "$GOTCELLPACK";
 		Inventory.Amount 100;
 	}
@@ -275,6 +314,8 @@ class GWM_GasCanister : Ammo
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "Gas Canister
 		Inventory.PickupSound "pickups/gas";
 		Inventory.Amount 24;
 		Inventory.MaxAmount 240;
@@ -294,6 +335,8 @@ class GWM_GasPack : GWM_GasCanister
 {
 	Default
 	{
+		//$Category Ammo
+		//$Title "Pack of Gas Canisters
 		Inventory.Amount 48;
 		Inventory.PickupMessage "$GOTGASPACK";
 	}
@@ -338,7 +381,7 @@ class GWM_ImpalerBoltsHefty : GWM_ImpalerBolts replaces CrossbowHefty
 	}
 }
 
-Class EverIce : Ammo replaces BlasterAmmo
+Class GWM_EverIce : Ammo replaces BlasterAmmo
 {
 	Default
 	{
@@ -358,7 +401,7 @@ Class EverIce : Ammo replaces BlasterAmmo
 			Loop;
 	}
 }
-Class EverIceHefty : EverIce replaces BlasterHefty
+Class GWM_EverIceHefty : GWM_EverIce replaces BlasterHefty
 {
 	Default
 	{
@@ -375,7 +418,7 @@ Class EverIceHefty : EverIce replaces BlasterHefty
 	}
 }
 
-Class GWM_ANNIHILATORAMMO : Ammo
+class GWM_ANNIHILATORAMMO : Ammo
 {
 	Default
 	{

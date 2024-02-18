@@ -3,6 +3,8 @@ class GWM_Shotgun : GWM_WeaponBase
 	int kahunaspread;
 	Default
 	{
+		//$Category Weapons
+		//$Title ""Slayer's Kahuna" Shotgun
 		Weapon.SelectionOrder 1400; // kinda bad for getting stuff out of your face, so +100 for it
 		Inventory.PickupSound "weapons/skpickup";
 		Weapon.UpSound "weapons/draw_secondary";

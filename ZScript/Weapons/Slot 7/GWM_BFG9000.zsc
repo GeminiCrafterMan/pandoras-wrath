@@ -2,6 +2,8 @@ class GWM_BFG9000 : GWM_WeaponBase // dude this thing's gonna be gone anyway. i'
 {
 	Default
 	{
+		//$Category Weapons
+		//$Title "BFG9000
 		Weapon.SelectionOrder 2800; // Don't waste ammo!! But also, big green ball of death, SAVE ME!!!
 		Weapon.UpSound "weapons/draw_primary";
 		Weapon.AmmoUse 40;
@@ -14,6 +16,9 @@ class GWM_BFG9000 : GWM_WeaponBase // dude this thing's gonna be gone anyway. i'
 	}
 	States
 	{
+		Spawn:
+			BFUG Z -1;
+			Stop;
 		Ready:
 			BFUG A 1 A_WeaponReady;
 			Loop;
@@ -55,9 +60,6 @@ class GWM_BFG9000 : GWM_WeaponBase // dude this thing's gonna be gone anyway. i'
 				A_OverlayScale(OverlayID(), -0.20, 0, WOF_ADD);
 			}
 			Goto LightDone;
-		Spawn:
-			BFUG Z -1;
-			Stop;
 	}
 }
 class GWM_BFGBall : BFGBall

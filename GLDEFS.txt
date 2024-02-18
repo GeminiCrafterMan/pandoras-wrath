@@ -218,7 +218,7 @@ pointlight SDEMONBALL
 
 flickerlight SDEMONBALL_X1
 {
-    color 7.0 0.0 0.0
+    color 0.7 0.0 0.0
     size 80
     secondarySize 88
     chance 0.25

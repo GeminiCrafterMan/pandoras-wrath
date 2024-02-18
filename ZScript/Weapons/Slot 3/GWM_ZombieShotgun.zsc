@@ -2,6 +2,8 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 {
 	Default
 	{
+		//$Category Weapons
+		//$Title "Zombie Shotgun
 		Weapon.SelectionOrder 1600; // dude this thing sucks ASS but at least it's a shotgun
 		Inventory.PickupSound "weapons/zsgpickup";
 		Weapon.UpSound "weapons/draw_secondary";

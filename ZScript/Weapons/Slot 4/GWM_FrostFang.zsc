@@ -6,7 +6,7 @@ Class GWM_FrostFang : GWM_WeaponBase replaces Blaster
 		Weapon.UpSound "weapons/draw_primary";
 		Tag "$TAG_FROSTFANG";
 		Inventory.PickupMessage "$GOTFROSTFANG";
-		Weapon.AmmoType "EverIce";
+		Weapon.AmmoType "GWM_EverIce";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 20;
 		Weapon.SisterWeapon "GWM_FrostFangPowered";

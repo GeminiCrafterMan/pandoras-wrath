@@ -3,6 +3,8 @@ class GWM_NoiseCrusher : GWM_WeaponBase
 	bool CrushCaught;
 	Default
 	{
+		//$Category Weapons
+		//$Title "Noise Crusher
 		Weapon.UpSound "weapons/draw_primary";
 		Weapon.AmmoUse1 5;
 		Weapon.AmmoGive 40;

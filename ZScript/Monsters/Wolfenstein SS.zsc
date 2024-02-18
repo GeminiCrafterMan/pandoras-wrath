@@ -2,6 +2,8 @@ class GWM_WolfensteinSS : WolfensteinSS
 {
 	Default
 	{
+		//$Category Monsters
+		//$Title "Wolfenstein SS
 		Tag "$TAG_WOLFENSTEINSS";
 		AttackSound "weapons/mp40fire";
 		DropItem "GWM_MP40";

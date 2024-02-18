@@ -3,6 +3,7 @@ class GWM_BaronOfHell : BaronOfHell
 	Default
 	{
 		//$Category Monsters
+		//$Title "Baron of Hell
 		Tag "$TAG_BARON";
 		BloodColor "93 2F 00";
 	}
@@ -77,6 +78,8 @@ class GWM_CyberBaron : GWM_BaronOfHell
 {
 	Default
 	{
+		//$Category Monsters
+		//$Title "Cyber Baron
 		Tag "$TAG_CYBERBARON";
 		Obituary "$OB_CYBERBARON_FIREBALL";
 		HitObituary "$OB_CYBERBARON_SCRATCH";

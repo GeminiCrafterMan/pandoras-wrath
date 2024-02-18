@@ -2,6 +2,8 @@ class GWM_Mine : GWM_WeaponBase // not that it needs to be this way...
 {
 	Default
 	{
+		//$Category Weapons
+		//$Title "Land Mine
 		Weapon.SelectionOrder 2500; // Don't blow yourself up!!
 		Tag "$TAG_MINE";
 		Weapon.AmmoUse 1;
@@ -45,7 +47,8 @@ class GWM_ThrownMine : Actor // Okay, so like, I was going to do this myself, bu
 	Default
 	{
 		//$Category Obstacles
-		Tag "Land mine";
+		//$Title "Planted Land Mine
+		Tag "$TAG_MINE";
 		Radius 16;
 		Height 4;
 		Health 1;

@@ -2,6 +2,8 @@ class GWM_Impactor : GWM_WeaponBase // not that it needs to be this way...
 {
 	Default
 	{
+		//$Category Weapons
+		//$Title "Impactor Gauntlet
 		Weapon.SelectionOrder 2200;
 		+WEAPON.MELEEWEAPON
 		Tag "$TAG_IMPACTOR";

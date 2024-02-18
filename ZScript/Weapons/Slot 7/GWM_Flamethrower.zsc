@@ -3,7 +3,8 @@ class GWM_Flamethrower : GWM_WeaponBase
 {
 	Default
 	{
-		// $Category Weapons
+		//$Category Weapons
+		//$Title "Flamethrower
 		Tag "$TAG_FLAMETHROWER";
 		Weapon.UpSound "weapons/draw_primary";
 		Inventory.PickupSound "misc/w_pkup";
