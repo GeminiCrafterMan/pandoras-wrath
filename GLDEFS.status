@@ -1,0 +1,9 @@
+object GWM_IceStatusThinker {
+	frame TNT1A { light GWM_ICESTATUSEFFECT }
+}
+
+PointLight GWM_ICESTATUSEFFECT
+{
+	Color 0.0 0.5 0.8
+	Size 40
+}

@@ -7,11 +7,12 @@ class GWM_IceProjectile : Actor // the absolute most basic projectile base possi
 		{
 			if (victim.health <= self.Damage)
 			{
-				victim.A_SpawnProjectile("GWM_IceDamageEffect");
+				victim.A_SpawnProjectile("GWM_IceStatusEffect");
 				victim.A_Die("Ice");
 				return 1;
 			}
-			victim.A_SpawnProjectile("GWM_IceDamageEffect");
+			victim.A_SpawnProjectile("GWM_IceStatusEffect");
+				
 		}
         return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
     }
