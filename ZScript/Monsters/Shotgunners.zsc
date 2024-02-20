@@ -213,7 +213,13 @@ class GWM_IceShotgunGuy : ShotgunGuy
 			ISGZ F 10 Bright
 			{
 				A_StartSound("weapons/iceshot", CHAN_WEAPON);
-				A_FatAttack3("GWM_ShotgunGuyIceChunk");
+				A_SpawnProjectile("GWM_ZombieShotgunIceShard",32,0,0,0,0);
+				
+				A_SpawnProjectile("GWM_ZombieShotgunIceShard",32,0,0,13,13);
+				A_SpawnProjectile("GWM_ZombieShotgunIceShard",32,0,0,13,-13);
+				A_SpawnProjectile("GWM_ZombieShotgunIceShard",32,0,0,-13,13);
+				A_SpawnProjectile("GWM_ZombieShotgunIceShard",32,0,0,-13,-13);
+				
 				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
 				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
 				A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
@@ -256,12 +262,53 @@ class GWM_IceShotgunGuy : ShotgunGuy
 			Stop;
 	}
 }
-class GWM_ShotgunGuyIceChunk : GWM_ShotgunIceChunk
+
+
+class GWM_ZombieShotgunIceShard : GWM_ShotgunIceShard
 {
+
+	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
+    {
+        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
+		{
+			if (victim.health <= self.Damage)
+			{
+				victim.A_Die("Ice");
+				return 1;
+			}
+			
+			if (victim.CountInv("IceSlowCount")== 0)
+			{
+				victim.A_SpawnProjectile("GWM_IceStatusThinker");
+			}
+			A_StartSound("Status/IceHit");
+			
+			victim.A_GiveInventory("IceSlowCount",25);
+				
+		}
+        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
+    }
+	
 	Default
 	{
-		DamageFunction (9);
-		Obituary "$OB_ICESHOTGUNGUY";
+		Speed 50;
+		Damagefunction (10);
+	}
+	States
+	{
+		Spawn:
+			SHGI A 1 Bright 
+			{
+			A_SpawnItemEx("IceFog2", vel.x*frandom(-1,-0.4), 0, vel.z*frandom(-1,-0.4), FRandom(-0.5, 0.5), FRandom(-0.5, 0.5), FRandom(-0.5, 0.5));
+			A_SpawnItemEx("IceFog2", vel.x*frandom(-1,-0.4), 0, vel.z*frandom(-1,-0.4), FRandom(-0.5, 0.5), FRandom(-0.5, 0.5), FRandom(-0.5, 0.5));
+			A_SpawnItemEx("IceFog2", vel.x*frandom(-1,-0.4), 0, vel.z*frandom(-1,-0.4), FRandom(-0.5, 0.5), FRandom(-0.5, 0.5), FRandom(-0.5, 0.5));
+			}
+			loop;
+		Death:
+		XDeath:
+			TNT1 AAAA 0 A_SpawnItemEX("StatusIceChunk",0,0,0,frandom(-4,4),frandom(-4,4),frandom(-1,6));
+			SHGI FBCDE 4 Bright;
+			Stop;
 	}
 }
 

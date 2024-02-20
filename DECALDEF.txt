@@ -39,8 +39,6 @@ decalgroup WallVenomPuddle
 
 Generator GWM_VenomBall					WallVenomPuddle
 
-Generator GWM_ShotgunIceChunk			FreezeBlastMelt
-
 fader MeltFade
 {
    DecayStart 0.0

@@ -148,6 +148,7 @@ Class IceFog2 : Actor
 	}
 }
 
+
 class GWM_Tracer : FastProjectile
 {
 	Default

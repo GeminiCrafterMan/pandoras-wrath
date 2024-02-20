@@ -86,3 +86,5 @@ $random misc/gibbed { misc/gibbed1 misc/gibbed2 misc/gibbed3 }
 misc/gibbed1				"Sounds/gib1.wav"
 misc/gibbed2				"Sounds/gib2.wav"
 misc/gibbed3				"Sounds/gib3.wav"
+
+Status/IceHit iceFrz
