@@ -221,10 +221,10 @@ Class StatusIceChunk : Actor
 		Spawn:
 			ICFX A 1 Bright 
 			{
-			A_SetScale(scalex-0.01,scaley-0.01);
+			A_SetScale(Scale.X-0.01,Scale.Y-0.01);
 			}
 			
-			ICFX A 0 A_JumpIf(scalex < 0, "Death");
+			ICFX A 0 A_JumpIf(Scale.X < 0, "Death");
 			loop;
 		Death:
 			TNT1 A 1;

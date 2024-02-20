@@ -235,6 +235,7 @@ class ThingReplacer : StaticEventHandler
 							e.Replacement = "DeadStick";
 							break;
 					}
+					break;	// I can't believe I forgot this... The lack of this caused DeadStick-s to be turned into GWM_ExplosiveBarrel-s.
 				case 'TangoBarrel':
 					e.Replacement = "GWM_ExplosiveBarrel";
 					break;
