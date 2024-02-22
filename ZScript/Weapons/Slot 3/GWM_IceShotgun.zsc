@@ -209,26 +209,28 @@ class GWM_IceShotgun : GWM_WeaponBase
 			TNT1 A 0 ZWL_CheckReload();
 			goto Pump;
 		AltFire:
-			ISHT B 5;
-			ISHT CD 2;
-			ISHT E 5 
+			TNT1 A 0 A_StartSound("weapons/icechrg", CHAN_WEAPON);
+		AltHold:
+			ISHT A 2
+			
 			{
-				A_StartSound("weapons/icepump1", CHAN_BODY);
-				A_StartSound("weapons/icehiss", CHAN_AUTO);
-				switch (invoker.iceCharge)
-				{
-					case 2:
-						invoker.iceCharge = 0;
-						break;
-					default:
-						invoker.iceCharge = invoker.iceCharge + 1;
-						break;
-				}
+				A_WeaponOffset(0+frandom(-0.4,0.4)*invoker.iceCharge, 32+frandom(-0.4,0.4)*invoker.iceCharge, WOF_INTERPOLATE);	
+				invoker.iceCharge = invoker.iceCharge + 1;
+				A_SpawnItemEx("IceFog", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
+				
+				if (invoker.iceCharge > 2)
+				{A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));}
+				if (invoker.iceCharge > 8)
+				{A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));}
+				if (invoker.iceCharge > 20)
+				{A_SpawnItemEx("IceFog2", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));}
+				
 			}
-			ISHT DC 2;
-			ISHT B 5 A_StartSound("weapons/icepump2", CHAN_BODY);
-			ISHT A 3 A_Refire();
-			Goto Ready;
+			ISHT A 0 A_Refire();
+			ISHT A 0 A_Jumpif(invoker.iceCharge > 20, "Lv3Fire");
+			ISHT A 0 A_Jumpif(invoker.iceCharge > 8, "Lv2Fire");
+			ISHT A 0 A_Jumpif(invoker.iceCharge > 2, "Lv1Fire");
+			Goto AltFire;
 		Flash:
 			TNT1 A 0 A_OverlayOffset(OverlayID(), 159, 92);
 			SGFL ABCCDE 1 Bright;
@@ -348,7 +350,6 @@ class GWM_ShotgunIceBomb : GWM_IceProjectile
 			loop;
 		Death:
 			TNT1 A 0 {
-				A_SpawnProjectile("GWM_ShotgunIceShard",0,0,invoker.anglecount,CMF_ABSOLUTEPITCH ,0);
 				A_SpawnProjectile("GWM_ShotgunIceShard",0,0,invoker.anglecount,CMF_ABSOLUTEPITCH ,30);
 				A_SpawnProjectile("GWM_ShotgunIceShard",0,0,invoker.anglecount,CMF_ABSOLUTEPITCH ,60);
 				A_SpawnProjectile("GWM_ShotgunIceShard",0,0,invoker.anglecount,CMF_ABSOLUTEPITCH ,-30);
@@ -357,8 +358,6 @@ class GWM_ShotgunIceBomb : GWM_IceProjectile
 				invoker.anglecount = invoker.anglecount + 30;
 				if (invoker.anglecount > 360)
 				{
-				A_SpawnProjectile("GWM_ShotgunIceShard",0,0,invoker.anglecount,CMF_ABSOLUTEPITCH ,90);
-				A_SpawnProjectile("GWM_ShotgunIceShard",0,0,invoker.anglecount,CMF_ABSOLUTEPITCH ,-90);
 				
 				
 				SetStateLabel("Fog");
