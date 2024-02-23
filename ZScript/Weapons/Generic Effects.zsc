@@ -161,7 +161,6 @@ class GWM_Tracer : FastProjectile
 		+HITTRACER
 		+NOINTERACTION
 		Scale .5;
-		//MissileType "GWM_TracerTrail";
 		MissileHeight 8;
 	}
 	States
@@ -182,25 +181,6 @@ class GWM_Tracer : FastProjectile
 			Stop;
 		XDeath:
 			TNT1 A 3 A_PlaySound("bullet/hitFlesh",CHAN_BODY,.5);
-			Stop;
-	}
-}
-class GWM_TracerTrail : Actor
-{
-	Default
-	{
-		RenderStyle "Add";
-		+NOBLOCKMAP
-		+NOGRAVITY
-		+NOTELEPORT
-		+CANNOTPUSH
-		+NODAMAGETHRUST
-		Scale .3;
-	}
-	States
-	{
-		Spawn:
-			WPUF B 3 BRIGHT;
 			Stop;
 	}
 }

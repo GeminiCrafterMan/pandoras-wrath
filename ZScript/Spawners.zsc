@@ -7,8 +7,10 @@ class GWM_WeaponSpawner : RandomSpawner
 	override void BeginPlay()
 	{
 		Super.BeginPlay();
-		if (random(0,3) == 3)
+		if (random(0,4) == 4)
 			Spawn("GWM_Mine", self.pos);
+		else if (random(0,4) == 3)
+			Spawn("GWM_Dynamite", self.pos);
 	}
 }
 

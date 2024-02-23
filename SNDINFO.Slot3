@@ -28,11 +28,13 @@ weapons/ssgpickup	"Sounds/Weapons/Slot 3/Super Shotgun/pickup.wav"
 weapons/icehit		"Sounds/Weapons/Slot 3/Ice SG/DSICEHIT.wav"
 weapons/iceshot		"Sounds/Weapons/Slot 3/Ice SG/Shot.wav"
 weapons/icepickup	"Sounds/Weapons/Slot 3/Ice SG/pickup.wav"
-weapons/icechrg	"Sounds/Weapons/Slot 3/Ice SG/IceCharge.mp3"
+weapons/icechrg		"Sounds/Weapons/Slot 3/Ice SG/Charge.wav"
 weapons/icepump1	"Sounds/Weapons/Slot 3/Ice SG/Pump1.wav"
 weapons/icepump2	"Sounds/Weapons/Slot 3/Ice SG/Pump2.wav"
 weapons/icehiss1	"Sounds/Weapons/Slot 3/Ice SG/Hiss1.wav"
 weapons/icehiss2	"Sounds/Weapons/Slot 3/Ice SG/Hiss2.mp3"
+weapons/icelv2		"Sounds/Weapons/Slot 3/Ice SG/Level2.wav"
+weapons/icelv3		"Sounds/Weapons/Slot 3/Ice SG/Level3.wav"
 
 $random weapons/icehiss {weapons/icehiss1 weapons/icehiss2}
 

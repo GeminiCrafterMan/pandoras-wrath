@@ -10,15 +10,15 @@ $random monsters/burndeath {
 	monsters/burndeath8
 	monsters/burndeath9
 }
-monsters/burndeath1	"Sounds/Monsters/Burnt/break1.ogg"
-monsters/burndeath2	"Sounds/Monsters/Burnt/break2.ogg"
-monsters/burndeath3	"Sounds/Monsters/Burnt/break3.ogg"
-monsters/burndeath4	"Sounds/Monsters/Burnt/break4.ogg"
-monsters/burndeath5	"Sounds/Monsters/Burnt/break5.ogg"
-monsters/burndeath6	"Sounds/Monsters/Burnt/break6.ogg"
-monsters/burndeath7	"Sounds/Monsters/Burnt/break7.ogg"
-monsters/burndeath8	"Sounds/Monsters/Burnt/break8.ogg"
-monsters/burndeath9	"Sounds/Monsters/Burnt/break9.ogg"
+monsters/burndeath1	"Sounds/Monsters/Burnt/break1.wav"
+monsters/burndeath2	"Sounds/Monsters/Burnt/break2.wav"
+monsters/burndeath3	"Sounds/Monsters/Burnt/break3.wav"
+monsters/burndeath4	"Sounds/Monsters/Burnt/break4.wav"
+monsters/burndeath5	"Sounds/Monsters/Burnt/break5.wav"
+monsters/burndeath6	"Sounds/Monsters/Burnt/break6.wav"
+monsters/burndeath7	"Sounds/Monsters/Burnt/break7.wav"
+monsters/burndeath8	"Sounds/Monsters/Burnt/break8.wav"
+monsters/burndeath9	"Sounds/Monsters/Burnt/break9.wav"
 
 // Hellhog (los zoglin but pinky)
 monsters/hellhog/sight1		"Sounds/Monsters/Hellhog/angry1.ogg"
