@@ -57,8 +57,33 @@ class GWM_VenomCannon : GWM_WeaponBase // desperately in need of a nerf
 			Stop;
 	}
 }
-class GWM_VenomBall : GWM_PoisonProjectile
+class GWM_VenomBall : Actor
 {
+
+	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
+    {
+        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
+		{
+			if (victim.health <= self.Damage)
+			{
+				victim.A_Die("Acid");
+				return 1;
+			}
+			
+			if (victim.CountInv("AcidWeakCount")== 0)
+			{
+				victim.A_SpawnProjectile("GWM_AcidStatusThinker");
+			}
+			A_StartSound("Status/IceHit");
+			
+			victim.A_GiveInventory("AcidWeakCount",50);
+				
+		}
+        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
+    }
+	
+	actor victim;
+
 	Default
 	{
 		Speed 20;
@@ -77,6 +102,7 @@ class GWM_VenomBall : GWM_PoisonProjectile
 		+FORCEXYBILLBOARD
 		+RANDOMIZE
 		+THRUGHOST
+		Projectile;
 		BounceSound "weapons/vnmcsplt";
 		DeathSound "weapons/vnmcbomb";
 		Obituary "$KILLVENOMCANNONBALL";
@@ -199,11 +225,12 @@ class GWM_SmallVenomBall : GWM_VenomBall
 	}
 }
 class GWM_SmallVenomBall_Shotgun : GWM_SmallVenomBall {Default {Speed 20;}}
-class GWM_FloorVenomPuddle : GWM_PoisonProjectile
+class GWM_FloorVenomPuddle : Actor
 {
 	Default
 	{
 		Height 2;
+		Projectile;
 		Radius 16;
 		-NOGRAVITY
 		+NOTELEPORT

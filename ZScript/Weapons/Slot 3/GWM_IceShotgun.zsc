@@ -495,6 +495,29 @@ class GWM_ShotgunIceTrail : Actor
 
 class GWM_ShotgunIceWallGenerator : GWM_IceProjectile
 {
+
+override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
+    {
+        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
+		{
+			if (victim.health <= self.Damage)
+			{
+				victim.A_Die("Ice");
+				return 1;
+			}
+			
+			if (victim.CountInv("IceSlowCount")== 0)
+			{
+				victim.A_SpawnProjectile("GWM_IceStatusThinker");
+			}
+			A_StartSound("Status/IceHit");
+			
+			victim.A_GiveInventory("IceSlowCount",250);
+				
+		}
+        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
+    }
+
 	Default
 	{
 		Radius 3;

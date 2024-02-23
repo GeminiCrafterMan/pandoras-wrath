@@ -74,13 +74,13 @@ class GWM_Zombieman : Zombieman
 		Death.Fire:
 			TNT1 A 0 {
 				bNOBLOOD = true;
-				A_SetTranslation("GWM_Burnt");
+				
 			}
-			PZOM M 5;
-			PZOM N 5 A_StartSound("monsters/burndeath");
-			PZOM O 5 A_NoBlocking;
-			PZOM PQRST 5;
-			PZOM U -1;
+			PZO2 A 5;
+			PZO2 B 5 A_StartSound("monsters/burndeath");
+			PZO2 C 5 A_NoBlocking;
+			PZO2 DE 5;
+			PZO2 E -1;
 			Stop;
 		Raise:
 			TNT1 A 0 {bNOBLOOD = false;}
@@ -167,13 +167,13 @@ class GWM_SMGGuy : Actor
 		Death.Fire:
 			TNT1 A 0 {
 				bNOBLOOD = true;
-				A_SetTranslation("GWM_Burnt");
+				
 			}
-			MGPO M 5;
-			MGPO N 5 A_XScream;
-			MGPO O 5 A_NoBlocking;
-			MGPO PQRST 5;
-			MGPO U -1;
+			PZO2 A 5;
+			PZO2 B 5 A_StartSound("monsters/burndeath");
+			PZO2 C 5 A_NoBlocking;
+			PZO2 DE 5;
+			PZO2 E -1;
 			Stop;
 		Raise:
 			TNT1 A 0 {bNOBLOOD = false;}

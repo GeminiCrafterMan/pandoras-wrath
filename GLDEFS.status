@@ -7,3 +7,23 @@ PointLight GWM_ICESTATUSEFFECT
 	Color 0.0 0.5 0.8
 	Size 40
 }
+
+object GWM_FlameStatusThinker {
+	frame TNT1A { light GWM_FIRESTATUSEFFECT }
+}
+
+PointLight GWM_FIRESTATUSEFFECT
+{
+	Color 0.8 0.3 0.0
+	Size 60
+}
+
+object GWM_AcidStatusThinker {
+	frame TNT1A { light GWM_ACIDSTATUSEFFECT }
+}
+
+PointLight GWM_ACIDSTATUSEFFECT
+{
+	Color 0.1 1.0 0.3
+	Size 50
+}

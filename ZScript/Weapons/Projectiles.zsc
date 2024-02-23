@@ -64,7 +64,7 @@ class GWM_PoisonProjectile : Actor // the absolute most basic projectile base po
 	{
 		Projectile;
 		DamageType "Poison";
-		PoisonDamage 12, 123;
+		//PoisonDamage 12, 123;
 		+ADDITIVEPOISONDAMAGE
 	}
 }
