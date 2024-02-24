@@ -87,6 +87,7 @@ class ZWeapon : Weapon
 	// Does the same thing as A_WeaponReady. It has similar flags (see above).
 	action void ZWL_WeaponReady(int flags = 0)
 	{
+		A_WeaponReady(); // G: Strange to be calling it early, but I'm trying to get rid of the angry face.
 		invoker.lastShotTic = 0;
 		invoker.deficit = 0.0;
 

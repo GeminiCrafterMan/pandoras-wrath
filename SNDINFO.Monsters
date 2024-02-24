@@ -24,50 +24,47 @@ monsters/burndeath9	"Sounds/Monsters/Burnt/break9.wav"
 monsters/hellhog/sight1		"Sounds/Monsters/Hellhog/angry1.ogg"
 monsters/hellhog/sight2		"Sounds/Monsters/Hellhog/angry2.ogg"
 monsters/hellhog/sight3		"Sounds/Monsters/Hellhog/angry3.ogg"
-$random monsters/hellhog/sight	{monsters/hellhog/sight1 monsters/hellhog/sight2 monsters/hellhog/sight3}
 monsters/hellhog/melee1		"Sounds/Monsters/Hellhog/attack1.ogg"
 monsters/hellhog/melee2		"Sounds/Monsters/Hellhog/attack2.ogg"
-$random monsters/hellhog/melee	{monsters/hellhog/melee1 monsters/hellhog/melee2}
 monsters/hellhog/pain1		"Sounds/Monsters/Hellhog/hurt1.ogg"
 monsters/hellhog/pain2		"Sounds/Monsters/Hellhog/hurt2.ogg"
 monsters/hellhog/pain3		"Sounds/Monsters/Hellhog/hurt3.ogg"
-$random monsters/hellhog/pain	{monsters/hellhog/pain1 monsters/hellhog/pain2 monsters/hellhog/pain3}
 monsters/hellhog/death1		"Sounds/Monsters/Hellhog/death1.ogg"
 monsters/hellhog/death2		"Sounds/Monsters/Hellhog/death2.ogg"
 monsters/hellhog/death3		"Sounds/Monsters/Hellhog/death3.ogg"
-$random monsters/hellhog/death	{monsters/hellhog/death1 monsters/hellhog/death2 monsters/hellhog/death3}
 monsters/hellhog/active1	"Sounds/Monsters/Hellhog/idle1.ogg"
 monsters/hellhog/active2	"Sounds/Monsters/Hellhog/idle2.ogg"
 monsters/hellhog/active3	"Sounds/Monsters/Hellhog/idle3.ogg"
 monsters/hellhog/active4	"Sounds/Monsters/Hellhog/idle4.ogg"
 monsters/hellhog/active5	"Sounds/Monsters/Hellhog/idle5.ogg"
 monsters/hellhog/active6	"Sounds/Monsters/Hellhog/idle6.ogg"
+$random monsters/hellhog/sight	{monsters/hellhog/sight1 monsters/hellhog/sight2 monsters/hellhog/sight3}
+$random monsters/hellhog/melee	{monsters/hellhog/melee1 monsters/hellhog/melee2}
+$random monsters/hellhog/pain	{monsters/hellhog/pain1 monsters/hellhog/pain2 monsters/hellhog/pain3}
+$random monsters/hellhog/death	{monsters/hellhog/death1 monsters/hellhog/death2 monsters/hellhog/death3}
 $random monsters/hellhog/active	{monsters/hellhog/active1 monsters/hellhog/active2 monsters/hellhog/active3 monsters/hellhog/active4 monsters/hellhog/active5 monsters/hellhog/active6}
 
 // Cyber-Imp
-$random monsters/cyberimp/sight { monsters/cyberimp/sight1 monsters/cyberimp/sight2 }
 monsters/cyberimp/sight1	"Sounds/Monsters/Imps/Cyber-Imp/sight1.wav"
 monsters/cyberimp/sight2	"Sounds/Monsters/Imps/Cyber-Imp/sight2.wav"
-$random monsters/cyberimp/death { monsters/cyberimp/death1 monsters/cyberimp/death2 }
 monsters/cyberimp/death1	"Sounds/Monsters/Imps/Cyber-Imp/death1.wav"
 monsters/cyberimp/death2	"Sounds/Monsters/Imps/Cyber-Imp/death2.wav"
 monsters/cyberimp/pain		"Sounds/Monsters/Imps/Cyber-Imp/pain.wav"
 monsters/cyberimp/active	"Sounds/Monsters/Imps/Cyber-Imp/active.wav"
+$random monsters/cyberimp/sight { monsters/cyberimp/sight1 monsters/cyberimp/sight2 }
+$random monsters/cyberimp/death { monsters/cyberimp/death1 monsters/cyberimp/death2 }
 
 // Devil
+monsters/devil/sight1		"Sounds/Monsters/Imps/Devil/sight1.ogg"
+monsters/devil/sight2		"Sounds/Monsters/Imps/Devil/sight2.ogg"
+monsters/devil/pain			"Sounds/Monsters/Imps/Devil/pain.ogg"
+monsters/devil/death1		"Sounds/Monsters/Imps/Devil/death1.ogg"
+monsters/devil/death2		"Sounds/Monsters/Imps/Devil/death2.ogg"
+monsters/devil/active		"Sounds/Monsters/Imps/Devil/active.ogg"
 $RANDOM monsters/devil/sight { monsters/devil/sight1 monsters/devil/sight2 }
-monsters/devil/sight1 "Sounds/Monsters/Imps/Devil/sight1.ogg"
-monsters/devil/sight2 "Sounds/Monsters/Imps/Devil/sight2.ogg"
-
-monsters/devil/pain "Sounds/Monsters/Devil/pain.ogg"
 $RANDOM monsters/devil/death { monsters/devil/death1 monsters/devil/death2 }
-monsters/devil/death1 "Sounds/Monsters/Imps/Devil/death1.ogg"
-monsters/devil/death2 "Sounds/Monsters/Imps/Devil/death2.ogg"
-
-monsters/devil/active "Sounds/Monsters/Imps/Devil/active.ogg"
 
 // Nightshade
-$random monsters/nightshade/sight	{ monsters/nightshade/sight1 monsters/nightshade/sight2 }
 monsters/nightshade/sight1	"Sounds/Monsters/Imps/Nightshade/dsnshsi1.ogg"
 monsters/nightshade/sight2	"Sounds/Monsters/Imps/Nightshade/dsnshsi2.ogg"
 monsters/nightshade/active	"Sounds/Monsters/Imps/Nightshade/dsnshact.ogg"
@@ -75,14 +72,15 @@ monsters/nightshade/pain	"Sounds/Monsters/Imps/Nightshade/dsnshpai.ogg"
 monsters/nightshade/death	"Sounds/Monsters/Imps/Nightshade/dsnshdth.ogg"
 monsters/nightshade/attack	"Sounds/Monsters/Imps/Nightshade/dsnshatk.ogg"
 monsters/nightshade/explode	"Sounds/Monsters/Imps/Nightshade/dsnshexp.ogg"
+$random monsters/nightshade/sight	{ monsters/nightshade/sight1 monsters/nightshade/sight2 }
 
 // Shadow Hunter
-$random monsters/shadowhunter/idle { monsters/shadowhunter/idle1 monsters/shadowhunter/idle2}
 monsters/shadowhunter/idle1	"Sounds/Monsters/Zombies/Shadow Hunter/SHADIDL1.ogg"
 monsters/shadowhunter/idle2	"Sounds/Monsters/Zombies/Shadow Hunter/SHADIDL2.ogg"
 monsters/shadowhunter/death	"Sounds/Monsters/Zombies/Shadow Hunter/SHADDEAD.ogg"
 monsters/shadowhunter/pain	"Sounds/Monsters/Zombies/Shadow Hunter/SHADPAIN.ogg"
 monsters/shadowhunter/sight	"Sounds/Monsters/Zombies/Shadow Hunter/SHADSIGH.ogg"
+$random monsters/shadowhunter/idle { monsters/shadowhunter/idle1 monsters/shadowhunter/idle2}
 
 // Blot
 monsters/blot/death			"Sounds/Monsters/Blot/DSBLOTDI.ogg"

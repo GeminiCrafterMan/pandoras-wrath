@@ -6,14 +6,13 @@ class GWM_SMG : GWM_WeaponBase
 		//$Title "SMG
 		Weapon.SelectionOrder 1800;
 		Weapon.AmmoUse 1;
-		Weapon.AmmoGive 50;
+		Weapon.AmmoGive 51;
 		Weapon.AmmoType "GWM_LowCaliberMagazine";
 
 		ZWeapon.MagazineSize 50;
 		ZWeapon.ReloadSound "weapons/smgclipin";
 		ZWeapon.ClickSound "weapons/92fsdryfire";
 
-		+WEAPON.WIMPY_WEAPON
 		Weapon.UpSound "weapons/draw_smg";
 		AttackSound "weapons/smgfire";
 		Obituary "$KILLSMG";
