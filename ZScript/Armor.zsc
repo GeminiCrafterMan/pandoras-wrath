@@ -121,12 +121,12 @@ Default
 		Radius 20;
 		Height 16;
 		DamageFactor "Fire", 0.25;
-		DamageFactor "Blast", 0.25;
-		DamageFactor "Explosion", 0.25;
-		DamageFactor "Explosive", 0.25;
-		DamageFactor "Rocket", 0.25;
-		DamageFactor "Grenade", 0.25;
-		DamageFactor "Missile", 0.25;
+		DamageFactor "Blast", 0.5;
+		DamageFactor "Explosion", 0.5;
+		DamageFactor "Explosive", 0.5;
+		DamageFactor "Rocket", 0.5;
+		DamageFactor "Grenade", 0.5;
+		DamageFactor "Missile", 0.5;
 		Inventory.PickupMessage "$GOTHELLARMOR";
 		Inventory.Icon "ARM3A0";
 		Armor.SavePercent 40;
