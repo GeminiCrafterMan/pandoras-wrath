@@ -104,9 +104,9 @@ class GWM_Rocket : Actor
 				A_Scream();
 				A_SetRenderstyle(alpha, STYLE_Add);
 				A_Explode(100,150);
-				A_QuakeEx(3, 3, 3, 10, 0, 512, flags: QF_SHAKEONLY);
+				A_SpawnItemEX("GWM_RocketBlast");
 			}
-			EXPL ABCDEFGHIJ 1 Bright;
+			//EXPL ABCDEFGHIJ 1 Bright;
 			Stop;
 	}
 }
@@ -169,9 +169,9 @@ class GWM_Grenade : Actor
 				A_Scream();
 				A_SetRenderstyle(alpha, STYLE_Add);
 				A_Explode(110,215);
-				A_QuakeEx(3, 3, 3, 10, 0, 512, flags: QF_SHAKEONLY);
+				A_SpawnItemEX("GWM_RocketBlast");
 			}
-			EXPL ABCDEFGHIJ 1 Bright;
+			//EXPL ABCDEFGHIJ 1 Bright;
 			Stop;
 	}
 }
@@ -186,5 +186,30 @@ class GWM_RocketTrail : Actor
 		Spawn:
 			RCKT BCDEF 2 Bright;
 			Stop;
+	}
+}
+
+Class GWM_RocketBlast : Actor
+{
+	Default
+	{
+		+NoInteraction
+	}
+
+	States
+	{
+	Spawn:
+		TNT1 A 1 nodelay A_SpawnItemEX("ShakeItBaby",0,0,5);
+		TNT1 AA 1
+		{
+		A_SpawnItemEX("BlastFlameFX2",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-4,4),frandom(-4,4),frandom(-4,4),frandom(1,359));
+		A_SpawnItemEX("BlastFlameFX2",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-4,4),frandom(-4,4),frandom(-4,4),frandom(1,359));
+		A_SpawnItemEX("BlastFlameFX2",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-4,4),frandom(-4,4),frandom(-4,4),frandom(1,359));
+		A_SpawnItemEX("BlastFlameFX",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-12,12),frandom(-12,12),frandom(-12,12),frandom(1,359));
+		A_SpawnItemEX("BlastFlameFX",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-12,12),frandom(-12,12),frandom(-12,12),frandom(1,359));
+		A_SpawnItemEX("BlastFlameFX",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-12,12),frandom(-12,12),frandom(-12,12),frandom(1,359));
+		A_SpawnItemEX("BlastFlameFX",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-12,12),frandom(-12,12),frandom(-12,12),frandom(1,359));
+		}
+		stop;
 	}
 }
