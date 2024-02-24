@@ -49,8 +49,8 @@ class GWM_Pistol : GWM_WeaponBase replaces Pistol
 			}
 			92FG DEEE 1
 			{
-			A_Setpitch(pitch+0.15);
-			ZWL_WeaponReady(ZRF_ExtraRound|ZRF_NoBob);
+				A_Setpitch(pitch+0.15);
+				ZWL_WeaponReady(ZRF_ExtraRound|ZRF_NoBob);
 			}
 			92FG DDCCBB 1 ZWL_WeaponReady(ZRF_ExtraRound|ZRF_NoBob);
 			TNT1 A 0 ZWL_ReFire(null, true);
