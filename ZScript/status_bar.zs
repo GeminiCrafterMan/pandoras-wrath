@@ -183,36 +183,21 @@ class GWM_StatusBar : BaseStatusBar
 		TextureID mtex = GetMugShot(1); // get a texture
 		String mtexname = TexMan.Getname(mtex); // conver to string
 		
-		if (armor != null && armor.Amount > 75)
+		if (armor != null)
 		{
-			mtexname.Replace("STF", "CA1");
+			if (armor.Amount > 75)
+				mtexname.Replace("STF", "CA1");
+			else if (armor.Amount > 50)
+				mtexname.Replace("STF", "CA2");
+			else if (armor.Amount > 25)
+				mtexname.Replace("STF", "CA3");
+			else if (armor.Amount > 0)
+				mtexname.Replace("STF", "CA4");
+
+			if (armor.Amount > 0)
+				DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
 		}
-		
-		if (armor != null && armor.Amount > 50)
-		{
-			mtexname.Replace("STF", "CA2");
-		}
-		
-		if (armor != null && armor.Amount > 25)
-		{
-			mtexname.Replace("STF", "CA3");
-		}
-		
-		if (armor != null && armor.Amount > 0)
-		{
-			mtexname.Replace("STF", "CA4");
-		}
-		
-		if (armor != null && armor.Amount > 0)
-		{
-			DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
-		}
-		
-		
-		
-		
-		
-		
+
 		Inventory ammotype1, ammotype2;
 		[ammotype1, ammotype2] = GetCurrentAmmo();
 		let weapon = ZWeapon(cplayer.readyWeapon);

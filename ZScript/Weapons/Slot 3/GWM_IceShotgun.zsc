@@ -9,9 +9,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 		Inventory.PickupSound "weapons/icepickup";
 		Weapon.UpSound "weapons/draw_secondary";
 		Weapon.AmmoType1 "GWM_IceShell";
-		Weapon.AmmoType2 "GWM_IceShell";
 		Weapon.AmmoUse 1;
-		Weapon.AmmoUse2 1;
 		Weapon.AmmoGive 6;
 
 		ZWeapon.MagazineSize 5;
@@ -140,7 +138,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);
 				A_OverlayRotate(OverlayID(), 0, WOF_INTERPOLATE);
-				invoker.ammoCount = invoker.ammoCount - 2;
+				invoker.ammoCount -= 2;
 			}
 			ISHT A 1 {
 				//ZWL_FireProjectile("GWM_ShotgunIce", 0);
@@ -176,7 +174,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);
 				A_OverlayRotate(OverlayID(), 0, WOF_INTERPOLATE);
-				invoker.ammoCount = invoker.ammoCount - 3;
+				invoker.ammoCount -= 3;
 			}
 			ISHT A 1 {
 				//ZWL_FireProjectile("GWM_ShotgunIce", 0);
