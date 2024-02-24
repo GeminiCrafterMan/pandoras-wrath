@@ -297,7 +297,7 @@ class GWM_ShotgunIceShard : GWM_IceProjectile
 		Radius 13;
 		Height 13;
 		Speed 50;
-		Damagefunction (8);
+		Damagefunction (4);
 		Scale 0.25;
 		+THRUGHOST;
 		+FORCEXYBILLBOARD;

@@ -3,8 +3,9 @@ class GWM_Chaingun : GWM_WeaponBase
 	action void A_FireCGun()
 	{
 		A_SpawnItemEx("GWM_Flash");
-		ZWL_FireHitscan(4, 18, tracerType: "GWM_Tracer");
+		ZWL_FireHitscan(0, 2, pellets: 3, spread: 8, tracerType: "GWM_Tracer");
 		ZWL_EjectCasing("GWM_RifleCasing", true, -23, 8, 16, (24, 0, -16));
+		A_ChangeVelocity(-Cos(pitch)*0.1, 0, sin(pitch)*0.1,CVF_RELATIVE);
 		A_SetPitch(pitch-0.5);
 		A_Setangle(angle+frandom(-.5,.5));
 	}
@@ -37,11 +38,21 @@ class GWM_Chaingun : GWM_WeaponBase
 		Fire:
 			// rev the chaingun
 			CHGG A 1 A_StartSound("weapons/cgunup", CHAN_BODY);
-			CHGG AABBBBCCCDDDEEFFGH 1;
+			CHGG AABBBBCCCDDEEFGHACEG 1;
 			CHGG A 0 A_StartSound("weapons/cgunloop", CHAN_BODY, CHANF_LOOPING);
 			CHGG A 0 A_ReFire("Hold");
 			Goto Release;
 		Hold:
+			CHGG A 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashAE");A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
+			CHGG E 1 {
+				A_FireCGun();
+				return ZWL_JumpIfEmpty("Release");
+			}
+			CHGG D 0 A_ReFire("Hold");
+			Goto Release;
+			
+			
+			
 			CHGG A 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashAB");A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
 			CHGG B 1 {
 				A_FireCGun();
@@ -70,9 +81,14 @@ class GWM_Chaingun : GWM_WeaponBase
 			Goto Release;
 		Release:
 			CHGG H 1 A_StartSound("weapons/cgundn", CHAN_BODY);
-			CHGG GFFEEDDDCCCBBBBAAA 1;
+			CHGG ABCDEEFFFGGGGHHHHH 1;
+			//CHGG GFFEEDDDCCCBBBBAAA 1;
 			TNT1 A 0 A_CheckReload;
 			Goto Ready;
+		FlashAE:
+			CHGF A 1 Bright A_Light1;
+			CHGF E 1 Bright A_Light1;
+			Stop;
 		FlashAB:
 			CHGF A 1 Bright A_Light1;
 			CHGF B 1 Bright A_Light1;

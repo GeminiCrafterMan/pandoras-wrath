@@ -71,7 +71,8 @@ class GWM_Shotgun : GWM_WeaponBase
 			SKSG A 1 Bright {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 12, pellets: 8, spread: 3, tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(0, 10, pellets: 12, spread: 6, tracerType: "GWM_Tracer");
+				A_ChangeVelocity(-Cos(pitch)*2, 0, sin(pitch)*2,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 				A_GunFlash();
@@ -113,7 +114,8 @@ class GWM_Shotgun : GWM_WeaponBase
 				A_Overlay(55, "Recoil");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 12, pellets: 8, spread: 6+(invoker.kahunaspread*0.75), tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(0, 11, pellets: 12, spread: 5+(invoker.kahunaspread*0.75), tracerType: "GWM_Tracer");
+				A_ChangeVelocity(-Cos(pitch)*2.5, 0, sin(pitch)*2.5,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 				A_GunFlash("Flash2");

@@ -48,13 +48,13 @@ class GWM_SuperShotgun : GWM_WeaponBase
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_WeaponOffset(0, 12, WOF_ADD);
 				//ZWL_FireHitscan(0, 12, pellets: 20, spread: 7, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_Tracer");
-				ZWL_FireHitscan(0, 0, pellets: 20, spread: 8, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_SSGShot");
+				ZWL_FireHitscan(0, 0, pellets: 24, spread: 12, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_SSGShot");
 				A_StartSound("weapons/ssgshot1", CHAN_WEAPON);
 				A_GunFlash();
 				A_SpawnItemEx("GWM_MuzzleFlashLight3",0,0,5);
 				A_SpawnItemEx("GWM_Flash");
 				A_Overlay(55,"Recoil");
-				A_ChangeVelocity(-Cos(pitch)*2, 0, sin(pitch)*2,CVF_RELATIVE);
+				A_ChangeVelocity(-Cos(pitch)*4, 0, sin(pitch)*4,CVF_RELATIVE);
 				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
 				A_QuakeEx(3, 3, 3, 4, 0, 1, "", QF_SHAKEONLY);
 				invoker.Fired = true;
@@ -79,6 +79,7 @@ class GWM_SuperShotgun : GWM_WeaponBase
 				}
 				//ZWL_FireHitscan(0, 12, pellets: 10, spread: 3.5, tracertype: "GWM_Tracer");
 				ZWL_FireHitscan(0, 0, pellets: 10, spread: 7, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_SSGShot2");
+				A_ChangeVelocity(-Cos(pitch)*2.5, 0, sin(pitch)*2.5,CVF_RELATIVE);
 				A_StartSound("weapons/ssgshot2", CHAN_WEAPON);
 				A_Overlay(55,"Recoil2");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
