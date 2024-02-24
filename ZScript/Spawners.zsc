@@ -185,3 +185,24 @@ class GWM_BerserkSpawner : RandomSpawner replaces Berserk
 //		DropItem "GWM_KnightSphere";
 	}
 }
+
+class GWM_Lv1ArmorSpawner : RandomSpawner replaces GreenArmor
+{
+	Default
+	{
+		DropItem "GWM_CombatArmor";
+		DropItem "GWM_BioSuit";
+		DropItem "GWM_HeatSuit";
+		DropItem "GWM_WelderSuit";
+	}
+}
+
+class GWM_Lv2ArmorSpawner : RandomSpawner replaces BlueArmor
+{
+	Default
+	{
+		DropItem "GWM_AssaultArmor";
+		DropItem "GWM_BombSuit";
+		DropItem "GWM_HellArmor";
+	}
+}

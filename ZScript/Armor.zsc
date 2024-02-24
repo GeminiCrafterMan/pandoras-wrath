@@ -1,0 +1,142 @@
+Class GWM_CombatArmor : GreenArmor
+{
+Default
+	{
+		DamageFactor "Normal", 0.8;
+		Armor.SavePercent 35;
+		Armor.SaveAmount 125;
+	}
+}
+
+Class GWM_BioSuit : BasicArmorPickup
+{
+Default
+	{
+		DamageFactor "Slime", 0.15;
+		DamageFactor "Acid", 0.25;
+		DamageFactor "Corrosion", 0.25;
+		DamageFactor "Nukage", 0.15;
+		DamageFactor "Lava", 0.25;
+		Inventory.PickupMessage "$GOTBIOSUIT";
+		Inventory.Icon "ARM3A0";
+		Armor.SavePercent 20;
+		Armor.SaveAmount 100;
+	}
+	States
+	{
+		Spawn:
+		ARM3 A 6;
+		ARM3 A 7 Bright;
+		Loop;
+	}
+}
+
+Class GWM_WelderSuit : BasicArmorPickup
+{
+Default
+	{
+		DamageFactor "Electric", 0.5;
+		DamageFactor "Plasma", 0.5;
+		Inventory.PickupMessage "$GOTWELDSUIT";
+		Inventory.Icon "ARM3A0";
+		Armor.SavePercent 20;
+		Armor.SaveAmount 100;
+	}
+	States
+	{
+		Spawn:
+		ARM3 A 6;
+		ARM3 A 7 Bright;
+		Loop;
+	}
+}
+
+Class GWM_HeatSuit : BasicArmorPickup
+{
+Default
+	{
+		DamageFactor "Fire", 0.5;
+		DamageFactor "Lava", 0.5;
+		DamageFactor "Magma", 0.5;
+		DamageFactor "Blast", 0.75;
+		DamageFactor "Explosion", 0.75;
+		DamageFactor "Explosive", 0.75;
+		DamageFactor "Rocket", 0.75;
+		DamageFactor "Grenade", 0.75;
+		DamageFactor "Missile", 0.75;
+		Inventory.PickupMessage "$GOTHEATSUIT";
+		Inventory.Icon "ARM3A0";
+		Armor.SavePercent 30;
+		Armor.SaveAmount 100;
+	}
+	States
+	{
+		Spawn:
+		ARM3 A 6;
+		ARM3 A 7 Bright;
+		Loop;
+	}
+}
+
+Class GWM_AssaultArmor : BlueArmor
+{
+Default
+	{
+		DamageFactor "Normal", 0.7;
+		Armor.SavePercent 65;
+		Armor.SaveAmount 250;
+	}
+}
+
+Class GWM_BombSuit : BasicArmorPickup
+{
+Default
+	{
+		Radius 20;
+		Height 16;
+		DamageFactor "Blast", 0.25;
+		DamageFactor "Explosion", 0.25;
+		DamageFactor "Explosive", 0.25;
+		DamageFactor "Rocket", 0.25;
+		DamageFactor "Grenade", 0.25;
+		DamageFactor "Missile", 0.25;
+		Inventory.PickupMessage "$GOTBOMBSUIT";
+		Inventory.Icon "ARM3A0";
+		Armor.SavePercent 45;
+		Armor.SaveAmount 175;
+	}
+	States
+	{
+		Spawn:
+		ARM3 A 6;
+		ARM3 A 7 Bright;
+		Loop;
+	}
+}
+
+Class GWM_HellArmor : BasicArmorPickup
+{
+Default
+	{
+		Radius 20;
+		Height 16;
+		DamageFactor "Fire", 0.25;
+		DamageFactor "Blast", 0.25;
+		DamageFactor "Explosion", 0.25;
+		DamageFactor "Explosive", 0.25;
+		DamageFactor "Rocket", 0.25;
+		DamageFactor "Grenade", 0.25;
+		DamageFactor "Missile", 0.25;
+		Inventory.PickupMessage "$GOTHELLARMOR";
+		Inventory.Icon "ARM3A0";
+		Armor.SavePercent 40;
+		Armor.SaveAmount 200;
+	}
+	States
+	{
+		Spawn:
+		ARM3 A 6;
+		ARM3 A 7 Bright;
+		Loop;
+	}
+}

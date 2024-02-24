@@ -62,6 +62,16 @@ GOTKNIGHTSPHERE = "Knightsphere!";
 GOTHEALTHBONUS = "\c[White]Picked up a \c[Blue]health bonus\c[White]. (+1 health)";
 GOTARMORBONUS = "\c[White]Picked up an \c[Green]armor bonus\c[White]. (+1 armor)";
 
+// Armor pickups
+GOTARMOR = "\c[White]You obtained some \c[Green]Combat Armor\c[White]!";
+GOTBIOSUIT = "\c[White]You obtained a \c[Green]BioSuit\c[White]!";
+GOTHEATSUIT = "\c[White]You obtained a \c[Orange]Heat Suit\c[White]!";
+GOTWELDSUIT = "\c[White]You obtained a \c[Sapphire]Welding Suit\c[White]!";
+
+GOTMEGA = "\c[White]You obtained some \c[Blue]Assault Armor\c[White]!";
+GOTBOMBSUIT = "\c[White]You got a \c[Gray]Bomb Suit\c[White]!";
+GOTHELLARMOR = "\c[White]You got the \c[Red]Hellfire Armor\c[White]!";
+
 // Obituaries
 KILLPLACEHOLDER = "You shouldn't see this.";
 KILLMINES = "%o didn't see %k's land mine.";

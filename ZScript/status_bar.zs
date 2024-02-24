@@ -163,9 +163,17 @@ class GWM_StatusBar : BaseStatusBar
 		}
 		
 		
-		
-		DrawTexture(GetMugShot(5,MugShot.STANDARD,"STF"), (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
-		
+		TextureID mtex2 = GetMugShot(5); // get a texture
+		String mtexname2 = TexMan.Getname(mtex2); // conver to string
+		if (armor != null && armor.Amount > 0)
+		{
+			mtexname2.Replace("STF", "STX");
+			DrawImage(mtexname2, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+		}
+		else
+		{
+			DrawTexture(GetMugShot(5,MugShot.STANDARD,"STF"), (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+		}
 		
 			 
 		
@@ -174,6 +182,7 @@ class GWM_StatusBar : BaseStatusBar
 		//THANK YOU ASH, YOU'RE MY HERO!!! -Mengo
 		TextureID mtex = GetMugShot(1); // get a texture
 		String mtexname = TexMan.Getname(mtex); // conver to string
+		
 		if (armor != null && armor.Amount > 75)
 		{
 			mtexname.Replace("STF", "CA1");
@@ -194,7 +203,11 @@ class GWM_StatusBar : BaseStatusBar
 			mtexname.Replace("STF", "CA4");
 		}
 		
-		DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+		if (armor != null && armor.Amount > 0)
+		{
+			DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+		}
+		
 		
 		
 		
