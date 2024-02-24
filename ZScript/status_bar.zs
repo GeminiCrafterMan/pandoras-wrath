@@ -161,7 +161,45 @@ class GWM_StatusBar : BaseStatusBar
 			DrawInventoryIcon(armor, (20, -22));
 			DrawString(mHUDFont, FormatNumber(armor.Amount, 3), (44, -40), translation: Font.CR_Sapphire);
 		}
-		DrawTexture(GetMugShot(5), (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+		
+		
+		
+		DrawTexture(GetMugShot(5,MugShot.STANDARD,"STF"), (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+		
+		
+			 
+		
+		
+		
+		//THANK YOU ASH, YOU'RE MY HERO!!! -Mengo
+		TextureID mtex = GetMugShot(1); // get a texture
+		String mtexname = TexMan.Getname(mtex); // conver to string
+		if (armor != null && armor.Amount > 75)
+		{
+			mtexname.Replace("STF", "CA1");
+		}
+		
+		if (armor != null && armor.Amount > 50)
+		{
+			mtexname.Replace("STF", "CA2");
+		}
+		
+		if (armor != null && armor.Amount > 25)
+		{
+			mtexname.Replace("STF", "CA3");
+		}
+		
+		if (armor != null && armor.Amount > 0)
+		{
+			mtexname.Replace("STF", "CA4");
+		}
+		
+		DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+		
+		
+		
+		
+		
 		Inventory ammotype1, ammotype2;
 		[ammotype1, ammotype2] = GetCurrentAmmo();
 		let weapon = ZWeapon(cplayer.readyWeapon);

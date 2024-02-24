@@ -1,6 +1,7 @@
 class GWM_Player : DoomPlayer
 {
 	int prevPlayerState;
+		
 	override void Tick()
 	{
 		super.Tick();
