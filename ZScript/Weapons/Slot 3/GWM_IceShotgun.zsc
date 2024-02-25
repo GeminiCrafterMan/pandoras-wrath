@@ -72,6 +72,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);
 				A_OverlayRotate(OverlayID(), 0, WOF_INTERPOLATE);
+				A_WeaponOffset(0, 32, WOF_INTERPOLATE);
 			}
 			ISHT A 1 {
 				//ZWL_FireProjectile("GWM_ShotgunIce", 0);
@@ -149,6 +150,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);
 				A_OverlayRotate(OverlayID(), 0, WOF_INTERPOLATE);
+				A_WeaponOffset(0, 32, WOF_INTERPOLATE);
 				invoker.ammoCount -= 2;
 			}
 			ISHT A 1 {
@@ -185,6 +187,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);
 				A_OverlayRotate(OverlayID(), 0, WOF_INTERPOLATE);
+				A_WeaponOffset(0, 32, WOF_INTERPOLATE);
 				invoker.ammoCount -= 3;
 			}
 			ISHT A 1 {
@@ -269,9 +272,9 @@ class GWM_IceShotgun : GWM_WeaponBase
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
 				invoker.chargeLevel = 0; // make sure it's reset if we are reloading
 			}
-			ISHT B 5;
-			ISHT CD 2;
-			ISHT E 2 {
+			ISHT J 5;
+			ISHT KL 2;
+			ISHT M 2 {
 				A_StartSound("weapons/icepump1", CHAN_BODY);
 				A_StartSound("weapons/icehiss", CHAN_AUTO);
 				ZWL_EjectCasing("GWM_IceShotgunCasing", offset: (24, -6, -14));
@@ -280,12 +283,12 @@ class GWM_IceShotgun : GWM_WeaponBase
 		Reload.Loop:
 			ISHT FGH 2;
 			TNT1 A 0 ZWL_Reload(1);
-			ISHT IFE 2;
-			ISHT E 0 ZWL_JumpIfReloaded("Reload.End", true, true);
+			ISHT IFM 2;
+			ISHT M 0 ZWL_JumpIfReloaded("Reload.End", true, true);
 			Loop;
 		Reload.End:
-			ISHT DC 2;
-			ISHT B 5 A_StartSound("weapons/icepump2");
+			ISHT LK 2;
+			ISHT J 5 A_StartSound("weapons/icepump2");
 			Goto Ready;
 	}
 }
