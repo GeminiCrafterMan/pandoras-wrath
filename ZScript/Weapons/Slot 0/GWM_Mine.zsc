@@ -54,6 +54,7 @@ class GWM_ThrownMine : Actor // Okay, so like, I was going to do this myself, bu
 		Health 1;
 		Speed 24;
 		Obituary "$KILLMINES";
+		DamageType "Rocket";
 		BounceType "Hexen";
 		DeathSound "weapons/explode";
 		BounceSound "weapons/grndimp";

@@ -125,6 +125,7 @@ class GWM_ThrownDynamiteBundle : Actor
 		Radius 8;
 		Height 8;
 		Scale 0.5;
+		DamageType "Rocket";
 		SeeSound "weapons/dynafuse";
 		DeathSound "weapons/dynabsplod";
 		Obituary "$KILLDYNAMITE";

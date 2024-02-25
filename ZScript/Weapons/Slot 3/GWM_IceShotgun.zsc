@@ -55,6 +55,17 @@ class GWM_IceShotgun : GWM_WeaponBase
 		Select:
 			ISHT A 1 A_Raise(18);
 			Loop;
+		Lv1Fire:
+			TNT1 A 0 {
+				if (!invoker.CheckMagazine(false))
+				{
+					invoker.chargeLevel = 0; // make sure it's reset if we are reloading
+					A_PlaySound(invoker.clickSound, CHAN_Auto);
+					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
+					return;
+				}
+				invoker.ammoCount -= 1;
+			}
 		Fire:
 			TNT1 A 0 {
 				A_OverlayPivot(OverlayID(), 0.2, 0.5, 0);
@@ -243,7 +254,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 			ISHT A 0 A_Refire();
 			ISHT A 0 A_Jumpif(invoker.chargeLevel >= 20, "Lv3Fire");
 			ISHT A 0 A_Jumpif(invoker.chargeLevel >= 10, "Lv2Fire");
-			ISHT A 0 A_Jumpif(invoker.chargeLevel >= 0, "Fire");
+			ISHT A 0 A_Jumpif(invoker.chargeLevel >= 0, "Lv1Fire");
 			Goto AltFire;
 		Flash:
 			TNT1 A 0 A_OverlayOffset(OverlayID(), 159, 92);
