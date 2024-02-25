@@ -53,6 +53,7 @@ class GWM_RevenantTracer : RevenantTracer
 	Default
 	{
 		DamageFunction (45);
+		DamageType "Rocket";
 	}
 	States
 	{
@@ -151,6 +152,7 @@ class GWM_DraugrTracer : GWM_RevenantTracer
 		Alpha 1;
 		DamageFunction (45);
 		Scale 0.5;
+		DamageType "Rocket";
 	}
 	States
 	{

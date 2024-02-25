@@ -167,11 +167,13 @@ Class StatusIceCrystal : Actor
 		Spawn:
 			TNT1 A 0 nodelay
 			{
-			
-			posX = random(-target.radius*0.75,target.radius*0.75);
-			posY = random(-target.radius*0.75,target.radius*0.75);
-			posZ = random(2,target.height);
-			StartSize = frandom(0.1,0.5);
+				if (target != null)
+				{
+					posX = random(-target.radius*0.75,target.radius*0.75);
+					posY = random(-target.radius*0.75,target.radius*0.75);
+					posZ = random(2,target.height);
+					StartSize = frandom(0.1,0.5);
+				}
 			}
 		Loopit:
 			ICFX A 1 Bright 

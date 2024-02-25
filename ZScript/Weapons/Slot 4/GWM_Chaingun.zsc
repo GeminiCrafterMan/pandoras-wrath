@@ -3,10 +3,10 @@ class GWM_Chaingun : GWM_WeaponBase
 	action void A_FireCGun()
 	{
 		A_SpawnItemEx("GWM_Flash");
-		ZWL_FireHitscan(0, 2, pellets: 3, spread: 8, tracerType: "GWM_Tracer");
+		ZWL_FireHitscan(0, 8, pellets: 3, spread: 8, tracerType: "GWM_Tracer");
 		ZWL_EjectCasing("GWM_RifleCasing", true, -23, 8, 16, (24, 0, -16));
 		A_ChangeVelocity(-Cos(pitch)*0.1, 0, sin(pitch)*0.1,CVF_RELATIVE);
-		A_SetPitch(pitch-0.5);
+		A_SetPitch(pitch+frandom(-.5,.5));
 		A_Setangle(angle+frandom(-.5,.5));
 	}
 	Default
@@ -48,30 +48,20 @@ class GWM_Chaingun : GWM_WeaponBase
 				A_FireCGun();
 				return ZWL_JumpIfEmpty("Release");
 			}
-			CHGG D 0 A_ReFire("Hold");
-			Goto Release;
-			
-			
-			
-			CHGG A 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashAB");A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
-			CHGG B 1 {
-				A_FireCGun();
-				return ZWL_JumpIfEmpty("Release");
-			}
-			CHGG C 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashCD"); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
-			CHGG D 1 {
-				A_FireCGun();
-				return ZWL_JumpIfEmpty("Release");
-			}
-			CHGG D 0 A_ReFire("Hold2");
-			Goto Release;
-		Hold2:
-			CHGG E 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashEF"); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
+			CHGG B 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashBF"); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
 			CHGG F 1 {
 				A_FireCGun();
 				return ZWL_JumpIfEmpty("Release");
 			}
-			CHGG G 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashGH"); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
+			CHGG E 0 A_ReFire("Hold2");
+			Goto Release;
+		Hold2:
+			CHGG C 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashCG"); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
+			CHGG G 1 {
+				A_FireCGun();
+				return ZWL_JumpIfEmpty("Release");
+			}
+			CHGG D 1 {A_FireCGun(); A_Overlay(PSP_FLASH, "FlashDH"); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
 			CHGG H 1 {
 				A_FireCGun();
 				ZWL_EjectCasing("GWM_ChaingunLink", true, -23, 8, 16, (24, 0, -16));
@@ -89,20 +79,16 @@ class GWM_Chaingun : GWM_WeaponBase
 			CHGF A 1 Bright A_Light1;
 			CHGF E 1 Bright A_Light1;
 			Stop;
-		FlashAB:
-			CHGF A 1 Bright A_Light1;
+		FlashBF:
 			CHGF B 1 Bright A_Light1;
-			Stop;
-		FlashCD:
-			CHGF C 1 Bright A_Light1;
-			CHGF D 1 Bright A_Light1;
-			Stop;
-		FlashEF:
-			CHGF E 1 Bright A_Light1;
 			CHGF F 1 Bright A_Light1;
 			Stop;
-		FlashGH:
+		FlashCG:
+			CHGF C 1 Bright A_Light1;
 			CHGF G 1 Bright A_Light1;
+			Stop;
+		FlashDH:
+			CHGF D 1 Bright A_Light1;
 			CHGF H 1 Bright A_Light1;
 			Stop;
 		Spawn:
