@@ -2,7 +2,8 @@ Class GWM_CombatArmor : GreenArmor
 {
 	Default
 	{
-		DamageFactor "Normal", 0.8;
+		DamageFactor "None", 0.8;
+		DamageFactor "Shotgun", 0.8;
 		Armor.SavePercent 35;
 		Armor.SaveAmount 125;
 		Inventory.Icon "ARMRA0";
@@ -64,6 +65,8 @@ Class GWM_HeatSuit : BasicArmorPickup
 Default
 	{
 		DamageFactor "Fire", 0.5;
+		DamageFactor "FireTrap", 0.5;
+		DamageFactor "PyroFire", 0.5;
 		DamageFactor "Lava", 0.5;
 		DamageFactor "Magma", 0.5;
 		DamageFactor "Blast", 0.75;
@@ -90,7 +93,8 @@ Class GWM_AssaultArmor : BlueArmor
 {
 	Default
 	{
-		DamageFactor "Normal", 0.7;
+		DamageFactor "None", 0.7;
+		DamageFactor "Shotgun", 0.7;
 		Armor.SavePercent 65;
 		Armor.SaveAmount 250;
 		Inventory.Icon "ARMRC0";
@@ -137,6 +141,8 @@ Class GWM_HellArmor : BasicArmorPickup
 		Radius 20;
 		Height 16;
 		DamageFactor "Fire", 0.25;
+		DamageFactor "FireTrap", 0.25;
+		DamageFactor "PyroFire", 0.25;
 		DamageFactor "Blast", 0.5;
 		DamageFactor "Explosion", 0.5;
 		DamageFactor "Explosive", 0.5;

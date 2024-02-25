@@ -294,7 +294,7 @@ class ThingReplacer : StaticEventHandler
 			}
 		}
 
-		// Weapons from other mapsets
+		// Stuff from other mapsets
 		// check if the class exists first
 		let cls = e.Replacee.GetClassName(); //Although not necessary, it helps out for simplification.
 		switch(cls)
@@ -343,6 +343,9 @@ class ThingReplacer : StaticEventHandler
 			case 'TangoBulletClip':
 				e.Replacement = "GWM_MagazineSpawner";
 				break;
+			case 'TangoBulletClipHalf':
+				e.Replacement = "GWM_MagazineSpawner";
+				break;
 			case 'TangoBulletBox':
 				e.Replacement = "GWM_MagazineBoxSpawner";
 				break;
@@ -376,10 +379,16 @@ class ThingReplacer : StaticEventHandler
 			case 'TangoStomperBox':
 				e.Replacement = "GWM_LargeVenomVial";
 				break;
+			// Nailgun seems to be unused and inaccessible
 			case 'TangoBerserk':
 				e.Replacement = "GWM_Berserk";
 				break;
-			// Nailgun seems to be unused and inaccessible
+			case 'TangoVioletArmorSmall':
+				e.Replacement = "GWM_Lv1ArmorSpawner";
+				break;
+			case 'TangoVioletArmorLarge':
+				e.Replacement = "GWM_Lv2ArmorSpawner";
+				break;
 		}
     }
 	override void CheckReplacee(ReplacedEvent e)

@@ -49,8 +49,8 @@ class GWM_ThrownMine : Actor // Okay, so like, I was going to do this myself, bu
 		//$Category Obstacles
 		//$Title "Planted Land Mine
 		Tag "$TAG_MINE";
-		Radius 16;
-		Height 4;
+		Radius 20;
+		Height 10;
 		Health 1;
 		Speed 24;
 		Obituary "$KILLMINES";
@@ -59,7 +59,7 @@ class GWM_ThrownMine : Actor // Okay, so like, I was going to do this myself, bu
 		DeathSound "weapons/explode";
 		BounceSound "weapons/grndimp";
 		Projectile;
-		+USEBOUNCESTATE +NOBLOOD +SHOOTABLE -NOGRAVITY -NOBLOCKMAP
+		+USEBOUNCESTATE +NOBLOOD +SHOOTABLE -NOGRAVITY -NOBLOCKMAP +CANBOUNCEWATER
 	}
 	States
 	{

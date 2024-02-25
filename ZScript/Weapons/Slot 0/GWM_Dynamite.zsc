@@ -14,7 +14,7 @@ class GWM_Dynamite : GWM_WeaponBase
 		+WEAPON.NOAUTOFIRE
 		+WEAPON.NOAUTOSWITCHTO
 		ZWeapon.MaxCharge 70;
-		Scale 0.5;
+		Scale 0.25;
 	}
 	States
 	{
@@ -124,7 +124,7 @@ class GWM_ThrownDynamiteBundle : Actor
 		Gravity 0.75;
 		Radius 8;
 		Height 8;
-		Scale 0.25;
+		Scale 0.5;
 		DamageType "Rocket";
 		SeeSound "weapons/dynafuse";
 		DeathSound "weapons/dynabsplod";

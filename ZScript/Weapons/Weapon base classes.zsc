@@ -58,7 +58,7 @@ class GWM_WeaponBase : ZWeapon
 		+WEAPON.NOAUTOSWITCHTO
 		Weapon.Kickback 100;
 		Weapon.UpSound "weapons/draw_default";
-		Obituary "$KILLPLACEHOLDER";
+		Obituary "$PLACEHOLDER";
 		Tag "Weapon base";
 		Weapon.BobStyle "Smooth";
 		Weapon.BobRangeX 1.0;

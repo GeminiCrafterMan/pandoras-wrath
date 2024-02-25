@@ -1,6 +1,9 @@
 [enu default]
+PLACEHOLDER = "You shouldn't see this.";
+
 // Weapon pickup messages
 GOTMINES = "\c[White]You picked up some \c[DarkGray]land mines\c[White]! (Slot 1)";
+GOTDYNAMITE = "\c[White]You picked up some \c[DarkGray]dynamite\c[White]! (Slot 1)";
 GOTLUMBERJACK = "\c[White]You picked up the \c[Black]Lumberjack\c[White]! (Slot 1)";
 GOTIMPACTOR = "\c[White]You picked up the \c[Black]Impactor Gauntlet\c[White]! (Slot 1)";
 GOTLEVENBRECH = "\c[White]You picked up the \c[Black]Levenbrech\c[White]! (Slot 1)";
@@ -73,7 +76,6 @@ GOTBOMBSUIT = "\c[White]You got a \c[Gray]Bomb Suit\c[White]!";
 GOTHELLARMOR = "\c[White]You got the \c[Red]Hellfire Armor\c[White]!";
 
 // Obituaries
-KILLPLACEHOLDER = "You shouldn't see this.";
 KILLMINES = "%o didn't see %k's land mine.";
 KILLDYNAMITE = "%o was blown to bits by %k's dynamite bundle.";
 KILLFISTS = "%o was punched in %p snout by %k to establish superiority.";

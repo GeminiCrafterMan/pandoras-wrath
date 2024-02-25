@@ -52,6 +52,7 @@ class GWM_DoomPlayer : GWM_Player
 		Player.StartItem "GWM_Pistol";
 		Player.StartItem "GWM_Fists";
 		Player.StartItem "GWM_Mine";
+		Player.StartItem "GWM_Dynamite";
 		Player.StartItem "GWM_LowCaliberMagazine", 50;
 		Player.StartItem "GWM_QuickKickController";
 	}
