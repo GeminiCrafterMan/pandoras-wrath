@@ -224,7 +224,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 		AltHold:
 			ISHT A 2
 			{
-				A_WeaponOffset(0+frandom(-0.4,0.4)*invoker.chargeLevel, 32+frandom(-0.4,0.4)*invoker.chargeLevel, WOF_INTERPOLATE);
+				A_WeaponOffset(0+frandom(-0.4,0.4)*invoker.chargeLevel, 32+frandom(0,0.8)*invoker.chargeLevel, WOF_INTERPOLATE);	// G: edited the second frandom call to not allow edges of the weapon to be seen
 				A_SpawnItemEx("IceFog", 24, 0, 32, 0.5, 0, FRandom(-0.5, 0.5), Random(-12, 12));
 
 				switch(invoker.chargeLevel)
@@ -277,7 +277,6 @@ class GWM_IceShotgun : GWM_WeaponBase
 			ISHT M 2 {
 				A_StartSound("weapons/icepump1", CHAN_BODY);
 				A_StartSound("weapons/icehiss", CHAN_AUTO);
-				ZWL_EjectCasing("GWM_IceShotgunCasing", offset: (24, -6, -14));
 			}
 			// Fallthrough
 		Reload.Loop:
@@ -295,35 +294,12 @@ class GWM_IceShotgun : GWM_WeaponBase
 
 class GWM_ShotgunIceShard : GWM_IceProjectile
 {
-
-	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
-    {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
-		{
-			if (victim.health <= self.Damage)
-			{
-				victim.A_Die("Ice");
-				return 1;
-			}
-
-			if (victim.CountInv("IceSlowCount")== 0)
-			{
-				victim.A_SpawnProjectile("GWM_IceStatusThinker");
-			}
-			A_StartSound("Status/IceHit");
-
-			victim.A_GiveInventory("IceSlowCount",50);
-
-		}
-        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
-    }
-
 	Default
 	{
 		Radius 13;
 		Height 13;
 		Speed 50;
-		Damagefunction (4);
+		Damagefunction (6);
 		Scale 0.25;
 		+THRUGHOST;
 		+FORCEXYBILLBOARD;
@@ -334,6 +310,7 @@ class GWM_ShotgunIceShard : GWM_IceProjectile
 		DeathSound "weapons/icehit";
 		Obituary "$KILLICESHOTGUN";
 		Renderstyle "Add";
+		GWM_IceProjectile.IceSlowCount 50;
 	}
 	States
 	{
@@ -361,7 +338,7 @@ class GWM_ShotgunIceBomb : GWM_IceProjectile
 		Radius 23;
 		Height 23;
 		Speed 50;
-		DamageFunction (35);
+		DamageFunction (53);
 		Scale 0.33;
 		+THRUGHOST
 		+RANDOMIZE
@@ -369,6 +346,7 @@ class GWM_ShotgunIceBomb : GWM_IceProjectile
 		-Nogravity
 		DeathSound "weapons/icehit";
 		Obituary "$KILLICESHOTGUN";
+		GWM_IceProjectile.IceSlowCount 75;
 	}
 	int anglecount;
 	States
@@ -458,34 +436,13 @@ Class IceFog3 : Actor
 
 class GWM_IceFogHitbox : GWM_IceProjectile
 {
-
-	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
-    {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
-		{
-			if (victim.health <= self.Damage)
-			{
-				victim.A_Die("Ice");
-				return 1;
-			}
-
-			if (victim.CountInv("IceSlowCount")== 0)
-			{
-				victim.A_SpawnProjectile("GWM_IceStatusThinker");
-			}
-
-			victim.A_GiveInventory("IceSlowCount",10);
-
-		}
-        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
-    }
-
 	Default
 	{
 		Radius 300;
 		Height 300;
 		Speed 0;
-		Damagefunction (1);
+		Damagefunction (2);
+		GWM_IceProjectile.IceSlowCount 10;
 	}
 	States
 	{
@@ -521,35 +478,12 @@ class GWM_ShotgunIceTrail : Actor
 
 class GWM_ShotgunIceWallGenerator : GWM_IceProjectile
 {
-
-override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
-    {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
-		{
-			if (victim.health <= self.Damage)
-			{
-				victim.A_Die("Ice");
-				return 1;
-			}
-
-			if (victim.CountInv("IceSlowCount")== 0)
-			{
-				victim.A_SpawnProjectile("GWM_IceStatusThinker");
-			}
-			A_StartSound("Status/IceHit");
-
-			victim.A_GiveInventory("IceSlowCount",250);
-
-		}
-        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
-    }
-
 	Default
 	{
 		Radius 3;
 		Height 3;
 		Speed 80;
-		DamageFunction (35);
+		DamageFunction (53);
 		Scale 0.33;
 		+THRUGHOST
 		+RANDOMIZE
@@ -557,6 +491,7 @@ override int SpecialMissileHit(actor victim) //decides how to spawn the ice thin
 		-Nogravity
 		DeathSound "weapons/icehit";
 		Obituary "$KILLICESHOTGUN";
+		GWM_IceProjectile.IceSlowCount 250;
 	}
 	int anglecount;
 	States

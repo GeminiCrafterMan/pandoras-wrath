@@ -141,8 +141,9 @@ class GWM_Shotgun : GWM_WeaponBase
 			SKSG FFGG 1;
 			TNT1 A 0 {ZWL_EjectCasing("GWM_ShotgunCasing", offset: (20, 4, -14));}
 			SKSG A 0 ZWL_ReFire();
-
-			// OLD CODE
+			// G: wh-
+			// G: okay, i guess
+			// M: OLD CODE
 			SKSG H 4 {
 				A_StartSound("weapons/skpump1");
 				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (20, 4, -14));
@@ -187,10 +188,7 @@ class GWM_Shotgun : GWM_WeaponBase
 			}
 			SKSG B 5;
 			SKSG CCCDD 1;
-			SKSG E 2 {
-				A_StartSound("weapons/skpump1");
-				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, -6, -14));
-			}
+			SKSG E 2 A_StartSound("weapons/skpump1");
 			// Fallthrough
 		Reload.Loop:
 			SKSG IJK 2;

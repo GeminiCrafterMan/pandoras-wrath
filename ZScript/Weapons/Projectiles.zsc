@@ -1,18 +1,28 @@
 class GWM_IceProjectile : Actor // the absolute most basic projectile base possible
 {
+	int iceSlowCount;
 	actor victim;
-	override int SpecialMissileHit(actor victim) //thanks mengo
+
+	Property IceSlowCount: iceSlowCount;
+
+	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
     {
         if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
 		{
 			if (victim.health <= self.Damage)
 			{
-				victim.A_SpawnProjectile("GWM_IceStatusEffect");
 				victim.A_Die("Ice");
 				return 1;
 			}
-			victim.A_SpawnProjectile("GWM_IceStatusEffect");
-				
+
+			if (victim.CountInv("IceSlowCount")== 0)
+			{
+				victim.A_SpawnProjectile("GWM_IceStatusThinker");
+			}
+			A_StartSound("Status/IceHit");
+
+			victim.A_GiveInventory("IceSlowCount",iceSlowCount);
+
 		}
         return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
     }
@@ -20,6 +30,7 @@ class GWM_IceProjectile : Actor // the absolute most basic projectile base possi
 	{
 		Projectile;
 		DamageType "Ice";
+		GWM_IceProjectile.IceSlowCount 0;
 		+ICESHATTER;
 	}
 }

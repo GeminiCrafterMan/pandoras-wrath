@@ -15,7 +15,7 @@ class GWM_PlasmaRifle : GWM_WeaponBase
 		Tag "$TAG_PLASMARIFLE";
 		Inventory.PickupMessage "$GOTPLASMARIFLE";
 		Obituary "$KILLPLASMARIFLE_RAIL";
-		AttackSound "weapons/plasmashot";
+		AttackSound "weapons/plasshot";
 	}
 	States
 	{
@@ -109,6 +109,8 @@ class GWM_PlasmaBall : PlasmaBall
 		DamageFunction (23);
 		Renderstyle "Add";
 		Alpha 1.0;
+		SeeSound "weapons/plasfly";
+		DeathSound "weapons/plasxpl";
 	}
 	States
 	{
