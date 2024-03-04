@@ -1,0 +1,33 @@
+script "FireWepSwitch" (void) 
+{
+	if (Checkinventory("GWM_Melter")==1&&CheckWeapon("GWM_Melter")==0)
+			{
+				SetWeapon("GWM_Melter");
+			}			
+	if (Checkinventory("GWM_FlameThrower")==1&&CheckWeapon("GWM_FlameThrower")==0)
+			{
+				SetWeapon("GWM_FlameThrower");
+			}
+}
+
+script "IceWepSwitch" (void) 
+{
+
+	if (Checkinventory("GWM_PFSuperShotgun")==1&&CheckWeapon("GWM_PFSuperShotgun")==0)
+			{
+				SetWeapon("GWM_PFSuperShotgun");
+			}
+	if (Checkinventory("GWM_IceShotgun")==1&&CheckWeapon("GWM_IceShotgun")==0)
+			{
+				SetWeapon("GWM_IceShotgun");
+			}
+}
+
+script "AcidWepSwitch" (void) 
+{
+
+	if (Checkinventory("GWM_VenomCannon")==1&&CheckWeapon("GWM_VenomCannon")==0)
+			{
+				SetWeapon("GWM_VenomCannon");
+			}
+}
