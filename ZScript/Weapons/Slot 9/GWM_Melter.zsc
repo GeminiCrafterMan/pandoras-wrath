@@ -1,0 +1,430 @@
+//See Ready state to change display temperature unit.
+//See Fire state to configure damage and beam length.
+
+Class GWM_Melter : GWM_WeaponBase
+{
+	int tmp;
+	int cd;
+	double hsm;
+	bool pls;
+	Default
+	{
+		//$Category Weapons
+		//$Title "Melter
+		Weapon.AmmoGive 40;
+		Weapon.AmmoUse 2;
+		Weapon.AmmoType "GWM_Cell";
+		Weapon.SelectionOrder 400; // I mean, it came reccommended like this... but I'll take 100 off for being a plasma weapon.
+		Weapon.UpSound "weapons/draw_primary";
+		Inventory.PickupMessage "$GOTMELTER";
+		Obituary "$KILLMELTER";
+		Tag "$TAG_MELTER";
+		+WEAPON.NOAUTOAIM;
+		+FLOORCLIP;	
+	}
+	States
+	{
+	Spawn:
+		VMLT P -1;
+		Stop;
+	Ready:
+		VMLT A 1 
+		{
+			if (CountInv("GWM_MelterHeatsink") == 3)
+			{
+				A_Overlay(4,"Heatsink3");
+				invoker.hsm = 2;
+			}
+			else if (CountInv("GWM_MelterHeatsink") == 2)
+			{
+				A_Overlay(4,"Heatsink2");
+				invoker.hsm = 1.667;
+			}
+			else if (CountInv("GWM_MelterHeatsink") == 1)
+			{
+				A_Overlay(4,"Heatsink1");
+				invoker.hsm = 1.333;
+			}
+			else
+			{
+				A_Overlay(4,"StopOverlay");
+				invoker.hsm = 1;
+			}
+			
+			player.mo.viewbob = player.mo.default.viewbob;
+			if (invoker.tmp > 0) invoker.tmp -= 2;
+			A_Gauge();
+			A_Overlay(3,"Celsius"); //replace "Celsius" with "Fahrenheit" if you prefer °F on the display
+			A_Stopsound(13320);
+			A_WeaponOffset(0,32,WOF_INTERPOLATE);
+			if (invoker.tmp > 140 * invoker.hsm)
+			{
+				if (!invoker.pls)
+				{
+					A_Startsound("Melter/cooldown",13324,startTime:0.8);
+					invoker.pls = true;
+				}
+				A_WeaponReady(WRF_NOFIRE);
+			}
+			else if (invoker.tmp > 105 * invoker.hsm)
+			{
+				if (!invoker.pls)
+				{
+					A_Startsound("Melter/cooldown",13325,startTime:1.6);
+					invoker.pls = true;
+				}
+				A_WeaponReady();
+			}
+			else A_WeaponReady();
+		}
+		Loop;
+	Deselect:
+		VMLT A 1 
+		{
+			A_Stopsound(13320);
+			A_Overlay(2,"StopOverlay");
+			A_Overlay(3,"StopOverlay");
+			A_Overlay(4,"StopOverlay");
+			A_Lower(18);
+			player.mo.viewbob = player.mo.default.viewbob; // fixes for when you run out of ammo
+			if (invoker.tmp > 0) invoker.tmp -= 2;
+		}
+		Loop;
+	Select:
+		VMLT A 1 
+		{
+			A_Raise(18);
+			if (invoker.tmp > 0) invoker.tmp -= 2;
+		}
+		Loop;
+	Fire:
+		TNT1 A 0 
+		{
+			invoker.pls = false;
+			invoker.DepleteAmmo(invoker.bAltFire,true);
+			player.mo.viewbob = 0.2;
+			A_Startsound("Melter/Fire",13320,CHANF_LOOPING,startTime:frandom(0.0,0.99));
+		}
+		VMLT BBBEEEDDDCCC 1 bright
+		{	
+			int damage = 11;	//damage per tic
+			int length = 768;			//beam length
+			A_MelterBeam(damage,length);
+			A_WeaponOffset(random(-1,1),random(32,34),WOF_INTERPOLATE);
+			if (invoker.tmp <= 175 * invoker.hsm) invoker.tmp += 1;
+			A_Gauge();
+			if (invoker.tmp >= 175 * invoker.hsm) {
+				player.SetPSprite(PSP_WEAPON,invoker.FindState("Overheat"));
+				A_StartSound("player/hot", CHAN_VOICE);
+			}
+		}
+		TNT1 A 0 A_ReFire;
+		Goto Ready;
+	Gauge0:
+		VMLT F 1;
+		Loop;
+	Gauge1:
+		VMLT G 1;
+		Loop;
+	Gauge2:
+		VMLT H 1;
+		Loop;
+	Gauge3:
+		VMLT I 1 A_MelterSteam(1,1);
+		Loop;
+	Gauge4:
+		VMLT J 1 A_MelterSteam(2,2);
+		Loop;
+	Gauge5:
+		VMLT F 1 A_MelterSteam(4,3);
+		Loop;
+	Overheat:
+		TNT1 A 0
+		{
+			A_Gauge();
+			A_Stopsound(13320);
+			A_Stopsound(13323);
+			A_Startsound("Melter/cooldown",13322,CHANF_NOSTOP);
+			A_WeaponOffset(0,32,WOF_INTERPOLATE);
+			A_WeaponReady(WRF_NOFIRE);
+			player.mo.viewbob = player.mo.default.viewbob;
+			if (invoker.cd >= 21)
+			{
+				invoker.cd = 0;
+				invoker.tmp = 0;
+				player.SetPSprite(PSP_WEAPON,invoker.FindState("Ready"));
+			}
+		}
+		VMLT A 5
+		{
+			A_WeaponReady(WRF_NOFIRE);
+			if (invoker.cd < 21) invoker.cd += 1;
+			A_Overlay(2,"Gauge4");
+		}
+		VMLT A 5
+		{	
+			A_WeaponReady(WRF_NOFIRE);
+			if (invoker.cd < 21) invoker.cd += 1;
+			A_Overlay(2,"Gauge5");
+		}
+		Loop;
+	Celsius:
+		VMLT K 1 bright;
+		Loop;
+	Fahrenheit:
+		VMLT L 1 bright;
+		Loop;
+	Heatsink1:
+		VMLT M 1 bright;
+		Loop;
+	Heatsink2:
+		VMLT N 1 bright;
+		Loop;
+	Heatsink3:
+		VMLT O 1 bright;
+		Loop;
+	StopOverlay:
+		Stop;
+	}
+//---------------------------------- Gauge -------------------------------------
+	action void A_Gauge()
+	{
+		if (invoker.tmp > 140 * invoker.hsm)
+		{
+			A_Overlay(2,"Gauge4");
+			A_Startsound("Melter/warning",13323,CHANF_NOSTOP);
+		}
+		else if (invoker.tmp > 105 * invoker.hsm) A_Overlay(2,"Gauge3");
+		else if (invoker.tmp > 70 * invoker.hsm) A_Overlay(2,"Gauge2");
+		else if (invoker.tmp > 35 * invoker.hsm) A_Overlay(2,"Gauge1");
+		else A_Overlay(2,"Gauge0");
+	}
+//---------------------------------- Steam -------------------------------------
+	action void A_MelterSteam(int amnt, int sz)
+	{
+		double zoff = height * 0.5 - floorclip + player.mo.AttackZOffset*player.crouchFactor - 4;
+		for (int i = amnt; i > 0; i--)
+		{
+			A_SpawnParticle("white",
+			flags:SPF_RELATIVE,
+			lifetime:70,
+			size:sz+random(1,2),
+			xoff:40+random(-4,4),
+			yoff:random(-4,4),
+			zoff:zoff,
+			velz:frandom(0.8,1.2),
+			startalphaf:0.33,
+			fadestepf:-1,
+			sizestep:0.5);
+		}
+	}
+//--------------------------------- Beam ---------------------------------------
+	action void A_MelterBeam(int dmg, double range)
+	{
+		vector3 puffpos;
+		double zoff = height * 0.5 - floorclip + player.mo.AttackZOffset*player.crouchFactor - 2;
+		FLineTraceData td;
+		LineTrace(angle, range, pitch, TRF_SOLIDACTORS, zoff, data:td);
+		double dist = td.Distance;
+
+		A_RailAttack(dmg,
+		useammo:false,
+		flags:RGF_SILENT,
+		maxdiff:0.2,
+		pufftype:"MelterPuff",
+		spread_xy:0.25,
+		spread_z:0.25,
+		range:dist,
+		sparsity:12,
+		spawnclass:"MelterBeam");
+		if (td.HitType == TRACE_HitActor || td.HitType == TRACE_HitWall || td.HitType == TRACE_HitFloor || td.HitType == TRACE_HitCeiling)
+		{
+			actor smoke = spawn("MelterSmoke",level.Vec3Offset(td.HitLocation, -td.HitDir));
+			if (td.HitType == TRACE_HitFloor || td.HitType == TRACE_HitCeiling)
+			{
+				actor scorch = spawn("MelterScorchFlat",td.HitLocation);
+			}
+		}
+	} 
+}
+
+class MelterBeam : Actor
+{
+	Default
+	{
+		+BRIGHT;
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		scale 0.2;
+		Renderstyle "Add";
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 0 Nodelay
+		{
+			if (!random(0,1)) bXFLIP = !bXFLIP;
+			if (!random(0,1)) bYFLIP = !bYFLIP;
+			if (target && Distance3D(target) < 48) destroy();
+		}
+		TNT1 A 0 A_Jump (256, 1, 2, 3, 4);
+		VMLP A 1;
+		Stop;
+		VMLP B 1;
+		Stop;
+		VMLP C 1;
+		Stop;
+		VMLP D 1;
+		Stop;
+	}
+}
+
+//-------------------------------- Smoke ---------------------------------------
+class MelterSmoke : Actor
+{
+	Default
+	{
+		+BRIGHT;
+		radius 1;
+		height 1;
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		-ALLOWPARTICLES;
+		+RANDOMIZE;
+		RenderStyle "Translucent";
+		Alpha 0.3;
+		VSpeed 0.0;
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 0 Nodelay
+		{
+			if (!random(0,1)) bXFLIP = !bXFLIP;
+			if (!random(0,1)) bYFLIP = !bYFLIP;
+			A_Startsound("Melter/melt",13321,startTime:frandom(0.0,0.35));
+		}
+		VPFF AB 1
+		{
+			Thrust(0.5, -angle);
+			A_SpawnParticle("orange",
+			flags:SPF_FULLBRIGHT,
+			lifetime: 14,
+			size:3,
+			velx:random(-5,5),
+			vely:random(-5,5),
+			velz:random(5,10),
+			accelx:0,
+			accely:0,
+			accelz:-2);
+		}
+		VPFF CCCDDDDEEEEEEEEEEEEEEEE 2
+		{
+			vel.x = frandom(-1.0,1.0);
+			vel.y = frandom(-1.0,1.0);
+			if (pos.z >= ceilingz - 18)
+			{
+				vel.z = frandom(-2.0,-1.0);
+			}
+			else vel.z = 2.0;
+			
+			alpha -= frandom(0.015,0.03);
+			scale.x += frandom(0.01,0.1);
+			scale.y += frandom(0.05,0.5);
+		}
+		Stop;
+	}
+}
+
+//--------------------------------- Scorch -------------------------------------	
+class MelterScorchFlat : Actor
+{
+	Default
+	{
+		scale 0.2;
+		+FLATSPRITE;
+		+NOTONAUTOMAP;
+		+NOBLOCKMAP;
+		+NOTELEPORT;
+		+NOINTERACTION;
+		Renderstyle "translucent";
+		alpha 0.5;
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 0 Nodelay
+		{
+			for (int i = 0; i < 360; i += 30)
+			{
+				if (GetZAt(5, 0, i) != floorz) destroy();
+			}
+			vel = (0,0,0);
+			angle = random(0,359);
+			if (!random(0,1)) bSPRITEFLIP = true;
+		}
+		VMLS A 0
+		{
+			frame = random(0,1);
+		}
+		#### ###################################################################### 1 bright
+		{
+			scale.x += 0.002;
+			scale.y += 0.002;
+		}
+	Death:
+		#### # 1 bright
+		{
+			A_FadeOut(0.02);
+		}
+		Loop;
+	}
+}
+//---------------------------------- Puff --------------------------------------	
+class MelterPuff : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		-ALLOWPARTICLES;
+		+BLOODLESSIMPACT;
+		+HITTRACER;
+		+ALWAYSPUFF;
+		+FORCEDECAL;
+		Decal "MeltScorch";
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 0 nodelay
+		{
+			if (tracer && tracer.bISMONSTER && tracer.FindState("XDeath") && tracer.InStateSequence(tracer.CurState, tracer.FindState("Death")))
+			{
+				tracer.SetStateLabel("XDeath");
+			}
+		}
+		stop;
+	}
+}
+
+//-------------------------------- Heatsink ------------------------------------	
+class GWM_MelterHeatsink : Inventory
+{
+	Default
+	{
+		//$Category Weapons
+		//$Title "Melter Heatsink
+		Inventory.Amount 1;
+		Inventory.MaxAmount 3;
+		Inventory.Icon "VMLTQ0";
+		Inventory.PickupMessage "You got a Melter Heatsink!";
+		Inventory.PickupSound "Melter/heatsink";
+	}
+	States
+	{
+	Spawn:
+		VMLT Q -1;
+		Stop;
+	}
+}

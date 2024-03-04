@@ -34,6 +34,7 @@ class GWM_Flamethrower : GWM_WeaponBase
 		Fire:
 			TNT1 A 0 A_StartSound("weapons/ftfiring", CHAN_WEAPON);
 			FLMG A 2 A_StartSound("weapons/ftsqueak", CHAN_BODY);
+			FLMG EEEEE 0 bright A_FireProjectile("GWM_FTFIREFX", frandom(-10,10), false, 0, 0,0,frandom(-3,3));
 			FLMG E 1 bright A_FireProjectile("GWM_FTFireShot", 0, 1, Random(-4, 4), 0);
 			FLMG FG 1 bright A_setpitch(pitch-2);
 			FLMG H 1 A_StartSound("weapons/ftend", CHAN_WEAPON);
@@ -188,14 +189,14 @@ Class GWM_FTFireShot : GWM_FlameProjectile
 	
 	Default
 	{
-		Radius 2;
-		Height 4;
-		Speed 13;
+		Radius 24;
+		Height 24;
+		Speed 18;
 		DamageFunction (0);
 		RenderStyle "Add";
 		DamageType "Fire";
-		Alpha 0.67;
-		Scale 0.47;
+		Alpha 0.75;
+		Scale 1.17;
 		Obituary "$KILLFLAMETHROWER";
 	}
 	States
@@ -219,7 +220,8 @@ Class GWM_FTFIREFX : Actor
 		RenderStyle "Add";
 		DamageType "Fire";
 		Alpha 0.67;
-		Scale 0.47;
+		Scale 1;
+		Speed 10;
 		
 	}
 

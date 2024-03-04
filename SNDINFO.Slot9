@@ -1,0 +1,12 @@
+// FlameShooter
+weapons/ftready		"Sounds/Weapons/Slot 7/Flamethrower/flame_thrower_pilot.wav"
+weapons/ftfiring	"Sounds/Weapons/Slot 7/Flamethrower/flame_thrower_dm_fire.ogg" // unfortunately .wav didn't work for the loop section
+weapons/ftend		"Sounds/Weapons/Slot 7/Flamethrower/flame_thrower_dm_end.wav"
+weapons/ftburn		"Sounds/Weapons/Slot 7/Flamethrower/flame_thrower_fire_hit.wav"
+weapons/fthit		"Sounds/Weapons/Slot 7/Flamethrower/flame_thrower_fire_hitloop.wav"
+Weapons/ftsqueak	"Sounds/Weapons/Slot 7/Flamethrower/flame_thrower_squeak.mp3"
+$volume weapons/ftready 0.5
+$volume weapons/ftfiring 0.5
+$volume weapons/ftend 0.5
+$volume weapons/ftburn 0.5
+$volume weapons/fthit 0.5

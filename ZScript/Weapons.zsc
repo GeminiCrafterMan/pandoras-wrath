@@ -13,26 +13,29 @@
 #include "ZScript/Weapons/Slot 3/GWM_ZombieShotgun.zsc"		// Get a better shotgun ASAP
 #include "ZScript/Weapons/Slot 3/GWM_Shotgun.zsc"			// Slayer's Kahuna
 #include "ZScript/Weapons/Slot 3/GWM_SuperShotgun.zsc"		// Super Shotgun
-#include "ZScript/Weapons/Slot 3/GWM_IceShotgun.zsc"		// Ice Shotgun
-#include "ZScript/Weapons/Slot 3/GWM_PFSuperShotgun.zsc"	// Perfect Freeze Super Shotgun
+
 
 #include "ZScript/Weapons/Slot 4/GWM_Chaingun.zsc"			// Chaingun
 #include "ZScript/Weapons/Slot 4/GWM_BurstRifle.zsc"		// Burst Rifle
 #include "ZScript/Weapons/Slot 4/GWM_MP40.zsc"				// MP40
 
 #include "ZScript/Weapons/Slot 5/GWM_RocketLauncher.zsc"	// Rocket Launcher
-#include "ZScript/Weapons/Slot 5/GWM_VenomCannon.zsc"		// Venom Cannon (poison goop gun)
+#include "ZScript/Weapons/Slot 5/GWM_THE_BOUNCERRR.zsc"	    //I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
 
 #include "ZScript/Weapons/Slot 6/GWM_PlasmaRifle.zsc"		// Plasma Rifle
-#include "ZScript/Weapons/Slot 6/GWM_Melter.zsc"			// Melter
 #include "ZScript/Weapons/Slot 6/GWM_NoiseCrusher.zsc"		// Noise Crusher
 
 #include "ZScript/Weapons/Slot 7/GWM_BFG9000.zsc"			// BFG9000 (Vanilla)
-#include "ZScript/Weapons/Slot 7/GWM_Flamethrower.zsc"		// Flamethrower
 #include "ZScript/Weapons/Slot 7/GWM_TwinPlasmaCannons.zsc"	// Twin Plasma Cannons
-#include "ZScript/Weapons/Slot 7/GWM_THE_BOUNCERRR.zsc"	    //I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
 
 #include "ZScript/Weapons/Slot 8/GWM_ANNIHILATOR.zsc"	    //Shroine Tew, out now!
+
+#include "ZScript/Weapons/Slot 9/GWM_IceShotgun.zsc"		// Ice Shotgun
+#include "ZScript/Weapons/Slot 9/GWM_PFSuperShotgun.zsc"	// Perfect Freeze Super Shotgun
+#include "ZScript/Weapons/Slot 9/GWM_Flamethrower.zsc"		// Flamethrower
+#include "ZScript/Weapons/Slot 9/GWM_VenomCannon.zsc"		// Venom Cannon (poison goop gun)
+#include "ZScript/Weapons/Slot 9/GWM_Melter.zsc"			// Melter
+
 
 #include "ZScript/Weapons/Slot 0/GWM_Mine.zsc"				// Land mine
 #include "ZScript/Weapons/Slot 0/GWM_Dynamite.zsc"			// Dynamite bundle
