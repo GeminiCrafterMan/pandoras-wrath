@@ -1,12 +1,12 @@
 addkeysection "GemWepStuff" GemWepShit
    
-   addmenukey "Quickswitch Fire" FireWepSwitch
-   alias FireWepSwitch "pukename FireWepSwitch"
+   addmenukey "Quickswitch Fire" "pukename GWM_FireWepSwitch"
+   //alias GWM_FireWepSwitch "pukename GWM_FireWepSwitch"
    
-   addmenukey "Quickswitch Ice" IceWepSwitch
-   alias IceWepSwitch "pukename IceWepSwitch"
+   addmenukey "Quickswitch Ice" "pukename GWM_IceWepSwitch"
+   //alias GWM_IceWepSwitch "pukename GWM_IceWepSwitch"
    
-   addmenukey "Quickswitch Acid" AcidWepSwitch
-   alias AcidWepSwitch "pukename AcidWepSwitch"
+   addmenukey "Quickswitch Acid" "pukename GWM_AcidWepSwitch"
+  // alias GWM_AcidWepSwitch "pukename GWM_AcidWepSwitch"
    
    

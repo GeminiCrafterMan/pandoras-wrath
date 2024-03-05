@@ -1,4 +1,7 @@
-script "FireWepSwitch" (void) 
+#library "WepSwitch"
+#include "Zcommon.acs"
+
+script "GWM_FireWepSwitch" (void) 
 {
 	if (Checkinventory("GWM_Melter")==1&&CheckWeapon("GWM_Melter")==0)
 			{
@@ -10,20 +13,19 @@ script "FireWepSwitch" (void)
 			}
 }
 
-script "IceWepSwitch" (void) 
+script "GWM_IceWepSwitch" (void) 
 {
-
-	if (Checkinventory("GWM_PFSuperShotgun")==1&&CheckWeapon("GWM_PFSuperShotgun")==0)
+	if (Checkinventory("GWM_PFSuperShotgun")==1 && CheckWeapon("GWM_PFSuperShotgun")==0)
 			{
 				SetWeapon("GWM_PFSuperShotgun");
 			}
-	if (Checkinventory("GWM_IceShotgun")==1&&CheckWeapon("GWM_IceShotgun")==0)
+	if (Checkinventory("GWM_IceShotgun")==1 && CheckWeapon("GWM_IceShotgun")==0)
 			{
 				SetWeapon("GWM_IceShotgun");
 			}
 }
 
-script "AcidWepSwitch" (void) 
+script "GWM_AcidWepSwitch" (void) 
 {
 
 	if (Checkinventory("GWM_VenomCannon")==1&&CheckWeapon("GWM_VenomCannon")==0)
@@ -31,3 +33,4 @@ script "AcidWepSwitch" (void)
 				SetWeapon("GWM_VenomCannon");
 			}
 }
+
