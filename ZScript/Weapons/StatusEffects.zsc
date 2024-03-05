@@ -95,10 +95,6 @@ class GWM_IceStatusThinker : Actor
 					{
 					target.Speed = originalspeed - (0.05 *target.CountInv("IceSlowCount"));			
 					}
-					else
-					{
-					target.Speed = originalspeed -( target.CountInv("IceSlowCount")*0.004);			
-					}
 					
 					if (target.health < 1)
 					{

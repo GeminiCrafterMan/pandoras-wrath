@@ -183,7 +183,7 @@ class GWM_StatusBar : BaseStatusBar
 		TextureID mtex = GetMugShot(1); // get a texture
 		String mtexname = TexMan.Getname(mtex); // conver to string
 		
-		if (armor != null)
+		if (armor != null)// && ArmorType == "GWM_CombatArmor")
 		{
 			if (armor.Amount > 75)
 				mtexname.Replace("STF", "CA1");
@@ -248,6 +248,19 @@ class GWM_StatusBar : BaseStatusBar
 		{
 			DrawInventoryBar(diparms, (0, 0), 7, DI_SCREEN_CENTER_BOTTOM, HX_SHADOW);
 		}
+		
+		DrawImage("IceHUDFX", (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM,GetAmount("IceSlowCount")*0.002);
+		
+		if (GetAmount("FireburnCount"))
+		{
+		DrawImage("FirHUDFX", (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM,0.25+frandom(0.03, 0.09)+GetAmount("FireburnCount")*0.002);
+		}
+		
+		if (GetAmount("AcidWeakCount"))
+		{
+		DrawImage("AciHUDFX", (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM,0.1+GetAmount("AcidWeakCount")*0.003);
+		}
+		
 	}
 	
 	protected virtual void DrawFullscreenKeys()

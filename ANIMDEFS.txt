@@ -24,3 +24,14 @@ texture RKTFE0 NoTrim
 texture PLSFA0 NoTrim
 texture PLSFB0 NoTrim
 texture PLSFC0 NoTrim
+
+Texture ACIHUDFX
+    pic ACIHUDFX tics 2
+    pic ACIHUDF2 tics 2
+    pic ACIHUDF3 tics 2
+    pic ACIHUDF4 tics 2
+    pic ACIHUDF5 tics 2
+	pic ACIHUDF6 tics 2
+    pic ACIHUDF7 tics 2
+    
+   

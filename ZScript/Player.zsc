@@ -1,6 +1,8 @@
 class GWM_Player : DoomPlayer
 {
 	int prevPlayerState;
+	int FireBurnDelay;
+	int AcidWeakDelay;
 		
 	override void Tick()
 	{
@@ -29,6 +31,30 @@ class GWM_Player : DoomPlayer
 		{
 			player.ReadyWeapon.FOVScale = 0.0;
 		}
+		
+		
+		self.speed = 1 - (0.004 *self.CountInv("IceSlowCount"));	
+		TakeInventory("IceSlowCount",1);
+		
+		if(self.CountInv("FireBurnCount") && self.FireBurnDelay > 15)
+		{ 
+		A_DamageSelf(1,"Fire");
+		self.FireBurnDelay = 0;
+		TakeInventory("FireBurnCount",4);
+		}
+		
+		self.FireBurnDelay = self.FireBurnDelay + 1;
+		
+		if(self.CountInv("AcidWeakCount") && self.AcidWeakDelay > 5)
+		{ 
+		A_TakeInventory("AcidWeakCount",1);
+		A_GiveInventory("PowerAcidWeakness");
+		self.AcidWeakDelay = 0;
+		}
+		
+		self.AcidWeakDelay = self.AcidWeakDelay + 1;
+		
+
 	}
 	Default
 	{
@@ -50,6 +76,7 @@ class GWM_DoomPlayer : GWM_Player
 {
 	Default
 	{
+		Player.StartItem "GWM_IsPlayer";
 		Player.StartItem "GWM_Pistol";
 		Player.StartItem "GWM_Fists";
 		Player.StartItem "GWM_Mine";
@@ -62,6 +89,7 @@ class GWM_HereticPlayer : GWM_Player
 {
 	Default
 	{
+		Player.StartItem "GWM_IsPlayer";
 		Player.StartItem "GWM_GoldWand";
 		Player.StartItem "GWM_Fists";
 		Player.StartItem "GoldWandAmmo", 50;
@@ -208,3 +236,5 @@ class GWM_HellKnightPlayer : PlayerPawn
 			Stop;
 	}
 }
+
+Class GWM_IsPlayer : Inventory {}
