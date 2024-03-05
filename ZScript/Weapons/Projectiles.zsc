@@ -15,7 +15,7 @@ class GWM_IceProjectile : Actor // the absolute most basic projectile base possi
 				return 1;
 			}
 
-			if (victim.CountInv("IceSlowCount")== 0)
+			if (victim.CountInv("IceSlowCount")== 0 && victim.CountInv("GWM_IsPlayer")== 0 )
 			{
 				victim.A_SpawnProjectile("GWM_IceStatusThinker");
 			}
@@ -37,18 +37,29 @@ class GWM_IceProjectile : Actor // the absolute most basic projectile base possi
 
 class GWM_FlameProjectile : Actor // the absolute most basic projectile base possible
 {
+	int FireBurnCount;
 	actor victim;
-	override int SpecialMissileHit(Actor victim) //thanks mengo
+
+	Property FireBurnCount: FireBurnCount;
+
+	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
     {
         if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
 		{
+			victim.A_GiveInventory("FireBurnCount",FireBurnCount);
 			if (victim.health <= self.Damage)
 			{
-				victim.A_SpawnProjectile("GWM_FlameDamageEffect");
 				victim.A_Die("Fire");
 				return 1;
 			}
-			victim.A_SpawnProjectile("GWM_FlameDamageEffect");
+
+			if (victim.CountInv("FireBurnCount")== 0 && victim.CountInv("GWM_IsPlayer")== 0 )
+			{
+				victim.A_SpawnProjectile("GWM_FlameStatusThinker");
+			}
+			A_StartSound("Status/IceHit");
+
+			
 		}
         return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
     }
@@ -58,13 +69,41 @@ class GWM_FlameProjectile : Actor // the absolute most basic projectile base pos
 		DamageType "Fire";
 	}
 }
-class GWM_FireDamage : CustomInventory
+
+class GWM_AcidProjectile : Actor // the absolute most basic projectile base possible
 {
-	States
+	int AcidWeakCount;
+	actor victim;
+
+	Property AcidWeakCount: AcidWeakCount;
+
+	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
+    {
+        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
+		{
+			if (victim.health <= self.Damage)
+			{
+				victim.A_GiveInventory("AcidWeakCount",AcidWeakCount);
+				victim.A_Die("Acid");
+				return 1;
+			}
+
+			if (victim.CountInv("AcidWeakCount")== 0 && victim.CountInv("GWM_IsPlayer")== 0)
+			{
+				victim.A_SpawnProjectile("GWM_AcidStatusThinker");
+			}
+			A_StartSound("Status/IceHit");
+			victim.A_GiveInventory("AcidWeakCount",AcidWeakCount);
+			
+			
+		}
+        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
+    }
+	
+	Default
 	{
-		Pickup:
-			TNT1 A 0 A_SpawnItemEx("GWM_FlameDamageEffect",0,0,20,0,0,0,0,SXF_SETMASTER);
-			Stop;
+		Projectile;
+		DamageType "Acid";
 	}
 }
 

@@ -40,11 +40,11 @@ Class GWM_BioSuit : BasicArmorPickup
 	}
 }
 
-Class GWM_WelderSuit : BasicArmorPickup
+Class GWM_ThermoSuit : BasicArmorPickup
 {
 	Default
 	{
-		DamageFactor "Electric", 0.5;
+		DamageFactor "Ice", 0.5;
 		DamageFactor "Plasma", 0.5;
 		Inventory.PickupMessage "$GOTWELDSUIT";
 		Inventory.Icon "ARMRI0";

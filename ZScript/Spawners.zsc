@@ -88,6 +88,9 @@ class GWM_ChainsawSpawner : GWM_WeaponSpawner replaces Chainsaw
 	Default
 	{
 		DropItem "GWM_EldritchAnnihilator", 255, 1;
+		DropItem "GWM_IceShotgun", 255, 6;
+		DropItem "GWM_VenomCannon", 255, 6;
+		DropItem "GWM_FlameThrower", 255, 6;
 		DropItem "GWM_Impactor", 255, 6;
 		DropItem "GWM_Lumberjack", 255, 6;
 	}
@@ -97,8 +100,9 @@ class GWM_ShotgunSpawner : GWM_WeaponSpawner replaces Shotgun
 {
 	Default
 	{
-		DropItem "GWM_Shotgun";
-		DropItem "GWM_IceShotgun";
+		DropItem "GWM_Shotgun", 255, 8;
+		DropItem "GWM_SuperShotgun", 255, 3;
+		DropItem "GWM_IceShotgun", 255, 2;
 	}
 }
 
@@ -107,7 +111,11 @@ class GWM_SuperShotgunSpawner : GWM_WeaponSpawner replaces SuperShotgun
 	Default
 	{
 		DropItem "GWM_SuperShotgun";
-		DropItem "GWM_PFSuperShotgun";
+		DropItem "GWM_Melter", 255, 2;
+		DropItem "GWM_Flamethrower", 255, 2;
+		DropItem "GWM_VenomCannon", 255, 2;
+		DropItem "GWM_IceShotgun", 255, 2;
+		DropItem "GWM_PFSuperShotgun", 255, 2;
 	}
 }
 
@@ -115,8 +123,9 @@ class GWM_ChaingunSpawner : GWM_WeaponSpawner replaces Chaingun
 {
 	Default
 	{
-		DropItem "GWM_Chaingun";
-		DropItem "GWM_BurstRifle";
+		DropItem "GWM_Chaingun", 255, 5;
+		DropItem "GWM_BurstRifle", 255, 8;
+		DropItem "GWM_Flamethrower", 255, 2;
 	}
 }
 
@@ -193,7 +202,7 @@ class GWM_Lv1ArmorSpawner : RandomSpawner replaces GreenArmor
 		DropItem "GWM_CombatArmor";
 		DropItem "GWM_BioSuit";
 		DropItem "GWM_HeatSuit";
-		DropItem "GWM_WelderSuit";
+		DropItem "GWM_ThermoSuit";
 	}
 }
 

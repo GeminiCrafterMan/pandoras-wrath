@@ -57,37 +57,14 @@ class GWM_VenomCannon : GWM_WeaponBase // desperately in need of a nerf
 			Stop;
 	}
 }
-class GWM_VenomBall : Actor
+class GWM_VenomBall : GWM_AcidProjectile
 {
-
-	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
-    {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
-		{
-			if (victim.health <= self.Damage)
-			{
-				victim.A_Die("Acid");
-				return 1;
-			}
-			
-			if (victim.CountInv("AcidWeakCount")== 0)
-			{
-				victim.A_SpawnProjectile("GWM_AcidStatusThinker");
-			}
-			A_StartSound("Status/IceHit");
-			
-			victim.A_GiveInventory("AcidWeakCount",50);
-				
-		}
-        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
-    }
-	
-	actor victim;
 
 	Default
 	{
 		Speed 20;
 		DamageFunction (80);
+		GWM_AcidProjectile.AcidWeakCount 50;
 		Height 24;
 		Radius 24;
 		BounceCount 11;
@@ -165,7 +142,7 @@ class GWM_VenomBall : Actor
 			Stop;
 	}
 }
-class GWM_SmallVenomBall : GWM_VenomBall
+class GWM_SmallVenomBall : GWM_AcidProjectile
 {
 	Default
 	{
@@ -258,37 +235,13 @@ class GWM_FloorVenomPuddle : Actor
 	}
 }
 
-class GWM_AcidBall : Actor
+class GWM_AcidBall : GWM_AcidProjectile
 {
-
-	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
-    {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
-		{
-			if (victim.health <= self.Damage)
-			{
-				victim.A_Die("Acid");
-				return 1;
-			}
-			
-			if (victim.CountInv("AcidWeakCount")== 0)
-			{
-				victim.A_SpawnProjectile("GWM_AcidStatusThinker");
-			}
-			A_StartSound("Status/IceHit");
-			
-			victim.A_GiveInventory("AcidWeakCount",150);
-				
-		}
-        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
-    }
-	
-	actor victim;
-
 	Default
 	{
 		Speed 20;
 		DamageFunction (20);
+		GWM_AcidProjectile.AcidWeakCount 50;
 		Height 24;
 		Radius 24;
 		BounceCount 11;
@@ -347,34 +300,8 @@ class GWM_AcidBall : Actor
 
 
 
-class GWM_FloorAcidPuddle : Actor
+class GWM_FloorAcidPuddle : GWM_AcidProjectile
 {
-
-	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
-    {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
-		{
-			if (victim.health <= self.Damage)
-			{
-				victim.A_Die("Acid");
-				return 1;
-			}
-			
-			if (victim.CountInv("AcidWeakCount")== 0)
-			{
-				victim.A_SpawnProjectile("GWM_AcidStatusThinker");
-			}
-			A_StartSound("Status/IceHit");
-			
-			victim.A_GiveInventory("AcidWeakCount",80);
-				
-		}
-        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
-    }
-	
-	actor victim;
-
-
 	Default
 	{
 		Height 2;
@@ -387,6 +314,7 @@ class GWM_FloorAcidPuddle : Actor
 		+MOVEWITHSECTOR
 		Scale 2;
 		DamageFunction (1);
+		GWM_AcidProjectile.AcidWeakCount 75;
 		Obituary "$KILLVENOMCANNONPUDDLE";
 	}
 	States
@@ -407,37 +335,13 @@ class GWM_FloorAcidPuddle : Actor
 }
 
 
-class GWM_SmallAcidBall : Actor
+class GWM_SmallAcidBall : GWM_AcidProjectile
 {
-
-	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
-    {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
-		{
-			if (victim.health <= self.Damage)
-			{
-				victim.A_Die("Acid");
-				return 1;
-			}
-			
-			if (victim.CountInv("AcidWeakCount")== 0)
-			{
-				victim.A_SpawnProjectile("GWM_AcidStatusThinker");
-			}
-			A_StartSound("Status/IceHit");
-			
-			victim.A_GiveInventory("AcidWeakCount",50);
-				
-		}
-        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
-    }
-	
-	actor victim;
-
 	Default
 	{
 		Speed 20;
 		DamageFunction (5);
+		GWM_AcidProjectile.AcidWeakCount 45;
 		Height 24;
 		Radius 24;
 		Scale 0.15;
@@ -478,37 +382,12 @@ class GWM_SmallAcidBall : Actor
 	}
 }
 
-class GWM_SmallFloorAcidPuddle : Actor
+class GWM_SmallFloorAcidPuddle : GWM_AcidProjectile
 {
-
-	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
-    {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
-		{
-			if (victim.health <= self.Damage)
-			{
-				victim.A_Die("Acid");
-				return 1;
-			}
-			
-			if (victim.CountInv("AcidWeakCount")== 0)
-			{
-				victim.A_SpawnProjectile("GWM_AcidStatusThinker");
-			}
-			A_StartSound("Status/IceHit");
-			
-			victim.A_GiveInventory("AcidWeakCount",50);
-				
-		}
-        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
-    }
-	
-	actor victim;
-
-
 	Default
 	{
 		Height 2;
+		Speed 0;
 		Projectile;
 		Radius 16;
 		-NOGRAVITY
@@ -517,12 +396,14 @@ class GWM_SmallFloorAcidPuddle : Actor
 		+FLOORHUGGER
 		+MOVEWITHSECTOR
 		DamageFunction (1);
+		GWM_AcidProjectile.AcidWeakCount 35;
 		Obituary "$KILLVENOMCANNONPUDDLE";
 	}
 	States
 	{
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Puddle3");
+			TNT1 A 0 NoDelay A_ScaleVelocity(0);
+			TNT1 A 0 A_JumpIf(random(0, 1), "Puddle3");
 			TNT1 A 0 A_JumpIf(random(0, 1), "Puddle2");
 		Puddle1:
 			VNMP G 1 {self.Vel.X = 0; self.Vel.Y = 0;}
@@ -536,12 +417,13 @@ class GWM_SmallFloorAcidPuddle : Actor
 	}
 }
 
-class GWM_MicroAcidBall : Actor
+class GWM_MicroAcidBall : GWM_SmallAcidBall
 {
 	Default
 	{
 		Speed 20;
 		DamageFunction (1);
+		GWM_AcidProjectile.AcidWeakCount 15;
 		Height 24;
 		Radius 24;
 		Scale 0.075;
