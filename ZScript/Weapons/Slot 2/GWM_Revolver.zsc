@@ -27,11 +27,33 @@ class GWM_Revolver : GWM_WeaponBase
 			RVLG Z -1;
 			Stop;
 		Select:
+			TNT1 A 0 {
+				ZWL_QuickRaise();
+				A_WeaponOffset(-64, 160);
+			}
+			RVLG YYYYYY 1 {
+				A_WeaponOffset(8, -16, WOF_ADD);
+			}
+			RVLG AA 1 {
+				A_WeaponOffset(8, -16, WOF_ADD);
+			}
+			Goto Ready;
+		Deselect:
+			RVLG AA 1 {
+				A_WeaponOffset(-8, 16, WOF_ADD);
+			}
+			RVLG YYYYYY 1 {
+				A_WeaponOffset(-8, 16, WOF_ADD);
+			}
+			TNT1 A 0 A_WeaponOffset(0, flags: WOF_KEEPY);
+			TNT1 A 0 ZWL_QuickLower;
+			Stop;
+/*		Select:
 			RVLG A 1 A_Raise(18);
 			Loop;
 		Deselect:
 			RVLG A 1 A_Lower(18);
-			Loop;
+			Loop;*/
 		Ready:
 			RVLG A 1 ZWL_WeaponReady();
 			Loop;

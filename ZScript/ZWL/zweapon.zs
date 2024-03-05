@@ -87,7 +87,6 @@ class ZWeapon : Weapon
 	// Does the same thing as A_WeaponReady. It has similar flags (see above).
 	action void ZWL_WeaponReady(int flags = 0)
 	{
-		A_WeaponReady(); // G: Strange to be calling it early, but I'm trying to get rid of the angry face.
 		invoker.lastShotTic = 0;
 		invoker.deficit = 0.0;
 
@@ -110,12 +109,14 @@ class ZWeapon : Weapon
 		wrf |= flags & ZRF_AllowUser3 ? WRF_AllowUser3 : 0;
 		wrf |= flags & ZRF_AllowUser4 ? WRF_AllowUser4 : 0;
 
+		wrf |= flags & ZRF_NoBob ? WRF_NoBob : 0;
+
+		A_WeaponReady(wrf); // G: Strange to be calling it early, but I'm trying to get rid of the angry face.
+
 		// If NoAutofire
 		wrf |= flags & ZRF_NoPrimary || !invoker.CheckMagazine(false) && !invoker.Default.bAmmo_Optional || !invoker.JustPressed(BT_Attack) && !invoker.bNoAutofire ? WRF_NoPrimary : 0;
 
 		wrf |= flags & ZRF_NoSecondary || !invoker.JustPressed(BT_AltAttack) ? WRF_NoSecondary : 0;
-
-		wrf |= flags & ZRF_NoBob ? WRF_NoBob : 0;
 
 		wrf |= !(flags & ZRF_NoZoom) && invoker.JustPressed(BT_Zoom) ? WRF_AllowZoom : 0;
 

@@ -34,6 +34,31 @@ class GWM_Shotgun : GWM_WeaponBase
 				}
 			}
 			Loop;
+		Select:
+			TNT1 A 0 {
+				ZWL_QuickRaise();
+				A_WeaponOffset(64, 160);
+			}
+			SKSG AAAAAA 1 {
+				A_WeaponOffset(-8, -16, WOF_ADD);
+			}
+			SKSG AA 1 {
+				A_WeaponOffset(-8, -16, WOF_ADD);
+			}
+			SKSG H 4 {A_StartSound("weapons/skpump1"); ZWL_WeaponReady(ZRF_ExtraRound);}
+			SKSG GGFF 1 ZWL_WeaponReady(ZRF_ExtraRound);
+			SKSG A 1 {A_StartSound("weapons/skpump2"); ZWL_WeaponReady(ZRF_ExtraRound);}
+			Goto Ready;
+		Deselect:
+			SKSG AA 1 {
+				A_WeaponOffset(8, 16, WOF_ADD);
+			}
+			SKSG AAAAAA 1 {
+				A_WeaponOffset(8, 16, WOF_ADD);
+			}
+			TNT1 A 0 A_WeaponOffset(0, flags: WOF_KEEPY);
+			TNT1 A 0 ZWL_QuickLower;
+			Stop;
 /*
 		Deselect:
 			TNT1 A 0 {
@@ -57,12 +82,12 @@ class GWM_Shotgun : GWM_WeaponBase
 				A_Overlay(OverlayID(), "Ready");
 			}
 */
-		Deselect:
+/*		Deselect:
 			SKSG A 1 A_Lower(18);
 			Loop;
 		Select:
 			SKSG A 1 A_Raise(18);
-			Loop;
+			Loop;*/
 		Recoil:
 			TNT1 AA 1 A_SetPitch(pitch+0.80);
 			TNT1 AAAAAA 1 A_SetPitch(pitch-0.40);

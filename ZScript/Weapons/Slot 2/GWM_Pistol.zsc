@@ -28,11 +28,33 @@ class GWM_Pistol : GWM_WeaponBase replaces Pistol
 			92FG Z -1;
 			Stop;
 		Select:
+			TNT1 A 0 {
+				ZWL_QuickRaise();
+				A_WeaponOffset(-64, 160);
+			}
+			92FG [[[[[[ 1 {
+				A_WeaponOffset(8, -16, WOF_ADD);
+			}
+			92FG AA 1 {
+				A_WeaponOffset(8, -16, WOF_ADD);
+			}
+			Goto Ready;
+		Deselect:
+			92FG AA 1 {
+				A_WeaponOffset(-8, 16, WOF_ADD);
+			}
+			92FG [[[[[[ 1 {
+				A_WeaponOffset(-8, 16, WOF_ADD);
+			}
+			TNT1 A 0 A_WeaponOffset(0, flags: WOF_KEEPY);
+			TNT1 A 0 ZWL_QuickLower;
+			Stop;
+/*		Select:
 			92FG A 1 A_Raise(18);
 			Loop;
 		Deselect:
 			92FG A 1 A_Lower(18);
-			Loop;
+			Loop;*/
 		Ready:
 			92FG A 1 ZWL_WeaponReady(ZRF_ExtraRound);
 			Loop;
