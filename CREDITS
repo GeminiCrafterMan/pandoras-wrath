@@ -6,7 +6,7 @@ Sonik.O.Fan:
 - Burst Rifle
 - Chaingun
 - Rocket Launcher
-- Some other rocket launcher (Toxin Cannon)
+- Some other rocket launcher (Venom Cannon, soon to be changed...)
 - Plasma Rifle
 - Doomguy Box Art Gloves + Darker version
 - Beretta 92FS redo
@@ -35,11 +35,10 @@ dodopod:
 - ZScript Weapons Library v0.3.0
 
 Captain J & Zrrion the Insect:
-- Jackie Hammer (edited for Icebreaker drill) [UNUSED]
 - "flamethrower like cannon...thing" (Flamethrower)
 
 Jetrel @ OpenGameArt.org:
-- Rocket & Grenade explosions (https://opengameart.org/content/explosion-animations)
+- Mine & Dynamite explosions (https://opengameart.org/content/explosion-animations)
 
 Skelegant, Ghastly, David G.:
 - Machine Gun Zombie (SMG Guy)
@@ -56,6 +55,7 @@ Eriance/Amuscaria:
 - Vorpal Blade (Levenbrech)
 - Demon Eclipse vanilla monster gib sprites (Revenant, Baron, Hell Knight)
 - Draugr sprites
+- Demon Eclipse shotgun ("Weapon Skin: Demon Eclipse")
 
 Open Fortress dev team:
 - Weapon sounds
@@ -68,11 +68,8 @@ ZUN:
 Ænima:
 - Super Skulltag (Fists, heavily edited)
 
-WildWeasel:
-- ww-terror (Bullet tracers)
-
 FreeDoom:
-- Bullet puff sprites (Added for games that don't have them, like Heretic)
+- Bullet puff sprites (Always used now, since they look even better than stock Doom!)
 
 Laskow:
 - Portable Medkit (First-Aid Kit)
@@ -104,5 +101,5 @@ TommyGalano5/_.druid.:
 Monolith (& Samsara devs, for having rips of them):
 - Blood (Dynamite sprites)
 
-(The big N... can't say their name or I might get a DMCA!):
-- (K)'s Return to Dream Land (Ice Shotgun charge sounds)
+Nintendo (okay the DMCA joke is over now):
+- Kirby's Return to Dream Land (Ice Shotgun charge sounds)

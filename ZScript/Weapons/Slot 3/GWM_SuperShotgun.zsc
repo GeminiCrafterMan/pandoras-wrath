@@ -35,7 +35,7 @@ class GWM_SuperShotgun : GWM_WeaponBase
 		Select:
 			TNT1 A 0 {
 				ZWL_QuickRaise();
-				A_WeaponOffset(-64, 160);
+				A_WeaponOffset(64, 160);
 			}
 			SSGG AAAAAA 1 {
 				A_WeaponOffset(-8, -16, WOF_ADD);
