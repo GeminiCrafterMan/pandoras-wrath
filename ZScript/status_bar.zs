@@ -181,23 +181,50 @@ class GWM_StatusBar : BaseStatusBar
 		
 		//THANK YOU ASH, YOU'RE MY HERO!!! -Mengo
 		TextureID mtex = GetMugShot(1); // get a texture
-		String mtexname = TexMan.Getname(mtex); // conver to string
+		String mtexname = TexMan.Getname(mtex); // convert to string
+		let arm = BasicArmor(CPlayer.mo.FindInventory('BasicArmor'));
 		
-		if (armor != null)// && ArmorType == "GWM_CombatArmor")
+		if(armor != null)
 		{
-			if (armor.Amount > 75)
-				mtexname.Replace("STF", "CA1");
-			else if (armor.Amount > 50)
-				mtexname.Replace("STF", "CA2");
-			else if (armor.Amount > 25)
-				mtexname.Replace("STF", "CA3");
-			else if (armor.Amount > 0)
-				mtexname.Replace("STF", "CA4");
-
-			if (armor.Amount > 0)
-				DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+			if (arm.armortype == "GWM_CombatArmor" ||arm.armortype == "GreenArmor")
+			{
+				if (armor.Amount > 75)
+					mtexname.Replace("STF", "CA1");
+				else if (armor.Amount > 50)
+					mtexname.Replace("STF", "CA2");
+				else if (armor.Amount > 25)
+					mtexname.Replace("STF", "CA3");
+				else if (armor.Amount > 0)
+					mtexname.Replace("STF", "CA4");
+					DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+			}
+			else
+			if (arm.armortype == "GWM_AssaultArmor" ||arm.armortype == "BlueArmor")
+			{
+				if (armor.Amount > 75)
+					mtexname.Replace("STF", "XA1");
+				else if (armor.Amount > 50)
+					mtexname.Replace("STF", "XA2");
+				else if (armor.Amount > 25)
+					mtexname.Replace("STF", "XA3");
+				else if (armor.Amount > 0)
+					mtexname.Replace("STF", "XA4");
+					DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+			}
+			else
+			{
+				if (armor.Amount > 75)
+					mtexname.Replace("STF", "CA1");
+				else if (armor.Amount > 50)
+					mtexname.Replace("STF", "CA2");
+				else if (armor.Amount > 25)
+					mtexname.Replace("STF", "CA3");
+				else if (armor.Amount > 0)
+					mtexname.Replace("STF", "CA4");
+					DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+			}
 		}
-
+		
 		Inventory ammotype1, ammotype2;
 		[ammotype1, ammotype2] = GetCurrentAmmo();
 		let weapon = ZWeapon(cplayer.readyWeapon);
@@ -249,16 +276,16 @@ class GWM_StatusBar : BaseStatusBar
 			DrawInventoryBar(diparms, (0, 0), 7, DI_SCREEN_CENTER_BOTTOM, HX_SHADOW);
 		}
 		
-		DrawImage("IceHUDFX", (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM,GetAmount("IceSlowCount")*0.002);
+		DrawImage("IceHUDFX", (0, 0), DI_ITEM_OFFSETS|DI_SCREEN_CENTER,GetAmount("IceSlowCount")*0.002);
 		
-		if (GetAmount("FireburnCount"))
+		if (GetAmount("FireburnCount")) 
 		{
-		DrawImage("FirHUDFX", (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM,0.25+frandom(0.03, 0.09)+GetAmount("FireburnCount")*0.002);
+		DrawImage("FirHUDFX", (0, 0), DI_ITEM_OFFSETS|DI_SCREEN_CENTER_BOTTOM,0.25+frandom(0.03, 0.09)+GetAmount("FireburnCount")*0.002);
 		}
 		
 		if (GetAmount("AcidWeakCount"))
 		{
-		DrawImage("AciHUDFX", (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM,0.1+GetAmount("AcidWeakCount")*0.003);
+		DrawImage("AciHUDFX", (0, 0), DI_ITEM_OFFSETS|DI_SCREEN_CENTER,0.1+GetAmount("AcidWeakCount")*0.003);
 		}
 		
 	}
