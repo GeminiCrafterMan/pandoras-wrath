@@ -97,6 +97,7 @@ class GWM_KahunaShotgunGuy : ShotgunGuy
 			Loop;
 		
 		Missile:
+			TNT1 A 0 A_Jumpif(target.countinv("GWM_IsPlayer")&&Distance3d(target)<1000,"Missile2");
 			TNT1 A 0 A_Jump(120,"Missile2");
 			KASG E 10 A_FaceTarget;
 			KASG F 5 Bright 
