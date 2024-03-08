@@ -28,8 +28,29 @@ object GWM_PlasmaFlash {
 }
 
 object GWM_Rocket {
-	frame EXPL { light ZOMBIEATK }
+	frame RCKT { light RocketLight }
 }
+
+object GWM_ChargedRocket {
+	frame RCKT { light SuperRocketLight }
+}
+
+PulseLight RocketLight
+{
+	Color 0.6 0.4 0.0
+	Size 48
+	SecondarySize 64
+	Interval 0.1
+}
+
+PulseLight SuperRocketLight
+{
+	Color 1.0 0.1 0.2
+	Size 88
+	SecondarySize 125
+	Interval 0.1
+}
+
 object GWM_Grenade {
 	frame EXPL { light ZOMBIEATK }
 }

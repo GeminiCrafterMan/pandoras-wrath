@@ -184,7 +184,7 @@ class GWM_StatusBar : BaseStatusBar
 		String mtexname = TexMan.Getname(mtex); // convert to string
 		let arm = BasicArmor(CPlayer.mo.FindInventory('BasicArmor'));
 		
-		if(armor != null)
+		if(armor != null && armor.Amount > 0)
 		{
 			if (arm.armortype == "GWM_CombatArmor" ||arm.armortype == "GreenArmor")
 			{
@@ -201,11 +201,11 @@ class GWM_StatusBar : BaseStatusBar
 			else
 			if (arm.armortype == "GWM_AssaultArmor" ||arm.armortype == "BlueArmor")
 			{
-				if (armor.Amount > 75)
+				if (armor.Amount > 150)
 					mtexname.Replace("STF", "XA1");
-				else if (armor.Amount > 50)
+				else if (armor.Amount > 100)
 					mtexname.Replace("STF", "XA2");
-				else if (armor.Amount > 25)
+				else if (armor.Amount > 50)
 					mtexname.Replace("STF", "XA3");
 				else if (armor.Amount > 0)
 					mtexname.Replace("STF", "XA4");

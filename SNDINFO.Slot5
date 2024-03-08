@@ -1,5 +1,6 @@
 // Rocket Launcher
 weapons/rocketfire	"Sounds/Weapons/Slot 5/Rocket Launcher/rocket_dm_shoot.wav"
+weapons/chargedrocketfire	"Sounds/Weapons/Slot 5/Rocket Launcher/rocket_cg_shoot.wav"
 weapons/grenadefire	"Sounds/Weapons/Slot 5/Rocket Launcher/grenade_launcher_dm_shoot.wav"
 
 weapons/grndimpact1	"Sounds/Weapons/Slot 5/Rocket Launcher/grenade_dm_impact.wav"

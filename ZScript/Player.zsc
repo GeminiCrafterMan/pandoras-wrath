@@ -3,7 +3,10 @@ class GWM_Player : DoomPlayer
 	int prevPlayerState;
 	int FireBurnDelay;
 	int AcidWeakDelay;
-		
+	//self.Player.ReadyWeapon;
+	int ChargedRocketDelay;
+	
+	
 	override void Tick()
 	{
 		super.Tick();
@@ -53,6 +56,23 @@ class GWM_Player : DoomPlayer
 		}
 		
 		self.AcidWeakDelay = self.AcidWeakDelay + 1;
+		
+		self.speed = 1 - (0.004 *self.CountInv("IceSlowCount"));	
+		TakeInventory("IceSlowCount",1);
+		
+		if(self.ChargedRocketDelay == 0 )
+		{ 
+		ChargedRocketDelay = 1000;
+		A_GiveInventory("GWM_ChargedRockets",1);
+		}
+		
+		if(CountInv("GWM_ChargedRockets")!=4)
+		{
+			if(self.player.ReadyWeapon.GetClassName() == "GWM_RocketLauncher")
+			{ChargedRocketDelay = ChargedRocketDelay - 2;}
+			else
+			{ChargedRocketDelay = ChargedRocketDelay - 3;}
+		}
 		
 
 	}
