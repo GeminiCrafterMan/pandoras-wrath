@@ -1,0 +1,10 @@
+// Eldritch Annihilator
+weapons/annhc1	"Sounds/Weapons/Slot 8/Annihilator/ANNICHAR"
+weapons/annhf1	"Sounds/Weapons/Slot 8/Annihilator/ANNIFIR1.wav"
+weapons/annhf2	"Sounds/Weapons/Slot 8/Annihilator/ANNIFIR2.wav"
+weapons/annhf3	"Sounds/Weapons/Slot 8/Annihilator/ANNIFIR3.wav"
+weapons/annhc2	"Sounds/Weapons/Slot 8/Annihilator/ANNISCRE"
+weapons/annhf4	"Sounds/Weapons/Slot 8/Annihilator/ANNISHOT"
+
+// Perforator (Eviternity II)
+weapons/perf_fire	"Sounds/Weapons/Slot 8/fire_perforator.wav"

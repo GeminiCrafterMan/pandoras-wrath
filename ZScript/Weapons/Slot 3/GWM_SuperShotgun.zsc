@@ -94,7 +94,15 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			//TNT1 A 0 A_JumpifInventory("PowerWeaponLevel2",1,"Ready");
 			Goto Ready;
 		AltFire:
-			TNT1 A 0 {if ((invoker.ammoCount <= 0) && (FindInventory(invoker.ammoType1).amount > 0)) {player.SetPSprite(OverlayID(), ResolveState("Reload.Empty"));}}
+			TNT1 A 0 {
+				if (invoker.ammoCount <= 0)
+				{
+					if (FindInventory(invoker.ammoType1).amount > 0)
+						player.SetPSprite(OverlayID(), ResolveState("Reload.Empty"));
+					else
+						player.SetPSprite(OverlayID(), ResolveState("Deselect"));
+				}
+			}
 			SSGG A 2 {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				if (invoker.ammoCount == 1) {

@@ -10,11 +10,3 @@ $attenuation weapons/bounb1 0.75
 $attenuation weapons/bounb2 0.75
 $attenuation weapons/bounx1 0.5
 $attenuation weapons/bounx2 0.5
-
-//BWAAAAAH
-weapons/annhc1	"Sounds/Weapons/Slot 8/Annihilator/ANNICHAR"
-weapons/annhf1	"Sounds/Weapons/Slot 8/Annihilator/ANNIFIR1.wav"
-weapons/annhf2	"Sounds/Weapons/Slot 8/Annihilator/ANNIFIR2.wav"
-weapons/annhf3	"Sounds/Weapons/Slot 8/Annihilator/ANNIFIR3.wav"
-weapons/annhc2	"Sounds/Weapons/Slot 8/Annihilator/ANNISCRE"
-weapons/annhf4	"Sounds/Weapons/Slot 8/Annihilator/ANNISHOT"
