@@ -188,11 +188,16 @@ class ZWeapon : Weapon
 
 
 	// Auto-reloads weapon, if empty. Auto-switches if player has no ammo left.
-	action void ZWL_CheckReload(bool autoReload = true, bool autoSwitch = true)
-	{
-		invoker.CheckMagazine(autoReload);
-		invoker.CheckAmmo(invoker.bAltFire ? AltFire : PrimaryFire, autoSwitch);
-	}
+    action void ZWL_CheckReload(bool pressedAlt = false, bool autoReload = true, bool autoSwitch = true)
+    {
+        invoker.CheckMagazine(autoReload);
+        if(pressedAlt == true)
+        {
+            invoker.CheckAmmo(!invoker.bAltFire ? AltFire : PrimaryFire, autoSwitch);
+        }
+        else
+        invoker.CheckAmmo(invoker.bAltFire ? AltFire : PrimaryFire, autoSwitch);
+    }
 
 
 	/*

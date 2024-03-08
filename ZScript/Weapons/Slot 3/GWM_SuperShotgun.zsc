@@ -69,13 +69,20 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			TNT1 AAAAAA 1 A_SetPitch(pitch-0.40);
 			Stop;
 		Fire:
-			TNT1 A 0 ZWL_CheckReload();
-			TNT1 A 0 {if (invoker.ammoCount == 1) {player.SetPSprite(OverlayID(), ResolveState("AltFire"));}}
+			TNT1 A 0 {
+			// G: What the fuck
+			// G: Why does this fix that issue (ssg primary randomly deselects when you have no reserve ammo)
+				if (invoker.ammoCount <= 1)
+				{
+					invoker.bALTFIRE = true;
+					player.SetPSprite(OverlayID(), ResolveState("AltFire"));
+				}
+			}
 			SSGG A 2 {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_WeaponOffset(0, 12, WOF_ADD);
-				//ZWL_FireHitscan(0, 12, pellets: 20, spread: 7, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_Tracer");
-				ZWL_FireHitscan(0, 0, pellets: 24, spread: 12, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_SSGShot", flags: ZHF_DontUseAmmo);
+				ZWL_FireHitscan(0, 0, pellets: 24, spread: 12, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_SSGShot");
+				invoker.ammoCount -= 1;
 				A_StartSound("weapons/ssgshot1", CHAN_WEAPON);
 				A_GunFlash();
 				A_SpawnItemEx("GWM_MuzzleFlashLight3",0,0,5);
@@ -84,7 +91,6 @@ class GWM_SuperShotgun : GWM_WeaponBase
 				A_ChangeVelocity(-Cos(pitch)*4, 0, sin(pitch)*4,CVF_RELATIVE);
 				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
 				A_QuakeEx(3, 3, 3, 4, 0, 1, "", QF_SHAKEONLY);
-				invoker.ammoCount -= 2;
 				//invoker.SSGShellstoEject = invoker.SSGShellstoEject+1;
 			}
 			SSGG AA 2 {
@@ -100,10 +106,7 @@ class GWM_SuperShotgun : GWM_WeaponBase
 					if (FindInventory(invoker.ammoType1).amount > 0)
 						player.SetPSprite(OverlayID(), ResolveState("Reload.Empty"));
 					else
-					{
-						invoker.bALTFIRE = false;
-						ZWL_CheckReload();
-					}
+						ZWL_CheckReload(true);
 				}
 			}
 			SSGG A 2 {

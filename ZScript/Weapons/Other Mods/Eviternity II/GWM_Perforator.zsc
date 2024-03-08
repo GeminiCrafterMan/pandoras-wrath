@@ -33,19 +33,19 @@ class GWM_Perforator : GWM_WeaponBase
 			Goto LightDone;
 		Fire:
 			PRFG A 2;
-			PRFG A 0 A_StartSound("weapon/perf_fire",1);
+			PRFG A 0 A_StartSound("weapons/perf_fire",1);
 			PRFG A 0 A_GunFlash("Flash");
 //			PRFG A 0 A_FireProjectile("_Rail Shot 1",0.0,0);
 			PRFG A 0 A_FireBullets(0.0, 0.0, 3, 282, "ZBulletPuff", FBF_USEAMMO|FBF_NORANDOM, missile: "GWM_Tracer", spawnheight: 0); // holy FUCKING SHIT no wonder it's called the perforator
 			PRFG A 2;
 			PRFG A 2;
-			PRFG A 0 A_StartSound("weapon/perf_fire",1);
+			PRFG A 0 A_StartSound("weapons/perf_fire",1);
 			PRFG A 0 A_GunFlash("Flash");
 //			PRFG A 0 A_FireProjectile("_Rail Shot 2",0.0,0);
 			PRFG A 0 A_FireBullets(2.0, 0.5, 8, 80, "ZBulletPuff", FBF_NORANDOM, missile: "GWM_Tracer", spawnheight: 0);
 			PRFG A 2;
 			PRFG A 2;
-			PRFG A 0 A_StartSound("weapon/perf_fire",1);
+			PRFG A 0 A_StartSound("weapons/perf_fire",1);
 			PRFG A 0 A_GunFlash("Flash2");
 //			PRFG A 0 A_FireProjectile("_Rail Shot 3",0.0,0);
 			PRFG A 0 A_FireBullets(4.0, 1.0, 20, 30, "ZBulletPuff", FBF_NORANDOM, missile: "GWM_Tracer", spawnheight: 0);
