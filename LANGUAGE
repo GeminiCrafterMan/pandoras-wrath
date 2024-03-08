@@ -2,59 +2,83 @@
 PLACEHOLDER = "You shouldn't see this.";
 
 // Weapon pickup messages
+// Slot 0
 GOTMINES = "\c[White]You picked up some \c[DarkGray]land mines\c[White]! (Slot 0)";
 GOTDYNAMITE = "\c[White]You picked up some \c[DarkGray]dynamite\c[White]! (Slot 0)";
+// Slot 1
 GOTLUMBERJACK = "\c[White]You picked up the \c[Black]Lumberjack\c[White]! (Slot 1)";
 GOTIMPACTOR = "\c[White]You picked up the \c[Black]Impactor Gauntlet\c[White]! (Slot 1)";
 GOTLEVENBRECH = "\c[White]You picked up the \c[Black]Levenbrech\c[White]! (Slot 1)";
+// Slot 2
 GOT92FS = "\c[White]You picked up the \c[Yellow]Beretta 92FS\c[White]! (Slot 2)";
 GOTSMG = "\c[White]You picked up the \c[Yellow]SMG\c[White]! (Slot 2)";
 GOTREVOLVER = "\c[White]You picked up the \c[Yellow]Revolver\c[White]! (Slot 2)";
 GOTWAND = "\c[White]You picked up the \c[Gold]Gold Wand\c[White]! (Slot 2)";
-GOTICESHOTGUN = "\c[White]You picked up the \c[Sapphire]Ice Shotgun\c[White]! (Slot 9)";
-GOTSLAYERSKAHUNA = "\c[White]You picked up the \c[Red]Slayer's Kahuna\c[White]! (Slot 3)";
-GOTPFSUPERSHOTGUN = "\c[White]You picked up the \c[Sapphire]Perfect Freeze Super Shotgun\c[White]! (Slot 9)";
-GOTSUPERSHOTGUN = "\c[White]You picked up the \c[Red]Super Shotgun\c[White]! Oh, yes. (Slot 3)";
+// Slot 3
 GOTZOMBIESHOTGUN = "\c[White]You picked up the... Wow, this \c[Red]Shotgun\c[White] is in horrible condition. (Slot 3)";
+GOTSLAYERSKAHUNA = "\c[White]You picked up the \c[Red]Slayer's Kahuna\c[White]! (Slot 3)";
+GOTSUPERSHOTGUN = "\c[White]You picked up the \c[Red]Super Shotgun\c[White]! Oh, yes. (Slot 3)";
 GOTIMPALERCROSSBOW = "\c[White]You picked up the \c[DarkGray]Impaler Crossbow\c[White]! (Slot 3)";
+// Slot 4
 GOTBURSTRIFLE = "\c[White]You picked up the \c[Gold]Burst Rifle\c[White]! (Slot 4)";
 GOTCHAINGUN = "\c[White]You picked up the \c[Gold]Mad Vulcan\c[White]! (Slot 4)";
 GOTMP40 = "\c[White]You picked up the \c[Yellow]MP40\c[White]! (Slot 4)";
 GOTFROSTFANG = "\c[White]You picked up the \c[Ice]Frost Fang\c[White]! (Slot 4)";
+GOTSCRAPGUN = "\c[White]You picked up the \c[Red]Scrapgun\c[White]! (Slot 4)";
+// Slot 5
 GOTROCKETLAUNCHER = "\c[White]You picked up the \c[DarkRed]Rocket Launcher\c[White]! (Slot 5)";
-GOTVENOMCANNON = "\c[White]You picked up the \c[Purple]Venom Cannon\c[White]! (Slot 9)";
+GOTBOUNCER = "\c[White]You picked up \c[DarkRed]The Bouncer\c[White]! (Slot 5)";
+GOTSTOMPER = "\c[White]You picked up the \c[Red]Stomper\c[White]! (Slot 5)";
+// Slot 6
 GOTPLASMARIFLE = "\c[White]You picked up the \c[Cyan]Plasma Rifle\c[White]! (Slot 6)";
 GOTMELTER = "\c[White]You picked up the \c[Cyan]Melter\c[White]! (Slot 9)";
 GOTNOISECRUSHER = "\c[White]You picked up the \c[Cyan]Noise Crusher\c[White]! (Slot 6)";
+// Slot 7
 GOTBFG9000 = "\c[White]You picked up the \c[Green]BFG9000\c[White]!! Oh yeah! (Slot 7)";
 GOTFLAMETHROWER = "\c[White]You picked up the \c[Brown]Flamethrower\c[White]! Burn, baby, burn!! (Slot 9)";
-GOTPERFORATOR = "\c[White]You picked up the \c[Yellow]Perforator\c[White]! (Slot 8)";
-GOTBOUNCER = "\c[White]You picked up \c[DarkRed]The Bouncer\c[White]! (Slot 5)";
+// Slot 8
 GOTANNIHILATOR = "\c[White]You found \c[Black]something you shouldn't have seen\c[White]... (Slot 8)";
+GOTPERFORATOR = "\c[White]You picked up the \c[Yellow]Perforator\c[White]! (Slot 8)";
+// Slot 9
+GOTVENOMCANNON = "\c[White]You picked up the \c[Purple]Venom Cannon\c[White]! (Slot 9)";
+GOTICESHOTGUN = "\c[White]You picked up the \c[Sapphire]Ice Shotgun\c[White]! (Slot 9)";
+GOTPFSUPERSHOTGUN = "\c[White]You picked up the \c[Sapphire]Perfect Freeze Super Shotgun\c[White]! (Slot 9)";
 
 // Ammo pickup messages
+DISARMEDMINE = "\c[White]Disarmed and retrieved a \c[DarkGray]mine\c[White].";
+// Bullets
 GOTLOWCALMAG = "\c[White]Picked up a \c[Yellow]magazine of low-caliber bullets\c[White].";
 GOTHIGHCALMAG = "\c[White]Picked up a \c[Gold]magazine of high-caliber bullets\c[White].";
 GOTLOWCALBOX = "\c[White]Picked up a \c[Yellow]box of low-caliber bullets\c[White].";
 GOTHIGHCALBELT = "\c[White]Picked up a \c[Gold]belt of high-caliber bullets\c[White].";
-DISARMEDMINE = "\c[White]Disarmed and retrieved a \c[DarkGray]mine\c[White].";
+// Shells
 GOTSHELLS = "\c[White]Picked up a \c[Red]small box of shotgun shells\c[White].";
 GOTSHELLBOX = "\c[White]Picked up a \c[Red]large box of shotgun shells\c[White].";
 GOTICESHELLS = "\c[White]Picked up a \c[Sapphire]small box of ice shotgun shells\c[White].";
 GOTICESHELLBOX = "\c[White]Picked up a \c[Sapphire]large box of ice shotgun shells\c[White].";
+// Rockets
+GOTROCKET = "\c[White]Picked up a \c[DarkRed]rocket\c[White].";
+GOTROCKETBOX = "\c[White]Picked up a \c[DarkRed]box of rockets\c[White].";
+// Acid (Rename later...)
+GOTVENOMVIAL = "\c[White]Picked up a \c[Purple]small vial of venom\c[White].";
+GOTLARGEVENOMVIAL = "\c[White]Picked up a \c[Purple]large vial of venom\c[White].";
+// Gas
+GOTGASCANISTER = "\c[White]Picked up a \c[Brown]gasoline canister\c[White].";
+GOTGASPACK = "\c[White]Picked up a \c[Brown]pack of gasoline canisters\c[White].";
+// Cells
+GOTCELL = "\c[White]Picked up a \c[Cyan]power cell\c[White].";
+GOTCELLPACK = "\c[White]Picked up a \c[Cyan]power cell pack\c[White].";
+GOTCYBERIMPARM = "\c[White]Pulled the \c[Cyan]power cell \c[White]out of a \c[DarkBrown]Cyber Imp\c[White]'s severed arm.";
+// Heretic items
 GOTBOLTS = "\c[White]Picked up some \c[DarkGray]steel bolts\c[White].";
 GOTBOLTSHEFTY = "\c[White]Picked up a \c[DarkGray]quiver of steel bolts\c[White].";
 GOTEVERICE = "\c[White]Picked up a \c[Ice]chunk of Ever Ice\c[White].";
 GOTEVERICEHEFTY = "\c[White]Picked up a \c[Ice]cluster of Ever Ice\c[White].";
-GOTROCKET = "\c[White]Picked up a \c[DarkRed]rocket\c[White].";
-GOTROCKETBOX = "\c[White]Picked up a \c[DarkRed]box of rockets\c[White].";
-GOTVENOMVIAL = "\c[White]Picked up a \c[Purple]small vial of venom\c[White].";
-GOTLARGEVENOMVIAL = "\c[White]Picked up a \c[Purple]large vial of venom\c[White].";
-GOTGASCANISTER = "\c[White]Picked up a \c[Brown]gasoline canister\c[White].";
-GOTGASPACK = "\c[White]Picked up a \c[Brown]pack of gasoline canisters\c[White].";
-GOTCELL = "\c[White]Picked up a \c[Cyan]power cell\c[White].";
-GOTCELLPACK = "\c[White]Picked up a \c[Cyan]power cell pack\c[White].";
-GOTCYBERIMPARM = "\c[White]Pulled the \c[Cyan]power cell \c[White]out of a \c[DarkBrown]Cyber Imp\c[White]'s severed arm.";
+// Abnormal ammo types
+GOTSCRAPDRUM = "\c[White]Picked up a \c[Red]scrap drum\c[White].";
+GOTSCRAPPACK = "\c[White]Picked up a \c[Red]scrap drum pack\c[White].";
+GOTSTOMPERAMMO = "\c[White]Picked up some \c[Red]Stomper missiles\c[White].";
+GOTSTOMPERBOX = "\c[White]Picked up a \c[Red]box of Stomper missiles\c[White].";
 
 // Powerup messages
 GOTLIFEDRAIN = "Life drain!";
@@ -115,6 +139,8 @@ KILLPERFORATOR = "%o was shredded by %k's Perforator.";
 KILLBOUNCE = "%o was blasted by %k's Bouncer.";
 KILLBOUNCE2 = "%o was swarmed by %k's Bouncer bombs.";
 KILLANNIHILATOR = "%o was torn asunder by %k's Eldritch Annihilator.";
+KILLSCRAP = "%o was turned into slag by %k's Scrapgun.";
+KILLSTOMPER = "%o was stomped by %k's Stomper missiles.";
 
 // Enemy kill messages
 OB_ZOMBIEMAN = "%o was capped by a Zombie."; 
@@ -204,3 +230,5 @@ TAG_HELLKNIGHTCLAWS = "Hell Knight claws";
 
 // Other mods' weapons
 TAG_PERFORATOR = "Perforator";
+TAG_SCRAPGUN = "Scrapgun";
+TAG_STOMPER = "The Stomper";

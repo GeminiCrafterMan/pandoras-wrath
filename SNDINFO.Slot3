@@ -24,30 +24,6 @@ weapons/ssgl		"Sounds/Weapons/Slot 3/Super Shotgun/Load.wav"
 weapons/ssgc		"Sounds/Weapons/Slot 3/Super Shotgun/Close.wav"
 weapons/ssgpickup	"Sounds/Weapons/Slot 3/Super Shotgun/pickup.wav"
 
-// Ice Shotgun
-weapons/icehit		"Sounds/Weapons/Slot 3/Ice SG/DSICEHIT.wav"
-weapons/iceshot		"Sounds/Weapons/Slot 3/Ice SG/Shot.wav"
-weapons/icepickup	"Sounds/Weapons/Slot 3/Ice SG/pickup.wav"
-weapons/icechrg		"Sounds/Weapons/Slot 3/Ice SG/Charge.wav"
-weapons/icepump1	"Sounds/Weapons/Slot 3/Ice SG/Pump1.wav"
-weapons/icepump2	"Sounds/Weapons/Slot 3/Ice SG/Pump2.wav"
-weapons/icehiss1	"Sounds/Weapons/Slot 3/Ice SG/Hiss1.wav"
-weapons/icehiss2	"Sounds/Weapons/Slot 3/Ice SG/Hiss2.mp3"
-weapons/icelv2		"Sounds/Weapons/Slot 3/Ice SG/Level2.wav"
-weapons/icelv3		"Sounds/Weapons/Slot 3/Ice SG/Level3.wav"
-
-$random weapons/icehiss {weapons/icehiss1 weapons/icehiss2}
-
-// P.F. Super Shotgun
-// All sounds here are from Touhou Koumakyou: Embodiment of Scarlet Devil (th06)
-weapons/pfshot1		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/tan00.wav"
-weapons/pfshot2		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/tan01.wav"
-weapons/pfdamage	"Sounds/Weapons/Slot 3/Perfect Freeze SSG/graze.wav"
-weapons/pfgraze		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/damage00.wav"
-weapons/ok00		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/ok00.wav"
-weapons/power1		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/power1.wav"
-weapons/powerup		"Sounds/Weapons/Slot 3/Perfect Freeze SSG/powerup.wav"
-
 // Impaler Crossbow
 weapons/xbowrelease	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_release.wav"
 weapons/xbowfire1	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_shot1.wav"

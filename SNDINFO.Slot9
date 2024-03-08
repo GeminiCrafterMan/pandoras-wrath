@@ -1,12 +1,66 @@
 // FlameShooter
-weapons/ftready		"Sounds/Weapons/Slot 7/Flamethrower/flame_thrower_pilot.wav"
-weapons/ftfiring	"Sounds/Weapons/Slot 7/Flamethrower/flame_thrower_dm_fire.ogg" // unfortunately .wav didn't work for the loop section
-weapons/ftend		"Sounds/Weapons/Slot 7/Flamethrower/flame_thrower_dm_end.wav"
-weapons/ftburn		"Sounds/Weapons/Slot 7/Flamethrower/flame_thrower_fire_hit.wav"
-weapons/fthit		"Sounds/Weapons/Slot 7/Flamethrower/flame_thrower_fire_hitloop.wav"
-Weapons/ftsqueak	"Sounds/Weapons/Slot 7/Flamethrower/flame_thrower_squeak.mp3"
+weapons/ftready		"Sounds/Weapons/Slot 9/Flamethrower/flame_thrower_pilot.wav"
+weapons/ftfiring	"Sounds/Weapons/Slot 9/Flamethrower/flame_thrower_dm_fire.ogg" // unfortunately .wav didn't work for the loop section
+weapons/ftend		"Sounds/Weapons/Slot 9/Flamethrower/flame_thrower_dm_end.wav"
+weapons/ftburn		"Sounds/Weapons/Slot 9/Flamethrower/flame_thrower_fire_hit.wav"
+weapons/fthit		"Sounds/Weapons/Slot 9/Flamethrower/flame_thrower_fire_hitloop.wav"
+Weapons/ftsqueak	"Sounds/Weapons/Slot 9/Flamethrower/flame_thrower_squeak.mp3"
 $volume weapons/ftready 0.5
 $volume weapons/ftfiring 0.5
 $volume weapons/ftend 0.5
 $volume weapons/ftburn 0.5
 $volume weapons/fthit 0.5
+
+// Acid Cannon
+weapons/vnmcfire1	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_01.wav"
+weapons/vnmcfire2	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_02.wav"
+weapons/vnmcfire3	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_03.wav"
+weapons/vnmcfire4	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_04.wav"
+weapons/vnmcfire5	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_05.wav"
+weapons/vnmcfire6	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_06.wav"
+weapons/vnmcfire7	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_07.wav"
+weapons/vnmcfire8	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_08.wav"
+weapons/vnmcfire9	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_09.wav"
+weapons/vnmcfire10	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_10.wav"
+
+weapons/vnmcsplt1	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_01.wav"
+weapons/vnmcsplt2	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_02.wav"
+weapons/vnmcsplt3	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_03.wav"
+weapons/vnmcsplt4	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_04.wav"
+weapons/vnmcsplt5	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_05.wav"
+weapons/vnmcsplt6	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_06.wav"
+weapons/vnmcsplt7	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_07.wav"
+weapons/vnmcsplt8	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_08.wav"
+weapons/vnmcsplt9	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_09.wav"
+weapons/vnmcsplt10	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_10.wav"
+weapons/vnmcsplt11	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_11.wav"
+weapons/vnmcsplt12	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_12.wav"
+
+weapons/vnmcbomb	"Sounds/Weapons/Slot 9/Acid Cannon/phys_paint_bomb_01.wav"
+
+$random weapons/vnmcfire { weapons/vnmcfire1 weapons/vnmcfire2 weapons/vnmcfire3 weapons/vnmcfire4 weapons/vnmcfire5 weapons/vnmcfire6 weapons/vnmcfire7 weapons/vnmcfire8 weapons/vnmcfire9 weapons/vnmcfire10 }
+$random weapons/vnmcsplt { weapons/vnmcsplt1 weapons/vnmcsplt2 weapons/vnmcsplt3 weapons/vnmcsplt4 weapons/vnmcsplt5 weapons/vnmcsplt6 weapons/vnmcsplt7 weapons/vnmcsplt8 weapons/vnmcsplt9 weapons/vnmcsplt10 weapons/vnmcsplt11 weapons/vnmcsplt12 }
+
+// Ice Shotgun
+weapons/icehit		"Sounds/Weapons/Slot 9/Ice SG/DSICEHIT.wav"
+weapons/iceshot		"Sounds/Weapons/Slot 9/Ice SG/Shot.wav"
+weapons/icepickup	"Sounds/Weapons/Slot 9/Ice SG/pickup.wav"
+weapons/icechrg		"Sounds/Weapons/Slot 9/Ice SG/Charge.wav"
+weapons/icepump1	"Sounds/Weapons/Slot 9/Ice SG/Pump1.wav"
+weapons/icepump2	"Sounds/Weapons/Slot 9/Ice SG/Pump2.wav"
+weapons/icehiss1	"Sounds/Weapons/Slot 9/Ice SG/Hiss1.wav"
+weapons/icehiss2	"Sounds/Weapons/Slot 9/Ice SG/Hiss2.mp3"
+weapons/icelv2		"Sounds/Weapons/Slot 9/Ice SG/Level2.wav"
+weapons/icelv3		"Sounds/Weapons/Slot 9/Ice SG/Level3.wav"
+
+$random weapons/icehiss {weapons/icehiss1 weapons/icehiss2}
+
+// P.F. Super Shotgun
+// All sounds here are from Touhou Koumakyou: Embodiment of Scarlet Devil (th06)
+weapons/pfshot1		"Sounds/Weapons/Slot 9/Perfect Freeze SSG/tan00.wav"
+weapons/pfshot2		"Sounds/Weapons/Slot 9/Perfect Freeze SSG/tan01.wav"
+weapons/pfdamage	"Sounds/Weapons/Slot 9/Perfect Freeze SSG/graze.wav"
+weapons/pfgraze		"Sounds/Weapons/Slot 9/Perfect Freeze SSG/damage00.wav"
+weapons/ok00		"Sounds/Weapons/Slot 9/Perfect Freeze SSG/ok00.wav"
+weapons/power1		"Sounds/Weapons/Slot 9/Perfect Freeze SSG/power1.wav"
+weapons/powerup		"Sounds/Weapons/Slot 9/Perfect Freeze SSG/powerup.wav"

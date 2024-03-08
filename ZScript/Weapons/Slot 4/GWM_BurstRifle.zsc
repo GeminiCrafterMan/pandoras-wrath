@@ -3,12 +3,13 @@ class GWM_BurstRifle : GWM_WeaponBase
 	action void A_FireRifle()
 	{
 		A_SpawnItemEx("GWM_Flash");
-		A_RailAttack((25),0,true,"",0,RGF_SILENT,0,"BulletPuff",3,2,0,0,1,0.5,"none");
+		A_RailAttack((25),0,true,"",0,RGF_SILENT,0,"ZBulletPuff",3,2,0,0,1,0.5,"none");
 		ZWL_FireHitscan(1, 0, tracerType: "GWM_Tracer");
 		ZWL_EjectCasing("GWM_RifleCasing");
 		A_WeaponOffset(0, 6, WOF_ADD);
 		A_SetPitch(pitch-0.5);
 		A_Setangle(angle+frandom(-.5,.5));
+		A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 	}
 	Default
 	{
@@ -69,19 +70,15 @@ class GWM_BurstRifle : GWM_WeaponBase
 			Loop;*/
 		Fire:
 			TNT1 A 0 ZWL_CheckReload();
-			TNT1 A 0 A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 			RIFL B 1 Bright A_FireRifle;
 			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
 			TNT1 A 0 ZWL_CheckReload();
-			TNT1 A 0 A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 			RIFL B 1 Bright A_FireRifle;
 			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
 			TNT1 A 0 ZWL_CheckReload();
-			TNT1 A 0 A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 			RIFL B 1 Bright A_FireRifle;
 			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
 			TNT1 A 0 ZWL_CheckReload();
-			TNT1 A 0 A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 			RIFL B 1 Bright A_FireRifle;
 			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
 			TNT1 A 0 ZWL_CheckReload();

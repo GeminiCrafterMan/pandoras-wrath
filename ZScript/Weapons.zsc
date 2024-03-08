@@ -1,25 +1,30 @@
 // Weapon bases
 #include "ZScript/Weapons/Weapon base classes.zsc"
 
-// Doom
 #include "ZScript/Weapons/Slot 1/GWM_Fists.zsc"				// Fists, taken from Super Skulltag and rewritten slightly, then modified heavily.
 #include "ZScript/Weapons/Slot 1/GWM_Impactor.zsc"			// Impactor Gauntlet, taken from Realm667.
 #include "ZScript/Weapons/Slot 1/GWM_Lumberjack.zsc"		// "Lumberjack" Chainsaw, sprites by Captain J
+#include "ZScript/Weapons/Slot 1/GWM_Levenbrech.zsc"		// Levenbrech
 
 #include "ZScript/Weapons/Slot 2/GWM_Pistol.zsc"			// Beretta 92FS
 #include "ZScript/Weapons/Slot 2/GWM_SMG.zsc"				// SMG
 #include "ZScript/Weapons/Slot 2/GWM_Revolver.zsc"			// Revolver
+#include "ZScript/Weapons/Slot 2/GWM_GoldWand.zsc"			// Gold Wand
 
 #include "ZScript/Weapons/Slot 3/GWM_ZombieShotgun.zsc"		// Get a better shotgun ASAP
 #include "ZScript/Weapons/Slot 3/GWM_Shotgun.zsc"			// Slayer's Kahuna
 #include "ZScript/Weapons/Slot 3/GWM_SuperShotgun.zsc"		// Super Shotgun
+#include "ZScript/Weapons/Slot 3/GWM_ImpalerCrossbow.zsc"	// Impaler Crossbow
 
-#include "ZScript/Weapons/Slot 4/GWM_Chaingun.zsc"			// Chaingun
+#include "ZScript/Weapons/Slot 4/GWM_Chaingun.zsc"			// Mad Vulcan
 #include "ZScript/Weapons/Slot 4/GWM_BurstRifle.zsc"		// Burst Rifle
 #include "ZScript/Weapons/Slot 4/GWM_MP40.zsc"				// MP40
+#include "ZScript/Weapons/Slot 4/GWM_Scrapgun.zsc"			// Not exactly TangoScrapgun anymore... (from Supercharge)
+#include "ZScript/Weapons/Slot 4/GWM_FrostFang.zsc"			// Frost Fang
 
 #include "ZScript/Weapons/Slot 5/GWM_RocketLauncher.zsc"	// Rocket Launcher
 #include "ZScript/Weapons/Slot 5/GWM_THE_BOUNCERRR.zsc"	    //I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
+#include "ZScript/Weapons/Slot 5/GWM_Stomper.zsc"			// THE STOMPERRR (from Supercharge)
 
 #include "ZScript/Weapons/Slot 6/GWM_PlasmaRifle.zsc"		// Plasma Rifle
 #include "ZScript/Weapons/Slot 6/GWM_NoiseCrusher.zsc"		// Noise Crusher
@@ -27,7 +32,8 @@
 #include "ZScript/Weapons/Slot 7/GWM_BFG9000.zsc"			// BFG9000 (Vanilla)
 #include "ZScript/Weapons/Slot 7/GWM_TwinPlasmaCannons.zsc"	// Twin Plasma Cannons
 
-#include "ZScript/Weapons/Slot 8/GWM_ANNIHILATOR.zsc"	    //Shroine Tew, out now!
+#include "ZScript/Weapons/Slot 8/GWM_ANNIHILATOR.zsc"	    // Shroine Tew, out now!
+#include "ZScript/Weapons/Slot 8/GWM_Perforator.zsc"		// Evitahnity Tew, out now!
 
 #include "ZScript/Weapons/Slot 9/GWM_IceShotgun.zsc"		// Ice Shotgun
 #include "ZScript/Weapons/Slot 9/GWM_PFSuperShotgun.zsc"	// Perfect Freeze Super Shotgun
@@ -35,21 +41,8 @@
 #include "ZScript/Weapons/Slot 9/GWM_VenomCannon.zsc"		// Venom Cannon (poison goop gun)
 #include "ZScript/Weapons/Slot 9/GWM_Melter.zsc"			// Melter
 
-
 #include "ZScript/Weapons/Slot 0/GWM_Mine.zsc"				// Land mine
 #include "ZScript/Weapons/Slot 0/GWM_Dynamite.zsc"			// Dynamite bundle
-
-// Heretic
-#include "ZScript/Weapons/Slot 1/GWM_Levenbrech.zsc"		// Levenbrech
-
-#include "ZScript/Weapons/Slot 2/GWM_GoldWand.zsc"			// Gold Wand
-
-#include "ZScript/Weapons/Slot 3/GWM_ImpalerCrossbow.zsc"	// Impaler Crossbow
-
-#include "ZScript/Weapons/Slot 4/GWM_FrostFang.zsc"			// Frost Fang
-
-// Other mods
-#include "ZScript/Weapons/Other Mods/Eviternity II/GWM_Perforator.zsc"	// Perforator
 
 // Morph weapons
 #include "ZScript/Weapons/GWM_HellKnightClaws.zsc"	// Hell Knight's claws

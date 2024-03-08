@@ -23,3 +23,18 @@ FrostFang/Fire1	FSTFFIR1
 FrostFang/Hit1	FSTFHIT1
 FrostFang/Fire2 FSTFFIR2
 FrostFang/Hit2	FSTFHIT2
+
+// Scrap gun
+weapons/scrapopen			SCOPEN
+weapons/scrapclose			SCCLOS
+$random weapons/scrapfire { weapons/scrapfire1 weapons/scrapfire2 weapons/scrapfire3 }
+weapons/scrapfire1			SCFIR1
+weapons/scrapfire2			SCFIR2
+weapons/scrapfire3			SCFIR3
+weapons/scrapload			SCLOAD
+items/scrapgun				SCSEL
+$volume weapons/scrapfire 0.6
+weapons/getscrapbox			GSBOX
+weapons/getscrapshell		GSSHELL
+scrapgun/rotate				SCROTATE
+scrapgun/eject				SCEJECT

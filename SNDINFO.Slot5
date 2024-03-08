@@ -19,32 +19,18 @@ $limit weapons/explode 0
 $attenuation weapons/grndimp 0.75
 $attenuation weapons/explode 0.5
 
-// Venom Cannon
-weapons/vnmcfire1	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_inception_01.wav"
-weapons/vnmcfire2	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_inception_02.wav"
-weapons/vnmcfire3	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_inception_03.wav"
-weapons/vnmcfire4	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_inception_04.wav"
-weapons/vnmcfire5	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_inception_05.wav"
-weapons/vnmcfire6	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_inception_06.wav"
-weapons/vnmcfire7	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_inception_07.wav"
-weapons/vnmcfire8	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_inception_08.wav"
-weapons/vnmcfire9	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_inception_09.wav"
-weapons/vnmcfire10	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_inception_10.wav"
+// Stomper
+stomper/pickup				SSCRSUP
+stomper/fire1				SSCRFI1
+stomper/fire2				SSCRFI2
+stomper/fire3				SSCRFI3
+$random stomper/fire { stomper/fire1 stomper/fire2 stomper/fire3 }
+stomper/explode1			SSCRXP1
+stomper/explode2			SSCRXP2
+stomper/explode3			SSCRXP3
+$random stomper/explode		{ stomper/explode1 stomper/explode2 stomper/explode3 }
+weapons/getstomperrockets	GSROCK
+weapons/getstomperbox		GSROCKBO
 
-weapons/vnmcsplt1	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_splat_01.wav"
-weapons/vnmcsplt2	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_splat_02.wav"
-weapons/vnmcsplt3	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_splat_03.wav"
-weapons/vnmcsplt4	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_splat_04.wav"
-weapons/vnmcsplt5	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_splat_05.wav"
-weapons/vnmcsplt6	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_splat_06.wav"
-weapons/vnmcsplt7	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_splat_07.wav"
-weapons/vnmcsplt8	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_splat_08.wav"
-weapons/vnmcsplt9	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_splat_09.wav"
-weapons/vnmcsplt10	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_splat_10.wav"
-weapons/vnmcsplt11	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_splat_11.wav"
-weapons/vnmcsplt12	"Sounds/Weapons/Slot 5/Venom Cannon/paint_blob_splat_12.wav"
-
-weapons/vnmcbomb	"Sounds/Weapons/Slot 5/Venom Cannon/phys_paint_bomb_01.wav"
-
-$random weapons/vnmcfire { weapons/vnmcfire1 weapons/vnmcfire2 weapons/vnmcfire3 weapons/vnmcfire4 weapons/vnmcfire5 weapons/vnmcfire6 weapons/vnmcfire7 weapons/vnmcfire8 weapons/vnmcfire9 weapons/vnmcfire10 }
-$random weapons/vnmcsplt { weapons/vnmcsplt1 weapons/vnmcsplt2 weapons/vnmcsplt3 weapons/vnmcsplt4 weapons/vnmcsplt5 weapons/vnmcsplt6 weapons/vnmcsplt7 weapons/vnmcsplt8 weapons/vnmcsplt9 weapons/vnmcsplt10 weapons/vnmcsplt11 weapons/vnmcsplt12 }
+$limit stomper/missile		0
+$limit stomper/explode		0

@@ -11,7 +11,7 @@ class GWM_SuperShotgun : GWM_WeaponBase
 		Weapon.UpSound "weapons/draw_primary";
 		Weapon.AmmoType "GWM_Shell";
 		Weapon.AmmoUse 1;
-		Weapon.AmmoGive 2;
+		Weapon.AmmoGive 2; // Setting it any higher gives too much in the magazine!!
 
 		ZWeapon.MagazineSize 2;
 		ZWeapon.ReloadSound "weapons/ssgl";
@@ -111,11 +111,11 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			}
 			SSGG A 2 {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				if (invoker.ammoCount == 1) {
-					A_Overlay(PSP_FLASH, "FlashLeft");
+				if (invoker.ammoCount % 2) {
+					A_Overlay(PSP_FLASH, "FlashRight");
 				}
 				else {
-					A_Overlay(PSP_FLASH, "FlashRight");
+					A_Overlay(PSP_FLASH, "FlashLeft");
 				}
 				//ZWL_FireHitscan(0, 12, pellets: 10, spread: 3.5, tracertype: "GWM_Tracer");
 				ZWL_FireHitscan(0, 0, pellets: 10, spread: 7, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_SSGShot2", flags: ZHF_DontUseAmmo);

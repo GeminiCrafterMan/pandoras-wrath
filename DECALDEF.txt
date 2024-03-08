@@ -1,14 +1,37 @@
 generator GWM_Rocket					Scorch
-generator GWM_ChargedRocket					Scorch
-generator GWM_HomingRocket					Scorch
-generator GWM_HomingRocket1					Scorch
-generator GWM_HomingRocket2					Scorch
-generator GWM_HomingRocket3					Scorch
-generator GWM_HomingRocket4					Scorch
+generator GWM_ChargedRocket				Scorch
+generator GWM_HomingRocket				Scorch
+generator GWM_HomingRocket1				Scorch
+generator GWM_HomingRocket2				Scorch
+generator GWM_HomingRocket3				Scorch
+generator GWM_HomingRocket4				Scorch
 generator GWM_Grenade					Scorch
+generator GWM_StomperMissile1			Scorch
+generator GWM_StomperMissile2			Scorch
+generator GWM_StomperMissile3			Scorch
 generator GWM_ThrownMine				Scorch
 
 generator GWM_RevolverShot				Bulletchip
+
+decalgroup DefaultBulletChip
+{
+	BulletChip1	1
+	BulletChip2	1
+	BulletChip3	1
+	BulletChip4	1
+	BulletChip5	1
+}
+
+decal ScrapChip
+{
+	Pic SCTRY0
+	Add 1.0
+	FullBright
+	Animator GoAway
+	X-scale 0.10
+	Y-scale 0.10
+	LowerDecal DefaultBulletChip
+}
 
 // Ice
 decal FreezeBlastMelt

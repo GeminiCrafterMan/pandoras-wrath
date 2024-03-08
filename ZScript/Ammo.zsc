@@ -435,3 +435,81 @@ class GWM_ANNIHILATORAMMO : Ammo
 			Loop;
 	}
 }
+
+class GWM_ScrapDrum : Ammo
+{
+	Default
+	{
+		//$Category Ammunition
+		Tag "Scrap Drum";
+		Inventory.PickupMessage "$GOTSCRAPDRUM";
+		Inventory.Amount 4;
+		Inventory.MaxAmount 50;
+		Ammo.BackpackAmount 4;
+		Ammo.BackpackMaxAmount 100;
+		Inventory.Icon "SCRPA0";
+		Inventory.PickupSound "weapons/getscrapshell";
+	}
+	States
+	{
+		Spawn:
+			SCRP A -1;
+			Stop;
+	}
+}
+class GWM_ScrapDrumPack : GWM_ScrapDrum
+{
+	Default
+	{
+		//$Category Ammunition
+		Tag "Scrap Drum Pack";
+		Inventory.PickupMessage "$GOTSCRAPPACK";
+		Inventory.Amount 20;
+		Inventory.PickupSound "weapons/getscrapbox";
+	}
+	States
+	{
+		Spawn:
+			SCRP B -1;
+			Stop;
+	}
+}
+
+class GWM_StomperAmmo : Ammo
+{
+	Default
+	{
+		//$Category Ammunition
+		Tag "Stomper Missiles";
+		Inventory.PickupMessage "$GOTSTOMPERAMMO";
+		Inventory.Amount 3;
+		Inventory.MaxAmount 50;
+		Ammo.BackpackAmount 3;
+		Ammo.BackpackMaxAmount 100;
+		Inventory.PickupSound "weapons/getstomperrockets";
+		Inventory.Icon "STMPA0";
+	}
+	States
+	{
+		Spawn:
+			STMP A -1;
+			Stop;
+	}
+}
+class GWM_StomperBox : GWM_StomperAmmo
+{
+	Default
+	{
+		//$Category Ammunition
+		Tag "Stomper Missile Box";
+		Inventory.PickupMessage "$GOTSTOMPERBOX";
+		Inventory.Amount 15;
+		Inventory.PickupSound "weapons/getstomperbox";
+	}
+	States
+	{
+		Spawn:
+			STMP B -1;
+			Stop;
+	}
+}

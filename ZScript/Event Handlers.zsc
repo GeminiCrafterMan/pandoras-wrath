@@ -330,10 +330,10 @@ class ThingReplacer : StaticEventHandler
 				e.Replacement = "GWM_RocketLauncher";
 				break;
 			case 'TangoStomper':
-				e.Replacement = "GWM_VenomCannon";
+				e.Replacement = "GWM_Stomper";
 				break;
 			case 'TangoScrapgun':
-				e.Replacement = "GWM_Flamethrower";
+				e.Replacement = "GWM_Scrapgun";
 				break;
 			case 'TangoBFG9000': // tango's is way fucking better but i have no choice
 				e.Replacement = "GWM_BFG9000";
@@ -362,10 +362,10 @@ class ThingReplacer : StaticEventHandler
 				e.Replacement = "GWM_RocketBox";
 				break;
 			case 'TangoScrapDrum':
-				e.Replacement = "GWM_GasCanister";
+				e.Replacement = "GWM_ScrapDrum";
 				break;
 			case 'TangoScrapDrumPack':
-				e.Replacement = "GWM_GasPack";
+				e.Replacement = "GWM_ScrapDrumPack";
 				break;
 			case 'TangoCell':
 				e.Replacement = "GWM_Cell";
@@ -374,10 +374,10 @@ class ThingReplacer : StaticEventHandler
 				e.Replacement = "GWM_CellPack";
 				break;
 			case 'TangoStomperAmmo':
-				e.Replacement = "GWM_VenomVial";
+				e.Replacement = "GWM_StomperAmmo";
 				break;
 			case 'TangoStomperBox':
-				e.Replacement = "GWM_LargeVenomVial";
+				e.Replacement = "GWM_StomperBox";
 				break;
 			// Nailgun seems to be unused and inaccessible
 			case 'TangoBerserk':

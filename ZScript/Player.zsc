@@ -81,12 +81,12 @@ class GWM_Player : DoomPlayer
 		Player.WeaponSlot 1, "GWM_Fists", "GWM_Lumberjack", "GWM_Impactor", "GWM_Levenbrech";
 		Player.WeaponSlot 2, "GWM_GoldWand", "GWM_Pistol", "GWM_SMG", "GWM_Revolver";
 		Player.WeaponSlot 3, "GWM_ZombieShotgun", "GWM_Shotgun", "GWM_SuperShotgun", "GWM_ImpalerCrossbow";
-		Player.WeaponSlot 4, "GWM_FrostFang", "GWM_Chaingun", "GWM_BurstRifle", "GWM_MP40";
-		Player.WeaponSlot 5, "GWM_RocketLauncher", "GWM_Bouncer";
+		Player.WeaponSlot 4, "GWM_FrostFang", "GWM_Chaingun", "GWM_BurstRifle", "GWM_MP40", "GWM_Scrapgun";
+		Player.WeaponSlot 5, "GWM_RocketLauncher", "GWM_Bouncer", "GWM_Stomper";
 		Player.WeaponSlot 6, "GWM_PlasmaRifle", "GWM_NoiseCrusher";
 		Player.WeaponSlot 7, "GWM_BFG9000", "GWM_TwinPlasmaCannons";
-		Player.WeaponSlot 8, "GWM_EldritchAnnihilator" ,"GWM_Perforator"; // Eviternity II's Perforator, but a little different
-		Player.WeaponSlot 9, "GWM_Flamethrower", "GWM_Melter", "GWM_VenomCannon", "GWM_IceShotgun", "GWM_PFSuperShotgun"; // Eviternity II's Perforator, but a little different
+		Player.WeaponSlot 8, "GWM_EldritchAnnihilator" ,"GWM_Perforator";
+		Player.WeaponSlot 9, "GWM_Flamethrower", "GWM_Melter", "GWM_VenomCannon", "GWM_IceShotgun", "GWM_PFSuperShotgun";
 		Player.WeaponSlot 0, "GWM_Mine", "GWM_Dynamite";
 	}
 }
