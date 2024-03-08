@@ -59,7 +59,7 @@ class GWM_Revolver : GWM_WeaponBase
 			Loop;
 		Fire:
 			RVLG B 1 {
-				ZWL_FireHitscan(1, 32, tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(1, 0, tracerType: "GWM_RevolverShot");
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,5);
 				A_GunFlash();
@@ -97,5 +97,103 @@ class GWM_Revolver : GWM_WeaponBase
 			RVLF A 1 Bright A_Light2;
 			RVLF B 1 Bright A_Light1;
 			Goto LightDone;
+	}
+}
+
+class GWM_RevolverShot : Actor
+{
+	Default
+	{
+		RenderStyle "Add";
+		Projectile;
+		+HEXENBOUNCE;
+		BounceFactor 1;
+		WallBounceFactor 1;
+		Bouncecount 8;
+		Radius 6;
+		Height 6;
+		DamageFunction (0);
+		Speed 100;
+		Scale .25;
+		MissileHeight 8;
+		+EXTREMEDEATH;
+		+USEBOUNCESTATE;
+		Decal "Bulletchip";
+	}
+	
+	actor victim;
+
+
+	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
+    {
+        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
+		{
+			if (victim.health <= 100)
+			{
+				victim.DamageMobj(self,target,50,'Extreme');
+				return -1;
+			}
+			else
+			{
+				victim.DamageMobj(self,target,40,'Extreme');
+				return -1;
+			}
+
+		}
+        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
+	}
+	
+	States
+	{
+		Dummy:
+			TRAC A 1 Bright;
+			Loop;
+		Spawn:
+			TRAC A 1 BRIGHT;
+			Loop;
+		Bounce:
+			TRAC A 1 
+			{
+				A_SpawnItemEX("RevolverBulletPuff");
+				A_StartSound("bullet/ricochet",CHAN_AUTO);
+				A_SpawnDebris("GWM_TracerSpark");
+			}
+			goto Spawn;
+		Crash:
+			TNT1 A 0 A_Jump(256,"Death");
+		Death:
+			PUFF A 2 BRIGHT A_SpawnDebris("GWM_TracerSpark");
+			PUFF B 1 BRIGHT A_SetTranslucent(0.9,0);
+			PUFF B 1 BRIGHT A_PlaySound("bullet/ricochet",CHAN_BODY,.5);
+			PUFF CD 2 BRIGHT;
+			Stop;
+		XDeath:
+			TNT1 A 3 A_PlaySound("bullet/hitFlesh",CHAN_BODY,.5);
+			Stop;
+	}
+}
+
+class RevolverBulletPuff : ZBulletPuff
+{
+    Default
+    {
+        Decal "BulletChip";
+        Height 18;
+		Radius 18;
+    }
+
+	States
+	{
+	Spawn:
+		PUFF A 4 Bright;
+		PUFF B 4;
+        // Fallthrough
+    Melee:
+		PUFF CD 4;
+		Stop;
+    Crash:
+		PUFF A 4 Bright A_SpawnItemEx("ZBulletChip");
+        PUFF BCD 4;
+        Stop;
 	}
 }
