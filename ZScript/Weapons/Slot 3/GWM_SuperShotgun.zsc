@@ -100,7 +100,10 @@ class GWM_SuperShotgun : GWM_WeaponBase
 					if (FindInventory(invoker.ammoType1).amount > 0)
 						player.SetPSprite(OverlayID(), ResolveState("Reload.Empty"));
 					else
-						player.SetPSprite(OverlayID(), ResolveState("Deselect"));
+					{
+						invoker.bALTFIRE = false;
+						ZWL_CheckReload();
+					}
 				}
 			}
 			SSGG A 2 {
@@ -139,7 +142,13 @@ class GWM_SuperShotgun : GWM_WeaponBase
 				if (invoker.ammoCount >= 2)
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
 				if (invoker.ammoCount <= 0)
-					player.SetPSprite(OverlayID(), ResolveState("Reload.Empty"));
+					if (FindInventory(invoker.ammoType1).amount > 0)
+						player.SetPSprite(OverlayID(), ResolveState("Reload.Empty"));
+					else
+					{
+						invoker.bALTFIRE = false;
+						ZWL_CheckReload();
+					}
 			}
 			SSGG D 2;
 			SSGG C 2;
