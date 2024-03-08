@@ -162,6 +162,10 @@ class GWM_StatusBar : BaseStatusBar
 			DrawString(mHUDFont, FormatNumber(armor.Amount, 3), (44, -40), translation: Font.CR_Sapphire);
 		}
 		
+		int amt1, maxamt;
+		
+		amt1 = GetAmount("GWM_ChargedRockets");
+		DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -90), translation: Font.CR_Red);
 		
 		TextureID mtex2 = GetMugShot(5); // get a texture
 		String mtexname2 = TexMan.Getname(mtex2); // conver to string

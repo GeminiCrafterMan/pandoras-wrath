@@ -312,12 +312,22 @@ class GWM_HomingRocket : GWM_Rocket
 		+SeekerMissile;
 		+ScreenSeeker;
 	}
+	int homing;
+	int dist;
+	int dmg;
 	States
 	{
 		Spawn:
+			TNT1 A 0 nodelay
+			{
+				homing = 1;
+				dist = 100;
+				dmg = 100;
+			}
+		Spawnloop:
 			RCKT A 1 Bright 
 			{
-			A_SeekerMissile(1,1,SMF_LOOK);
+			A_SeekerMissile(invoker.homing,invoker.homing,SMF_LOOK);
 			A_SpawnItemEx("GWM_RocketTrail", -20,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5));
 			}
 			Loop;
@@ -330,9 +340,11 @@ class GWM_HomingRocket : GWM_Rocket
 				self.Vel.Z = 0;
 				A_Scream();
 				A_SetRenderstyle(alpha, STYLE_Add);
-				A_Explode(100,100);
+				A_Explode(invoker.dmg,invoker.dist);
 				A_SpawnItemEX("GWM_RocketBlast");
 			}
+			Blast:
+			TNT1 A 0;
 			//EXPL ABCDEFGHIJ 1 Bright;
 			Stop;
 	}
@@ -350,26 +362,13 @@ class GWM_HomingRocket1 : GWM_HomingRocket
 	States
 	{
 		Spawn:
-			RCKT A 1 Bright 
+			TNT1 A 0 nodelay
 			{
-			A_SeekerMissile(3,3,SMF_LOOK);
-			A_SpawnItemEx("GWM_RocketTrail", -20,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5));
+				homing = 3;
+				dist = 125;
+				dmg = 125;
 			}
-			Loop;
-		Death:
-			TNT1 A 0 {
-				bMISSILE = false;
-				bNOGRAVITY = true;
-				self.Vel.X = 0;
-				self.Vel.Y = 0;
-				self.Vel.Z = 0;
-				A_Scream();
-				A_SetRenderstyle(alpha, STYLE_Add);
-				A_Explode(125,125);
-				A_SpawnItemEX("GWM_RocketBlast");
-			}
-			//EXPL ABCDEFGHIJ 1 Bright;
-			Stop;
+			goto Spawnloop;
 	}
 }
 
@@ -385,24 +384,14 @@ class GWM_HomingRocket2 : GWM_HomingRocket1
 	States
 	{
 		Spawn:
-			RCKT A 1 Bright 
+			TNT1 A 0 nodelay
 			{
-			A_SeekerMissile(8,8,SMF_LOOK);
-			A_SpawnItemEx("GWM_RocketTrail", -20,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5));
+				homing = 10;
+				dist = 125;
+				dmg = 150;
 			}
-			Loop;
-		Death:
-			TNT1 A 0 {
-				bMISSILE = false;
-				bNOGRAVITY = true;
-				self.Vel.X = 0;
-				self.Vel.Y = 0;
-				self.Vel.Z = 0;
-				A_Scream();
-				A_SetRenderstyle(alpha, STYLE_Add);
-				A_Explode(150,150);
-				A_SpawnItemEX("GWM_RocketBlast");
-			}
+			goto Spawnloop;
+		Blast:
 			TNT1 AAA 1
 			{
 				A_SpawnItemEX("BlastFlameFX2",frandom(-85,85),frandom(-15,15),frandom(2,45),frandom(-9,9),frandom(-9,9),frandom(-9,9),frandom(1,359));
@@ -435,24 +424,14 @@ class GWM_HomingRocket3 : GWM_HomingRocket2
 	States
 	{
 		Spawn:
-			RCKT A 1 Bright 
+			TNT1 A 0 nodelay
 			{
-			A_SeekerMissile(15,15,SMF_LOOK);
-			A_SpawnItemEx("GWM_RocketTrail", -20,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5));
+				homing = 30;
+				dist = 150;
+				dmg = 180;
 			}
-			Loop;
-		Death:
-			TNT1 A 0 {
-				bMISSILE = false;
-				bNOGRAVITY = true;
-				self.Vel.X = 0;
-				self.Vel.Y = 0;
-				self.Vel.Z = 0;
-				A_Scream();
-				A_SetRenderstyle(alpha, STYLE_Add);
-				A_Explode(180,160);
-				A_SpawnItemEX("GWM_RocketBlast");
-			}
+			goto Spawnloop;
+		Blast:
 			TNT1 AAA 1
 			{
 				A_SpawnItemEX("BlastFlameFX2",frandom(-85,85),frandom(-15,15),frandom(2,45),frandom(-9,9),frandom(-9,9),frandom(-9,9),frandom(1,359));
@@ -485,23 +464,14 @@ class GWM_HomingRocket4 : GWM_HomingRocket3
 	States
 	{
 		Spawn:
-			RCKT A 1 Bright 
+			TNT1 A 0 nodelay
 			{
-			A_SeekerMissile(45,45,SMF_LOOK);
-			A_SpawnItemEx("GWM_RocketTrail", -20,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5));
+				homing = 90;
+				dist = 150;
+				dmg = 200;
 			}
-			Loop;
-		Death:
-			TNT1 A 0 {
-				bMISSILE = false;
-				bNOGRAVITY = true;
-				self.Vel.X = 0;
-				self.Vel.Y = 0;
-				self.Vel.Z = 0;
-				A_Scream();
-				A_SetRenderstyle(alpha, STYLE_Add);
-				A_Explode(250,200);
-			}	
+			goto Spawnloop;
+		Blast:
 			TNT1 AAA 1
 			{
 				A_SpawnItemEX("BlastFlameFX2",frandom(-85,85),frandom(-15,15),frandom(2,45),frandom(-9,9),frandom(-9,9),frandom(-9,9),frandom(1,359));
