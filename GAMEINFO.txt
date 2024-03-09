@@ -1,0 +1,2 @@
+STARTUPTITLE = "Pandora's Wrath"
+STARTUPCOLORS = "FFFFFF", "7E2376"
