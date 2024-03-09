@@ -4,7 +4,8 @@ class GWM_Stomper : GWM_WeaponBase
 	Default
 	{
 		//$Category Weapons
-		Tag "Stomper";
+		Tag "$TAG_STOMPER";
+		Weapon.SlotNumber 5;
 		-WEAPON.NOAUTOFIRE;
 		Weapon.SelectionOrder 50;
 		Weapon.AmmoType "GWM_StomperAmmo";

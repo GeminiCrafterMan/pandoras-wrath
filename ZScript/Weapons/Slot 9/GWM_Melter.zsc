@@ -11,6 +11,7 @@ Class GWM_Melter : GWM_WeaponBase
 	{
 		//$Category Weapons
 		//$Title "Melter
+		Weapon.SlotNumber 9;
 		Weapon.AmmoGive 40;
 		Weapon.AmmoUse 2;
 		Weapon.AmmoType "GWM_Cell";

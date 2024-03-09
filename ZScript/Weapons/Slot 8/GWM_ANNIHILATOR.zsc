@@ -5,6 +5,7 @@ class GWM_EldritchAnnihilator : GWM_WeaponBase
 		//$Category Weapons
 		//$Title "Eldritch Annihilator
 		Weapon.SelectionOrder 2800;
+		Weapon.SlotNumber 8;
 		Weapon.UpSound "weapons/draw_primary";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 5;

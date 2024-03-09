@@ -4,6 +4,7 @@ class GWM_MP40 : GWM_WeaponBase
 	Default
 	{
 		Weapon.SelectionOrder 1800;
+		Weapon.SlotNumber 4;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 32;
 		Weapon.AmmoType "GWM_LowCaliberMagazine";

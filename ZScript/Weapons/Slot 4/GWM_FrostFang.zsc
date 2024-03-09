@@ -3,6 +3,7 @@ Class GWM_FrostFang : GWM_WeaponBase replaces Blaster
 	Default
 	{
 		Weapon.SelectionOrder 700;
+		Weapon.SlotNumber 4;
 		Weapon.UpSound "weapons/draw_primary";
 		Tag "$TAG_FROSTFANG";
 		Inventory.PickupMessage "$GOTFROSTFANG";

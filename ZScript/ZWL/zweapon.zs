@@ -87,6 +87,19 @@ class ZWeapon : Weapon
 	// Does the same thing as A_WeaponReady. It has similar flags (see above).
 	action void ZWL_WeaponReady(int flags = 0)
 	{
+		// G: quick and dirty fix for the silly shit ZWL does when you cheat in an item and such
+		// G: todo: make returned ammo (beyond the maximum) automatically get removed
+		if (flags & ZRF_ExtraRound)
+		{
+			if ((invoker.ammoCount - (invoker.magazineSize+1)) > 0)
+				ZWL_Unload(invoker.ammoCount - (invoker.magazineSize+1), true);
+		}
+		else
+		{
+			if ((invoker.ammoCount - invoker.magazineSize) > 0)
+				ZWL_Unload(invoker.ammoCount - invoker.magazineSize, true);
+		}
+
 		invoker.lastShotTic = 0;
 		invoker.deficit = 0.0;
 

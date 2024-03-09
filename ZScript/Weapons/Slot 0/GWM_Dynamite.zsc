@@ -6,6 +6,7 @@ class GWM_Dynamite : GWM_WeaponBase
 		//$Category Weapons
 		//$Title "Dynamite Bundle
 		Weapon.SelectionOrder 1900;
+		Weapon.SlotNumber 0;
 		Tag "$TAG_DYNAMITE";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoType "GWM_DynamiteAmmo";

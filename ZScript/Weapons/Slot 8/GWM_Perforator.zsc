@@ -2,6 +2,7 @@ class GWM_Perforator : GWM_WeaponBase
 {
 	Default
 	{
+		Weapon.SlotNumber 8;
 		Weapon.SelectionOrder 2800;
 		Weapon.AmmoGive 20;
 		Weapon.AmmoUse 25;

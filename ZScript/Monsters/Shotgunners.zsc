@@ -1,4 +1,4 @@
-class GWM_KahunaShotgunGuySpawner : RandomSpawner
+class GWM_ShitShotgunGuySpawner : RandomSpawner
 {
 	override void BeginPlay()
 	{
@@ -11,7 +11,7 @@ class GWM_KahunaShotgunGuySpawner : RandomSpawner
 	}
 	Default
 	{
-		DropItem "GWM_KahunaShotgunGuy";
+		DropItem "GWM_ShitShotgunGuy";
 	}
 }
 

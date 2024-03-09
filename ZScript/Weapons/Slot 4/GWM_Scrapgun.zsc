@@ -3,7 +3,8 @@ class GWM_Scrapgun : GWM_WeaponBase
 	Default
 	{
 		//$Category Weapons
-		Tag "Scrapgun";
+		Weapon.SlotNumber 4;
+		Tag "$TAG_SCRAPGUN";
 		Decal "bulletchip";
 		Weapon.KickBack 150;
 		Weapon.AmmoUse 1;

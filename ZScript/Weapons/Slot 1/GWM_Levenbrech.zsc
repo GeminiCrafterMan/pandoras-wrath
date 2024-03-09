@@ -3,6 +3,7 @@ class GWM_Levenbrech : GWM_WeaponBase replaces Gauntlets // not that it needs to
 	Default
 	{
 		Weapon.SelectionOrder 2200;
+		Weapon.SlotNumber 1;
 		+WEAPON.MELEEWEAPON
 		+WEAPON.AXEBLOOD
 		Tag "$TAG_LEVENBRECH";

@@ -5,6 +5,7 @@ class GWM_Bouncer : GWM_WeaponBase
 		//$Category Weapons
 		//$Title "The Bouncer
 		Weapon.SelectionOrder 2800;
+		Weapon.SlotNumber 5;
 		Weapon.UpSound "weapons/draw_primary";
 		Weapon.AmmoUse 10;
 		Weapon.AmmoGive 40;

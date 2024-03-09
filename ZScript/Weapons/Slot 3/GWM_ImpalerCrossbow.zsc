@@ -3,6 +3,7 @@ class GWM_ImpalerCrossbow : GWM_WeaponBase replaces Crossbow
 	Default
 	{
 		Weapon.SelectionOrder 1300;
+		Weapon.SlotNumber 3;
 		Inventory.PickupMessage "$GOTIMPALERCROSSBOW";
 		Tag "$TAG_IMPALERCROSSBOW";
 		Weapon.AmmoGive 15;

@@ -6,6 +6,7 @@ class GWM_Flamethrower : GWM_WeaponBase
 		//$Category Weapons
 		//$Title "Flamethrower
 		Tag "$TAG_FLAMETHROWER";
+		Weapon.SlotNumber 9;
 		Weapon.UpSound "weapons/draw_primary";
 		Inventory.PickupSound "misc/w_pkup";
 		Inventory.PickupMessage "$GOTFLAMETHROWER";

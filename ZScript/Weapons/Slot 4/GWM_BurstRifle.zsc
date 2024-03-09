@@ -16,6 +16,7 @@ class GWM_BurstRifle : GWM_WeaponBase
 		//$Category Weapons
 		//$Title "Burst Rifle"
 		Weapon.SelectionOrder 700;
+		Weapon.SlotNumber 4;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoType "GWM_HighCaliberMagazine";
 		Weapon.AmmoGive 31;

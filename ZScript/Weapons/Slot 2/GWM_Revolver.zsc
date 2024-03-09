@@ -5,6 +5,7 @@ class GWM_Revolver : GWM_WeaponBase
 		//$Category Weapons
 		//$Title "Revolver
 		Weapon.SelectionOrder 1900;
+		Weapon.SlotNumber 2;
 		Weapon.UpSound "weapons/draw_secondary";
 		Weapon.AmmoUse1 1;
 		Weapon.AmmoType1 "GWM_LowCaliberMagazine";

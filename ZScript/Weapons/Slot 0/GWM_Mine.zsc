@@ -5,6 +5,7 @@ class GWM_Mine : GWM_WeaponBase // not that it needs to be this way...
 		//$Category Weapons
 		//$Title "Land Mine
 		Weapon.SelectionOrder 2500; // Don't blow yourself up!!
+		Weapon.SlotNumber 0;
 		Tag "$TAG_MINE";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoType "GWM_MineAmmo";

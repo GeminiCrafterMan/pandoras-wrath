@@ -5,6 +5,7 @@ class GWM_TwinPlasmaCannons : GWM_AkimboWeaponBase
 		//$Category Weapons
 		//$Title "Twin Plasma Cannons
 		Weapon.SelectionOrder 300;
+		Weapon.SlotNumber 7;
 		Weapon.UpSound "weapons/draw_primary";
 		Obituary "$KILLTWINS";
 		Tag "$TAG_TWINS";

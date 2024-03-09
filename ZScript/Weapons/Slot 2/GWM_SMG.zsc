@@ -5,6 +5,7 @@ class GWM_SMG : GWM_WeaponBase
 		//$Category Weapons
 		//$Title "SMG
 		Weapon.SelectionOrder 1800;
+		Weapon.SlotNumber 2;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 51;
 		Weapon.AmmoType "GWM_LowCaliberMagazine";
