@@ -24,7 +24,7 @@ class GWM_SuperShotgun : GWM_WeaponBase
 	States
 	{
 		Ready:
-			SSGG A 1 A_WeaponReady(WRF_ALLOWRELOAD);
+			SSGG A 1 ZWL_WeaponReady;
 			Loop;
 /*		Deselect:
 			SSGG A 1 A_Lower(18);
