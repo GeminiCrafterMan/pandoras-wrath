@@ -72,6 +72,7 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			TNT1 A 0 {
 			// G: What the fuck
 			// G: Why does this fix that issue (ssg primary randomly deselects when you have no reserve ammo)
+			// G: NEVERMIND IT DOESN'T!!!!
 				if (invoker.ammoCount <= 1)
 				{
 					invoker.bALTFIRE = true;
