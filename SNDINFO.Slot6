@@ -9,21 +9,6 @@ weapons/plasxpl3	"Sounds/Weapons/Slot 6/Plasma Rifle/plasma_impact3.wav"
 
 $random weapons/plasxpl { weapons/plasxpl1 weapons/plasxpl2 weapons/plasxpl3 }
 
-// Melter
-Melter/fire	VMELTER
-Melter/cooldown VMELTCD
-Melter/warning VMELTWRN
-Melter/heatsink VMELTHS
-$pitchset Melter/warning 1.7
-$volume Melter/warning 0.5
-$random Melter/melt	{ melt1 melt2 }
-$limit Melter/melt 0
-$volume Melter/melt 0.1
-$pitchset Melter/melt 0.8 1.2
-$attenuation Melter/melt 1.5
-melt1 VMELT1
-melt2 VMELT2
-
 // Noise Crusher
 weapons/noisehit	"Sounds/Weapons/Slot 6/Noise Crusher/shot_d.wav"
 weapons/noisecharge	"Sounds/Weapons/Slot 6/Noise Crusher/charge.wav"

@@ -11,6 +11,21 @@ $volume weapons/ftend 0.5
 $volume weapons/ftburn 0.5
 $volume weapons/fthit 0.5
 
+// Melter
+Melter/fire	VMELTER
+Melter/cooldown VMELTCD
+Melter/warning VMELTWRN
+Melter/heatsink VMELTHS
+$pitchset Melter/warning 1.7
+$volume Melter/warning 0.5
+$random Melter/melt	{ melt1 melt2 }
+$limit Melter/melt 0
+$volume Melter/melt 0.1
+$pitchset Melter/melt 0.8 1.2
+$attenuation Melter/melt 1.5
+melt1 VMELT1
+melt2 VMELT2
+
 // Acid Cannon
 weapons/vnmcfire1	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_01.wav"
 weapons/vnmcfire2	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_02.wav"
