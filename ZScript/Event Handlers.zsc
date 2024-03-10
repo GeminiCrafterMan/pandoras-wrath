@@ -389,6 +389,12 @@ class ThingReplacer : StaticEventHandler
 			case 'TangoVioletArmorLarge':
 				e.Replacement = "GWM_Lv2ArmorSpawner";
 				break;
+			case 'TangoGreenArmor':
+				e.Replacement = "GWM_Lv1ArmorSpawner";
+				break;
+			case 'TangoBlueArmor':
+				e.Replacement = "GWM_Lv2ArmorSpawner";
+				break;
 		}
     }
 	override void CheckReplacee(ReplacedEvent e)
