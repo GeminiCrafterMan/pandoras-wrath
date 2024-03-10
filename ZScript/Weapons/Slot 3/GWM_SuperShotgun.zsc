@@ -45,9 +45,9 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			}
 			SSGG N 1 {
 				A_StartSound("weapons/ssgc");
-				A_WeaponReady(WRF_ALLOWRELOAD);
+				ZWL_WeaponReady();
 			}
-			SSGG OOBBCCDD 1 A_WeaponReady(WRF_ALLOWRELOAD);
+			SSGG OOBBCCDD 1 ZWL_WeaponReady;
 			Goto Ready;
 		Deselect:
 			SSGG AA 1 {

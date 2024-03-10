@@ -17,6 +17,19 @@ class PlayerSpawnLines : StaticEventHandler
     }
 }
 
+class PandoraPointsHandler : StaticEventHandler
+{
+	override void WorldThingDied(WorldEvent e)
+	{
+		let victim = e.Thing.GetClassName();
+		let victimHP = e.Thing.SpawnHealth();
+		let killer = e.Thing.target.GetClassName();
+		let killerWep = e.Inflictor.GetClassName();
+		Console.Printf(victim .. " had " .. victimHP .. " spawn health, and was killed by " .. killer .. " using " .. killerWep);
+		Super.WorldThingDied(e);
+	}
+}
+
 class ThingReplacer : StaticEventHandler
 {
     override void CheckReplacement(ReplaceEvent e)
