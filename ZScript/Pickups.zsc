@@ -329,41 +329,17 @@ class GWM_PandorasBox : Inventory
 			case 5:
 			case 2:
 				Console.Printf("Rolled: Scrapgun");
-				if (!owner.FindInventory("GWM_Scrapgun"))
-				{
-					owner.A_GiveInventory("GWM_Scrapgun");
-					break;
-				}
-				else
-				{
-					owner.A_GiveInventory("GWM_ScrapDrum");
-					break;
-				}
+				owner.A_GiveInventory("GWM_Scrapgun");
+				break;
 			case 4:
 			case 1:
 				Console.Printf("Rolled: Stomper");
-				if (!owner.FindInventory("GWM_Stomper"))
-				{
-					owner.A_GiveInventory("GWM_Stomper");
-					break;
-				}
-				else
-				{
-					owner.A_GiveInventory("GWM_StomperAmmo");
-					break;
-				}
+				owner.A_GiveInventory("GWM_Stomper");
+				break;
 			case 3:
 				Console.Printf("Rolled: Perforator");
-				if (!owner.FindInventory("GWM_Perforator"))
-				{
-					owner.A_GiveInventory("GWM_Perforator");
-					break;
-				}
-				else
-				{
-					owner.A_GiveInventory("GWM_HighCaliberMagazine");
-					break;
-				}
+				owner.A_GiveInventory("GWM_Perforator");
+				break;
 			default:
 				Console.Printf("Rolled: Nothing");
 				break;
