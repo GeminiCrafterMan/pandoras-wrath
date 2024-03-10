@@ -165,9 +165,9 @@ class GWM_StatusBar : BaseStatusBar
 		int amt1, amt2;
 		
 		amt1 = GetAmount("GWM_ChargedRockets");
-		amt2 = GetAmount("GWM_PandorasBox");
+		amt2 = GetAmount("GWM_PandoraPoints");
 		DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -90), translation: Font.CR_Red);
-		DrawString(mHUDFont, FormatNumber(amt2,3), (-44, -74), translation: Font.CR_Purple);
+		DrawString(mHUDFont, FormatNumber(amt2,8), (-94, -74), translation: Font.CR_Purple);
 		
 		TextureID mtex2 = GetMugShot(5); // get a texture
 		String mtexname2 = TexMan.Getname(mtex2); // conver to string

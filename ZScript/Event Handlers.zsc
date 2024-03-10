@@ -21,12 +21,39 @@ class PandoraPointsHandler : StaticEventHandler
 {
 	override void WorldThingDied(WorldEvent e)
 	{
+		let player = players[consoleplayer].mo;
 		let victim = e.Thing.GetClassName();
 		let victimHP = e.Thing.SpawnHealth();
 		let killer = e.Thing.target.GetClassName();
 		let killerWep = e.Inflictor.GetClassName();
 		Console.Printf(victim .. " had " .. victimHP .. " spawn health, and was killed by " .. killer .. " using " .. killerWep);
+		
+		let Xdeathmultiplier = 1;
+		let Elementmultiplier = 1;
+		let pointstogive = victimHP * 0.2;
+		
+		//if(e.Thing.//InStateSequence("Xdeath"))//, ResolveState('XDeath')))
+		//{/
+			//Xdeathmultiplier = 1.5;
+		//}
+		
+		if(e.thing.CountInv("FireBurnCount")) { ElementMultiplier = ElementMultiplier * 1.5; Console.Printf("Fire Bonus!");}
+		if(e.thing.CountInv("IceSlowCount")) { ElementMultiplier = ElementMultiplier * 1.5; Console.Printf("Ice Bonus!");}
+		if(e.thing.CountInv("AcidWeakCount")) { ElementMultiplier = ElementMultiplier * 1.5; Console.Printf("Acid Bonus!");}
+		
+		e.thing.target.GiveInventory("GWM_PandoraPoints", pointstogive * Xdeathmultiplier * 0.5);
+		player.GiveInventory("GWM_PandoraPoints", pointstogive * Xdeathmultiplier * 0.5 * ElementMultiplier);
+		//A_GiveInventory("PandoraPoints",victimHP*0.1,killer);
+		
 		Super.WorldThingDied(e);
+	}
+}
+
+class GWM_PandoraPoints : Inventory
+{
+	Default
+	{
+	Inventory.Maxamount 99999;
 	}
 }
 

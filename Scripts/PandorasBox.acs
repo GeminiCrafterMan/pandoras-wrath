@@ -1,0 +1,1247 @@
+#library "PandorasBox"
+#include "zcommon.acs"
+
+script "PandorasBox" (void)
+{
+    int buttons, oldbuttons;
+	int menutime;
+	int menusel;
+
+	if(checkinventory("Neverdash")) {}
+	else
+	{
+	FadeRange (0, 0, 0, 0.0, 0, 0, 0, 1.0, 0.3);
+	Delay(10);
+	}
+
+	SetPlayerProperty(0,1,PROP_TOTALLYFROZEN);
+	menutime = 1;
+	
+	SetHudSize(360,256,0);
+	SetFont("FADEBLK");
+	Delay(1);
+	HudMessage(s:"a";HUDMSG_FADEINOUT,0,0,180.0,118.0,0.0,0.0,0.2);
+		
+    while(1)
+    {
+		
+		
+		
+
+
+
+		
+		
+		
+		
+		
+		
+		SetHudSize(360,256,0);
+		SetPlayerProperty(0,1,PROP_TOTALLYFROZEN);
+		GiveActorInventory(0,"NEVERDASH",1);
+		FadeRange (0, 0, 0, 1.0, 0, 0, 0, 1.0, 0.1);
+	
+		
+		buttons = GetPlayerInput(-1,INPUT_BUTTONS);
+		oldbuttons = GetPlayerInput(-1,INPUT_OLDBUTTONS);
+
+		if (menutime == 1)
+		{	
+			Giveinventory("PowerTimeFreezer2",1);
+			SetFont("SUBBAK");
+			HudMessage(s:"a";HUDMSG_PLAIN,321001,0,180.0,118.0,0.1);
+
+
+
+
+
+					
+		//STATUS BAR!!!
+			SetFont("StatBar");
+			HudMessage(s:"a";HUDMSG_PLAIN,25000,0,180.0,128.0,0.1);
+
+			SetFont("HPBLIP");
+			if(Getactorproperty(0,APROP_HEALTH)>=1)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30000,0,91.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=2)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30001,0,93.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=3)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30002,0,95.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=4)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30003,0,97.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=5)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30004,0,99.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=6)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30005,0,101.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=7)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30006,0,103.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=8)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30007,0,105.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=9)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30008,0,107.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=10)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30009,0,109.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=11)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30010,0,111.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=12)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30011,0,113.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=13)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30012,0,115.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=14)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30013,0,117.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=15)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30014,0,119.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=16)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30015,0,121.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=17)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30016,0,123.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=18)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30017,0,125.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=19)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30018,0,127.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=20)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30019,0,129.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=21)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30020,0,131.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=22)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30021,0,133.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=23)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30022,0,135.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=24)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30023,0,137.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=25)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30024,0,139.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=26)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30025,0,141.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=27)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30026,0,143.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=28)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30027,0,145.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=29)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30028,0,147.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=30)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30029,0,149.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=31)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30030,0,151.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=32)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30031,0,153.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=33)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30032,0,155.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=34)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30033,0,157.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=35)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30034,0,159.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=36)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30035,0,161.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=37)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30036,0,163.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=38)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30037,0,165.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=39)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30038,0,167.0,18.0,0.1);}
+			if(Getactorproperty(0,APROP_HEALTH)>=40)
+			{HudMessage(s:"a";HUDMSG_PLAIN,30039,0,169.0,18.0,0.1);}
+			
+			SetFont("MMZStatusBarFont");
+			HudMessage(d:(Getactorproperty(0,APROP_HEALTH));HUDMSG_PLAIN,24999,CR_UNTRANSLATED,93.2,39.0,0.1);
+			HudMessage(d:(Getactorproperty(0,APROP_SPAWNHEALTH)+Getactorproperty(0,APROP_STAMINA));HUDMSG_PLAIN,24998,CR_UNTRANSLATED,127.2,39.0,0.1);
+			HudMessage(d:(Checkinventory("ECrystal"));HUDMSG_PLAIN,24997,CR_UNTRANSLATED,219.2,39.0,0.1);
+
+			SetFont("HPFUCK");
+			if(CheckInventory("Healthupgrade")==6)
+			{HudMessage(s:"a";HUDMSG_PLAIN,23999,0,170.1,17.0,0.1);}
+			if(CheckInventory("Healthupgrade")==5)
+			{HudMessage(s:"a";HUDMSG_PLAIN,23999,0,162.1,17.0,0.1);}
+			if(CheckInventory("Healthupgrade")==4)
+			{HudMessage(s:"a";HUDMSG_PLAIN,23999,0,154.1,17.0,0.1);}
+			if(CheckInventory("Healthupgrade")==3)
+			{HudMessage(s:"a";HUDMSG_PLAIN,23999,0,146.1,17.0,0.1);}
+			if(CheckInventory("Healthupgrade")==2)
+			{HudMessage(s:"a";HUDMSG_PLAIN,23999,0,138.1,17.0,0.1);}
+			if(CheckInventory("Healthupgrade")==1)
+			{HudMessage(s:"a";HUDMSG_PLAIN,23999,0,130.1,17.0,0.1);}
+			if(CheckInventory("Healthupgrade")==0)
+			{HudMessage(s:"a";HUDMSG_PLAIN,23999,0,122.1,17.0,0.1);}
+			//END OF STATUS BAR
+
+
+
+
+
+
+
+
+
+
+
+			SetFont("EXSCREN");
+			HudMessage(s:"a";HUDMSG_PLAIN,1000,0,180.0,128.0,0.1);
+			
+			SetFont("NEXTST");
+			HudMessage(s:"a";HUDMSG_PLAIN,2,0,12.0,143.0,0.1);
+			SetFont("NEXTXTRA");
+			HudMessage(s:"a";HUDMSG_PLAIN,3,0,12.0,143.0,0.1);
+
+			
+			//SetFont("EXSKILZ");
+			//HudMessage(s:"a";HUDMSG_PLAIN,999,0,180.0,110.0,0.1);
+
+		if (Checkinventory("Zsaber"))
+		{ SetFont("EXSAB"); HudMessage(s:"a";HUDMSG_PLAIN,999,0,180.0,128.0,0.1);}
+		if (Checkinventory("BusterShot"))
+		{ SetFont("EXBUS"); HudMessage(s:"a";HUDMSG_PLAIN,998,0,180.0,128.0,0.1);}
+		if (Checkinventory("TripleRod")+Checkinventory("FallingBlaze")+Checkinventory("BoltStrike"))
+		{ SetFont("EXTRI"); HudMessage(s:"a";HUDMSG_PLAIN,997,0,180.0,128.0,0.1);}
+		if (Checkinventory("ChainRod")+Checkinventory("EnergyChain"))
+		{ SetFont("EXCHN"); HudMessage(s:"a";HUDMSG_PLAIN,996,0,180.0,128.0,0.1);}
+		if (Checkinventory("RecoilRod")+Checkinventory("DoubleRecoil")+Checkinventory("SoulLauncher")+Checkinventory("ThousandStabs")+Checkinventory("RecoilSpike"))
+		{ SetFont("EXREC"); HudMessage(s:"a";HUDMSG_PLAIN,995,0,180.0,128.0,0.1);}
+		if (Checkinventory("ShieldBoomerang")+Checkinventory("FilterShield")+Checkinventory("HomingShield")+Checkinventory("ShieldSweep")+Checkinventory("OrbitShield"))
+		{ SetFont("EXSHD"); HudMessage(s:"a";HUDMSG_PLAIN,994,0,180.0,128.0,0.1);}
+	
+	
+		//if(menusel==37){menusel=36;}
+
+			if (buttons & BT_FORWARD && !(oldbuttons & BT_FORWARD))
+			{
+			if(menusel==-50||menusel==-51) {}
+			else
+			{
+				LocalAmbientSound("menu/cursor",127);
+				if (menusel==0||menusel==1||menusel==2||menusel==3||menusel==4||menusel==5||menusel==6||menusel==7)
+			{menusel = menusel+50;}
+			else
+			{menusel = menusel-10;}
+			if (menusel == 45||menusel == 46||menusel == 47)
+			{menusel = menusel-10;}
+			
+			}}
+
+			if (buttons & BT_BACK && !(oldbuttons & BT_BACK))
+			{
+			if(menusel==-50||menusel==-51) {}
+			else
+			{
+				LocalAmbientSound("menu/cursor",127);
+			if (menusel==50||menusel==51||menusel==52||menusel==53||menusel==54||menusel==55||menusel==56||menusel==57)
+			{menusel = menusel-50;}
+			else
+			{menusel = menusel+10;}
+			if (menusel == 45||menusel == 46||menusel == 47)
+			{menusel = menusel+10;}
+			
+			}}
+			
+
+			if (buttons & BT_MOVELEFT && !(oldbuttons & BT_MOVELEFT))
+			{
+			if (menusel==-50) {}
+			else
+			{
+			LocalAmbientSound("menu/cursor",127);
+			if (menusel==-51) {menusel = 37; }
+			else
+			if (menusel==0||menusel==10||menusel==20||menusel==30||menusel==40||menusel==50)
+			{ menusel = -50; }
+			else
+			{ menusel = menusel-1; }
+			}}
+
+			if (buttons & BT_MOVERIGHT && !(oldbuttons & BT_MOVERIGHT))
+			{
+			if (menusel==-51) {}
+			else
+			{
+			LocalAmbientSound("menu/cursor",127);
+			if (menusel==-50) {menusel = 0; }
+			else
+			if (menusel==7||menusel==17||menusel==27||menusel==37||menusel==44||menusel==47||menusel==57) { menusel = -51; }
+			else
+			{ menusel = menusel+1; }
+			}}
+
+
+			if (menusel == -50) { SetFont("NXTSCR1"); HudMessage(s:"a";HUDMSG_PLAIN,150,0,11.0,145.0,0.06);}
+			if (menusel == -51) { SetFont("NXTSCR2"); HudMessage(s:"a";HUDMSG_PLAIN,150,0,238.0,145.0,0.06);}
+			
+
+			//Saber Skill Section
+			if (menusel == 0) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,35.0,71.0,0.06);}
+			if (menusel == 1) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,59.0,71.0,0.06);}
+			if (menusel == 2) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,83.0,71.0,0.06);}
+			if (menusel == 3) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,107.0,71.0,0.06);}
+			if (menusel == 10) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,35.0,95.0,0.06);}
+			if (menusel == 11) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,59.0,95.0,0.06);}
+			if (menusel == 12) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,83.0,95.0,0.06);}
+			if (menusel == 13) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,107.0,95.0,0.06);}
+			if (menusel == 20) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,35.0,119.0,0.06);}
+			if (menusel == 21) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,59.0,119.0,0.06);}
+			if (menusel == 22) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,83.0,119.0,0.06);}
+			if (menusel == 23) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,107.0,119.0,0.06);}
+			if (menusel == 30) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,35.0,143.0,0.06);}
+			if (menusel == 31) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,59.0,143.0,0.06);}
+			if (menusel == 32) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,83.0,143.0,0.06);}
+			if (menusel == 33) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,107.0,143.0,0.06);}
+			
+			//Buster
+			if (menusel == 4) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,139.0,71.0,0.06);}
+			if (menusel == 14) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,139.0,95.0,0.06);}
+			if (menusel == 24) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,139.0,119.0,0.06);}
+			if (menusel == 34) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,139.0,143.0,0.06);}
+			if (menusel == 5) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,163.0,71.0,0.06);}
+			if (menusel == 15) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,163.0,95.0,0.06);}
+			if (menusel == 25) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,163.0,119.0,0.06);}
+			if (menusel == 35) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,163.0,143.0,0.06);}
+			if (menusel == 6) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,187.0,71.0,0.06);}
+			if (menusel == 16) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,187.0,95.0,0.06);}
+			if (menusel == 26) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,187.0,119.0,0.06);}
+			if (menusel == 36) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,187.0,143.0,0.06);}
+			if (menusel == 7) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,211.0,71.0,0.06);}
+			if (menusel == 17) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,211.0,95.0,0.06);}
+			if (menusel == 27) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,211.0,119.0,0.06);}
+			if (menusel == 37) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,211.0,143.0,0.06);}
+			
+			//Triple
+			if (menusel == 40) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,35.0,179.0,0.06);}
+			if (menusel == 41) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,59.0,179.0,0.06);}
+			if (menusel == 42) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,83.0,179.0,0.06);}
+			if (menusel == 43) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,107.0,179.0,0.06);}
+			
+			//Chain
+			if (menusel == 44) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,139.0,179.0,0.06);}
+			if (menusel == 45) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,163.0,179.0,0.06);}
+			if (menusel == 46) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,187.0,179.0,0.06);}
+			if (menusel == 47) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,211.0,179.0,0.06);}
+			
+			//Recoil
+			if (menusel == 50) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,35.0,215.0,0.06);}
+			if (menusel == 51) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,59.0,215.0,0.06);}
+			if (menusel == 52) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,83.0,215.0,0.06);}
+			if (menusel == 53) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,107.0,215.0,0.06);}
+			
+			//Shield
+			if (menusel == 54) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,139.0,215.0,0.06);}
+			if (menusel == 55) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,163.0,215.0,0.06);}
+			if (menusel == 56) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,187.0,215.0,0.06);}
+			if (menusel == 57) { SetFont("EX_CURSR"); HudMessage(s:"a";HUDMSG_PLAIN,1,0,211.0,215.0,0.06);}
+			
+			
+			//RISING
+			if (Checkinventory("FlyingFang")) {if (Checkinventory("FlyingFangActive"))
+			{ SetFont("SPHVA");} else
+			{ SetFont("SPHVB");} HudMessage(s:"A";HUDMSG_PLAIN,493,0,35.0,71.0,0.06);}
+			
+			if (Checkinventory("Tenshouzan")) {if (Checkinventory("TenshouzanActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("TNSHZC");} else
+			{ SetFont("TNSHZA");}} else
+			{ SetFont("TNSHZB");} HudMessage(s:"A";HUDMSG_PLAIN,499,0,59.0,71.0,0.06);}
+			
+			if (Checkinventory("Shouretsujin")) {if (Checkinventory("ShouretsujinActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("SHRETC");} else
+			{ SetFont("SHRETA");}} else
+			{ SetFont("SHRETB");} HudMessage(s:"A";HUDMSG_PLAIN,470,0,83.0,71.0,0.06);}
+			
+			if (Checkinventory("WhiteFang")) {if (Checkinventory("WhiteFangActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("WFANGC");} else
+			{ SetFont("WFANGA");}} else
+			{ SetFont("WFANGB");} HudMessage(s:"A";HUDMSG_PLAIN,486,0,107.0,71.0,0.06);}
+			
+			//DASH 
+			if (Checkinventory("GaleAttack")) {if (Checkinventory("GaleAttackActive")) 
+			{ SetFont("GATKA");} else
+			{ SetFont("GATKB");} HudMessage(s:"A";HUDMSG_PLAIN,498,0,35.0,95.0,0.06);}
+			
+			if (Checkinventory("FuryThrust")) {if (Checkinventory("FuryThrustActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("DANRGC");} else
+			{ SetFont("DANRGA");}} else
+			{ SetFont("DANRGB");} HudMessage(s:"A";HUDMSG_PLAIN,464,0,59.0,95.0,0.06);}
+			
+			if (Checkinventory("Sengatotsu")) {if (Checkinventory("SengatotsuActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("SENGATC");} else
+			{ SetFont("SENGATA");}} else
+			{ SetFont("SENGATB");} HudMessage(s:"A";HUDMSG_PLAIN,466,0,83.0,95.0,0.06);}
+			
+			if (Checkinventory("Gendantotsu")) {if (Checkinventory("GendantotsuActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("GANDTC");} else
+			{ SetFont("GANDTA");}} else
+			{ SetFont("GANDTB");} HudMessage(s:"A";HUDMSG_PLAIN,476,0,107.0,95.0,0.06);}
+			
+			
+			//STAB
+			if (Checkinventory("SkyChaser")) {if (Checkinventory("SkyChaserActive")) 
+			{ SetFont("SKCHAA");} else
+			{ SetFont("SKCHAB");} HudMessage(s:"A";HUDMSG_PLAIN,489,0,35.0,119.0,0.06);}
+			
+			if (Checkinventory("Senkougeki")) {if (Checkinventory("SenkougekiActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("ENKZNC");} else
+			{ SetFont("ENKZNA");}} else
+			{ SetFont("ENKZNB");} HudMessage(s:"A";HUDMSG_PLAIN,480,0,59.0,119.0,0.06);}
+			
+			if (Checkinventory("SaberSmash")) {if (Checkinventory("SaberSmashActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("SASMAC");} else
+			{ SetFont("SASMAA");}} else
+			{ SetFont("SASMAB");} HudMessage(s:"A";HUDMSG_PLAIN,484,0,83.0,119.0,0.06);}
+			
+			if (Checkinventory("Rakuretsuzan")) {if (Checkinventory("RakuretsuzanActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("RAKSNC");} else
+			{ SetFont("RAKSNA");}} else
+			{ SetFont("RAKSNB");} HudMessage(s:"A";HUDMSG_PLAIN,497,0,107.0,119.0,0.06);}
+			
+			
+			
+			//WAVE
+			if (Checkinventory("Kougenjin")) {if (Checkinventory("KougenjinActive")) 
+			{ SetFont("KNJNA");} else
+			{ SetFont("KNJNB");} HudMessage(s:"A";HUDMSG_PLAIN,500,0,35.0,143.0,0.06);}
+			
+			if (Checkinventory("TyphoonCutter")) {if (Checkinventory("TyphoonCutterActive"))  {if (GetCVAR("MMZD_ALTEX")){ SetFont("TYPHNC");} else
+			{ SetFont("TYPHNA");}} else
+			{ SetFont("TYPHNB");} HudMessage(s:"A";HUDMSG_PLAIN,465,0,59.0,143.0,0.06);}
+			
+			
+			if (Checkinventory("Fuujinshou")) {if (Checkinventory("FuujinshouActive"))  {if (GetCVAR("MMZD_ALTEX")){ SetFont("FUJINC");} else
+			{ SetFont("FUJINA");}} else
+			{ SetFont("FUJINB");} HudMessage(s:"A";HUDMSG_PLAIN,485,0,83.0,143.0,0.06);}
+			
+			if (Checkinventory("ThrowBlade")) {if (Checkinventory("ThrowBladeActive"))  {if (GetCVAR("MMZD_ALTEX")){ SetFont("TBLADC");} else
+			{ SetFont("TBLADA");}} else
+			{ SetFont("TBLADB");} HudMessage(s:"A";HUDMSG_PLAIN,491,0,107.0,143.0,0.06);}
+			
+			
+			
+			if (Checkinventory("PierceLaser")) {if (Checkinventory("PierceLaserActive")) 
+			{ SetFont("PLASRA");} else
+			{ SetFont("PLASRB");} HudMessage(s:"A";HUDMSG_PLAIN,496,0,139.0,71.0,0.06);}
+			
+			if (Checkinventory("ReflectBeam")) {if (Checkinventory("ReflectBeamActive")) 
+			{ SetFont("RBEAMA");} else
+			{ SetFont("RBEAMB");} HudMessage(s:"A";HUDMSG_PLAIN,478,0,163.0,71.0,0.06);}
+			
+			if (Checkinventory("TimeStopper")) {if (Checkinventory("TimeStopperActive")) 
+			{ SetFont("TIMESTA");} else
+			{ SetFont("TIMESTB");} HudMessage(s:"A";HUDMSG_PLAIN,472,0,187.0,71.0,0.06);}
+			
+			if (Checkinventory("StockShot")) {if (Checkinventory("StockShotActive")) 
+			{ SetFont("STOKA");} else
+			{ SetFont("STOKB");} HudMessage(s:"A";HUDMSG_PLAIN,475,0,211.0,71.0,0.06);}
+			
+			
+			
+			if (Checkinventory("BlastShot")) {if (Checkinventory("BlastShotActive"))  {if (GetCVAR("MMZD_ALTEX")){ SetFont("BLASC");} else
+			{ SetFont("BLASA");}} else
+			{ SetFont("BLASB");} HudMessage(s:"A";HUDMSG_PLAIN,479,0,139.0,95.0,0.06);}
+			
+			if (Checkinventory("FlameShower")) {if (Checkinventory("FlameShowerActive"))  {if (GetCVAR("MMZD_ALTEX")){ SetFont("SHOWRC");} else
+			{ SetFont("SHOWRA");}} else
+			{ SetFont("SHOWRB");} HudMessage(s:"A";HUDMSG_PLAIN,462,0,163.0,95.0,0.06);}
+			
+			if (Checkinventory("BurningShot")) {if (Checkinventory("BurningShotActive"))  {if (GetCVAR("MMZD_ALTEX")){ SetFont("BURNC");} else
+			{ SetFont("BURNA");}} else
+			{ SetFont("BURNB");} HudMessage(s:"A";HUDMSG_PLAIN,490,0,187.0,95.0,0.06);}
+			
+			if (Checkinventory("MagmaSpread")) {if (Checkinventory("MagmaSpreadActive"))  {if (GetCVAR("MMZD_ALTEX")){ SetFont("MAGMC");} else
+			{ SetFont("MAGMA");}} else
+			{ SetFont("MAGMB");} HudMessage(s:"A";HUDMSG_PLAIN,459,0,211.0,95.0,0.06);}
+			
+			
+			if (Checkinventory("SparkShot")) {if (Checkinventory("SparkShotActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("SPASHTC");} else
+			{ SetFont("SPASHTA");}} else
+			{ SetFont("SPASHTB");} HudMessage(s:"A";HUDMSG_PLAIN,469,0,139.0,119.0,0.06);}
+			
+			if (Checkinventory("VShot")) {if (Checkinventory("VShotActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("VSHTC");} else
+			{ SetFont("VSHTA");}} else
+			{ SetFont("VSHTB");} HudMessage(s:"A";HUDMSG_PLAIN,495,0,163.0,119.0,0.06);}
+			
+			if (Checkinventory("TractorShot")) {if (Checkinventory("TractorShotActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("TRACTRC");} else
+			{ SetFont("TRACTRA");}} else
+			{ SetFont("TRACTRB");} HudMessage(s:"A";HUDMSG_PLAIN,468,0,187.0,119.0,0.06);}
+			
+			if (Checkinventory("ChaserShot")) {if (Checkinventory("ChaserShotActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("CHSHTC");} else
+			{ SetFont("CHSHTA");}} else
+			{ SetFont("CHSHTB");} HudMessage(s:"A";HUDMSG_PLAIN,473,0,211.0,119.0,0.06);}
+			
+			if (Checkinventory("TripleShot")) {if (Checkinventory("TripleShotActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("TRIPLC");} else
+			{ SetFont("TRIPLA");}} else
+			{ SetFont("TRIPLB");} HudMessage(s:"A";HUDMSG_PLAIN,463,0,139.0,143.0,0.06);}
+			
+			if (Checkinventory("BlizzardArrow")) {if (Checkinventory("BlizzardArrowActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("BARRWC");} else
+			{ SetFont("BARRWA");}} else
+			{ SetFont("BARRWB");} HudMessage(s:"A";HUDMSG_PLAIN,467,0,163.0,143.0,0.06);}
+			
+			if (Checkinventory("IceJavelin")) {if (Checkinventory("IceJavelinActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("IJAVC");} else
+			{ SetFont("IJAVA");}} else
+			{ SetFont("IJAVB");} HudMessage(s:"A";HUDMSG_PLAIN,488,0,187.0,143.0,0.06);}
+			
+			if (Checkinventory("FrostGatling")) {if (Checkinventory("FrostGatlingActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("FRGATLC");} else
+			{ SetFont("FRGATLA");}} else
+			{ SetFont("FRGATLB");} HudMessage(s:"A";HUDMSG_PLAIN,460,0,211.0,143.0,0.06);}
+			//Triple
+			if (Checkinventory("RisingGale")) {if (Checkinventory("RisingGaleActive"))
+			{ SetFont("RGALEA");} else
+			{ SetFont("RGALEB");} HudMessage(s:"A";HUDMSG_PLAIN,457,0,35.0,179.0,0.06);}
+			
+			if (Checkinventory("FallingBlaze")) {if (Checkinventory("FallingBlazeActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("FBLAZC");} else
+			{ SetFont("FBLAZA");}} else
+			{ SetFont("FBLAZB");} HudMessage(s:"A";HUDMSG_PLAIN,471,0,59.0,179.0,0.06);}
+			
+			if (Checkinventory("BoltStrike")) {if (Checkinventory("BoltStrikeActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("BSTRKC");} else
+			{ SetFont("BSTRKA");}} else
+			{ SetFont("BSTRKB");} HudMessage(s:"A";HUDMSG_PLAIN,481,0,83.0,179.0,0.06);}
+			
+			if (Checkinventory("FrostDragon")) {if (Checkinventory("FrostDragonActive")) {if (GetCVAR("MMZD_ALTEX")){ SetFont("FDRAGNC");} else
+			{ SetFont("FDRAGNA");}} else
+			{ SetFont("FDRAGNB");} HudMessage(s:"A";HUDMSG_PLAIN,458,0,107.0,179.0,0.06);}
+			
+			
+			//Chain
+			if (Checkinventory("EnergyChain")) {if (Checkinventory("EnergyChainActive")) 
+			{ SetFont("ENCHNA");} else
+			{ SetFont("ENCHNB");} HudMessage(s:"A";HUDMSG_PLAIN,461,0,139.0,179.0,0.06);}
+			
+			
+			//Recoil
+			if (Checkinventory("DoubleRecoil")) {if (Checkinventory("DoubleRecoilActive")) 
+			{ SetFont("DRECA");} else
+			{ SetFont("DRECB");} HudMessage(s:"A";HUDMSG_PLAIN,477,0,35.0,215.0,0.06);}
+			
+			if (Checkinventory("SoulLauncher")) {if (Checkinventory("SoulLauncherActive"))  {if (GetCVAR("MMZD_ALTEX")){ SetFont("SLNCHC");} else
+			{ SetFont("SLNCHA");}} else
+			{ SetFont("SLNCHB");} HudMessage(s:"A";HUDMSG_PLAIN,494,0,59.0,215.0,0.06);}
+			
+			if (Checkinventory("ThousandStabs")) {if (Checkinventory("ThousandStabsActive"))  {if (GetCVAR("MMZD_ALTEX")){ SetFont("TSTABC");} else
+			{ SetFont("TSTABA");}} else
+			{ SetFont("TSTABB");} HudMessage(s:"A";HUDMSG_PLAIN,492,0,83.0,215.0,0.06);}
+			
+			if (Checkinventory("RecoilSpike")) {if (Checkinventory("RecoilSpikeActive"))  {if (GetCVAR("MMZD_ALTEX")){ SetFont("RSPIKC");} else
+			{ SetFont("RSPIKA");}} else
+			{ SetFont("RSPIKB");} HudMessage(s:"A";HUDMSG_PLAIN,474,0,107.0,215.0,0.06);}
+			
+			//Shield
+			if (Checkinventory("FilterShield")) {if (Checkinventory("FilterShieldActive")) 
+			{ SetFont("FSHIELA");} else
+			{ SetFont("FSHIELB");} HudMessage(s:"A";HUDMSG_PLAIN,482,0,139.0,215.0,0.06);}
+			
+			if (Checkinventory("HomingShield")) {if (Checkinventory("HomingShieldActive"))  {if (GetCVAR("MMZD_ALTEX")){ SetFont("HOSHDC");} else
+			{ SetFont("HOSHDA");}} else
+			{ SetFont("HOSHDB");} HudMessage(s:"A";HUDMSG_PLAIN,456,0,163.0,215.0,0.06);}
+			
+			if (Checkinventory("ShieldSweep")) {if (Checkinventory("ShieldSweepActive"))  {if (GetCVAR("MMZD_ALTEX")){ SetFont("SSWEPC");} else
+			{ SetFont("SSWEPA");}} else
+			{ SetFont("SSWEPB");} HudMessage(s:"A";HUDMSG_PLAIN,487,0,187.0,215.0,0.06);}
+			
+			if (Checkinventory("OrbitShield")) {if (Checkinventory("OrbitShieldActive"))  {if (GetCVAR("MMZD_ALTEX")){ SetFont("OSHLDC");} else
+			{ SetFont("OSHLDA");}} else
+			{ SetFont("OSHLDB");} HudMessage(s:"A";HUDMSG_PLAIN,483,0,211.0,215.0,0.06);}
+			
+			
+			
+			SetFont("MMZFONT");
+			
+			if (menusel == -50) {HudMessage(s:"Go to Status Screen.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1);}
+			if (menusel == -51) {HudMessage(s:"Go to Extra Screen.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1);}
+			
+			
+			if (menusel == 0) 
+			{ if (Checkinventory("FlyingFang")) 
+			{if (GetCVAR("MMZD_RISINGNAME_N"))
+			{HudMessage(s:"KUUSHOUGA";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"FLYING FANG";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"A rising slash\nthat is able\n to be used in \nthe air.";HUDMSG_PLAIN,12,CR_WHITE,301.0,122.0,0.1); 
+			HudMessage(s:"Press ", k:"+back", s:"+",  k:"+attack";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 1) 
+			{ if (Checkinventory("Tenshouzan")) 
+			{if (GetCVAR("MMZD_RISINGNAME_F")==2)
+			{HudMessage(s:"TENRETSUJIN";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			if (GetCVAR("MMZD_RISINGNAME_F"))
+			{HudMessage(s:"TENSHOUZAN";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"SPLIT HEAVENS";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"A rising atk\n with high\n power. \nPower up with \nfire chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,130.0,0.1); 
+			HudMessage(s:"Press ", k:"+back", s:"+",  k:"+attack", s:" on ground";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 2) 
+			{ if (Checkinventory("Shouretsujin")) 
+			{if (GetCVAR("MMZD_RISINGNAME_T"))
+			{HudMessage(s:"SHOURETSUJIN";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"SKY CLEAVER";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"A rising atk\nwith long\n reach. \nPower up with \nThunder chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,130.0,0.1); 
+			HudMessage(s:"Press ", k:"+back", s:"+",  k:"+attack", s:" on ground";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 3) 
+			{ if (Checkinventory("WhiteFang")) 
+			{if (GetCVAR("MMZD_RISINGNAME_I"))
+			{HudMessage(s:"SENKOUGA";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"WHITE FANG";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"A rising atk\nwith large\nupward reach\nthat sends\na slash wave\nPower up with \nIce Chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,147.0,0.1); 
+			HudMessage(s:"Press ", k:"+back", s:"+",  k:"+attack", s:" on ground";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			
+			if (menusel == 10) 
+			{ if (Checkinventory("GaleAttack")) 
+			{if (GetCVAR("MMZD_DASHNAME_N"))
+			{HudMessage(s:"REPPUGEKI";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"GALE ATTACK";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Dashing stab\nattack with\nhigh power\nand speed.";HUDMSG_PLAIN,12,CR_WHITE,301.0,122.0,0.1); 
+			HudMessage(s:"Press ", k:"+forward", s:"+",  k:"+attack", s:" while dashing.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 11) 
+			{ if (Checkinventory("FuryThrust")) 
+			{if (GetCVAR("MMZD_DASHNAME_F"))
+			{HudMessage(s:"DANRYUGA";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"FURY THRUST";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"A dash stab\nattack that\ncan be used\nin the air\nor ground.\nPower up with \nFlame Chip.";HUDMSG_PLAIN,12,CR_WHITE,301.0,147.0,0.1); 
+			HudMessage(s:"Press ", k:"+forward", s:"+",  k:"+attack", s:"+", k:"+speed";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 12) 
+			{ if (Checkinventory("Sengatotsu")) 
+			{if (GetCVAR("MMZD_DASHNAME_T"))
+			{HudMessage(s:"SENGATOTSU";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"FLASH STAB";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"A dash stab\nattack that\ncan be aimed\n and has good\n range.\n Power up with \n Thunder Chip.";HUDMSG_PLAIN,12,CR_WHITE,301.0,147.0,0.1); 
+			HudMessage(s:"Press ", k:"+forward", s:"+",  k:"+attack", s:" while dashing.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 13) 
+			{ if (Checkinventory("Gendantotsu")) 
+			{if (GetCVAR("MMZD_DASHNAME_I"))
+			{HudMessage(s:"GENDANTOTSU";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"PHANTOM BLADE";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"A stab\nattack that\nsends an\nenergy slash\na short range.\n Power up with \n Ice Chip.";HUDMSG_PLAIN,12,CR_WHITE,301.0,147.0,0.1); 
+			HudMessage(s:"Press ", k:"+forward", s:"+",  k:"+attack", s:" while dashing.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			
+			if (menusel == 20) 
+			{ if (Checkinventory("SkyChaser")) 
+			{if (GetCVAR("MMZD_STABNAME_N"))
+			{HudMessage(s:"TSUIBANGEKI";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"SKY CHASER";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Stab downward\nto smash the \nground and \nsend debris \nflying.";HUDMSG_PLAIN,12,CR_WHITE,301.0,130.0,0.1); 
+			HudMessage(s:"",  k:"+altattack", s:"+NEUTRAL in air. OR ",  k:"+speed", s:"instead.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 21) 
+			{ if (Checkinventory("Senkougeki")) 
+			{if (GetCVAR("MMZD_STABNAME_F"))
+			{HudMessage(s:"SENKOUGEKI";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"FLASH DROP";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Stab downward\n diagonally\n at high speed.\n Power up with\n Flame Chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,130.0,0.1); 
+			HudMessage(s:"",  k:"+altattack", s:"+NEUTRAL in air. OR ",  k:"+speed", s:"instead.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 22) 
+			{ if (Checkinventory("SaberSmash")) 
+			{if (GetCVAR("MMZD_STABNAME_T"))
+			{HudMessage(s:"RAKUSAIGA";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"SABER SMASH";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Stab downward\n and do wide \n DMG. You take \n less DMG while \n falling. \n Power up with \n Thunder Chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,147.0,0.1); 
+			HudMessage(s:"",  k:"+altattack", s:"+NEUTRAL in air. OR ",  k:"+speed", s:"instead.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			
+			if (menusel == 23) 
+			{ if (Checkinventory("Rakuretsuzan")) 
+			{if (GetCVAR("MMZD_STABNAME_I"))
+			{HudMessage(s:"RAKURETSUZAN";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"SHARP EDGE";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Stab downward\n and do DMG \n below. When \n falling you \n can aim it. \n Power up with \n Ice Chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,147.0,0.1); 
+			HudMessage(s:"",  k:"+altattack", s:"+NEUTRAL in air. OR ",  k:"+speed", s:"instead.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 30) 
+			{ if (Checkinventory("Kougenjin")) 
+			{if (GetCVAR("MMZD_WAVENAME_N"))
+			{HudMessage(s:"KOUGENJIN";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"SONIC BOOM";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Fling a \nshort range \nwave slash. \nCan be used \nafter saber \ncombo.";HUDMSG_PLAIN,12,CR_WHITE,300.0,139.0,0.1); 
+			HudMessage(s:"Press ", k:"+back", s:"+",  k:"+altattack", s:" on ground. OR ",  k:"+altattack", s:" in combo.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 31) 
+			{ if (Checkinventory("TyphoonCutter")) 
+			{if (GetCVAR("MMZD_WAVENAME_F"))
+			{HudMessage(s:"RETSUENJIN";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"TYPHOON CUTTER";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Create a\n spinning blade \n that falls\n off ledges and\n ricochets.\n power up with\n the flame\n chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,156.0,0.1); 
+			HudMessage(s:"Press ", k:"+back", s:"+",  k:"+altattack", s:" on ground.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 32) 
+			{ if (Checkinventory("Fuujinshou")) 
+			{if (GetCVAR("MMZD_WAVENAME_T"))
+			{HudMessage(s:"FUUJINSHOU";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"WIND SHREDDER";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Create a\n tornado that \n stays in place\n to do heavy\n damage.\n power up with\n the thunder\n chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,156.0,0.1); 
+			HudMessage(s:"Press ", k:"+back", s:"+",  k:"+altattack", s:" on ground.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 33) 
+			{ if (Checkinventory("ThrowBlade")) 
+			{if (GetCVAR("MMZD_WAVENAME_I"))
+			{HudMessage(s:"ZAN'EIDAN";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"THROW BLADE";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"Z-SABER";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Send a \nshort range \nenergy blade \nflying. \npower up\nwith the \nIce Chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,147.0,0.1); 
+			HudMessage(s:"Press ", k:"+back", s:"+",  k:"+altattack", s:" on ground.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			
+			if (menusel == 4) 
+			{ if (Checkinventory("PierceLaser")) 
+			{if (GetCVAR("MMZD_LASERNAME"))
+			{HudMessage(s:"LASER SHOT";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"PIERCE LASER";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Fire a laser\n that pierces\n through lines\n of enemies.";HUDMSG_PLAIN,12,CR_WHITE,300.0,122.0,0.1); 
+			HudMessage(s:"Unequip Element Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 5) 
+			{ if (Checkinventory("ReflectBeam")) 
+			{if (GetCVAR("MMZD_REFLECTNAME"))
+			{HudMessage(s:"REFLECT LASER";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"REFLECT BEAM";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Fire a laser\n that reflects\n off walls.\n";HUDMSG_PLAIN,12,CR_WHITE,300.0,122.0,0.1); 
+			HudMessage(s:"Unequip Element Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 6) 
+			{ if (Checkinventory("TimeStopper")) 
+			{HudMessage(s:"TIME STOPPER";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Create a field\nthat stops \nenemies and \nprojectiles.";HUDMSG_PLAIN,12,CR_WHITE,300.0,122.0,0.1); 
+			HudMessage(s:"Unequip Element Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 7) 
+			{ if (Checkinventory("StockShot")) 
+			{HudMessage(s:"STOCK SHOT";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Charge up and\n fire 4 charged\n shots in a\n row.";HUDMSG_PLAIN,12,CR_WHITE,300.0,122.0,0.1); 
+			HudMessage(s:"Unequip Element Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			
+			if (menusel == 14) 
+			{ if (Checkinventory("BlastShot")) 
+			{if (GetCVAR("MMZD_BURSTSHOT"))
+			{HudMessage(s:"BURST SHOT";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"BLAST SHOT";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Fire a shot\n that explodes\n and does rapid\n damage over \n time.";HUDMSG_PLAIN,12,CR_WHITE,300.0,130.0,0.1); 
+			HudMessage(s:"Equip Flame Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 15) 
+			{ if (Checkinventory("FlameShower")) 
+			{HudMessage(s:"FLAME SHOWER";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Fire a shot\n that drops\n balls of fire\n to burn\n enemies below.";HUDMSG_PLAIN,12,CR_WHITE,300.0,130.0,0.1); 
+			HudMessage(s:"Equip Flame Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			
+			if (menusel == 16) 
+			{ if (Checkinventory("BurningShot")) 
+			{HudMessage(s:"BURNING SHOT";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Fire a shot\n that explodes\n in a wide\n range.";HUDMSG_PLAIN,12,CR_WHITE,300.0,122.0,0.1); 
+			HudMessage(s:"Equip Flame Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 17) 
+			{ if (Checkinventory("MagmaSpread")) 
+			{HudMessage(s:"SCORCH SPREAD";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Fire a shot\nthat bounces\nand splits\ninto an arcing \nspread. The\nArc's path is \nbased on the \nshot's angle.";HUDMSG_PLAIN,12,CR_WHITE,301.0,156.0,0.1); 
+			HudMessage(s:"Equip Flame Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			
+			
+			if (menusel == 24) 
+			{ if (Checkinventory("SparkShot"))
+			{HudMessage(s:"SPARK SHOT";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Fire a shot \nthat splits\nsideways upon\nimpact.";HUDMSG_PLAIN,12,CR_WHITE,300.0,122.0,0.1); 
+			HudMessage(s:"Equip Thunder Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 25) 
+			{ if (Checkinventory("VShot"))
+			{HudMessage(s:"V-SHOT";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"The Buster \nwill fire two\nshots in a\nV-formation.";HUDMSG_PLAIN,12,CR_WHITE,300.0,122.0,0.1); 
+			HudMessage(s:"Equip Thunder Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 26) 
+			{ if (Checkinventory("TractorShot"))
+			{HudMessage(s:"TRACTOR SHOT";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Hold a ball \n of energy out\n that sucks\n shots in and\n grows in power.";HUDMSG_PLAIN,12,CR_WHITE,302.0,130.0,0.1); 
+			HudMessage(s:"Equip Thunder Chip to use. Charge buster.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 27) 
+			{ if (Checkinventory("ChaserShot"))
+			{HudMessage(s:"CHASER SHOT";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Fire a shot \n that seeks in\n on a nearby a\n enemy.";HUDMSG_PLAIN,12,CR_WHITE,300.0,122.0,0.1); 
+			HudMessage(s:"Equip Thunder Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 34) 
+			{ if (Checkinventory("TripleShot")) 
+			{if (GetCVAR("MMZD_TRIPLESHOTNAME"))
+			{HudMessage(s:"TRIPLE SHOT";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"SHARD SHOT";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Fire a shot\n that breaks\n into piercing\n shards upon\n impact.";HUDMSG_PLAIN,12,CR_WHITE,300.0,130.0,0.1); 
+			HudMessage(s:"Equip Ice Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 35) 
+			{ if (Checkinventory("BlizzardArrow")) 
+			{HudMessage(s:"BLIZZARD ARROW";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Fire off 3\n icicles with\n high power \n and a wide \n spread.";HUDMSG_PLAIN,12,CR_WHITE,300.0,130.0,0.1); 
+			HudMessage(s:"Equip Ice Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 36) 
+			{ if (Checkinventory("IceJavelin")) 
+			{HudMessage(s:"ICE JAVELIN";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Fire an icy\n multi-hit\n spear of ice \n at a slow \n speed.";HUDMSG_PLAIN,12,CR_WHITE,300.0,130.0,0.1); 
+			HudMessage(s:"Equip Ice Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 37) 
+			{ if (Checkinventory("FrostGatling")) 
+			{HudMessage(s:"FROST GATLING";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"BUSTER SHOT";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Fire a barrage\n of small ice\n shards with\n a slight \n spread.";HUDMSG_PLAIN,12,CR_WHITE,300.0,130.0,0.1); 
+			HudMessage(s:"Equip Ice Chip to use.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 40) 
+			{ if (Checkinventory("RisingGale")) 
+			{HudMessage(s:"RISING GALE";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"TRIPLE ROD";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Spin the\ntriple rod\nupwards\nto rise\nupwards.\nRequires No\nElement Chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,147.0,0.1); 
+			HudMessage(s:"Unequip Element Chip + Charge ATK.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 41) 
+			{ if (Checkinventory("FallingBlaze")) 
+			{HudMessage(s:"FALLING BLAZE";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"TRIPLE ROD";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Makes the pogo \n attack an \n explosive \n flaming drop \n attack.\n Requires the\n Flame Chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,147.0,0.1); 
+			HudMessage(s:"Equip Flame Chip + Use Pogo ATK.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 42) 
+			{ if (Checkinventory("BoltStrike")) 
+			{HudMessage(s:"BOLT STRIKE";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"TRIPLE ROD";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Changes third \n strike into \n a fast and\n powerful \n electric atk.\n Requires the\n Thunder Chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,147.0,0.1); 
+			HudMessage(s:"Equip Thunder Chip + Use Triple ATK.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 43) 
+			{ if (Checkinventory("FrostDragon")) 
+			{HudMessage(s:"FROST DRAGON";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"TRIPLE ROD";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Your charged \n spin will \n make a homing\n ice dragon\n Requires the\n Ice Chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,147.0,0.1); 
+			HudMessage(s:"Equip Ice Chip + Use Charge ATK.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			
+			if (menusel == 44) 
+			{ if (Checkinventory("EnergyChain")) 
+			{HudMessage(s:"ENERGY CHAIN";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"CHAIN ROD";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Stay latched\nonto an enemy\nto drain its\nhealth and\nheal yourself\n ";HUDMSG_PLAIN,12,CR_WHITE,300.0,139.0,0.1); 
+			HudMessage(s:"Hold ", k:"+attack", s:" after latching onto an enemy.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			
+			if (menusel == 50) 
+			{ if (Checkinventory("DoubleRecoil")) 
+			{HudMessage(s:"DOUBLE RECOIL";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"RECOIL ROD";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Charge up two \nRecoil Rods. \nYou can hold\nthe charge even\nafter switching\nweapons.";HUDMSG_PLAIN,12,CR_WHITE,300.0,156.0,0.1); 
+			HudMessage(s:"Charge further to hold 2nd charge.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 51) 
+			{ if (Checkinventory("SoulLauncher")) 
+			{HudMessage(s:"SOUL LAUNCHER";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"RECOIL ROD";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Shoot a \nprojectile. \nit rains \nshots when it \nhits.Can be\naimed in any\ndir. with\nFlame Chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,156.0,0.1); 
+			HudMessage(s:"Aim up, charge atk. Flame Chip to aim anywhere.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 52) 
+			{ if (Checkinventory("ThousandStabs")) 
+			{if (GetCVAR("MMZD_REFLECTNAME"))
+			{HudMessage(s:"1000 SLASH";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"1000 STABS";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"RECOIL ROD";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Rapidly stab \n while rooted\n in place.\n powered up\n with the\n Thunder Chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,139.0,0.1); 
+			HudMessage(s:"Do 7 stabs in a row without pause.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 53) 
+			{ if (Checkinventory("RecoilSpike")) 
+			{HudMessage(s:"RECOIL SPIKE";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"RECOIL ROD";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Send spikes \n of energy up\n around you.\n powered up\n with the\n Ice Chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,139.0,0.1); 
+			HudMessage(s:"Aim down + Charge atk. on ground.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			
+			if (menusel == 54) 
+			{ if (Checkinventory("FilterShield")) 
+			{HudMessage(s:"FILTER SHIELD";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"S. BOOMERANG";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Block a shot\nwith good\ntiming to\nerase it and\nget a small\nE-Crystal.";HUDMSG_PLAIN,12,CR_WHITE,300.0,139.0,0.1); 
+			HudMessage(s:"Press ", k:"+attack", s:" as a projectile is close.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 55) 
+			{ if (Checkinventory("HomingShield")) 
+			{HudMessage(s:"HOMING SHIELD";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1); 
+			HudMessage(s:"S. BOOMERANG";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:"Throw your\nshield to home\n in onto\nenemies.\nPower up with\nthe Flame Chip";HUDMSG_PLAIN,12,CR_WHITE,300.0,139.0,0.1); 
+			HudMessage(s:"Hold ", k:"+speed", s:" while throwing.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			
+			if (menusel == 56) 
+			{ if (Checkinventory("ShieldSweep")) 
+			{if (GetCVAR("MMZD_SWEEPNAME"))
+			{HudMessage(s:"CRAWL SHIELD";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"SHIELD SWEEP";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"S. BOOMERANG";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Throw your \n shield to\n crawl along\n the ground.\n Power up \n with the\n Thunder chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,147.0,0.1); 
+			HudMessage(s:"Hold ", k:"+back", s:"+",  k:"+speed", s:" while throwing.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			if (menusel == 57) 
+			{ if (Checkinventory("OrbitShield")) 
+			{if (GetCVAR("MMZD_ORBITNAME"))
+			{HudMessage(s:"CIRCLE SHIELD";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);} else
+			{HudMessage(s:"ORBIT SHIELD";HUDMSG_PLAIN,10,CR_WHITE,300.0,60.0,0.1);}
+			HudMessage(s:"S. BOOMERANG";HUDMSG_PLAIN,11,CR_BRICK,300.0,78.0,0.1); 
+			HudMessage(s:" Throw your \n shield to\n orbit around\n you.\n Power up \n with the\n Ice Chip.";HUDMSG_PLAIN,12,CR_WHITE,300.0,147.0,0.1); 
+			HudMessage(s:"Hold ", k:"+forward", s:"+",  k:"+speed", s:" while throwing.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1); } 
+			else{ HudMessage(s:"???";HUDMSG_PLAIN,18,CR_WHITE,300.0,60.0,0.1);}			}
+			
+			
+
+			if (buttons & BT_ATTACK && !(oldbuttons & BT_ATTACK) || buttons & BT_USE && !(oldbuttons & BT_USE))
+			{
+				
+				if (menusel == -50) {LocalAmbientSound("menu/activate",127); 
+				SetFont("FADEBLK");
+				HudMessage(s:"a";HUDMSG_FADEINOUT,0,0,180.0,118.0,0.1,0.2,0.1);
+				SetFont("SUBBAK");
+				HudMessage(s:"a";HUDMSG_PLAIN,1001,0,180.0,118.0,0.3);
+				SetFont("EXSCREN");
+				HudMessage(s:"a";HUDMSG_PLAIN,1000,0,180.0,128.0,0.3);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				ACS_NamedExecute("Status_menu",0,0,0,0);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				terminate;}
+				if (menusel == -51) {LocalAmbientSound("menu/activate",127); 
+				SetFont("FADEBLK");
+				HudMessage(s:"a";HUDMSG_FADEINOUT,0,0,180.0,118.0,0.1,0.2,0.1);
+				SetFont("SUBBAK");
+				HudMessage(s:"a";HUDMSG_PLAIN,1001,0,180.0,118.0,0.3);
+				SetFont("EXSCREN");
+				HudMessage(s:"a";HUDMSG_PLAIN,1000,0,180.0,128.0,0.3);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				ACS_NamedExecute("Extras_menu",0,0,0,0); terminate;}
+				
+
+				if (menusel == 0) { if (Checkinventory("FlyingFang")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("FlyingFangActive")) {Takeinventory("FlyingFangActive",1);} 
+					else {Giveinventory("FlyingFangActive",1);Takeinventory("TenshouzanActive",1);Takeinventory("ShouretsujinActive",1);Takeinventory("WhiteFangActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 1) { if (Checkinventory("Tenshouzan")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("TenshouzanActive")) {Takeinventory("TenshouzanActive",1);} 
+					else {Giveinventory("TenshouzanActive",1);Takeinventory("FlyingFangActive",1);Takeinventory("ShouretsujinActive",1);Takeinventory("WhiteFangActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 2) { if (Checkinventory("Shouretsujin")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("ShouretsujinActive")) {Takeinventory("ShouretsujinActive",1);} 
+					else {Giveinventory("ShouretsujinActive",1);Takeinventory("FlyingFangActive",1);Takeinventory("TenshouzanActive",1);Takeinventory("WhiteFangActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 3) { if (Checkinventory("WhiteFang")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("WhiteFangActive")) {Takeinventory("WhiteFangActive",1);} 
+					else {Giveinventory("WhiteFangActive",1);Takeinventory("FlyingFangActive",1);Takeinventory("TenshouzanActive",1);Takeinventory("ShouretsujinActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				
+				if (menusel == 10) { if (Checkinventory("GaleAttack")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("GaleAttackActive")) {Takeinventory("GaleAttackActive",1);} 
+					else {Giveinventory("GaleAttackActive",1); Takeinventory("FuryThrustActive",1); Takeinventory("SengatotsuActive",1); Takeinventory("GendantotsuActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 11) { if (Checkinventory("FuryThrust")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("FuryThrustActive")) {Takeinventory("FuryThrustActive",1);} 
+					else {Giveinventory("FuryThrustActive",1); Takeinventory("GaleAttackActive",1); Takeinventory("SengatotsuActive",1); Takeinventory("GendantotsuActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 12) { if (Checkinventory("Sengatotsu")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("SengatotsuActive")) {Takeinventory("SengatotsuActive",1);} 
+					else {Giveinventory("SengatotsuActive",1); Takeinventory("GaleAttackActive",1); Takeinventory("FuryThrustActive",1); Takeinventory("GendantotsuActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				
+				if (menusel == 13) { if (Checkinventory("Gendantotsu")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("GendantotsuActive")) {Takeinventory("GendantotsuActive",1);} 
+					else {Giveinventory("GendantotsuActive",1); Takeinventory("GaleAttackActive",1); Takeinventory("FuryThrustActive",1); Takeinventory("SengatotsuActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				
+				if (menusel == 20) { if (Checkinventory("SkyChaser")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("SkyChaserActive")) {Takeinventory("SkyChaserActive",1);} 
+					else {Giveinventory("SkyChaserActive",1); Takeinventory("SenkougekiActive",1); Takeinventory("SaberSmashActive",1); Takeinventory("RakuretsuzanActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 21) { if (Checkinventory("Senkougeki")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("SenkougekiActive")) {Takeinventory("SenkougekiActive",1);} 
+					else {Giveinventory("SenkougekiActive",1); Takeinventory("SkyChaserActive",1); Takeinventory("SaberSmashActive",1); Takeinventory("RakuretsuzanActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 22) { if (Checkinventory("SaberSmash")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("SaberSmashActive")) {Takeinventory("SaberSmashActive",1);} 
+					else {Giveinventory("SaberSmashActive",1); Takeinventory("SenkougekiActive",1); Takeinventory("RakuretsuzanActive",1); Takeinventory("SkyChaserActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 23) { if (Checkinventory("Rakuretsuzan")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("RakuretsuzanActive")) {Takeinventory("RakuretsuzanActive",1);} 
+					else {Giveinventory("RakuretsuzanActive",1); Takeinventory("SenkougekiActive",1); Takeinventory("SaberSmashActive",1); Takeinventory("SkyChaserActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+					
+					
+				if (menusel == 30) { if (Checkinventory("Kougenjin")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("KougenjinActive")) {Takeinventory("KougenjinActive",1);} 
+					else {Giveinventory("KougenjinActive",1);Takeinventory("TyphoonCutterActive",1);Takeinventory("FuujinshouActive",1);Takeinventory("ThrowBladeActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 31) { if (Checkinventory("TyphoonCutter")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("TyphoonCutterActive")) {Takeinventory("TyphoonCutterActive",1);} 
+					else {Giveinventory("TyphoonCutterActive",1);Takeinventory("KougenjinActive",1);Takeinventory("FuujinshouActive",1);Takeinventory("ThrowBladeActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 32) { if (Checkinventory("Fuujinshou")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("FuujinshouActive")) {Takeinventory("FuujinshouActive",1);} 
+					else {Giveinventory("FuujinshouActive",1);Takeinventory("KougenjinActive",1);Takeinventory("TyphoonCutterActive",1);Takeinventory("ThrowBladeActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 33) { if (Checkinventory("ThrowBlade")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("ThrowBladeActive")) {Takeinventory("ThrowBladeActive",1);} 
+					else {Giveinventory("ThrowBladeActive",1);Takeinventory("KougenjinActive",1);Takeinventory("TyphoonCutterActive",1);Takeinventory("FuujinshouActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				
+				if (menusel == 4) { if (Checkinventory("PierceLaser")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("PierceLaserActive")) {Takeinventory("PierceLaserActive",1);} 
+					else {Giveinventory("PierceLaserActive",1);Takeinventory("ReflectBeamActive",1);Takeinventory("TimeStopperActive",1);Takeinventory("StockShotActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 5) { if (Checkinventory("ReflectBeam")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("ReflectBeamActive")) {Takeinventory("ReflectBeamActive",1);} 
+					else {Giveinventory("ReflectBeamActive",1);Takeinventory("PierceLaserActive",1);Takeinventory("TimeStopperActive",1);Takeinventory("StockShotActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 6) { if (Checkinventory("TimeStopper")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("TimeStopperActive")) {Takeinventory("TimeStopperActive",1);} 
+					else {Giveinventory("TimeStopperActive",1);Takeinventory("PierceLaserActive",1);Takeinventory("ReflectBeamActive",1);Takeinventory("StockShotActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 7) { if (Checkinventory("StockShot")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("StockShotActive")) {Takeinventory("StockShotActive",1);} 
+					else {Giveinventory("StockShotActive",1);Takeinventory("PierceLaserActive",1);Takeinventory("ReflectBeamActive",1);Takeinventory("TimeStopperActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				
+				
+				if (menusel == 14) { if (Checkinventory("BlastShot")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("BlastShotActive")) {Takeinventory("BlastShotActive",1);} 
+					else {Giveinventory("BlastShotActive",1);Takeinventory("FlameShowerActive",1);Takeinventory("BurningShotActive",1);Takeinventory("MagmaSpreadActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 15) { if (Checkinventory("FlameShower")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("FlameShowerActive")) {Takeinventory("FlameShowerActive",1);} 
+					else {Giveinventory("FlameShowerActive",1);Takeinventory("BlastShotActive",1);Takeinventory("BurningShotActive",1);Takeinventory("MagmaSpreadActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 16) { if (Checkinventory("BurningShot")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("BurningShotActive")) {Takeinventory("BurningShotActive",1);} 
+					else {Giveinventory("BurningShotActive",1);Takeinventory("BlastShotActive",1);Takeinventory("FlameShowerActive",1);Takeinventory("MagmaSpreadActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 17) { if (Checkinventory("MagmaSpread")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("MagmaSpreadtActive")) {Takeinventory("MagmaSpreadActive",1);} 
+					else {Giveinventory("MagmaSpreadActive",1);Takeinventory("BlastShotActive",1);Takeinventory("FlameShowerActive",1);Takeinventory("BurningShotActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				
+				if (menusel == 24) { if (Checkinventory("SparkShot")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("SparkShotActive")) {Takeinventory("SparkShotActive",1);} 
+					else {Giveinventory("SparkShotActive",1);Takeinventory("VShotActive",1);Takeinventory("TractorShotActive",1);Takeinventory("ChaserShotActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 25) { if (Checkinventory("VShot")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("VShotActive")) {Takeinventory("VShotActive",1);} 
+					else {Giveinventory("VShotActive",1);Takeinventory("SparkShotActive",1);Takeinventory("TractorShotActive",1);Takeinventory("ChaserShotActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 26) { if (Checkinventory("TractorShot")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("TractorShotActive")) {Takeinventory("TractorShotActive",1);} 
+					else {Giveinventory("TractorShotActive",1);Takeinventory("SparkShotActive",1);Takeinventory("VShotActive",1);Takeinventory("ChaserShotActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 27) { if (Checkinventory("ChaserShot")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("ChaserShotActive")) {Takeinventory("ChaserShotActive",1);} 
+					else {Giveinventory("ChaserShotActive",1);Takeinventory("SparkShotActive",1);Takeinventory("VShotActive",1);Takeinventory("TractorShotActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				
+				
+				if (menusel == 34) { if (Checkinventory("TripleShot")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("TripleShotActive")) {Takeinventory("TripleShotActive",1);} 
+					else {Giveinventory("TripleShotActive",1);Takeinventory("BlizzardArrowActive",1);Takeinventory("IceJavelinActive",1);Takeinventory("FrostGatlingActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 35) { if (Checkinventory("BlizzardArrow")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("BlizzardArrowActive")) {Takeinventory("BlizzardArrowActive",1);} 
+					else {Giveinventory("BlizzardArrowActive",1);Takeinventory("TripleShotActive",1);Takeinventory("IceJavelinActive",1);Takeinventory("FrostGatlingActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 36) { if (Checkinventory("IceJavelin")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("IceJavelinActive")) {Takeinventory("IceJavelinActive",1);} 
+					else {Giveinventory("IceJavelinActive",1);Takeinventory("TripleShotActive",1);Takeinventory("BlizzardArrowActive",1);Takeinventory("FrostGatlingActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 37) { if (Checkinventory("FrostGatling")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("FrostGatlingActive")) {Takeinventory("FrostGatlingActive",1);} 
+					else {Giveinventory("FrostGatlingActive",1);Takeinventory("TripleShotActive",1);Takeinventory("BlizzardArrowActive",1);Takeinventory("IceJavelinActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 40) { if (Checkinventory("RisingGale")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("RisingGaleActive")) {Takeinventory("RisingGaleActive",1);} 
+					else {Giveinventory("RisingGaleActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 41) { if (Checkinventory("FallingBlaze")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("FallingBlazeActive")) {Takeinventory("FallingBlazeActive",1);} 
+					else {Giveinventory("FallingBlazeActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 42) { if (Checkinventory("BoltStrike")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("BoltStrikeActive")) {Takeinventory("BoltStrikeActive",1);} 
+					else {Giveinventory("BoltStrikeActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 43) { if (Checkinventory("FrostDragon")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("FrostDragonActive")) {Takeinventory("FrostDragonActive",1);} 
+					else {Giveinventory("FrostDragonActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				
+				
+				if (menusel == 44) { if (Checkinventory("EnergyChain")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("EnergyChainActive")) {Takeinventory("EnergyChainActive",1);} 
+					else {Giveinventory("EnergyChainActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				
+				if (menusel == 50) { if (Checkinventory("DoubleRecoil")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("DoubleRecoilActive")) {Takeinventory("DoubleRecoilActive",1);} 
+					else {Giveinventory("DoubleRecoilActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 51) { if (Checkinventory("SoulLauncher")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("SoulLauncherActive")) {Takeinventory("SoulLauncherActive",1);} 
+					else {Giveinventory("SoulLauncherActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 52) { if (Checkinventory("ThousandStabs")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("ThousandStabsActive")) {Takeinventory("ThousandStabsActive",1);} 
+					else {Giveinventory("ThousandStabsActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 53) { if (Checkinventory("RecoilSpike")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("RecoilSpikeActive")) {Takeinventory("RecoilSpikeActive",1);} 
+					else {Giveinventory("RecoilSpikeActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				
+				if (menusel == 54) { if (Checkinventory("FilterShield")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("FilterShieldActive")) {Takeinventory("FilterShieldActive",1);} 
+					else {Giveinventory("FilterShieldActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 55) { if (Checkinventory("HomingShield")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("HomingShieldActive")) {Takeinventory("HomingShieldActive",1);} 
+					else {Giveinventory("HomingShieldActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 56) { if (Checkinventory("ShieldSweep")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("ShieldSweepActive")) {Takeinventory("ShieldSweepActive",1);} 
+					else {Giveinventory("ShieldSweepActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				if (menusel == 57) { if (Checkinventory("OrbitShield")) {LocalAmbientSound("menu/choose",127);
+				if (Checkinventory("OrbitShieldActive")) {Takeinventory("OrbitShieldActive",1);} 
+					else {Giveinventory("OrbitShieldActive",1);} } else {LocalAmbientSound("menu/invalid",127);}}
+				
+				
+			}
+
+			
+
+		}
+
+        delay(1);
+		Giveinventory("PowerTimeFreezer2",1);
+		
+		if (buttons & BT_ALTATTACK && !(oldbuttons & BT_ALTATTACK)||buttons & BT_RELOAD && !(oldbuttons & BT_RELOAD))
+			{
+				LocalAmbientSound("menu/clear",127);
+
+				menusel = 0;
+				menutime = 0;
+				SetFont("FADEBLK");
+				HudMessage(s:"a";HUDMSG_FADEINOUT,3,0,180.0,118.0,0.8,0.25,0);
+				SetFont("SUBBAK");
+				HudMessage(s:"a";HUDMSG_PLAIN,1001,0,180.0,118.0,0.7);
+				SetFont("EXSCREN");
+				HudMessage(s:"a";HUDMSG_PLAIN,1000,0,180.0,128.0,0.7);
+				
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				Giveinventory("PowerTimeFreezer2",1); Delay(1);
+				
+				HudMessage(s:"";HUDMSG_PLAIN,3,0,180.0,118.0,0.01);
+				HudMessage(s:"";HUDMSG_PLAIN,1001,0,180.0,118.0,0.01);
+				HudMessage(s:"";HUDMSG_PLAIN,1000,0,180.0,118.0,0.01);
+				FadeRange (0, 0, 0, 1.0, 0, 0, 0, 0.0, 0.25);
+				Delay(5);
+				SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
+				TakeActorInventory(0,"NEVERDASH",1);
+	
+				terminate;
+		
+			}
+    }
+}
