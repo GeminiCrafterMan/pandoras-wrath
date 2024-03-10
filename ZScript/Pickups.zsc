@@ -275,7 +275,7 @@ class GWM_StopwatchSparkle : Actor
 
 class GWM_PortableMedkit : Inventory
 {
-    override bool Use (bool pickup)
+    override bool Use(bool pickup)
     {
 		int firstAidAmount;
 		firstAidAmount = owner.CountInv("GWM_PortableMedkit");
@@ -313,6 +313,78 @@ class GWM_PortableMedkit : Inventory
 	{
 		Spawn:
 			PKIT A -1;
+			Stop;
+	}
+}
+
+class GWM_PandorasBox : Inventory
+{
+    override bool Use(bool pickup)
+    {
+		if (!owner || !owner.player || !owner.FindInventory("GWM_PandorasBox"))
+			return false;
+
+		switch (random(0, 5))
+		{
+			case 5:
+			case 2:
+				Console.Printf("Rolled: Scrapgun");
+				if (!owner.FindInventory("GWM_Scrapgun"))
+				{
+					owner.A_GiveInventory("GWM_Scrapgun");
+					break;
+				}
+				else
+				{
+					owner.A_GiveInventory("GWM_ScrapDrum");
+					break;
+				}
+			case 4:
+			case 1:
+				Console.Printf("Rolled: Stomper");
+				if (!owner.FindInventory("GWM_Stomper"))
+				{
+					owner.A_GiveInventory("GWM_Stomper");
+					break;
+				}
+				else
+				{
+					owner.A_GiveInventory("GWM_StomperAmmo");
+					break;
+				}
+			case 3:
+				Console.Printf("Rolled: Perforator");
+				if (!owner.FindInventory("GWM_Perforator"))
+				{
+					owner.A_GiveInventory("GWM_Perforator");
+					break;
+				}
+				else
+				{
+					owner.A_GiveInventory("GWM_HighCaliberMagazine");
+					break;
+				}
+			default:
+				Console.Printf("Rolled: Nothing");
+				break;
+
+		}
+		owner.A_TakeInventory("GWM_PandorasBox");
+		return Super.Use(pickup);
+	}
+	Default
+	{
+		+INVENTORY.INVBAR;
+		Inventory.Amount 1;
+		Inventory.MaxAmount 1;
+		Inventory.PickUpMessage "$PLACEHOLDER";
+		Inventory.Icon "PANDA0";
+		Tag "Pandora's Box";
+	}
+	States
+	{
+		Spawn:
+			PAND A -1;
 			Stop;
 	}
 }
