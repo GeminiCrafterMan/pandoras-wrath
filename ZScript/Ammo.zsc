@@ -284,7 +284,7 @@ class GWM_Cell : Ammo
 			Stop;
 	}
 }
-class GWM_CellPack : CellPack
+class GWM_CellPack : GWM_Cell
 {
 	Default
 	{

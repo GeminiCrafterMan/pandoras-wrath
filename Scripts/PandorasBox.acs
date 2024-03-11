@@ -30,7 +30,7 @@ script "PandorasBox" (void)
 	
 	wepslot = random(0,11);
 	upgslot = random(0,3);
-	itmslot = random(0,2);
+	itmslot = random(0,3);
     
 	MENUSEL = 1;
 			
@@ -122,6 +122,7 @@ script "PandorasBox" (void)
 			if (itmslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"SoulSphere";HUDMSG_PLAIN,3,0,260.0,100.0,0.06);}
 			if (itmslot == 1) { SetFont("SMALLFONT"); HudMessage(s:"Assault Armor";HUDMSG_PLAIN,3,0,260.0,100.0,0.06);}
 			if (itmslot == 2) { SetFont("SMALLFONT"); HudMessage(s:"HellFire Armor";HUDMSG_PLAIN,3,0,260.0,100.0,0.06);}
+			if (itmslot == 3) { SetFont("SMALLFONT"); HudMessage(s:"Melter Heatsink";HUDMSG_PLAIN,3,0,260.0,100.0,0.06);}
 			
 			
 			if (menusel == 1) {HudMessage(s:"Pick a Weapon";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1);}
@@ -155,6 +156,7 @@ script "PandorasBox" (void)
 					if (itmslot == 0) { GiveInventory("SoulSphere",1);}
 					if (itmslot == 1) { GiveInventory("GWM_AssaultArmor",1);}
 					if (itmslot == 2) { GiveInventory("GWM_HellArmor",1);}
+					if (itmslot == 3) { GiveInventory("GWM_MelterHeatsink", 1);}
 				}
 				
 				

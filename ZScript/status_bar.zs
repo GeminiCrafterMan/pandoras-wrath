@@ -170,8 +170,9 @@ class GWM_StatusBar : BaseStatusBar
 		amt1 = GetAmount("GWM_PandoraPoints");
 		amt2 = GetAmount("GWM_PandoraPointsCap");
 		
-		DrawString(mHUDFont, FormatNumber(amt1,8), (-94, -74), translation: Font.CR_Purple);
-		DrawString(mHUDFont, FormatNumber(amt2,8), (-94, -54), translation: Font.CR_Purple);
+		DrawString(mHUDFont, StringStruct.Format("%d/%d", amt1, amt2), (-10, -74), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Purple);
+//		DrawString(mHUDFont, FormatNumber(amt1,8), (-94, -74), translation: Font.CR_Purple);
+//		DrawString(mHUDFont, FormatNumber(amt2,8), (-94, -54), translation: Font.CR_Purple);
 		
 		
 		TextureID mtex2 = GetMugShot(5); // get a texture
