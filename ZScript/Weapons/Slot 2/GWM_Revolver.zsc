@@ -7,11 +7,11 @@ class GWM_Revolver : GWM_WeaponBase
 		Weapon.SelectionOrder 1900;
 		Weapon.SlotNumber 2;
 		Weapon.UpSound "weapons/draw_secondary";
-		Weapon.AmmoUse1 1;
+		Weapon.AmmoUse1 3;
 		Weapon.AmmoType1 "GWM_LowCaliberMagazine";
-		Weapon.AmmoGive 6;
+		Weapon.AmmoGive 18;
 
-		ZWeapon.MagazineSize 6;
+		ZWeapon.MagazineSize 18;
 		ZWeapon.ReloadSound "weapons/rvlvreload2";
 		ZWeapon.ClickSound "weapons/92fsdryfire";
 

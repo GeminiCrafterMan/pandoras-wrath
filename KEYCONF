@@ -9,4 +9,6 @@ addkeysection "GemWepStuff" GemWepShit
    addmenukey "Quickswitch Acid" "pukename GWM_AcidWepSwitch"
   // alias GWM_AcidWepSwitch "pukename GWM_AcidWepSwitch"
    
+   addmenukey "Open Pandora's Bpx" "pukename PandorasBox"
+   
    

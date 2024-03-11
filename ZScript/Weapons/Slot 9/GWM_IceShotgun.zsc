@@ -310,6 +310,7 @@ class GWM_ShotgunIceShard : GWM_IceProjectile
 		DeathSound "weapons/icehit";
 		Obituary "$KILLICESHOTGUN";
 		Renderstyle "Add";
+		Damagetype "Ice";
 		GWM_IceProjectile.IceSlowCount 50;
 	}
 	States
@@ -346,6 +347,7 @@ class GWM_ShotgunIceBomb : GWM_IceProjectile
 		-Nogravity
 		DeathSound "weapons/icehit";
 		Obituary "$KILLICESHOTGUN";
+		Damagetype "Ice";
 		GWM_IceProjectile.IceSlowCount 75;
 	}
 	int anglecount;
@@ -442,6 +444,7 @@ class GWM_IceFogHitbox : GWM_IceProjectile
 		Height 300;
 		Speed 0;
 		Damagefunction (2);
+		Damagetype "Ice";
 		GWM_IceProjectile.IceSlowCount 10;
 	}
 	States
@@ -491,6 +494,7 @@ class GWM_ShotgunIceWallGenerator : GWM_IceProjectile
 		-Nogravity
 		DeathSound "weapons/icehit";
 		Obituary "$KILLICESHOTGUN";
+		Damagetype "Ice";
 		GWM_IceProjectile.IceSlowCount 250;
 	}
 	int anglecount;
