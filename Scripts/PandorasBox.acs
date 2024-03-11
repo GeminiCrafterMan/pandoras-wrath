@@ -38,8 +38,8 @@ script "PandorasBox" (void)
     {
 
 		SetHudSize(360,256,0);
-		SetPlayerProperty(0,1,PROP_TOTALLYFROZEN);
-		SetActorProperty(0,1,APROP_Invulnerable);
+		//SetPlayerProperty(0,1,PROP_TOTALLYFROZEN);
+		//SetActorProperty(0,1,APROP_Invulnerable);
 	
 		
 		buttons = GetPlayerInput(-1,INPUT_BUTTONS);
