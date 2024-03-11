@@ -78,6 +78,10 @@ class GWM_MP40 : GWM_WeaponBase
 			MP4F B 1 Bright A_Light2;
 			Goto LightDone;
 		Reload:
+			TNT1 A 0 {
+				if (!invoker.CheckAmmo(PrimaryFire, false, true))
+					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
+			}
 			MP4G CCDD 2;
 			MP4G E 2 {
 				A_StartSound("weapons/smgclipout");
