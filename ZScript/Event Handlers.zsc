@@ -28,17 +28,11 @@ class PandoraPointsHandler : StaticEventHandler
 			{
 				let victim = e.Thing.GetClassName();
 				let victimHP = e.Thing.SpawnHealth();
-			// G: Causes a crash; adding a null check + placeholder
+			// G: Caused a crash; adding a null check + placeholder
 				if (e.Thing.target)
-				{
 					let killer = e.Thing.target.GetClassName();
-					let killerWep = e.Inflictor.GetClassName();
-				}
 				else
-				{
 					let killer = player;
-					let killerWep = null;
-				}
 				
 	//			{Console.Printf(victim .. " had " .. victimHP .. " spawn health, and was killed by " .. killer);}
 				let Xdeathmultiplier = 1;
@@ -51,7 +45,8 @@ class PandoraPointsHandler : StaticEventHandler
 				if(e.thing.CountInv("IceSlowCount")) { ElementMultiplier = ElementMultiplier * 1.5; Console.Printf("Ice Bonus!");}
 				if(e.thing.CountInv("AcidWeakCount")) { ElementMultiplier = ElementMultiplier * 1.5; Console.Printf("Acid Bonus!");}
 				
-				e.thing.target.GiveInventory("GWM_PandoraPoints", pointstogive * Xdeathmultiplier * 0.5);
+				if (e.thing.target != null)
+					e.thing.target.GiveInventory("GWM_PandoraPoints", pointstogive * Xdeathmultiplier * 0.5);
 				player.GiveInventory("GWM_PandoraPoints", pointstogive * Xdeathmultiplier * 0.5 * ElementMultiplier);
 			}
 			
