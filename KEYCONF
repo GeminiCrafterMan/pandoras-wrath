@@ -1,4 +1,4 @@
-addkeysection "GemWepStuff" GemWepShit
+addkeysection "Pandora's Wrath" GemWepShit
    
    addmenukey "Quickswitch Fire" "pukename GWM_FireWepSwitch"
    //alias GWM_FireWepSwitch "pukename GWM_FireWepSwitch"
@@ -9,6 +9,6 @@ addkeysection "GemWepStuff" GemWepShit
    addmenukey "Quickswitch Acid" "pukename GWM_AcidWepSwitch"
   // alias GWM_AcidWepSwitch "pukename GWM_AcidWepSwitch"
    
-   addmenukey "Open Pandora's Bpx" "pukename PandorasBox"
+   addmenukey "Open Pandora's Box" "pukename PandorasBox"
    
    

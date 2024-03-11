@@ -1,6 +1,6 @@
 OptionMenu gwm_Options
 {
-	Title "Gem's Weapon Mod Options"
+	Title "Pandora's Wrath Options"
 
 	StaticText ""
 	Option "Replace monsters"			, gwm_replacemonsters	, OnOff
@@ -13,10 +13,10 @@ OptionMenu gwm_Options
 
 AddOptionMenu OptionsMenu
 {
-	Submenu "Gem's Weapon Mod options", gwm_Options
+	Submenu "Pandora's Wrath options", gwm_Options
 }
 
 AddOptionMenu OptionsMenuSimple
 {
-	Submenu "Gem's Weapon Mod options", gwm_Options
+	Submenu "Pandora's Wrath options", gwm_Options
 }

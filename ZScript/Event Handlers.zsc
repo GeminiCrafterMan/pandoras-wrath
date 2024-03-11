@@ -23,27 +23,36 @@ class PandoraPointsHandler : StaticEventHandler
 	{
 		let player = players[consoleplayer].mo;
 		
-		if( e.Thing != null)
+		if (e.Thing != null && e.Thing.bISMONSTER )
 			
 			{
-			let victim = e.Thing.GetClassName();
-			let victimHP = e.Thing.SpawnHealth();
-			let killer = e.Thing.target.GetClassName();
-			let killerWep = e.Inflictor.GetClassName();
+				let victim = e.Thing.GetClassName();
+				let victimHP = e.Thing.SpawnHealth();
+			// G: Causes a crash; adding a null check + placeholder
+				if (e.Thing.target)
+				{
+					let killer = e.Thing.target.GetClassName();
+					let killerWep = e.Inflictor.GetClassName();
+				}
+				else
+				{
+					let killer = player;
+					let killerWep = null;
+				}
+				
+	//			{Console.Printf(victim .. " had " .. victimHP .. " spawn health, and was killed by " .. killer);}
+				let Xdeathmultiplier = 1;
+				let Elementmultiplier = 1;
+				let pointstogive = victimHP * 0.2;
+				
+				if (e.Thing.health <= e.Thing.GetGibHealth())  { XDeathMultiplier = 2; Console.Printf("Gib Bonus!");}
 			
-			{Console.Printf(victim .. " had " .. victimHP .. " spawn health, and was killed by " .. killer);}
-			let Xdeathmultiplier = 1;
-			let Elementmultiplier = 1;
-			let pointstogive = victimHP * 0.2;
-			
-			if (e.Thing.health <= e.Thing.GetGibHealth())  { XDeathMultiplier = 2; Console.Printf("Gib Bonus!");}
-		
-			if(e.thing.CountInv("FireBurnCount")) { ElementMultiplier = ElementMultiplier * 1.5; Console.Printf("Fire Bonus!");}
-			if(e.thing.CountInv("IceSlowCount")) { ElementMultiplier = ElementMultiplier * 1.5; Console.Printf("Ice Bonus!");}
-			if(e.thing.CountInv("AcidWeakCount")) { ElementMultiplier = ElementMultiplier * 1.5; Console.Printf("Acid Bonus!");}
-			
-			e.thing.target.GiveInventory("GWM_PandoraPoints", pointstogive * Xdeathmultiplier * 0.5);
-			player.GiveInventory("GWM_PandoraPoints", pointstogive * Xdeathmultiplier * 0.5 * ElementMultiplier);
+				if(e.thing.CountInv("FireBurnCount")) { ElementMultiplier = ElementMultiplier * 1.5; Console.Printf("Fire Bonus!");}
+				if(e.thing.CountInv("IceSlowCount")) { ElementMultiplier = ElementMultiplier * 1.5; Console.Printf("Ice Bonus!");}
+				if(e.thing.CountInv("AcidWeakCount")) { ElementMultiplier = ElementMultiplier * 1.5; Console.Printf("Acid Bonus!");}
+				
+				e.thing.target.GiveInventory("GWM_PandoraPoints", pointstogive * Xdeathmultiplier * 0.5);
+				player.GiveInventory("GWM_PandoraPoints", pointstogive * Xdeathmultiplier * 0.5 * ElementMultiplier);
 			}
 			
 			Super.WorldThingDied(e);
