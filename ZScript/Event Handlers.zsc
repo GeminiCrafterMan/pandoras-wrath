@@ -598,3 +598,12 @@ class PowerTimeFreezer2 : Powerup
 		S_ResumeSound(false);
 	}
 }
+
+Class PowerMenuInvul : PowerProtection
+{
+Default
+{
+  DamageFactor "", 0.0;
+  Powerup.Duration 2;
+}
+}

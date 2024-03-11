@@ -56,6 +56,7 @@ script "PandorasBox" (void)
 		{	
 			menutime = 1;
 			Giveinventory("PowerTimeFreezer2",1);
+			Giveinventory("PowerMenuInvul",1);
 			SetFont("SUBBAK");
 			HudMessage(s:"a";HUDMSG_PLAIN,321001,0,180.0,118.0,0.1);
 			
@@ -159,7 +160,6 @@ script "PandorasBox" (void)
 				GiveInventory("GWM_PandoraPointsCap",50);
 				
 				SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
-				SetActorProperty(0,0,APROP_Invulnerable);
 				
 				terminate;
 			}
