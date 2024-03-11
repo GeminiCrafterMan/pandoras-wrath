@@ -30,7 +30,7 @@ script "PandorasBox" (void)
 	
 	wepslot = random(0,11);
 	upgslot = random(0,3);
-	itmslot = random(0,3);
+	itmslot = random(0,2);
     
 	MENUSEL = 1;
 			
@@ -132,6 +132,7 @@ script "PandorasBox" (void)
 			
 			if (buttons & BT_ATTACK && !(oldbuttons & BT_ATTACK) || buttons & BT_USE && !(oldbuttons & BT_USE))
 			{
+				LocalAmbientSound("menu/choose",127);
 				Takeinventory("PowerTimeFreezer2",1);
 				
 				if (menusel == 1)
@@ -153,10 +154,9 @@ script "PandorasBox" (void)
 				
 				if (menusel == 3)
 				{
-					if (itmslot == 0) { GiveInventory("SoulSphere",1);}
+					if (itmslot == 0) { GiveInventory("Soulsphere", 100);} // Requires 100 soulsphere items because Inventory.Amount 100
 					if (itmslot == 1) { GiveInventory("GWM_AssaultArmor",1);}
 					if (itmslot == 2) { GiveInventory("GWM_HellArmor",1);}
-					if (itmslot == 3) { GiveInventory("GWM_MelterHeatsink", 1);}
 				}
 				
 				
