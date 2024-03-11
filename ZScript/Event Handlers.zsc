@@ -21,25 +21,16 @@ class PandoraPointsHandler : StaticEventHandler
 {
 	override void WorldThingDied(WorldEvent e)
 	{
+		let player = players[consoleplayer].mo;
+		
+		if( e.Thing != null)
+			
+			{
 			let victim = e.Thing.GetClassName();
 			let victimHP = e.Thing.SpawnHealth();
 			let killer = e.Thing.target.GetClassName();
 			let killerWep = e.Inflictor.GetClassName();
 			
-		
-			let player = players[consoleplayer].mo;
-			
-			if( e.Thing == null || e.Thing.target == null || e.Inflictor == null)
-			{
-			player.GiveInventory("GWM_PandoraPoints", 15);
-			Super.WorldThingDied(e);
-			}
-			else
-		{
-			
-			if (e.Inflictor != null)
-			{Console.Printf(victim .. " had " .. victimHP .. " spawn health, and was killed by " .. killer .. " using " .. killerWep);}
-			else
 			{Console.Printf(victim .. " had " .. victimHP .. " spawn health, and was killed by " .. killer);}
 			let Xdeathmultiplier = 1;
 			let Elementmultiplier = 1;
@@ -53,13 +44,13 @@ class PandoraPointsHandler : StaticEventHandler
 			
 			e.thing.target.GiveInventory("GWM_PandoraPoints", pointstogive * Xdeathmultiplier * 0.5);
 			player.GiveInventory("GWM_PandoraPoints", pointstogive * Xdeathmultiplier * 0.5 * ElementMultiplier);
+			}
 			
 			Super.WorldThingDied(e);
 		}
 			
 		
 	}
-}
 
 class GWM_PandoraPoints : Inventory
 {
