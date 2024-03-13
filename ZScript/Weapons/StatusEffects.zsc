@@ -175,14 +175,16 @@ Class StatusIceCrystal : Actor
 			ICFX A 1 Bright 
 			{
 				if (target != null)
+				{
 					invoker.Slowcount = target.CountInv("IceSlowCount");
+					if (target.health < 1)
+						SetStateLabel("Death");
+				}
 				else
 					SetStateLabel("Death");
 				A_Warp(AAPTR_TARGET,posX,posY,posZ,0,WARPF_INTERPOLATE);
 				A_SetScale(StartSize+invoker.Slowcount*0.01,StartSize+invoker.Slowcount*0.01);
 			}
-			
-			ICFX A 0 A_JumpIf(target.health < 1, "Death");
 			ICFX A 1 A_JumpIfInTargetInventory("IceSlowCount",1,"Loopit");
 			stop;
 			
