@@ -19,7 +19,7 @@ class GWM_BurstRifle : GWM_WeaponBase
 		Weapon.SlotNumber 4;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoType "GWM_HighCaliberMagazine";
-		Weapon.AmmoGive 31;
+		Weapon.AmmoGive 32; // as opposed to 31, since we're firing in bursts of four now
 		Weapon.UpSound "weapons/draw_primary";
 
 		ZWeapon.MagazineSize 31;
