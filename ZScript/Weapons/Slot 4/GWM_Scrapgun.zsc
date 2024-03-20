@@ -34,6 +34,12 @@ class GWM_Scrapgun : GWM_WeaponBase
 		Select:
 			SCRA A 1 A_Raise(18);
 			Loop;
+			
+		Recoil:
+			TNT1 AAA 1 A_SetPitch(pitch+1.5);
+			TNT1 AAAAAA 1 A_SetPitch(pitch-0.75);
+			Stop;
+			
 		Fire:
 			TNT1 A 0 ZWL_CheckReload();
 			SCRA A 1 Bright {
@@ -42,6 +48,9 @@ class GWM_Scrapgun : GWM_WeaponBase
 				A_Light1();
 				Radius_Quake(6, 3, 0, 1, 0);
 				A_SetPitch(pitch - 1.0);
+				A_Overlay(55,"Recoil");
+				A_ChangeVelocity(-Cos(pitch)*5, 0, sin(pitch)*5,CVF_RELATIVE);
+				
 			}
 			SCRA B 1 Bright A_Light2;
 			SCRA C 1 {
@@ -83,7 +92,7 @@ class GWM_Scrap : FastProjectile
 	Default
 	{
 		// Projectile
-		DamageFunction (6);
+		DamageFunction (8);
 		Decal "ScrapChip";
 		Speed 60;
 		Height 4;

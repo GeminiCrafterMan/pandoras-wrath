@@ -22,7 +22,8 @@ class GWM_ShitShotgunGuy : ShotgunGuy
 		//$Category Monsters
 		//$Title "Shotgun Zombie
 		AttackSound "weapons/zsgshot";
-		DropItem "GWM_ZombieShotgun";
+		DropItem "GWM_ZombieShotgun",85;
+		DropItem "GWM_Shell",175;
 		Obituary "$OB_ZOMBIESHOTGUNGUY";
 		Tag "$TAG_ZOMBIESHOTGUNGUY";
 	}
@@ -82,7 +83,8 @@ class GWM_KahunaShotgunGuy : ShotgunGuy
 		//$Title "Slayer's Kahuna Shotgun Zombie
 		Health 80;
 		AttackSound "weapons/skshot";
-		DropItem "GWM_Shotgun";
+		DropItem "GWM_Shotgun",25;
+		DropItem "GWM_Shell",230;
 		Obituary "$OB_KAHUNASHOTGUNGUY";
 		Tag "$TAG_KAHUNASHOTGUNGUY";
 	}

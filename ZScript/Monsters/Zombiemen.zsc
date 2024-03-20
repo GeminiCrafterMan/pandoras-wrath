@@ -108,7 +108,8 @@ class GWM_SMGGuy : Actor
 		ActiveSound "grunt/active";
 		AttackSound "weapons/smgfire";
 		Obituary "$OB_SMGGUY";
-		DropItem "GWM_SMG";
+		DropItem "GWM_SMG",10;
+		DropItem "GWM_LowCaliberMagazine",255;
 		Monster;
 		+FLOORCLIP
 	}
