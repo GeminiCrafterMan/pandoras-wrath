@@ -88,3 +88,13 @@ misc/gibbed2				"Sounds/gib2.wav"
 misc/gibbed3				"Sounds/gib3.wav"
 
 Status/IceHit iceFrz
+
+menu/activate MOPEN
+menu/backup MSELECT
+menu/prompt MSELECT
+menu/cursor MBROWSE
+menu/change MMOVE
+menu/invalid MSELECT
+menu/dismiss MCLOSE
+menu/choose MYES
+menu/clear MCLOSE
