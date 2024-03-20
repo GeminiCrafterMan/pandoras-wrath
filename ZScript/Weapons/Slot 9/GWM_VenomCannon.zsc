@@ -325,21 +325,21 @@ class GWM_FloorAcidPuddle : GWM_AcidProjectile
 			TNT1 A 0 A_JumpIf(random(0, 1), "Puddle2");
 		Puddle1:
 			VNMP G 1 {self.Vel.X = 0; self.Vel.Y = 0;
-			if (scalex < 3.1) {A_Setscale(scalex+0.001,scalex+0.001);}
-			if (scalex < 2.8) {A_Setscale(scalex+0.001,scalex+0.001);}
-			if (scalex < 2.6) {A_Setscale(scalex+0.001,scalex+0.001);}}
+			if (Scale.X < 3.1) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 2.8) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 2.6) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
 			Loop;
 		Puddle2:
 			VNMP H 1 {self.Vel.X = 0; self.Vel.Y = 0;
-			if (scalex < 3.1) {A_Setscale(scalex+0.001,scalex+0.001);}
-			if (scalex < 2.8) {A_Setscale(scalex+0.001,scalex+0.001);}
-			if (scalex < 2.6) {A_Setscale(scalex+0.001,scalex+0.001);}}
+			if (Scale.X < 3.1) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 2.8) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 2.6) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
 			Loop;
 		Puddle3:
 			VNMP I 1 {self.Vel.X = 0; self.Vel.Y = 0;
-			if (scalex < 3.1) {A_Setscale(scalex+0.001,scalex+0.001);}
-			if (scalex < 2.8) {A_Setscale(scalex+0.001,scalex+0.001);}
-			if (scalex < 2.6) {A_Setscale(scalex+0.001,scalex+0.001);}}
+			if (Scale.X < 3.1) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 2.8) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 2.6) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
 			Loop;
 	}
 }
@@ -418,21 +418,21 @@ class GWM_SmallFloorAcidPuddle : GWM_AcidProjectile
 			TNT1 A 0 A_JumpIf(random(0, 1), "Puddle2");
 		Puddle1:
 			VNMP G 1 {self.Vel.X = 0; self.Vel.Y = 0; 
-			if (scalex < 1.5) {A_Setscale(scalex+0.001,scalex+0.001);}
-			if (scalex < 1.4) {A_Setscale(scalex+0.001,scalex+0.001);}
-			if (scalex < 1.2) {A_Setscale(scalex+0.001,scalex+0.001);}}
+			if (Scale.X < 1.5) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 1.4) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 1.2) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
 			Loop;
 		Puddle2:
 			VNMP H 1 {self.Vel.X = 0; self.Vel.Y = 0;
-			if (scalex < 1.5) {A_Setscale(scalex+0.001,scalex+0.001);}
-			if (scalex < 1.4) {A_Setscale(scalex+0.001,scalex+0.001);}
-			if (scalex < 1.2) {A_Setscale(scalex+0.001,scalex+0.001);}}
+			if (Scale.X < 1.5) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 1.4) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 1.2) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
 			Loop;
 		Puddle3:
 			VNMP I 1 {self.Vel.X = 0; self.Vel.Y = 0;
-			if (scalex < 1.5) {A_Setscale(scalex+0.001,scalex+0.001);}
-			if (scalex < 1.4) {A_Setscale(scalex+0.001,scalex+0.001);}
-			if (scalex < 1.2) {A_Setscale(scalex+0.001,scalex+0.001);}}
+			if (Scale.X < 1.5) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 1.4) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 1.2) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
 			Loop;
 	}
 }
@@ -489,13 +489,13 @@ class GWM_MicroFloorAcidPuddle : Actor
 			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Puddle3");
 			TNT1 A 0 A_JumpIf(random(0, 1), "Puddle2");
 		Puddle1:
-			VNMP G 1 {self.Vel.X = 0; self.Vel.Y = 0; A_Setscale(scalex*1.001,scalex*1.001); A_Fadeout(0.008);}
+			VNMP G 1 {self.Vel.X = 0; self.Vel.Y = 0; A_Setscale(Scale.X*1.001,Scale.X*1.001); A_Fadeout(0.008);}
 			Loop;
 		Puddle2:
-			VNMP H 1 {self.Vel.X = 0; self.Vel.Y = 0; A_Setscale(scalex*1.001,scalex*1.001); A_Fadeout(0.008);}
+			VNMP H 1 {self.Vel.X = 0; self.Vel.Y = 0; A_Setscale(Scale.X*1.001,Scale.X*1.001); A_Fadeout(0.008);}
 			Loop;
 		Puddle3:
-			VNMP I 1 {self.Vel.X = 0; self.Vel.Y = 0; A_Setscale(scalex*1.001,scalex*1.001); A_Fadeout(0.008);}
+			VNMP I 1 {self.Vel.X = 0; self.Vel.Y = 0; A_Setscale(Scale.X*1.001,Scale.X*1.001); A_Fadeout(0.008);}
 			Loop;
 	}
 }

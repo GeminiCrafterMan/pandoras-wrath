@@ -235,13 +235,11 @@ script "PandorasBox" (void)
 				
 				if (menusel == 2) //ITEM
 				{
-					if (refslot == 1) {GiveInventory("SoulSphere",100);}
-					if (refslot == 1) {GiveInventory("GWM_AssaultArmor",1);}
-					if (refslot == 1) {GiveInventory("GWM_HellArmor",1);}
-					if (refslot == 1) {GiveInventory("GWM_Bombsuit",1);}
-					if (refslot == 1) {GiveInventory("GWM_Heatsink",1);}
-					
-					
+					if (itmslot == 0) {GiveInventory("SoulSphere",100);}
+					if (itmslot == 1) {GiveInventory("GWM_AssaultArmor",1);}
+					if (itmslot == 2) {GiveInventory("GWM_HellArmor",1);}
+					if (itmslot == 3) {GiveInventory("GWM_Bombsuit",1);}
+					if (itmslot == 4) {GiveInventory("GWM_MelterHeatsink",1);}
 				}
 				
 				if (menusel == 3) //REFILL
