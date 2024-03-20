@@ -1,3 +1,6 @@
+class GWM_Speedupgrades : Inventory { Default {Inventory.Maxamount 50000;}}
+class GWM_HPupgrade : UpgradeStamina { Default {Inventory.Maxamount 9900;}}
+
 class GWM_Player : DoomPlayer
 {
 	int prevPlayerState;
@@ -36,10 +39,7 @@ class GWM_Player : DoomPlayer
 			player.ReadyWeapon.FOVScale = 0.0;
 		}
 		
-		
-		self.speed = 1 - (0.004 *self.CountInv("IceSlowCount"));	
-		TakeInventory("IceSlowCount",1);
-		
+	
 		if(self.CountInv("FireBurnCount") && self.FireBurnDelay > 15)
 		{ 
 		A_DamageSelf(1,"Fire");
@@ -58,7 +58,7 @@ class GWM_Player : DoomPlayer
 		
 		self.AcidWeakDelay = self.AcidWeakDelay + 1;
 		
-		self.speed = 1 - (0.004 *self.CountInv("IceSlowCount"));	
+		self.speed = 1 + (0.2*self.CountInv("GWM_Speedupgrades")) - (0.004 *self.CountInv("IceSlowCount"));	
 		TakeInventory("IceSlowCount",1);
 		
 		if (ChargedRocketDelay > 1050)

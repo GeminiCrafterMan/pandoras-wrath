@@ -19,6 +19,7 @@ script "PandorasBox" (void)
 	
 	int wepslot;
 	int upgslot;
+	int refslot;
 	int itmslot;
 	
 	
@@ -28,11 +29,12 @@ script "PandorasBox" (void)
 	SetHudSize(360,256,0);
 	Delay(1);
 	
-	wepslot = random(0,11);
-	upgslot = random(0,3);
-	itmslot = random(0,2);
+	wepslot = random(0,16);
+	upgslot = random(0,10);
+	itmslot = random(0,4);
+    refslot = random(0,7);
     
-	MENUSEL = 1;
+	MENUSEL = 0;
 			
 	while(1)
     {
@@ -62,102 +64,225 @@ script "PandorasBox" (void)
 			
 			if (buttons & BT_FORWARD && !(oldbuttons & BT_FORWARD))
 			{
-				if(menusel!=4) {}
+				if(menusel==3) 
+				{
+					LocalAmbientSound("menu/cursor",127);
+					menusel = 0;
+				}
+				else
+				if(menusel==1) 	{}
 				else
 				{
 					LocalAmbientSound("menu/cursor",127);
-					menusel = 2;
+					menusel = 1;
 				}
 			}
 
 			if (buttons & BT_BACK && !(oldbuttons & BT_BACK))
 			{
-				if(menusel==4) {}
+				if(menusel==1) 
+				{
+					LocalAmbientSound("menu/cursor",127);
+					menusel = 0;
+				}
+				else
+				if(menusel==3) 	{}
 				else
 				{
 					LocalAmbientSound("menu/cursor",127);
-					menusel = 4;
+					menusel = 3;
 				}
 			}
 			
 
 			if (buttons & BT_MOVELEFT && !(oldbuttons & BT_MOVELEFT))
 			{
-				if (menusel==4||menusel==1) {}
+				if(menusel==2) 
+				{
+					LocalAmbientSound("menu/cursor",127);
+					menusel = 0;
+				}
+				else
+				if(menusel==4) 	{}
 				else
 				{
 					LocalAmbientSound("menu/cursor",127);
-					menusel = menusel-1;
+					menusel = 4;
 				}
 			}
 
 			if (buttons & BT_MOVERIGHT && !(oldbuttons & BT_MOVERIGHT))
 			{
-				if (menusel==4||menusel==3) {}
+				if(menusel==4) 
+				{
+					LocalAmbientSound("menu/cursor",127);
+					menusel = 0;
+				}
+				else
+				if(menusel==2) 	{}
 				else
 				{
 					LocalAmbientSound("menu/cursor",127);
-					menusel = menusel+1;
+					menusel = 2;
 				}
 			}
 			
-			if (menusel == 1) { SetFont("SMALLFONT"); HudMessage(s:"X";HUDMSG_PLAIN,88,0,100.0,100.0,0.06);}
-			if (menusel == 2) { SetFont("SMALLFONT"); HudMessage(s:"X";HUDMSG_PLAIN,88,0,180.0,100.0,0.06);}
-			if (menusel == 3) { SetFont("SMALLFONT"); HudMessage(s:"X";HUDMSG_PLAIN,88,0,260.0,100.0,0.06);}
-			if (menusel == 4) { SetFont("SMALLFONT"); HudMessage(s:"X";HUDMSG_PLAIN,88,0,180.0,215.0,0.06);}
+			if (wepslot == 1 && CheckInventory("GWM_MP40")) {restart;}
+			if (wepslot == 2 && CheckInventory("GWM_Revolver")) {restart;}
+			if (wepslot == 3 && CheckInventory("GWM_Shotgun")) {restart;}
+			if (wepslot == 4 && CheckInventory("GWM_SuperShotgun")) {restart;}
+			if (wepslot == 5 && CheckInventory("GWM_Scrapgun")) {restart;}
+			if (wepslot == 6 && CheckInventory("GWM_MadVulcan")) {restart;}
+			if (wepslot == 7 && CheckInventory("GWM_BurstRifle")) {restart;}
+			if (wepslot == 8 && CheckInventory("GWM_RocketLauncher")) {restart;}
+			if (wepslot == 9 && CheckInventory("GWM_Bouncer")) {restart;}
+			if (wepslot == 10 && CheckInventory("GWM_Stomper")) {restart;}
+			if (wepslot == 11 && CheckInventory("GWM_PlasmaRifle")) {restart;}
+			if (wepslot == 12 && CheckInventory("GWM_NoiseCrusher")) {restart;}
+			if (wepslot == 13 && CheckInventory("GWM_VenomCannon")) {restart;}
+			if (wepslot == 14 && CheckInventory("GWM_IceShotgun")) {restart;}
+			if (wepslot == 15 && CheckInventory("GWM_Flamethrower")) {restart;}
+			if (wepslot == 16 && CheckInventory("GWM_Perforator")) {restart;}
 			
-			if (wepslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"MP40";HUDMSG_PLAIN,1,0,100.0,100.0,0.06);}
-			if (wepslot == 1) { SetFont("SMALLFONT"); HudMessage(s:"Kahuna";HUDMSG_PLAIN,1,0,100.0,100.0,0.06);}
-			if (wepslot == 2) { SetFont("SMALLFONT"); HudMessage(s:"SSG";HUDMSG_PLAIN,1,0,100.0,100.0,0.06);}
-			if (wepslot == 3) { SetFont("SMALLFONT"); HudMessage(s:"ScrapGun";HUDMSG_PLAIN,1,0,100.0,100.0,0.06);}
-			if (wepslot == 4) { SetFont("SMALLFONT"); HudMessage(s:"Magnum";HUDMSG_PLAIN,1,0,100.0,100.0,0.06);}
-			if (wepslot == 5) { SetFont("SMALLFONT"); HudMessage(s:"AcidGun";HUDMSG_PLAIN,1,0,100.0,100.0,0.06);}
-			if (wepslot == 6) { SetFont("SMALLFONT"); HudMessage(s:"Flamer";HUDMSG_PLAIN,1,0,100.0,100.0,0.06);}
-			if (wepslot == 7) { SetFont("SMALLFONT"); HudMessage(s:"IceShot";HUDMSG_PLAIN,1,0,100.0,100.0,0.06);}
-			if (wepslot == 8) { SetFont("SMALLFONT"); HudMessage(s:"Rocket";HUDMSG_PLAIN,1,0,100.0,100.0,0.06);}
-			if (wepslot == 9) { SetFont("SMALLFONT"); HudMessage(s:"Plasma";HUDMSG_PLAIN,1,0,100.0,100.0,0.06);}
-			if (wepslot == 10) { SetFont("SMALLFONT"); HudMessage(s:"Perforator";HUDMSG_PLAIN,1,0,100.0,100.0,0.06);}
-			if (wepslot == 11) { SetFont("SMALLFONT"); HudMessage(s:"Stomper";HUDMSG_PLAIN,1,0,100.0,100.0,0.06);}
-			
-			if (itmslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"SoulSphere";HUDMSG_PLAIN,3,0,260.0,100.0,0.06);}
-			if (itmslot == 1) { SetFont("SMALLFONT"); HudMessage(s:"Assault Armor";HUDMSG_PLAIN,3,0,260.0,100.0,0.06);}
-			if (itmslot == 2) { SetFont("SMALLFONT"); HudMessage(s:"HellFire Armor";HUDMSG_PLAIN,3,0,260.0,100.0,0.06);}
-			if (itmslot == 3) { SetFont("SMALLFONT"); HudMessage(s:"Melter Heatsink";HUDMSG_PLAIN,3,0,260.0,100.0,0.06);}
+			if (menusel == 0) { SetFont("SMALLFONT"); HudMessage(s:"X";HUDMSG_PLAIN,88,0,180.0,140.0,0.06);}
+			if (menusel == 1) { SetFont("SMALLFONT"); HudMessage(s:"X";HUDMSG_PLAIN,88,0,180.0,120.0,0.06);}
+			if (menusel == 2) { SetFont("SMALLFONT"); HudMessage(s:"X";HUDMSG_PLAIN,88,0,200.0,140.0,0.06);}
+			if (menusel == 3) { SetFont("SMALLFONT"); HudMessage(s:"X";HUDMSG_PLAIN,88,0,180.0,160.0,0.06);}
+			if (menusel == 4) { SetFont("SMALLFONT"); HudMessage(s:"X";HUDMSG_PLAIN,88,0,160.0,140.0,0.06);}
 			
 			
-			if (menusel == 1) {HudMessage(s:"Pick a Weapon";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1);}
-			if (menusel == 2) {HudMessage(s:"Obtain an upgrade";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1);}
-			if (menusel == 3) {HudMessage(s:"Obtain an item";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1);}
-			if (menusel == 4) {HudMessage(s:"Go to Extra Screen.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1);}
+			
+			if (menusel == 0) {HudMessage(s:"Let fate decide";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1);}
+			if (menusel == 1) {HudMessage(s:"Obtain an upgrade";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1);}
+			if (menusel == 2) {HudMessage(s:"Gain an item.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1);}
+			if (menusel == 3) {HudMessage(s:"Refill a supply.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1);}
+			if (menusel == 4) {HudMessage(s:"Obtain a weapon.";HUDMSG_PLAIN,13,CR_WHITE,180.0,248.0,0.1);}
+			
+			//SLOT 1 (UPGRADE)
+			if (upgslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"+Health";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+			if (upgslot == 1) { SetFont("SMALLFONT"); HudMessage(s:"+Speed";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+			if (upgslot == 2) { SetFont("SMALLFONT"); HudMessage(s:"+Defense";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+			if (upgslot == 3) { SetFont("SMALLFONT"); HudMessage(s:"+Bullets";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+			if (upgslot == 4) { SetFont("SMALLFONT"); HudMessage(s:"+Shells";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+			if (upgslot == 5) { SetFont("SMALLFONT"); HudMessage(s:"+HiCal";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+			if (upgslot == 6) { SetFont("SMALLFONT"); HudMessage(s:"+Rockets";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+			if (upgslot == 7) { SetFont("SMALLFONT"); HudMessage(s:"+Cells";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+			if (upgslot == 8) { SetFont("SMALLFONT"); HudMessage(s:"+IceShell";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+			if (upgslot == 9) { SetFont("SMALLFONT"); HudMessage(s:"+Acid";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+			if (upgslot == 10) { SetFont("SMALLFONT"); HudMessage(s:"+Flame";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+			
+			//SLOT 2 (ITEMS)
+			if (itmslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"SoulSphere";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
+			if (itmslot == 1) { SetFont("SMALLFONT"); HudMessage(s:"Assault Armmor";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
+			if (itmslot == 2) { SetFont("SMALLFONT"); HudMessage(s:"HellFire Armor";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
+			if (itmslot == 3) { SetFont("SMALLFONT"); HudMessage(s:"Bomb Suit";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
+			if (itmslot == 4) { SetFont("SMALLFONT"); HudMessage(s:"Heatsink";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
+			
+			//SLOT 3 (REFILL)
+			if (refslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"Health";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+			if (refslot == 1) { SetFont("SMALLFONT"); HudMessage(s:"Armor";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+			if (refslot == 2) { SetFont("SMALLFONT"); HudMessage(s:"LowCal";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+			if (refslot == 3) { SetFont("SMALLFONT"); HudMessage(s:"Shells";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+			if (refslot == 4) { SetFont("SMALLFONT"); HudMessage(s:"HiCal";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+			if (refslot == 5) { SetFont("SMALLFONT"); HudMessage(s:"Rocket";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+			if (refslot == 6) { SetFont("SMALLFONT"); HudMessage(s:"Cells";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+			if (refslot == 7) { SetFont("SMALLFONT"); HudMessage(s:"Element";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+			
+			//SLOT 4 (WEAPON)
+			if (wepslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"SMG";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 1) { SetFont("SMALLFONT"); HudMessage(s:"MP40";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 2) { SetFont("SMALLFONT"); HudMessage(s:"Magnum";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 3) { SetFont("SMALLFONT"); HudMessage(s:"Kahuna";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 4) { SetFont("SMALLFONT"); HudMessage(s:"Super Shotgun";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 5) { SetFont("SMALLFONT"); HudMessage(s:"Scrapgun";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 6) { SetFont("SMALLFONT"); HudMessage(s:"Mad Vulcan";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 7) { SetFont("SMALLFONT"); HudMessage(s:"Burst Rifle";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 8) { SetFont("SMALLFONT"); HudMessage(s:"Rocket Launcher";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 9) { SetFont("SMALLFONT"); HudMessage(s:"Bouncer";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 10) { SetFont("SMALLFONT"); HudMessage(s:"Stomper";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 11) { SetFont("SMALLFONT"); HudMessage(s:"Plasma Rifle";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 12) { SetFont("SMALLFONT"); HudMessage(s:"Noise Crush";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 13) { SetFont("SMALLFONT"); HudMessage(s:"VenomCannon";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 14) { SetFont("SMALLFONT"); HudMessage(s:"Ice Shotgun";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 15) { SetFont("SMALLFONT"); HudMessage(s:"FlameShot";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			if (wepslot == 16) { SetFont("SMALLFONT"); HudMessage(s:"Perforator";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+			
+			
+
+					
 			
 			if (buttons & BT_ATTACK && !(oldbuttons & BT_ATTACK) || buttons & BT_USE && !(oldbuttons & BT_USE))
 			{
 				LocalAmbientSound("menu/choose",127);
 				Takeinventory("PowerTimeFreezer2",1);
 				
-				if (menusel == 1)
+				
+				
+				if (menusel == 1) //UPGRADE
 				{
-					if (wepslot == 0) { GiveInventory("GWM_MP40",1);}
-					if (wepslot == 1) { GiveInventory("GWM_Shotgun",1);}
-					if (wepslot == 2) { GiveInventory("GWM_SuperShotgun",1);}
-					if (wepslot == 3) { GiveInventory("GWM_Scrapgun",1);}
-					if (wepslot == 4) { GiveInventory("GWM_Revolver",1);}
-					if (wepslot == 5) { GiveInventory("GWM_VenomCannon",1);}
-					if (wepslot == 6) { GiveInventory("GWM_Flamethrower",1);}
-					if (wepslot == 7) { GiveInventory("GWM_IceShotgun",1);}
+					if (upgslot == 0) { GiveInventory("GWM_HPupgrade", 50);}
+					if (upgslot == 1) { GiveInventory("GWM_Speedupgrades", 1);}
+					//if (upgslot == 2) { GiveInventory("GWM_Defenseupgrades", 1);}
+					if (upgslot == 3) { SetAmmoCapacity("GWM_LowCaliberMagazine",GetAmmoCapacity("GWM_LowCaliberMagazine")+150);}
+					if (upgslot == 4) { SetAmmoCapacity("GWM_Shell",GetAmmoCapacity("GWM_Shell")+25);}
+					if (upgslot == 5) { SetAmmoCapacity("GWM_HighCaliberMagazine",GetAmmoCapacity("GWM_HighCaliberMagazine")+100);}
+					if (upgslot == 6) { SetAmmoCapacity("GWM_RocketAmmo",GetAmmoCapacity("GWM_RocketAmmo")+20);}
+					if (upgslot == 7) { SetAmmoCapacity("GWM_Cell",GetAmmoCapacity("GWM_Cell")+175);}
+					if (upgslot == 8) { SetAmmoCapacity("GWM_IceShell",GetAmmoCapacity("GWM_IceShell")+20);}
+					if (upgslot == 9) { SetAmmoCapacity("GWM_VenomVial",GetAmmoCapacity("GWM_VenomVial")+10);}
+					if (upgslot == 10) { SetAmmoCapacity("GWM_GasCanister",GetAmmoCapacity("GWM_GasCanister")+10);}
+				}
+				
+				if (menusel == 2) //ITEM
+				{
+					if (refslot == 1) {GiveInventory("SoulSphere",100);}
+					if (refslot == 1) {GiveInventory("GWM_AssaultArmor",1);}
+					if (refslot == 1) {GiveInventory("GWM_HellArmor",1);}
+					if (refslot == 1) {GiveInventory("GWM_Bombsuit",1);}
+					if (refslot == 1) {GiveInventory("GWM_Heatsink",1);}
+					
+					
+				}
+				
+				if (menusel == 3) //REFILL
+				{
+					if (refslot == 0) {HealThing(500);}
+					if (refslot == 1) {GiveInventory("GWM_CombatArmor",1);}
+					if (refslot == 2) {GiveInventory("GWM_LowCaliberMagazine",200);}
+					if (refslot == 3) {GiveInventory("GWM_Shell",100);}
+					if (refslot == 4) {GiveInventory("GWM_HighCaliberMagazine",400);}
+					if (refslot == 5) {GiveInventory("GWM_RocketAmmo",200);}
+					if (refslot == 6) {GiveInventory("GWM_Cells",200);}
+					if (refslot == 7) {
+					GiveInventory("GWM_IceShell",200);
+					GiveInventory("GWM_VenomVial",200);
+					GiveInventory("GWM_GasCanister",200);
+					}
+				}
+				
+				if (menusel == 4) //WEAPON
+				{
+					if (wepslot == 0) { GiveInventory("GWM_SMG",1);}
+					if (wepslot == 1) { GiveInventory("GWM_MP40",1);}
+					if (wepslot == 2) { GiveInventory("GWM_Revolver",1);}
+					if (wepslot == 3) { GiveInventory("GWM_Shotgun",1);}
+					if (wepslot == 4) { GiveInventory("GWM_SuperShotgun",1);}
+					if (wepslot == 5) { GiveInventory("GWM_Scrapgun",1);}
+					if (wepslot == 6) { GiveInventory("GWM_MadVulcan",1);}
+					if (wepslot == 7) { GiveInventory("GWM_BurstRifle",1);}
 					if (wepslot == 8) { GiveInventory("GWM_RocketLauncher",1);}
-					if (wepslot == 9) { GiveInventory("GWM_PlasmaRifle",1);}
-					if (wepslot == 10) { GiveInventory("GWM_Perforator",1);}
-					if (wepslot == 11) { GiveInventory("GWM_Stomper",1);}
+					if (wepslot == 9) { GiveInventory("GWM_Bouncer",1);}
+					if (wepslot == 10) { GiveInventory("GWM_Stomper",1);}
+					if (wepslot == 11) { GiveInventory("GWM_PlasmaRifle",1);}
+					if (wepslot == 12) { GiveInventory("GWM_NoiseCrusher",1);}
+					if (wepslot == 13) { GiveInventory("GWM_VenomCannon",1);}
+					if (wepslot == 14) { GiveInventory("GWM_IceShotgun",1);}
+					if (wepslot == 15) { GiveInventory("GWM_Flamethrower",1);}
+					if (wepslot == 16) { GiveInventory("GWM_Perforator",1);}
+
 				}
 				
 				
-				if (menusel == 3)
-				{
-					if (itmslot == 0) { GiveInventory("Soulsphere", 100);} // Requires 100 soulsphere items because Inventory.Amount 100
-					if (itmslot == 1) { GiveInventory("GWM_AssaultArmor",1);}
-					if (itmslot == 2) { GiveInventory("GWM_HellArmor",1);}
-				}
 				
 				
 				Takeinventory("GWM_PandoraPoints",CheckInventory("GWM_PandoraPointsCap"));
