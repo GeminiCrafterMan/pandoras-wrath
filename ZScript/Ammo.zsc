@@ -8,7 +8,6 @@ class GWM_LowCaliberMagazine : Ammo
 		Inventory.Amount 10;
 		Inventory.MaxAmount 200;
 		Ammo.BackpackAmount 10;
-		Ammo.BackpackMaxAmount 400;
 		Inventory.Icon "MAGZA0";
 		Inventory.PickupSound "pickups/magazine";
 	}
@@ -45,9 +44,8 @@ class GWM_HighCaliberMagazine : Ammo
 		//$Title "High-caliber Magazine
 		Inventory.PickupMessage "$GOTHIGHCALMAG";
 		Inventory.Amount 10;
-		Inventory.MaxAmount 200;
+		Inventory.MaxAmount 300;
 		Ammo.BackpackAmount 10;
-		Ammo.BackpackMaxAmount 400;
 		Inventory.Icon "MAGZB0";
 		Inventory.PickupSound "pickups/magazine";
 	}
@@ -87,7 +85,6 @@ class GWM_Shell : Ammo
 		Inventory.Amount 4;
 		Inventory.MaxAmount 50;
 		Ammo.BackpackAmount 4;
-		Ammo.BackpackMaxAmount 100;
 		Inventory.Icon "SHELA0";
 	}
 	States
@@ -123,9 +120,8 @@ class GWM_IceShell : Ammo
 		Inventory.PickupSound "pickups/shells";
 		Inventory.PickupMessage "$GOTICESHELLS";
 		Inventory.Amount 4;
-		Inventory.MaxAmount 50;
+		Inventory.MaxAmount 25;
 		Ammo.BackpackAmount 4;
-		Ammo.BackpackMaxAmount 100;
 		Inventory.Icon "SHELB0";
 	}
 	States
@@ -160,9 +156,8 @@ class GWM_RocketAmmo : Ammo
 		//$Title "Rocket
 		Inventory.PickupMessage "$GOTROCKET";
 		Inventory.Amount 1;
-		Inventory.MaxAmount 50;
+		Inventory.MaxAmount 30;
 		Ammo.BackpackAmount 1;
-		Ammo.BackpackMaxAmount 100;
 		Inventory.Icon "ROCKA0";
 	}
 	States
@@ -197,9 +192,8 @@ class GWM_VenomVial : Ammo
 		//$Title "Venom Vial
 		Inventory.PickupMessage "$GOTVENOMVIAL";
 		Inventory.Amount 1;
-		Inventory.MaxAmount 50;
-		Ammo.BackpackAmount 1;
-		Ammo.BackpackMaxAmount 100;
+		Inventory.MaxAmount 20;
+		Ammo.BackpackAmount 2;
 		Inventory.Icon "VNMVC0";
 	}
 	States
@@ -234,7 +228,6 @@ class GWM_MineAmmo : Ammo
 		Inventory.Amount 1;
 		Inventory.MaxAmount 50;
 		Ammo.BackpackAmount 1;
-		Ammo.BackpackMaxAmount 100;
 		Inventory.Icon "MINEZ0";
 	}
 	States
@@ -253,7 +246,6 @@ class GWM_DynamiteAmmo : Ammo
 		Inventory.Amount 1;
 		Inventory.MaxAmount 50;
 		Ammo.BackpackAmount 1;
-		Ammo.BackpackMaxAmount 100;
 		Inventory.Icon "DYNWZ0";
 	}
 	States
@@ -272,9 +264,8 @@ class GWM_Cell : Ammo
 		//$Title "Power Cell
 		Inventory.PickupMessage "$GOTCELL";
 		Inventory.Amount 20;
-		Inventory.MaxAmount 300;
+		Inventory.MaxAmount 250;
 		Ammo.BackpackAmount 20;
-		Ammo.BackpackMaxAmount 600;
 		Inventory.Icon "CELLA0";
 	}
 	States
@@ -317,10 +308,9 @@ class GWM_GasCanister : Ammo
 		//$Category Ammo
 		//$Title "Gas Canister
 		Inventory.PickupSound "pickups/gas";
-		Inventory.Amount 24;
-		Inventory.MaxAmount 240;
-		Ammo.BackpackAmount 12;
-		Ammo.BackpackMaxAmount 480;
+		Inventory.Amount 3;
+		Inventory.MaxAmount 20;
+		Ammo.BackpackAmount 5;
 		Inventory.PickupMessage "$GOTGASCANISTER";
 		Inventory.Icon "AGASA0";
 	}
@@ -337,7 +327,7 @@ class GWM_GasPack : GWM_GasCanister
 	{
 		//$Category Ammo
 		//$Title "Pack of Gas Canisters
-		Inventory.Amount 48;
+		Inventory.Amount 10;
 		Inventory.PickupMessage "$GOTGASPACK";
 	}
 	States
@@ -357,7 +347,6 @@ class GWM_ImpalerBolts : Ammo replaces CrossbowAmmo
 		Inventory.MaxAmount 40;
 		Inventory.Icon "CBWAA0";
 		Ammo.BackpackAmount 2;
-		Ammo.BackpackMaxAmount 80;
 	}
 	States
 	{
@@ -389,7 +378,6 @@ Class GWM_EverIce : Ammo replaces BlasterAmmo
 		Inventory.Amount 25;
 		Inventory.MaxAmount 200;
 		Ammo.BackpackAmount 25;
-		Ammo.BackpackMaxAmount 400;
 		Inventory.Icon "EICEI0";
 		Scale 0.4;
 	}
@@ -444,9 +432,8 @@ class GWM_ScrapDrum : Ammo
 		Tag "Scrap Drum";
 		Inventory.PickupMessage "$GOTSCRAPDRUM";
 		Inventory.Amount 4;
-		Inventory.MaxAmount 50;
+		Inventory.MaxAmount 20;
 		Ammo.BackpackAmount 4;
-		Ammo.BackpackMaxAmount 100;
 		Inventory.Icon "SCRPA0";
 		Inventory.PickupSound "weapons/getscrapshell";
 	}
@@ -483,9 +470,8 @@ class GWM_StomperAmmo : Ammo
 		Tag "Stomper Missiles";
 		Inventory.PickupMessage "$GOTSTOMPERAMMO";
 		Inventory.Amount 3;
-		Inventory.MaxAmount 50;
+		Inventory.MaxAmount 20;
 		Ammo.BackpackAmount 3;
-		Ammo.BackpackMaxAmount 100;
 		Inventory.PickupSound "weapons/getstomperrockets";
 		Inventory.Icon "STMPA0";
 	}
