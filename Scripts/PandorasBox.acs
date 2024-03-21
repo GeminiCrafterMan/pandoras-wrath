@@ -250,7 +250,7 @@ script "PandorasBox" (void)
 					if (refslot == 3) {GiveInventory("GWM_Shell",100);}
 					if (refslot == 4) {GiveInventory("GWM_HighCaliberMagazine",400);}
 					if (refslot == 5) {GiveInventory("GWM_RocketAmmo",200);}
-					if (refslot == 6) {GiveInventory("GWM_Cells",200);}
+					if (refslot == 6) {GiveInventory("GWM_Cell",200);}
 					if (refslot == 7) {
 					GiveInventory("GWM_IceShell",200);
 					GiveInventory("GWM_VenomVial",200);
