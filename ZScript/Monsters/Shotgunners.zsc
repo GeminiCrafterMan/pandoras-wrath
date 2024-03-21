@@ -22,8 +22,7 @@ class GWM_ShitShotgunGuy : ShotgunGuy
 		//$Category Monsters
 		//$Title "Shotgun Zombie
 		AttackSound "weapons/zsgshot";
-		DropItem "GWM_ZombieShotgun",85;
-		DropItem "GWM_Shell",175;
+		DropItem "GWM_ZombieShotgun";
 		Obituary "$OB_ZOMBIESHOTGUNGUY";
 		Tag "$TAG_ZOMBIESHOTGUNGUY";
 	}
