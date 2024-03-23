@@ -22,6 +22,17 @@ decalgroup DefaultBulletChip
 	BulletChip5	1
 }
 
+decal BulletChip
+{
+	Pic PUFFA0
+	Add 1.0
+	FullBright
+	Animator GoAway
+	X-scale 0.45
+	Y-scale 0.45
+	LowerDecal DefaultBulletChip
+}
+
 decal ScrapChip
 {
 	Pic SCTRY0
