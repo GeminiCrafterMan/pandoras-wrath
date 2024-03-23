@@ -76,7 +76,7 @@ class GWM_Player : DoomPlayer
 	{
 		Player.DisplayName "Mercenary";
 		Player.SoundClass "GWM_Player";
-		Player.WeaponSlot 1, "GWM_Fists", "GWM_Lumberjack";
+		Player.WeaponSlot 1, "GWM_Fist", "GWM_Lumberjack";
 		Player.WeaponSlot 2, "GWM_Pistol";
 		Player.WeaponSlot 3, "GWM_Shotgun", "GWM_SuperShotgun";
 		Player.WeaponSlot 4, "GWM_Chaingun";
@@ -95,7 +95,7 @@ class GWM_DoomPlayer : GWM_Player
 	{
 		Player.StartItem "GWM_IsPlayer";
 		Player.StartItem "GWM_Pistol";
-		Player.StartItem "GWM_Fists";
+		Player.StartItem "GWM_Fist";
 		Player.StartItem "GWM_Mine";
 		Player.StartItem "GWM_Dynamite";
 		Player.StartItem "GWM_LowCaliberMagazine", 50;
@@ -110,7 +110,7 @@ class GWM_HereticPlayer : GWM_Player
 	{
 		Player.StartItem "GWM_IsPlayer";
 		Player.StartItem "GWM_GoldWand";
-		Player.StartItem "GWM_Fists";
+		Player.StartItem "GWM_Fist";
 		Player.StartItem "GoldWandAmmo", 50;
 		Player.StartItem "GWM_QuickKickController";
 		Player.StartItem "GWM_PandoraPointsCap", 250;

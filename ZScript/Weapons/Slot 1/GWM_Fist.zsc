@@ -1,0 +1,152 @@
+// Super Skulltag's fist weapon rewritten in ZScript.
+class GWM_Fist : GWM_WeaponBase replaces Fist
+{
+	Default
+	{
+		Weapon.SelectionOrder 3700;
+		Weapon.UpSound "weapons/draw_fist";
+		+INVENTORY.UNDROPPABLE
+		+WEAPON.NOAUTOFIRE
+		+WEAPON.NOALERT
+		+WEAPON.WIMPY_WEAPON
+		+WEAPON.MELEEWEAPON
+		+WEAPON.NOAUTOSWITCHTO
+		Obituary "$KILLFISTS";
+		Tag "$TAG_FISTS";
+		AttackSound "weapons/fist_hit";
+	}
+	States
+	{
+		Ready:
+			FIST B 1 A_WeaponReady;
+			Loop;
+		Deselect:
+			FIST B 1 A_Lower(18);
+			Loop;
+		Select:
+			FIST B 1 A_Raise(18);
+			Loop;
+		Fire:
+			FIST C 0 A_JumpIfInventory("PowerStrength", 1, "Fire.Berserk");
+		Fire1:
+			FIST TC 1;
+			FIST D 0 A_StartSound("weapons/fistjab", CHAN_WEAPON);
+			FIST G 1 A_CustomPunch(11, 1, CPF_NOTURN, "GWM_FistPuff");
+		Hold:
+			FIST C 0 A_JumpIfInventory("PowerStrength", 1, "Hold.Berserk");
+			PLA3 A 0 A_JumpIf((Vel.X+Vel.Y+Vel.Z > 10) || (Vel.X+Vel.Y+Vel.Z < -10), "RunningPunch");
+			FIST G 1;
+			FIST G 0 A_ReFire;
+			FIST FE 1;
+			FIST D 1 A_WeaponReady;
+			FIST CC 35 A_WeaponReady;
+			Goto Ready;
+		RunningPunch:
+			FIST G 3 A_CustomPunch(11, 1, CPF_NOTURN, "GWM_FistPuff");
+			FIST G 0 A_ReFire;
+			FIST FE 1;
+			FIST D 1 A_WeaponReady;
+			FIST CC 35 A_WeaponReady;
+			Goto Ready;
+		Fire.Berserk:
+			FIST TC 1;
+			FIST D 0 A_StartSound("weapons/fistjab", CHAN_WEAPON);
+			FIST G 1 A_CustomPunch(125, 1, CPF_NOTURN, "GWM_BerserkPuff");
+		Hold.Berserk:
+			PLA3 A 0 A_JumpIf((Vel.X+Vel.Y+Vel.Z > 10) || (Vel.X+Vel.Y+Vel.Z < -10), "RunningBerserk");
+			FIST G 1;
+			FIST G 0 A_ReFire;
+			FIST FE 1;
+			FIST D 1 A_WeaponReady;
+			FIST CC 35 A_WeaponReady;
+			Goto Ready;
+		RunningBerserk:
+			FIST G 3 A_CustomPunch(125, 1, CPF_NOTURN, "GWM_BerserkPuff");
+			FIST G 0 A_ReFire;
+			FIST FE 1;
+			FIST D 1 A_WeaponReady;
+			FIST CC 35 A_WeaponReady;
+			Goto Ready;
+		AltFire:
+			FIST QRST 1;
+		AltHold:
+			FIST U 1;
+			TNT1 A 0 A_ReFire;
+			FIST C 0 Bright A_StartSound("weapons/fistwhoosh", CHAN_WEAPON);
+			FIST C 0 A_JumpIfInventory("PowerStrength", 1, "SlugBerserk");
+			FIST CDE 1;
+			FIST F 1 A_CustomPunch(20, 1, CPF_NOTURN, "GWM_FistPuff");
+			FIST HIJKLMNOP 1;
+			FIST CC 35 A_WeaponReady;
+			Goto Ready;
+		SlugBerserk:
+			FIST CDE 1;
+			FIST F 1 A_CustomPunch(200, 1, CPF_NOTURN, "GWM_BerserkPuff");
+			FIST HIJKLMNOP 1;
+			FIST CC 35 A_WeaponReady;
+			Goto Ready;
+		Spawn:
+			TNT1 A -1;
+			Stop;
+	}
+}
+class GWM_FistPuff : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		-ALLOWPARTICLES
+		-RANDOMIZE
+		+ZDOOMTRANS
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+	}
+	States
+	{
+		Melee:
+			TNT1 A 0 A_StartSound("weapons/fist_hit_world", 6);
+			PUFF CD 4;
+			Stop;
+	}
+}
+class GWM_BerserkPuff : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		-ALLOWPARTICLES
+		-RANDOMIZE
+		+PUFFONACTORS
+		RenderStyle "Add";
+		Alpha 0.5;
+		Scale 0.65;
+		VSpeed 0;
+		Mass 5;
+		DamageType "Rocket";
+	}
+	States
+	{
+		Spawn:
+			PUFF A 4 Bright;
+			PUFF BCD 4;
+			Stop;
+		Melee:
+			TNT1 A 0 {
+				Radius_Quake(6, random(8,16), 0, 3, 0);
+				A_StartSound("weapons/berserk_hit_world", 6);
+			}
+			EXPL ABCDEFGHIJ 1 Bright A_FadeOut(0.05);
+			Stop;
+		XDeath:
+			TNT1 A 0 {
+				Radius_Quake(6, random(8,16), 0, 3, 0);
+				A_StartSound("weapons/berserk_hitbod", 6);
+			}
+			EXPL ABCDEFGHIJ 1 Bright A_FadeOut(0.05);
+			Stop;
+	}
+}
