@@ -1,0 +1,10 @@
+// Shotgun (Slayer's Kahuna)
+weapons/skshot1		"Sounds/Weapons/Slot 3/Shotgun/Fire1.wav"
+weapons/skshot2		"Sounds/Weapons/Slot 3/Shotgun/Fire2.wav"
+weapons/skshot3		"Sounds/Weapons/Slot 3/Shotgun/Fire3.wav"
+weapons/skpump1		"Sounds/Weapons/Slot 3/Shotgun/Pump1.wav"
+weapons/skpump2		"Sounds/Weapons/Slot 3/Shotgun/Pump2.wav"
+weapons/skpickup	"Sounds/Weapons/Slot 3/Shotgun/pickup.wav"
+weapons/skempty		"Sounds/Weapons/Slot 3/Shotgun/empty.wav"
+
+$random weapons/skshot { weapons/skshot1 weapons/skshot2 weapons/skshot3 }

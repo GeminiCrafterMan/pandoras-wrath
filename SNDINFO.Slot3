@@ -1,14 +1,22 @@
 // Shotgun (Slayer's Kahuna)
-weapons/skshot1		"Sounds/Weapons/Slot 3/Shotgun/Fire1.wav"
-weapons/skshot2		"Sounds/Weapons/Slot 3/Shotgun/Fire2.wav"
-weapons/skshot3		"Sounds/Weapons/Slot 3/Shotgun/Fire3.wav"
-weapons/skpump1		"Sounds/Weapons/Slot 3/Shotgun/Pump1.wav"
-weapons/skpump2		"Sounds/Weapons/Slot 3/Shotgun/Pump2.wav"
+weapons/skshot1		"Sounds/Weapons/Slot 3/Shotgun/CSGFIRE1.ogg"
+weapons/skshot2		"Sounds/Weapons/Slot 3/Shotgun/CSGFIRE2.ogg"
+weapons/skshot3		"Sounds/Weapons/Slot 3/Shotgun/CSGFIRE3.ogg"
+weapons/skshot4		"Sounds/Weapons/Slot 3/Shotgun/CSGFIRE4.ogg"
+weapons/skshot5		"Sounds/Weapons/Slot 3/Shotgun/CSGFIRE5.ogg"
+weapons/skpump11	"Sounds/Weapons/Slot 3/Shotgun/CSGPMPI1.ogg"
+weapons/skpump12	"Sounds/Weapons/Slot 3/Shotgun/CSGPMPI2.ogg"
+weapons/skpump21	"Sounds/Weapons/Slot 3/Shotgun/CSGPMPO1.ogg"
+weapons/skpump22	"Sounds/Weapons/Slot 3/Shotgun/CSGPMPO2.ogg"
+
+weapons/skempty		"Sounds/Weapons/Slot 3/Shotgun/CSGDRY.ogg"
 weapons/skpickup	"Sounds/Weapons/Slot 3/Shotgun/pickup.wav"
-weapons/skempty		"Sounds/Weapons/Slot 3/Shotgun/empty.wav"
 weapons/shell_load	"Sounds/Weapons/Slot 3/Shotgun/load.wav"
 
-$random weapons/skshot {weapons/skshot1 weapons/skshot2 weapons/skshot3}
+$random weapons/skshot { weapons/skshot1 weapons/skshot2 weapons/skshot3 weapons/skshot4 weapons/skshot5 }
+$random weapons/skpump1 { weapons/skpump11 weapons/skpump12 }
+$random weapons/skpump2 { weapons/skpump21 weapons/skpump22 }
+
 
 // Zombie Shotgun
 weapons/zsgshot		"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_fire.ogg"

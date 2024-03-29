@@ -2,6 +2,7 @@
 weapons/fist_hit1	"Sounds/Weapons/Slot 1/Fist/fist_hit_world1.wav"
 weapons/fist_hit2	"Sounds/Weapons/Slot 1/Fist/fist_hit_world2.wav"
 weapons/fistjab		"Sounds/Weapons/Slot 1/Fist/fist_jab.ogg"
+weapons/fistwhoosh	"Sounds/Weapons/Slot 1/Fist/fist_whoosh.ogg"
 weapons/berserk_hit_world1	"Sounds/Weapons/Slot 1/Fist/berserk_hit_world1.wav"
 weapons/berserk_hit_world2	"Sounds/Weapons/Slot 1/Fist/berserk_hit_world2.wav"
 weapons/berserk_hitbod1	"Sounds/Weapons/Slot 1/Fist/berserk_hitbod1.wav"
