@@ -1,3 +1,5 @@
+Class GWM_KahunaSpread : Inventory { Default {Inventory.Maxamount 24;}}
+
 class GWM_Shotgun : GWM_WeaponBase
 {
 	int kahunaspread;
@@ -26,13 +28,6 @@ class GWM_Shotgun : GWM_WeaponBase
 	{
 		Ready:
 			SKSG AAAA 1 ZWL_WeaponReady(ZRF_ExtraRound);
-			SKSG A 1 {
-				ZWL_WeaponReady(ZRF_ExtraRound);
-				if (invoker.kahunaspread > 0)
-				{
-					invoker.kahunaspread = invoker.kahunaspread - 1;
-				}
-			}
 			Loop;
 		Select:
 			TNT1 A 0 {
@@ -116,7 +111,7 @@ class GWM_Shotgun : GWM_WeaponBase
 				A_Overlay(55, "Recoil");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 11, pellets: 12, spread: 4+(invoker.kahunaspread*0.75), tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(0, 11, pellets: 12, spread: 4+(Countinv("GWM_KahunaSpread")*0.7), tracerType: "GWM_Tracer");
 				A_ChangeVelocity(-Cos(pitch)*2.5, 0, sin(pitch)*2.5,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
@@ -124,10 +119,7 @@ class GWM_Shotgun : GWM_WeaponBase
 				A_WeaponOffset(0, 52, WOF_INTERPOLATE);
 				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
 				A_QuakeEx(1.5, 1.5, 1.5, 4, 0, 1, "", QF_SHAKEONLY);
-				if (invoker.kahunaspread < 15)
-				{
-					invoker.kahunaspread = invoker.kahunaspread + 2;
-				}
+				A_GiveInventory("GWM_KahunaSpread",2);
 			}
 			SKSG A 3 Bright;
 			SKSG A 1 Bright {

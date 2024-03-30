@@ -167,6 +167,9 @@ class GWM_StatusBar : BaseStatusBar
 		amt1 = GetAmount("GWM_ChargedRockets");
 		DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -90), translation: Font.CR_Red);
 		
+		amt1 = GetAmount("GWM_KahunaSpread");
+		DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -100), translation: Font.CR_Gold);
+		
 		amt1 = GetAmount("GWM_PandoraPoints");
 		amt2 = GetAmount("GWM_PandoraPointsCap");
 		
