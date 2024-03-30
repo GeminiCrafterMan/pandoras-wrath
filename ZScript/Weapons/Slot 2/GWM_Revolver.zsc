@@ -76,8 +76,36 @@ class GWM_Revolver : GWM_WeaponBase
 				if (!invoker.CheckAmmo(PrimaryFire, false, true))
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
 			}
-			RVLG D 1;
-			RVLG E 1 A_StartSound("weapons/rvlvreload1", CHAN_BODY);
+			
+			RVLG D 2;
+			RVL2 AB 3;
+			RVL2 C 3 A_StartSound("weapons/rvlvreload1", CHAN_BODY);
+			RVL2 DDEF 1;
+			RVL2 G 4 {
+				ZWL_EjectCasing("GWM_PistolCasing", true, 45, offset: (22, -2, -12));
+				ZWL_EjectCasing("GWM_PistolCasing", true, 45, offset: (22, 2, -12));
+				ZWL_EjectCasing("GWM_PistolCasing", true, 45, offset: (24, -4, -12));
+				ZWL_EjectCasing("GWM_PistolCasing", true, 45, offset: (26, -2, -12));
+				ZWL_EjectCasing("GWM_PistolCasing", true, 45, offset: (26, 2, -12));
+				ZWL_EjectCasing("GWM_PistolCasing", true, 45, offset: (24, 4, -12));
+			}
+			RVL2 HHIJJ 1;
+			
+			RVL2 K 4 ZWL_Reload();
+			RVL2 LMNO 2;
+			RVL2 PQR 1;
+			
+			RVL2 S 2 A_StartSound("weapons/rvlvreload3", CHAN_BODY);
+			
+			RVL2 STUV 2;
+			
+			Goto Ready;
+			
+			
+			
+			
+			
+			
 			RVLG FGHIJK 1;
 			RVLG L 4 {
 				ZWL_EjectCasing("GWM_PistolCasing", true, 45, offset: (22, -2, -12));

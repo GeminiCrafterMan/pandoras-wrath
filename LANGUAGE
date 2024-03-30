@@ -12,7 +12,7 @@ GOTLEVENBRECH = "\c[White]You picked up the \c[Black]Levenbrech\c[White]! (Slot 
 // Slot 2
 GOT92FS = "\c[White]You picked up the \c[Yellow]Beretta 92FS\c[White]! (Slot 2)";
 GOTSMG = "\c[White]You picked up the \c[Yellow]SMG\c[White]! (Slot 2)";
-GOTREVOLVER = "\c[White]You picked up the \c[Yellow]Revolver\c[White]! (Slot 2)";
+GOTREVOLVER = "\c[White]You picked up the \c[Yellow]Revolver\c[White]! You're feeling REAL lucky. (Slot 2)";
 GOTWAND = "\c[White]You picked up the \c[Gold]Gold Wand\c[White]! (Slot 2)";
 // Slot 3
 GOTZOMBIESHOTGUN = "\c[White]You picked up the... Wow, this \c[Red]Shotgun\c[White] is in horrible condition. (Slot 3)";
