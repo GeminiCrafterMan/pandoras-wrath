@@ -22,16 +22,6 @@ class GWM_ArmorBonus : ArmorBonus replaces ArmorBonus
 	}
 }
 
-class GWM_Soulsphere : Soulsphere
-{
-	Default
-	{
-		//$Category Pickups
-		//$Title "Soulsphere
-		Inventory.MaxAmount 300;
-	}
-}
-
 class GWM_Backpack : Backpack replaces Backpack
 {
 	Default
@@ -93,6 +83,14 @@ class GWM_KnightSphere : Inventory
 	}
 }
 
+class GWM_Soulsphere : Soulsphere
+{
+	Default
+	{
+		//$Category Pickups
+		//$Title "Soulsphere
+	}
+}
 class GWM_BlurSphere : BlurSphere
 {
 	Default
@@ -279,13 +277,13 @@ class GWM_PortableMedkit : Inventory
 		int firstAidAmount;
 		firstAidAmount = owner.CountInv("GWM_PortableMedkit");
 
-		if (!owner || !owner.player || owner.player.Health > 100 || !owner.FindInventory("GWM_PortableMedkit"))
+		if (!owner || !owner.player || owner.player.Health > owner.GetMaxHealth(true) || !owner.FindInventory("GWM_PortableMedkit"))
 		return false;
 
-		if (owner.player.Health < 100 && firstAidAmount != 0)
+		if (owner.player.Health < owner.GetMaxHealth(true) && firstAidAmount != 0)
 		{
 			owner.A_StartSound("powerups/portable_medkit", CHAN_ITEM); 
-			int toheal = 100 - owner.player.health; //Check how much to heal
+			int toheal = owner.GetMaxHealth(true) - owner.player.Health; //Check how much to heal
 
 			If(toheal > firstAidAmount)  //If that amount is larger than the amount of charge, set it to be equal
 			{
