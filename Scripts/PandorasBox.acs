@@ -132,7 +132,7 @@ script "PandorasBox" (void)
 				if (wepslot == 3 && CheckInventory("GWM_Shotgun")) {restart;}
 				if (wepslot == 4 && CheckInventory("GWM_SuperShotgun")) {restart;}
 				if (wepslot == 5 && CheckInventory("GWM_Scrapgun")) {restart;}
-				if (wepslot == 6 && CheckInventory("GWM_MadVulcan")) {restart;}
+				if (wepslot == 6 && CheckInventory("GWM_Chaingun")) {restart;}
 				if (wepslot == 7 && CheckInventory("GWM_BurstRifle")) {restart;}
 				if (wepslot == 8 && CheckInventory("GWM_RocketLauncher")) {restart;}
 				if (wepslot == 9 && CheckInventory("GWM_Bouncer")) {restart;}
