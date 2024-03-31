@@ -30,9 +30,9 @@ script "PandorasBox" (void)
 		Delay(1);
 		
 		wepslot = random(0,16);
-		upgslot = random(0,10);
+		upgslot = random(0,12);
 		itmslot = random(0,4);
-		refslot = random(0,7);
+		refslot = random(0,9);
 		
 		MENUSEL = 0;
 				
@@ -170,6 +170,8 @@ script "PandorasBox" (void)
 				if (upgslot == 8) { SetFont("SMALLFONT"); HudMessage(s:"+IceShell";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 9) { SetFont("SMALLFONT"); HudMessage(s:"+Acid";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 10) { SetFont("SMALLFONT"); HudMessage(s:"+Flame";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+				if (upgslot == 11) { SetFont("SMALLFONT"); HudMessage(s:"+Scrap";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+				if (upgslot == 12) { SetFont("SMALLFONT"); HudMessage(s:"+Stomper";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				
 				//SLOT 2 (ITEMS)
 				if (itmslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"SoulSphere";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
@@ -187,6 +189,8 @@ script "PandorasBox" (void)
 				if (refslot == 5) { SetFont("SMALLFONT"); HudMessage(s:"Rocket";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 6) { SetFont("SMALLFONT"); HudMessage(s:"Cells";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 7) { SetFont("SMALLFONT"); HudMessage(s:"Element";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+				if (refslot == 8) { SetFont("SMALLFONT"); HudMessage(s:"Scrap";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+				if (refslot == 9) { SetFont("SMALLFONT"); HudMessage(s:"Stomper";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				
 				//SLOT 4 (WEAPON)
 				if (wepslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"SMG";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
@@ -224,10 +228,12 @@ script "PandorasBox" (void)
 						if (upgslot == 8) { SetAmmoCapacity("GWM_IceShell",GetAmmoCapacity("GWM_IceShell")+20);}
 						if (upgslot == 9) { SetAmmoCapacity("GWM_VenomVial",GetAmmoCapacity("GWM_VenomVial")+10);}
 						if (upgslot == 10) { SetAmmoCapacity("GWM_GasCanister",GetAmmoCapacity("GWM_GasCanister")+10);}
+						if (upgslot == 11) { SetAmmoCapacity("GWM_ScrapDrum",GetAmmoCapacity("GWM_ScrapDrum")+10);}
+						if (upgslot == 12) { SetAmmoCapacity("GWM_StomperAmmo",GetAmmoCapacity("GWM_StomperAmmo")+10);}
 					}
 					if (menusel == 2) //ITEM
 					{
-						if (itmslot == 0) {GiveInventory("Soulsphere",100);}
+						if (itmslot == 0) {HealThing(100);}
 						if (itmslot == 1) {GiveInventory("GWM_AssaultArmor",1);}
 						if (itmslot == 2) {GiveInventory("GWM_HellArmor",1);}
 						if (itmslot == 3) {GiveInventory("GWM_Bombsuit",1);}
@@ -247,6 +253,8 @@ script "PandorasBox" (void)
 							GiveInventory("GWM_VenomVial",200);
 							GiveInventory("GWM_GasCanister",200);
 						}
+						if (refslot == 8) {GiveInventory("GWM_ScrapDrum",200);}
+						if (refslot == 9) {GiveInventory("GWM_StomperAmmo",200);}
 					}
 					if (menusel == 4) //WEAPON
 					{

@@ -4,7 +4,6 @@ class GWM_HealthBonus : HealthBonus replaces HealthBonus
 	{
 		//$Category Pickups
 		//$Title "Health Bonus
-		Inventory.MaxAmount 300;
 		Inventory.PickupSound "pickups/healthbonus";
 		Inventory.PickupMessage "$GOTHEALTHBONUS";
 	}
@@ -310,54 +309,6 @@ class GWM_PortableMedkit : Inventory
 	{
 		Spawn:
 			PKIT A -1;
-			Stop;
-	}
-}
-
-class GWM_PandorasBox : Inventory
-{
-    override bool Use(bool pickup)
-    {
-		if (!owner || !owner.player || !owner.FindInventory("GWM_PandorasBox"))
-			return false;
-
-		switch (random(0, 5))
-		{
-			case 5:
-			case 2:
-				Console.Printf("Rolled: Scrapgun");
-				owner.A_GiveInventory("GWM_Scrapgun");
-				break;
-			case 4:
-			case 1:
-				Console.Printf("Rolled: Stomper");
-				owner.A_GiveInventory("GWM_Stomper");
-				break;
-			case 3:
-				Console.Printf("Rolled: Perforator");
-				owner.A_GiveInventory("GWM_Perforator");
-				break;
-			default:
-				Console.Printf("Rolled: Nothing");
-				break;
-
-		}
-		owner.A_TakeInventory("GWM_PandorasBox");
-		return Super.Use(pickup);
-	}
-	Default
-	{
-		+INVENTORY.INVBAR;
-		Inventory.Amount 1;
-		Inventory.MaxAmount 1;
-		Inventory.PickUpMessage "$PLACEHOLDER";
-		Inventory.Icon "PANDA0";
-		Tag "Pandora's Box";
-	}
-	States
-	{
-		Spawn:
-			PAND A -1;
 			Stop;
 	}
 }

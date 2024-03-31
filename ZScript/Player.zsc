@@ -1,5 +1,5 @@
 class GWM_Speedupgrades : Inventory { Default {Inventory.Maxamount 50000;}}
-class GWM_HPupgrade : UpgradeStamina { Default {Inventory.Maxamount 9900;}}
+class GWM_HPupgrade : MaxHealth { Default {Inventory.Maxamount 9900;}}
 
 class GWM_Player : DoomPlayer
 {
