@@ -75,7 +75,26 @@ class GWM_AcidBall : GWM_AcidProjectile
 	States
 	{
 		Spawn:
-			ACDP A 2 A_SpawnItemEX("GWM_AcidSplashFX",0,0,12,frandom(-2,2),frandom(-2,2),frandom(-2,1));
+			ACDP A 2 {
+				A_SetScale(0.45, 0.45);
+				A_SpawnItemEX("GWM_AcidSplashFX",0,0,12,frandom(-2,2),frandom(-2,2),frandom(-2,1));
+			}
+			ACDP AAAAA 2 {
+				A_SetScale(self.Scale.X, self.Scale.Y-0.025);
+				A_SpawnItemEX("GWM_AcidSplashFX",0,0,12,frandom(-2,2),frandom(-2,2),frandom(-2,1));
+			}
+			ACDP AAAAA 2 {
+				A_SetScale(self.Scale.X, self.Scale.Y+0.025);
+				A_SpawnItemEX("GWM_AcidSplashFX",0,0,12,frandom(-2,2),frandom(-2,2),frandom(-2,1));
+			}
+			ACDP AAAAA 2 {
+				A_SetScale(self.Scale.X-0.025, self.Scale.Y);
+				A_SpawnItemEX("GWM_AcidSplashFX",0,0,12,frandom(-2,2),frandom(-2,2),frandom(-2,1));
+			}
+			ACDP AAAAA 2 {
+				A_SetScale(self.Scale.X+0.025, self.Scale.Y);
+				A_SpawnItemEX("GWM_AcidSplashFX",0,0,12,frandom(-2,2),frandom(-2,2),frandom(-2,1));
+			}
 			Loop;
 		Bounce.Ceiling:
 				

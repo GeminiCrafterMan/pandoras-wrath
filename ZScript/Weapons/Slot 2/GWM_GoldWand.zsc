@@ -1,4 +1,4 @@
-class GWM_GoldWand : weapon replaces GoldWand // Okay, this DOES actually need to be inheriting from GoldWand, for the attacks.
+class GWM_GoldWand : GWM_WeaponBase replaces GoldWand
 {
 	Default
 	{
@@ -10,10 +10,10 @@ class GWM_GoldWand : weapon replaces GoldWand // Okay, this DOES actually need t
 		Tag "$TAG_WAND";
 		AttackSound "weapons/wandhit";
 		Weapon.AmmoUse1 1;
-		Weapon.AmmoType1 "GoldWandAmmo";
+		Weapon.AmmoType1 "GWM_WandCrystal";
 		Weapon.AmmoUse2 3;
-		Weapon.AmmoType2 "GoldWandAmmo";
-  
+		Weapon.AmmoType2 "GWM_WandCrystal";
+		Weapon.AmmoGive 25;
 	}
 	States
 	{

@@ -70,6 +70,8 @@ GOTCELL = "\c[White]Picked up a \c[Cyan]power cell\c[White].";
 GOTCELLPACK = "\c[White]Picked up a \c[Cyan]power cell pack\c[White].";
 GOTCYBERIMPARM = "\c[White]Pulled the \c[Cyan]power cell \c[White]out of a \c[DarkBrown]Cyber Imp\c[White]'s severed arm.";
 // Heretic items
+GOTWANDCRYSTAL = "\c[White]Picked up a \c[Gold]small wand crystal\c[White].";
+GOTLARGEWANDCRYSTAL = "\c[White]Picked up a \c[Gold]large wand crystal\c[White].";
 GOTBOLTS = "\c[White]Picked up some \c[DarkGray]steel bolts\c[White].";
 GOTBOLTSHEFTY = "\c[White]Picked up a \c[DarkGray]quiver of steel bolts\c[White].";
 GOTEVERICE = "\c[White]Picked up a \c[Ice]chunk of Ever Ice\c[White].";

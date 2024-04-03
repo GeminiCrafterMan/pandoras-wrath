@@ -123,7 +123,7 @@ class GWM_HereticPlayer : GWM_Player
 		Player.StartItem "GWM_IsPlayer";
 		Player.StartItem "GWM_GoldWand";
 		Player.StartItem "GWM_Fist";
-		Player.StartItem "GoldWandAmmo", 50;
+		Player.StartItem "GWM_WandCrystal", 50;
 		Player.StartItem "GWM_QuickKickController";
 		Player.StartItem "GWM_PandoraPointsCap", 250;
 		

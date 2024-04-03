@@ -29,10 +29,10 @@ script "PandorasBox" (void)
 		SetHudSize(360,256,0);
 		Delay(1);
 		
-		wepslot = random(0,16);
-		upgslot = random(0,12);
+		wepslot = random(0,17);
+		upgslot = random(0,13);
 		itmslot = random(0,4);
-		refslot = random(0,9);
+		refslot = random(0,10);
 		
 		MENUSEL = 0;
 				
@@ -126,7 +126,8 @@ script "PandorasBox" (void)
 						menusel = 2;
 					}
 				}
-				
+
+/*				// this is dumb and causes lag
 				if (wepslot == 1 && CheckInventory("GWM_MP40")) {restart;}
 				if (wepslot == 2 && CheckInventory("GWM_Revolver")) {restart;}
 				if (wepslot == 3 && CheckInventory("GWM_SlayersKahuna")) {restart;}
@@ -143,7 +144,8 @@ script "PandorasBox" (void)
 				if (wepslot == 14 && CheckInventory("GWM_IceShotgun")) {restart;}
 				if (wepslot == 15 && CheckInventory("GWM_Flamethrower")) {restart;}
 				if (wepslot == 16 && CheckInventory("GWM_Perforator")) {restart;}
-				
+				if (wepslot == 17 && CheckInventory("GWM_GoldWand")) {restart;}
+*/				
 				if (menusel == 0) { SetFont("SMALLFONT"); HudMessage(s:"X";HUDMSG_PLAIN,88,0,180.0,140.0,0.06);}
 				if (menusel == 1) { SetFont("SMALLFONT"); HudMessage(s:"X";HUDMSG_PLAIN,88,0,180.0,120.0,0.06);}
 				if (menusel == 2) { SetFont("SMALLFONT"); HudMessage(s:"X";HUDMSG_PLAIN,88,0,200.0,140.0,0.06);}
@@ -167,11 +169,12 @@ script "PandorasBox" (void)
 				if (upgslot == 5) { SetFont("SMALLFONT"); HudMessage(s:"+HiCal";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 6) { SetFont("SMALLFONT"); HudMessage(s:"+Rockets";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 7) { SetFont("SMALLFONT"); HudMessage(s:"+Cells";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
-				if (upgslot == 8) { SetFont("SMALLFONT"); HudMessage(s:"+IceShell";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+				if (upgslot == 8) { SetFont("SMALLFONT"); HudMessage(s:"+Ice Shells";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 9) { SetFont("SMALLFONT"); HudMessage(s:"+Acid";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 10) { SetFont("SMALLFONT"); HudMessage(s:"+Flame";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 11) { SetFont("SMALLFONT"); HudMessage(s:"+Scrap";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 12) { SetFont("SMALLFONT"); HudMessage(s:"+Stomper";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+				if (upgslot == 13) { SetFont("SMALLFONT"); HudMessage(s:"+Wand Crystals";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				
 				//SLOT 2 (ITEMS)
 				if (itmslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"SoulSphere";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
@@ -186,11 +189,12 @@ script "PandorasBox" (void)
 				if (refslot == 2) { SetFont("SMALLFONT"); HudMessage(s:"LowCal";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 3) { SetFont("SMALLFONT"); HudMessage(s:"Shells";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 4) { SetFont("SMALLFONT"); HudMessage(s:"HiCal";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
-				if (refslot == 5) { SetFont("SMALLFONT"); HudMessage(s:"Rocket";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+				if (refslot == 5) { SetFont("SMALLFONT"); HudMessage(s:"Rockets";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 6) { SetFont("SMALLFONT"); HudMessage(s:"Cells";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 7) { SetFont("SMALLFONT"); HudMessage(s:"Element";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 8) { SetFont("SMALLFONT"); HudMessage(s:"Scrap";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 9) { SetFont("SMALLFONT"); HudMessage(s:"Stomper";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+				if (refslot == 10) { SetFont("SMALLFONT"); HudMessage(s:"Wand Crystals";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				
 				//SLOT 4 (WEAPON)
 				if (wepslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"SMG";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
@@ -210,6 +214,7 @@ script "PandorasBox" (void)
 				if (wepslot == 14) { SetFont("SMALLFONT"); HudMessage(s:"Ice Shotgun";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 15) { SetFont("SMALLFONT"); HudMessage(s:"Flame Shot";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 16) { SetFont("SMALLFONT"); HudMessage(s:"Perforator";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 17) { SetFont("SMALLFONT"); HudMessage(s:"Gold Wand";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				
 				if (buttons & BT_ATTACK && !(oldbuttons & BT_ATTACK) || buttons & BT_USE && !(oldbuttons & BT_USE))
 				{
@@ -230,10 +235,11 @@ script "PandorasBox" (void)
 						if (upgslot == 10) { SetAmmoCapacity("GWM_GasCanister",GetAmmoCapacity("GWM_GasCanister")+10);}
 						if (upgslot == 11) { SetAmmoCapacity("GWM_ScrapDrum",GetAmmoCapacity("GWM_ScrapDrum")+10);}
 						if (upgslot == 12) { SetAmmoCapacity("GWM_StomperAmmo",GetAmmoCapacity("GWM_StomperAmmo")+10);}
+						if (upgslot == 13) { SetAmmoCapacity("GWM_WandCrystal",GetAmmoCapacity("GWM_WandCrystal")+10);}
 					}
 					if (menusel == 2) //ITEM
 					{
-						if (itmslot == 0) {HealThing(100);}
+						if (itmslot == 0) {GiveInventory("GWM_Soulsphere",100);} // difference between this and the HealThing below is that this can overheal
 						if (itmslot == 1) {GiveInventory("GWM_AssaultArmor",1);}
 						if (itmslot == 2) {GiveInventory("GWM_HellArmor",1);}
 						if (itmslot == 3) {GiveInventory("GWM_Bombsuit",1);}
@@ -255,16 +261,17 @@ script "PandorasBox" (void)
 						}
 						if (refslot == 8) {GiveInventory("GWM_ScrapDrum",200);}
 						if (refslot == 9) {GiveInventory("GWM_StomperAmmo",200);}
+						if (refslot == 10) {GiveInventory("GWM_WandCrystal",50);}
 					}
 					if (menusel == 4) //WEAPON
 					{
 						if (wepslot == 0) { GiveInventory("GWM_SMG",1);}
 						if (wepslot == 1) { GiveInventory("GWM_MP40",1);}
 						if (wepslot == 2) { GiveInventory("GWM_Revolver",1);}
-						if (wepslot == 3) { GiveInventory("GWM_Shotgun",1);}
+						if (wepslot == 3) { GiveInventory("GWM_SlayersKahuna",1);}
 						if (wepslot == 4) { GiveInventory("GWM_SuperShotgun",1);}
 						if (wepslot == 5) { GiveInventory("GWM_Scrapgun",1);}
-						if (wepslot == 6) { GiveInventory("GWM_Chaingun",1);}
+						if (wepslot == 6) { GiveInventory("GWM_MadVulcan",1);}
 						if (wepslot == 7) { GiveInventory("GWM_BurstRifle",1);}
 						if (wepslot == 8) { GiveInventory("GWM_RocketLauncher",1);}
 						if (wepslot == 9) { GiveInventory("GWM_Bouncer",1);}
@@ -275,6 +282,7 @@ script "PandorasBox" (void)
 						if (wepslot == 14) { GiveInventory("GWM_IceShotgun",1);}
 						if (wepslot == 15) { GiveInventory("GWM_Flamethrower",1);}
 						if (wepslot == 16) { GiveInventory("GWM_Perforator",1);}
+						if (wepslot == 17) { GiveInventory("GWM_GoldWand",1);}
 					}
 					
 					Takeinventory("GWM_PandoraPoints",CheckInventory("GWM_PandoraPointsCap"));
