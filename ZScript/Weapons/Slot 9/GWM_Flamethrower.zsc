@@ -165,7 +165,7 @@ Class GWM_FTFireShot : GWM_FlameProjectile
 	//actor victim;
     array<actor> hitList;
 
-    override int SpecialMissileHit(actor victim)
+    override int SpecialMissileHit(actor victim) //G: This is weird. REALLY weird.
     {
         if (hitList.Find(victim) == hitList.Size() && !self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
         {
@@ -173,7 +173,7 @@ Class GWM_FTFireShot : GWM_FlameProjectile
 			{
 				victim.A_SpawnProjectile("GWM_FlameStatusThinker");
 			}
-			A_StartSound("Status/IceHit");
+			A_StartSound("Status/FireHit");
 			
 			victim.A_GiveInventory("FireBurnCount",25);
             victim.DamageMobj(self,target,5,'Fire');

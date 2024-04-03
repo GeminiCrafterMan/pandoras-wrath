@@ -104,17 +104,27 @@ class GWM_DisCacodemon : Actor
 			Goto See;
 	}
 }
-class GWM_DisCacodemonBall : GWM_CacodemonBall
+class GWM_DisCacodemonBall : GWM_FlameProjectile
 {
 	Default
 	{
-		Speed 14;
-		+SEEKERMISSILE
+		Radius 6;
+		Height 8;
+		Speed 7;
+		FastSpeed 14;
+		DamageFunction (23);
+		+RANDOMIZE
+		+ZDOOMTRANS
+		RenderStyle "Add";
+		Alpha 1;
+		SeeSound "caco/attack";
+		DeathSound "caco/shotx";
+		GWM_FlameProjectile.FireBurnCount 23;
 	}
 	States
 	{
 		Spawn:
-			DCBL AABBCC 2 BRIGHT A_SeekerMissile(0, 6);
+			DCBL ABC 4 BRIGHT;
 			Loop;
 		Death:
 			DCBL D 5 BRIGHT;

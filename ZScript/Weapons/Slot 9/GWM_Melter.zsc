@@ -15,7 +15,7 @@ Class GWM_Melter : GWM_WeaponBase
 		Weapon.AmmoGive 40;
 		Weapon.AmmoUse 2;
 		Weapon.AmmoType "GWM_Cell";
-		Weapon.SelectionOrder 400; // I mean, it came reccommended like this... but I'll take 100 off for being a plasma weapon.
+		Weapon.SelectionOrder 400; // I mean, it came recommended like this... but I'll take 100 off for being a plasma weapon.
 		Weapon.UpSound "weapons/draw_primary";
 		Inventory.PickupMessage "$GOTMELTER";
 		Obituary "$KILLMELTER";
@@ -400,9 +400,12 @@ class MelterPuff : Actor
 	Spawn:
 		TNT1 A 0 nodelay
 		{
-			if (tracer && tracer.bISMONSTER && tracer.FindState("XDeath") && tracer.InStateSequence(tracer.CurState, tracer.FindState("Death")))
+			if (tracer && tracer.bISMONSTER && tracer.InStateSequence(tracer.CurState, tracer.FindState("Death")))
 			{
-				tracer.SetStateLabel("XDeath");
+				if (tracer.FindState("Death.Fire"))
+					tracer.SetStateLabel("Death.Fire");
+				else if (tracer.FindState("XDeath"))
+					tracer.SetStateLabel("XDeath");
 			}
 		}
 		stop;

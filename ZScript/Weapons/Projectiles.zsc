@@ -57,7 +57,7 @@ class GWM_FlameProjectile : Actor // the absolute most basic projectile base pos
 			{
 				victim.A_SpawnProjectile("GWM_FlameStatusThinker");
 			}
-			A_StartSound("Status/IceHit");
+			A_StartSound("Status/FireHit");
 
 			
 		}
