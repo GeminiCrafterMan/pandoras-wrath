@@ -1,11 +1,11 @@
-// Pistol (Beretta 92FS)
-weapons/92fsfire		"Sounds/Weapons/Slot 2/Beretta 92FS/92fs_fire.wav"
-weapons/92fspickup		"Sounds/Weapons/Slot 2/Beretta 92FS/92fs_pickup.wav"
-weapons/92fsdryfire		"Sounds/Weapons/Slot 2/Beretta 92FS/92fs_dryfire.wav"
-weapons/92fsclipout		"Sounds/Weapons/Slot 2/Beretta 92FS/92fs_clipout.wav"
-weapons/92fsclipin		"Sounds/Weapons/Slot 2/Beretta 92FS/92fs_clipin.wav"
-weapons/92fsslidefwd	"Sounds/Weapons/Slot 2/Beretta 92FS/92fs_slideforward.wav"
-weapons/92fsslideback	"Sounds/Weapons/Slot 2/Beretta 92FS/92fs_slideback.wav"
+// Pistol
+weapons/pistolfire		"Sounds/Weapons/Slot 2/Pistol/pistol_fire.wav"
+weapons/pistolpickup	"Sounds/Weapons/Slot 2/Pistol/pistol_pickup.wav"
+weapons/pistoldryfire	"Sounds/Weapons/Slot 2/Pistol/pistol_dryfire.wav"
+weapons/pistolclipout	"Sounds/Weapons/Slot 2/Pistol/pistol_clipout.wav"
+weapons/pistolclipin	"Sounds/Weapons/Slot 2/Pistol/pistol_clipin.wav"
+weapons/pistolslidefwd	"Sounds/Weapons/Slot 2/Pistol/pistol_slideforward.wav"
+weapons/pistolslideback	"Sounds/Weapons/Slot 2/Pistol/pistol_slideback.wav"
 
 // SMG
 weapons/smgfire		"Sounds/Weapons/Slot 2/SMG/smg_fire.wav"

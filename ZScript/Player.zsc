@@ -79,7 +79,7 @@ class GWM_Player : DoomPlayer
 			self.ShotgunSpreadDelay = 0;
 			A_TakeInventory("GWM_KahunaSpread",1);
 		}
-		if (self.player.ReadyWeapon.GetClassName() == "GWM_Shotgun")
+		if (self.player.ReadyWeapon.GetClassName() == "GWM_SlayersKahuna")
 			self.ShotgunSpreadDelay += 1;
 		else
 			self.ShotgunSpreadDelay += 3;
@@ -90,8 +90,8 @@ class GWM_Player : DoomPlayer
 		Player.SoundClass "GWM_Player";
 		Player.WeaponSlot 1, "GWM_Fist", "GWM_Lumberjack";
 		Player.WeaponSlot 2, "GWM_Pistol";
-		Player.WeaponSlot 3, "GWM_Shotgun", "GWM_SuperShotgun";
-		Player.WeaponSlot 4, "GWM_Chaingun";
+		Player.WeaponSlot 3, "GWM_SlayersKahuna", "GWM_SuperShotgun";
+		Player.WeaponSlot 4, "GWM_MadVulcan";
 		Player.WeaponSlot 5, "GWM_RocketLauncher";
 		Player.WeaponSlot 6, "GWM_PlasmaRifle";
 		Player.WeaponSlot 7, "GWM_BFG9000";

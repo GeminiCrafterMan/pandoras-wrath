@@ -53,7 +53,7 @@ class GWM_RocketAmmoSpawner : GWM_WeaponSpawner replaces RocketAmmo
 	Default
 	{
 		DropItem "GWM_RocketAmmo";
-		DropItem "GWM_VenomVial";
+		DropItem "GWM_AcidVial";
 	}
 }
 class GWM_RocketBoxSpawner : GWM_WeaponSpawner replaces RocketBox
@@ -61,7 +61,7 @@ class GWM_RocketBoxSpawner : GWM_WeaponSpawner replaces RocketBox
 	Default
 	{
 		DropItem "GWM_RocketBox";
-		DropItem "GWM_LargeVenomVial";
+		DropItem "GWM_LargeAcidVial";
 	}
 }
 
@@ -89,7 +89,7 @@ class GWM_ChainsawSpawner : GWM_WeaponSpawner replaces Chainsaw
 	{
 		DropItem "GWM_EldritchAnnihilator", 255, 1;
 		DropItem "GWM_IceShotgun", 255, 6;
-		DropItem "GWM_VenomCannon", 255, 6;
+		DropItem "GWM_AcidCannon", 255, 6;
 		DropItem "GWM_FlameThrower", 255, 6;
 		DropItem "GWM_Impactor", 255, 6;
 		DropItem "GWM_Lumberjack", 255, 6;
@@ -100,7 +100,7 @@ class GWM_ShotgunSpawner : GWM_WeaponSpawner replaces Shotgun
 {
 	Default
 	{
-		DropItem "GWM_Shotgun", 255, 8;
+		DropItem "GWM_SlayersKahuna", 255, 8;
 		DropItem "GWM_SuperShotgun", 255, 3;
 		DropItem "GWM_IceShotgun", 255, 2;
 	}
@@ -113,7 +113,7 @@ class GWM_SuperShotgunSpawner : GWM_WeaponSpawner replaces SuperShotgun
 		DropItem "GWM_SuperShotgun";
 		DropItem "GWM_Melter", 255, 2;
 		DropItem "GWM_Flamethrower", 255, 2;
-		DropItem "GWM_VenomCannon", 255, 2;
+		DropItem "GWM_AcidCannon", 255, 2;
 		DropItem "GWM_IceShotgun", 255, 2;
 		DropItem "GWM_PFSuperShotgun", 255, 2;
 	}
@@ -123,7 +123,7 @@ class GWM_ChaingunSpawner : GWM_WeaponSpawner replaces Chaingun
 {
 	Default
 	{
-		DropItem "GWM_Chaingun", 255, 5;
+		DropItem "GWM_MadVulcan", 255, 5;
 		DropItem "GWM_BurstRifle", 255, 8;
 		DropItem "GWM_Flamethrower", 255, 2;
 	}
@@ -134,7 +134,7 @@ class GWM_RocketLauncherSpawner : GWM_WeaponSpawner replaces RocketLauncher
 	Default
 	{
 		DropItem "GWM_RocketLauncher";
-		DropItem "GWM_VenomCannon";
+		DropItem "GWM_AcidCannon";
 	}
 }
 

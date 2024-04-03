@@ -1,4 +1,4 @@
-class GWM_ExplosiveBarrel : ExplosiveBarrel // The bouncing part of this REALLY needs to be remade! I'm not that good at making stuff that has gravity but explodes on actors and walls!
+class GWM_ExplosiveBarrel : ExplosiveBarrel
 {
 	override int DamageMobj(Actor inflictor, Actor source, int damage, Name mod, int flags, double angle)
 	{
@@ -9,13 +9,6 @@ class GWM_ExplosiveBarrel : ExplosiveBarrel // The bouncing part of this REALLY 
 		}
 		return ret;
 	}
-	override int SpecialBounceHit(Actor bounceMobj, Line bounceLine, secPlane bouncePlane)
-	{
-		if (bouncePlane)
-			return 0;
-		else
-			return Super.SpecialBounceHit(bounceMobj, bounceLine, bouncePlane);
-	}
 	Default
 	{
 		//$Category Obstacles
@@ -23,8 +16,6 @@ class GWM_ExplosiveBarrel : ExplosiveBarrel // The bouncing part of this REALLY 
 		Tag "Explosive Barrel";
 		+PUSHABLE
 		Friction 0.8;
-		DamageFactor "Kick", 0.1;
-		PainChance "Kick", 256;
 		DeathSound "objects/barrel_explode";
 	}
 	States
@@ -32,27 +23,9 @@ class GWM_ExplosiveBarrel : ExplosiveBarrel // The bouncing part of this REALLY 
 		Spawn:
 			XBAR A -1;
 			Stop;
-		Pain.Kick:
-			XBAR A 1 {
-				bDontThrust = false;
-				bMissile = true;
-				bStepMissile = true;
-				bNoGravity = false;
-				self.BounceFactor = 1;
-			}
-			BNOB A 0 A_FaceTarget;
-			Goto Rolling;
-		Rolling:
-			XBAR B 1 A_ChangeVelocity(-20, 0, Vel.Z, CVF_RELATIVE|CVF_REPLACE);
-			Loop;
 		Death:
 		Boom:
 			XBAR BCD 1;
-			//TNT1 A 0 {
-				
-				
-			//}
-			//XBAR CDEFGHIJKL 2 Bright;
 			TNT1 A 0 
 			{
 				A_Scream();

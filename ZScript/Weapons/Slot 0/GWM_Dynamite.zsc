@@ -112,9 +112,10 @@ class GWM_ThrownDynamiteBundle : Actor
 	}
 	void A_Countdown()
 	{
-		self.ReactionTime--;
 		if (self.ReactionTime == 0)
 			SetStateLabel("Boom");
+		else
+			self.ReactionTime--;
 	}
 	Default
 	{
@@ -147,13 +148,17 @@ class GWM_ThrownDynamiteBundle : Actor
 				self.Vel.X = 0;
 				self.Vel.Y = 0;
 				self.Vel.Z = 0;
-				self.Scale = (1, 1);
 				A_Scream();
-				A_SetRenderstyle(alpha, STYLE_Add);
 				A_Explode();
-				A_QuakeEx(3, 3, 3, 10, 0, 512, flags: QF_SHAKEONLY);
 			}
-			EXPL ABCDEFGHIJ 1 Bright;
+			TNT1 A 1 A_SpawnItemEX("ShakeItBaby",0,0,5);
+			TNT1 AAA 1 {
+				A_SpawnItemEX("BlastFlameFX2",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-6,6),frandom(-6,6),frandom(-6,6),frandom(1,359));
+				A_SpawnItemEX("BlastFlameFX",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-10,10),frandom(-10,10),frandom(-10,10),frandom(1,359));
+				A_SpawnItemEX("BlastFlameFX",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-10,10),frandom(-10,10),frandom(-10,10),frandom(1,359));
+				A_SpawnItemEX("BlastFlameFX",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-10,10),frandom(-10,10),frandom(-10,10),frandom(1,359));
+				A_SpawnItemEX("BlastFlameFX",frandom(-15,15),frandom(-15,15),frandom(2,45),frandom(-10,10),frandom(-10,10),frandom(-10,10),frandom(1,359));
+			}
 			Stop;
 	}
 }

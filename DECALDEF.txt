@@ -55,32 +55,6 @@ decal FreezeBlastMelt
 	animator BloodSmearer
 }
 
-// Venom puddles on the wall.
-decal VenomPuddle1
-{
-	pic VNMPG0
-	animator BloodSmearer
-}
-decal VenomPuddle2
-{
-	pic VNMPH0
-	animator BloodSmearer
-}
-decal VenomPuddle3
-{
-	pic VNMPI0
-	animator BloodSmearer
-}
-
-decalgroup WallVenomPuddle
-{
-	VenomPuddle1	1
-	VenomPuddle2	1
-	VenomPuddle3	1
-}
-
-Generator GWM_VenomBall					WallVenomPuddle
-
 fader MeltFade
 {
    DecayStart 0.0

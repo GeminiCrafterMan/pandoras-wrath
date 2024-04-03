@@ -5,18 +5,18 @@ weapons/rifleout		"Sounds/Weapons/Slot 4/Burst Rifle/assaultrifle_clip_out.wav"
 weapons/riflefwd		"Sounds/Weapons/Slot 4/Burst Rifle/draw_assaultrifle_boltforward.wav"
 weapons/riflebak		"Sounds/Weapons/Slot 4/Burst Rifle/draw_assaultrifle_boltback.wav"
 
-// Chaingun
-weapons/draw_chaingun	"Sounds/Weapons/Slot 4/Chaingun/draw.wav"
-weapons/cgunup			"Sounds/Weapons/Slot 4/Chaingun/chaingun_cg_windup_mix_01.wav"
-weapons/cgunloop		"Sounds/Weapons/Slot 4/Chaingun/chaingun_cg_motor_loop_01.wav"
-weapons/cgundn			"Sounds/Weapons/Slot 4/Chaingun/chaingun_cg_winddown_mix_01.wav"
+// Mad Vulcan
+weapons/draw_vulcan		"Sounds/Weapons/Slot 4/Mad Vulcan/draw.wav"
+weapons/vulcanup		"Sounds/Weapons/Slot 4/Mad Vulcan/chaingun_cg_windup_mix_01.wav"
+weapons/vulcanloop		"Sounds/Weapons/Slot 4/Mad Vulcan/chaingun_cg_motor_loop_01.wav"
+weapons/vulcandn		"Sounds/Weapons/Slot 4/Mad Vulcan/chaingun_cg_winddown_mix_01.wav"
 
-weapons/chainfire1		"Sounds/Weapons/Slot 4/Chaingun/chaingun_fire1.wav"
-weapons/chainfire2		"Sounds/Weapons/Slot 4/Chaingun/chaingun_fire2.wav"
-weapons/chainfire3		"Sounds/Weapons/Slot 4/Chaingun/chaingun_fire3.wav"
-weapons/chainfire4		"Sounds/Weapons/Slot 4/Chaingun/chaingun_fire4.wav"
+weapons/vulcanfire1		"Sounds/Weapons/Slot 4/Mad Vulcan/chaingun_fire1.wav"
+weapons/vulcanfire2		"Sounds/Weapons/Slot 4/Mad Vulcan/chaingun_fire2.wav"
+weapons/vulcanfire3		"Sounds/Weapons/Slot 4/Mad Vulcan/chaingun_fire3.wav"
+weapons/vulcanfire4		"Sounds/Weapons/Slot 4/Mad Vulcan/chaingun_fire4.wav"
 
-$random weapons/chainfire { weapons/chainfire1 weapons/chainfire2 weapons/chainfire3 weapons/chainfire4 }	
+$random weapons/vulcanfire { weapons/vulcanfire1 weapons/vulcanfire2 weapons/vulcanfire3 weapons/vulcanfire4 }	
 
 // Frost Fang
 FrostFang/Fire1	FSTFFIR1

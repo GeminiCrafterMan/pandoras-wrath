@@ -27,34 +27,34 @@ melt1 VMELT1
 melt2 VMELT2
 
 // Acid Cannon
-weapons/vnmcfire1	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_01.wav"
-weapons/vnmcfire2	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_02.wav"
-weapons/vnmcfire3	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_03.wav"
-weapons/vnmcfire4	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_04.wav"
-weapons/vnmcfire5	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_05.wav"
-weapons/vnmcfire6	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_06.wav"
-weapons/vnmcfire7	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_07.wav"
-weapons/vnmcfire8	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_08.wav"
-weapons/vnmcfire9	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_09.wav"
-weapons/vnmcfire10	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_10.wav"
+weapons/acdcfire1	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_01.wav"
+weapons/acdcfire2	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_02.wav"
+weapons/acdcfire3	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_03.wav"
+weapons/acdcfire4	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_04.wav"
+weapons/acdcfire5	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_05.wav"
+weapons/acdcfire6	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_06.wav"
+weapons/acdcfire7	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_07.wav"
+weapons/acdcfire8	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_08.wav"
+weapons/acdcfire9	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_09.wav"
+weapons/acdcfire10	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_10.wav"
 
-weapons/vnmcsplt1	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_01.wav"
-weapons/vnmcsplt2	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_02.wav"
-weapons/vnmcsplt3	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_03.wav"
-weapons/vnmcsplt4	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_04.wav"
-weapons/vnmcsplt5	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_05.wav"
-weapons/vnmcsplt6	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_06.wav"
-weapons/vnmcsplt7	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_07.wav"
-weapons/vnmcsplt8	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_08.wav"
-weapons/vnmcsplt9	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_09.wav"
-weapons/vnmcsplt10	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_10.wav"
-weapons/vnmcsplt11	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_11.wav"
-weapons/vnmcsplt12	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_12.wav"
+weapons/acdcsplt1	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_01.wav"
+weapons/acdcsplt2	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_02.wav"
+weapons/acdcsplt3	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_03.wav"
+weapons/acdcsplt4	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_04.wav"
+weapons/acdcsplt5	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_05.wav"
+weapons/acdcsplt6	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_06.wav"
+weapons/acdcsplt7	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_07.wav"
+weapons/acdcsplt8	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_08.wav"
+weapons/acdcsplt9	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_09.wav"
+weapons/acdcsplt10	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_10.wav"
+weapons/acdcsplt11	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_11.wav"
+weapons/acdcsplt12	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_splat_12.wav"
 
-weapons/vnmcbomb	"Sounds/Weapons/Slot 9/Acid Cannon/phys_paint_bomb_01.wav"
+weapons/acdcbomb	"Sounds/Weapons/Slot 9/Acid Cannon/phys_paint_bomb_01.wav"
 
-$random weapons/vnmcfire { weapons/vnmcfire1 weapons/vnmcfire2 weapons/vnmcfire3 weapons/vnmcfire4 weapons/vnmcfire5 weapons/vnmcfire6 weapons/vnmcfire7 weapons/vnmcfire8 weapons/vnmcfire9 weapons/vnmcfire10 }
-$random weapons/vnmcsplt { weapons/vnmcsplt1 weapons/vnmcsplt2 weapons/vnmcsplt3 weapons/vnmcsplt4 weapons/vnmcsplt5 weapons/vnmcsplt6 weapons/vnmcsplt7 weapons/vnmcsplt8 weapons/vnmcsplt9 weapons/vnmcsplt10 weapons/vnmcsplt11 weapons/vnmcsplt12 }
+$random weapons/acdcfire { weapons/acdcfire1 weapons/acdcfire2 weapons/acdcfire3 weapons/acdcfire4 weapons/acdcfire5 weapons/acdcfire6 weapons/acdcfire7 weapons/acdcfire8 weapons/acdcfire9 weapons/acdcfire10 }
+$random weapons/acdcsplt { weapons/acdcsplt1 weapons/acdcsplt2 weapons/acdcsplt3 weapons/acdcsplt4 weapons/acdcsplt5 weapons/acdcsplt6 weapons/acdcsplt7 weapons/acdcsplt8 weapons/acdcsplt9 weapons/acdcsplt10 weapons/acdcsplt11 weapons/acdcsplt12 }
 
 // Ice Shotgun
 weapons/icehit		"Sounds/Weapons/Slot 9/Ice SG/DSICEHIT.wav"

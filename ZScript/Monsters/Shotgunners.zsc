@@ -82,7 +82,7 @@ class GWM_KahunaShotgunGuy : ShotgunGuy
 		//$Title "Slayer's Kahuna Shotgun Zombie
 		Health 80;
 		AttackSound "weapons/skshot";
-		DropItem "GWM_Shotgun",25;
+		DropItem "GWM_SlayersKahuna",25;
 		DropItem "GWM_Shell",230;
 		Obituary "$OB_KAHUNASHOTGUNGUY";
 		Tag "$TAG_KAHUNASHOTGUNGUY";

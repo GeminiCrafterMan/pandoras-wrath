@@ -184,38 +184,38 @@ class GWM_RocketBox : GWM_RocketAmmo
 	}
 }
 
-class GWM_VenomVial : Ammo
+class GWM_AcidVial : Ammo
 {
 	Default
 	{
 		//$Category Ammo
-		//$Title "Venom Vial
-		Inventory.PickupMessage "$GOTVENOMVIAL";
+		//$Title "Acid Vial
+		Inventory.PickupMessage "$GOTACIDVIAL";
 		Inventory.Amount 1;
 		Inventory.MaxAmount 20;
 		Ammo.BackpackAmount 2;
-		Inventory.Icon "VNMVC0";
+		Inventory.Icon "ACDVC0";
 	}
 	States
 	{
 		Spawn:
-			VNMV ABCDCB 6;
+			ACDV ABCDCB 6;
 			Loop;
 	}
 }
-class GWM_LargeVenomVial : GWM_VenomVial
+class GWM_LargeAcidVial : GWM_AcidVial
 {
 	Default
 	{
 		//$Category Ammo
-		//$Title "Large Venom Vial
-		Inventory.PickupMessage "$GOTLARGEVENOMVIAL";
+		//$Title "Large Acid Vial
+		Inventory.PickupMessage "$GOTLARGEACIDVIAL";
 		Inventory.Amount 5;
 	}
 	States
 	{
 		Spawn:
-			VNMV EFGHGF 6;
+			ACDV EFGHGF 6;
 			Loop;
 	}
 }

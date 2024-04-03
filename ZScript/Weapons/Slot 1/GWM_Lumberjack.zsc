@@ -39,7 +39,7 @@ class GWM_Lumberjack : GWM_WeaponBase
 			Goto Release;
 		Hold:
 			LJAK C 1 {
-				A_Saw("", "weapons/csawhit", 22, "ZBulletPuff", SF_NORANDOM);
+				A_Saw("", "weapons/csawhit", 22, "ZDefaultBulletPuff", SF_NORANDOM);
 				A_WeaponOffset(frandom(-2, 2), frandom(30, 34));
 			}
 			LJAK CDD 1 A_WeaponOffset(frandom(-2, 2), frandom(30, 34));

@@ -199,7 +199,10 @@ class ThingReplacer : StaticEventHandler
 							e.Replacement = "GWM_BaronOfHell";
 						break;
 					case 'Cacodemon':
-						e.Replacement = "GWM_Cacodemon";
+						if (random(0, 4) == 4)
+							e.Replacement = "GWM_DisCacodemon";
+						else
+							e.Replacement = "GWM_Cacodemon";
 						break;
 					// Other monsters
 					case 'Demon':
@@ -311,13 +314,13 @@ class ThingReplacer : StaticEventHandler
 					e.Replacement = "GWM_Pistol";
 					break;
 				case 'Shotgun':
-					e.Replacement = "GWM_Shotgun";
+					e.Replacement = "GWM_SlayersKahuna";
 					break;
 				case 'SuperShotgun':
 					e.Replacement = "GWM_SuperShotgun";
 					break;
 				case 'Chaingun':
-					e.Replacement = "GWM_Chaingun";
+					e.Replacement = "GWM_MadVulcan";
 					break;
 				case 'RocketLauncher':
 					e.Replacement = "GWM_RocketLauncher";
@@ -365,7 +368,7 @@ class ThingReplacer : StaticEventHandler
 				e.Replacement = "GWM_Pistol";
 				break;
 			case 'TangoShotgun':
-				e.Replacement = "GWM_ShotgunSpawner"; // Spawns either a Shotgun or an Ice Shotgun.
+				e.Replacement = "GWM_ShotgunSpawner";
 				break;
 			case 'TangoAssaultRifle':
 				e.Replacement = "GWM_BurstRifle";
@@ -374,7 +377,7 @@ class ThingReplacer : StaticEventHandler
 				e.Replacement = "GWM_ChainsawSpawner";
 				break;
 			case 'TangoMinigun':
-				e.Replacement = "GWM_Chaingun";
+				e.Replacement = "GWM_MadVulcan";
 				break;
 			case 'TangoPlasmaRifle':
 				e.Replacement = "GWM_PlasmaRifleSpawner";

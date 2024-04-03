@@ -1,0 +1,342 @@
+class GWM_AcidCannon : GWM_WeaponBase
+{
+	Default
+	{
+		//$Category Weapons
+		//$Title "Acid Cannon"
+		Weapon.SlotNumber 9;
+		Weapon.SelectionOrder 600;
+		Weapon.UpSound "weapons/draw_primary";
+		Weapon.AmmoUse 1;
+		Weapon.AmmoUse2 1;
+		Weapon.AmmoGive 2;
+		Weapon.AmmoType "GWM_AcidVial";
+		Weapon.AmmoType2 "GWM_AcidVial";
+		+WEAPON.NOAUTOFIRE
+		Inventory.PickupMessage "$GOTACIDCANNON";
+		Tag "$TAG_ACIDCANNON";
+	}
+	States
+	{
+		Ready:
+			ACDG A 1 A_WeaponReady;
+			Loop;
+		Deselect:
+			ACDG A 1 A_Lower(18);
+			Loop;
+		Select:
+			ACDG A 1 A_Raise(18);
+			Loop;
+		Fire:
+			ACDG B 4 A_Overlay(-2, "Flash");
+			ACDG C 6 {
+				A_Overlay(-2, "Flash");
+				A_StartSound("weapons/acdcfire", CHAN_WEAPON);
+				A_FireProjectile("GWM_AcidBall", 0, true, 0, 0, 0);
+			}
+			ACDG BA 4;
+			TNT1 A 0 A_ReFire;
+			Goto Ready;
+		Flash:
+			ACDF ABCDE 2;
+			Stop;
+		Spawn:
+			ACDG Z -1;
+			Stop;
+	}
+}
+class GWM_AcidBall : GWM_AcidProjectile
+{
+	Default
+	{
+		Speed 20;
+		DamageFunction (20);
+		GWM_AcidProjectile.AcidWeakCount 50;
+		Height 24;
+		Radius 24;
+		BounceCount 11;
+		Scale 0.45;
+		Gravity 0.43;
+		-NOGRAVITY
+		+BOUNCEONWALLS
+		+BOUNCEONFLOORS
+		+BOUNCEONCEILINGS
+		+BOUNCEAUTOOFF
+		+USEBOUNCESTATE
+		+FORCEXYBILLBOARD
+		+RANDOMIZE
+		+THRUGHOST
+		Projectile;
+		BounceSound "weapons/acdcsplt";
+		DeathSound "weapons/acdcbomb";
+		Obituary "$KILLACIDCANNONBALL";
+		-NoGravity;
+	}
+	States
+	{
+		Spawn:
+			ACDP A 2 A_SpawnItemEX("GWM_AcidSplashFX",0,0,12,frandom(-2,2),frandom(-2,2),frandom(-2,1));
+			Loop;
+		Bounce.Ceiling:
+				
+			TNT1 AAAAAAAAAA 0 A_SpawnItemEx("GWM_AcidSplashFX", 0,0,5, frandom(-5,5),frandom(-5,5),frandom(-4,-2), random(1,360));
+			TNT1 AAAAAAAAAA 0 A_SpawnItemEx("GWM_SmallAcidBall", 0,0,5, frandom(-5,5),frandom(-5,5),frandom(-4,-2), random(1,360));
+			stop;	
+		Bounce.Floor:
+			TNT1 A 0 A_SpawnItemEx("GWM_FloorAcidPuddle");
+			TNT1 AAAAAAAAAA 0 A_SpawnItemEx("GWM_AcidSplashFX", 0,0,5, frandom(-5,5),frandom(-5,5),frandom(5,8), random(1,360));
+			TNT1 AAAAAAAAAA 0 A_SpawnItemEx("GWM_SmallAcidBall", 0,0,5, frandom(-5,5),frandom(-5,5),frandom(5,8), random(1,360));
+			stop;	
+		Bounce.Wall:
+			TNT1 AAAAAAAAAA 0 A_SpawnItemEx("GWM_AcidSplashFX", 0,0,5, frandom(-8,-3),frandom(-5,5),frandom(5,8), random(1,360));
+			TNT1 AAAAAAAAAA 0 A_SpawnItemEx("GWM_SmallAcidBall", 0,0,5, frandom(-8,-3),frandom(-5,5),frandom(5,8), random(1,360));
+			stop;
+		Death:
+			TNT1 A 0 {
+				A_Scream();
+				A_SetScale(0.25, 0.25);
+				A_SpawnItemEx("GWM_SmallAcidBall", xvel: 5, zvel: 10, angle: random(1,360));
+				A_SpawnItemEx("GWM_SmallAcidBall", xvel: 5, zvel: 10, angle: random(1,360));
+				A_SpawnItemEx("GWM_SmallAcidBall", xvel: 5, zvel: 10, angle: random(1,360));
+				A_SpawnItemEx("GWM_SmallAcidBall", xvel: 5, zvel: 10, angle: random(1,360));
+				A_SpawnItemEx("GWM_SmallAcidBall", xvel: 5, zvel: 10, angle: random(1,360));
+				A_SpawnItemEx("GWM_FloorAcidPuddle");
+			}
+			ACDP BCDEF 1;
+			Stop;
+			
+	}
+}
+
+
+
+class GWM_FloorAcidPuddle : GWM_AcidProjectile
+{
+	Default
+	{
+		Height 2;
+		Projectile;
+		Radius 16;
+		-NOGRAVITY
+		+NOTELEPORT
+		+FLATSPRITE
+		+FLOORHUGGER
+		+MOVEWITHSECTOR
+		Scale 2;
+		DamageFunction (1);
+		GWM_AcidProjectile.AcidWeakCount 75;
+		Obituary "$KILLACIDCANNONPUDDLE";
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Puddle3");
+			TNT1 A 0 A_JumpIf(random(0, 1), "Puddle2");
+		Puddle1:
+			ACDP G 1 {self.Vel.X = 0; self.Vel.Y = 0;
+			if (Scale.X < 3.1) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 2.8) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 2.6) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
+			Loop;
+		Puddle2:
+			ACDP H 1 {self.Vel.X = 0; self.Vel.Y = 0;
+			if (Scale.X < 3.1) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 2.8) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 2.6) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
+			Loop;
+		Puddle3:
+			ACDP I 1 {self.Vel.X = 0; self.Vel.Y = 0;
+			if (Scale.X < 3.1) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 2.8) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 2.6) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
+			Loop;
+	}
+}
+
+
+class GWM_SmallAcidBall : GWM_AcidProjectile
+{
+	Default
+	{
+		Speed 20;
+		DamageFunction (5);
+		GWM_AcidProjectile.AcidWeakCount 45;
+		Height 24;
+		Radius 24;
+		Scale 0.15;
+		Gravity 0.43;
+		-NOGRAVITY
+		+FORCEXYBILLBOARD
+		+RANDOMIZE
+		+THRUGHOST
+		Projectile;
+		BounceSound "weapons/acdcsplt";
+		DeathSound "weapons/acdcbomb";
+		Obituary "$KILLACIDCANNONBALL";
+		-NoGravity;
+	}
+	States
+	{
+		Spawn:
+			ACDP A 8 A_SpawnItemEX("GWM_SmallAcidSplashFX",0,0,12,frandom(-2,2),frandom(-2,2),frandom(-2,1));
+			Loop;
+		Death:
+			TNT1 A 0 {
+				A_Scream();
+				A_SetScale(0.25, 0.25);
+				A_SpawnItemEx("GWM_MicroAcidBall", 0,0,5, frandom(-3,-3),frandom(-3,3),frandom(1,4), random(1,360));
+				A_SpawnItemEx("GWM_MicroAcidBall", 0,0,5, frandom(-3,-3),frandom(-3,3),frandom(1,4), random(1,360));
+				A_SpawnItemEx("GWM_MicroAcidBall", 0,0,5, frandom(-3,-3),frandom(-3,3),frandom(1,4), random(1,360));
+				A_SpawnItemEx("GWM_MicroAcidBall", 0,0,5, frandom(-3,-3),frandom(-3,3),frandom(1,4), random(1,360));
+				A_SpawnItemEx("GWM_MicroAcidBall", 0,0,5, frandom(-3,-3),frandom(-3,3),frandom(1,4), random(1,360));
+				A_SpawnItemEx("GWM_AcidSplashFX", 0,0,5, frandom(-3,-3),frandom(-3,3),frandom(1,4), random(1,360));
+				A_SpawnItemEx("GWM_AcidSplashFX", 0,0,5, frandom(-3,-3),frandom(-3,3),frandom(1,4), random(1,360));
+				A_SpawnItemEx("GWM_AcidSplashFX", 0,0,5, frandom(-3,-3),frandom(-3,3),frandom(1,4), random(1,360));
+				A_SpawnItemEx("GWM_AcidSplashFX", 0,0,5, frandom(-3,-3),frandom(-3,3),frandom(1,4), random(1,360));
+				A_SpawnItemEx("GWM_AcidSplashFX", 0,0,5, frandom(-3,-3),frandom(-3,3),frandom(1,4), random(1,360));
+				A_SpawnItemEx("GWM_SmallFloorAcidPuddle");
+			}
+			ACDP BCDEF 1;
+			Stop;
+	}
+}
+
+class GWM_SmallFloorAcidPuddle : GWM_AcidProjectile
+{
+	Default
+	{
+		Height 2;
+		Speed 0;
+		Projectile;
+		Radius 16;
+		-NOGRAVITY
+		+NOTELEPORT
+		+FLATSPRITE
+		+FLOORHUGGER
+		+MOVEWITHSECTOR
+		DamageFunction (1);
+		Scale 0.95;
+		GWM_AcidProjectile.AcidWeakCount 35;
+		Obituary "$KILLACIDCANNONPUDDLE";
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_ScaleVelocity(0);
+			TNT1 A 0 A_JumpIf(random(0, 1), "Puddle3");
+			TNT1 A 0 A_JumpIf(random(0, 1), "Puddle2");
+		Puddle1:
+			ACDP G 1 {self.Vel.X = 0; self.Vel.Y = 0; 
+			if (Scale.X < 1.5) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 1.4) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 1.2) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
+			Loop;
+		Puddle2:
+			ACDP H 1 {self.Vel.X = 0; self.Vel.Y = 0;
+			if (Scale.X < 1.5) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 1.4) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 1.2) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
+			Loop;
+		Puddle3:
+			ACDP I 1 {self.Vel.X = 0; self.Vel.Y = 0;
+			if (Scale.X < 1.5) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 1.4) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
+			if (Scale.X < 1.2) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
+			Loop;
+	}
+}
+
+class GWM_MicroAcidBall : GWM_SmallAcidBall
+{
+	Default
+	{
+		Speed 20;
+		DamageFunction (1);
+		GWM_AcidProjectile.AcidWeakCount 15;
+		Height 24;
+		Radius 24;
+		Scale 0.075;
+		Gravity 0.43;
+		-NOGRAVITY
+		+FORCEXYBILLBOARD
+		+RANDOMIZE
+		+THRUGHOST
+		Projectile;
+		BounceSound "weapons/acdcsplt";
+		DeathSound "weapons/acdcbomb";
+		Obituary "$KILLACIDCANNONBALL";
+		-NoGravity;
+	}
+	States
+	{
+		Spawn:
+			ACDP A 6;
+			Loop;
+		Death:
+			TNT1 A 0 {
+				A_Scream();
+			}
+			TNT1 A 0 A_SpawnItemEx("GWM_AcidSplashFX", 0,0,5, frandom(-3,-3),frandom(-3,3),frandom(1,4), random(1,360));
+			TNT1 A 0 A_SpawnItemEx("GWM_MicroFloorAcidPuddle");
+			Stop;
+	}
+}
+
+class GWM_MicroFloorAcidPuddle : Actor
+{
+	Default
+	{
+		+noclip
+		+FLATSPRITE
+		+FLOORHUGGER
+		+MOVEWITHSECTOR
+		Scale 0.75;
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Puddle3");
+			TNT1 A 0 A_JumpIf(random(0, 1), "Puddle2");
+		Puddle1:
+			ACDP G 1 {self.Vel.X = 0; self.Vel.Y = 0; A_Setscale(Scale.X*1.001,Scale.X*1.001); A_Fadeout(0.008);}
+			Loop;
+		Puddle2:
+			ACDP H 1 {self.Vel.X = 0; self.Vel.Y = 0; A_Setscale(Scale.X*1.001,Scale.X*1.001); A_Fadeout(0.008);}
+			Loop;
+		Puddle3:
+			ACDP I 1 {self.Vel.X = 0; self.Vel.Y = 0; A_Setscale(Scale.X*1.001,Scale.X*1.001); A_Fadeout(0.008);}
+			Loop;
+	}
+}
+
+class GWM_AcidSplashFX : Actor
+{
+	Default
+	{
+		Scale 0.21;
+		Gravity 0.43;
+		Alpha 0.75;
+	}
+	States
+	{
+		Spawn:
+			ACED ABCDEFGHI 2 bright;
+			Stop;
+	}
+}
+
+class GWM_SmallAcidSplashFX : Actor
+{
+	Default
+	{
+		Scale 0.095;
+		Gravity 0.43;
+		Alpha 0.75;
+	}
+	States
+	{
+		Spawn:
+			ACED ABCDEFGHI 2 bright;
+			Stop;
+	}
+}

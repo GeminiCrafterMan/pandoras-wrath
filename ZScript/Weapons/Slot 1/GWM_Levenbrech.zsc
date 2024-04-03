@@ -32,7 +32,7 @@ class GWM_Levenbrech : GWM_WeaponBase replaces Gauntlets // not that it needs to
 			LBRE BCD 2;
 			TNT1 A 0 {
 				A_StartSound("weapons/swordslash");
-				A_CustomPunch(22, true, pufftype: "ZBulletPuff");
+				A_CustomPunch(22, true, pufftype: "ZDefaultBulletPuff");
 			}
 			LBRE EFG 2;
 			LBRE A 1;
@@ -63,7 +63,7 @@ class GWM_LevenbrechPowered : GWM_Levenbrech
 			LBRE KLM 2 Bright;
 			TNT1 A 0 {
 				A_StartSound("weapons/swordslash");
-				A_CustomPunch(44, true, pufftype: "ZBulletPuff", lifesteal: 0.5);
+				A_CustomPunch(44, true, pufftype: "ZDefaultBulletPuff", lifesteal: 0.5);
 			}
 			LBRE NOP 2 Bright;
 			LBRE H 1 Bright;

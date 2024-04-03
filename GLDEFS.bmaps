@@ -220,8 +220,8 @@ Brightmap Sprite MINED4D6 { Map MINEC1 DisableFullbright }
 Brightmap Sprite MINED5 { Map MINED1 DisableFullbright }
 Brightmap Sprite MINEZ0 { Map BMMINEZ0 DisableFullbright }
 // Pistol
-Brightmap Sprite 92FFA0 { Map 92FFA0 DisableFullbright }
-Brightmap Sprite 92FFB0 { Map 92FFB0 DisableFullbright }
+Brightmap Sprite PSTFA0 { Map PSTFA0 DisableFullbright }
+Brightmap Sprite PSTFB0 { Map PSTFB0 DisableFullbright }
 // SMG
 Brightmap Sprite SMGFA0 { Map SMGFA0 DisableFullbright }
 Brightmap Sprite SMGFB0 { Map SMGFB0 DisableFullbright }
@@ -305,14 +305,14 @@ Brightmap Sprite RIFLL0 { Map RIFLL0 DisableFullbright }
 Brightmap Sprite RIFLM0 { Map RIFLM0 DisableFullbright }
 Brightmap Sprite RIFLZ0 { Map BMRIFLZ0 DisableFullbright }
 // Chaingun
-Brightmap Sprite CHGFA0 { Map CHGFA0 DisableFullbright }
-Brightmap Sprite CHGFB0 { Map CHGFB0 DisableFullbright }
-Brightmap Sprite CHGFC0 { Map CHGFC0 DisableFullbright }
-Brightmap Sprite CHGFD0 { Map CHGFD0 DisableFullbright }
-Brightmap Sprite CHGFE0 { Map CHGFE0 DisableFullbright }
-Brightmap Sprite CHGFF0 { Map CHGFF0 DisableFullbright }
-Brightmap Sprite CHGFG0 { Map CHGFG0 DisableFullbright }
-Brightmap Sprite CHGFH0 { Map CHGFH0 DisableFullbright }
+Brightmap Sprite VLCFA0 { Map VLCFA0 DisableFullbright }
+Brightmap Sprite VLCFB0 { Map VLCFB0 DisableFullbright }
+Brightmap Sprite VLCFC0 { Map VLCFC0 DisableFullbright }
+Brightmap Sprite VLCFD0 { Map VLCFD0 DisableFullbright }
+Brightmap Sprite VLCFE0 { Map VLCFE0 DisableFullbright }
+Brightmap Sprite VLCFF0 { Map VLCFF0 DisableFullbright }
+Brightmap Sprite VLCFG0 { Map VLCFG0 DisableFullbright }
+Brightmap Sprite VLCFH0 { Map VLCFH0 DisableFullbright }
 // Frost Fang
 Brightmap Sprite FSTFA0 { Map FSTFA0 DisableFullbright }
 Brightmap Sprite FSTFB0 { Map FSTFB0 DisableFullbright }
@@ -322,10 +322,10 @@ Brightmap Sprite FSTFZ0 { Map BMFSTFZ0 DisableFullbright }
 // Rocket Launcher
 Brightmap Sprite RKTLA0 { Map RKTLA0 DisableFullbright }
 Brightmap Sprite RKTLZ0 { Map BMRKTLZ0 DisableFullbright }
-// Venom Cannon
-Brightmap Sprite VNMGA0 { Map VNMGA0 DisableFullbright }
-Brightmap Sprite VNMGB0 { Map VNMGB0 DisableFullbright }
-Brightmap Sprite VNMGZ0 { Map BMVNMGZ0 DisableFullbright }
+// Acid Cannon
+Brightmap Sprite ACDGA0 { Map ACDGA0 DisableFullbright }
+Brightmap Sprite ACDGB0 { Map ACDGB0 DisableFullbright }
+Brightmap Sprite ACDGZ0 { Map BMACDGZ0 DisableFullbright }
 // Plasma Rifle
 Brightmap Sprite PLSFA0 { Map PLSFA0 DisableFullbright }
 Brightmap Sprite PLSFB0 { Map PLSFB0 DisableFullbright }

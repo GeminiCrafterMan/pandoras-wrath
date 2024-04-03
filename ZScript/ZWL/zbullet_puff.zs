@@ -22,6 +22,14 @@ class ZBulletPuff : BulletPuff
 	}
 }
 
+class ZDefaultBulletPuff : ZBulletPuff
+{
+    Default
+    {
+        Decal "DefaultBulletChip";
+    }
+}
+
 class ZFlatDecal : Actor
 {
     const epsilon = 4;

@@ -1,5 +1,5 @@
 #library "WepSwitch"
-#include "Zcommon.acs"
+#include "zcommon.acs"
 
 script "GWM_FireWepSwitch" (void) 
 {
@@ -28,9 +28,9 @@ script "GWM_IceWepSwitch" (void)
 script "GWM_AcidWepSwitch" (void) 
 {
 
-	if (Checkinventory("GWM_VenomCannon")==1&&CheckWeapon("GWM_VenomCannon")==0)
+	if (Checkinventory("GWM_AcidCannon")==1&&CheckWeapon("GWM_AcidCannon")==0)
 			{
-				SetWeapon("GWM_VenomCannon");
+				SetWeapon("GWM_AcidCannon");
 			}
 }
 

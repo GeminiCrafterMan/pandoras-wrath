@@ -108,12 +108,19 @@ class GWM_DisCacodemonBall : GWM_CacodemonBall
 {
 	Default
 	{
+		Speed 14;
 		+SEEKERMISSILE
 	}
 	States
 	{
 		Spawn:
-			BAL2 AABB 2 BRIGHT A_SeekerMissile(0, 6);
+			DCBL AABBCC 2 BRIGHT A_SeekerMissile(0, 6);
 			Loop;
+		Death:
+			DCBL D 5 BRIGHT;
+			DCBL E 3 BRIGHT A_FadeOut(0.15);
+			DCBL F 3 BRIGHT A_FadeOut(0.15);
+			DCBL GHIJ 3 BRIGHT A_FadeOut(0.15);
+			Stop;
 	}
 }

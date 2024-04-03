@@ -6,17 +6,17 @@
 #include "ZScript/Weapons/Slot 1/GWM_Lumberjack.zsc"		// "Lumberjack" Chainsaw, sprites by Captain J
 #include "ZScript/Weapons/Slot 1/GWM_Levenbrech.zsc"		// Levenbrech
 
-#include "ZScript/Weapons/Slot 2/GWM_Pistol.zsc"			// Beretta 92FS
+#include "ZScript/Weapons/Slot 2/GWM_Pistol.zsc"			// Pistol
 #include "ZScript/Weapons/Slot 2/GWM_SMG.zsc"				// SMG
 #include "ZScript/Weapons/Slot 2/GWM_Revolver.zsc"			// Revolver
 #include "ZScript/Weapons/Slot 2/GWM_GoldWand.zsc"			// Gold Wand
 
 #include "ZScript/Weapons/Slot 3/GWM_ZombieShotgun.zsc"		// Get a better shotgun ASAP
-#include "ZScript/Weapons/Slot 3/GWM_Shotgun.zsc"			// Slayer's Kahuna
+#include "ZScript/Weapons/Slot 3/GWM_SlayersKahuna.zsc"		// Slayer's Kahuna
 #include "ZScript/Weapons/Slot 3/GWM_SuperShotgun.zsc"		// Super Shotgun
 #include "ZScript/Weapons/Slot 3/GWM_ImpalerCrossbow.zsc"	// Impaler Crossbow
 
-#include "ZScript/Weapons/Slot 4/GWM_Chaingun.zsc"			// Mad Vulcan
+#include "ZScript/Weapons/Slot 4/GWM_MadVulcan.zsc"			// Mad Vulcan
 #include "ZScript/Weapons/Slot 4/GWM_BurstRifle.zsc"		// Burst Rifle
 #include "ZScript/Weapons/Slot 4/GWM_MP40.zsc"				// MP40
 #include "ZScript/Weapons/Slot 4/GWM_Scrapgun.zsc"			// Not exactly TangoScrapgun anymore... (from Supercharge)
@@ -38,7 +38,7 @@
 #include "ZScript/Weapons/Slot 9/GWM_IceShotgun.zsc"		// Ice Shotgun
 #include "ZScript/Weapons/Slot 9/GWM_PFSuperShotgun.zsc"	// Perfect Freeze Super Shotgun
 #include "ZScript/Weapons/Slot 9/GWM_Flamethrower.zsc"		// Flamethrower
-#include "ZScript/Weapons/Slot 9/GWM_VenomCannon.zsc"		// Venom Cannon (poison goop gun)
+#include "ZScript/Weapons/Slot 9/GWM_AcidCannon.zsc"		// Acid Cannon (corrosive goop gun)
 #include "ZScript/Weapons/Slot 9/GWM_Melter.zsc"			// Melter
 
 #include "ZScript/Weapons/Slot 0/GWM_Mine.zsc"				// Land mine
