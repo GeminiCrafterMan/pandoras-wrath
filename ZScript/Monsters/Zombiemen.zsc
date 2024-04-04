@@ -8,7 +8,7 @@ class GWM_Zombieman : Zombieman
 		Tag "$TAG_ZOMBIEMAN";
 		Obituary "$OB_ZOMBIEMAN";
 		DropItem "GWM_LowCaliberMagazine";
-		AttackSound "weapons/92fsfire";
+		AttackSound "weapons/pistolfire";
 	}
 	States
 	{

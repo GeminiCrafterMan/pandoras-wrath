@@ -27,7 +27,6 @@ Model GWM_SSGShot // Name of actor
 	MODEL 0 "Tracer.md3" // Model index, texture (can be in any format supported by GZDoom)
 	Scale 6.5 2.5 2.5 // Scale values
 	PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
-
 	FrameIndex TRAC A 0 0 // The sprite lump, sprite frame, model index, frame number
 }
 
@@ -51,4 +50,23 @@ Model GWM_ShotgunIceShard // Name of actor
 	PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
 
 	FrameIndex SHGI A 0 0 // The sprite lump, sprite frame, model index, frame number
+}
+
+Model IceWallColumn
+{
+   Path "Models"   
+   Model 0 "icebox1.md2"   
+   Skin 0 "icebox1.png"    
+   Skin 0 "icebox2.png"    
+   Skin 0 "icebox3.png"    
+   Skin 0 "icebox4.png"    
+   Scale 0.45 0.45 0.64          
+   PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
+	Offset 0 0 1
+	
+	//Disable these comments for model replacing
+	//FrameIndex ICWL A 0 0
+	//FrameIndex ICWL B 0 1
+	//FrameIndex ICWL C 0 2
+	//FrameIndex ICWL D 0 3
 }
