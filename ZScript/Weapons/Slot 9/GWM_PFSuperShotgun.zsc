@@ -365,10 +365,10 @@ int rotations;
 			
 			TNT1 A 0 
 			{
-				rotations = 0;
-				angler = 0;
-				offsetangle = 0;
-				bulletspeed = 3;
+				rotations = 0; //how many full rotations have been made?
+				angler = 0; //angle at which shots will spawn
+				offsetangle = 0; //angle to spread each round of shots from
+				bulletspeed = 3; //take a lucky guess.
 				A_StartSound("weapons/power1");
 			}
 			Generate:
@@ -377,28 +377,32 @@ int rotations;
 				A_SpawnItemEX("GWM_PerfectFreezeBullet",0,0,4,frandom(-0.75,0.75)+bulletspeed,0,frandom(-0.75,0.75),angler+offsetangle+random(-9,9),SXF_SETTRACER  );
 				
 				A_SpawnItemEX("GWM_PerfectFreezeBullet",0,0,4,frandom(-0.75,0.75)+bulletspeed*0.25,0,frandom(-0.75,0.75)+bulletspeed*0.75,angler+offsetangle+random(-9,9),SXF_SETTRACER  );
-				A_SpawnItemEX("GWM_PerfectFreezeBullet",0,0,4,frandom(-0.75,0.75)+bulletspeed*0.75,0,frandom(-0.75,0.75)+bulletspeed*0.25,angler+offsetangle+random(-9,9),SXF_SETTRACER  );
 				
 				A_SpawnItemEX("GWM_PerfectFreezeBullet",0,0,4,frandom(-0.75,0.75)+bulletspeed*0.25,0,frandom(-0.75,0.75)-bulletspeed*0.75,angler+offsetangle+random(-9,9),SXF_SETTRACER  );
-				A_SpawnItemEX("GWM_PerfectFreezeBullet",0,0,4,frandom(-0.75,0.75)+bulletspeed*0.75,0,frandom(-0.75,0.75)-bulletspeed*0.25,angler+offsetangle+random(-9,9),SXF_SETTRACER  );
 				
-				
+				//change the offset angle and make another spread this many degrees over.
+				//more degrees, fewer spreads.
 				offsetangle = offsetangle+120;
 			}
 			
+			//if the angle has incraesed
 			TNT1 A 0 A_Jumpif(invoker.offsetangle <= 360,"Generate");
 			
 			
 			TNT1 A 3
 			{
+			 //reset offset
 			 offsetangle = 0;
-			 angler = angler + 20;
+			 //move the next spreads over by this many degrees
+			 angler = angler + 30;
+			 //if the angle is this many degrees, add a rotation and reset the degrees
 			 if ( angler >= 240)
 			 {
 			 angler = 0;
 			 rotations = rotations + 1;
 			 }
 			}
+			//if it's rotated this many times, stop.
 			TNT1 A 0 A_Jumpif(invoker.rotations == 1,"Die");
 			goto Generate;
 				
