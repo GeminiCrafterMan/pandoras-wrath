@@ -142,12 +142,12 @@ class GWM_PerfectFreezeBullet : GWM_IceProjectile
 			A_Stop();
 			return ResolveState("White");
 		}
-		if (GetAge() >= 6*35 && GetAge() <= 6.25*35)
+		if (GetAge() >= 4*35 && GetAge() <= 4.25*35)
 		{
 			bSEEKERMISSILE = true;
 			A_SeekerMissile(0, 90, SMF_LOOK);
 		}
-		if (GetAge() > 6.25*35)
+		if (GetAge() > 4.25*35)
 		{
 			A_SeekerMissile(0, 2, SMF_LOOK);
 		}
@@ -160,7 +160,7 @@ class GWM_PerfectFreezeBullet : GWM_IceProjectile
 		Radius 16;
 		Height 16;
 		Speed 20;
-		DamageFunction (2);
+		DamageFunction (10);
 		Projectile;
 		+RIPPER
 		+FORCEXYBILLBOARD
