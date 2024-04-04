@@ -400,7 +400,7 @@ class MelterPuff : Actor
 	Spawn:
 		TNT1 A 0 nodelay
 		{
-			if (tracer && tracer.bISMONSTER && (tracer.InStateSequence(tracer.CurState, tracer.FindState("Death")) || tracer.InStateSequence(tracer.CurState, tracer.FindState("Death2"))))//OLD if (tracer && tracer.bISMONSTER && tracer.InStateSequence(tracer.CurState, tracer.FindState("Death")))
+			if (tracer && tracer.bISMONSTER && (tracer.InStateSequence(tracer.CurState, tracer.FindState("Death")) || tracer.InStateSequence(tracer.CurState, tracer.FindState("Death2"))))
 			{
 				if (tracer.FindState("Death.Fire"))
 					tracer.SetStateLabel("Death.Fire");

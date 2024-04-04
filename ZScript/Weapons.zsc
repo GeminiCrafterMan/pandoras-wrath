@@ -37,6 +37,7 @@
 
 #include "ZScript/Weapons/Slot 9/GWM_IceShotgun.zsc"		// Ice Shotgun
 #include "ZScript/Weapons/Slot 9/GWM_PFSuperShotgun.zsc"	// Perfect Freeze Super Shotgun
+#include "ZScript/Weapons/Slot 9/GWM_PFMissileLauncher.zsc"	// Perfect Freeze Missile Launcher (WIP replacement for the above weapon)
 #include "ZScript/Weapons/Slot 9/GWM_Flamethrower.zsc"		// Flamethrower
 #include "ZScript/Weapons/Slot 9/GWM_AcidCannon.zsc"		// Acid Cannon (corrosive goop gun)
 #include "ZScript/Weapons/Slot 9/GWM_Melter.zsc"			// Melter
