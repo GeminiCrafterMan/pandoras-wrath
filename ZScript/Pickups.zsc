@@ -312,3 +312,14 @@ class GWM_PortableMedkit : Inventory
 			Stop;
 	}
 }
+
+class GWM_LightAmpVisor : Infrared replaces Infrared // Exists solely to free up the PVIS sprite name for mapsets like Valiant, so Pyro Knights don't turn into light-amp goggles.
+{
+	States
+	{
+		Spawn:
+			AMPV A 6 Bright;
+			AMPV B 6;
+			Loop;
+	}
+}
