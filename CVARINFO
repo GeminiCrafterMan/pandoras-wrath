@@ -3,4 +3,5 @@ server int zwl_maxcasings = 1024;
 server bool gwm_replacemonsters = true;
 server bool gwm_replaceobjects = true;
 server bool gwm_noaltreplacements = false;
+server bool gwm_replacewolfss = true;
 user bool gwm_shutupmerc = false;

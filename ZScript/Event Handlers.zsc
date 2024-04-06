@@ -80,6 +80,7 @@ class ThingReplacer : StaticEventHandler
 		// Monsters
         CVar replaceMonsters = CVar.FindCVar('gwm_replacemonsters');
 		CVar noAltReplacements = CVar.FindCVar('gwm_noaltreplacements');
+		CVar replaceWolfSS = CVar.FindCVar('gwm_replacewolfss');
         if (replaceMonsters.GetBool())
         {
 			let cls = e.Replacee.GetClassName(); //Although not necessary, it helps out for simplification.
@@ -136,7 +137,8 @@ class ThingReplacer : StaticEventHandler
 						e.Replacement = "GWM_SpiderMastermind";
 						break;
 					case 'WolfensteinSS':
-						e.Replacement = "GWM_WolfensteinSS";
+						if (replaceWolfSS.GetBool())
+							e.Replacement = "GWM_WolfensteinSS";
 						break;
 				}
 			}
@@ -239,7 +241,8 @@ class ThingReplacer : StaticEventHandler
 						e.Replacement = "GWM_SpiderMastermind";
 						break;
 					case 'WolfensteinSS':
-						e.Replacement = "GWM_WolfensteinSS";
+						if (replaceWolfSS.GetBool())
+							e.Replacement = "GWM_WolfensteinSS";
 						break;
 				}
 			}
