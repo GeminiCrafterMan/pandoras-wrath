@@ -7,10 +7,12 @@ Brightmap Sprite SKSGE0 { Map SKSGE0 DisableFullbright }
 Brightmap Sprite SKSGF0 { Map SKSGSLAM DisableFullbright }
 Brightmap Sprite SKSGG0 { Map SKSGSLAM DisableFullbright }
 Brightmap Sprite SKSGH0 { Map SKSGSLAM DisableFullbright }
-Brightmap Sprite SKSGI0 { Map SKSGI0M0 DisableFullbright }
-Brightmap Sprite SKSGJ0 { Map SKSGJ0 DisableFullbright }
-Brightmap Sprite SKSGK0 { Map SKSGK0 DisableFullbright }
+Brightmap Sprite SKSGI0 { Map SKSGSLAM DisableFullbright }
+Brightmap Sprite SKSGJ0 { Map SKSGSLAM DisableFullbright }
+Brightmap Sprite SKSGK0 { Map SKSGK0O0 DisableFullbright }
 Brightmap Sprite SKSGL0 { Map SKSGL0 DisableFullbright }
-Brightmap Sprite SKSGM0 { Map SKSGI0M0 DisableFullbright }
+Brightmap Sprite SKSGM0 { Map SKSGM0 DisableFullbright }
 Brightmap Sprite SKSGN0 { Map SKSGN0 DisableFullbright }
+Brightmap Sprite SKSGO0 { Map SKSGK0O0 DisableFullbright }
+Brightmap Sprite SKSGP0 { Map SKSGN0 DisableFullbright }
 Brightmap Sprite SKSGZ0 { Map BMSKSGZ0 DisableFullbright }

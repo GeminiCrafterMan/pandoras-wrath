@@ -34,21 +34,21 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 				ZWL_QuickRaise();
 				A_WeaponOffset(64, 160);
 			}
-			SKSG NNNNNN 1 {
+			SKSG PPPPPP 1 {
 				A_WeaponOffset(-8, -16, WOF_ADD);
 			}
 			SKSG AA 1 {
 				A_WeaponOffset(-8, -16, WOF_ADD);
 			}
 			SKSG H 4 {A_StartSound("weapons/skpump1"); ZWL_WeaponReady(ZRF_ExtraRound);}
-			SKSG GGFF 1 ZWL_WeaponReady(ZRF_ExtraRound);
+			SKSG IIJJ 1 ZWL_WeaponReady(ZRF_ExtraRound);
 			SKSG A 1 {A_StartSound("weapons/skpump2"); ZWL_WeaponReady(ZRF_ExtraRound);}
 			Goto Ready;
 		Deselect:
 			SKSG AA 1 {
 				A_WeaponOffset(8, 16, WOF_ADD);
 			}
-			SKSG NNNNNN 1 {
+			SKSG PPPPPP 1 {
 				A_WeaponOffset(8, 16, WOF_ADD);
 			}
 			TNT1 A 0 A_WeaponOffset(0, flags: WOF_KEEPY);
@@ -142,7 +142,7 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 				A_StartSound("weapons/skpump1");
 				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (20, 4, -14));
 			}
-			SKSG GGFF 1; // These two play on CHAN_BODY because the firing sound is just too fucking long
+			SKSG IIJJ 1; // These two play on CHAN_BODY because the firing sound is just too fucking long
 			SKSG A 5 A_StartSound("weapons/skpump2");
 			SKSG A 0 ZWL_ReFire();
 			Goto Ready;
@@ -185,9 +185,9 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 			SKSG E 2 A_StartSound("weapons/skpump1");
 			// Fallthrough
 		Reload.Loop:
-			SKSG IJK 2;
+			SKSG KLM 2;
 			TNT1 A 0 ZWL_Reload(1);
-			SKSG LM 2;
+			SKSG NO 2;
 			SKSG E 0 ZWL_JumpIfReloaded("Reload.End", true, true);
 			Loop;
 		Reload.End:
