@@ -72,11 +72,11 @@ $random weapons/icehiss {weapons/icehiss1 weapons/icehiss2}
 
 // P.F. Super Shotgun
 weapons/pfshot		"Sounds/Weapons/Slot 9/Perfect Freeze Missile Launcher/rocket_quad_shoot.wav"
-// All sounds here are from Touhou Koumakyou: Embodiment of Scarlet Devil (th06)
-weapons/pfshot1		"Sounds/Weapons/Slot 9/Perfect Freeze SSG/tan00.wav"
-weapons/pfshot2		"Sounds/Weapons/Slot 9/Perfect Freeze SSG/tan01.wav"
-weapons/pfdamage	"Sounds/Weapons/Slot 9/Perfect Freeze SSG/graze.wav"
-weapons/pfgraze		"Sounds/Weapons/Slot 9/Perfect Freeze SSG/damage00.wav"
-weapons/ok00		"Sounds/Weapons/Slot 9/Perfect Freeze SSG/ok00.wav"
-weapons/power1		"Sounds/Weapons/Slot 9/Perfect Freeze SSG/power1.wav"
-weapons/powerup		"Sounds/Weapons/Slot 9/Perfect Freeze SSG/powerup.wav"
+// All sounds from here on are from Touhou Koumakyou: Embodiment of Scarlet Devil (th06)
+weapons/pfshot1		"Sounds/Weapons/Slot 9/Perfect Freeze Missile Launcher/tan00.wav"
+weapons/pfshot2		"Sounds/Weapons/Slot 9/Perfect Freeze Missile Launcher/tan01.wav"
+weapons/pfdamage	"Sounds/Weapons/Slot 9/Perfect Freeze Missile Launcher/graze.wav"
+weapons/pfgraze		"Sounds/Weapons/Slot 9/Perfect Freeze Missile Launcher/damage00.wav"
+weapons/ok00		"Sounds/Weapons/Slot 9/Perfect Freeze Missile Launcher/ok00.wav"
+weapons/power1		"Sounds/Weapons/Slot 9/Perfect Freeze Missile Launcher/power1.wav"
+weapons/powerup		"Sounds/Weapons/Slot 9/Perfect Freeze Missile Launcher/powerup.wav"
