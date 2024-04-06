@@ -27,6 +27,7 @@ GOTFROSTFANG = "\c[White]You picked up the \c[Ice]Frost Fang\c[White]! (Slot 4)"
 GOTSCRAPGUN = "\c[White]You picked up the \c[Red]Scrapgun\c[White]! (Slot 4)";
 // Slot 5
 GOTROCKETLAUNCHER = "\c[White]You picked up the \c[DarkRed]Rocket Launcher\c[White]! (Slot 5)";
+GOTGRENADELAUNCHER = "\c[White]You picked up the \c[DarkRed]Grenade Launcher\c[White]! (Slot 5)";
 GOTBOUNCER = "\c[White]You picked up \c[DarkRed]The Bouncer\c[White]! (Slot 5)";
 GOTSTOMPER = "\c[White]You picked up the \c[Red]Stomper\c[White]! (Slot 5)";
 // Slot 6
@@ -42,7 +43,8 @@ GOTPERFORATOR = "\c[White]You picked up the \c[Yellow]Perforator\c[White]! (Slot
 // Slot 9
 GOTACIDCANNON = "\c[White]You picked up the \c[Green]Acid Cannon\c[White]! (Slot 9)";
 GOTICESHOTGUN = "\c[White]You picked up the \c[Sapphire]Ice Shotgun\c[White]! (Slot 9)";
-GOTPFSUPERSHOTGUN = "\c[White]You picked up the \c[Sapphire]Perfect Freeze Super Shotgun\c[White]! (Slot 9)";
+//GOTPFSUPERSHOTGUN = "\c[White]You picked up the \c[Sapphire]Perfect Freeze Super Shotgun\c[White]! (Slot 9)";
+GOTPFMISSILELAUNCHER = "\c[White]You picked up the \c[Sapphire]Perfect Freeze Missile Launcher\c[White]! (Slot 9)";
 
 // Ammo pickup messages
 DISARMEDMINE = "\c[White]Disarmed and retrieved a \c[DarkGray]mine\c[White].";
@@ -118,7 +120,8 @@ KILLICESHOTGUN = "%o got frozen solid by %k's Ice Shotgun.";
 KILLKICK = "%o got %p ass kicked by %k.";
 KILLZOMBIESHOTGUN = "%o was somehow killed by %k's Zombie Shotgun.";
 KILLSLAYERSKAHUNA = "%o caught the wave (of pellets) produced by %k's Slayer's Kahuna.";
-KILLPFSUPERSHOTGUN = "%o was instantly turned into a popsicle by %k's Perfect Freeze Super Shotgun.";
+//KILLPFSUPERSHOTGUN = "%o was instantly turned into a popsicle by %k's Perfect Freeze Super Shotgun.";
+KILLPFMISSILELAUNCHER = "%o was instantly turned into a popsicle by %k's Perfect Freeze Missile Launcher.";
 KILLSUPERSHOTGUN = "%o was splattered by %k's Super Shotgun.";
 KILLIMPALER = "%o was pinned to the wall by %k's Impaler Crossbow.";
 KILLBURSTRIFLE = "%o was perforated by %k's Burst Rifle.";
@@ -215,7 +218,8 @@ TAG_SMG = "SMG";
 TAG_MP40 = "MP40";
 TAG_ICESHOTGUN = "Ice Shotgun";
 TAG_IMPALERCROSSBOW = "Impaler Crossbow";
-TAG_PFSUPERSHOTGUN = "Perfect Freeze Super Shotgun";
+//TAG_PFSUPERSHOTGUN = "Perfect Freeze Super Shotgun";
+TAG_PFMISSILELAUNCHER = "Perfect Freeze Missile Launcher";
 TAG_SLAYERSKAHUNA = "\"Slayer's Kahuna\" Shotgun";
 TAG_ZOMBIESHOTGUN = "Zombie Shotgun";
 TAG_SUPERSHOTGUN = "Super Shotgun";
@@ -223,6 +227,7 @@ TAG_BURSTRIFLE = "Burst Rifle";
 TAG_MADVULCAN = "\"Mad Vulcan\" Chaingun";
 TAG_FROSTFANG = "Frost Fang";
 TAG_ROCKETLAUNCHER = "Rocket Launcher";
+TAG_GRENADELAUNCHER = "Grenade Launcher";
 TAG_ACIDCANNON = "Acid Cannon";
 TAG_MELTER = "Melter";
 TAG_NOISECRUSHER = "Noise Crusher";

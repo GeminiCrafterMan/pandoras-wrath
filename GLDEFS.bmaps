@@ -262,25 +262,6 @@ Brightmap Sprite CBOWJ0 { Map CBOWJ0 DisableFullbright }
 Brightmap Sprite CBOWK0 { Map CBOWK0 DisableFullbright }
 Brightmap Sprite CBOWL0 { Map CBOWL0 DisableFullbright }
 Brightmap Sprite CBOWZ0 { Map BMCBOWZ0 DisableFullbright }
-// P.F. Super Shotgun
-Brightmap Sprite PFSHA0 { Map PFSHA0 DisableFullbright }
-Brightmap Sprite PFSHB0 { Map PFSHB0L0 DisableFullbright }
-Brightmap Sprite PFSHC0 { Map PFSHC0 DisableFullbright }
-Brightmap Sprite PFSHD0 { Map PFSHD0 DisableFullbright }
-Brightmap Sprite PFSHE0 { Map PFSHE0 DisableFullbright }
-Brightmap Sprite PFSHF0 { Map PFSHF0 DisableFullbright }
-Brightmap Sprite PFSHG0 { Map PFSHG0 DisableFullbright }
-Brightmap Sprite PFSHH0 { Map PFSHH0 DisableFullbright }
-Brightmap Sprite PFSHI0 { Map PFSHI0 DisableFullbright }
-Brightmap Sprite PFSHJ0 { Map PFSHJ0 DisableFullbright }
-Brightmap Sprite PFSHK0 { Map PFSHK0 DisableFullbright }
-Brightmap Sprite PFSHL0 { Map PFSHB0L0 DisableFullbright }
-Brightmap Sprite PFSHM0 { Map PFSHM0 DisableFullbright }
-Brightmap Sprite PFSHN0 { Map PFSHN0 DisableFullbright }
-Brightmap Sprite PFSHO0 { Map PFSHO0 DisableFullbright }
-Brightmap Sprite PFSHP0 { Map PFSHP0 DisableFullbright }
-Brightmap Sprite PFSHQ0 { Map PFSHQ0 DisableFullbright }
-Brightmap Sprite PFSHZ0 { Map BMPFSHZ0 DisableFullbright }
 // Slayer's Kahuna
 Brightmap Sprite SKSFA0 { Map SKSFA0 DisableFullbright }
 Brightmap Sprite SKSFB0 { Map SKSFB0 DisableFullbright }

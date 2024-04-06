@@ -15,9 +15,9 @@ script "GWM_FireWepSwitch" (void)
 
 script "GWM_IceWepSwitch" (void) 
 {
-	if (Checkinventory("GWM_PFSuperShotgun")==1 && CheckWeapon("GWM_PFSuperShotgun")==0)
+	if (Checkinventory("GWM_PFMissileLauncher")==1 && CheckWeapon("GWM_PFMissileLauncher")==0)
 			{
-				SetWeapon("GWM_PFSuperShotgun");
+				SetWeapon("GWM_PFMissileLauncher");
 			}
 	if (Checkinventory("GWM_IceShotgun")==1 && CheckWeapon("GWM_IceShotgun")==0)
 			{

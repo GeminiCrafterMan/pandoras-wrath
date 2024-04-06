@@ -23,8 +23,9 @@
 #include "ZScript/Weapons/Slot 4/GWM_FrostFang.zsc"			// Frost Fang
 
 #include "ZScript/Weapons/Slot 5/GWM_RocketLauncher.zsc"	// Rocket Launcher
-#include "ZScript/Weapons/Slot 5/GWM_THE_BOUNCERRR.zsc"	    //I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
+#include "ZScript/Weapons/Slot 5/GWM_GrenadeLauncher.zsc"	// Yep, they're split again...
 #include "ZScript/Weapons/Slot 5/GWM_Stomper.zsc"			// THE STOMPERRR (from Supercharge)
+#include "ZScript/Weapons/Slot 5/GWM_THE_BOUNCERRR.zsc"	    //I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
 
 #include "ZScript/Weapons/Slot 6/GWM_PlasmaRifle.zsc"		// Plasma Rifle
 #include "ZScript/Weapons/Slot 6/GWM_NoiseCrusher.zsc"		// Noise Crusher
@@ -36,7 +37,6 @@
 #include "ZScript/Weapons/Slot 8/GWM_Perforator.zsc"		// Evitahnity Tew, out now!
 
 #include "ZScript/Weapons/Slot 9/GWM_IceShotgun.zsc"		// Ice Shotgun
-#include "ZScript/Weapons/Slot 9/GWM_PFSuperShotgun.zsc"	// Perfect Freeze Super Shotgun
 #include "ZScript/Weapons/Slot 9/GWM_PFMissileLauncher.zsc"	// Perfect Freeze Missile Launcher (WIP replacement for the above weapon)
 #include "ZScript/Weapons/Slot 9/GWM_Flamethrower.zsc"		// Flamethrower
 #include "ZScript/Weapons/Slot 9/GWM_AcidCannon.zsc"		// Acid Cannon (corrosive goop gun)

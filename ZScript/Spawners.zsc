@@ -115,7 +115,7 @@ class GWM_SuperShotgunSpawner : GWM_WeaponSpawner replaces SuperShotgun
 		DropItem "GWM_Flamethrower", 255, 2;
 		DropItem "GWM_AcidCannon", 255, 2;
 		DropItem "GWM_IceShotgun", 255, 2;
-		DropItem "GWM_PFSuperShotgun", 255, 2;
+		DropItem "GWM_PFMissileLauncher", 255, 2;
 	}
 }
 
@@ -134,6 +134,7 @@ class GWM_RocketLauncherSpawner : GWM_WeaponSpawner replaces RocketLauncher
 	Default
 	{
 		DropItem "GWM_RocketLauncher";
+		DropItem "GWM_GrenadeLauncher";
 		DropItem "GWM_AcidCannon";
 	}
 }

@@ -1,23 +1,27 @@
 // Rocket Launcher
 weapons/rocketfire	"Sounds/Weapons/Slot 5/Rocket Launcher/rocket_dm_shoot.wav"
 weapons/chargedrocketfire	"Sounds/Weapons/Slot 5/Rocket Launcher/rocket_cg_shoot.wav"
-weapons/grenadefire	"Sounds/Weapons/Slot 5/Rocket Launcher/grenade_launcher_dm_shoot.wav"
-
-weapons/grndimpact1	"Sounds/Weapons/Slot 5/Rocket Launcher/grenade_dm_impact.wav"
-weapons/grndimpact2	"Sounds/Weapons/Slot 5/Rocket Launcher/grenade_dm_impact2.wav"
-weapons/grndimpact3	"Sounds/Weapons/Slot 5/Rocket Launcher/grenade_dm_impact3.wav"
 
 weapons/explode1	"Sounds/Weapons/Slot 5/Rocket Launcher/explode3.wav"
 weapons/explode2	"Sounds/Weapons/Slot 5/Rocket Launcher/explode4.wav"
 weapons/explode3	"Sounds/Weapons/Slot 5/Rocket Launcher/explode5.wav"
-
-$random weapons/grndimp { weapons/grndimpact1 weapons/grndimpact2 weapons/grndimpact3 }
 $random weapons/explode { weapons/explode1 weapons/explode2 weapons/explode3 }
 
 $limit weapons/explode 0
 
-$attenuation weapons/grndimp 0.75
 $attenuation weapons/explode 0.5
+
+// Grenade Launcher
+weapons/grenadefire		"Sounds/Weapons/Slot 5/Grenade Launcher/grenade_launcher_dm_shoot.wav"
+weapons/grenadedrumspin	"Sounds/Weapons/Slot 5/Grenade Launcher/grenade_launcher_drum_start.wav"
+weapons/grenadedrumstop	"Sounds/Weapons/Slot 5/Grenade Launcher/grenade_launcher_drum_stop.wav"
+
+weapons/grndimpact1		"Sounds/Weapons/Slot 5/Grenade Launcher/grenade_dm_impact.wav"
+weapons/grndimpact2		"Sounds/Weapons/Slot 5/Grenade Launcher/grenade_dm_impact2.wav"
+weapons/grndimpact3		"Sounds/Weapons/Slot 5/Grenade Launcher/grenade_dm_impact3.wav"
+
+$random weapons/grndimp { weapons/grndimpact1 weapons/grndimpact2 weapons/grndimpact3 }
+$attenuation weapons/grndimp 0.75
 
 //THE BOUNCERRRRR
 weapons/bounf1	"Sounds/Weapons/Slot 7/Bouncer/BOUNCFIR"
