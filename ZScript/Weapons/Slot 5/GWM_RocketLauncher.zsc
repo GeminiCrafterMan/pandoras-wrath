@@ -151,7 +151,7 @@ class GWM_ChargedRocket : GWM_Rocket
 		Speed 40; // faster.
 		DamageFunction (115);
 		Scale 1.25;
-		+EXTREMEDEATH;
+		+EXTREMEDEATH
 	}
 	States
 	{

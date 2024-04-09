@@ -271,21 +271,79 @@ object GWM_SuperDemonBall
     frame BAL9E { light SDEMONBALL_X3 }
 }
 
-FlickerLight2 GWM_FlameThrowerFire
+object GWM_FTFireShot
 {
-	Offset 0 2 0
-	Color 0.56 0.56 1.0
-	Size 40
-	SecondarySize 60
-	Interval 2.0
+	frame ZFIRA { light RocketLight }
+	frame ZFIRB { light RocketLight }
+	frame ZFIRC { light RocketLight }
+	frame ZFIRD { light RocketLight }
+	frame ZFIRE { light RocketLight }
+	frame ZFIRF { light RocketLight }
+	frame ZFIRG { light RocketLight }
+	frame ZFIRH { light RocketLight }
+	frame ZFIRI { light RocketLight }
+	frame ZFIRJ { light RocketLight }
+	frame ZFIRK { light RocketLight }
+	frame ZFIRL { light RocketLight }
+	frame ZFIRM { light RocketLight }
+	frame ZFIRN { light RocketLight }
+	frame ZFIRO { light RocketLight }
+	frame ZFIRP { light RocketLight }
 }
-Object GWM_FTFire { Frame FRFX { Light GWM_FlameThrowerFire } }
-FlickerLight2 GWM_DropFlame
+object GWM_FTFIREFX
 {
-	Offset 0 0 0
-	Color 0.68 0.68 1.0
-	Size 30
-	SecondarySize 36
-	Interval 2.0
+	frame ZFIRA { light RocketLight }
+	frame ZFIRB { light RocketLight }
+	frame ZFIRC { light RocketLight }
+	frame ZFIRD { light RocketLight }
+	frame ZFIRE { light RocketLight }
+	frame ZFIRF { light RocketLight }
+	frame ZFIRG { light RocketLight }
+	frame ZFIRH { light RocketLight }
+	frame ZFIRI { light RocketLight }
+	frame ZFIRJ { light RocketLight }
+	frame ZFIRK { light RocketLight }
+	frame ZFIRL { light RocketLight }
+	frame ZFIRM { light RocketLight }
+	frame ZFIRN { light RocketLight }
+	frame ZFIRO { light RocketLight }
+	frame ZFIRP { light RocketLight }
 }
-Object GWM_DropFire { Frame FLME { Light GWM_DropFlame } }
+object GWM_DisCacodemonFire
+{
+	frame ZFIRA { light RocketLight }
+	frame ZFIRB { light RocketLight }
+	frame ZFIRC { light RocketLight }
+	frame ZFIRD { light RocketLight }
+	frame ZFIRE { light RocketLight }
+	frame ZFIRF { light RocketLight }
+	frame ZFIRG { light RocketLight }
+	frame ZFIRH { light RocketLight }
+	frame ZFIRI { light RocketLight }
+	frame ZFIRJ { light RocketLight }
+	frame ZFIRK { light RocketLight }
+	frame ZFIRL { light RocketLight }
+	frame ZFIRM { light RocketLight }
+	frame ZFIRN { light RocketLight }
+	frame ZFIRO { light RocketLight }
+	frame ZFIRP { light RocketLight }
+}
+object GWM_DisCacodemonFireFX
+{
+	frame ZFIRA { light RocketLight }
+	frame ZFIRB { light RocketLight }
+	frame ZFIRC { light RocketLight }
+	frame ZFIRD { light RocketLight }
+	frame ZFIRE { light RocketLight }
+	frame ZFIRF { light RocketLight }
+	frame ZFIRG { light RocketLight }
+	frame ZFIRH { light RocketLight }
+	frame ZFIRI { light RocketLight }
+	frame ZFIRJ { light RocketLight }
+	frame ZFIRK { light RocketLight }
+	frame ZFIRL { light RocketLight }
+	frame ZFIRM { light RocketLight }
+	frame ZFIRN { light RocketLight }
+	frame ZFIRO { light RocketLight }
+	frame ZFIRP { light RocketLight }
+}

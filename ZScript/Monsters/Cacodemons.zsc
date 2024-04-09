@@ -71,7 +71,12 @@ class GWM_DisCacodemon : Actor
 		Missile:
 			DISC B 5 A_FaceTarget;
 			DISC C 5 A_FaceTarget;
-			DISC D 5 BRIGHT A_CustomComboAttack("GWM_DisCacodemonBall", 32, 35);
+			DISC D 5 BRIGHT A_SpawnProjectile("GWM_DisCacodemonFire", 32); //A_CustomComboAttack("GWM_DisCacodemonBall", 32, 35);
+			Goto See;
+		Melee:
+			DISC B 5 A_FaceTarget;
+			DISC C 5 A_FaceTarget;
+			DISC D 5 BRIGHT A_CustomMeleeAttack(35);
 			Goto See;
 		Pain:
 			DISC E 3;
@@ -104,33 +109,28 @@ class GWM_DisCacodemon : Actor
 			Goto See;
 	}
 }
-class GWM_DisCacodemonBall : GWM_FlameProjectile
+class GWM_DisCacodemonFire : GWM_FTFireShot
 {
 	Default
 	{
-		Radius 6;
-		Height 8;
-		Speed 7;
-		FastSpeed 14;
-		DamageFunction (23);
-		+RANDOMIZE
-		+ZDOOMTRANS
-		RenderStyle "Add";
-		Alpha 1;
-		SeeSound "caco/attack";
-		DeathSound "caco/shotx";
-		GWM_FlameProjectile.FireBurnCount 23;
+		Scale 0.75;
 	}
 	States
 	{
 		Spawn:
-			DCBL ABC 4 BRIGHT;
-			Loop;
-		Death:
-			DCBL D 5 BRIGHT;
-			DCBL E 3 BRIGHT A_FadeOut(0.15);
-			DCBL F 3 BRIGHT A_FadeOut(0.15);
-			DCBL GHIJ 3 BRIGHT A_FadeOut(0.15);
+			ZFIR AABBCCDDEEFFGGHHIIJJKKLLMM 1 bright 
+			{
+			A_SpawnItemEX("GWM_DisCacodemonFireFX",0,frandom(-5,5),frandom(-5,5),frandom(6,15),frandom(-1,1),frandom(-2,2));
+			A_ScaleVelocity(0.98);
+			}
+			ZFIR NOP 2 bright A_ScaleVelocity(0.9);
 			Stop;
+	}
+}
+class GWM_DisCacodemonFireFX : GWM_FTFIREFX
+{
+	Default
+	{
+		Scale 0.75;
 	}
 }

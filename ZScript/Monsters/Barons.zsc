@@ -89,7 +89,6 @@ class GWM_CyberBaron : GWM_BaronOfHell
 		PainSound "monsters/cbaron/pain";
 		DeathSound "monsters/cbaron/death";
 		ActiveSound "monsters/cbaron/active";
-		+NORADIUSDMG // Might remove this later.
 		DropItem "GWM_RocketAmmo";
 		DropItem "GWM_RocketAmmo";
 		DropItem "GWM_RocketAmmo";

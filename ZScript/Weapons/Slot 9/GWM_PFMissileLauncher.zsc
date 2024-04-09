@@ -105,7 +105,7 @@ class GWM_PerfectFreezeMissile : GWM_IceProjectile
 		Height 8;
 		Speed 30; // faster.
 		DamageFunction (64);
-		ExplosionDamage 64;
+		ExplosionDamage 32;
 		+RANDOMIZE
 		+THRUGHOST
 		SeeSound "";

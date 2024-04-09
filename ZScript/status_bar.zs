@@ -163,20 +163,20 @@ class GWM_StatusBar : BaseStatusBar
 		}
 		
 		int amt1, amt2;
+
+		amt1 = GetAmount("GWM_PandoraPoints");
+		amt2 = GetAmount("GWM_PandoraPointsCap");
+		DrawString(mHUDFont, StringStruct.Format("%d/%d", amt1, amt2), (-10, -74), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Purple);
 		
 		amt1 = GetAmount("GWM_ChargedRockets");
 		DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -90), translation: Font.CR_Red);
+		amt1 = GetAmount("GWM_ChargedGrenades");
+		DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -106), translation: Font.CR_Green);
 		
 		amt1 = GetAmount("GWM_KahunaSpread");
-		DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -100), translation: Font.CR_Gold);
+		DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -122), translation: Font.CR_Gold);
 		
-		amt1 = GetAmount("GWM_PandoraPoints");
-		amt2 = GetAmount("GWM_PandoraPointsCap");
-		
-		DrawString(mHUDFont, StringStruct.Format("%d/%d", amt1, amt2), (-10, -74), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Purple);
-//		DrawString(mHUDFont, FormatNumber(amt1,8), (-94, -74), translation: Font.CR_Purple);
-//		DrawString(mHUDFont, FormatNumber(amt2,8), (-94, -54), translation: Font.CR_Purple);
-		
+
 		
 		TextureID mtex2 = GetMugShot(5); // get a texture
 		String mtexname2 = TexMan.Getname(mtex2); // conver to string
