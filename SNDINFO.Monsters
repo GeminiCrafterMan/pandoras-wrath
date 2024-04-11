@@ -107,3 +107,6 @@ monsters/skguy/warning		"Sounds/Monsters/Zombies/Kahuna Shotgun Guy/PRESHOOT.wav
 
 // Draugr
 monsters/draugr/shoot		"Sounds/Monsters/Draugr/quake_rpg_fire.wav"
+
+// Dis Cacodemon
+monsters/discaco/spit		"Sounds/Monsters/Dis Cacodemon/discaco_spit.wav"

@@ -114,6 +114,7 @@ class GWM_DisCacodemonFire : GWM_FTFireShot
 	Default
 	{
 		Scale 0.75;
+		SeeSound "monsters/discaco/spit";
 	}
 	States
 	{

@@ -11,7 +11,7 @@ class GWM_SuperShotgun : GWM_WeaponBase
 		Weapon.UpSound "weapons/draw_primary";
 		Weapon.AmmoType "GWM_Shell";
 		Weapon.AmmoUse 1;
-		Weapon.AmmoGive 2; // Setting it any higher gives too much in the magazine!!
+		Weapon.AmmoGive 8; // Setting it any higher gives too much in the magazine!!
 
 		ZWeapon.MagazineSize 2;
 		ZWeapon.ReloadSound "weapons/ssgl";
@@ -159,8 +159,7 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			SSGG B 3;
 			SSGG C 4;
 			SSGG D 3;
-			SSGG E 2 A_StartSound("weapons/ssgo", CHAN_BODY);
-			SSGG E 1; 
+			SSGG E 3 A_StartSound("weapons/ssgo", CHAN_BODY);
 			SSGG P 2 ZWL_EjectCasing("GWM_ShotgunCasing", true);
 			SSGG PQRS 2;
 			Goto Reload.End;
