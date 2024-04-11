@@ -7,7 +7,7 @@ class GWM_ChaingunGuy : ChaingunGuy
 		//$Title "Mad Vulcan Zombie
 		Tag "$TAG_CHAINGUNNER";
 		AttackSound "weapons/vulcanfire";
-		DropItem "GWM_MadVulcan";
+		DropItem "GWM_Minigun";
 	}
 	States
 	{		

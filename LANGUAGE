@@ -21,7 +21,9 @@ GOTSUPERSHOTGUN = "\c[White]You picked up the \c[Red]Super Shotgun\c[White]! Oh,
 GOTIMPALERCROSSBOW = "\c[White]You picked up the \c[DarkGray]Impaler Crossbow\c[White]! (Slot 3)";
 // Slot 4
 GOTBURSTRIFLE = "\c[White]You picked up the \c[Gold]Burst Rifle\c[White]! (Slot 4)";
+GOTMINIGUN = "\c[White]You picked up the \c[Gold]Minigun\c[White]! (Slot 4)";
 GOTMADVULCAN = "\c[White]You picked up the \c[Gold]Mad Vulcan\c[White]! (Slot 4)";
+GOTBURNMINI = "\c[White]You picked up the \c[Gold]Burning Minigun\c[White]! (Slot 4)";
 GOTMP40 = "\c[White]You picked up the \c[Yellow]MP40\c[White]! (Slot 4)";
 GOTFROSTFANG = "\c[White]You picked up the \c[Ice]Frost Fang\c[White]! (Slot 4)";
 GOTSCRAPGUN = "\c[White]You picked up the \c[Red]Scrapgun\c[White]! (Slot 4)";
@@ -49,10 +51,10 @@ GOTPFMISSILELAUNCHER = "\c[White]You picked up the \c[Sapphire]Perfect Freeze Mi
 // Ammo pickup messages
 DISARMEDMINE = "\c[White]Disarmed and retrieved a \c[DarkGray]mine\c[White].";
 // Bullets
-GOTLOWCALMAG = "\c[White]Picked up a \c[Yellow]magazine of low-caliber bullets\c[White].";
-GOTHIGHCALMAG = "\c[White]Picked up a \c[Gold]magazine of high-caliber bullets\c[White].";
-GOTLOWCALBOX = "\c[White]Picked up a \c[Yellow]box of low-caliber bullets\c[White].";
-GOTHIGHCALBELT = "\c[White]Picked up a \c[Gold]belt of high-caliber bullets\c[White].";
+GOTHOLLOWPOINTMAG = "\c[White]Picked up a \c[Yellow]magazine of hollow point rounds\c[White].";
+GOTFULLMETALMAG = "\c[White]Picked up a \c[Gold]magazine of full metal jacket rounds\c[White].";
+GOTHOLLOWPOINTBOX = "\c[White]Picked up a \c[Yellow]box of hollow point rounds\c[White].";
+GOTFULLMETALBELT = "\c[White]Picked up a \c[Gold]belt of full metal jacket rounds\c[White].";
 // Shells
 GOTSHELLS = "\c[White]Picked up a \c[Red]small box of shotgun shells\c[White].";
 GOTSHELLBOX = "\c[White]Picked up a \c[Red]large box of shotgun shells\c[White].";
@@ -125,7 +127,9 @@ KILLPFMISSILELAUNCHER = "%o was instantly turned into a popsicle by %k's Perfect
 KILLSUPERSHOTGUN = "%o was splattered by %k's Super Shotgun.";
 KILLIMPALER = "%o was pinned to the wall by %k's Impaler Crossbow.";
 KILLBURSTRIFLE = "%o was perforated by %k's Burst Rifle.";
+KILLMINIGUN = "%o was turned into Swiss cheese by %k's Minigun.";
 KILLMADVULCAN = "%o was turned into Swiss cheese by %k's Mad Vulcan.";
+KILLBURNMINI = "%o was turned into molten Swiss cheese by %k's Burning Minigun.";
 KILLMP40 = "%o was filled with lead by %k's MP40.";
 KILLFROSTFANG = "%o was put on ice by %k's Frost Fang.";
 KILLFROSTFANG_POWERED = "%o was horribly chilled by %k's powered-up Frost Fang.";
@@ -224,7 +228,9 @@ TAG_SLAYERSKAHUNA = "\"Slayer's Kahuna\" Shotgun";
 TAG_ZOMBIESHOTGUN = "Zombie Shotgun";
 TAG_SUPERSHOTGUN = "Super Shotgun";
 TAG_BURSTRIFLE = "Burst Rifle";
-TAG_MADVULCAN = "\"Mad Vulcan\" Chaingun";
+TAG_MINIGUN = "Minigun";
+TAG_MADVULCAN = "\"Mad Vulcan\" Minigun";
+TAG_BURNMINI = "Burning Minigun";
 TAG_FROSTFANG = "Frost Fang";
 TAG_ROCKETLAUNCHER = "Rocket Launcher";
 TAG_GRENADELAUNCHER = "Grenade Launcher";

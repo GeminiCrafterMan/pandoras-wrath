@@ -1,10 +1,10 @@
-class GWM_LowCaliberMagazine : Ammo
+class GWM_HollowPointMagazine : Ammo
 {
 	Default
 	{
 		//$Category Ammo
-		//$Title "Low-caliber Magazine
-		Inventory.PickupMessage "$GOTLOWCALMAG";
+		//$Title "Hollow Point Magazine
+		Inventory.PickupMessage "$GOTHOLLOWPOINTMAG";
 		Inventory.Amount 10;
 		Inventory.MaxAmount 200;
 		Ammo.BackpackAmount 10;
@@ -18,13 +18,13 @@ class GWM_LowCaliberMagazine : Ammo
 			Stop;
 	}
 }
-class GWM_LowCaliberBox : GWM_LowCaliberMagazine
+class GWM_HollowPointBox : GWM_HollowPointMagazine
 {
 	Default
 	{
 		//$Category Ammo
-		//$Title "Low-caliber Box
-		Inventory.PickupMessage "$GOTLOWCALBOX";
+		//$Title "Hollow Point Box
+		Inventory.PickupMessage "$GOTHOLLOWPOINTBOX";
 		Inventory.Amount 50;
 		Inventory.PickupSound "pickups/magazinebox";
 	}
@@ -36,13 +36,13 @@ class GWM_LowCaliberBox : GWM_LowCaliberMagazine
 	}
 }
 
-class GWM_HighCaliberMagazine : Ammo
+class GWM_FullMetalJacketMagazine : Ammo
 {
 	Default
 	{
 		//$Category Ammo
-		//$Title "High-caliber Magazine
-		Inventory.PickupMessage "$GOTHIGHCALMAG";
+		//$Title "Full Metal Jacket Magazine
+		Inventory.PickupMessage "$GOTFULLMETALMAG";
 		Inventory.Amount 10;
 		Inventory.MaxAmount 300;
 		Ammo.BackpackAmount 10;
@@ -56,13 +56,13 @@ class GWM_HighCaliberMagazine : Ammo
 			Stop;
 	}
 }
-class GWM_HighCaliberBelt : GWM_HighCaliberMagazine
+class GWM_FullMetalJacketBelt : GWM_FullMetalJacketMagazine
 {
 	Default
 	{
 		//$Category Ammo
-		//$Title "High-caliber Belt
-		Inventory.PickupMessage "$GOTHIGHCALBELT";
+		//$Title "Full Metal Jacket Belt
+		Inventory.PickupMessage "$GOTFULLMETALBELT";
 		Inventory.Amount 50;
 		Inventory.PickupSound "pickups/belt";
 	}

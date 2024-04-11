@@ -8,7 +8,7 @@ class GWM_SMG : GWM_WeaponBase
 		Weapon.SlotNumber 2;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 51;
-		Weapon.AmmoType "GWM_LowCaliberMagazine";
+		Weapon.AmmoType "GWM_HollowPointMagazine";
 
 		ZWeapon.MagazineSize 50;
 		ZWeapon.ReloadSound "weapons/smgclipin";

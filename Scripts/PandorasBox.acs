@@ -88,16 +88,16 @@ script "PandorasBox" (void)
 		if (weprarity < 24) {restart;}
 		}
 		
-		if (wepslot == 7) //Chaingun
+		if (wepslot == 7) //Minigun
 		{
-		if (CheckInventory("GWM_Chaingun")) {restart;}
+		if (CheckInventory("GWM_Minigun")) {restart;}
 		if (CheckInventory("GWM_MadVulcan")) {restart;}
 		if (weprarity < 7) {restart;}
 		}
 		
 		if (wepslot == 8) //Mad Vulcan
 		{
-		if (CheckInventory("GWM_Chaingun")==0) {if (weprarity < 25) {restart;}}
+		if (CheckInventory("GWM_Minigun")==0) {if (weprarity < 25) {restart;}}
 		if (CheckInventory("GWM_MadVulcan")) {restart;}
 		if (weprarity < 14) {restart;}
 		}
@@ -311,7 +311,7 @@ script "PandorasBox" (void)
 				if (upgslot == 2) { SetFont("SMALLFONT"); HudMessage(s:"+Defense";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 3) { SetFont("SMALLFONT"); HudMessage(s:"+Bullets";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 4) { SetFont("SMALLFONT"); HudMessage(s:"+Shells";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
-				if (upgslot == 5) { SetFont("SMALLFONT"); HudMessage(s:"+HiCal";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+				if (upgslot == 5) { SetFont("SMALLFONT"); HudMessage(s:"+Full Metal Jackets";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 6) { SetFont("SMALLFONT"); HudMessage(s:"+Rockets";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 7) { SetFont("SMALLFONT"); HudMessage(s:"+Cells";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 8) { SetFont("SMALLFONT"); HudMessage(s:"+Ice Shells";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
@@ -331,12 +331,12 @@ script "PandorasBox" (void)
 				//SLOT 3 (REFILL)
 				if (refslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"Health";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 1) { SetFont("SMALLFONT"); HudMessage(s:"Armor";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
-				if (refslot == 2) { SetFont("SMALLFONT"); HudMessage(s:"LowCal";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+				if (refslot == 2) { SetFont("SMALLFONT"); HudMessage(s:"Hollow Points";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 3) { SetFont("SMALLFONT"); HudMessage(s:"Shells";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
-				if (refslot == 4) { SetFont("SMALLFONT"); HudMessage(s:"HiCal";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+				if (refslot == 4) { SetFont("SMALLFONT"); HudMessage(s:"Full Metal Jackets";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 5) { SetFont("SMALLFONT"); HudMessage(s:"Rockets";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 6) { SetFont("SMALLFONT"); HudMessage(s:"Cells";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
-				if (refslot == 7) { SetFont("SMALLFONT"); HudMessage(s:"Element";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
+				if (refslot == 7) { SetFont("SMALLFONT"); HudMessage(s:"Elements";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 8) { SetFont("SMALLFONT"); HudMessage(s:"Scrap";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 9) { SetFont("SMALLFONT"); HudMessage(s:"Stomper";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
 				if (refslot == 10) { SetFont("SMALLFONT"); HudMessage(s:"Wand Crystals";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
@@ -345,24 +345,24 @@ script "PandorasBox" (void)
 				if (wepslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"SMG";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 1) { SetFont("SMALLFONT"); HudMessage(s:"MP40";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 2) { SetFont("SMALLFONT"); HudMessage(s:"Magnum";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 3) { SetFont("SMALLFONT"); HudMessage(s:"Shotgun";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 4) { SetFont("SMALLFONT"); HudMessage(s:"Kahuna";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 3) { SetFont("SMALLFONT"); HudMessage(s:"Zombie Shotgun";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 4) { SetFont("SMALLFONT"); HudMessage(s:"Slayer's Kahuna";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 5) { SetFont("SMALLFONT"); HudMessage(s:"Super Shotgun";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 6) { SetFont("SMALLFONT"); HudMessage(s:"Scrapgun";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 7) { SetFont("SMALLFONT"); HudMessage(s:"Chaingun";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 8) { SetFont("SMALLFONT"); HudMessage(s:"MadVulcan";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 9) { SetFont("SMALLFONT"); HudMessage(s:"Burst";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 10) { SetFont("SMALLFONT"); HudMessage(s:"RocketL";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 11) { SetFont("SMALLFONT"); HudMessage(s:"GrenadeL";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 7) { SetFont("SMALLFONT"); HudMessage(s:"Minigun";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 8) { SetFont("SMALLFONT"); HudMessage(s:"Mad Vulcan";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 9) { SetFont("SMALLFONT"); HudMessage(s:"Burst Rifle";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 10) { SetFont("SMALLFONT"); HudMessage(s:"Rocket Launcher";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 11) { SetFont("SMALLFONT"); HudMessage(s:"Grenade Launcher";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 12) { SetFont("SMALLFONT"); HudMessage(s:"Bouncer";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 13) { SetFont("SMALLFONT"); HudMessage(s:"Stomper";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 14) { SetFont("SMALLFONT"); HudMessage(s:"Plasma";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 15) { SetFont("SMALLFONT"); HudMessage(s:"Noise";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 16) { SetFont("SMALLFONT"); HudMessage(s:"Acid";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 17) { SetFont("SMALLFONT"); HudMessage(s:"Ice";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 18) { SetFont("SMALLFONT"); HudMessage(s:"Fire";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 14) { SetFont("SMALLFONT"); HudMessage(s:"Plasma Rifle";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 15) { SetFont("SMALLFONT"); HudMessage(s:"Noise Crusher";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 16) { SetFont("SMALLFONT"); HudMessage(s:"Acid Cannon";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 17) { SetFont("SMALLFONT"); HudMessage(s:"Ice Shotgun";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 18) { SetFont("SMALLFONT"); HudMessage(s:"Flame Shot";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 19) { SetFont("SMALLFONT"); HudMessage(s:"Perforator";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 20) { SetFont("SMALLFONT"); HudMessage(s:"GoldWand";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 20) { SetFont("SMALLFONT"); HudMessage(s:"Gold Wand";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				
 				if (buttons & BT_ATTACK && !(oldbuttons & BT_ATTACK) || buttons & BT_USE && !(oldbuttons & BT_USE))
 				{
@@ -373,9 +373,9 @@ script "PandorasBox" (void)
 						if (upgslot == 0) { GiveInventory("GWM_HPupgrade", 50);}
 						if (upgslot == 1) { GiveInventory("GWM_Speedupgrades", 1);}
 						//if (upgslot == 2) { GiveInventory("GWM_Defenseupgrades", 1);}
-						if (upgslot == 3) { SetAmmoCapacity("GWM_LowCaliberMagazine",GetAmmoCapacity("GWM_LowCaliberMagazine")+150);}
+						if (upgslot == 3) { SetAmmoCapacity("GWM_HollowPointMagazine",GetAmmoCapacity("GWM_HollowPointMagazine")+150);}
 						if (upgslot == 4) { SetAmmoCapacity("GWM_Shell",GetAmmoCapacity("GWM_Shell")+25);}
-						if (upgslot == 5) { SetAmmoCapacity("GWM_HighCaliberMagazine",GetAmmoCapacity("GWM_HighCaliberMagazine")+100);}
+						if (upgslot == 5) { SetAmmoCapacity("GWM_FullMetalJacketMagazine",GetAmmoCapacity("GWM_FullMetalJacketMagazine")+100);}
 						if (upgslot == 6) { SetAmmoCapacity("GWM_RocketAmmo",GetAmmoCapacity("GWM_RocketAmmo")+20);}
 						if (upgslot == 7) { SetAmmoCapacity("GWM_Cell",GetAmmoCapacity("GWM_Cell")+175);}
 						if (upgslot == 8) { SetAmmoCapacity("GWM_IceShell",GetAmmoCapacity("GWM_IceShell")+20);}
@@ -397,9 +397,9 @@ script "PandorasBox" (void)
 					{
 						if (refslot == 0) {HealThing(1000);}
 						if (refslot == 1) {GiveInventory("GWM_CombatArmor",1);}
-						if (refslot == 2) {GiveInventory("GWM_LowCaliberMagazine",1000);}
+						if (refslot == 2) {GiveInventory("GWM_HollowPointMagazine",1000);}
 						if (refslot == 3) {GiveInventory("GWM_Shell",1000);}
-						if (refslot == 4) {GiveInventory("GWM_HighCaliberMagazine",1000);}
+						if (refslot == 4) {GiveInventory("GWM_FullMetalJacketMagazine",1000);}
 						if (refslot == 5) {GiveInventory("GWM_RocketAmmo",1000);}
 						if (refslot == 6) {GiveInventory("GWM_Cell",1000);}
 						if (refslot == 7) {
@@ -420,7 +420,7 @@ script "PandorasBox" (void)
 						if (wepslot == 4) { GiveInventory("GWM_SlayersKahuna",1);}
 						if (wepslot == 5) { GiveInventory("GWM_SuperShotgun",1);}
 						if (wepslot == 6) { GiveInventory("GWM_Scrapgun",1);}
-						if (wepslot == 7) { GiveInventory("GWM_Chaingun",1);}
+						if (wepslot == 7) { GiveInventory("GWM_Minigun",1);}
 						if (wepslot == 8) { GiveInventory("GWM_MadVulcan",1);}
 						if (wepslot == 9) { GiveInventory("GWM_BurstRifle",1);}
 						if (wepslot == 10) { GiveInventory("GWM_RocketLauncher",1);}

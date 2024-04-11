@@ -110,7 +110,7 @@ class GWM_StatusBar : BaseStatusBar
 	protected virtual void DrawBarAmmo()
 	{
 		int amt1, maxamt;
-		[amt1, maxamt] = GetAmount("GWM_LowCaliberMagazine");
+		[amt1, maxamt] = GetAmount("GWM_HollowPointMagazine");
 		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 173), DI_TEXT_ALIGN_RIGHT);
 		DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 173), DI_TEXT_ALIGN_RIGHT);
 		
@@ -142,7 +142,7 @@ class GWM_StatusBar : BaseStatusBar
 	{
 		Vector2 iconbox = (40, 20);
 		// Draw health
-		let berserk = CPlayer.mo.FindInventory("PowerStrength");
+		let berserk = CPlayer.mo.FindInventory("GWM_PowerStrength");
 		DrawImage(berserk? "PSTRA0" : "MEDIA0", (20, -2));
 /*		if (CPlayer.Health == 0)
 			DrawBar("STBAROFF", "STBAROFF", CPlayer.Health, 0, (44, -20), 0, 0);

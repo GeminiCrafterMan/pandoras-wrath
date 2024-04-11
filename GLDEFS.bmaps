@@ -285,7 +285,16 @@ Brightmap Sprite RIFLK0 { Map RIFLK0 DisableFullbright }
 Brightmap Sprite RIFLL0 { Map RIFLL0 DisableFullbright }
 Brightmap Sprite RIFLM0 { Map RIFLM0 DisableFullbright }
 Brightmap Sprite RIFLZ0 { Map BMRIFLZ0 DisableFullbright }
-// Chaingun
+// Minigun
+Brightmap Sprite MINFA0 { Map MINFA0 DisableFullbright }
+Brightmap Sprite MINFB0 { Map MINFB0 DisableFullbright }
+Brightmap Sprite MINFC0 { Map MINFC0 DisableFullbright }
+Brightmap Sprite MINFD0 { Map MINFD0 DisableFullbright }
+Brightmap Sprite MINFE0 { Map MINFE0 DisableFullbright }
+Brightmap Sprite MINFF0 { Map MINFF0 DisableFullbright }
+Brightmap Sprite MINFG0 { Map MINFG0 DisableFullbright }
+Brightmap Sprite MINFH0 { Map MINFH0 DisableFullbright }
+// Mad Vulcan
 Brightmap Sprite VLCFA0 { Map VLCFA0 DisableFullbright }
 Brightmap Sprite VLCFB0 { Map VLCFB0 DisableFullbright }
 Brightmap Sprite VLCFC0 { Map VLCFC0 DisableFullbright }

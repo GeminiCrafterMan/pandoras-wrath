@@ -18,16 +18,16 @@ class GWM_MagazineSpawner : GWM_WeaponSpawner replaces Clip
 {
 	Default
 	{
-		DropItem "GWM_LowCaliberMagazine";
-		DropItem "GWM_HighCaliberMagazine";
+		DropItem "GWM_HollowPointMagazine";
+		DropItem "GWM_FullMetalJacketMagazine";
 	}
 }
 class GWM_MagazineBoxSpawner : GWM_WeaponSpawner replaces ClipBox
 {
 	Default
 	{
-		DropItem "GWM_LowCaliberBox";
-		DropItem "GWM_HighCaliberBelt";
+		DropItem "GWM_HollowPointBox";
+		DropItem "GWM_FullMetalJacketBelt";
 	}
 }
 

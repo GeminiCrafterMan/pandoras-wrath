@@ -16,7 +16,9 @@
 #include "ZScript/Weapons/Slot 3/GWM_SuperShotgun.zsc"		// Super Shotgun
 #include "ZScript/Weapons/Slot 3/GWM_ImpalerCrossbow.zsc"	// Impaler Crossbow
 
+#include "ZScript/Weapons/Slot 4/GWM_Minigun.zsc"			// Minigun
 #include "ZScript/Weapons/Slot 4/GWM_MadVulcan.zsc"			// Mad Vulcan
+#include "ZScript/Weapons/Slot 4/GWM_BurningMinigun.zsc"	// Burning Minigun
 #include "ZScript/Weapons/Slot 4/GWM_BurstRifle.zsc"		// Burst Rifle
 #include "ZScript/Weapons/Slot 4/GWM_MP40.zsc"				// MP40
 #include "ZScript/Weapons/Slot 4/GWM_Scrapgun.zsc"			// Not exactly TangoScrapgun anymore... (from Supercharge)

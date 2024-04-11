@@ -8,7 +8,7 @@ class GWM_Revolver : GWM_WeaponBase
 		Weapon.SlotNumber 2;
 		Weapon.UpSound "weapons/draw_secondary";
 		Weapon.AmmoUse1 3;
-		Weapon.AmmoType1 "GWM_LowCaliberMagazine";
+		Weapon.AmmoType1 "GWM_HollowPointMagazine";
 		Weapon.AmmoGive 18;
 
 		ZWeapon.MagazineSize 18;

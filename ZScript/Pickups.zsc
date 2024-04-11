@@ -47,10 +47,20 @@ class GWM_Berserk : Berserk
 	{
 		Pickup:
 			TNT1 A 0 {
-				A_GiveInventory("PowerStrength");
+				A_GiveInventory("GWM_PowerStrength");
 				HealThing(100, 0);
+				A_SetBlend("Red", .25, 35); // from Supercharge
 			}
 			Stop;
+	}
+}
+class GWM_PowerStrength : PowerStrength replaces PowerStrength
+{
+	Default
+	{
+		Powerup.Duration 1;
+		Powerup.Color "000000", 0.0;
+		+INVENTORY.HUBPOWER
 	}
 }
 

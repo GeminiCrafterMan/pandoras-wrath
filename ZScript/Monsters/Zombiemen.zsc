@@ -7,7 +7,7 @@ class GWM_Zombieman : Zombieman
 		//$Title "Pistol Zombie
 		Tag "$TAG_ZOMBIEMAN";
 		Obituary "$OB_ZOMBIEMAN";
-		DropItem "GWM_LowCaliberMagazine";
+		DropItem "GWM_HollowPointMagazine";
 		AttackSound "weapons/pistolfire";
 	}
 	States
@@ -109,7 +109,7 @@ class GWM_SMGGuy : Actor
 		AttackSound "weapons/smgfire";
 		Obituary "$OB_SMGGUY";
 		DropItem "GWM_SMG",10;
-		DropItem "GWM_LowCaliberMagazine",255;
+		DropItem "GWM_HollowPointMagazine",255;
 		Monster;
 		+FLOORCLIP
 	}

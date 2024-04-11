@@ -9,7 +9,7 @@ class GWM_Pistol : GWM_WeaponBase replaces Pistol
 		Weapon.SelectionOrder 1900;
 		Weapon.UpSound "weapons/draw_secondary";
 		Weapon.AmmoUse1 1;
-		Weapon.AmmoType1 "GWM_LowCaliberMagazine";
+		Weapon.AmmoType1 "GWM_HollowPointMagazine";
 		Weapon.AmmoGive 16;
 
 		ZWeapon.MagazineSize 15;

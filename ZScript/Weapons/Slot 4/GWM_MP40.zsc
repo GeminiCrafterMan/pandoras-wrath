@@ -7,7 +7,7 @@ class GWM_MP40 : GWM_WeaponBase
 		Weapon.SlotNumber 4;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 32;
-		Weapon.AmmoType "GWM_LowCaliberMagazine";
+		Weapon.AmmoType "GWM_HollowPointMagazine";
 
 		ZWeapon.MagazineSize 32;
 		ZWeapon.ReloadSound "weapons/smgclipin";
