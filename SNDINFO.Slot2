@@ -1,5 +1,6 @@
 // Pistol
 weapons/pistolfire		"Sounds/Weapons/Slot 2/Pistol/pistol_fire.wav"
+weapons/pistolwimp		"Sounds/Weapons/Slot 2/Pistol/pistol_wimp.wav"
 weapons/pistolpickup	"Sounds/Weapons/Slot 2/Pistol/pistol_pickup.wav"
 weapons/pistoldryfire	"Sounds/Weapons/Slot 2/Pistol/pistol_dryfire.wav"
 weapons/pistolclipout	"Sounds/Weapons/Slot 2/Pistol/pistol_clipout.wav"
