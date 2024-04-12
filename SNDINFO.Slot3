@@ -31,6 +31,9 @@ weapons/ssgo		"Sounds/Weapons/Slot 3/Super Shotgun/Open.wav"
 weapons/ssgl		"Sounds/Weapons/Slot 3/Super Shotgun/Load.wav"
 weapons/ssgc		"Sounds/Weapons/Slot 3/Super Shotgun/Close.wav"
 weapons/ssgpickup	"Sounds/Weapons/Slot 3/Super Shotgun/pickup.wav"
+weapons/ssgcshot	"Sounds/Weapons/Slot 3/Super Shotgun/Charged"
+weapons/ssgcEcho	"Sounds/Weapons/Slot 3/Super Shotgun/ChargeEcho"
+
 
 // Impaler Crossbow
 weapons/xbowrelease	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_release.wav"

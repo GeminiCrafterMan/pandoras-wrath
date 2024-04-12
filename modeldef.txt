@@ -52,6 +52,16 @@ Model GWM_SSGShot2 // Name of actor
 	FrameIndex TRAC A 0 0 // The sprite lump, sprite frame, model index, frame number
 }
 
+Model GWM_SSGChargedShot // Name of actor
+{
+	Path "Models/Tracers" // Path to model in PK3
+	SKIN 0 "Tracer1.png" // Model index, model file
+	MODEL 0 "Tracer.md3" // Model index, texture (can be in any format supported by GZDoom)
+	Scale 6.5 2.5 2.5 // Scale values
+	PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
+	FrameIndex TRAC A 0 0 // The sprite lump, sprite frame, model index, frame number
+}
+
 Model GWM_ShotgunIceShard // Name of actor
 {
 	Path "Models/Tracers" // Path to model in PK3
