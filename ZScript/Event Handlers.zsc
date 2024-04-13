@@ -140,6 +140,13 @@ class ThingReplacer : StaticEventHandler
 						if (replaceWolfSS.GetBool())
 							e.Replacement = "GWM_WolfensteinSS";
 						break;
+					// Eviternity I & II
+					case 'NightmareDemon':
+						e.Replacement = "GWM_NightmareDemon";
+						break;
+					case 'Annihilator':
+						e.Replacement = "GWM_Annihilator";
+						break;
 				}
 			}
 			else
@@ -195,8 +202,15 @@ class ThingReplacer : StaticEventHandler
 							e.Replacement = "GWM_HellKnight";
 						break;
 					case 'BaronOfHell':
+						string annihilator = "Annihilator";
+						class<Actor> annihilatorAlreadyExists = annihilator;
 						if (random(0, 4) == 4)
-							e.Replacement = "GWM_CyberBaron";
+						{
+							if (annihilatorAlreadyExists)
+								e.Replacement = "GWM_BaronOfHell";
+							else
+								e.Replacement = "GWM_Annihilator";
+						}
 						else
 							e.Replacement = "GWM_BaronOfHell";
 						break;
@@ -208,10 +222,23 @@ class ThingReplacer : StaticEventHandler
 						break;
 					// Other monsters
 					case 'Demon':
-						if (random(0, 4) == 4)
-							e.Replacement = "GWM_Hellhog";
-						else
-							e.Replacement = "GWM_Pinky";
+						string nightmareDemon = "NightmareDemon";
+						class<Actor> nightmareDemonAlreadyExists = nightmareDemon;
+						switch (random(0,5))
+						{
+							case 5:
+								if (nightmareDemonAlreadyExists)
+									e.Replacement = "GWM_Pinky";
+								else
+									e.Replacement = "GWM_NightmareDemon";
+								break;
+							case 4:
+								e.Replacement = "GWM_Hellhog";
+								break;
+							default:
+								e.Replacement = "GWM_Pinky";
+								break;
+						}
 						break;
 					case 'Spectre':
 						e.Replacement = "GWM_Spectre";
@@ -243,6 +270,13 @@ class ThingReplacer : StaticEventHandler
 					case 'WolfensteinSS':
 						if (replaceWolfSS.GetBool())
 							e.Replacement = "GWM_WolfensteinSS";
+						break;
+					// Eviternity I & II
+					case 'NightmareDemon':
+						e.Replacement = "GWM_NightmareDemon";
+						break;
+					case 'Annihilator':
+						e.Replacement = "GWM_Annihilator";
 						break;
 				}
 			}
@@ -361,7 +395,7 @@ class ThingReplacer : StaticEventHandler
 		let cls = e.Replacee.GetClassName(); //Although not necessary, it helps out for simplification.
 		switch(cls)
 		{
-		// Eviternity II
+		// Eviternity I & II
 			case 'Perforator':
 				e.Replacement = "GWM_Perforator";
 				break;
@@ -467,7 +501,7 @@ class ThingReplacer : StaticEventHandler
 			case 'GWM_BaronOfHell':
 				e.Replacee = "BaronOfHell";
 				break;
-			case 'GWM_CyberBaron':
+			case 'GWM_Annihilator':
 				e.Replacee = "BaronOfHell";
 				break;
 			case 'GWM_Cyberdemon':

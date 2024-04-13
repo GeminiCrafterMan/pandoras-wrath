@@ -1,3 +1,4 @@
+// Baron of Hell =============================
 class GWM_BaronOfHell : BaronOfHell
 {
 	Default
@@ -74,70 +75,63 @@ class GWM_BaronBall : BaronBall
 	}
 }
 
-class GWM_CyberBaron : GWM_BaronOfHell
+// Annihilator ===============================
+class GWM_Annihilator : Actor
 {
 	Default
 	{
-		//$Category Monsters
-		//$Title "Cyber Baron
-		Tag "$TAG_CYBERBARON";
-		Obituary "$OB_CYBERBARON_FIREBALL";
-		HitObituary "$OB_CYBERBARON_SCRATCH";
-		Health 1200;
-		PainChance 40;
-		SeeSound "monsters/cbaron/sight";
-		PainSound "monsters/cbaron/pain";
-		DeathSound "monsters/cbaron/death";
-		ActiveSound "monsters/cbaron/active";
+		Health 1100;
+		Speed 10;
+		Radius 24;
+		Height 64;
+		ReactionTime 8;
+		PainChance 20;
+		Mass 1000;
+		Monster;
+		+FLOORCLIP
+		SeeSound "monsters/annihilator/sight";
+		PainSound "monsters/annihilator/pain";
+		DeathSound "monsters/annihilator/death";
+		ActiveSound "monsters/annihilator/active";
+		Obituary "$OB_ANNIHILATOR";
+		Tag "$TAG_ANNIHILATOR";
 		DropItem "GWM_RocketAmmo";
 		DropItem "GWM_RocketAmmo";
-		DropItem "GWM_RocketAmmo";
+		DropItem "GWM_Cell";
 	}
-	states
+	States
 	{
 		Spawn:
-			CBOS AB 10 A_Look;
+			ANNI AB 10 A_Look;
 			Loop;
 		See:
-			CBOS A 3 A_Chase;
-			CBOS A 3 A_Chase;
-			CBOS B 0 A_StartSound("monsters/cbaron/metal");
-			CBOS BB 3 A_Chase;
-			CBOS CC 3 A_Chase;		
-			CBOS D 3 A_Chase;
-			CBOS D 3 A_Hoof;
+			ANNI AA 3 A_Chase;
+			ANNI B 0 A_StartSound("monsters/annihilator/step");
+			ANNI BBCC 3 A_Chase;
+			ANNI D 0 A_StartSound("monsters/annihilator/step");
+			ANNI DD 3 A_Chase;
 			Loop;
-		Missile:
-			CBOS E 0 A_Jump(80,"Missile2");
-			CBOS E 10 A_FaceTarget;
-			CBOS E 10 A_FaceTarget;
-			CBOS F 10 Bright A_SpawnProjectile("GWM_EnemyRocket",27,16,0);
-			CBOS E 10 A_FaceTarget;
-			Goto See;
-		Melee:
-		Missile2:
-			CBOS PQ 8 A_FaceTarget;
-			CBOS R 8 A_CustomComboAttack("GWM_BaronBall", 32, 45, "baron/melee");
-			Goto See;
 		Pain:
-			CBOS H 2;
-			CBOS H 2 A_Pain;
+			ANNI J 3;
+			ANNI J 3 A_Pain;
+			Goto See;
+		Missile:
+			ANNI E 8 Bright A_FaceTarget;
+			ANNI F 12 Bright A_SpawnProjectile("GWM_EnemyRocket",27,16,0);
+			ANNI GS 10 A_FaceTarget;
+			ANNI HIHIHIH 3 Bright A_SpawnProjectile("GWM_EnemyPlasma", 32, 0, 0); // "HighCaliberFast"
+			ANNI S 10 A_FaceTarget;
 			Goto See;
 		Death:
-			CBOS I 8;
-			CBOS J 8 A_Scream;
-			CBOS K 8 Bright A_StartSound("world/barrelx");
-			CBOS L 8 Bright A_NoBlocking;
-			CBOS MN 8 Bright;
-			CBOS O -1 A_BossDeath;
+			ANNI K 8;
+			ANNI L 8 Bright A_Scream;
+			ANNI M 8 Bright A_Fall;
+			ANNI NOP 8 Bright;
+			ANNI Q 8 Bright;
+			ANNI R -1;
 			Stop;
-		Death.Fire:
-			Goto Death;
 		Raise:
-			TNT1 A 0 {bNOBLOOD = false;}
-			CBOS O 8;
-			CBOS NMLK 8 Bright;
-			CBOS JI 8;
+			ANNI QPONMLK 5;
 			Goto See;
 	}
 }

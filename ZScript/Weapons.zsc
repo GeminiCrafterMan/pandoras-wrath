@@ -1,51 +1,51 @@
 // Weapon bases
 #include "ZScript/Weapons/Weapon base classes.zsc"
 
-#include "ZScript/Weapons/Slot 1/GWM_Fist.zsc"				// Fist, taken from Super Skulltag and rewritten slightly, then damage randomization was removed
-#include "ZScript/Weapons/Slot 1/GWM_Impactor.zsc"			// Impactor Gauntlet, taken from Realm667.
-#include "ZScript/Weapons/Slot 1/GWM_Lumberjack.zsc"		// "Lumberjack" Chainsaw, sprites by Captain J
-#include "ZScript/Weapons/Slot 1/GWM_Levenbrech.zsc"		// Levenbrech
+#include "ZScript/Weapons/Slot 1/GWM_Fist.zsc"					// Fist, taken from Super Skulltag and rewritten slightly, then damage randomization was removed
+#include "ZScript/Weapons/Slot 1/GWM_Impactor.zsc"				// Impactor Gauntlet, taken from Realm667.
+#include "ZScript/Weapons/Slot 1/GWM_Lumberjack.zsc"			// "Lumberjack" Chainsaw, sprites by Captain J
+#include "ZScript/Weapons/Slot 1/GWM_Levenbrech.zsc"			// Levenbrech
 
-#include "ZScript/Weapons/Slot 2/GWM_Pistol.zsc"			// Pistol
-#include "ZScript/Weapons/Slot 2/GWM_SMG.zsc"				// SMG
-#include "ZScript/Weapons/Slot 2/GWM_Revolver.zsc"			// Revolver
-#include "ZScript/Weapons/Slot 2/GWM_GoldWand.zsc"			// Gold Wand
+#include "ZScript/Weapons/Slot 2/GWM_Pistol.zsc"				// Pistol
+#include "ZScript/Weapons/Slot 2/GWM_SMG.zsc"					// SMG
+#include "ZScript/Weapons/Slot 2/GWM_Revolver.zsc"				// Revolver
+#include "ZScript/Weapons/Slot 2/GWM_GoldWand.zsc"				// Gold Wand
 
-#include "ZScript/Weapons/Slot 3/GWM_ZombieShotgun.zsc"		// Get a better shotgun ASAP
-#include "ZScript/Weapons/Slot 3/GWM_SlayersKahuna.zsc"		// Slayer's Kahuna
-#include "ZScript/Weapons/Slot 3/GWM_SuperShotgun.zsc"		// Super Shotgun
-#include "ZScript/Weapons/Slot 3/GWM_ImpalerCrossbow.zsc"	// Impaler Crossbow
+#include "ZScript/Weapons/Slot 3/GWM_ZombieShotgun.zsc"			// Get a better shotgun ASAP
+#include "ZScript/Weapons/Slot 3/GWM_SlayersKahuna.zsc"			// Slayer's Kahuna
+#include "ZScript/Weapons/Slot 3/GWM_SuperShotgun.zsc"			// Super Shotgun
+#include "ZScript/Weapons/Slot 3/GWM_ImpalerCrossbow.zsc"		// Impaler Crossbow
 
-#include "ZScript/Weapons/Slot 4/GWM_Minigun.zsc"			// Minigun
-#include "ZScript/Weapons/Slot 4/GWM_MadVulcan.zsc"			// Mad Vulcan
-#include "ZScript/Weapons/Slot 4/GWM_BurningMinigun.zsc"	// Burning Minigun
-#include "ZScript/Weapons/Slot 4/GWM_BurstRifle.zsc"		// Burst Rifle
-#include "ZScript/Weapons/Slot 4/GWM_MP40.zsc"				// MP40
-#include "ZScript/Weapons/Slot 4/GWM_Scrapgun.zsc"			// Not exactly TangoScrapgun anymore... (from Supercharge)
-#include "ZScript/Weapons/Slot 4/GWM_FrostFang.zsc"			// Frost Fang
+#include "ZScript/Weapons/Slot 4/GWM_Minigun.zsc"				// Minigun
+#include "ZScript/Weapons/Slot 4/GWM_MadVulcan.zsc"				// Mad Vulcan
+#include "ZScript/Weapons/Slot 4/GWM_BurningMinigun.zsc"		// Burning Minigun
+#include "ZScript/Weapons/Slot 4/GWM_BurstRifle.zsc"			// Burst Rifle
+#include "ZScript/Weapons/Slot 4/GWM_MP40.zsc"					// MP40
+#include "ZScript/Weapons/Slot 4/GWM_Scrapgun.zsc"				// Not exactly TangoScrapgun anymore... (from Supercharge)
+#include "ZScript/Weapons/Slot 4/GWM_FrostFang.zsc"				// Frost Fang
 
-#include "ZScript/Weapons/Slot 5/GWM_RocketLauncher.zsc"	// Rocket Launcher
-#include "ZScript/Weapons/Slot 5/GWM_GrenadeLauncher.zsc"	// Yep, they're split again...
-#include "ZScript/Weapons/Slot 5/GWM_Stomper.zsc"			// THE STOMPERRR (from Supercharge)
-#include "ZScript/Weapons/Slot 5/GWM_THE_BOUNCERRR.zsc"	    //I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
+#include "ZScript/Weapons/Slot 5/GWM_RocketLauncher.zsc"		// Rocket Launcher
+#include "ZScript/Weapons/Slot 5/GWM_GrenadeLauncher.zsc"		// Yep, they're split again...
+#include "ZScript/Weapons/Slot 5/GWM_Stomper.zsc"				// THE STOMPERRR (from Supercharge)
+#include "ZScript/Weapons/Slot 5/GWM_THE_BOUNCERRR.zsc"	    	//I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
 
-#include "ZScript/Weapons/Slot 6/GWM_PlasmaRifle.zsc"		// Plasma Rifle
-#include "ZScript/Weapons/Slot 6/GWM_NoiseCrusher.zsc"		// Noise Crusher
+#include "ZScript/Weapons/Slot 6/GWM_PlasmaRifle.zsc"			// Plasma Rifle
+#include "ZScript/Weapons/Slot 6/GWM_NoiseCrusher.zsc"			// Noise Crusher
 
-#include "ZScript/Weapons/Slot 7/GWM_BFG9000.zsc"			// BFG9000 (Vanilla)
-#include "ZScript/Weapons/Slot 7/GWM_TwinPlasmaCannons.zsc"	// Twin Plasma Cannons
+#include "ZScript/Weapons/Slot 7/GWM_BFG9000.zsc"				// BFG9000 (Vanilla)
+#include "ZScript/Weapons/Slot 7/GWM_TwinPlasmaCannons.zsc"		// Twin Plasma Cannons
 
-#include "ZScript/Weapons/Slot 8/GWM_ANNIHILATOR.zsc"	    // Shroine Tew, out now!
-#include "ZScript/Weapons/Slot 8/GWM_Perforator.zsc"		// Evitahnity Tew, out now!
+#include "ZScript/Weapons/Slot 8/GWM_EldritchAnnihilator.zsc"	// Shroine Tew, out now!
+#include "ZScript/Weapons/Slot 8/GWM_Perforator.zsc"			// Evitahnity Tew, out now!
 
-#include "ZScript/Weapons/Slot 9/GWM_IceShotgun.zsc"		// Ice Shotgun
-#include "ZScript/Weapons/Slot 9/GWM_PFMissileLauncher.zsc"	// Perfect Freeze Missile Launcher (WIP replacement for the above weapon)
-#include "ZScript/Weapons/Slot 9/GWM_Flamethrower.zsc"		// Flamethrower
-#include "ZScript/Weapons/Slot 9/GWM_AcidCannon.zsc"		// Acid Cannon (corrosive goop gun)
-#include "ZScript/Weapons/Slot 9/GWM_Melter.zsc"			// Melter
+#include "ZScript/Weapons/Slot 9/GWM_IceShotgun.zsc"			// Ice Shotgun
+#include "ZScript/Weapons/Slot 9/GWM_PFMissileLauncher.zsc"		// Perfect Freeze Missile Launcher
+#include "ZScript/Weapons/Slot 9/GWM_Flamethrower.zsc"			// Flamethrower
+#include "ZScript/Weapons/Slot 9/GWM_AcidCannon.zsc"			// Acid Cannon (corrosive goop gun)
+#include "ZScript/Weapons/Slot 9/GWM_Melter.zsc"				// Melter
 
-#include "ZScript/Weapons/Slot 0/GWM_Mine.zsc"				// Land mine
-#include "ZScript/Weapons/Slot 0/GWM_Dynamite.zsc"			// Dynamite bundle
+#include "ZScript/Weapons/Slot 0/GWM_Mine.zsc"					// Land mine
+#include "ZScript/Weapons/Slot 0/GWM_Dynamite.zsc"				// Dynamite bundle
 
 // Morph weapons
-#include "ZScript/Weapons/GWM_HellKnightClaws.zsc"	// Hell Knight's claws
+#include "ZScript/Weapons/GWM_HellKnightClaws.zsc"				// Hell Knight's claws

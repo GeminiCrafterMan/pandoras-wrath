@@ -1,0 +1,25 @@
+class GWM_PainElemental : PainElemental
+{
+	Default
+	{
+		//$Category Monsters
+		//$Title "Pain Elemental
+		Tag "$TAG_PAINELEMENTAL";
+	}
+	States
+	{
+		Missile:
+			PAIN D 5 A_FaceTarget;
+			PAIN E 5 A_FaceTarget;
+			PAIN F 5 BRIGHT A_FaceTarget;
+			PAIN F 0 BRIGHT A_PainAttack("GWM_LostSoul");
+			Goto See;
+		Death:
+			PAIN H 8 BRIGHT;
+			PAIN I 8 BRIGHT A_Scream;
+			PAIN JK 8 BRIGHT;
+			PAIN L 8 BRIGHT A_PainDie("GWM_LostSoul");
+			PAIN M 8 BRIGHT;
+			Stop;
+	}
+}

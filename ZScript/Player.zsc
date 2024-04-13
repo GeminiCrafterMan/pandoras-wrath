@@ -203,7 +203,7 @@ class GWM_QuickKickController : CustomInventory
 			KICK E 3 {
 				// redo this shit later
 				int dmg = 11;
-				if (FindInventory("PowerStrength"))
+				if (FindInventory("GWM_PowerStrength"))
 				{
 					A_CustomPunch(dmg*10, norandom:true, flags: 0, pufftype: "GWM_BerserkPuff", range: meleeRange + 20, meleesound: "*fist");
 				}

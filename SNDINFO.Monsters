@@ -21,28 +21,35 @@ monsters/burndeath8	"Sounds/Monsters/Burnt/break8.wav"
 monsters/burndeath9	"Sounds/Monsters/Burnt/break9.wav"
 
 // Hellhog (los zoglin but pinky)
-monsters/hellhog/sight1		"Sounds/Monsters/Hellhog/angry1.ogg"
-monsters/hellhog/sight2		"Sounds/Monsters/Hellhog/angry2.ogg"
-monsters/hellhog/sight3		"Sounds/Monsters/Hellhog/angry3.ogg"
-monsters/hellhog/melee1		"Sounds/Monsters/Hellhog/attack1.ogg"
-monsters/hellhog/melee2		"Sounds/Monsters/Hellhog/attack2.ogg"
-monsters/hellhog/pain1		"Sounds/Monsters/Hellhog/hurt1.ogg"
-monsters/hellhog/pain2		"Sounds/Monsters/Hellhog/hurt2.ogg"
-monsters/hellhog/pain3		"Sounds/Monsters/Hellhog/hurt3.ogg"
-monsters/hellhog/death1		"Sounds/Monsters/Hellhog/death1.ogg"
-monsters/hellhog/death2		"Sounds/Monsters/Hellhog/death2.ogg"
-monsters/hellhog/death3		"Sounds/Monsters/Hellhog/death3.ogg"
-monsters/hellhog/active1	"Sounds/Monsters/Hellhog/idle1.ogg"
-monsters/hellhog/active2	"Sounds/Monsters/Hellhog/idle2.ogg"
-monsters/hellhog/active3	"Sounds/Monsters/Hellhog/idle3.ogg"
-monsters/hellhog/active4	"Sounds/Monsters/Hellhog/idle4.ogg"
-monsters/hellhog/active5	"Sounds/Monsters/Hellhog/idle5.ogg"
-monsters/hellhog/active6	"Sounds/Monsters/Hellhog/idle6.ogg"
+monsters/hellhog/sight1		"Sounds/Monsters/Pinkies/Hellhog/angry1.ogg"
+monsters/hellhog/sight2		"Sounds/Monsters/Pinkies/Hellhog/angry2.ogg"
+monsters/hellhog/sight3		"Sounds/Monsters/Pinkies/Hellhog/angry3.ogg"
+monsters/hellhog/melee1		"Sounds/Monsters/Pinkies/Hellhog/attack1.ogg"
+monsters/hellhog/melee2		"Sounds/Monsters/Pinkies/Hellhog/attack2.ogg"
+monsters/hellhog/pain1		"Sounds/Monsters/Pinkies/Hellhog/hurt1.ogg"
+monsters/hellhog/pain2		"Sounds/Monsters/Pinkies/Hellhog/hurt2.ogg"
+monsters/hellhog/pain3		"Sounds/Monsters/Pinkies/Hellhog/hurt3.ogg"
+monsters/hellhog/death1		"Sounds/Monsters/Pinkies/Hellhog/death1.ogg"
+monsters/hellhog/death2		"Sounds/Monsters/Pinkies/Hellhog/death2.ogg"
+monsters/hellhog/death3		"Sounds/Monsters/Pinkies/Hellhog/death3.ogg"
+monsters/hellhog/active1	"Sounds/Monsters/Pinkies/Hellhog/idle1.ogg"
+monsters/hellhog/active2	"Sounds/Monsters/Pinkies/Hellhog/idle2.ogg"
+monsters/hellhog/active3	"Sounds/Monsters/Pinkies/Hellhog/idle3.ogg"
+monsters/hellhog/active4	"Sounds/Monsters/Pinkies/Hellhog/idle4.ogg"
+monsters/hellhog/active5	"Sounds/Monsters/Pinkies/Hellhog/idle5.ogg"
+monsters/hellhog/active6	"Sounds/Monsters/Pinkies/Hellhog/idle6.ogg"
 $random monsters/hellhog/sight	{monsters/hellhog/sight1 monsters/hellhog/sight2 monsters/hellhog/sight3}
 $random monsters/hellhog/melee	{monsters/hellhog/melee1 monsters/hellhog/melee2}
 $random monsters/hellhog/pain	{monsters/hellhog/pain1 monsters/hellhog/pain2 monsters/hellhog/pain3}
 $random monsters/hellhog/death	{monsters/hellhog/death1 monsters/hellhog/death2 monsters/hellhog/death3}
 $random monsters/hellhog/active	{monsters/hellhog/active1 monsters/hellhog/active2 monsters/hellhog/active3 monsters/hellhog/active4 monsters/hellhog/active5 monsters/hellhog/active6}
+
+// Nightmare Demon
+monsters/nmaredemon/sight	"Sounds/Monsters/Pinkies/Nightmare Demon/sight.wav"
+monsters/nmaredemon/melee	"Sounds/Monsters/Pinkies/Nightmare Demon/melee.wav"
+monsters/nmaredemon/pain	"Sounds/Monsters/Pinkies/Nightmare Demon/pain.wav"
+monsters/nmaredemon/death	"Sounds/Monsters/Pinkies/Nightmare Demon/death.wav"
+monsters/nmaredemon/active	"Sounds/Monsters/Pinkies/Nightmare Demon/active.wav"
 
 // Cyber-Imp
 monsters/cyberimp/sight1	"Sounds/Monsters/Imps/Cyber-Imp/sight1.wav"
@@ -65,48 +72,52 @@ $RANDOM monsters/devil/sight { monsters/devil/sight1 monsters/devil/sight2 }
 $RANDOM monsters/devil/death { monsters/devil/death1 monsters/devil/death2 }
 
 // Nightshade
-monsters/nightshade/sight1	"Sounds/Monsters/Imps/Nightshade/dsnshsi1.ogg"
-monsters/nightshade/sight2	"Sounds/Monsters/Imps/Nightshade/dsnshsi2.ogg"
-monsters/nightshade/active	"Sounds/Monsters/Imps/Nightshade/dsnshact.ogg"
-monsters/nightshade/pain	"Sounds/Monsters/Imps/Nightshade/dsnshpai.ogg"
-monsters/nightshade/death	"Sounds/Monsters/Imps/Nightshade/dsnshdth.ogg"
-monsters/nightshade/attack	"Sounds/Monsters/Imps/Nightshade/dsnshatk.ogg"
-monsters/nightshade/explode	"Sounds/Monsters/Imps/Nightshade/dsnshexp.ogg"
+monsters/nightshade/sight1	"Sounds/Monsters/Imps/Nightshade/sight1.ogg"
+monsters/nightshade/sight2	"Sounds/Monsters/Imps/Nightshade/sight2.ogg"
+monsters/nightshade/active	"Sounds/Monsters/Imps/Nightshade/active.ogg"
+monsters/nightshade/pain	"Sounds/Monsters/Imps/Nightshade/pain.ogg"
+monsters/nightshade/death	"Sounds/Monsters/Imps/Nightshade/death.ogg"
+monsters/nightshade/attack	"Sounds/Monsters/Imps/Nightshade/attack.ogg"
+monsters/nightshade/explode	"Sounds/Monsters/Imps/Nightshade/explode.ogg"
 $random monsters/nightshade/sight	{ monsters/nightshade/sight1 monsters/nightshade/sight2 }
 
 // Shadow Hunter
-monsters/shadowhunter/idle1	"Sounds/Monsters/Zombies/Shadow Hunter/SHADIDL1.ogg"
-monsters/shadowhunter/idle2	"Sounds/Monsters/Zombies/Shadow Hunter/SHADIDL2.ogg"
-monsters/shadowhunter/death	"Sounds/Monsters/Zombies/Shadow Hunter/SHADDEAD.ogg"
-monsters/shadowhunter/pain	"Sounds/Monsters/Zombies/Shadow Hunter/SHADPAIN.ogg"
-monsters/shadowhunter/sight	"Sounds/Monsters/Zombies/Shadow Hunter/SHADSIGH.ogg"
+monsters/shadowhunter/idle1	"Sounds/Monsters/Zombies/Shadow Hunter/idle1.ogg"
+monsters/shadowhunter/idle2	"Sounds/Monsters/Zombies/Shadow Hunter/idle2.ogg"
+monsters/shadowhunter/death	"Sounds/Monsters/Zombies/Shadow Hunter/death.ogg"
+monsters/shadowhunter/pain	"Sounds/Monsters/Zombies/Shadow Hunter/pain.ogg"
+monsters/shadowhunter/sight	"Sounds/Monsters/Zombies/Shadow Hunter/sight.ogg"
 $random monsters/shadowhunter/idle { monsters/shadowhunter/idle1 monsters/shadowhunter/idle2}
 
 // Blot
-monsters/blot/death			"Sounds/Monsters/Blot/DSBLOTDI.ogg"
-monsters/blot/attack		"Sounds/Monsters/Blot/DSBLOTAT.ogg"
+monsters/blot/death			"Sounds/Monsters/Blot/death.ogg"
+monsters/blot/attack		"Sounds/Monsters/Blot/attack.ogg"
 
 // Superdemon
-monsters/superdemon/death	"Sounds/Monsters/Superdemon/DSSUPDTH.ogg"
-monsters/superdemon/snarl	"Sounds/Monsters/Superdemon/DSSUPSNA.ogg"
-monsters/superdemon/crash	"Sounds/Monsters/Superdemon/DSSUPLND.ogg"
+monsters/superdemon/death	"Sounds/Monsters/Superdemon/death.ogg"
+monsters/superdemon/snarl	"Sounds/Monsters/Superdemon/snarl.ogg"
+monsters/superdemon/crash	"Sounds/Monsters/Superdemon/crash.ogg"
 
 // Cyber Knight & Cyber Baron
-monsters/chknight/sight		"Sounds/Monsters/Bruisers/CHKNTSIT.ogg"
-monsters/chknight/active	"Sounds/Monsters/Bruisers/CHKNTACT.ogg"
-monsters/chknight/pain		"Sounds/Monsters/Bruisers/CHKNTPAI.ogg"
-monsters/chknight/death		"Sounds/Monsters/Bruisers/CHKNTDTH.ogg"
-monsters/cbaron/sight		"Sounds/Monsters/Bruisers/CBARNSIT.wav"
-monsters/cbaron/pain		"Sounds/Monsters/Bruisers/CBARNPAI.wav"
-monsters/cbaron/death		"Sounds/Monsters/Bruisers/CBARNDTH.wav"
-monsters/cbaron/active		"Sounds/Monsters/Bruisers/CBARNACT.wav"
-monsters/cbaron/metal		"Sounds/Monsters/Bruisers/CMETAL.ogg"
+monsters/chknight/sight		"Sounds/Monsters/Bruisers/Cyber Hell Knight/sight.ogg"
+monsters/chknight/active	"Sounds/Monsters/Bruisers/Cyber Hell Knight/active.ogg"
+monsters/chknight/pain		"Sounds/Monsters/Bruisers/Cyber Hell Knight/pain.ogg"
+monsters/chknight/death		"Sounds/Monsters/Bruisers/Cyber Hell Knight/death.ogg"
+monsters/chknight/metal		"Sounds/Monsters/Bruisers/Cyber Hell Knight/metal.ogg"
+
+// Annihilator
+monsters/annihilator/sight	"Sounds/Monsters/Bruisers/Annihilator/sight.wav"
+monsters/annihilator/active	"Sounds/Monsters/Bruisers/Annihilator/active.wav"
+monsters/annihilator/pain	"Sounds/Monsters/Bruisers/Annihilator/pain.wav" // G: He has no pain sound, so I took the one from the Cyber Baron
+monsters/annihilator/death	"Sounds/Monsters/Bruisers/Annihilator/death.wav"
+monsters/annihilator/shoot	"Sounds/Monsters/Bruisers/Annihilator/shoot.wav"
+monsters/annihilator/step	"Sounds/Monsters/Bruisers/Annihilator/step.wav"
 
 // Kahuna Shotgun Guy
-monsters/skguy/warning		"Sounds/Monsters/Zombies/Kahuna Shotgun Guy/PRESHOOT.wav"
+monsters/skguy/warning		"Sounds/Monsters/Zombies/Kahuna Shotgun Guy/warning.wav"
 
 // Draugr
 monsters/draugr/shoot		"Sounds/Monsters/Draugr/quake_rpg_fire.wav"
 
 // Dis Cacodemon
-monsters/discaco/spit		"Sounds/Monsters/Dis Cacodemon/discaco_spit.wav"
+monsters/discaco/spit		"Sounds/Monsters/Dis Cacodemon/spit.wav"

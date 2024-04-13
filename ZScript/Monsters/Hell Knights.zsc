@@ -98,9 +98,8 @@ class GWM_CyberHellKnight : GWM_HellKnight
 			CBO2 AB 10 A_Look;
 			Loop;
 		See:
-			CBO2 A 3 A_Chase;
-			CBO2 A 3 A_Chase;
-			CBO2 B 0 A_StartSound("monsters/cbaron/metal");
+			CBO2 AA 3 A_Chase;
+			CBO2 B 0 A_StartSound("monsters/chknight/metal");
 			CBO2 BB 3 A_Chase;
 			CBO2 CC 3 A_Chase;		
 			CBO2 D 3 A_Chase;

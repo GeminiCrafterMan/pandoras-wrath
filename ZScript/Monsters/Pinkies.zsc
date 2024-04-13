@@ -1,3 +1,4 @@
+// Pinky Demon =============================
 class GWM_Pinky : Demon
 {
 	Default
@@ -55,6 +56,7 @@ class GWM_Pinky : Demon
 			Goto See;
 	}
 }
+// Spectre =================================
 class GWM_Spectre : GWM_Pinky
 {
 	Default
@@ -74,6 +76,7 @@ class GWM_Spectre : GWM_Pinky
 	}
 }
 
+// Hellhog =================================
 class GWM_Hellhog : Actor
 {
 	Default
@@ -156,5 +159,60 @@ class GWM_HellhogArm : Actor
 		Hit:
 			HHOG W -1;
 			Stop;
+	}
+}
+
+// Nightmare Demon =========================
+class GWM_NightmareDemon : Actor
+{
+	Default
+	{
+		//$Category Monsters
+		//$Title "Nightmare Demon
+		Health 300;
+		Speed 15;
+		Radius 30;
+		Height 56;
+		PainChance 100;
+		Mass 400;
+		Monster;
+		+FLOORCLIP
+		SeeSound "monsters/nmaredemon/sight";
+		AttackSound "monsters/nmaredemon/melee";
+		PainSound "monsters/nmaredemon/pain";
+		DeathSound "monsters/nmaredemon/death";
+		ActiveSound "monsters/nmaredemon/active";
+		Obituary "$OB_NIGHTMAREDEMON";
+		Tag "$TAG_NIGHTMAREDEMON";
+		BloodColor "4F A9 67";
+	}
+	States
+	{
+		Spawn:
+			NIDM AABB 10 A_Look;
+			Loop;
+		See:
+			NIDM AABBCCDD 2 A_Chase;
+			Loop;
+		Melee:
+			NIDM E 6 A_FaceTarget;
+			NIDM F 7 A_FaceTarget;
+			NIDM G 8 A_CustomMeleeAttack(22);
+			Goto See;
+		Pain:
+			NIDM H 2;
+			NIDM H 2 A_Pain;
+			Goto See;
+		Death:
+			NIDM I 8;
+			NIDM J 8 A_Scream;
+			NIDM K 4;
+			NIDM L 4 A_Fall;
+			NIDM M 4;
+			NIDM N -1;
+			Stop;
+		Raise:
+			NIDM NMLKJI 5;
+			Goto See;
 	}
 }
