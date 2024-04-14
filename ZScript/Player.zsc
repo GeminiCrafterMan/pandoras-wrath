@@ -7,8 +7,10 @@ class GWM_Player : DoomPlayer
 	int FireBurnDelay;
 	int AcidWeakDelay;
 	//self.Player.ReadyWeapon;
-	int ChargedRocketDelay;
+	int ChargedRockets;
+		int ChargedRocketDelay;
 	int ChargedGrenadeDelay;
+		int ChargedGrenades;
 	int ShotgunSpreadDelay;
 	int PandoraChargeDelay;
 	
@@ -65,25 +67,46 @@ class GWM_Player : DoomPlayer
 		
 	// G: WHY DID ADDING self. IN FRONT OF EACH ChargedRocketDelay FIX IT???
 	// M: Zscript bullshit strikes again!!!
+		
+		//Lower Rockets and reset delay when firing.
+		if(self.CountInv("GWM_FiringRocket") > 0)
+		{
+			self.ChargedRocketDelay = 0;
+			if(self.ChargedRockets > 0)
+			{--self.ChargedRockets;}
+			Takeinventory("GWM_FiringRocket",5);
+		}
+		
 		if (self.ChargedRocketDelay > 1050)
 		{ 
 			self.ChargedRocketDelay = 0;
-			A_GiveInventory("GWM_ChargedRockets",1);
+			if (self.ChargedRockets < 4)
+				{++ self.ChargedRockets;}
 		}
 		if (self.player.ReadyWeapon.GetClassName() == "GWM_RocketLauncher")
 			self.ChargedRocketDelay += 2;
 		else
 			self.ChargedRocketDelay += 3;
-
+		
+		if(self.CountInv("GWM_FiringGrenade") > 0)
+		{
+			self.ChargedRocketDelay = 0;
+			self.ChargedGrenades = 0;
+			Takeinventory("GWM_FiringGrenade",5);
+		}
+		
 		if (self.ChargedGrenadeDelay > 780)
 		{ 
 			self.ChargedGrenadeDelay = 0;
-			A_GiveInventory("GWM_ChargedGrenades",1);
+			if (self.ChargedGrenades < 6)
+				{++ self.ChargedGrenades;}
 		}
 		if (self.player.ReadyWeapon.GetClassName() == "GWM_GrenadeLauncher")
 			self.ChargedGrenadeDelay += 3;
 		else
 			self.ChargedGrenadeDelay += 4;
+
+		setInventory("GWM_ChargedGrenades",self.chargedGrenades);
 
 		if (self.ShotgunSpreadDelay > 36)
 		{ 
