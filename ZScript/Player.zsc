@@ -77,6 +77,17 @@ class GWM_Player : DoomPlayer
 			Takeinventory("GWM_FiringRocket",5);
 		}
 		
+		if(self.CountInv("GWM_AltFiringRocket") > 0)
+		{
+			self.ChargedRocketDelay = 0;
+			if(self.ChargedRockets > 0)
+			{
+			--self.ChargedRockets;
+			--self.ChargedRockets;
+			}
+			Takeinventory("GWM_AltFiringRocket",5);
+		}
+		
 		if (self.ChargedRocketDelay > 1050)
 		{ 
 			self.ChargedRocketDelay = 0;
