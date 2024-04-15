@@ -170,7 +170,7 @@ class GWM_KahunaShotgunGuy : ShotgunGuy
 			KASG P 5 A_XScream;
 			KASG Q 5 A_NoBlocking;
 			KASG RSTUV 5;
-			KASG X -1;
+			KASG W -1;
 			Stop;
 		Death.Fire:
 			TNT1 A 0 {
@@ -181,7 +181,7 @@ class GWM_KahunaShotgunGuy : ShotgunGuy
 			KASG P 5 A_StartSound("monsters/burndeath");
 			KASG Q 5 A_NoBlocking;
 			KASG RSTUV 5;
-			KASG X -1;
+			KASG W -1;
 			Stop;
 		Raise:
 			TNT1 A 0 {bNOBLOOD = false;}

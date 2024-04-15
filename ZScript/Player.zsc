@@ -13,6 +13,7 @@ class GWM_Player : DoomPlayer
 		int ChargedGrenades;
 	int ShotgunSpreadDelay;
 	int PandoraChargeDelay;
+	bool PW_FiringGrenade;
 	
 	
 	override void Tick()
@@ -98,12 +99,12 @@ class GWM_Player : DoomPlayer
 			self.ChargedRocketDelay += 2;
 		else
 			self.ChargedRocketDelay += 3;
-		
-		if(self.CountInv("GWM_FiringGrenade") > 0)
+
+		if(self.PW_FiringGrenade)
 		{
 			self.ChargedRocketDelay = 0;
 			self.ChargedGrenades = 0;
-			Takeinventory("GWM_FiringGrenade",5);
+			PW_FiringGrenade = false;
 		}
 		
 		if (self.ChargedGrenadeDelay > 780)
