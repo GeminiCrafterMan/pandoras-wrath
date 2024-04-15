@@ -173,7 +173,7 @@ class GWM_StatusBar : BaseStatusBar
 		
 		amt1 = GWM_PLAYER(Cplayer.mo).chargedgrenades;
 		DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -106), translation: Font.CR_Green);
-		amt1 = GetAmount("GWM_ChargedGrenades");
+		amt1 =  GWM_PLAYER(Cplayer.mo).chargedgrenades;
 		DrawString(mIndexFont, FormatNumber(amt1,3), (-39, -106), translation: Font.CR_Green);
 		
 		amt1 = GetAmount("GWM_KahunaSpread");
