@@ -118,8 +118,6 @@ class GWM_Player : DoomPlayer
 		else
 			self.ChargedGrenadeDelay += 4;
 
-		setInventory("GWM_ChargedGrenades",self.chargedGrenades);
-
 		if (self.ShotgunSpreadDelay > 36)
 		{ 
 			self.ShotgunSpreadDelay = 0;
