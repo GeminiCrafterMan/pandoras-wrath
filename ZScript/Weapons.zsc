@@ -46,6 +46,3 @@
 
 #include "ZScript/Weapons/Slot 0/GWM_Mine.zsc"					// Land mine
 #include "ZScript/Weapons/Slot 0/GWM_Dynamite.zsc"				// Dynamite bundle
-
-// Morph weapons
-#include "ZScript/Weapons/GWM_HellKnightClaws.zsc"				// Hell Knight's claws

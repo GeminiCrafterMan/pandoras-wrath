@@ -73,7 +73,6 @@ misc/w_pkup					"Sounds/Pickups/Weapon.wav"
 powerups/time_stop_start	"Sounds/Powerups/time_stop_start.wav"
 powerups/time_stop_end		"Sounds/Powerups/time_stop_end.wav"
 powerups/portable_medkit	"Sounds/Powerups/portable_medkit.wav"
-powerups/knightsphere		"Sounds/Powerups/knightsphere_scream.wav"
 
 // Keys
 $random misc/k_pkup	{ misc/k_pkup1 misc/k_pkup2 misc/k_pkup3 misc/k_pkup4 }

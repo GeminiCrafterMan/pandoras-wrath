@@ -64,34 +64,6 @@ class GWM_PowerStrength : PowerStrength replaces PowerStrength
 	}
 }
 
-class GWM_KnightSphere : Inventory
-{
-	override void Touch(Actor toucher) {
-		toucher.A_StartSound("powerups/knightsphere", CHAN_VOICE);
-		toucher.A_Morph("GWM_HellKnightPlayer", 40*35, MRF_ADDSTAMINA|MRF_UNDOBYCHAOSDEVICE|MRF_FAILNOLAUGH|MRF_WHENINVULNERABLE|MRF_LOSEACTUALWEAPON|MRF_UNDOBYDEATH);
-		Super.Touch(toucher);
-	}
-	Default
-	{
-		//$Category Pickups
-		//$Title "Hell Knight transformation
-		Inventory.PickupMessage "$GOTKNIGHTSPHERE";
-		Inventory.Icon "HPOWA0";
-		Inventory.MaxAmount 0;
-		Inventory.UseSound "pickups/slowmo";
-		+COUNTITEM
-		+INVENTORY.ALWAYSPICKUP
-		+INVENTORY.AUTOACTIVATE
-		+RANDOMIZE
-	}
-	States
-	{
-		Spawn:
-			HPOW ABCDCB 6 Bright;
-			Loop;
-	}
-}
-
 class GWM_Soulsphere : Soulsphere
 {
 	Default

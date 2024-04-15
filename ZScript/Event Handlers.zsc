@@ -278,6 +278,16 @@ class ThingReplacer : StaticEventHandler
 					case 'Annihilator':
 						e.Replacement = "GWM_Annihilator";
 						break;
+					// Valiant... maybe
+					case 'ValiantImp':
+						e.Replacement = "GWM_Devil";
+						break;
+					case 'ValiantDemon':
+						e.Replacement = "GWM_NightmareDemon";
+						break;
+					case 'ValiantCybruiser':
+						e.Replacement = "GWM_Annihilator";
+						break;
 				}
 			}
         }
