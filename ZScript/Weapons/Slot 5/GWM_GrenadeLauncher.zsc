@@ -1,5 +1,3 @@
-class GWM_ChargedGrenades : Inventory {Default{Inventory.Maxamount 6;}} 
-
 class GWM_GrenadeLauncher : GWM_WeaponBase
 {
 	Default
@@ -221,8 +219,6 @@ class GWM_ChargedGrenade : GWM_Grenade
 				A_Scream();
 				A_SetRenderstyle(alpha, STYLE_Add);
 				A_Explode(135,240);
-				
-				A_TakeInventory("GWM_ChargedGrenades",1);
 				
 				
 				A_SpawnItemEX("GWM_RocketBlast");
