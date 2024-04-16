@@ -10,8 +10,13 @@ class GWM_DoomImp : DoomImp // literally just a normal imp
 	{
 		Melee:
 		Missile:
+			TROO E 2 A_Jump(100,"Missile2");
 			TROO EF 8 A_FaceTarget;
 			TROO G 6 A_CustomComboAttack("GWM_ImpBall", 32, 14, "imp/melee");
+			Goto See;
+		Missile2:
+			TROO EEF 8 A_FaceTarget;
+			TROO G 10 A_CustomMissile("GWM_ImpFastBall",32);
 			Goto See;
 		Death.Fire:
 			TNT1 A 0 {
@@ -51,7 +56,60 @@ class GWM_ImpBall : DoomImpBall
 	Default
 	{
 		DamageType "Fire";
-		DamageFunction (14);
+		RenderStyle "Add";
+		DamageFunction (15);
+		Speed 17;
+		Scale 1.75;
+	}
+	States
+	{
+	Spawn:
+		YFIR A 1 BRIGHT
+		{
+			A_SpawnItemEX("GWM_ImpFlameFX",frandom(-20,8),frandom(-1,1),frandom(-1,1));
+			A_SpawnItemEX("GWM_ImpFlameFX",frandom(-15,5),frandom(-4,4),frandom(-4,4));
+		}
+		Loop;
+	Death:
+		BAL1 CCCDDDEEEE 1 BRIGHT
+		{
+			A_SpawnItemEX("GWM_ImpFlameFX",frandom(-8,8),frandom(-8,8),frandom(-8,8),frandom(-4,4),frandom(-4,4),frandom(-4,4));
+			A_SpawnItemEX("GWM_ImpFlameFX",frandom(-8,8),frandom(-8,8),frandom(-8,8),frandom(-4,4),frandom(-4,4),frandom(-4,4));
+			A_SpawnItemEX("GWM_ImpFlameFX",frandom(-8,8),frandom(-8,8),frandom(-8,8),frandom(-4,4),frandom(-4,4),frandom(-4,4));
+			
+		}
+		Stop;
+ }
+}
+
+class GWM_ImpFastBall : GWM_ImpBall
+{
+	Default
+	{
+		DamageType "Fire";
+		DamageFunction (20);
+		Speed 40;
+		-NOGRAVITY;
+		Gravity 0.25;
+		Scale 1.75;
+		Vspeed 5;
+	}
+}
+
+Class GWM_ImpFlameFX : Actor
+{
+	Default
+	{
+		+NoInteraction;
+		RenderStyle "Add";
+		Scale 0.42;
+		Speed 10;
+	}
+	States
+	{
+	Spawn:
+		ZFIR EGIKMOP 1 bright A_ScaleVelocity(0.9);
+		stop;
 	}
 }
 
