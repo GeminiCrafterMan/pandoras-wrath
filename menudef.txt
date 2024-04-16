@@ -8,7 +8,8 @@ OptionMenu gwm_Options
 	Option "Replace objects"				, gwm_replaceobjects	, OnOff
 	Option "No alternative replacements"	, gwm_noaltreplacements	, OnOff
 	Option "No intro/berserk dialogue"		, gwm_shutupmerc		, OnOff
-}
+	Option "Replace worse weapons"			, gwm_upgradereplace		, OnOff
+}	
 
 // Entry points
 

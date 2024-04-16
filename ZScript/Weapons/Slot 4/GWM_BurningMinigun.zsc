@@ -28,6 +28,7 @@ class GWM_BurningMinigun : GWM_WeaponBase
 		Tag "$TAG_BURNMINI";
 		
 		GWM_WeaponBase.BaseVersion "GWM_MadVulcan";
+		GWM_WeaponBase.BaseVersion2 "GWM_Minigun";
 	}
 	States
 	{

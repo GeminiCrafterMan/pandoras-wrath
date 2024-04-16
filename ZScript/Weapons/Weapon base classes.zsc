@@ -2,30 +2,41 @@
 class GWM_WeaponBase : ZWeapon
 {
 	class<Weapon> baseVersion;
+	class<Weapon> baseVersion2;
 	property BaseVersion : baseVersion;
+	property BaseVersion2 : baseVersion2;
 	override void AttachToOwner(Actor other)
 	{
 		Super.AttachToOwner(other);
-		if (!baseVersion)
+		if (!baseVersion && !baseVersion2) 
 			return;
 		// Remove base version on pickup:
-		if (owner)
+		if (GetCVAR("gwm_upgradereplace")==1)
 		{
-			let basever = owner.FindInventory(baseVersion);
-			if (basever)
+			if (owner)
 			{
-				basever.GoAwayAndDie();
+				let basever = owner.FindInventory(baseVersion);
+				let basever2 = owner.FindInventory(baseVersion2);
+				if (basever)
+				{
+					basever.GoAwayAndDie();
+				}	
+				if (basever2)
+				{
+					basever2.GoAwayAndDie();
+				}
 			}
 		}
 	}
 	override void DoEffect()
 	{
 		Super.DoEffect();
-		if (!owner || !owner.player || !baseVersion)
+		if (!GetCVAR("gwm_upgradereplace")|| !owner || !owner.player || !baseVersion || !baseVersion && !baseVersion2)
 			return;
 
 		// check if the player currently has base version:
 		let basever = Weapon(owner.FindInventory(baseVersion));
+		let basever2 = Weapon(owner.FindInventory(baseVersion2));
 		if (basever)
 		{
 			// If they do and it's currently selected, switch
@@ -38,12 +49,33 @@ class GWM_WeaponBase : ZWeapon
 			// And remove base version from inventory:
 			basever.GoAwayAndDie();
 		}
+		
+		if (basever2)
+		{
+			// If they do and it's currently selected, switch
+			// to self instead:
+			let rweap = owner.player.readyweapon;
+			if (rweap == basever2)
+			{
+				owner.player.pendingweapon = self;
+			}
+			// And remove base version from inventory:
+			basever2.GoAwayAndDie();
+		}
+		
 	}
 	override bool HandlePickup(Inventory item)
 	{
 		// If receiving another base version for any reason,
 		// give ammo instead and remove the base version instance:
 		if (baseversion && item.GetClass() == baseVersion)
+		{
+			Weapon(item).PickupForAmmo(self);
+			item.bPickupGood = true;
+			return true;
+		}
+		
+		if (baseversion2 && item.GetClass() == baseVersion2)
 		{
 			Weapon(item).PickupForAmmo(self);
 			item.bPickupGood = true;
