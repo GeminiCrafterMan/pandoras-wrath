@@ -126,7 +126,7 @@ class GWM_SMGGuy : Actor
 		Shoot:
 			MGPO F 2 Bright 
 			{
-			A_CustomBulletAttack(12, 12, 1, 9, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
+			A_CustomBulletAttack(14, 14, 1, 6, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
 			A_SpawnItemEX("GWM_PistolCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));
 			A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,15);	
 			}
@@ -134,7 +134,7 @@ class GWM_SMGGuy : Actor
 			{
 			invoker.shotsfired = invoker.shotsfired+1;
 			A_FaceTarget();
-				if (invoker.shotsfired > random(15,20))
+				if (invoker.shotsfired > random(10,17))
 				{
 				SetStateLabel("StopFiring");
 				}
