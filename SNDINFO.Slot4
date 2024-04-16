@@ -5,16 +5,28 @@ weapons/rifleout		"Sounds/Weapons/Slot 4/Burst Rifle/assaultrifle_clip_out.wav"
 weapons/riflefwd		"Sounds/Weapons/Slot 4/Burst Rifle/draw_assaultrifle_boltforward.wav"
 weapons/riflebak		"Sounds/Weapons/Slot 4/Burst Rifle/draw_assaultrifle_boltback.wav"
 
+// Chaingun
+weapons/draw_chain		"Sounds/Weapons/Slot 4/Minigun/draw.wav"
+weapons/chainup		"Sounds/Weapons/Slot 4/Minigun/chaingun_cg_windup_mix_01.wav"
+weapons/chainloop		"Sounds/Weapons/Slot 4/Minigun/chaingun_cg_motor_loop_01.wav"
+weapons/chaindn		"Sounds/Weapons/Slot 4/Minigun/chaingun_cg_winddown_mix_01.wav"
+
+weapons/chainfire1		"Sounds/Weapons/Slot 4/Minigun/chaingun_fire1"
+weapons/chainfire2		"Sounds/Weapons/Slot 4/Minigun/chaingun_fire2"
+weapons/chainfire3		"Sounds/Weapons/Slot 4/Minigun/chaingun_fire3"
+
+$random weapons/chainfire { weapons/chainfire1 weapons/chainfire2 weapons/chainfire3}	
+
 // Mad Vulcan
 weapons/draw_vulcan		"Sounds/Weapons/Slot 4/Mad Vulcan/draw.wav"
-weapons/vulcanup		"Sounds/Weapons/Slot 4/Mad Vulcan/chaingun_cg_windup_mix_01.wav"
-weapons/vulcanloop		"Sounds/Weapons/Slot 4/Mad Vulcan/chaingun_cg_motor_loop_01.wav"
-weapons/vulcandn		"Sounds/Weapons/Slot 4/Mad Vulcan/chaingun_cg_winddown_mix_01.wav"
+weapons/vulcanup		"Sounds/Weapons/Slot 4/Mad Vulcan/madvlcan_cg_windup_mix_01.wav"
+weapons/vulcanloop		"Sounds/Weapons/Slot 4/Mad Vulcan/madvlcan_cg_motor_loop_01.wav"
+weapons/vulcandn		"Sounds/Weapons/Slot 4/Mad Vulcan/madvlcan_cg_winddown_mix_01.wav"
 
-weapons/vulcanfire1		"Sounds/Weapons/Slot 4/Mad Vulcan/chaingun_fire1.wav"
-weapons/vulcanfire2		"Sounds/Weapons/Slot 4/Mad Vulcan/chaingun_fire2.wav"
-weapons/vulcanfire3		"Sounds/Weapons/Slot 4/Mad Vulcan/chaingun_fire3.wav"
-weapons/vulcanfire4		"Sounds/Weapons/Slot 4/Mad Vulcan/chaingun_fire4.wav"
+weapons/vulcanfire1		"Sounds/Weapons/Slot 4/Mad Vulcan/madvlcan_fire1.wav"
+weapons/vulcanfire2		"Sounds/Weapons/Slot 4/Mad Vulcan/madvlcan_fire2.wav"
+weapons/vulcanfire3		"Sounds/Weapons/Slot 4/Mad Vulcan/madvlcan_fire3.wav"
+weapons/vulcanfire4		"Sounds/Weapons/Slot 4/Mad Vulcan/madvlcan_fire4.wav"
 
 $random weapons/vulcanfire { weapons/vulcanfire1 weapons/vulcanfire2 weapons/vulcanfire3 weapons/vulcanfire4 }	
 
