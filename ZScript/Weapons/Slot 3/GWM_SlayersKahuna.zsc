@@ -68,7 +68,8 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 			SKSG A 1 Bright {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 10, pellets: 12, spread: 6, tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(0, 10, pellets: 12, spread: 6+(Countinv("GWM_KahunaSpread")*0.4), tracerType: "GWM_Tracer");
+				
 				A_ChangeVelocity(-Cos(pitch)*2, 0, sin(pitch)*2,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
@@ -111,7 +112,7 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 				A_Overlay(55, "Recoil");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 11, pellets: 12, spread: 4+(Countinv("GWM_KahunaSpread")*0.7), tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(0, 11, pellets: 12, spread: 5+(Countinv("GWM_KahunaSpread")*0.8), tracerType: "GWM_Tracer");
 				A_ChangeVelocity(-Cos(pitch)*2.5, 0, sin(pitch)*2.5,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
@@ -132,12 +133,13 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
 			TNT1 A 0 ZWL_CheckReload();
-			SKSG FFGG 1;
+			SKSG FGG 2;
 			TNT1 A 0 {ZWL_EjectCasing("GWM_ShotgunCasing", offset: (20, 4, -14));}
 			SKSG A 0 ZWL_ReFire();
 			// G: wh-
 			// G: okay, i guess
 			// M: OLD CODE
+			// M: Did you delete the old code? I don't mind but these comments are gonna look MAD odd.
 			SKSG H 4 {
 				A_StartSound("weapons/skpump1");
 				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (20, 4, -14));
