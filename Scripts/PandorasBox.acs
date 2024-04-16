@@ -381,7 +381,7 @@ script "PandorasBox" (void)
 						//if (upgslot == 2) { GiveInventory("GWM_Defenseupgrades", 1);}
 						if (upgslot == 3) { SetAmmoCapacity("GWM_HollowPointMagazine",GetAmmoCapacity("GWM_HollowPointMagazine")+150);}
 						if (upgslot == 4) { SetAmmoCapacity("GWM_Shell",GetAmmoCapacity("GWM_Shell")+25);}
-						if (upgslot == 5) { SetAmmoCapacity("GWM_FullMetalJacketMagazine",GetAmmoCapacity("GWM_FullMetalJacketMagazine")+100);}
+						if (upgslot == 5) { SetAmmoCapacity("GWM_FMJMagazine",GetAmmoCapacity("GWM_FMJMagazine")+100);}
 						if (upgslot == 6) { SetAmmoCapacity("GWM_RocketAmmo",GetAmmoCapacity("GWM_RocketAmmo")+20);}
 						if (upgslot == 7) { SetAmmoCapacity("GWM_Cell",GetAmmoCapacity("GWM_Cell")+175);}
 						if (upgslot == 8) { SetAmmoCapacity("GWM_IceShell",GetAmmoCapacity("GWM_IceShell")+20);}
@@ -410,7 +410,7 @@ script "PandorasBox" (void)
 						if (refslot == 1) {GiveInventory("GWM_CombatArmor",1);}
 						if (refslot == 2) {GiveInventory("GWM_HollowPointMagazine",1000);}
 						if (refslot == 3) {GiveInventory("GWM_Shell",1000);}
-						if (refslot == 4) {GiveInventory("GWM_FullMetalJacketMagazine",1000);}
+						if (refslot == 4) {GiveInventory("GWM_FMJMagazine",1000);}
 						if (refslot == 5) {GiveInventory("GWM_RocketAmmo",1000);}
 						if (refslot == 6) {GiveInventory("GWM_Cell",1000);}
 						if (refslot == 7) {

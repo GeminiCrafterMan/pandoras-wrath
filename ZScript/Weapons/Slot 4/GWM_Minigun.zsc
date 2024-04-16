@@ -3,9 +3,9 @@ class GWM_Minigun : GWM_WeaponBase
 	action void A_FireMinigun()
 	{
 		A_SpawnItemEx("GWM_Flash");
-		ZWL_FireHitscan(0, 18, spread: 8, tracerType: "GWM_Tracer");
+		ZWL_FireHitscan(0, 10, pellets: 2, spread: 5, tracerType: "GWM_Tracer");
 		ZWL_EjectCasing("GWM_RifleCasing", true, -23, 8, 16, (24, 0, -16));
-		A_ChangeVelocity(-Cos(pitch)*0.05, 0, sin(pitch)*0.05,CVF_RELATIVE);
+		A_ChangeVelocity(-Cos(pitch)*0.06, 0, sin(pitch)*0.05,CVF_RELATIVE);
 		A_SetPitch(pitch+frandom(-.25,.25));
 		A_Setangle(angle+frandom(-.25,.25));
 	}
@@ -15,11 +15,11 @@ class GWM_Minigun : GWM_WeaponBase
 		//$Title "Minigun
 		Weapon.SlotNumber 4;
 		Weapon.SelectionOrder 800; // Has a wind-up, so +100
-		Weapon.UpSound "weapons/draw_vulcan";
+		Weapon.UpSound "weapons/draw_chain";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 20;
-		Weapon.AmmoType "GWM_FullMetalJacketMagazine";
-		AttackSound "weapons/vulcanfire";
+		Weapon.AmmoType "GWM_FMJMagazine";
+		AttackSound "weapons/chainfire";
 		Inventory.PickupMessage "$GOTMINIGUN";
 		Obituary "$KILLMINIGUN";
 		Tag "$TAG_MINIGUN";
@@ -38,9 +38,9 @@ class GWM_Minigun : GWM_WeaponBase
 			Loop;
 		Fire:
 			// rev the chaingun
-			MING A 1 A_StartSound("weapons/vulcanup", CHAN_BODY);
+			MING A 1 A_StartSound("weapons/Chainup", CHAN_BODY);
 			MING AABBBBCCCDDEEFGH 1;
-			MING A 0 A_StartSound("weapons/vulcanloop", CHAN_BODY, CHANF_LOOPING);
+			MING A 0 A_StartSound("weapons/Chainloop", CHAN_BODY, CHANF_LOOPING);
 			MING A 0 A_ReFire("Hold");
 			Goto Release;
 		Hold:
@@ -64,7 +64,7 @@ class GWM_Minigun : GWM_WeaponBase
 			MING H 0 A_ReFire;
 			Goto Release;
 		Release:
-			MING H 1 A_StartSound("weapons/vulcandn", CHAN_BODY);
+			MING H 1 A_StartSound("weapons/Chaindn", CHAN_BODY);
 			MING ABCDEEFFFGGGGHHHHH 1;
 			//MING GFFEEDDDCCCBBBBAAA 1;
 			TNT1 A 0 A_CheckReload;

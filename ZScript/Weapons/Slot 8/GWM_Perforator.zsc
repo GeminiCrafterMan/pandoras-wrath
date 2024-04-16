@@ -6,7 +6,7 @@ class GWM_Perforator : GWM_WeaponBase
 		Weapon.SelectionOrder 2800;
 		Weapon.AmmoGive 20;
 		Weapon.AmmoUse 25;
-		Weapon.AmmoType "GWM_FullMetalJacketMagazine";
+		Weapon.AmmoType "GWM_FMJMagazine";
 
 		Tag "$TAG_PERFORATOR";
 		Obituary "$KILLPERFORATOR";

@@ -3,7 +3,7 @@ class GWM_BurningMinigun : GWM_WeaponBase
 	action void A_FireBurnMini()
 	{
 		A_SpawnItemEx("GWM_Flash");
-		ZWL_FireHitscan(0, 8, pellets: 3, spread: 8, tracerType: "GWM_Tracer");
+		ZWL_FireHitscan(0, 9, pellets: 6, spread: 14, tracerType: "GWM_Tracer");
 		ZWL_EjectCasing("GWM_RifleCasing", true, -23, 8, 16, (24, 0, -16));
 		A_ChangeVelocity(-Cos(pitch)*0.1, 0, sin(pitch)*0.1,CVF_RELATIVE);
 		A_SetPitch(pitch+frandom(-.5,.5));
@@ -16,7 +16,7 @@ class GWM_BurningMinigun : GWM_WeaponBase
 		Weapon.SlotNumber 4;
 		Weapon.SelectionOrder 800; // Has a wind-up, so +100
 		Weapon.UpSound "weapons/draw_vulcan";
-		Weapon.AmmoType1 "GWM_FullMetalJacketMagazine";
+		Weapon.AmmoType1 "GWM_FMJMagazine";
 		Weapon.AmmoUse1 1;
 		Weapon.AmmoGive1 20;
 		Weapon.AmmoType2 "GWM_GasCanister";

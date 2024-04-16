@@ -36,7 +36,7 @@ class GWM_HollowPointBox : GWM_HollowPointMagazine
 	}
 }
 
-class GWM_FullMetalJacketMagazine : Ammo
+class GWM_FMJMagazine : Ammo
 {
 	Default
 	{
@@ -56,7 +56,7 @@ class GWM_FullMetalJacketMagazine : Ammo
 			Stop;
 	}
 }
-class GWM_FullMetalJacketBelt : GWM_FullMetalJacketMagazine
+class GWM_FMJBelt : GWM_FMJMagazine
 {
 	Default
 	{

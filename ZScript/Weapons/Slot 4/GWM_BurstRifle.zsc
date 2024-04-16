@@ -18,7 +18,7 @@ class GWM_BurstRifle : GWM_WeaponBase
 		Weapon.SelectionOrder 700;
 		Weapon.SlotNumber 4;
 		Weapon.AmmoUse 1;
-		Weapon.AmmoType "GWM_FullMetalJacketMagazine";
+		Weapon.AmmoType "GWM_FMJMagazine";
 		Weapon.AmmoGive 32; // as opposed to 31, since we're firing in bursts of four now
 		Weapon.UpSound "weapons/draw_primary";
 
