@@ -1,8 +1,13 @@
 class GWM_Speedupgrades : Inventory { Default {Inventory.Maxamount 50000;}}
 class GWM_HPupgrade : MaxHealth { Default {Inventory.Maxamount 9900;}}
+class GWM_HealAmount : Inventory { Default {Inventory.Maxamount 9999;}}
+class GWM_Healspeed : Inventory { Default {Inventory.Maxamount 4;}}
 
 class GWM_Player : DoomPlayer
 {
+	int healtics;
+	int healtime;
+	
 	int prevPlayerState;
 	int FireBurnDelay;
 	int AcidWeakDelay;
@@ -15,6 +20,12 @@ class GWM_Player : DoomPlayer
 	int PandoraChargeDelay;
 	bool PW_FiringGrenade;
 	
+	override void BeginPlay()
+	{
+		Super.BeginPlay ();
+		ChangeStatNum (STAT_PLAYER);
+		FullHeight = Height;
+	}
 	
 	override void Tick()
 	{
@@ -44,14 +55,21 @@ class GWM_Player : DoomPlayer
 			player.ReadyWeapon.FOVScale = 0.0;
 		}
 		
-	
+		if(self.CountInv("GWM_HealAmount") && self.healtics > self.healtime)
+		{ 
+		self.healtics = 0;
+		HealThing(1);
+		TakeInventory("GWM_HealAmount",1);
+		}
+		self.healtics = self.healtics + 1;
+		self.healtime = 4 - self.CountInv("GWM_HealSpeed");
+		
 		if(self.CountInv("FireBurnCount") && self.FireBurnDelay > 15)
 		{ 
 		A_DamageSelf(1,"Fire");
 		self.FireBurnDelay = 0;
 		TakeInventory("FireBurnCount",4);
 		}
-		
 		self.FireBurnDelay = self.FireBurnDelay + 1;
 		
 		if(self.CountInv("AcidWeakCount") && self.AcidWeakDelay > 5)

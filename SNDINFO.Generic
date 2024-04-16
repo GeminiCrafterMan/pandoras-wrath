@@ -57,6 +57,7 @@ objects/barrel_explode		"Sounds/Objects/barrel_explode.wav"
 // Pickups
 pickups/healthbonus			"Sounds/Pickups/Health Bonus.wav"
 pickups/armorbonus			"Sounds/Pickups/Armor Bonus.wav"
+pickups/healthitem		"Sounds/Pickups/HealthItem.wav"
 
 // Ammo
 pickups/magazine			"Sounds/Pickups/Magazine.wav"

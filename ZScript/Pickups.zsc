@@ -1,3 +1,59 @@
+Class GWM_Stimpack : CustomInventory replaces Stimpack
+{
+Default
+{
+Inventory.PickupMessage "Picked up a stimpack.";
+Inventory.PickupSound "pickups/healthitem";
++NOSKIN;
++SEESDAGGERS;
+}
+States
+{
+Spawn:
+STIM A 1;
+loop;
+Pickup:
+TNT1 A 0 A_Jumpifhealthlower(Stamina+100,"Heal");
+goto FailToHeal;
+Heal:
+TNT1 A 0 GiveInventory("GWM_HealAmount",10);
+stop;
+
+FailToHeal:
+TNT1 A 0;
+fail;
+}
+}
+
+Class GWM_Medikit : CustomInventory replaces Medikit
+{
+Default
+{
+Inventory.PickupMessage "Picked up a Medikit.";
+Inventory.PickupSound "pickups/healthitem";
++NOSKIN;
++SEESDAGGERS;
+}
+States
+{
+Spawn:
+MEDI A 1;
+loop;
+Pickup:
+TNT1 A 0 A_Jumpifhealthlower(Stamina+100,"Heal");
+goto FailToHeal;
+Heal:
+TNT1 A 0 GiveInventory("GWM_HealAmount",25);
+stop;
+
+FailToHeal:
+TNT1 A 0;
+fail;
+}
+}
+
+
+
 class GWM_HealthBonus : HealthBonus replaces HealthBonus
 {
 	Default

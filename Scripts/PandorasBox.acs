@@ -320,6 +320,9 @@ script "PandorasBox" (void)
 				if (upgslot == 11) { SetFont("SMALLFONT"); HudMessage(s:"+Scrap";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 12) { SetFont("SMALLFONT"); HudMessage(s:"+Stomper";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
 				if (upgslot == 13) { SetFont("SMALLFONT"); HudMessage(s:"+Wand Crystals";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+				if (upgslot == 14) { SetFont("SMALLFONT"); HudMessage(s:"+Healing Speed";HUDMSG_PLAIN,4,0,180.0,100.0,0.06);}
+				
+				
 				
 				//SLOT 2 (ITEMS)
 				if (itmslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"SoulSphere";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
@@ -384,6 +387,8 @@ script "PandorasBox" (void)
 						if (upgslot == 11) { SetAmmoCapacity("GWM_ScrapDrum",GetAmmoCapacity("GWM_ScrapDrum")+10);}
 						if (upgslot == 12) { SetAmmoCapacity("GWM_StomperAmmo",GetAmmoCapacity("GWM_StomperAmmo")+10);}
 						if (upgslot == 13) { SetAmmoCapacity("GWM_WandCrystal",GetAmmoCapacity("GWM_WandCrystal")+10);}
+						if (upgslot == 14) { GiveInventory("GWM_Healspeed", 1);}
+						
 					}
 					if (menusel == 2) //ITEM
 					{
