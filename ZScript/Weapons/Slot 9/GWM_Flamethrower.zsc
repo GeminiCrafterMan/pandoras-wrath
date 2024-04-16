@@ -80,7 +80,7 @@ Class GWM_FTFireShot : GWM_FlameProjectile
 			}
 			A_StartSound("Status/FireHit");
 			
-			victim.A_GiveInventory("FireBurnCount",25);
+			victim.A_GiveInventory("FireBurnCount",50);
             victim.DamageMobj(self,target,5,'Fire');
             hitlist.Push(victim);
         }

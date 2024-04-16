@@ -382,8 +382,10 @@ class MelterScorchFlat : Actor
 	}
 }
 //---------------------------------- Puff --------------------------------------	
-class MelterPuff : Actor
+class MelterPuff : GWM_FlameProjectile
 {
+
+
 	Default
 	{
 		+NOBLOCKMAP;
@@ -393,6 +395,8 @@ class MelterPuff : Actor
 		+HITTRACER;
 		+ALWAYSPUFF;
 		+FORCEDECAL;
+		Radius 10;
+		Height 10;
 		Decal "MeltScorch";
 	}
 	States
@@ -400,8 +404,19 @@ class MelterPuff : Actor
 	Spawn:
 		TNT1 A 0 nodelay
 		{
+		
+			if (tracer && tracer.bISMONSTER)
+			{
+				if (tracer.CountInv("FireBurnCount")== 0)
+				{
+					tracer.A_SpawnProjectile("GWM_FlameStatusThinker");
+				}
+				tracer.A_GiveInventory("FireBurnCount",5);
+            }
+		
 			if (tracer && tracer.bISMONSTER && (tracer.InStateSequence(tracer.CurState, tracer.FindState("Death")) || tracer.InStateSequence(tracer.CurState, tracer.FindState("Death2"))))
 			{
+			
 				if (tracer.FindState("Death.Fire"))
 					tracer.SetStateLabel("Death.Fire");
 				else if (tracer.FindState("XDeath"))
@@ -411,6 +426,7 @@ class MelterPuff : Actor
 		stop;
 	}
 }
+
 
 //-------------------------------- Heatsink ------------------------------------	
 class GWM_MelterHeatsink : Inventory
