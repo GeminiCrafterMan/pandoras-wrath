@@ -16,7 +16,7 @@ class GWM_DoomImp : DoomImp // literally just a normal imp
 			Goto See;
 		Missile2:
 			TROO EEF 8 A_FaceTarget;
-			TROO G 10 A_CustomMissile("GWM_ImpFastBall",32);
+			TROO G 10 A_SpawnProjectile("GWM_ImpFastBall",32);
 			Goto See;
 		Death.Fire:
 			TNT1 A 0 {

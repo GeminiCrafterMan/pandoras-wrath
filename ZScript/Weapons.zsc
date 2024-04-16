@@ -8,26 +8,26 @@
 
 #include "ZScript/Weapons/Slot 2/GWM_Pistol.zsc"				// Pistol
 #include "ZScript/Weapons/Slot 2/GWM_SMG.zsc"					// SMG
+	#include "ZScript/Weapons/Slot 2/GWM_MP40.zsc"					// MP40
 #include "ZScript/Weapons/Slot 2/GWM_Revolver.zsc"				// Revolver
 #include "ZScript/Weapons/Slot 2/GWM_GoldWand.zsc"				// Gold Wand
 
 #include "ZScript/Weapons/Slot 3/GWM_ZombieShotgun.zsc"			// Get a better shotgun ASAP
-#include "ZScript/Weapons/Slot 3/GWM_SlayersKahuna.zsc"			// Slayer's Kahuna
+	#include "ZScript/Weapons/Slot 3/GWM_SlayersKahuna.zsc"			// Slayer's Kahuna
 #include "ZScript/Weapons/Slot 3/GWM_SuperShotgun.zsc"			// Super Shotgun
 #include "ZScript/Weapons/Slot 3/GWM_ImpalerCrossbow.zsc"		// Impaler Crossbow
 
 #include "ZScript/Weapons/Slot 4/GWM_Minigun.zsc"				// Minigun
-#include "ZScript/Weapons/Slot 4/GWM_MadVulcan.zsc"				// Mad Vulcan
-#include "ZScript/Weapons/Slot 4/GWM_BurningMinigun.zsc"		// Burning Minigun
+	#include "ZScript/Weapons/Slot 4/GWM_MadVulcan.zsc"				// Mad Vulcan
+	#include "ZScript/Weapons/Slot 4/GWM_BurningMinigun.zsc"		// Burning Minigun
 #include "ZScript/Weapons/Slot 4/GWM_BurstRifle.zsc"			// Burst Rifle
-#include "ZScript/Weapons/Slot 4/GWM_MP40.zsc"					// MP40
 #include "ZScript/Weapons/Slot 4/GWM_Scrapgun.zsc"				// Not exactly TangoScrapgun anymore... (from Supercharge)
 #include "ZScript/Weapons/Slot 4/GWM_FrostFang.zsc"				// Frost Fang
 
 #include "ZScript/Weapons/Slot 5/GWM_RocketLauncher.zsc"		// Rocket Launcher
 #include "ZScript/Weapons/Slot 5/GWM_GrenadeLauncher.zsc"		// Yep, they're split again...
+	#include "ZScript/Weapons/Slot 5/GWM_THE_BOUNCERRR.zsc"	    	//I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
 #include "ZScript/Weapons/Slot 5/GWM_Stomper.zsc"				// THE STOMPERRR (from Supercharge)
-#include "ZScript/Weapons/Slot 5/GWM_THE_BOUNCERRR.zsc"	    	//I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
 
 #include "ZScript/Weapons/Slot 6/GWM_PlasmaRifle.zsc"			// Plasma Rifle
 #include "ZScript/Weapons/Slot 6/GWM_NoiseCrusher.zsc"			// Noise Crusher
