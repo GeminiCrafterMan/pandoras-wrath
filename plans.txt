@@ -13,3 +13,8 @@ Tome of Power effects:
 - Lv3: 50 HP
 - Lv4: 50% max HP restored
 - Lv5: max HP restored
+
+Medic Bag
+An item that replaces portable medkit. Can collect excess health to use.
+-Pick up more bags to increase capacity, starts at 50, goes up by 25.
+-Only a fraction is gained from items. This fraction can be made larger with upgrades.

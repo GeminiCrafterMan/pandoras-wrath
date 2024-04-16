@@ -19,7 +19,7 @@ class GWM_MagazineSpawner : GWM_WeaponSpawner replaces Clip
 	Default
 	{
 		DropItem "GWM_HollowPointMagazine";
-		DropItem "GWM_FullMetalJacketMagazine";
+		DropItem "GWM_FMJMagazine";
 	}
 }
 class GWM_MagazineBoxSpawner : GWM_WeaponSpawner replaces ClipBox
@@ -27,7 +27,7 @@ class GWM_MagazineBoxSpawner : GWM_WeaponSpawner replaces ClipBox
 	Default
 	{
 		DropItem "GWM_HollowPointBox";
-		DropItem "GWM_FullMetalJacketBelt";
+		DropItem "GWM_FMJBelt";
 	}
 }
 
@@ -123,7 +123,7 @@ class GWM_ChaingunSpawner : GWM_WeaponSpawner replaces Chaingun
 {
 	Default
 	{
-		DropItem "GWM_MadVulcan", 255, 5;
+		DropItem "GWM_Minigun", 255, 5;
 		DropItem "GWM_BurstRifle", 255, 8;
 		DropItem "GWM_Flamethrower", 255, 2;
 	}
