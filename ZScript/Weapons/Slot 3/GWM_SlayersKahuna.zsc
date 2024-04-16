@@ -133,13 +133,14 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
 			TNT1 A 0 ZWL_CheckReload();
-			SKSG FGG 2;
+			SKSG FFFGGG 1;
 			TNT1 A 0 {ZWL_EjectCasing("GWM_ShotgunCasing", offset: (20, 4, -14));}
 			SKSG A 0 ZWL_ReFire();
 			// G: wh-
 			// G: okay, i guess
 			// M: OLD CODE
 			// M: Did you delete the old code? I don't mind but these comments are gonna look MAD odd.
+			// G: i think it was about you leaving in old code past the Goto Ready but it's been reworked since so it looks like i'm insane :D
 			SKSG H 4 {
 				A_StartSound("weapons/skpump1");
 				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (20, 4, -14));

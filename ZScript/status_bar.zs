@@ -168,14 +168,15 @@ class GWM_StatusBar : BaseStatusBar
 		amt2 = GetAmount("GWM_PandoraPointsCap");
 		DrawString(mHUDFont, StringStruct.Format("%d/%d", amt1, amt2), (-10, -74), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Purple);
 		
-		amt1 = GWM_PLAYER(Cplayer.mo).chargedrockets;
-		DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -90), translation: Font.CR_Red);
-		
-		amt1 = GWM_PLAYER(Cplayer.mo).chargedgrenades;
-		DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -106), translation: Font.CR_Green);
-		amt1 =  GWM_PLAYER(Cplayer.mo).chargedgrenades;
-		DrawString(mIndexFont, FormatNumber(amt1,3), (-39, -106), translation: Font.CR_Green);
-		
+		if (GWM_Player(CPlayer.mo))
+		{
+			amt1 = GWM_PLAYER(Cplayer.mo).chargedrockets;
+			DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -90), translation: Font.CR_Red);
+			amt1 = GWM_PLAYER(Cplayer.mo).chargedgrenades;
+			DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -106), translation: Font.CR_Green);
+			amt1 =  GWM_PLAYER(Cplayer.mo).chargedgrenades;
+			DrawString(mIndexFont, FormatNumber(amt1,3), (-39, -106), translation: Font.CR_Green);
+		}
 		amt1 = GetAmount("GWM_KahunaSpread");
 		DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -122), translation: Font.CR_Gold);
 		
