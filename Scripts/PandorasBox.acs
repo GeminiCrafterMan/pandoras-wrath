@@ -34,7 +34,7 @@ script "PandorasBox" (void)
 		weprarity = random(0,25);
 		
 		upgslot = random(0,13);
-		itmslot = random(0,4);
+		itmslot = random(0,7);
 		refslot = random(0,10);
 		
 		MENUSEL = 0;
@@ -330,6 +330,9 @@ script "PandorasBox" (void)
 				if (itmslot == 2) { SetFont("SMALLFONT"); HudMessage(s:"HellFire Armor";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
 				if (itmslot == 3) { SetFont("SMALLFONT"); HudMessage(s:"Bomb Suit";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
 				if (itmslot == 4) { SetFont("SMALLFONT"); HudMessage(s:"Melter Heatsink";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
+				if (itmslot == 5) { SetFont("SMALLFONT"); HudMessage(s:"Blursphere";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
+				if (itmslot == 6) { SetFont("SMALLFONT"); HudMessage(s:"Drainsphere";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
+				if (itmslot == 7) { SetFont("SMALLFONT"); HudMessage(s:"Stopwatch";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
 				
 				//SLOT 3 (REFILL)
 				if (refslot == 0) { SetFont("SMALLFONT"); HudMessage(s:"Health";HUDMSG_PLAIN,2,0,180.0,180.0,0.06);}
@@ -397,6 +400,9 @@ script "PandorasBox" (void)
 						if (itmslot == 2) {GiveInventory("GWM_HellArmor",1);}
 						if (itmslot == 3) {GiveInventory("GWM_Bombsuit",1);}
 						if (itmslot == 4) {GiveInventory("GWM_MelterHeatsink",1);}
+						if (itmslot == 5) {GiveInventory("GWM_Blursphere",1);}
+						if (itmslot == 6) {GiveInventory("GWM_Drainsphere",1);}
+						if (itmslot == 7) {GiveInventory("GWM_Stopwatch",1);}
 					}
 					if (menusel == 3) //REFILL
 					{

@@ -91,9 +91,12 @@ GOTLIFEDRAIN = "Life drain!";
 GOTREFLECTIVE = "Reflective shots!";
 GOTSTOPWATCH = "Stopwatch!";
 GOTPORTABLEMEDKIT = "Portable medkit!";
-GOTKNIGHTSPHERE = "Knightsphere!";
 GOTHEALTHBONUS = "\c[White]Picked up a \c[Blue]health bonus\c[White]. (+1 health)";
 GOTARMORBONUS = "\c[White]Picked up an \c[Green]armor bonus\c[White]. (+1 armor)";
+GOTSTIMPACK = "\c[White]Picked up a \c[Red]stimpack\c[White].";
+GOTSTIMPACKNEED = "\c[White]Picked up a \c[Red]stimpack\c[White] that you REALLY need!";
+GOTMEDKIT = "\c[White]Picked up a \c[Red]medkit\c[White].";
+GOTMEDKITNEED = "\c[White]Picked up a \c[Red]medkit\c[White] that you REALLY need!";
 
 // Armor pickups
 GOTARMOR = "\c[White]You obtained some \c[Green]Combat Armor\c[White]!";
