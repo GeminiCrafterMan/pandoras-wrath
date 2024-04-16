@@ -7,10 +7,10 @@ class GWM_SMG : GWM_WeaponBase
 		Weapon.SelectionOrder 1800;
 		Weapon.SlotNumber 2;
 		Weapon.AmmoUse 1;
-		Weapon.AmmoGive 51;
+		Weapon.AmmoGive 25;
 		Weapon.AmmoType "GWM_HollowPointMagazine";
 
-		ZWeapon.MagazineSize 50;
+		ZWeapon.MagazineSize 25;
 		ZWeapon.ReloadSound "weapons/smgclipin";
 		ZWeapon.ClickSound "weapons/92fsdryfire";
 
@@ -56,7 +56,7 @@ class GWM_SMG : GWM_WeaponBase
 			Loop;*/
 		Fire:
 			SMGG A 1 {
-				ZWL_FireHitscan(6, 12, tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(0, 10, spread: 6, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,5);
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
@@ -64,7 +64,7 @@ class GWM_SMG : GWM_WeaponBase
 				A_WeaponOffset(0, 2, WOF_ADD);
 				ZWL_EjectCasing("GWM_PistolCasing");
 			}
-			SMGG AA 1 {A_WeaponOffset(0, -1, WOF_ADD); A_Setpitch(pitch-.375);}
+			SMGG AAA 1 {A_WeaponOffset(0, -1, WOF_ADD); A_Setpitch(pitch-.25);}
 			SMGG A 0 ZWL_CheckReload();
 			SMGG A 1 ZWL_ReFire(null, true);
 			Goto Ready;

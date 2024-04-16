@@ -4,21 +4,21 @@ class GWM_MP40 : GWM_WeaponBase
 	Default
 	{
 		Weapon.SelectionOrder 1800;
-		Weapon.SlotNumber 4;
+		Weapon.SlotNumber 2;
 		Weapon.AmmoUse 1;
-		Weapon.AmmoGive 32;
+		Weapon.AmmoGive 45;
 		Weapon.AmmoType "GWM_HollowPointMagazine";
 
-		ZWeapon.MagazineSize 32;
+		ZWeapon.MagazineSize 45;
 		ZWeapon.ReloadSound "weapons/smgclipin";
 		ZWeapon.ClickSound "weapons/92fsdryfire";
 
-		+WEAPON.WIMPY_WEAPON
 		Weapon.UpSound "weapons/draw_secondary";
 		AttackSound "weapons/mp40fire";
 		Obituary "$KILLMP40";
 		Inventory.PickupMessage "$GOTMP40";
 		Tag "$TAG_MP40";
+		GWM_WeaponBase.BaseVersion "GWM_SMG";
 	}
 	States
 	{
@@ -55,9 +55,8 @@ class GWM_MP40 : GWM_WeaponBase
 			Loop;*/
 		Fire:
 		// Did my best to replicate 500RPM, since the "fire rate" part of ZWL_FireHitscan is... unreliable, at best
-			MP4G A 2 {
-				ZWL_FireHitscan(3, 14, tracerType: "GWM_Tracer");
-//				A_FireBullets(7.6, 0, 1, 4, "ZBulletPuff", missile: "GWM_Tracer", spawnheight: 0);
+		MP4G A 2 {
+				ZWL_FireHitscan(0, 16, spread: 4, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,5);
 				A_Overlay(-2, "Flash");
