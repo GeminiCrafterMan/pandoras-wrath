@@ -11,7 +11,7 @@ class GWM_Stimpack : CustomInventory replaces Stimpack
 			STIM A 1;
 			loop;
 		Pickup:
-			TNT1 A 0 A_Jumpifhealthlower(Stamina+100,"Heal");
+			TNT1 A 0 A_Jumpifhealthlower(GetMaxHealth(true),"Heal");
 			goto FailToHeal;
 		Heal:
 			TNT1 A 0 {
@@ -41,7 +41,7 @@ class GWM_Medkit : CustomInventory replaces Medikit
 			MEDI A 1;
 			loop;
 		Pickup:
-			TNT1 A 0 A_Jumpifhealthlower(Stamina+100,"Heal");
+			TNT1 A 0 A_Jumpifhealthlower(GetMaxHealth(true),"Heal");
 			goto FailToHeal;
 		Heal:
 			TNT1 A 0 {
