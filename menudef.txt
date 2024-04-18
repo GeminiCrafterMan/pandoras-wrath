@@ -1,3 +1,55 @@
+LISTMENU "MainMenu"
+{
+	IfGame(Doom, Chex)
+	{
+		StaticPatch 94, 26, "M_DOOM"
+		StaticPatch 94, 2, "M_WRATH"
+		Position 97, 92
+		IfOption(ReadThis)
+		{
+			Position 97, 84
+		}
+	}
+	IfGame(Heretic)
+	{
+		StaticPatch 88, 20, "M_HTIC"
+		StaticPatch 40, 30, "M_SKL01"
+		StaticPatch 232, 30, "M_SKL00"
+		StaticPatch 94, 0, "M_WRATH"
+		Position 110, 76
+	}
+	IfGame(Doom, Chex)
+	{
+		PatchItem "M_NGAME", "n", "PlayerclassMenu"
+		ifOption(SwapMenu)
+		{
+			PatchItem "M_LOADG", "l", "LoadGameMenu"
+			PatchItem "M_SAVEG", "s", "SaveGameMenu"
+			PatchItem "M_OPTION","o", "OptionsMenu"
+		}
+		else
+		{
+			PatchItem "M_OPTION","o", "OptionsMenu"
+			PatchItem "M_LOADG", "l", "LoadGameMenu"
+			PatchItem "M_SAVEG", "s", "SaveGameMenu"
+		}
+		ifOption(ReadThis)
+		{
+			PatchItem "M_RDTHIS","r", "ReadThisMenu"
+		}
+		PatchItem "M_QUITG", "q", "QuitMenu"
+	}
+	
+	IfGame(Heretic)
+	{
+		TextItem "$MNU_NEWGAME", "n", "PlayerclassMenu"
+		TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
+		TextItem "$MNU_GAMEFILES", "g", "GameFilesMenu"
+		TextItem "$MNU_INFO", "i", "ReadThisMenu"
+		TextItem "$MNU_QUITGAME", "q", "QuitMenu"
+	}
+}
+
 OptionMenu gwm_Options
 {
 	Title "Pandora's Wrath Options"

@@ -99,3 +99,7 @@ menu/invalid MSELECT
 menu/dismiss MCLOSE
 menu/choose MYES
 menu/clear MCLOSE
+
+// Koopa shell (spawned from box? idk this is for fun)
+objects/shell_kick		"Sounds/Objects/shell_kick.wav"
+objects/shell_bounce	"Sounds/Objects/shell_bounce.wav"

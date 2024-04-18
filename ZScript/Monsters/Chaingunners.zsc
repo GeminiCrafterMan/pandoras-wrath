@@ -6,6 +6,7 @@ class GWM_ChaingunGuy : ChaingunGuy
 		//$Category Monsters
 		//$Title "Mad Vulcan Zombie
 		Tag "$TAG_CHAINGUNNER";
+		Obituary "$OB_CHAINGUNNER";
 		AttackSound "weapons/chainfire";
 		DropItem "GWM_MiniGun",108;
 		DropItem "GWM_FMJBelt",74;
@@ -85,18 +86,24 @@ class GWM_VulcanGuy : ChaingunGuy
 		Speed 12;
 		//$Category Monsters
 		//$Title "Mad Vulcan Zombie
-		+BRIGHT;
-		Tag "$TAG_CHAINGUNNER";
+		Tag "$TAG_VULCANGUY";
+		Obituary "$OB_VULCANGUY";
 		AttackSound "weapons/vulcanfire";
 		DropItem "GWM_MadVulcan",36;
 		DropItem "GWM_FMJBelt",220;
 	}
 	States
-	{		
+	{
+		Spawn:
+			MVPO AB 10 A_Look;
+			Loop;
+		See:
+			MVPO AABBCCDD 3 A_Chase;
+			Loop;
 		Missile:
-			CPOS E 25 A_FaceTarget;
+			MVPO E 25 A_FaceTarget;
 		Shoot:
-			CPOS F 2 Bright 
+			MVPO F 2 Bright 
 			{
 				A_CustomBulletAttack(28.5, 15, 9, 3, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 26, spawnofs_xy: 7);
 				A_SpawnItemEX("GWM_RifleCasing",5,0,20,frandom(-4,6),frandom(3,15),frandom(3,12));
@@ -105,7 +112,7 @@ class GWM_VulcanGuy : ChaingunGuy
 				A_SpawnItemEX("GWM_RifleCasing",5,0,20,frandom(-4,6),frandom(3,15),frandom(3,12));
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
 			}
-			CPOS E 1
+			MVPO E 1
 			{
 				invoker.shotsfired = invoker.shotsfired+1;
 				//if (invoker.shotsfired > random(45,59))
@@ -117,7 +124,7 @@ class GWM_VulcanGuy : ChaingunGuy
 			TNT1 A 0 A_Jumpif(target.health==0,"KeepFiring");
 			TNT1 A 0 A_JumpIfinTargetLOS("Shoot");
 		KeepFiring:
-			CPOS F 2 Bright 
+			MVPO F 2 Bright 
 			{
 				A_CustomBulletAttack(33.5, 18, 10, 5, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 26, spawnofs_xy: 7);
 				A_SpawnItemEX("GWM_RifleCasing",5,0,20,frandom(-4,6),frandom(3,15),frandom(3,12));
@@ -126,8 +133,8 @@ class GWM_VulcanGuy : ChaingunGuy
 				A_SpawnItemEX("GWM_RifleCasing",5,0,20,frandom(-4,6),frandom(3,15),frandom(3,12));
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,15);	
 			}
-			CPOS E 2;
-			CPOS E 1
+			MVPO E 2;
+			MVPO E 1
 			{
 				if (invoker.shotsfired > 70) {invoker.shotsfired = invoker.shotsfired-2;}
 				if (invoker.shotsfired > 30) {invoker.shotsfired = invoker.shotsfired-2;}
@@ -140,22 +147,43 @@ class GWM_VulcanGuy : ChaingunGuy
 					}
 			}
 		Stopfiring:
-			CPOS E 10
+			MVPO E 10
 			{
 				invoker.shotsfired = 0;
 				A_JumpIfinTargetLOS("Shoot");
 			}
+			Goto See;
+		Pain:
+			MVPO G 3;
+			MVPO G 3 A_Pain;
+			Goto See;
+		Death:
+			MVPO H 5;
+			MVPO I 5 A_Scream;
+			MVPO J 5 A_NoBlocking;
+			MVPO KLM 5;
+			MVPO N -1;
+			Stop;
+		XDeath:
+			MVPO O 5;
+			MVPO P 5 A_XScream;
+			MVPO Q 5 A_NoBlocking;
+			MVPO RS 5;
+			MVPO T -1;
+			Stop;
+		Raise:
+			MVPO NMLKJIH 5;
 			Goto See;
 		Death.Fire:
 			TNT1 A 0 {
 				bNOBLOOD = true;
 				A_SetTranslation("GWM_Burnt");
 			}
-			CPOS O 5;
-			CPOS P 5 A_StartSound("monsters/burndeath");
-			CPOS Q 5 A_NoBlocking;
-			CPOS RS 5;
-			CPOS T -1;
+			MVPO O 5;
+			MVPO P 5 A_StartSound("monsters/burndeath");
+			MVPO Q 5 A_NoBlocking;
+			MVPO RS 5;
+			MVPO T -1;
 			Stop;
 		Raise:
 			TNT1 A 0 {bNOBLOOD = false;}

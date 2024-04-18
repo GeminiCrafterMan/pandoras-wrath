@@ -271,3 +271,51 @@ class GWM_DeadPinkyStick : DeadStick
 			Stop;
 	}
 }
+
+class GWM_KoopaShell : Actor
+{
+	Default
+	{
+		Height 24;
+		Radius 15;
+		Speed 0;
+		DamageFunction (20);
+		PainChance 256;
+		BounceSound "objects/shell_bounce";
+		DeathSound "objects/shell_kick";
+		WallBounceFactor 1;
+		+BOUNCEONWALLS
+		+BOUNCEONACTORS
+		+USEBOUNCESTATE
+		+SHOOTABLE
+		+CANBOUNCEWATER
+		+NOBLOOD
+	}
+	States
+	{
+		Spawn:
+			SHLL A -1;
+			Stop;
+		Melee:
+		Pain:
+			SHLL A 0 A_FaceTarget;
+			SHLL A 0 {
+				A_SetAngle(angle-180);
+				bMISSILE = true;
+				bSOLID = false;
+				self.Vel.Y = 20;
+				A_Scream();
+			}
+			Goto Bounce;
+		Bounce:
+			SHLL A 3 A_SetSpriteRotation(0);
+			SHLL A 3 A_SetSpriteRotation(45);
+			SHLL A 3 A_SetSpriteRotation(90);
+			SHLL A 3 A_SetSpriteRotation(135);
+			SHLL A 3 A_SetSpriteRotation(180);
+			SHLL A 3 A_SetSpriteRotation(225);
+			SHLL A 3 A_SetSpriteRotation(270);
+			SHLL A 3 A_SetSpriteRotation(315);
+			Loop;
+	}
+}

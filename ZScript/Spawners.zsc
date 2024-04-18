@@ -216,3 +216,17 @@ class GWM_Lv2ArmorSpawner : RandomSpawner replaces BlueArmor
 		DropItem "GWM_HellArmor";
 	}
 }
+
+class GWM_Lv1and2ArmorSpawner : RandomSpawner // Flesh this out later and turn it into a Level 3 spawner with Box Armors
+{
+	Default
+	{
+		DropItem "GWM_CombatArmor";
+		DropItem "GWM_BioSuit";
+		DropItem "GWM_HeatSuit";
+		DropItem "GWM_ThermoSuit";
+		DropItem "GWM_AssaultArmor";
+		DropItem "GWM_BombSuit";
+		DropItem "GWM_HellArmor";
+	}
+}

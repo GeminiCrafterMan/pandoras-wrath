@@ -136,8 +136,8 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 			TNT1 A 0 {
 				ZWL_CheckReload();
 				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (20, 4, -14));
-				ZWL_ReFire();
 			}
+			TNT1 A 0 ZWL_ReFire();
 			SKSG FG 2;
 			// G: wh-
 			// G: okay, i guess
