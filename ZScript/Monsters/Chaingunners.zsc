@@ -79,6 +79,9 @@ class GWM_ChaingunGuy : ChaingunGuy
 
 class GWM_VulcanGuy : ChaingunGuy
 {
+	
+	
+	
 	int shotsfired;
 	Default
 	{
@@ -91,6 +94,11 @@ class GWM_VulcanGuy : ChaingunGuy
 		AttackSound "weapons/vulcanfire";
 		DropItem "GWM_MadVulcan",36;
 		DropItem "GWM_FMJBelt",220;
+		
+		SeeSound "monsters/vulcan/see";
+		PainSound "monsters/vulcan/pain";
+		DeathSound "monsters/vulcan/die";
+		ActiveSound "monsters/vulcan/idle";
 	}
 	States
 	{

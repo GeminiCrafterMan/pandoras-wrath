@@ -116,6 +116,26 @@ monsters/annihilator/step	"Sounds/Monsters/Bruisers/Annihilator/step.wav"
 // Kahuna Shotgun Guy
 monsters/skguy/warning		"Sounds/Monsters/Zombies/Kahuna Shotgun Guy/warning.wav"
 
+// monsters
+$random monsters/vulcan/see      {  VCGSIT1 VCGSIT2 VCGSIT3 VCGSIT4 }
+VCGSIT1 "Sounds/Monsters/Zombies/Mad Vulcan Gunner/see1.wav"
+VCGSIT2 "Sounds/Monsters/Zombies/Mad Vulcan Gunner/see2.wav"
+VCGSIT3 "Sounds/Monsters/Zombies/Mad Vulcan Gunner/see3.wav"
+VCGSIT4 "Sounds/Monsters/Zombies/Mad Vulcan Gunner/see4.wav"
+$attenuation VCGSIT1 0.5
+$attenuation VCGSIT2 0.5
+$attenuation VCGSIT3 0.5
+$attenuation VCGSIT4 0.5
+
+
+$random monsters/vulcan/pain      {  SSGPIN1 SSGPIN2 }
+VCGPIN1 "Sounds/Monsters/Zombies/Mad Vulcan Gunner/pain1.wav"
+VCGPIN2 "Sounds/Monsters/Zombies/Mad Vulcan Gunner/pain2.wav"
+monsters/vulcan/die "Sounds/Monsters/Zombies/Mad Vulcan Gunner/die.wav"
+$attenuation monsters/vulcan/die 0.5
+monsters/vulcan/idle "Sounds/Monsters/Zombies/Mad Vulcan Gunner/idle.wav"
+$attenuation monsters/vulcan/idle 0.5
+
 // Draugr
 monsters/draugr/shoot		"Sounds/Monsters/Draugr/quake_rpg_fire.wav"
 
