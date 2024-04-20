@@ -10,6 +10,7 @@
 #include "ZScript/Monsters/Cyberdemons.zsc"
 #include "ZScript/Monsters/Arachnotrons.zsc"
 #include "ZScript/Monsters/Mancubi.zsc"
+#include "ZScript/Monsters/Pain Elementals.zsc"
 #include "ZScript/Monsters/Revenants.zsc"
 #include "ZScript/Monsters/Spider Masterminds.zsc"
 #include "ZScript/Monsters/Wolfenstein SS.zsc"

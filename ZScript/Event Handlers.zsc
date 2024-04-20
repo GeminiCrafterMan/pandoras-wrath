@@ -130,6 +130,9 @@ class ThingReplacer : StaticEventHandler
 					case 'Fatso':
 						e.Replacement = "GWM_Mancubus";
 						break;
+					case 'PainElemental':
+						e.Replacement = "GWM_PainElemental";
+						break;
 					case 'Revenant':
 						e.Replacement = "GWM_Revenant";
 						break;
@@ -260,6 +263,9 @@ class ThingReplacer : StaticEventHandler
 						break;
 					case 'Fatso':
 						e.Replacement = "GWM_Mancubus";
+						break;
+					case 'PainElemental':
+						e.Replacement = "GWM_PainElemental";
 						break;
 					case 'Revenant':
 						if (random(0,1) == 1)
