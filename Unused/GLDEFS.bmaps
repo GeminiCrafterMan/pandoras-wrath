@@ -17,3 +17,8 @@ Brightmap Sprite PFSHO0 { Map PFSHO0 DisableFullbright }
 Brightmap Sprite PFSHP0 { Map PFSHP0 DisableFullbright }
 Brightmap Sprite PFSHQ0 { Map PFSHQ0 DisableFullbright }
 Brightmap Sprite PFSHZ0 { Map BMPFSHZ0 DisableFullbright }
+// Super Shotgun
+Brightmap Sprite SSGFA0 { Map SSGFA0 DisableFullbright }
+Brightmap Sprite SSGFB0 { Map SSGFB0 DisableFullbright }
+Brightmap Sprite SSGGA0 { Map SSGGA0 DisableFullbright }
+Brightmap Sprite SSGGZ0 { Map BMSSGGZ0 DisableFullbright }

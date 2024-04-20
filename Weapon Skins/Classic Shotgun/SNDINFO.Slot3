@@ -1,5 +1,5 @@
-// Slayer's Kahuna Shotgun
-weapons/skshot		"Sounds/Weapons/Slot 3/Slayer's Kahuna/Fire.wav"
-weapons/skpump1		"Sounds/Weapons/Slot 3/Slayer's Kahuna/Pump1.wav"
-weapons/skpump2		"Sounds/Weapons/Slot 3/Slayer's Kahuna/Pump2.wav"
-weapons/skpickup	"Sounds/Weapons/Slot 3/Slayer's Kahuna/pickup.wav"
+// Zombie Shotgun
+weapons/zsgshot		"Sounds/Weapons/Slot 3/Zombie Shotgun/Fire.wav"
+weapons/zsgpump1	"Sounds/Weapons/Slot 3/Zombie Shotgun/Pump1.wav"
+weapons/zsgpump2	"Sounds/Weapons/Slot 3/Zombie Shotgun/Pump2.wav"
+weapons/zsgpickup	"Sounds/Weapons/Slot 3/Zombie Shotgun/pickup.wav"
