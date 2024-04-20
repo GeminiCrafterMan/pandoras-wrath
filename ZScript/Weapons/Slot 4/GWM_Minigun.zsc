@@ -15,7 +15,7 @@ class GWM_Minigun : GWM_WeaponBase
 		//$Title "Minigun
 		Weapon.SlotNumber 4;
 		Weapon.SelectionOrder 800; // Has a wind-up, so +100
-		Weapon.UpSound "weapons/draw_chain";
+		Weapon.UpSound "weapons/draw_vulcan";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 20;
 		Weapon.AmmoType "GWM_FMJMagazine";

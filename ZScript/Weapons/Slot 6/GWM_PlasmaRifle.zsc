@@ -38,11 +38,11 @@ class GWM_PlasmaRifle : GWM_WeaponBase
 				ZWL_FireProjectile("GWM_PlasmaBall", 0);
 				A_SpawnItemEx("GWM_PlasmaFlash");
 				A_GunFlash();
-				A_WeaponOffset(0, 4, WOF_ADD);
+				A_WeaponOffset(0, 8, WOF_ADD);
 				A_OverlayScale(OverlayID(), 1.10, 0, WOF_INTERPOLATE);
 			}
 			PLSG AA 1 {
-				A_WeaponOffset(0, -2, WOF_ADD);
+				A_WeaponOffset(0, -4, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.05, 0, WOF_ADD);
 			}
 			TNT1 A 0 A_CheckReload;
@@ -57,18 +57,18 @@ class GWM_PlasmaRifle : GWM_WeaponBase
 				A_GunFlash("RailFlash");
 				A_RailAttack(270, color1: "1baaff", color2: "73e4ff", maxdiff: 4);
 				A_StartSound("weapons/railshot", CHAN_WEAPON);
-				A_WeaponOffset(0, 6, WOF_ADD);
+				A_WeaponOffset(0, 12, WOF_ADD);
 				A_Overlay(55,"Recoil");
 				A_QuakeEx(3, 3, 3, 4, 0, 1, "", QF_SHAKEONLY);
 				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
 				A_ChangeVelocity(-Cos(pitch)*2, 0, sin(pitch)*2,CVF_RELATIVE);
 			}
 			PLSG D 5 {
-				A_WeaponOffset(0, -2, WOF_ADD);
+				A_WeaponOffset(0, -4, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
 			PLSG D 5 {
-				A_WeaponOffset(0, -4, WOF_ADD);
+				A_WeaponOffset(0, -8, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
 			TNT1 A 0 A_CheckReload;

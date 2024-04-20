@@ -1,13 +1,26 @@
 // Plasma Rifle
 weapons/railshot	"Sounds/Weapons/Slot 6/Plasma Rifle/railgun_shoot.wav"
 weapons/railchrg	"Sounds/Weapons/Slot 6/Plasma Rifle/railgun_charge.wav"
-weapons/plasshot	"Sounds/Weapons/Slot 6/Plasma Rifle/plasma_2fire1.wav"
-weapons/plasfly		"Sounds/Weapons/Slot 6/Plasma Rifle/plasmagun_flight.wav"
-weapons/plasxpl1	"Sounds/Weapons/Slot 6/Plasma Rifle/plasma_impact1.wav"
-weapons/plasxpl2	"Sounds/Weapons/Slot 6/Plasma Rifle/plasma_impact2.wav"
-weapons/plasxpl3	"Sounds/Weapons/Slot 6/Plasma Rifle/plasma_impact3.wav"
+weapons/plasshot	"Sounds/Weapons/Slot 6/Plasma Rifle/PLSFIRE.ogg"
 
-$random weapons/plasxpl { weapons/plasxpl1 weapons/plasxpl2 weapons/plasxpl3 }
+weapons/plasfly1	"Sounds/Weapons/Slot 6/Plasma Rifle/PLASFLY1.ogg"
+weapons/plasfly2	"Sounds/Weapons/Slot 6/Plasma Rifle/PLASFLY2.ogg"
+weapons/plasfly3	"Sounds/Weapons/Slot 6/Plasma Rifle/PLASFLY3.ogg"
+weapons/plasxpl1	"Sounds/Weapons/Slot 6/Plasma Rifle/PLSDTH01.ogg"
+weapons/plasxpl2	"Sounds/Weapons/Slot 6/Plasma Rifle/PLSDTH02.ogg"
+weapons/plasxpl3	"Sounds/Weapons/Slot 6/Plasma Rifle/PLSDTH03.ogg"
+weapons/plasxpl4	"Sounds/Weapons/Slot 6/Plasma Rifle/PLSDTH04.ogg"
+weapons/plasxpl5	"Sounds/Weapons/Slot 6/Plasma Rifle/PLSDTH05.ogg"
+weapons/plasxpl6	"Sounds/Weapons/Slot 6/Plasma Rifle/PLSDTH06.ogg"
+weapons/plasxpl7	"Sounds/Weapons/Slot 6/Plasma Rifle/PLSDTH07.ogg"
+weapons/plasxpl8	"Sounds/Weapons/Slot 6/Plasma Rifle/PLSDTH08.ogg"
+weapons/plasxpl9	"Sounds/Weapons/Slot 6/Plasma Rifle/PLSDTH09.ogg"
+weapons/plasxpl10	"Sounds/Weapons/Slot 6/Plasma Rifle/PLSDTH10.ogg"
+
+$random weapons/plasxpl { weapons/plasxpl1 weapons/plasxpl2 weapons/plasxpl3 weapons/plasxpl4 weapons/plasxpl5 weapons/plasxpl6 weapons/plasxpl7 weapons/plasxpl8 weapons/plasxpl9 weapons/plasxpl10 }
+$random weapons/plasfly { weapons/plasfly1 weapons/plasfly2 weapons/plasfly3 }
+
+$attenuation weapons/plasfly 1.5
 
 // Noise Crusher
 weapons/noisehit	"Sounds/Weapons/Slot 6/Noise Crusher/shot_d.wav"

@@ -1,0 +1,10 @@
+// Plasma Rifle
+weapons/plasshot	"Sounds/Weapons/Slot 6/Plasma Rifle/plasma_2fire1.wav"
+weapons/plasfly		"Sounds/Weapons/Slot 6/Plasma Rifle/plasmagun_flight.wav"
+weapons/plasxpl1	"Sounds/Weapons/Slot 6/Plasma Rifle/plasma_impact1.wav"
+weapons/plasxpl2	"Sounds/Weapons/Slot 6/Plasma Rifle/plasma_impact2.wav"
+weapons/plasxpl3	"Sounds/Weapons/Slot 6/Plasma Rifle/plasma_impact3.wav"
+
+$random weapons/plasxpl { weapons/plasxpl1 weapons/plasxpl2 weapons/plasxpl3 }
+
+$attenuation weapons/plasfly 1
