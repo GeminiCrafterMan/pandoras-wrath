@@ -55,7 +55,7 @@ class GWM_BlotSmoke : Actor
 			BLOT P 2;
 			BLOT QRST 2 A_FadeOut(0.2);
 			Stop;
-  }
+	}
 }
 class GWM_Blot : Actor
 {
@@ -76,7 +76,7 @@ class GWM_Blot : Actor
 		DamageFactor "Blot", 0;
 		BloodType "None";
 		Scale 0.6;
-	
+
 		MONSTER;
 		-SOLID
 		-CANPASS
@@ -150,6 +150,231 @@ class GWM_BlotDamage : Actor
 	{
 		Spawn:
 			TNT1 A 1 NoDelay A_Explode(1, 40, 0);
+			Stop;
+	}
+}
+
+class GWM_ChillerSoul : Actor
+{
+	Default
+	{
+		Health 100;
+		Radius 16;
+		Height 56;
+		Mass 50;
+		Speed 4;
+		Scale 1.2;
+		DamageFunction (23);
+		PainChance 128;
+		Monster;
+		+Float
+		+NoGravity
+		+MissileEvenMore
+		+DontFall
+		+NoIceDeath
+//		+DontHurtSpecies
+		BloodColor "61A5D3";
+		DamageType "Ice";
+		DamageFactor "Ice", 0.0;
+		AttackSound "";
+		PainSound "ChillerSoul/Pain";
+		DeathSound "ChillerSoul/Death";
+		ActiveSound "ChillerSoul/Active";
+		Obituary "%o was frozen solid by a Chiller Soul.";
+		MaxTargetRange 2560;
+	}
+	States
+	{
+		Spawn:
+			CHSL A 1 {
+				A_Look();
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+			}
+			Loop;
+		See:
+			CHSL A 1 {
+				A_Chase();
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+			}
+			CHSL AA 1 {
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+			}
+			Loop;
+		Missile:
+			CHSL A 0 A_JumpIfCloser(512,"Charge");
+		Missile.FaceTarget:
+			CHSL AAAA 1 BRIGHT {
+				A_FaceTarget();
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+			}
+		Missile.Shoot:
+			CHSL B 1 BRIGHT {
+				A_SpawnProjectile("GWM_ChillerSoulBall", 6);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+			}
+			CHSL BBB 1 BRIGHT {
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+			}
+			Goto See;
+		Charge:
+			CHSL AA 5 Bright A_FaceTarget;
+			CHSL B 1 Bright {
+				A_PlaySound("ChillerSoul/Attack");
+				A_SkullAttack();
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+			}
+		KeepCharging:
+			CHSL BBB 1 Bright {
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+			}
+			CHSL B 0 Bright A_JumpIfTargetInLOS("HomeIn", 80);
+			CHSL B 0 A_Jump(24, "StopCharging");
+			CHSL B 4 Bright;
+			Goto Missile.Shoot;
+		HomeIn:
+			CHSL BBBB 1 BRIGHT {
+				A_FaceTarget();
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+			}
+			Goto KeepCharging;
+		StopCharging:
+			CHSL A 0 A_Stop;
+			Goto See;
+		Pain:
+			CHSL BBB 1 Bright {
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+			}
+			CHSL B 1 Bright {
+				A_Pain();
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+			}
+			CHSL BB 1 Bright {
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+				A_SpawnItemEx("GWM_ChillerSoulFrost", random(-3,-13), random(10,-10), random(8, 25), 0, 0, 0.1*Random(5, 20), 0, 160, 0);
+			}
+			Goto See;
+		Death:
+			CHSL A 6 {
+				A_Scream();
+				A_IceGuyDie();
+			}
+			Stop;
+	}
+}
+class GWM_ChillerSoulFrost : Actor
+{
+	Default
+	{
+		Radius 6;
+		Height 8;
+		Speed 1;
+		DamageFunction (0);
+		RenderStyle "Translucent";
+		Alpha 0.3;
+		Scale 0.4;
+		+NoBlockMap
+		+NoGravity
+		+Missile
+		+NoTeleport
+		+DontSplash
+	}
+	States
+	{
+		Spawn:
+			FRST ABCDEFGHIJKLMNO 1 A_FadeOut(0.03);
+			Stop;
+	}
+}
+class GWM_ChillerSoulBall : Actor
+{
+	Default
+	{
+		Radius 4;
+		Height 6;
+		Speed 15;
+		DamageFunction (23);
+		Scale 0.5;
+		Decal "MummyScorch";
+//		Decal "RevenantScorch"
+		Renderstyle "Add";
+		Alpha 0.65;
+		DamageType "Ice";
+		Seesound "ChillerSoul/Ball";
+		Deathsound "ChillerSoul/BallDie";
+		Projectile;
+		+Randomize
+	}
+	States
+	{
+		Spawn:
+			RCBL A 0 Bright A_BishopMissileWeave;
+			RCBL AA 1 Bright A_SpawnItemEx("GWM_ChillerSoulTrail", 0, Random(2,-2), Random(2,-2), 0, 0, 0, 0, 160);
+			RCBL A 0 Bright A_BishopMissileWeave;
+			RCBL AB 1 Bright A_SpawnItemEx("GWM_ChillerSoulTrail", 0, Random(2,-2), Random(2,-2), 0, 0, 0, 0, 160);
+			RCBL B 0 Bright A_BishopMissileWeave;
+			RCBL BB 1 Bright A_SpawnItemEx("GWM_ChillerSoulTrail", 0, Random(2,-2), Random(2,-2), 0, 0, 0, 0, 160);
+			Loop;
+		Death:
+			RCBL J 4 Bright A_Explode(2,16,1);
+			RCBL JJJJJ 0 Bright A_SpawnItemEx("GWM_ChillerSoulTrail", 0, 0, 0, 2, 0, Random(1,-1), Random(0,360), 128, 0);
+			RCBL KLMN 4 Bright;
+			Stop;
+	}
+}
+class GWM_ChillerSoulTrail : Actor
+{
+	Default
+	{
+		Radius 3;
+		Height 3;
+		RenderStyle "Add";
+		Alpha 0.65;
+		Scale 0.55;
+		+NoGravity
+		+NoBlockMap
+		+DontSplash
+		+ForceXYBillboard
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 2;
+			RCBL CDEFGHI 2 Bright;
 			Stop;
 	}
 }

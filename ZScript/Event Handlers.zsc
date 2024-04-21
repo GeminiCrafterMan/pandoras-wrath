@@ -256,7 +256,10 @@ class ThingReplacer : StaticEventHandler
 							e.Replacement = "GWM_Cyberdemon";
 						break;
 					case 'LostSoul':
-						e.Replacement = "GWM_LostSoulSpawner"; // to spawn a Lost Soul or a Blot
+						if (random(0,4) == 4)
+							e.Replacement = "GWM_ChillerSoul";
+						else
+							e.Replacement = "GWM_LostSoulSpawner";
 						break;
 					case 'Arachnotron':
 						e.Replacement = "GWM_Arachnotron";
@@ -265,11 +268,14 @@ class ThingReplacer : StaticEventHandler
 						e.Replacement = "GWM_Mancubus";
 						break;
 					case 'PainElemental':
-						e.Replacement = "GWM_PainElemental";
+						if (random(0,4) == 4)
+							e.Replacement = "GWM_FrostElemental";
+						else
+							e.Replacement = "GWM_PainElemental";
 						break;
 					case 'Revenant':
-						if (random(0,1) == 1)
-							e.Replacement = "GWM_Draugr";
+						if (random(0,5) == 5)
+							e.Replacement = "GWM_Draugr"; // these guys are mad annoying
 						else
 							e.Replacement = "GWM_Revenant";
 						break;
