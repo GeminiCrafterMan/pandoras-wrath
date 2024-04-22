@@ -47,7 +47,7 @@ class GWM_Cryocubus : Actor
 	Default
 	{
 		BloodColor "743737";
-		DamageFactor "Ice" 0.0;
+		DamageFactor "Ice", 0.0;
 		+NOICEDEATH
 	}
 	States
