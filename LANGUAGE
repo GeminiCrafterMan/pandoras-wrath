@@ -31,6 +31,7 @@ GOTSCRAPGUN = "\c[White]You picked up the \c[Red]Scrapgun\c[White]! (Slot 4)";
 GOTROCKETLAUNCHER = "\c[White]You picked up the \c[DarkRed]Rocket Launcher\c[White]! (Slot 5)";
 GOTGRENADELAUNCHER = "\c[White]You picked up the \c[DarkRed]Grenade Launcher\c[White]! (Slot 5)";
 GOTBOUNCER = "\c[White]You picked up \c[DarkRed]The Bouncer\c[White]! (Slot 5)";
+GOTBOUNCER2 = "\c[White]You picked up \c[Gold]The Bouncer Mk-II \"Phoenix\"\c[White]!!! (Slot 5)";
 GOTSTOMPER = "\c[White]You picked up the \c[Red]Stomper\c[White]! (Slot 5)";
 // Slot 6
 GOTPLASMARIFLE = "\c[White]You picked up the \c[Cyan]Plasma Rifle\c[White]! (Slot 6)";
@@ -150,6 +151,7 @@ KILLFLAMETHROWER = "%o got %p buns thoroughly toasted by %k's Flamethrower.";
 KILLPERFORATOR = "%o was shredded by %k's Perforator.";
 KILLBOUNCE = "%o was blasted by %k's Bouncer.";
 KILLBOUNCE2 = "%o was swarmed by %k's Bouncer bombs.";
+KILLBOUNCER2 = "%o was annihilated by %k's Bouncer Mk_II.";
 KILLANNIHILATOR = "%o was torn asunder by %k's Eldritch Annihilator.";
 KILLSCRAP = "%o was turned into slag by %k's Scrapgun.";
 KILLSTOMPER = "%o was stomped by %k's Stomper missiles.";
@@ -256,6 +258,7 @@ TAG_PLASMARIFLE = "Plasma Rifle";
 TAG_BFG9000 = "BFG9000";
 TAG_FLAMETHROWER = "Flamethrower";
 TAG_BOUNCER = "The Bouncer";
+TAG_BOUNCER2 = "Bouncer Mk-II \"Phoenix\"";
 TAG_ELDRITCHANNIHILATOR = "Eldritch Annihilator";
 TAG_HELLKNIGHTCLAWS = "Hell Knight claws";
 

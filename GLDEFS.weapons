@@ -1,0 +1,71 @@
+object GWM_Grenade
+{
+	frame GNDE { light GWM_Grenade }
+}
+
+pointlight GWM_Grenade
+{
+	color 0.2 1 0.2
+	size 32
+	attenuate 1
+}
+
+object GWM_BouncerShot 
+{
+	frame BONCA { light GWM_Bounce1 }
+}
+
+object GWM_BouncerMini 
+{
+	frame BONCA { light GWM_Bounce2 }
+}
+
+pointlight GWM_Bounce1
+{
+	color 1 0 0
+	size 64
+	attenuate 1
+}
+
+pointlight GWM_Bounce2
+{
+	color 1 0 0
+	size 23
+	attenuate 1
+}
+
+object GWM_GoldBouncerShot 
+{
+	frame GONCB { light GWM_GBounce1 }
+	frame GONCC { light GWM_GBounce3 }
+	frame GONCD { light GWM_GBounce3 }
+	frame GONCE { light GWM_GBounce3 }
+	frame GONCF { light GWM_GBounce3 }
+	frame GONCG { light GWM_GBounce3 }
+}
+
+object GWM_GoldBouncerMini 
+{
+	frame GONCA { light GWM_GBounce2 }
+}
+
+pointlight GWM_GBounce1
+{
+	color 0 0.9 1
+	size 187
+	attenuate 1
+}
+
+pointlight GWM_GBounce2
+{
+	color 0 0.5 0.8
+	size 64
+	attenuate 1
+}
+
+pointlight GWM_GBounce3
+{
+	color 1 1 1
+	size 11670
+	attenuate 1
+}

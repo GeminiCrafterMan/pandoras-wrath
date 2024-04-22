@@ -132,8 +132,10 @@ class GWM_Revolver : GWM_WeaponBase
 
 class GWM_RevolverShot : Actor
 {
+	int Bounces;
 	Default
 	{
+		+SEEKERMISSILE;
 		RenderStyle "Add";
 		Projectile;
 		+HEXENBOUNCE;
@@ -160,12 +162,12 @@ class GWM_RevolverShot : Actor
 		{
 			if (victim.health <= 100)
 			{
-				victim.DamageMobj(self,target,50,'Extreme');
+				victim.DamageMobj(self,target,75,'Extreme');
 				return -1;
 			}
 			else
 			{
-				victim.DamageMobj(self,target,40,'Extreme');
+				victim.DamageMobj(self,target,30,'Extreme');
 				return -1;
 			}
 
@@ -187,6 +189,11 @@ class GWM_RevolverShot : Actor
 				A_SpawnItemEX("RevolverBulletPuff");
 				A_StartSound("bullet/ricochet",CHAN_AUTO);
 				A_SpawnDebris("GWM_TracerSpark");
+				++bounces;
+				if(invoker.bounces >= random(5,8) && target.health <= 70 ||invoker.bounces >= random(6,10))
+					{
+					A_Seekermissile(360,360,SMF_PRECISE|SMF_LOOK,256,280);
+					}
 			}
 			goto Spawn;
 		Crash:

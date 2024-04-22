@@ -12,7 +12,7 @@
 #include "ZScript/Weapons/Slot 2/GWM_Revolver.zsc"				// Revolver
 #include "ZScript/Weapons/Slot 2/GWM_GoldWand.zsc"				// Gold Wand
 
-#include "ZScript/Weapons/Slot 3/GWM_ZombieShotgun.zsc"			// Get a better shotgun ASAP
+#include "ZScript/Weapons/Slot 3/GWM_ZombieShotgun.zsc"			// The beginning of a long road of various scatterguns!
 	#include "ZScript/Weapons/Slot 3/GWM_SlayersKahuna.zsc"			// Slayer's Kahuna
 #include "ZScript/Weapons/Slot 3/GWM_SuperShotgun.zsc"			// Super Shotgun
 #include "ZScript/Weapons/Slot 3/GWM_ImpalerCrossbow.zsc"		// Impaler Crossbow
@@ -22,15 +22,16 @@
 	#include "ZScript/Weapons/Slot 4/GWM_BurningMinigun.zsc"		// Burning Minigun
 #include "ZScript/Weapons/Slot 4/GWM_BurstRifle.zsc"			// Burst Rifle
 #include "ZScript/Weapons/Slot 4/GWM_Scrapgun.zsc"				// Not exactly TangoScrapgun anymore... (from Supercharge)
-#include "ZScript/Weapons/Slot 4/GWM_FrostFang.zsc"				// Frost Fang
+#include "ZScript/Weapons/Slot 4/GWM_FrostFang.zsc"				// Frost Fang... Both shit and busted. How???
 
 #include "ZScript/Weapons/Slot 5/GWM_RocketLauncher.zsc"		// Rocket Launcher
-#include "ZScript/Weapons/Slot 5/GWM_GrenadeLauncher.zsc"		// Yep, they're split again...
+#include "ZScript/Weapons/Slot 5/GWM_GrenadeLauncher.zsc"		// Yep, they're split again... -g     For the better tbh -m
 	#include "ZScript/Weapons/Slot 5/GWM_THE_BOUNCERRR.zsc"	    	//I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
+	#include "ZScript/Weapons/Slot 5/GWM_GoldenBouncer.zsc"	    	//A ratchet and clank AND gundam reference at once? I've outdone myself -Mengo
 #include "ZScript/Weapons/Slot 5/GWM_Stomper.zsc"				// THE STOMPERRR (from Supercharge)
 
 #include "ZScript/Weapons/Slot 6/GWM_PlasmaRifle.zsc"			// Plasma Rifle
-#include "ZScript/Weapons/Slot 6/GWM_NoiseCrusher.zsc"			// Noise Crusher
+#include "ZScript/Weapons/Slot 6/GWM_NoiseCrusher.zsc"			// Noise Crusher! I'll make it good eventually I promise man -mengo
 
 #include "ZScript/Weapons/Slot 7/GWM_BFG9000.zsc"				// BFG9000 (Vanilla)
 #include "ZScript/Weapons/Slot 7/GWM_TwinPlasmaCannons.zsc"		// Twin Plasma Cannons

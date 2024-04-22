@@ -24,16 +24,21 @@ $random weapons/grndimp { weapons/grndimpact1 weapons/grndimpact2 weapons/grndim
 $attenuation weapons/grndimp 0.75
 
 //THE BOUNCERRRRR
-weapons/bounf1	"Sounds/Weapons/Slot 7/Bouncer/BOUNCFIR"
-weapons/bounb1	"Sounds/Weapons/Slot 7/Bouncer/BOUNCBON"
-weapons/bounx1	"Sounds/Weapons/Slot 7/Bouncer/BOUNCBOM"
-weapons/bounb2	"Sounds/Weapons/Slot 7/Bouncer/BOUNCTIN"
-weapons/bounx2	"Sounds/Weapons/Slot 7/Bouncer/BOUNCBAN"
+weapons/bounf1	"Sounds/Weapons/Slot 5/Bouncer/BOUNCFIR"
+weapons/bounb1	"Sounds/Weapons/Slot 5/Bouncer/BOUNCBON"
+weapons/bounx1	"Sounds/Weapons/Slot 5/Bouncer/BOUNCBOM"
+weapons/bounb2	"Sounds/Weapons/Slot 5/Bouncer/BOUNCTIN"
+weapons/bounx2	"Sounds/Weapons/Slot 5/Bouncer/BOUNCBAN"
 
 $attenuation weapons/bounb1 0.75
 $attenuation weapons/bounb2 0.75
 $attenuation weapons/bounx1 0.5
 $attenuation weapons/bounx2 0.5
+
+//Golden Bouncer
+weapons/goldboom	"Sounds/Weapons/Slot 5/Golden Bouncer/BoomPenis"
+$attenuation weapons/goldboom 0.2
+
 
 // Stomper
 stomper/pickup				SSCRSUP

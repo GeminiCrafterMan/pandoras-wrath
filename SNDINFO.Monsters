@@ -115,6 +115,7 @@ monsters/annihilator/step	"Sounds/Monsters/Bruisers/Annihilator/step.wav"
 
 // Kahuna Shotgun Guy
 monsters/skguy/warning		"Sounds/Monsters/Zombies/Kahuna Shotgun Guy/warning.wav"
+$attenuation monsters/skguy/warning 0.75
 
 // monsters
 $random monsters/vulcan/see      {  VCGSIT1 VCGSIT2 VCGSIT3 VCGSIT4 }
