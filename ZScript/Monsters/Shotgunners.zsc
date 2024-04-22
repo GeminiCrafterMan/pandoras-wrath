@@ -85,7 +85,7 @@ class GWM_KahunaShotgunGuy : ShotgunGuy
 		Health 100;
 		AttackSound "weapons/skshot";
 		DropItem "GWM_SlayersKahuna",25;
-		DropItem "GWM_Shell",230;
+		DropItem "GWM_ShellBox",230;
 		Obituary "$OB_KAHUNASHOTGUNGUY";
 		Tag "$TAG_KAHUNASHOTGUNGUY";
 	}

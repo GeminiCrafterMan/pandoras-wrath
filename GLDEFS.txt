@@ -347,3 +347,17 @@ object GWM_DisCacodemonFireFX
 	frame ZFIRO { light RocketLight }
 	frame ZFIRP { light RocketLight }
 }
+
+Pulselight ChillerGlow
+{
+Color 0 100 100
+Size 40
+SecondarySize 50
+Interval 5
+Offset 0 0 10
+}
+
+Object GWM_ChillerSoul
+{
+Frame CHSL { Light ChillerGlow }
+}

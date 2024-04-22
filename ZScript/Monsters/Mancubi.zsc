@@ -37,6 +37,50 @@ class GWM_MancubusFireball : FatShot
 {
 	Default
 	{
+		DamageType "Fire";
 		DamageFunction (36);
+	}
+}
+
+class GWM_Cryocubus : Actor
+{
+	Default
+	{
+		BloodColor "743737";
+		DamageFactor "Ice", 0.0;
+		+NOICEDEATH
+	}
+	States
+	{
+		Spawn:
+			CRYC AB 15 A_Look;
+			Loop;
+		See:
+			CRYC AABBCCDDEEFF 4 A_Chase;
+			Loop;
+		Missile:
+			CRYC G 20 A_FatRaise;
+			CRYC H 10 BRIGHT A_FatAttack1;
+			CRYC IG 5 A_FaceTarget;
+			CRYC H 10 BRIGHT A_FatAttack2;
+			CRYC IG 5 A_FaceTarget;
+			CRYC H 10 BRIGHT A_FatAttack3;
+			CRYC IG 5 A_FaceTarget;
+			Goto See;
+		Pain:
+			CRYC J 3;
+			CRYC J 3 A_Pain;
+			Goto See;
+		Death:
+			CRYC K 6;
+			CRYC L 6 A_Scream;
+			CRYC M 6 A_NoBlocking;
+			CRYC NOPQRS 6;
+			CRYC T -1 A_BossDeath;
+			Stop;
+		Raise:
+			CRYC R 5;
+			CRYC QPONMLK 5;
+			Goto See;
 	}
 }

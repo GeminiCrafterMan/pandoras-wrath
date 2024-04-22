@@ -262,6 +262,9 @@ Brightmap Sprite CBOWJ0 { Map CBOWJ0 DisableFullbright }
 Brightmap Sprite CBOWK0 { Map CBOWK0 DisableFullbright }
 Brightmap Sprite CBOWL0 { Map CBOWL0 DisableFullbright }
 Brightmap Sprite CBOWZ0 { Map BMCBOWZ0 DisableFullbright }
+// Zombie Shotgun
+Brightmap Sprite ZSHFA0 { Map ZSHFA0 DisableFullbright }
+Brightmap Sprite ZSHFB0 { Map ZSHFB0 DisableFullbright }
 // Slayer's Kahuna
 Brightmap Sprite SKSFA0 { Map SKSFA0 DisableFullbright }
 Brightmap Sprite SKSFB0 { Map SKSFB0 DisableFullbright }

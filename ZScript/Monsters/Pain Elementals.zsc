@@ -23,3 +23,115 @@ class GWM_PainElemental : PainElemental
 			Stop;
 	}
 }
+
+class GWM_FrostElemental : Actor
+{
+	Default
+	{
+		Health 400;
+		Radius 31;
+		Height 56;
+		Mass 400;
+		Speed 10;
+		PainChance 128;
+		MONSTER;
+		DamageFactor "Ice", 0.0;
+		+NoGravity
+		+Float
+		+DontFall
+		BloodColor "61A5D3";
+		SeeSound "FrostElemental/Sight";
+		PainSound "FrostElemental/Pain";
+		DeathSound "FrostElemental/Pain";
+		ActiveSound "FrostElemental/Active";
+		Obituary "$OB_FROSTELEMENTAL";
+	}
+	States
+	{
+		Spawn:
+			FREL A 10 A_Look;
+			Loop;
+		See:
+			FREL AABBCC 3 A_Chase;
+			Loop;
+		Missile:
+			FREL D 0 Bright A_JumpIfCloser(192, "Frost");
+			FREL DE 5 A_FaceTarget;
+			FREL F 5 Bright A_FaceTarget;
+			FREL F 0 Bright {
+				A_StartSound("ChillerSoul/Attack");
+				A_PainAttack("GWM_ChillerSoul");
+			}
+			Goto See;
+		Frost:
+			FREL D 0 {
+				A_StartSound("FrostElemental/Frost", CHAN_AUTO);
+				A_FaceTarget();
+			}
+			FREL DDD 2 Bright A_SpawnProjectile("GWM_IceBreath", 20, 0, random(-10,10), CMF_CHECKTARGETDEAD);
+			FREL D 0 {
+				A_StartSound("FrostElemental/Frost", CHAN_AUTO);
+				A_FaceTarget();
+			}
+			FREL DDD 2 Bright A_SpawnProjectile("GWM_IceBreath", 20, 0, random(-10,10), CMF_CHECKTARGETDEAD);
+			FREL D 0 {
+				A_StartSound("FrostElemental/Frost", CHAN_AUTO);
+				A_FaceTarget();
+			}
+			FREL DDD 2 Bright A_SpawnProjectile("GWM_IceBreath", 20, 0, random(-10,10), CMF_CHECKTARGETDEAD);
+			FREL D 0 {
+				A_StartSound("FrostElemental/Frost", CHAN_AUTO);
+				A_FaceTarget();
+			}
+			FREL DDD 2 Bright A_SpawnProjectile("GWM_IceBreath", 20, 0, random(-10,10), CMF_CHECKTARGETDEAD);
+			FREL D 0 {
+				A_StartSound("FrostElemental/Frost", CHAN_AUTO);
+				A_FaceTarget();
+			}
+			FREL DDD 2 Bright A_SpawnProjectile("GWM_IceBreath", 20, 0, random(-10,10), CMF_CHECKTARGETDEAD);
+			Goto See;
+		Pain:
+			FREL G 6;
+			FREL G 6 A_Pain;
+			Goto See;
+		Death:
+			FREL H 8 A_Scream;
+			FREL I 8;
+			FREL J 8;
+			FREL J 0 {
+				A_PainDie("GWM_ChillerSoul");
+				A_IceGuyDie();
+			}
+			Stop;
+	}
+}
+
+class GWM_IceBreath : Actor
+{
+	Default
+	{
+		Radius 12;
+		Height 8;
+		Speed 8;
+		Damage 3;
+		DamageType "Ice";
+		Alpha 0.2;
+		Projectile;
+		-NoBlockMap
+		-ActivateImpact
+		-ActivatePCross
+		+WindThrust
+		+SpawnSoundSource
+		+BloodlessImpact
+		+NoDamageThrust
+		RenderStyle "Add";
+	}
+	States
+	{
+		Spawn:
+			IBRT ABABABABABABAB 2 Bright;
+		Death:
+			IBRT AB 2 Bright;
+			Stop;
+	}
+}

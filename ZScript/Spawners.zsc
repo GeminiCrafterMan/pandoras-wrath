@@ -88,11 +88,11 @@ class GWM_ChainsawSpawner : GWM_WeaponSpawner replaces Chainsaw
 	Default
 	{
 		DropItem "GWM_EldritchAnnihilator", 255, 1;
-		DropItem "GWM_IceShotgun", 255, 6;
-		DropItem "GWM_AcidCannon", 255, 6;
-		DropItem "GWM_FlameThrower", 255, 6;
-		DropItem "GWM_Impactor", 255, 6;
-		DropItem "GWM_Lumberjack", 255, 6;
+		DropItem "GWM_IceShotgun", 255, 4;
+		DropItem "GWM_AcidCannon", 255, 4;
+		DropItem "GWM_FlameThrower", 255, 4;
+		DropItem "GWM_Impactor", 255, 8;
+		DropItem "GWM_Lumberjack", 255, 8;
 	}
 }
 
@@ -100,9 +100,9 @@ class GWM_ShotgunSpawner : GWM_WeaponSpawner replaces Shotgun
 {
 	Default
 	{
-		DropItem "GWM_SlayersKahuna", 255, 8;
-		DropItem "GWM_SuperShotgun", 255, 3;
-		DropItem "GWM_IceShotgun", 255, 2;
+		DropItem "GWM_ZombieShotgun", 255, 8;
+		DropItem "GWM_SlayersKahuna", 255, 1;
+		DropItem "GWM_IceShotgun", 255, 4;
 	}
 }
 
@@ -110,7 +110,7 @@ class GWM_SuperShotgunSpawner : GWM_WeaponSpawner replaces SuperShotgun
 {
 	Default
 	{
-		DropItem "GWM_SuperShotgun";
+		DropItem "GWM_SuperShotgun", 255, 6;
 		DropItem "GWM_Melter", 255, 2;
 		DropItem "GWM_Flamethrower", 255, 2;
 		DropItem "GWM_AcidCannon", 255, 2;
@@ -123,7 +123,7 @@ class GWM_ChaingunSpawner : GWM_WeaponSpawner replaces Chaingun
 {
 	Default
 	{
-		DropItem "GWM_Minigun", 255, 5;
+		DropItem "GWM_Minigun", 255, 6;
 		DropItem "GWM_BurstRifle", 255, 8;
 		DropItem "GWM_Flamethrower", 255, 2;
 	}

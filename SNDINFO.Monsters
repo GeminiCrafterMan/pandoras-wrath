@@ -90,8 +90,8 @@ monsters/shadowhunter/sight	"Sounds/Monsters/Zombies/Shadow Hunter/sight.ogg"
 $random monsters/shadowhunter/idle { monsters/shadowhunter/idle1 monsters/shadowhunter/idle2}
 
 // Blot
-monsters/blot/death			"Sounds/Monsters/Blot/death.ogg"
-monsters/blot/attack		"Sounds/Monsters/Blot/attack.ogg"
+monsters/blot/death			"Sounds/Monsters/Lost Souls/Blot/death.ogg"
+monsters/blot/attack		"Sounds/Monsters/Lost Souls/Blot/attack.ogg"
 
 // Superdemon
 monsters/superdemon/death	"Sounds/Monsters/Superdemon/death.ogg"
@@ -142,3 +142,17 @@ monsters/draugr/shoot		"Sounds/Monsters/Draugr/quake_rpg_fire.wav"
 
 // Dis Cacodemon
 monsters/discaco/spit		"Sounds/Monsters/Dis Cacodemon/spit.wav"
+
+// Frost Elemental
+FrostElemental/Active		FRELACT
+FrostElemental/Sight		FRELSIT
+FrostElemental/Pain			FRELPAI
+FrostElemental/Frost		FROSTB
+
+// Chiller Soul
+ChillerSoul/Active		CHLSACT
+ChillerSoul/Pain		CHLSPAI
+ChillerSoul/Death		CHLSDETH
+ChillerSoul/Attack		CHLSATK
+ChillerSoul/Ball		CHLSICEB
+ChillerSoul/BallDie		SHARDS1B
