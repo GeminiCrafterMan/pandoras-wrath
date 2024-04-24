@@ -12,11 +12,11 @@ LISTMENU "MainMenu"
 	}
 	IfGame(Heretic)
 	{
-		StaticPatch 88, 20, "M_HTIC"
-		StaticPatch 40, 30, "M_SKL01"
-		StaticPatch 232, 30, "M_SKL00"
-		StaticPatch 94, 0, "M_WRATH"
-		Position 110, 76
+		StaticPatch 88, 30, "M_HTIC"
+		StaticPatch 40, 40, "M_SKL01"
+		StaticPatch 232, 40, "M_SKL00"
+		StaticPatch 94, 2, "M_WRATH"
+		Position 110, 86
 	}
 	IfGame(Doom, Chex)
 	{

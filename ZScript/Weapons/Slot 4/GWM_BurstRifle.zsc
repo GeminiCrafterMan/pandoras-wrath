@@ -31,6 +31,8 @@ class GWM_BurstRifle : GWM_WeaponBase
 		Tag "$TAG_BURSTRIFLE";
 		AttackSound "weapons/riflesht";
 		Obituary "$KILLBURSTRIFLE";
+		+ALLOWTHRUFLAGS
+		+THRUGHOST
 	}
 	States
 	{

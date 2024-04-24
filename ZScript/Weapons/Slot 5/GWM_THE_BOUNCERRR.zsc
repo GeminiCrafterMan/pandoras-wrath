@@ -326,6 +326,7 @@ class GWM_BouncerMiniMega : GWM_BouncerShot
 		DamageType "Rocket";
 		Reactiontime 25;
 		Scale 8;
+		+THRUGHOST
 	}
 	States
 	{

@@ -131,11 +131,12 @@ class GWM_Grenade : Actor
 		Spawnloop:
 			GNDE AAABBBCCCDDDEEEFFFGGGHHH 1 Bright GrenadeTimerJump();
 			goto Spawnloop;
-		Bounce:
+		Bounce.Wall:
+		Bounce.Ceiling:
+		Bounce.Floor:
 			TNT1 A 0 {GrenadeTimerJump();}
 			TNT1 A 0 {invoker.missed = true;}
 			Goto Spawnloop;
-		Bounce.Actor:
 		Death:
 			TNT1 A 0 {
 				bMISSILE = false;

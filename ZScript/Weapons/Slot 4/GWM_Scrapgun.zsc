@@ -98,6 +98,7 @@ class GWM_Scrap : FastProjectile
 		Height 4;
 		Radius 2;
 		+BLOODSPLATTER
+		+THRUGHOST
 		Scale 0.25;
 		DamageType "Shotgun";
 	}
