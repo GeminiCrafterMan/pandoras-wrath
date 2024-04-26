@@ -33,6 +33,7 @@ weapons/ssgc		"Sounds/Weapons/Slot 3/Super Shotgun/Close.wav"
 weapons/ssgpickup	"Sounds/Weapons/Slot 3/Super Shotgun/pickup.wav"
 weapons/ssgcshot	"Sounds/Weapons/Slot 3/Super Shotgun/Charged"
 weapons/ssgcEcho	"Sounds/Weapons/Slot 3/Super Shotgun/ChargeEcho"
+weapons/SSGCharge	"Sounds/Weapons/Slot 3/Super Shotgun/ChargeUp"
 
 
 // Impaler Crossbow
