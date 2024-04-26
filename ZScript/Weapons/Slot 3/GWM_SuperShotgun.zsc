@@ -29,24 +29,19 @@ class GWM_SuperShotgun : GWM_WeaponBase
 		Ready:
 			SSGG A 1 ZWL_WeaponReady;
 			Loop;
-/*		Deselect:
-			SSGG A 1 A_Lower(18);
-			Loop;
-		Select:
-			SSGG A 1 A_Raise(18);
-			Loop;*/
 		Select:
 			TNT1 A 0 {
 				ZWL_QuickRaise();
 				
 			}
-			SSGG VVWW 1;
-			SSGG XX 1;
-			SSGG D 1 {
+			SSGG V 1 Offset(-4,40);
+			SSGG V 1;
+			SSGG W 3 {
 				A_StartSound("weapons/ssgc");
 				ZWL_WeaponReady();
 			}
-			SSG2 E 1 ZWL_WeaponReady;
+			SSGG XYZZ 2 ZWL_WeaponReady;
+			SSG2 ABCDE 2 ZWL_WeaponReady;
 			Goto Ready;
 		Deselect:
 			SSGG AA 1 {
@@ -373,30 +368,30 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			}
 			Goto LightDone;
 		Spawn:
-			SSGG Z -1;
+			SSGG [ -1;
 			Stop;
 	}
 }
 class ZBulletPuff_SSG : ZBulletPuff
 {
-    Default
-    {
-        +PUFFGETSOWNER
-        +PUFFONACTORS
-        +HITTRACER
-    }
-    States
-    {
-    XDeath:
-        TNT1 A 1
-        {
-            if (tracer && target && target.Distance3D(tracer) < 80)
-            {
-                bExtremeDeath = true;
-            }
-        }
-        Stop;
-    }
+	Default
+	{
+		+PUFFGETSOWNER
+		+PUFFONACTORS
+		+HITTRACER
+	}
+	States
+	{
+		XDeath:
+			TNT1 A 1
+			{
+				if (tracer && target && target.Distance3D(tracer) < 80)
+				{
+					bExtremeDeath = true;
+				}
+			}
+			Stop;
+	}
 }
 
 class GWM_SSGShot : FastProjectile
@@ -486,25 +481,25 @@ class GWM_SSGChargedShot : FastProjectile
 
 Class GWM_SSGChTrail : Actor
 {
-Default
-  {
-  +NOBLOCKMAP;
-  +NOGRAVITY;
-  +ALLOWPARTICLES;
-  +RANDOMIZE;
-  +FORCEXYBILLBOARD;
-  RenderStyle "Add";
-  Alpha 0.2;
-  Scale 0.52;
-  Mass 5;
-  }
-  States
-  {
-  Spawn:
-    TNT1 AAA 0 A_Changevelocity(frandom(-1,1),frandom(-1,1),frandom(-1,1));
-	ZFIR BDFHJLNP 1 Bright;
-    Stop;
-  }
+	Default
+	{
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		+ALLOWPARTICLES;
+		+RANDOMIZE;
+		+FORCEXYBILLBOARD;
+		RenderStyle "Add";
+		Alpha 0.2;
+		Scale 0.52;
+		Mass 5;
+	}
+	States
+	{
+		Spawn:
+			TNT1 AAA 0 A_Changevelocity(frandom(-1,1),frandom(-1,1),frandom(-1,1));
+			ZFIR BDFHJLNP 1 Bright;
+			Stop;
+	}
 }
 
 class GWM_SSGShot2 : FastProjectile

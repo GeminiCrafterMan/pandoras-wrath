@@ -89,6 +89,7 @@ class GWM_Annihilator : Actor
 		Mass 1000;
 		Monster;
 		+FLOORCLIP
+		+BOSSDEATH
 		SeeSound "monsters/annihilator/sight";
 		PainSound "monsters/annihilator/pain";
 		DeathSound "monsters/annihilator/death";
@@ -128,7 +129,7 @@ class GWM_Annihilator : Actor
 			ANNI M 8 Bright A_Fall;
 			ANNI NOP 8 Bright;
 			ANNI Q 8 Bright;
-			ANNI R -1;
+			ANNI R -1 A_BossDeath;
 			Stop;
 		Raise:
 			ANNI QPONMLK 5;
