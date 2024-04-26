@@ -320,15 +320,14 @@ class GWM_SSGShot : FastProjectile
 		Radius 2;
 		Height 2;
 		Speed 120;
+		+BLOODSPLATTER
+		+HITTRACER
+		+NOINTERACTION
 		Scale .5;
 		DamageFunction (13);
 		//MissileType "GWM_TracerTrail";
 		MissileHeight 8;
-		+BLOODSPLATTER
-		+HITTRACER
-		+NOINTERACTION
-		+EXTREMEDEATH
-		+THRUGHOST
+		+EXTREMEDEATH;
 	}
 	States
 	{
@@ -361,17 +360,17 @@ class GWM_SSGChargedShot : FastProjectile
 		Radius 5;
 		Height 5;
 		Speed 150;
+		+BLOODSPLATTER
+		+HITTRACER
+		+NOINTERACTION
 		Scale .85;
 		DamageFunction (15);
 		//MissileType "GWM_TracerTrail";
 		MissileHeight 8;
+		+EXTREMEDEATH;
+		+FORCEPAIN;
+		+HEXENBOUNCE;
 		Bouncecount 3;
-		+BLOODSPLATTER
-		+HITTRACER
-		+NOINTERACTION
-		+EXTREMEDEATH
-		+FORCEPAIN
-		+HEXENBOUNCE
 	}
 	States
 	{
@@ -406,7 +405,6 @@ class GWM_SSGShot2 : FastProjectile
 		+BLOODSPLATTER
 		+HITTRACER
 		+NOINTERACTION
-		+THRUGHOST
 		Scale .4;
 		DamageFunction (10);
 		//MissileType "GWM_TracerTrail";
