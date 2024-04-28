@@ -12,13 +12,11 @@ class GWM_SuperShotgun : GWM_WeaponBase
 		Weapon.SelectionOrder 1300;
 		Inventory.PickupSound "weapons/ssgpickup";
 		Weapon.UpSound "weapons/draw_primary";
-		Weapon.AmmoType "GWM_Shell";
-		Weapon.AmmoUse 1;
-		Weapon.AmmoGive 8; // Setting it any higher gives too much in the magazine!!
-
-		ZWeapon.MagazineSize 2;
-		ZWeapon.ReloadSound "weapons/ssgl";
-		ZWeapon.ClickSound "weapons/skempty";
+		Weapon.AmmoType1 "GWM_Shell";
+		Weapon.AmmoUse1 2;
+		Weapon.AmmoGive1 8;
+		Weapon.AmmoType2 "GWM_Shell";
+		Weapon.AmmoUse2 2;
 
 		Inventory.PickupMessage "$GOTSUPERSHOTGUN";
 		Obituary "$KILLSUPERSHOTGUN";
@@ -27,7 +25,7 @@ class GWM_SuperShotgun : GWM_WeaponBase
 	States
 	{
 		Ready:
-			SSGG A 1 ZWL_WeaponReady;
+			SSGG A 1 A_WeaponReady;
 			Loop;
 		Select:
 			TNT1 A 0 {
@@ -38,10 +36,10 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			SSGG V 1;
 			SSGG W 3 {
 				A_StartSound("weapons/ssgc");
-				ZWL_WeaponReady();
+				A_WeaponReady();
 			}
-			SSGG XYZZ 2 ZWL_WeaponReady;
-			SSG2 ABCDE 2 ZWL_WeaponReady;
+			SSGG XYZZ 2 A_WeaponReady;
+			SSG2 ABCDE 2 A_WeaponReady;
 			Goto Ready;
 		Deselect:
 			SSGG AA 1 {
@@ -92,22 +90,10 @@ class GWM_SuperShotgun : GWM_WeaponBase
 		
 		Fire:
 			TNT1 A 0 {
-			// G: What the fuck
-			// G: Why does this fix that issue (ssg primary randomly deselects when you have no reserve ammo)
-			// G: NEVERMIND IT DOESN'T!!!!
-				if (invoker.ammoCount <= 1)
-				{
-					invoker.bALTFIRE = true;
-					player.SetPSprite(OverlayID(), ResolveState("AltFire"));
-				
-				
-				}
-				//A_Overlay(88,"ChargeFace",true);
-				
-			invoker.yoffset = 32+frandom(0,0.1)*invoker.chargeLevel;
+				invoker.yoffset = 32+frandom(0,0.1)*invoker.chargeLevel;
+				A_StartSound("weapons/SSGCharge",CHAN_BODY);
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_TOP);
 			}
-			TNT1 A 0 A_StartSound("weapons/SSGCharge",CHAN_BODY);
-			TNT1 A 0 A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_TOP);
 			
 			Refire:
 				TNT1 A 0 A_Jumpif(invoker.chargelevel > 31,"ChgLv5");
@@ -119,36 +105,35 @@ class GWM_SuperShotgun : GWM_WeaponBase
 				SSGG A 1;
 				
 			Refire2:
-			SSGG A 0
-			{
-			A_WeaponOffset(invoker.xoffset, invoker.yoffset, WOF_INTERPOLATE);	// G: edited the second frandom call to not allow edges of the weapon to be seen
-			A_OverlayScale(OverlayID(), 0.0001*invoker.chargeLevel, 0.0001*invoker.chargeLevel, WOF_ADD);
-			invoker.xoffset = 0+frandom(-0.1,0.1)*invoker.chargeLevel;
-			invoker.yoffset = 32+frandom(0,0.1)*invoker.chargeLevel;
-			++invoker.chargelevel;
-			}
-			TNT1 A 0 A_Jumpif(Invoker.Chargelevel > 35, "ChargedShot");
-			TNT1 A 0 A_Refire("Refire");
-			
-			TNT1 A 0 A_StopSound(CHAN_BODY);
-			TNT1 A 0 A_Overlay(3,"SSGFlash");
-			SSGG A 2 {
-				ZWL_FireHitscan(0, 0, pellets: 24, spread: 12, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_SSGShot");
-				invoker.ammoCount -= 1;
-				invoker.chargelevel = 0;
-				A_StartSound("weapons/ssgshot1", CHAN_WEAPON);
-				A_SpawnItemEx("GWM_MuzzleFlashLight3",0,0,5);
-				A_SpawnItemEx("GWM_Flash");
-				A_Overlay(55,"Recoil");
-				A_ChangeVelocity(-Cos(pitch)*4, 0, sin(pitch)*4,CVF_RELATIVE);
-				A_QuakeEx(3, 3, 3, 4, 0, 1, "", QF_SHAKEONLY);
-				A_OverlayScale(OverlayID(), 1, 1, WOF_INTERPOLATE);
-			//invoker.SSGShellstoEject = invoker.SSGShellstoEject+1;
-			}
-			SSGG BCDEEE 1;
-			//TNT1 A 0 A_JumpifInventory("PowerWeaponLevel2",1,"Ready");
+				SSGG A 0
+				{
+					A_WeaponOffset(invoker.xoffset, invoker.yoffset, WOF_INTERPOLATE);	// G: edited the second frandom call to not allow edges of the weapon to be seen
+					A_OverlayScale(OverlayID(), 0.0001*invoker.chargeLevel, 0.0001*invoker.chargeLevel, WOF_ADD);
+					invoker.xoffset = 0+frandom(-0.1,0.1)*invoker.chargeLevel;
+					invoker.yoffset = 32+frandom(0,0.1)*invoker.chargeLevel;
+					++invoker.chargelevel;
+				}
+				TNT1 A 0 A_Jumpif(Invoker.Chargelevel > 35, "ChargedShot");
+				TNT1 A 0 A_Refire("Refire");
+			AltFire:
+				TNT1 A 0 A_StopSound(CHAN_BODY);
+				TNT1 A 0 A_Overlay(3,"SSGFlash");
+				SSGG A 2 {
+					ZWL_FireHitscan(0, 0, pellets: 24, spread: 12, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_SSGShot");
+					invoker.chargelevel = 0;
+					A_StartSound("weapons/ssgshot1", CHAN_WEAPON);
+					A_SpawnItemEx("GWM_MuzzleFlashLight3",0,0,5);
+					A_SpawnItemEx("GWM_Flash");
+					A_Overlay(55,"Recoil");
+					A_ChangeVelocity(-Cos(pitch)*4, 0, sin(pitch)*4,CVF_RELATIVE);
+					A_QuakeEx(3, 3, 3, 4, 0, 1, "", QF_SHAKEONLY);
+					A_OverlayScale(OverlayID(), 1, 1, WOF_INTERPOLATE);
+				//invoker.SSGShellstoEject = invoker.SSGShellstoEject+1;
+				}
+				SSGG BCDEEE 1;
+				//TNT1 A 0 A_JumpifInventory("PowerWeaponLevel2",1,"Ready");
 
-					ReloadAfterShot:
+		Reload:
 			SSGG FGHIJK 3;
 			SSGG L 3 A_StartSound("weapons/ssgo", CHAN_BODY);
 			SSGG M 2 
@@ -158,16 +143,14 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			}
 			SSGG N 6;
 			SSGG OPQRS 2;
-			SSGG S 3 ZWL_Reload();
+			SSGG S 3 A_StartSound("weapons/ssgl", CHAN_BODY);
 			SSGG TUVV 2;
 			SSGG W 3 A_StartSound("weapons/ssgc", CHAN_BODY);
 			SSGG XYZZ 2;
 			SSG2 ABCDE 2;
-			
-			
 			Goto Ready;
 			
-			SSGFlash:
+		SSGFlash:
 			XTS3 WWXY 1 BRIGHT;
 			stop;
 		
@@ -219,71 +202,15 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			A_OverlayScale(OverlayID(), 1, 1, WOF_INTERPOLATE);
 			}
 			
-			Goto Reload;
-			
-		AltFire:
-			TNT1 A 0 {
-				if (invoker.ammoCount <= 0)
-				{
-					if (FindInventory(invoker.ammoType1).amount > 0)
-						player.SetPSprite(OverlayID(), ResolveState("Reload.Empty"));
-					else
-						ZWL_CheckReload(true);
-				}
-			}
-			SSGG A 2 {
-				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				if (invoker.ammoCount % 2) {
-					A_Overlay(PSP_FLASH, "FlashRight");
-				}
-				else {
-					A_Overlay(PSP_FLASH, "FlashLeft");
-				}
-				//ZWL_FireHitscan(0, 12, pellets: 10, spread: 3.5, tracertype: "GWM_Tracer");
-				ZWL_FireHitscan(0, 0, pellets: 10, spread: 7, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_SSGShot2", flags: ZHF_DontUseAmmo);
-				A_ChangeVelocity(-Cos(pitch)*2.5, 0, sin(pitch)*2.5,CVF_RELATIVE);
-				A_StartSound("weapons/ssgshot2", CHAN_WEAPON);
-				A_Overlay(55,"Recoil2");
-				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
-				A_SpawnItemEx("GWM_Flash");
-				A_WeaponOffset(0, 12, WOF_ADD);
-				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
-				A_QuakeEx(1.5, 1.5, 1.5, 4, 0, 1, "", QF_SHAKEONLY);
-				invoker.ammoCount -= 1;
-			}
-			SSGG AA 2 {
-				A_WeaponOffset(0, -6, WOF_ADD);
-				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
-			}
-			SSGG A 4 {
-				A_WeaponOffset(0, 32, WOF_INTERPOLATE);
-				A_OverlayScale(OverlayID(), 1, 0, WOF_INTERPOLATE);
-			}
-			Goto Ready;
-		Reload:
-			TNT1 A 0 {
-				if (!invoker.CheckAmmo(PrimaryFire, false, true))
-					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
-				if (invoker.ammoCount >= invoker.magazineSize)
-					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
-				if (invoker.ammoCount <= 0)
-					if (FindInventory(invoker.ammoType1).amount > 0)
-						player.SetPSprite(OverlayID(), ResolveState("Reload2"));
-					else
-					{
-						invoker.bALTFIRE = false;
-						ZWL_CheckReload();
-					}
-			}
-			Reload2:
+			Goto Reload.ChargeShot;
+
+		Reload.ChargeShot:
 			SSGG HIJK 3;
 			SSGG L 3 A_StartSound("weapons/ssgo", CHAN_BODY);
 			SSGG M 2 
 			{
-				if (invoker.ammoCount == 0)
-				{ ZWL_EjectCasing("GWM_ShotgunCasing", true);}
-				if (invoker.ammoCount <= 1)
-				{ZWL_EjectCasing("GWM_ShotgunCasing", true, offset: (24, 4, -10));}
+				ZWL_EjectCasing("GWM_ShotgunCasing", true);
+				ZWL_EjectCasing("GWM_ShotgunCasing", true, offset: (24, 4, -10));
 			}
 			SSGG N 6;
 			SSGG OPQRS 2;
@@ -292,38 +219,8 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			SSGG W 3 A_StartSound("weapons/ssgc", CHAN_BODY);
 			SSGG XYZZ 2;
 			SSG2 ABCDE 2;
-			
-			
 			Goto Ready;
-			//Goto Reload.End;
-		//Reload.Empty:
-			SSGG D 2;
-			SSGG C 2;
-			SSGG B 3;
-			SSGG C 4;
-			SSGG D 3;
-			SSGG E 3 A_StartSound("weapons/ssgo", CHAN_BODY);
-		//EjectSomeSSGShells:
-			SSGG F 2 
-			{
-				//A_StartSound("weapons/ssgo", CHAN_BODY);
-				ZWL_EjectCasing("GWM_ShotgunCasing", true);
-				ZWL_EjectCasing("GWM_ShotgunCasing", true, offset: (24, 4, -10));
-				//invoker.SSGShellstoEject = invoker.SSGShellstoEject;
-			}
-			SSGG F 1;
-			//{ if ( !invoker.SSGShellstoEject == 0) { SetStateLabel("EjectSomeSSGShells");}}
-			//goto EjectSomeSSGShells;
-		EjectSomeSSGShells.End:
-			SSGG FGHI 2;
-		Reload.End:
-			SSGG J 3 ZWL_Reload();
-			SSGG KLL 2;
-			SSGG MMM 1;
-			SSGG N 3 A_StartSound("weapons/ssgc", CHAN_BODY);
-			SSGG O 5;
-			SSGG A 1;
-			Goto Ready;
+
 		Flash:
 			TNT1 A 0 A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 			SSGF A 2 Bright {
@@ -342,29 +239,6 @@ class GWM_SuperShotgun : GWM_WeaponBase
 			SSGF AB 2 Bright {
 				A_Light1();
 				A_OverlayScale(OverlayID(), 1.5, 0, WOF_INTERPOLATE);
-			}
-			Goto LightDone;
-			
-		FlashLeft:
-			SSGF C 2 Bright {
-				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
-				A_Light2();
-			}
-			SSGF D 2 Bright {
-				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
-				A_Light2();
-			}
-			Goto LightDone;
-		FlashRight:
-			SSGF E 2 Bright {
-				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
-				A_Light2();
-			}
-			SSGF F 2 Bright {
-				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
-				A_Light2();
 			}
 			Goto LightDone;
 		Spawn:
