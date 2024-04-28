@@ -5,6 +5,7 @@ class GWM_StatusBar : BaseStatusBar
 	HUDFont mAmountFont;
 	InventoryBarState diparms;
 	
+	
 
 	override void Init()
 	{
@@ -23,7 +24,9 @@ class GWM_StatusBar : BaseStatusBar
 	override void Draw (int state, double TicFrac)
 	{
 		Super.Draw (state, TicFrac);
-
+		
+		
+		
 		if (state == HUD_StatusBar)
 		{
 			BeginStatusBar();
@@ -162,11 +165,14 @@ class GWM_StatusBar : BaseStatusBar
 			DrawString(mHUDFont, FormatNumber(armor.Amount, 3), (44, -40), translation: Font.CR_Sapphire);
 		}
 		
+		
 		int amt1, amt2;
 
 		amt1 = GetAmount("GWM_PandoraPoints");
 		amt2 = GetAmount("GWM_PandoraPointsCap");
 		DrawString(mHUDFont, StringStruct.Format("%d/%d", amt1, amt2), (-10, -74), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Purple);
+		
+		
 		
 		if (GWM_Player(CPlayer.mo))
 		{
@@ -249,19 +255,123 @@ class GWM_StatusBar : BaseStatusBar
 		[ammotype1, ammotype2] = GetCurrentAmmo();
 		let weapon = ZWeapon(cplayer.readyWeapon);
 		int invY = -20;
+		
+		if (weapon.magazineSize == 18)
+		{
+		if (weapon.ammocount > 0){DrawImage("2MAG1",(-30,-5));} else {DrawImage("2MAG0",(-30,-5));}
+		if (weapon.ammocount > 3){DrawImage("2MAG1",(-40,-5));} else {DrawImage("2MAG0",(-40,-5));}
+		if (weapon.ammocount > 6){DrawImage("2MAG1",(-50,-5));} else {DrawImage("2MAG0",(-50,-5));}
+		if (weapon.ammocount > 9){DrawImage("2MAG1",(-60,-5));} else {DrawImage("2MAG0",(-60,-5));}
+		if (weapon.ammocount > 12){DrawImage("2MAG1",(-70,-5));} else {DrawImage("2MAG0",(-70,-5));}
+		if (weapon.ammocount > 15){DrawImage("2MAG1",(-80,-5));} else {DrawImage("2MAG0",(-80,-5));}
+		}
+		else
+		if (weapon.magazineSize < 20)
+		{
+		if (weapon.magazineSize > 0) {if (weapon.ammocount > 0){DrawImage("MAG1",(-30,-5));} else {DrawImage("MAG0",(-30,-5));}}
+		if (weapon.magazineSize > 1) {if (weapon.ammocount > 1){DrawImage("MAG1",(-35,-5));} else {DrawImage("MAG0",(-35,-5));}}
+		if (weapon.magazineSize > 2) {if (weapon.ammocount > 2){DrawImage("MAG1",(-40,-5));} else {DrawImage("MAG0",(-40,-5));}}
+		if (weapon.magazineSize > 3) {if (weapon.ammocount > 3){DrawImage("MAG1",(-45,-5));} else {DrawImage("MAG0",(-45,-5));}}
+		if (weapon.magazineSize > 4) {if (weapon.ammocount > 4){DrawImage("MAG1",(-50,-5));} else {DrawImage("MAG0",(-50,-5));}}
+		if (weapon.magazineSize > 5) {if (weapon.ammocount > 5){DrawImage("MAG1",(-55,-5));} else {DrawImage("MAG0",(-55,-5));}}
+		if (weapon.magazineSize > 6) {if (weapon.ammocount > 6){DrawImage("MAG1",(-60,-5));} else {DrawImage("MAG0",(-60,-5));}}
+		if (weapon.magazineSize > 7) {if (weapon.ammocount > 7){DrawImage("MAG1",(-65,-5));} else {DrawImage("MAG0",(-65,-5));}}
+		if (weapon.magazineSize > 8) {if (weapon.ammocount > 8){DrawImage("MAG1",(-70,-5));} else {DrawImage("MAG0",(-70,-5));}}
+		if (weapon.magazineSize > 9) {if (weapon.ammocount > 9){DrawImage("MAG1",(-75,-5));} else {DrawImage("MAG0",(-75,-5));}}
+		if (weapon.magazineSize > 10) {if (weapon.ammocount > 10){DrawImage("MAG1",(-80,-5));} else {DrawImage("MAG0",(-80,-5));}}
+		if (weapon.magazineSize > 11) {if (weapon.ammocount > 11){DrawImage("MAG1",(-85,-5));} else {DrawImage("MAG0",(-85,-5));}}
+		if (weapon.magazineSize > 12) {if (weapon.ammocount > 12){DrawImage("MAG1",(-90,-5));} else {DrawImage("MAG0",(-90,-5));}}
+		if (weapon.magazineSize > 13) {if (weapon.ammocount > 13){DrawImage("MAG1",(-95,-5));} else {DrawImage("MAG0",(-95,-5));}}
+		if (weapon.magazineSize > 14) {if (weapon.ammocount > 14){DrawImage("MAG1",(-100,-5));} else {DrawImage("MAG0",(-100,-5));}}
+		if (weapon.magazineSize > 15) {if (weapon.ammocount > 15){DrawImage("MAG1",(-105,-5));} else {DrawImage("MAG0",(-105,-5));}}
+		if (weapon.magazineSize > 16) {if (weapon.ammocount > 16){DrawImage("MAG1",(-110,-5));} else {DrawImage("MAG0",(-110,-5));}}
+		if (weapon.magazineSize > 17) {if (weapon.ammocount > 17){DrawImage("MAG1",(-115,-5));} else {DrawImage("MAG0",(-115,-5));}}
+		if (weapon.magazineSize > 18) {if (weapon.ammocount > 18){DrawImage("MAG1",(-120,-5));} else {DrawImage("MAG0",(-120,-5));}}
+		if (weapon.magazineSize > 19) {if (weapon.ammocount > 19){DrawImage("MAG1",(-125,-5));} else {DrawImage("MAG0",(-125,-5));}}
+		}
+		
+		if (weapon.magazineSize < 10)
+		{
+		if (weapon.magazineSize > 0) {if (weapon.ammocount > 0){DrawImage("2MAG1",(-30,-5));} else {DrawImage("2MAG0",(-30,-5));}}
+		if (weapon.magazineSize > 1) {if (weapon.ammocount > 1){DrawImage("2MAG1",(-40,-5));} else {DrawImage("2MAG0",(-40,-5));}}
+		if (weapon.magazineSize > 2) {if (weapon.ammocount > 2){DrawImage("2MAG1",(-50,-5));} else {DrawImage("2MAG0",(-50,-5));}}
+		if (weapon.magazineSize > 3) {if (weapon.ammocount > 3){DrawImage("2MAG1",(-60,-5));} else {DrawImage("2MAG0",(-60,-5));}}
+		if (weapon.magazineSize > 4) {if (weapon.ammocount > 4){DrawImage("2MAG1",(-70,-5));} else {DrawImage("2MAG0",(-70,-5));}}
+		if (weapon.magazineSize > 5) {if (weapon.ammocount > 5){DrawImage("2MAG1",(-80,-5));} else {DrawImage("2MAG0",(-80,-5));}}
+		if (weapon.magazineSize > 6) {if (weapon.ammocount > 6){DrawImage("2MAG1",(-90,-5));} else {DrawImage("2MAG0",(-90,-5));}}
+		if (weapon.magazineSize > 7) {if (weapon.ammocount > 7){DrawImage("2MAG1",(-100,-5));} else {DrawImage("2MAG0",(-100,-5));}}
+		if (weapon.magazineSize > 8) {if (weapon.ammocount > 8){DrawImage("2MAG1",(-110,-5));} else {DrawImage("2MAG0",(-110,-5));}}
+		if (weapon.magazineSize > 9) {if (weapon.ammocount > 9){DrawImage("2MAG1",(-120,-5));} else {DrawImage("2MAG0",(-120,-5));}}
+		}
+		
+		if (weapon.magazineSize > 20)
+		{
+		if (weapon.magazineSize > 0) {if (weapon.ammocount > 0){DrawImage("3MAG1",(-30,-5));} else {DrawImage("3MAG0",(-30,-5));}}
+		if (weapon.magazineSize > 1) {if (weapon.ammocount > 1){DrawImage("3MAG1",(-32,-5));} else {DrawImage("3MAG0",(-32,-5));}}
+		if (weapon.magazineSize > 2) {if (weapon.ammocount > 2){DrawImage("3MAG1",(-34,-5));} else {DrawImage("3MAG0",(-34,-5));}}
+		if (weapon.magazineSize > 3) {if (weapon.ammocount > 3){DrawImage("3MAG1",(-36,-5));} else {DrawImage("3MAG0",(-36,-5));}}
+		if (weapon.magazineSize > 4) {if (weapon.ammocount > 4){DrawImage("3MAG1",(-38,-5));} else {DrawImage("3MAG0",(-38,-5));}}
+		if (weapon.magazineSize > 5) {if (weapon.ammocount > 5){DrawImage("3MAG1",(-40,-5));} else {DrawImage("3MAG0",(-40,-5));}}
+		if (weapon.magazineSize > 6) {if (weapon.ammocount > 6){DrawImage("3MAG1",(-42,-5));} else {DrawImage("3MAG0",(-42,-5));}}
+		if (weapon.magazineSize > 7) {if (weapon.ammocount > 7){DrawImage("3MAG1",(-44,-5));} else {DrawImage("3MAG0",(-44,-5));}}
+		if (weapon.magazineSize > 8) {if (weapon.ammocount > 8){DrawImage("3MAG1",(-46,-5));} else {DrawImage("3MAG0",(-46,-5));}}
+		if (weapon.magazineSize > 9) {if (weapon.ammocount > 9){DrawImage("3MAG1",(-48,-5));} else {DrawImage("3MAG0",(-48,-5));}}
+		if (weapon.magazineSize > 10) {if (weapon.ammocount > 10){DrawImage("3MAG1",(-50,-5));} else {DrawImage("3MAG0",(-50,-5));}}
+		if (weapon.magazineSize > 11) {if (weapon.ammocount > 11){DrawImage("3MAG1",(-52,-5));} else {DrawImage("3MAG0",(-52,-5));}}
+		if (weapon.magazineSize > 12) {if (weapon.ammocount > 12){DrawImage("3MAG1",(-54,-5));} else {DrawImage("3MAG0",(-54,-5));}}
+		if (weapon.magazineSize > 13) {if (weapon.ammocount > 13){DrawImage("3MAG1",(-56,-5));} else {DrawImage("3MAG0",(-56,-5));}}
+		if (weapon.magazineSize > 14) {if (weapon.ammocount > 14){DrawImage("3MAG1",(-58,-5));} else {DrawImage("3MAG0",(-58,-5));}}
+		if (weapon.magazineSize > 15) {if (weapon.ammocount > 15){DrawImage("3MAG1",(-60,-5));} else {DrawImage("3MAG0",(-60,-5));}}
+		if (weapon.magazineSize > 16) {if (weapon.ammocount > 16){DrawImage("3MAG1",(-62,-5));} else {DrawImage("3MAG0",(-62,-5));}}
+		if (weapon.magazineSize > 17) {if (weapon.ammocount > 17){DrawImage("3MAG1",(-64,-5));} else {DrawImage("3MAG0",(-64,-5));}}
+		if (weapon.magazineSize > 18) {if (weapon.ammocount > 18){DrawImage("3MAG1",(-66,-5));} else {DrawImage("3MAG0",(-66,-5));}}
+		if (weapon.magazineSize > 19) {if (weapon.ammocount > 19){DrawImage("3MAG1",(-68,-5));} else {DrawImage("3MAG0",(-68,-5));}}
+		if (weapon.magazineSize > 20) {if (weapon.ammocount > 20){DrawImage("3MAG1",(-70,-5));} else {DrawImage("3MAG0",(-70,-5));}}
+		if (weapon.magazineSize > 21) {if (weapon.ammocount > 21){DrawImage("3MAG1",(-72,-5));} else {DrawImage("3MAG0",(-72,-5));}}
+		if (weapon.magazineSize > 22) {if (weapon.ammocount > 22){DrawImage("3MAG1",(-74,-5));} else {DrawImage("3MAG0",(-74,-5));}}
+		if (weapon.magazineSize > 23) {if (weapon.ammocount > 23){DrawImage("3MAG1",(-76,-5));} else {DrawImage("3MAG0",(-76,-5));}}
+		if (weapon.magazineSize > 24) {if (weapon.ammocount > 24){DrawImage("3MAG1",(-78,-5));} else {DrawImage("3MAG0",(-78,-5));}}
+		if (weapon.magazineSize > 25) {if (weapon.ammocount > 25){DrawImage("3MAG1",(-80,-5));} else {DrawImage("3MAG0",(-80,-5));}}
+		if (weapon.magazineSize > 26) {if (weapon.ammocount > 26){DrawImage("3MAG1",(-82,-5));} else {DrawImage("3MAG0",(-82,-5));}}
+		if (weapon.magazineSize > 27) {if (weapon.ammocount > 27){DrawImage("3MAG1",(-84,-5));} else {DrawImage("3MAG0",(-84,-5));}}
+		if (weapon.magazineSize > 28) {if (weapon.ammocount > 28){DrawImage("3MAG1",(-86,-5));} else {DrawImage("3MAG0",(-86,-5));}}
+		if (weapon.magazineSize > 29) {if (weapon.ammocount > 29){DrawImage("3MAG1",(-88,-5));} else {DrawImage("3MAG0",(-88,-5));}}
+		if (weapon.magazineSize > 30) {if (weapon.ammocount > 30){DrawImage("3MAG1",(-90,-5));} else {DrawImage("3MAG0",(-90,-5));}}
+		if (weapon.magazineSize > 31) {if (weapon.ammocount > 31){DrawImage("3MAG1",(-92,-5));} else {DrawImage("3MAG0",(-92,-5));}}
+		if (weapon.magazineSize > 32) {if (weapon.ammocount > 32){DrawImage("3MAG1",(-94,-5));} else {DrawImage("3MAG0",(-94,-5));}}
+		if (weapon.magazineSize > 33) {if (weapon.ammocount > 33){DrawImage("3MAG1",(-96,-5));} else {DrawImage("3MAG0",(-96,-5));}}
+		if (weapon.magazineSize > 34) {if (weapon.ammocount > 34){DrawImage("3MAG1",(-98,-5));} else {DrawImage("3MAG0",(-98,-5));}}
+		if (weapon.magazineSize > 35) {if (weapon.ammocount > 35){DrawImage("3MAG1",(-100,-5));} else {DrawImage("3MAG0",(-100,-5));}}
+		if (weapon.magazineSize > 36) {if (weapon.ammocount > 36){DrawImage("3MAG1",(-102,-5));} else {DrawImage("3MAG0",(-102,-5));}}
+		if (weapon.magazineSize > 37) {if (weapon.ammocount > 37){DrawImage("3MAG1",(-104,-5));} else {DrawImage("3MAG0",(-104,-5));}}
+		if (weapon.magazineSize > 38) {if (weapon.ammocount > 38){DrawImage("3MAG1",(-106,-5));} else {DrawImage("3MAG0",(-106,-5));}}
+		if (weapon.magazineSize > 39) {if (weapon.ammocount > 39){DrawImage("3MAG1",(-108,-5));} else {DrawImage("3MAG0",(-108,-5));}}
+		if (weapon.magazineSize > 40) {if (weapon.ammocount > 40){DrawImage("3MAG1",(-110,-5));} else {DrawImage("3MAG0",(-110,-5));}}
+		if (weapon.magazineSize > 41) {if (weapon.ammocount > 41){DrawImage("3MAG1",(-112,-5));} else {DrawImage("3MAG0",(-112,-5));}}
+		if (weapon.magazineSize > 42) {if (weapon.ammocount > 42){DrawImage("3MAG1",(-114,-5));} else {DrawImage("3MAG0",(-114,-5));}}
+		if (weapon.magazineSize > 43) {if (weapon.ammocount > 43){DrawImage("3MAG1",(-116,-5));} else {DrawImage("3MAG0",(-116,-5));}}
+		if (weapon.magazineSize > 44) {if (weapon.ammocount > 44){DrawImage("3MAG1",(-118,-5));} else {DrawImage("3MAG0",(-118,-5));}}
+		if (weapon.magazineSize > 45) {if (weapon.ammocount > 45){DrawImage("3MAG1",(-120,-5));} else {DrawImage("3MAG0",(-120,-5));}}
+		if (weapon.magazineSize > 46) {if (weapon.ammocount > 46){DrawImage("3MAG1",(-122,-5));} else {DrawImage("3MAG0",(-122,-5));}}
+		if (weapon.magazineSize > 47) {if (weapon.ammocount > 47){DrawImage("3MAG1",(-124,-5));} else {DrawImage("3MAG0",(-124,-5));}}
+		if (weapon.magazineSize > 48) {if (weapon.ammocount > 48){DrawImage("3MAG1",(-126,-5));} else {DrawImage("3MAG0",(-126,-5));}}
+		if (weapon.magazineSize > 49) {if (weapon.ammocount > 49){DrawImage("3MAG1",(-128,-5));} else {DrawImage("3MAG0",(-128,-5));}}
+		if (weapon.magazineSize > 50) {if (weapon.ammocount > 50){DrawImage("3MAG1",(-130,-5));} else {DrawImage("3MAG0",(-130,-5));}}
+		}
+		
 		if (ammotype1 != null)
 		{
 			if (ammotype1 && weapon && weapon.magazineSize > 0)
 			{
 				DrawInventoryIcon(ammotype1, (-14, -4));
-				DrawString(mHUDFont, StringStruct.Format("%d/%d", weapon.ammoCount, ammoType1.amount), (-30, -20),
+				DrawString(mHUDFont, StringStruct.Format("%d/%d", weapon.ammoCount, ammoType1.amount), (-30, -30),
 						   DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
 				invY -= 20;
 			}
 			else
 			{
 				DrawInventoryIcon(ammotype1, (-14, -4));
-				DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-30, -20), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
+				DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-30, -30), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
 				invY -= 20;
 			}
 		}

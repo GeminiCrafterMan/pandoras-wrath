@@ -1,5 +1,7 @@
 class GWM_Revolver : GWM_WeaponBase
 {
+
+
 	Default
 	{
 		//$Category Weapons
