@@ -7,6 +7,7 @@ weapons/pistolclipout	"Sounds/Weapons/Slot 2/Pistol/pistol_clipout.wav"
 weapons/pistolclipin	"Sounds/Weapons/Slot 2/Pistol/pistol_clipin.wav"
 weapons/pistolslidefwd	"Sounds/Weapons/Slot 2/Pistol/pistol_slideforward.wav"
 weapons/pistolslideback	"Sounds/Weapons/Slot 2/Pistol/pistol_slideback.wav"
+weapons/pistolTfire		"Sounds/Weapons/Slot 2/Pistol/pistol_spfire.wav"
 
 // SMG
 weapons/smgfire		"Sounds/Weapons/Slot 2/SMG/smg_fire.wav"

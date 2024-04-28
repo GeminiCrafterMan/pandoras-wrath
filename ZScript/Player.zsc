@@ -12,12 +12,16 @@ class GWM_Player : DoomPlayer
 	int FireBurnDelay;
 	int AcidWeakDelay;
 	//self.Player.ReadyWeapon;
+	int VulcanRage;
+		int VulcanInc;
 	int ChargedRockets;
 		int ChargedRocketDelay;
 	int ChargedGrenadeDelay;
 		int ChargedGrenades;
 	int ShotgunSpreadDelay;
+	
 	int PandoraChargeDelay;
+	
 	bool PW_FiringGrenade;
 	
 	override void BeginPlay()
@@ -83,6 +87,11 @@ class GWM_Player : DoomPlayer
 		
 		self.speed = 1 + (0.2*self.CountInv("GWM_Speedupgrades")) - (0.004 *self.CountInv("IceSlowCount"));	
 		TakeInventory("IceSlowCount",1);
+		
+		if(self.speed < 0.015)
+		{
+		 self.speed = 0.015;
+		}
 		
 	// G: WHY DID ADDING self. IN FRONT OF EACH ChargedRocketDelay FIX IT???
 	// M: Zscript bullshit strikes again!!!
@@ -284,3 +293,40 @@ class GWM_KickPuff : GWM_FistPuff
 }
 
 Class GWM_IsPlayer : Inventory {}
+
+Class GWM_VBMode : Powerup
+{
+	Default
+	{
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	//Powerup.Type "PowerStandin";
+	Powerup.Colormap 0.0, 0.0, 0.0, 0.95,0.0,0.0;
+	Powerup.Duration -800;
+	}
+}
+
+Class GWM_GBMode : Powerup
+{
+	Default
+	{
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	//Powerup.Type "PowerStandin";
+	Powerup.Colormap 0.0, 0.0, 0.0, 0.85,0.9,0.3;
+	Powerup.Duration -800;
+	}
+}
+
+Class GWM_ASSMode : Powerup
+{
+	Default
+	{
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	//Powerup.Type "PowerStandin";
+	Powerup.Colormap 0.0, 1.0, 1.0, 1.0,0.0,0.0;
+	Powerup.Duration -200;
+	}
+}
+

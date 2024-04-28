@@ -28,8 +28,6 @@ script "PandorasBox" (void)
 		SetActorProperty(0,1,APROP_Invulnerable);
 		
 		SetHudSize(360,256,0);
-		Delay(1);
-		
 		wepslot = random(-1,20);
 		weprarity = random(0,35);
 		
@@ -394,6 +392,11 @@ script "PandorasBox" (void)
 				{
 					LocalAmbientSound("menu/choose",127);
 					Takeinventory("PowerTimeFreezer2",1);
+					if (menusel == 0) //Random
+					{
+					ACS_NamedExecute("RandomBoxPicker",0,0,0,0);
+					}
+					
 					if (menusel == 1) //UPGRADE
 					{
 						if (upgslot == 0) { GiveInventory("GWM_HPupgrade", 50);}
@@ -471,7 +474,18 @@ script "PandorasBox" (void)
 					}
 					
 					Takeinventory("GWM_PandoraPoints",CheckInventory("GWM_PandoraPointsCap"));
-					GiveInventory("GWM_PandoraPointsCap",50);
+					
+					if (menusel == 0)
+					{GiveInventory("GWM_PandoraPointsCap",20);}
+					if (menusel == 1)
+					{GiveInventory("GWM_PandoraPointsCap",45);}
+					if (menusel == 2)
+					{GiveInventory("GWM_PandoraPointsCap",40);}
+					if (menusel == 3)
+					{GiveInventory("GWM_PandoraPointsCap",35);}
+					if (menusel == 4)
+					{GiveInventory("GWM_PandoraPointsCap",50);}
+					
 					
 					SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
 					

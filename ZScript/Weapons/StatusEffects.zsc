@@ -2,7 +2,7 @@ class IceSlowCount : Inventory
 {
 	Default
 	{
-		Inventory.MaxAmount 250;
+		Inventory.MaxAmount 750;
 	}
 }
 
