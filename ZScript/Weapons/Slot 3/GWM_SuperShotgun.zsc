@@ -5,6 +5,12 @@ class GWM_SuperShotgun : GWM_WeaponBase
 	double xoffset;
 	double yoffset;
 	
+	action void A_EjectSSGCasings()
+	{
+		ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, 4, -12));
+		ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, 8, -12));
+	}
+
 	Default
 	{
 		//$Category Weapons
@@ -136,11 +142,7 @@ class GWM_SuperShotgun : GWM_WeaponBase
 		Reload:
 			SSGG FGHIJK 3;
 			SSGG L 3 A_StartSound("weapons/ssgo", CHAN_BODY);
-			SSGG M 2 
-			{
-				ZWL_EjectCasing("GWM_ShotgunCasing", true);
-				ZWL_EjectCasing("GWM_ShotgunCasing", true, offset: (24, 4, -10));
-			}
+			SSGG M 2 A_EjectSSGCasings;
 			SSGG N 6;
 			SSGG OPQRS 2;
 			SSGG S 3 A_StartSound("weapons/ssgl", CHAN_BODY);
@@ -207,14 +209,10 @@ class GWM_SuperShotgun : GWM_WeaponBase
 		Reload.ChargeShot:
 			SSGG HIJK 3;
 			SSGG L 3 A_StartSound("weapons/ssgo", CHAN_BODY);
-			SSGG M 2 
-			{
-				ZWL_EjectCasing("GWM_ShotgunCasing", true);
-				ZWL_EjectCasing("GWM_ShotgunCasing", true, offset: (24, 4, -10));
-			}
+			SSGG M 2 A_EjectSSGCasings;
 			SSGG N 6;
 			SSGG OPQRS 2;
-			SSGG S 3 ZWL_Reload();
+			SSGG S 3 A_StartSound("weapons/ssgl", CHAN_BODY);
 			SSGG TUVVV 2;
 			SSGG W 3 A_StartSound("weapons/ssgc", CHAN_BODY);
 			SSGG XYZZ 2;

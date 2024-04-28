@@ -269,10 +269,6 @@ Brightmap Sprite ZSHFB0 { Map ZSHFB0 DisableFullbright }
 Brightmap Sprite SKSFA0 { Map SKSFA0 DisableFullbright }
 Brightmap Sprite SKSFB0 { Map SKSFB0 DisableFullbright }
 // Super Shotgun
-Brightmap Sprite SSGFA0 { Map SSGFA0 DisableFullbright }
-Brightmap Sprite SSGFB0 { Map SSGFB0 DisableFullbright }
-Brightmap Sprite SSGGA0 { Map SSGGA0 DisableFullbright }
-Brightmap Sprite SSGGZ0 { Map BMSSGGZ0 DisableFullbright }
 // Burst Rifle
 Brightmap Sprite RIFLA0 { Map RIFLA0 DisableFullbright }
 Brightmap Sprite RIFLB0 { Map RIFLB0 DisableFullbright }
@@ -298,14 +294,7 @@ Brightmap Sprite MINFF0 { Map MINFF0 DisableFullbright }
 Brightmap Sprite MINFG0 { Map MINFG0 DisableFullbright }
 Brightmap Sprite MINFH0 { Map MINFH0 DisableFullbright }
 // Mad Vulcan
-Brightmap Sprite VLCFA0 { Map VLCFA0 DisableFullbright }
-Brightmap Sprite VLCFB0 { Map VLCFB0 DisableFullbright }
-Brightmap Sprite VLCFC0 { Map VLCFC0 DisableFullbright }
-Brightmap Sprite VLCFD0 { Map VLCFD0 DisableFullbright }
-Brightmap Sprite VLCFE0 { Map VLCFE0 DisableFullbright }
-Brightmap Sprite VLCFF0 { Map VLCFF0 DisableFullbright }
-Brightmap Sprite VLCFG0 { Map VLCFG0 DisableFullbright }
-Brightmap Sprite VLCFH0 { Map VLCFH0 DisableFullbright }
+// Basilisk
 // Frost Fang
 Brightmap Sprite FSTFA0 { Map FSTFA0 DisableFullbright }
 Brightmap Sprite FSTFB0 { Map FSTFB0 DisableFullbright }

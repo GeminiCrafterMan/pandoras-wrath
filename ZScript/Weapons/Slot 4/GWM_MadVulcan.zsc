@@ -40,59 +40,29 @@ class GWM_MadVulcan : GWM_WeaponBase
 		Fire:
 			// rev the chaingun
 			VLCG A 1 A_StartSound("weapons/vulcanup", CHAN_BODY);
-			VLCG AABBBBCCCDDEEFGHACEG 1;
+			VLCG AABBBBCCCDDAABCDACAC 1;
 			VLCG A 0 A_StartSound("weapons/vulcanloop", CHAN_BODY, CHANF_LOOPING);
 			VLCG A 0 A_ReFire("Hold");
 			Goto Release;
 		Hold:
-			VLCG A 1 {A_FireMVulcan(); A_Overlay(PSP_FLASH, "FlashAE");A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
-			VLCG E 1 {
-				A_FireMVulcan();
-				return ZWL_JumpIfEmpty("Release");
-			}
-			VLCG B 1 {A_FireMVulcan(); A_Overlay(PSP_FLASH, "FlashBF"); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
+			VLCG E 1 {A_FireMVulcan(); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
 			VLCG F 1 {
 				A_FireMVulcan();
 				return ZWL_JumpIfEmpty("Release");
 			}
-			VLCG E 0 A_ReFire("Hold2");
-			Goto Release;
-		Hold2:
-			VLCG C 1 {A_FireMVulcan(); A_Overlay(PSP_FLASH, "FlashCG"); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
-			VLCG G 1 {
-				A_FireMVulcan();
-				return ZWL_JumpIfEmpty("Release");
-			}
-			VLCG D 1 {A_FireMVulcan(); A_Overlay(PSP_FLASH, "FlashDH"); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
+			VLCG G 1 {A_FireMVulcan(); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);}
 			VLCG H 1 {
 				A_FireMVulcan();
-				ZWL_EjectCasing("GWM_ChaingunLink", true, -23, 8, 16, (24, 0, -16));
 				return ZWL_JumpIfEmpty("Release");
 			}
-			VLCG H 0 A_ReFire;
+			VLCG E 0 A_ReFire;
 			Goto Release;
 		Release:
-			VLCG H 1 A_StartSound("weapons/vulcandn", CHAN_BODY);
-			VLCG ABCDEEFFFGGGGHHHHH 1;
+			VLCG D 1 A_StartSound("weapons/vulcandn", CHAN_BODY);
+			VLCG ABCDAABBBCCCCDDDDD 1;
 			//VLCG GFFEEDDDCCCBBBBAAA 1;
 			TNT1 A 0 A_CheckReload;
 			Goto Ready;
-		FlashAE:
-			VLCF A 1 Bright A_Light1;
-			VLCF E 1 Bright A_Light1;
-			Stop;
-		FlashBF:
-			VLCF B 1 Bright A_Light1;
-			VLCF F 1 Bright A_Light1;
-			Stop;
-		FlashCG:
-			VLCF C 1 Bright A_Light1;
-			VLCF G 1 Bright A_Light1;
-			Stop;
-		FlashDH:
-			VLCF D 1 Bright A_Light1;
-			VLCF H 1 Bright A_Light1;
-			Stop;
 		Spawn:
 			VLCG Z -1;
 			Stop;
