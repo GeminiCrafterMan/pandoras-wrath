@@ -28,7 +28,7 @@ script "PandorasBox" (void)
 		SetActorProperty(0,1,APROP_Invulnerable);
 		
 		SetHudSize(360,256,0);
-		wepslot = random(-1,20);
+		wepslot = random(-1,22);
 		weprarity = random(0,35);
 		
 		upgslot = random(0,13);
@@ -90,7 +90,7 @@ script "PandorasBox" (void)
 		{
 		if (CheckInventory("GWM_Minigun")) {restart;}
 		if (CheckInventory("GWM_MadVulcan")) {restart;}
-		if (CheckInventory("GWM_BurningMinigun")) {restart;}
+		if (CheckInventory("GWM_Basilisk")) {restart;}
 		if (weprarity < 7) {restart;}
 		}
 		
@@ -98,7 +98,7 @@ script "PandorasBox" (void)
 		{
 		if (CheckInventory("GWM_Minigun")==0) {if (weprarity < 25) {restart;}}
 		if (CheckInventory("GWM_MadVulcan")) {restart;}
-		if (CheckInventory("GWM_BurningMinigun")) {restart;}
+		if (CheckInventory("GWM_Basilisk")) {restart;}
 		if (weprarity < 14) {restart;}
 		}
 		
@@ -190,7 +190,7 @@ script "PandorasBox" (void)
 		{
 		if (CheckInventory("GWM_Minigun")==0) {restart;}
 		if (CheckInventory("GWM_MadVulcan")==0) {if (weprarity < 35) {restart;}}
-		if (CheckInventory("GWM_BurningMinigun")) {restart;}
+		if (CheckInventory("GWM_Basilisk")) {restart;}
 		if (weprarity < 14) {restart;}
 		}
 		
@@ -385,8 +385,8 @@ script "PandorasBox" (void)
 				if (wepslot == 18) { SetFont("SMALLFONT"); HudMessage(s:"Flame Shot";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 19) { SetFont("SMALLFONT"); HudMessage(s:"Perforator";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 20) { SetFont("SMALLFONT"); HudMessage(s:"Gold Wand";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 21) { SetFont("SMALLFONT"); HudMessage(s:"Bouncer2";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 21) { SetFont("SMALLFONT"); HudMessage(s:"Hot MiniGun";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 21) { SetFont("SMALLFONT"); HudMessage(s:"Phoenix";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 22) { SetFont("SMALLFONT"); HudMessage(s:"Basilisk";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				
 				if (buttons & BT_ATTACK && !(oldbuttons & BT_ATTACK) || buttons & BT_USE && !(oldbuttons & BT_USE))
 				{
@@ -469,7 +469,7 @@ script "PandorasBox" (void)
 						if (wepslot == 19) { GiveInventory("GWM_Perforator",1);}
 						if (wepslot == 20) { GiveInventory("GWM_GoldWand",1);}
 						if (wepslot == 21) { GiveInventory("GWM_GoldenBouncer",1);}
-						if (wepslot == 22) { GiveInventory("GWM_BurningMinigun",1);}
+						if (wepslot == 22) { GiveInventory("GWM_Basilisk",1);}
 						
 					}
 					
