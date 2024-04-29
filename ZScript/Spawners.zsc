@@ -87,7 +87,7 @@ class GWM_ChainsawSpawner : GWM_WeaponSpawner replaces Chainsaw
 {
 	Default
 	{
-		DropItem "GWM_EldritchAnnihilator", 255, 1;
+//		DropItem "GWM_EldritchAnnihilator", 255, 1;	// G: taking this out until it's at least a little more finished, sorry man lol
 		DropItem "GWM_AcidCannon", 255, 4;
 		DropItem "GWM_FlameThrower", 255, 4;
 		DropItem "GWM_Impactor", 255, 8;

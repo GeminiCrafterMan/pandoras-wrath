@@ -12,7 +12,7 @@ class GWM_Pistol : GWM_WeaponBase replaces Pistol
 		Weapon.AmmoType1 "GWM_HollowPointMagazine";
 		Weapon.AmmoGive 16;
 
-		ZWeapon.MagazineSize 15;
+		ZWeapon.MagazineSize 16;
 		ZWeapon.ReloadSound "weapons/pistolclipin";
 		ZWeapon.ClickSound "weapons/pistoldryfire";
 
@@ -109,7 +109,7 @@ class GWM_Pistol : GWM_WeaponBase replaces Pistol
 			TNT1 A 0 ZWL_EjectCasing("GWM_PistolEmptyMag", true, 45, 2, 16, (24, 0, -24));
 			PSTG M 4;
 			PSTG NOPQR 2;
-			TNT1 A 0 ZWL_Reload(-1);
+			TNT1 A 0 ZWL_Reload();
 			TNT1 A 0 {invoker.iswimpy = 0;}
 			PSTG R 4;
 			TNT1 A 0 A_StartSound("weapons/pistolslidefwd", CHAN_AUTO);

@@ -3,7 +3,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 	Default
 	{
 		//$Category Weapons
-		//$Title ""Slayer's Kahuna" Shotgun
+		//$Title "\"White Wedding\" Shotgun
 		Weapon.SelectionOrder 1300;
 		Inventory.PickupSound "weapons/skpickup";
 		Weapon.UpSound "weapons/draw_secondary";
@@ -25,7 +25,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 	States
 	{
 		Ready:
-			SKSG AAAA 1 ZWL_WeaponReady( );
+			SKSG AAAA 1 ZWL_WeaponReady();
 			Loop;
 		Select:
 			TNT1 A 0 {
@@ -213,7 +213,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 			SKSG KLM 2;
 			TNT1 A 0 ZWL_Reload(1);
 			SKSG NO 2;
-			SKSG E 0 ZWL_JumpIfReloaded("Reload.End", true, true);
+			SKSG E 0 ZWL_JumpIfReloaded("Reload.End", true);
 			Loop;
 		Reload.End:
 			SKSG DDCCC 1;

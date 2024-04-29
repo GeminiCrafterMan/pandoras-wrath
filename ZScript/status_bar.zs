@@ -369,12 +369,12 @@ class GWM_StatusBar : BaseStatusBar
 				DrawInventoryIcon(ammotype1, (-14, -4));
 				DrawString(mHUDFont, StringStruct.Format("%d/%d", weapon.ammoCount, ammoType1.amount), (-30, -30),
 						   DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
-				invY -= 20;
+				invY -= 30;
 			}
 			else
 			{
 				DrawInventoryIcon(ammotype1, (-14, -4));
-				DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-30, -30), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
+				DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-30, -20), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
 				invY -= 20;
 			}
 		}

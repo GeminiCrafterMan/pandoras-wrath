@@ -6,7 +6,7 @@ class GWM_TwinPistol : GWM_WeaponBase
 	Default
 	{
 		//$Category Weapons
-		//$Title "Pistol
+		//$Title "Twin Pistol
 		Weapon.SlotNumber 2;
 		Weapon.SelectionOrder 1900;
 		Weapon.UpSound "weapons/draw_secondary";
@@ -14,7 +14,7 @@ class GWM_TwinPistol : GWM_WeaponBase
 		Weapon.AmmoType1 "GWM_HollowPointMagazine";
 		Weapon.AmmoUse2 0;
 		Weapon.AmmoType2 "GWM_HollowPointMagazine";
-		Weapon.AmmoGive 16;
+		Weapon.AmmoGive 24;
 
 		GWM_WeaponBase.BaseVersion "GWM_Pistol";
 		ZWeapon.MagazineSize 24;
@@ -151,7 +151,7 @@ class GWM_TwinPistol : GWM_WeaponBase
 			TNT1 A 0 ZWL_EjectCasing("GWM_PistolEmptyMag", true, 45, 2, 16, (24, 0, -24));
 			PSTG M 4;
 			PSTG NOPQR 2;
-			TNT1 A 0 ZWL_Reload(-1);
+			TNT1 A 0 ZWL_Reload();
 			TNT1 A 0 {invoker.iswimpy = 0;}
 			PSTG R 4;
 			TNT1 A 0 A_StartSound("weapons/pistolslidefwd", CHAN_AUTO);

@@ -22,7 +22,7 @@ class GWM_BurstRifle : GWM_WeaponBase
 		Weapon.AmmoGive 32; // as opposed to 31, since we're firing in bursts of four now
 		Weapon.UpSound "weapons/draw_primary";
 
-		ZWeapon.MagazineSize 31;
+		ZWeapon.MagazineSize 32;
 		ZWeapon.ReloadSound "weapons/riflein";
 		ZWeapon.ClickSound "weapons/92fsdryfire";
 
@@ -37,7 +37,7 @@ class GWM_BurstRifle : GWM_WeaponBase
 	States
 	{
 		Ready:
-			RIFL A 1 ZWL_WeaponReady( );
+			RIFL A 1 ZWL_WeaponReady();
 			Loop;
 		Select:
 			TNT1 A 0 {
@@ -50,10 +50,10 @@ class GWM_BurstRifle : GWM_WeaponBase
 			RIFL QQ 1 {
 				A_WeaponOffset(8, -16, WOF_ADD);
 			}
-			RIFL TTSS 1 ZWL_WeaponReady( );
-			RIFL R 4 {A_StartSound("weapons/riflebak"); ZWL_WeaponReady( );}
-			RIFL SSTT 1 ZWL_WeaponReady( );
-			RIFL Q 1 {A_StartSound("weapons/riflefwd"); ZWL_WeaponReady( );}
+			RIFL TTSS 1 ZWL_WeaponReady();
+			RIFL R 4 {A_StartSound("weapons/riflebak"); ZWL_WeaponReady();}
+			RIFL SSTT 1 ZWL_WeaponReady();
+			RIFL Q 1 {A_StartSound("weapons/riflefwd"); ZWL_WeaponReady();}
 			Goto Ready;
 		Deselect:
 			RIFL AA 1 {
@@ -103,7 +103,7 @@ class GWM_BurstRifle : GWM_WeaponBase
 			RIFL EF 2;
 			TNT1 A 0 ZWL_EjectCasing("GWM_PistolEmptyMag", true, 45, 2, 16, (24, 0, -24));
 			RIFL GHIJK 3;
-			RIFL L 4 ZWL_Reload(-1);
+			RIFL L 4 ZWL_Reload();
 			RIFL MD 2;
 			RIFL NO 2;
 			RIFL P 4 A_StartSound("weapons/riflefwd");

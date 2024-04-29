@@ -12,7 +12,7 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 7;
 		
-		ZWeapon.MagazineSize 6;
+		ZWeapon.MagazineSize 7;
 		ZWeapon.ReloadSound "weapons/shell_load";
 		ZWeapon.ClickSound "weapons/skempty";
 
@@ -107,7 +107,7 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 			ZSHG IJK 2;
 			TNT1 A 0 ZWL_Reload(1);
 			ZSHG LM 2;
-			ZSHG E 0 ZWL_JumpIfReloaded("Reload.End", true, true);
+			ZSHG E 0 ZWL_JumpIfReloaded("Reload.End", true);
 			Loop;
 		Reload.End:
 			ZSHG DDCCC 1;

@@ -13,7 +13,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 6;
 
-		ZWeapon.MagazineSize 5;
+		ZWeapon.MagazineSize 6;
 		ZWeapon.ReloadSound "weapons/shell_load";
 		ZWeapon.ClickSound "weapons/skempty";
 		ZWeapon.MaxCharge 30;
@@ -25,7 +25,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 	States
 	{
 		Ready:
-			ISHT A 1 ZWL_WeaponReady(ZRF_ExtraRound);
+			ISHT A 1 ZWL_WeaponReady();
 			Loop;
 		Select:
 			TNT1 A 0 {
@@ -283,7 +283,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 			ISHT FGH 2;
 			TNT1 A 0 ZWL_Reload(1);
 			ISHT IFM 2;
-			ISHT M 0 ZWL_JumpIfReloaded("Reload.End", true, true);
+			ISHT M 0 ZWL_JumpIfReloaded("Reload.End", true);
 			Loop;
 		Reload.End:
 			ISHT LK 2;
