@@ -17,6 +17,9 @@ $random weapons/skshot { weapons/skshot1 weapons/skshot2 weapons/skshot3 weapons
 $random weapons/skpump1 { weapons/skpump11 weapons/skpump12 }
 $random weapons/skpump2 { weapons/skpump21 weapons/skpump22 }
 
+// White Wedding. Silk Shedding. Fancy shower, white wedding day.
+weapons/wwshot1		"Sounds/Weapons/Slot 3/White Wedding/billyfire1"
+weapons/wwshot2 	"Sounds/Weapons/Slot 3/White Wedding/billyfire2"
 
 // Zombie Shotgun
 weapons/zsgshot		"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_fire.ogg"

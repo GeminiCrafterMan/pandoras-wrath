@@ -43,9 +43,9 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 			ZSHG AA 1 {
 				A_WeaponOffset(-8, -16, WOF_ADD);
 			}
-			ZSHG H 4 {A_StartSound("weapons/zsgpump1"); ZWL_WeaponReady(ZRF_ExtraRound);}
-			ZSHG GGFF 1 ZWL_WeaponReady(ZRF_ExtraRound);
-			ZSHG A 1 {A_StartSound("weapons/zsgpump2"); ZWL_WeaponReady(ZRF_ExtraRound);}
+			ZSHG H 4 {A_StartSound("weapons/zsgpump1"); ZWL_WeaponReady( );}
+			ZSHG GGFF 1 ZWL_WeaponReady( );
+			ZSHG A 1 {A_StartSound("weapons/zsgpump2"); ZWL_WeaponReady( );}
 			Goto Ready;
 		Deselect:
 			ZSHG AA 1 {
@@ -58,7 +58,7 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 			TNT1 A 0 ZWL_QuickLower;
 			Stop;
 		Ready:
-			ZSHG A 1 ZWL_WeaponReady(ZRF_ExtraRound);
+			ZSHG A 1 ZWL_WeaponReady( );
 			Loop;
 		Fire:
 			ZSHG A 1 Bright {

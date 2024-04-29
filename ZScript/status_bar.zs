@@ -183,6 +183,9 @@ class GWM_StatusBar : BaseStatusBar
 			amt1 = GWM_PLAYER(Cplayer.mo).VulcanRage;
 			DrawString(mHUDFont, FormatNumber(amt1,3), (-84, -106), translation: Font.CR_ORANGE);
 			
+			amt1 = GWM_PLAYER(Cplayer.mo).WeddingCharges;
+			DrawString(mHUDFont, FormatNumber(amt1,3), (-84, -90), translation: Font.CR_WHITE);
+			
 		}
 		amt1 = GetAmount("GWM_KahunaSpread");
 		DrawString(mHUDFont, FormatNumber(amt1,3), (-44, -122), translation: Font.CR_Gold);

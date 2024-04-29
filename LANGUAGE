@@ -18,6 +18,7 @@ GOTWAND = "\c[White]You picked up the \c[Gold]Gold Wand\c[White]! (Slot 2)";
 // Slot 3
 GOTZOMBIESHOTGUN = "\c[White]You picked up the \c[Red]Zombie Shotgun\c[White]! (Slot 3)";
 GOTSLAYERSKAHUNA = "\c[White]You picked up the \c[Red]Slayer's Kahuna\c[White]! (Slot 3)";
+GOTWHITEWEDDING = "\c[White]You picked up the \c[Black]White Wedding\c[White]! It's a nice day! (Slot 3)";
 GOTSUPERSHOTGUN = "\c[White]You picked up the \c[Red]Super Shotgun\c[White]! Oh, yes. (Slot 3)";
 GOTIMPALERCROSSBOW = "\c[White]You picked up the \c[DarkGray]Impaler Crossbow\c[White]! (Slot 3)";
 // Slot 4
@@ -126,6 +127,7 @@ KILLICESHOTGUN = "%o got frozen solid by %k's Ice Shotgun.";
 KILLKICK = "%o got %p ass kicked by %k.";
 KILLZOMBIESHOTGUN = "%o was somehow killed by %k's Zombie Shotgun.";
 KILLSLAYERSKAHUNA = "%o caught the wave (of pellets) produced by %k's Slayer's Kahuna.";
+KILLWHITEWEDDING = "%o's silk was shedded by %k's White Wedding.";
 //KILLPFSUPERSHOTGUN = "%o was instantly turned into a popsicle by %k's Perfect Freeze Super Shotgun.";
 KILLPFMISSILELAUNCHER = "%o was instantly turned into a popsicle by %k's Perfect Freeze Missile Launcher.";
 KILLSUPERSHOTGUN = "%o was splattered by %k's Super Shotgun.";
@@ -242,6 +244,7 @@ TAG_IMPALERCROSSBOW = "Impaler Crossbow";
 //TAG_PFSUPERSHOTGUN = "Perfect Freeze Super Shotgun";
 TAG_PFMISSILELAUNCHER = "Perfect Freeze Missile Launcher";
 TAG_SLAYERSKAHUNA = "\"Slayer's Kahuna\" Shotgun";
+TAG_WhiteWedding = "White Wedding";
 TAG_ZOMBIESHOTGUN = "Zombie Shotgun";
 TAG_SUPERSHOTGUN = "Super Shotgun";
 TAG_BURSTRIFLE = "Burst Rifle";

@@ -24,7 +24,7 @@ class GWM_SMG : GWM_WeaponBase
 	States
 	{
 		Ready:
-			SMGG A 1 ZWL_WeaponReady(ZRF_ExtraRound);
+			SMGG A 1 ZWL_WeaponReady( );
 			Loop;
 		Select:
 			TNT1 A 0 {

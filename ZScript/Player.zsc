@@ -2,6 +2,13 @@ class GWM_Speedupgrades : Inventory { Default {Inventory.Maxamount 50000;}}
 class GWM_HPupgrade : MaxHealth { Default {Inventory.Maxamount 9900;}}
 class GWM_HealAmount : Inventory { Default {Inventory.Maxamount 9999;}}
 class GWM_Healspeed : Inventory { Default {Inventory.Maxamount 4;}}
+Class GWM_WeddingDelay : Powerup
+{
+	Default
+	{
+	Powerup.Duration -45;
+	}
+}
 
 class GWM_Player : DoomPlayer
 {
@@ -19,6 +26,8 @@ class GWM_Player : DoomPlayer
 	int ChargedGrenadeDelay;
 		int ChargedGrenades;
 	int ShotgunSpreadDelay;
+	
+	int WeddingCharges;
 	
 	int PandoraChargeDelay;
 	
@@ -46,6 +55,7 @@ class GWM_Player : DoomPlayer
 				prevPlayerState = player.playerstate;
 			}
 		}
+		
 		if(player.playerstate == PST_DEAD)
 		{
 			player.ReadyWeapon.FOVScale = 0.0;
@@ -67,6 +77,8 @@ class GWM_Player : DoomPlayer
 		}
 		self.healtics = self.healtics + 1;
 		self.healtime = 4 - self.CountInv("GWM_HealSpeed");
+		
+		
 		
 		if(self.CountInv("FireBurnCount") && self.FireBurnDelay > 15)
 		{ 
@@ -154,6 +166,15 @@ class GWM_Player : DoomPlayer
 			self.ShotgunSpreadDelay += 1;
 		else
 			self.ShotgunSpreadDelay += 3;
+			
+		if (self.CountInv("GWM_KahunaSpread") == 0 && !self.CountInv("GWM_WeddingDelay"))
+		{ 
+			self.WeddingCharges = 5;
+		}
+		
+		if (self.CountInv("GWM_WeddingDelay"))
+			{self.WeddingCharges = 0;}
+		
 	}
 	Default
 	{

@@ -1,8 +1,5 @@
-Class GWM_KahunaSpread : Inventory { Default {Inventory.Maxamount 24;}}
-
-class GWM_SlayersKahuna : GWM_WeaponBase
+class GWM_WhiteWedding : GWM_WeaponBase
 {
-	int kahunaspread;
 	Default
 	{
 		//$Category Weapons
@@ -13,16 +10,17 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 		Weapon.AmmoType "GWM_Shell";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 9;
+		Weapon.Slotnumber 3;
 
-		ZWeapon.MagazineSize 9;
+		ZWeapon.MagazineSize 13;
 		ZWeapon.ReloadSound "weapons/shell_load";
 		ZWeapon.ClickSound "weapons/skempty";
 
-		GWM_WeaponBase.BaseVersion "GWM_ZombieShotgun";
-		Tag "$TAG_SLAYERSKAHUNA";
-		Inventory.PickupMessage "$GOTSLAYERSKAHUNA";
-		Obituary "$KILLSLAYERSKAHUNA";
-		AttackSound "weapons/skshot";
+		GWM_WeaponBase.BaseVersion "GWM_SlayersKahuna";
+		GWM_WeaponBase.BaseVersion2 "GWM_ZombieShotgun";
+		Tag "$TAG_WHITEWEDDING";
+		Inventory.PickupMessage "$GOTWHITEWEDDING";
+		Obituary "$KILLWHITEWEDDING";
 	}
 	States
 	{
@@ -66,11 +64,12 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 			Stop;
 		Fire:
 			SKSG A 1 Bright {
+				A_StartSound("weapons/wwshot1");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 10, pellets: 12, spread: 6+(Countinv("GWM_KahunaSpread")*0.4), tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(0, 11, pellets: 15, spread: 6+(Countinv("GWM_KahunaSpread")*0.4), tracerType: "GWM_TracerWhite");
 				
-				A_ChangeVelocity(-Cos(pitch)*2, 0, sin(pitch)*2,CVF_RELATIVE);
+				A_ChangeVelocity(-Cos(pitch)*3, 0, sin(pitch)*3,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 				A_GunFlash();
@@ -101,6 +100,9 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 			SKSG A 0 ZWL_ReFire();
 			Goto Ready;
 		AltFire:
+			TNT1 A 0 A_Jumpif(GWM_Player(player.mo).WeddingCharges > 0,"Altfire2");
+			
+			
 			TNT1 A 0 {
 				if (!invoker.DepleteAmmo(false, true))
 				{
@@ -109,11 +111,12 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 				}
 			}
 			SKSG A 1 Bright {
+				A_StartSound("weapons/wwshot1");
 				A_Overlay(55, "Recoil");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 11, pellets: 12, spread: 5+(Countinv("GWM_KahunaSpread")*0.8), tracerType: "GWM_Tracer");
-				A_ChangeVelocity(-Cos(pitch)*2.5, 0, sin(pitch)*2.5,CVF_RELATIVE);
+				ZWL_FireHitscan(0, 11, pellets: 12, spread: 5+(Countinv("GWM_KahunaSpread")*0.8), tracerType: "GWM_TracerWhite");
+				A_ChangeVelocity(-Cos(pitch)*3.1, 0, sin(pitch)*3.1,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 				A_GunFlash("Flash2");
@@ -121,63 +124,82 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
 				A_QuakeEx(1.5, 1.5, 1.5, 4, 0, 1, "", QF_SHAKEONLY);
 				A_GiveInventory("GWM_KahunaSpread",2);
+				A_GiveInventory("GWM_WeddingDelay",1);
 			}
-			SKSG A 3 Bright;
+			SKSG A 1 Bright;
 			SKSG A 1 Bright {
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
-			SKSG AA 1 Bright;
+			SKSG A 1 Bright;
 			SKSG A 1 {
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
-			SKSG QRSAA 1;
+			SKSG QRSA 1;
 			TNT1 A 0 {
 				ZWL_CheckReload();
 				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (20, 4, -14));
 			}
 			TNT1 A 0 ZWL_ReFire();
-			SKSG FG 2;
-			// G: wh-
-			// G: okay, i guess
-			// M: OLD CODE
-			// M: Did you delete the old code? I don't mind but these comments are gonna look MAD odd.
-			// G: i think it was about you leaving in old code past the Goto Ready but it's been reworked since so it looks like i'm insane :D
-			SKSG H 4 A_StartSound("weapons/skpump1");
-			SKSG IIJJ 1; // These two play on CHAN_BODY because the firing sound is just too fucking long
-			SKSG A 5 A_StartSound("weapons/skpump2");
+			SKSG FG 1;
+			SKSG H 3 A_StartSound("weapons/skpump1");
+			SKSG IIJJ 1;
+			SKSG A 3 A_StartSound("weapons/skpump2");
 			SKSG A 0 ZWL_ReFire();
 			Goto Ready;
+			
+		Altfire2:
+			TNT1 A 0 {
+				if (!invoker.DepleteAmmo(false, true))
+				{
+					A_PlaySound(invoker.clickSound, CHAN_Auto);
+					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Weird, fucked-up way of making it click instead.
+				}
+			}
+			SKSG A 1 Bright {
+				A_StartSound("weapons/wwshot2");
+				A_Overlay(55, "Recoil");
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
+				ZWL_FireHitscan(0, 12, pellets: 18, spread: 7, tracerType: "GWM_TracerWhite2");
+				A_ChangeVelocity(-Cos(pitch)*3.5, 0, sin(pitch)*3.5,CVF_RELATIVE);
+				A_SpawnItemEx("GWM_Flash");
+				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
+				A_GunFlash("Flash2");
+				A_WeaponOffset(0, 52, WOF_INTERPOLATE);
+				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
+				A_QuakeEx(1.5, 1.5, 1.5, 4, 0, 1, "", QF_SHAKEONLY);
+				A_GiveInventory("GWM_KahunaSpread",2);
+				GWM_Player(player.mo).WeddingCharges = GWM_Player(player.mo).WeddingCharges-1;
+			}
+			SKSG A 1 Bright {
+				A_WeaponOffset(0, -10, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
+			}
+			SKSG A 1 {
+				A_WeaponOffset(0, -10, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
+			}
+			SKSG QAS 1;
+			TNT1 A 0 {
+				ZWL_CheckReload();
+				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (20, 4, -14));
+			}
+			TNT1 A 0 ZWL_ReFire();
+			SKSG FG 1 A_GiveInventory("GWM_WeddingDelay",1); 
+			SKSG H 3 A_StartSound("weapons/skpump1");
+			SKSG IIJJ 1;
+			SKSG A 3 A_StartSound("weapons/skpump2");
+			SKSG A 0 ZWL_ReFire();
+			Goto Ready;
+			
 		Spawn:
 			SKSG Z -1;
 			Stop;
 		Flash:
-			SKSF A 1 Bright {
-				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				A_Light1();
-				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
-			}
-			SKSF A 2 Bright A_Light1;
-			SKSF B 3 Bright {
-				A_Light2();
-				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
-			}
-			Goto LightDone;
-		Flash2:
-			SKSF A 1 Bright {
-				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
-				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				A_Light1();
-				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
-			}
-			SKSF A 3 Bright A_Light1;
-			SKSF B 3 Bright {
-				A_Light2();
-				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
-			}
-			Goto LightDone;
+			TNT1 A 5;
+			stop;
 		Reload:
 			TNT1 A 0 {
 				if (!invoker.CheckAmmo(PrimaryFire, false, true))

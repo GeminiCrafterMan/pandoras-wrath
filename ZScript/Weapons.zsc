@@ -7,7 +7,7 @@
 #include "ZScript/Weapons/Slot 1/GWM_Levenbrech.zsc"			// Levenbrech
 
 #include "ZScript/Weapons/Slot 2/GWM_Pistol.zsc"				// Pistol
-	#include "ZScript/Weapons/Slot 2/GWM_TwinPistol.zsc"				// TwinPistol
+	#include "ZScript/Weapons/Slot 2/GWM_TwinPistol.zsc"			// TwinPistol
 #include "ZScript/Weapons/Slot 2/GWM_SMG.zsc"					// SMG
 	#include "ZScript/Weapons/Slot 2/GWM_MP40.zsc"					// MP40
 #include "ZScript/Weapons/Slot 2/GWM_Revolver.zsc"				// Revolver
@@ -15,6 +15,7 @@
 
 #include "ZScript/Weapons/Slot 3/GWM_ZombieShotgun.zsc"			// The beginning of a long road of various scatterguns!
 	#include "ZScript/Weapons/Slot 3/GWM_SlayersKahuna.zsc"			// Slayer's Kahuna
+	#include "ZScript/Weapons/Slot 3/GWM_WhiteWedding.zsc"			// ITS A NICE DAY TO START AGAAAAAAAAIN
 #include "ZScript/Weapons/Slot 3/GWM_SuperShotgun.zsc"			// Super Shotgun
 #include "ZScript/Weapons/Slot 3/GWM_ImpalerCrossbow.zsc"		// Impaler Crossbow
 
