@@ -152,7 +152,6 @@ class GWM_BFG9000Spawner : GWM_WeaponSpawner replaces BFG9000
 	Default
 	{
 		DropItem "GWM_BFG9000";
-		DropItem "GWM_Flamethrower";
 		DropItem "GWM_Bouncer";
 	}
 }
