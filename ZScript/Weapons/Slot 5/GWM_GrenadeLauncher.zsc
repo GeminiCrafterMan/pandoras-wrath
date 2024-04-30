@@ -44,9 +44,6 @@ class GWM_GrenadeLauncher : GWM_WeaponBase
 				let player = GWM_Player(player.mo); 
 				player.PW_FiringGrenade = true; //boolean instead of token.
 			}
-			Goto Fire.Done;
-		
-		Fire.Done:
 			RGLG B 2 A_StartSound("weapons/grenadedrumspin", CHAN_BODY);
 			RGLG C 2;
 			RGLG D 2 A_StartSound("weapons/grenadedrumstop", CHAN_BODY);
