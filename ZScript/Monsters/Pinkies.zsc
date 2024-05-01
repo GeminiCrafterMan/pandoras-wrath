@@ -192,16 +192,16 @@ class GWM_NightmareDemon : Actor
 			NIDM AABB 10 A_Look;
 			Loop;
 		See:
-			NIDM AABBCCDD 2 A_Chase;
+			NIDM AABBCCDD 2 Fast A_Chase;
 			Loop;
 		Melee:
-			NIDM E 6 A_FaceTarget;
-			NIDM F 7 A_FaceTarget;
-			NIDM G 8 A_CustomMeleeAttack(22);
+			NIDM E 6 Fast A_FaceTarget;
+			NIDM F 7 Fast A_FaceTarget;
+			NIDM G 8 Fast A_CustomMeleeAttack(22);
 			Goto See;
 		Pain:
-			NIDM H 2;
-			NIDM H 2 A_Pain;
+			NIDM H 2 Fast;
+			NIDM H 2 Fast A_Pain;
 			Goto See;
 		Death:
 			NIDM I 8;

@@ -39,19 +39,31 @@ $attenuation weapons/bounx2 0.5
 weapons/goldboom	"Sounds/Weapons/Slot 5/Golden Bouncer/BoomPenis"
 $attenuation weapons/goldboom 0.2
 
-
 // Stomper
-stomper/pickup				SSCRSUP
-stomper/fire1				SSCRFI1
-stomper/fire2				SSCRFI2
-stomper/fire3				SSCRFI3
-$random stomper/fire { stomper/fire1 stomper/fire2 stomper/fire3 }
-stomper/explode1			SSCRXP1
-stomper/explode2			SSCRXP2
-stomper/explode3			SSCRXP3
-$random stomper/explode		{ stomper/explode1 stomper/explode2 stomper/explode3 }
-weapons/getstomperrockets	GSROCK
-weapons/getstomperbox		GSROCKBO
+weapons/stomperpickup				"Sounds/Weapons/Slot 5/Stomper/pickup.wav"
+weapons/stomperfire1				"Sounds/Weapons/Slot 5/Stomper/fire1.wav"
+weapons/stomperfire2				"Sounds/Weapons/Slot 5/Stomper/fire2.ogg"
+weapons/stomperfire3				"Sounds/Weapons/Slot 5/Stomper/fire3.ogg"
+weapons/stomperexplode1				"Sounds/Weapons/Slot 5/Stomper/explode1.wav"
+weapons/stomperexplode2				"Sounds/Weapons/Slot 5/Stomper/explode2.wav"
+weapons/stomperexplode3				"Sounds/Weapons/Slot 5/Stomper/explode3.wav"
 
-$limit stomper/missile		0
-$limit stomper/explode		0
+$random weapons/stomperfire 		{ weapons/stomperfire1 weapons/stomperfire2 weapons/stomperfire3 }
+$random weapons/stomperexplode		{ weapons/stomperexplode1 weapons/stomperexplode2 weapons/stomperexplode3 }
+
+$limit weapons/stompermissile		0
+$limit weapons/stomperexplode		0
+
+// Trumpetbuss
+weapons/trumpetraise				"Sounds/Weapons/Slot 5/Trumpetbuss/DEPLOYTB.wav"
+weapons/trumpetnoterip				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTERIP.ogg"
+weapons/trumpetnote1				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRUM.ogg"
+weapons/trumpetnote2				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU2.ogg"
+weapons/trumpetnote3				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU3.ogg"
+weapons/trumpetnote4				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU4.ogg"
+weapons/trumpetnote5				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU5.ogg"
+weapons/trumpetnote6				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU6.ogg"
+weapons/trumpetnote7				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU7.ogg"
+weapons/trumpetboom					"Sounds/Weapons/Slot 5/Trumpetbuss/TRUMBOOM.ogg"
+weapons/trumpetpickup				"Sounds/Weapons/Slot 5/Trumpetbuss/TRUMUP.wav"
+$random weapons/trumpetnote { weapons/trumpetnote1 weapons/trumpetnote2 weapons/trumpetnote3 weapons/trumpetnote4 weapons/trumpetnote5 weapons/trumpetnote6 weapons/trumpetnote7 }

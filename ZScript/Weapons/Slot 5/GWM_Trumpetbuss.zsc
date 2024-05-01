@@ -1,0 +1,152 @@
+class GWM_Trumpetbuss : GWM_WeaponBase
+{
+	Default
+	{
+		Weapon.SlotNumber 5;
+		Tag "$TAG_TRUMPETBUSS";
+		Weapon.SelectionOrder 1300;
+		Weapon.AmmoUse1 1;
+		Weapon.AmmoGive1 5;
+		Weapon.AmmoType1 "GWM_NoteBox";
+		+WEAPON.NOAUTOFIRE
+		Weapon.UpSound "weapons/trumpetraise";
+		Inventory.PickupMessage "$GOTTRUMPETBUSS";
+		AttackSound "weapons/trumpetboom";
+	}
+	States
+	{
+		Ready:
+			GSBT A 1 A_WeaponReady;
+			Loop;
+		Deselect:
+			GSBT A 1 A_Lower(18);
+			Loop;
+		Select:
+			GSBT A 1 A_Raise(18);
+			Loop;
+		Fire:
+			TNT1 A 0 {
+				if (FindInventory(invoker.ammoType1).amount > 1)
+					ZWL_FireProjectile("GWM_TrumpetNote", 0);
+				else
+					ZWL_FireProjectile("GWM_TrumpetNoteLow", 0);
+			}
+			GSBT BC 2 bright;
+			GSBT H 2 bright;
+			GSBT DE 2 bright;
+			TNT1 A 0 A_StartSound("weapons/trumpetpickup", CHAN_5);
+			GSBT FG 3;
+			GSBT A 5;
+			GSBT A 0 A_ReFire;
+			Goto Ready;
+		Spawn:
+			GSBT Z -1;
+			Stop;
+	}
+}
+class GWM_TrumpetNote : Actor
+{
+	action void A_NoteWeave()
+	{
+		A_Weave(5, 0, 1.0, 0);
+		A_SpawnItemEx("GWM_NoteTail", 0, 0, 0, 0, 0, 0, 0, 128);
+		A_ScaleVelocity(1.1);
+	}
+	Default
+	{
+		Radius 11;
+		Height 8;
+		Speed 20;
+		DamageFunction (99);
+		DamageType "Noise";
+		Scale 0.7;
+		Projectile;
+		+RANDOMIZE
+		+DEHEXPLOSION
+		+ROCKETTRAIL
+		Alpha 0.7;
+		SeeSound "weapons/trumpetnote";
+		DeathSound "weapons/rocklx";
+		Obituary "$OB_TRUMPETBUSS";
+	}
+	States
+	{
+	Spawn:
+		GBTP ABCDEFG 2 Bright A_NoteWeave;
+		Loop;
+	Death:
+		TNT1 A 0 {
+			A_Quake(1, 15, 0, 320, "Null");
+			A_Explode();
+			A_SpawnItemEX("GWM_NoteRadExplosion");
+		}
+		TNT1 AAAAAAAAAAAAAAAA 1 A_SpawnItemEX("GWM_NoteGFXExplosion", random(-12, 12), random(-12, 12), random(-6, 6), 0, 0, 0, random(0, 360));
+		Stop;
+	}
+}
+class GWM_TrumpetNoteLow : GWM_TrumpetNote { Default { SeeSound "weapons/trumpetnoterip"; } }
+class GWM_NoteGFXExplosion : Actor
+{
+	Default
+	{
+		Radius 2;
+		Height 2;
+		Scale 0.9;
+		Renderstyle "Add";
+		Alpha 0.5;
+		+NOINTERACTION
+		+NOGRAVITY
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_Jump(256, "Yellow", "Red", "Green", "Blue", "Purple");
+		Red:
+			GBE1 ABCDEF 2 bright;
+			Stop;
+		Yellow:
+			GBE2 ABCDEF 2 bright;
+			Stop;
+		Green:
+			GBE3 ABCDEF 2 bright;
+			Stop;
+		Blue:
+			GBE4 ABCDEF 2 bright;
+			Stop;
+		Purple:
+			GBE5 ABCDEF 2 bright;
+			Stop;
+		}
+}
+class GWM_NoteTail : Actor
+{
+	Default
+	{
+		Projectile;
+		+NOCLIP
+		RenderStyle "Add";
+		Alpha 0.3;
+	}
+	States
+	{
+		Spawn:
+			GBTP H 2 Bright;
+			Stop;
+	}
+}
+class GWM_NoteRadExplosion : Actor
+{
+	Default
+	{
+		Radius 128;
+		Height 256;
+		Speed 0;
+		+NOGRAVITY
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0 A_Explode(10,256,0);
+			Stop;
+	}
+}

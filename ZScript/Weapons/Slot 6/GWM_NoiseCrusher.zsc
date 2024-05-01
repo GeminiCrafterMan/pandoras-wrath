@@ -7,13 +7,12 @@ class GWM_NoiseCrusher : GWM_WeaponBase
 		//$Title "Noise Crusher
 		Weapon.UpSound "weapons/draw_primary";
 		Weapon.SlotNumber 6;
-		Weapon.AmmoUse1 5;
+		Weapon.AmmoType "GWM_Cell";
+		Weapon.AmmoUse 5;
 		Weapon.AmmoGive 40;
 		Inventory.PickupMessage "$GOTNOISECRUSHER";
 		Obituary "$KILLNOISECRUSHER";
 		Tag "$TAG_NOISECRUSHER";
-		Weapon.AmmoType "GWM_Cell";
-		Inventory.Icon "NCRGZ0";
 	}
 	States
 	{
@@ -122,7 +121,7 @@ class GWM_NoiseCrush : Actor
 		DamageFunction (27);
 		BounceSound "weapons/noisebounce";
 		DeathSound "weapons/noisehit";
-//		damagetype "NoiseCrush1";
+		DamageType "Noise";
 		Obituary "$KILLNOISECRUSHER";
 		speed 28;
 		+FORCEXYBILLBOARD
@@ -192,7 +191,7 @@ class GWM_NoiseCrush2 : Actor
 		Radius 20;
 		Height 10;
 		DamageFunction (80);
-//		damagetype "NoiseCrush2";
+		DamageType "Noise";
 		DeathSound "weapons/noisehit";
 		Obituary "$KILLNOISECRUSHER";
 		+FORCEXYBILLBOARD

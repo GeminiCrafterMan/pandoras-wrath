@@ -60,12 +60,17 @@ pickups/armorbonus			"Sounds/Pickups/Armor Bonus.wav"
 pickups/healthitem		"Sounds/Pickups/HealthItem.wav"
 
 // Ammo
-pickups/magazine			"Sounds/Pickups/Magazine.wav"
-pickups/magazinebox			"Sounds/Pickups/Magazine Box.wav"
-pickups/belt				"Sounds/Pickups/Belt.wav"
-pickups/shells				"Sounds/Pickups/Shells.wav"
-pickups/gas					"Sounds/Pickups/Gas.wav"
-pickups/backpack			"Sounds/Pickups/Backpack.wav"
+pickups/magazine			"Sounds/Pickups/Ammo/Magazine.wav"
+pickups/magazinebox			"Sounds/Pickups/Ammo/Magazine Box.wav"
+pickups/belt				"Sounds/Pickups/Ammo/Belt.wav"
+pickups/shells				"Sounds/Pickups/Ammo/Shells.wav"
+pickups/gas					"Sounds/Pickups/Ammo/Gas.wav"
+pickups/notebox				"Sounds/Pickups/Ammo/Note Box.wav"
+pickups/scrapdrum			"Sounds/Pickups/Ammo/Scrap Drum.ogg"
+pickups/scrappack			"Sounds/Pickups/Ammo/Scrap Drum Pack.ogg"
+pickups/stompermissile		"Sounds/Pickups/Ammo/Stomper Missile.ogg"
+pickups/stomperbox			"Sounds/Pickups/Ammo/Stomper Box.ogg"
+pickups/backpack			"Sounds/Pickups/Ammo/Backpack.wav"
 
 // Weapons
 misc/w_pkup					"Sounds/Pickups/Weapon.wav"

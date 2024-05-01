@@ -28,9 +28,11 @@
 
 #include "ZScript/Weapons/Slot 5/GWM_RocketLauncher.zsc"		// Rocket Launcher
 #include "ZScript/Weapons/Slot 5/GWM_GrenadeLauncher.zsc"		// Yep, they're split again... -g     For the better tbh -m
-	#include "ZScript/Weapons/Slot 5/GWM_THE_BOUNCERRR.zsc"	    	//I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
-	#include "ZScript/Weapons/Slot 5/GWM_GoldenBouncer.zsc"	    	//A ratchet and clank AND gundam reference at once? I've outdone myself -Mengo
+	#include "ZScript/Weapons/Slot 5/GWM_THE_BOUNCERRR.zsc"	    	// I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
+	#include "ZScript/Weapons/Slot 5/GWM_GoldenBouncer.zsc"	    	// A ratchet and clank AND gundam reference at once? I've outdone myself -Mengo
 #include "ZScript/Weapons/Slot 5/GWM_Stomper.zsc"				// THE STOMPERRR (from Supercharge)
+#include "ZScript/Weapons/Slot 5/GWM_Trumpetbuss.zsc"			// Trumpetbuss (from Golden Souls 2)
+	#include "ZScript/Weapons/Slot 5/GWM_Tromboomer.zsc"			// Tromboomer (originally Golden Trumpetbuss) (from Golden Souls 2)
 
 #include "ZScript/Weapons/Slot 6/GWM_PlasmaRifle.zsc"			// Plasma Rifle
 #include "ZScript/Weapons/Slot 6/GWM_NoiseCrusher.zsc"			// Noise Crusher! I'll make it good eventually I promise man -mengo

@@ -1,0 +1,82 @@
+class GWM_Tromboomer : GWM_Trumpetbuss
+{
+	Default
+	{
+		Weapon.AmmoUse2 1;
+		Weapon.AmmoType2 "GWM_NoteBox";
+		Inventory.PickupMessage "$GOTTROMBOOMER";
+		Tag "$TAG_TROMBOOMER";
+		GWM_WeaponBase.BaseVersion "GWM_Trumpetbuss";
+	}
+	States
+	{
+		Ready:
+			USBT A 1 A_WeaponReady;
+			TNT1 A 0 A_Jump(255, "Ready");
+			TNT1 A 0 A_Overlay(2, "Sparkle");
+			Loop;
+		Sparkle:
+			USBT IJK 2 bright;
+			Stop;
+		Deselect:
+			USBT A 1 A_Lower(18);
+			Loop;
+		Select:
+			USBT A 1 A_Raise(18);
+			Loop;
+		Fire:
+			TNT1 A 0 {
+				if (FindInventory(invoker.ammoType1).amount > 1)
+					ZWL_FireProjectile("GWM_TromboneNote", 0);
+				else
+					ZWL_FireProjectile("GWM_TromboneNoteLow", 0);
+			}
+			USBT BC 2 bright;
+			USBT H 2 bright;
+			USBT DE 2 bright;
+			TNT1 A 0 A_StartSound("weapons/trumpetpickup", CHAN_5);
+			USBT FG 3;
+			USBT A 5;
+			CANN A 0 A_ReFire;
+			Goto Ready;
+		AltFire:
+			TNT1 A 0 ZWL_FireProjectile("GWM_TromboneNoteSeeker", 0, angleOfs: random(-4,4), pitchOfs: random(-1,4));
+			USBT BC 2 bright;
+			TNT1 A 0 A_StartSound("weapons/trumpetpickup", CHAN_5);
+			USBT FG 2;
+			USBT A 1;
+			CANN A 0 A_ReFire;
+			Goto Ready;
+		Spawn:
+			USBT Z -1;
+			Stop;
+	}
+}
+
+class GWM_TromboneNote : GWM_TrumpetNote
+{
+	Default
+	{
+		Speed 25;
+		DamageFunction (198);
+		Obituary "$KILLTROMBOOMER";
+	}
+}
+class GWM_TromboneNoteLow : GWM_TromboneNote { Default { SeeSound "weapons/trumpetnoterip"; } }
+class GWM_TromboneNoteSeeker : GWM_TrumpetNote
+{
+	action void A_NoteWeave()
+	{
+		A_Weave(5, 0, 1.0, 0);
+		A_SpawnItemEx("GWM_NoteTailS", 0, 0, 0, 0, 0, 0, 0, 128);
+		A_ScaleVelocity(1.1);
+	}
+	Default
+	{
+		Speed 40;
+		DamageFunction (18);
+		Scale 0.3;
+		Obituary "$KILLTROMBOOMERALT";
+	}
+}
+class GWM_NoteTailS : GWM_NoteTail { Default { Scale 0.3; } }

@@ -10,8 +10,8 @@ class GWM_Scrapgun : GWM_WeaponBase
 		Weapon.AmmoUse 1;
 		Weapon.AmmoType "GWM_ScrapDrum";
 		Weapon.AmmoGive 8;
-		Inventory.PickupSound "items/scrapgun";
-		Weapon.UpSound "items/scrapgun";
+		Inventory.PickupSound "weapons/scrappickup";
+		Weapon.UpSound "weapons/scrappickup";
 		Inventory.PickupMessage "$GOTSCRAPGUN";
 		DamageType "Shotgun";
 
@@ -59,7 +59,7 @@ class GWM_Scrapgun : GWM_WeaponBase
 			}
 			SCRA D 1 A_SetPitch(pitch + 0.5);
 			SCRA EFF 1;
-			SCRA I 2 A_PlaySound("scrapgun/rotate", CHAN_AUTO);
+			SCRA I 2 A_PlaySound("weapons/scraprotate", CHAN_AUTO);
 			SCRA GGHHH 1;
 			TNT1 A 0 ZWL_CheckReload();
 			Goto Ready;
@@ -71,7 +71,7 @@ class GWM_Scrapgun : GWM_WeaponBase
 			SRLA ABCFE 1;
 			SRLA D 1 A_PlaySound("weapons/scrapopen", CHAN_AUTO);
 			SRLB ABCDE 2;
-			SRLB F 1 A_PlaySound("scrapgun/eject", CHAN_WEAPON);
+			SRLB F 1 A_PlaySound("weapons/scrapeject", CHAN_WEAPON);
 			SRLB GHI 1;
 			SRLB J 7;
 			SRLB KLM 2;

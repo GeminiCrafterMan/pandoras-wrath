@@ -124,7 +124,7 @@ class GWM_SMGGuy : Actor
 		Missile:
 			MGPO E 8 A_FaceTarget();
 		Shoot:
-			MGPO F 2 Bright 
+			MGPO F 3 Bright 
 			{
 			A_CustomBulletAttack(14, 14, 1, 6, "ZBulletPuff", 0, CBAF_NORANDOM, missile: "GWM_Tracer", spawnheight: 34, spawnofs_xy: 11);
 			A_SpawnItemEX("GWM_PistolCasing",5,0,20,frandom(-2,4),frandom(3,8),frandom(3,8));

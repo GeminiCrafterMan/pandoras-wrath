@@ -178,13 +178,19 @@ class ThingReplacer : StaticEventHandler
 						}
 						break;
 					case 'ChaingunGuy':
-						if (random(0, 2) == 2)
-							e.Replacement = "GWM_HeavyRifleman";
-
-						if (random(0, 3) == 3)
-							e.Replacement = "GWM_VulcanGuy";
-						else
-							e.Replacement = "GWM_ChaingunGuy";
+						switch (random(0, 5))
+						{
+							case 5:
+								e.Replacement = "GWM_VulcanGuy";
+								break;
+							case 4:
+							case 3:
+								e.Replacement = "GWM_HeavyRifleman";
+								break;
+							default:
+								e.Replacement = "GWM_ChaingunGuy";
+								break;
+						}
 						break;
 					// Imps and Variants
 					case 'DoomImp':

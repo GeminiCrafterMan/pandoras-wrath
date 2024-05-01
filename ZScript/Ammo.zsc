@@ -442,7 +442,7 @@ class GWM_ScrapDrum : Ammo
 		Inventory.MaxAmount 20;
 		Ammo.BackpackAmount 4;
 		Inventory.Icon "SCRPA0";
-		Inventory.PickupSound "weapons/getscrapshell";
+		Inventory.PickupSound "pickups/scrapdrum";
 	}
 	States
 	{
@@ -459,7 +459,7 @@ class GWM_ScrapDrumPack : GWM_ScrapDrum
 		//$Title "Scrap Drum Pack
 		Inventory.PickupMessage "$GOTSCRAPPACK";
 		Inventory.Amount 20;
-		Inventory.PickupSound "weapons/getscrapbox";
+		Inventory.PickupSound "pickups/scrapdrumpack";
 	}
 	States
 	{
@@ -479,7 +479,7 @@ class GWM_StomperAmmo : Ammo
 		Inventory.Amount 3;
 		Inventory.MaxAmount 20;
 		Ammo.BackpackAmount 3;
-		Inventory.PickupSound "weapons/getstomperrockets";
+		Inventory.PickupSound "pickups/stompermissile";
 		Inventory.Icon "STMPA0";
 	}
 	States
@@ -497,7 +497,7 @@ class GWM_StomperBox : GWM_StomperAmmo
 		//$Title "Stomper Missile Box
 		Inventory.PickupMessage "$GOTSTOMPERBOX";
 		Inventory.Amount 15;
-		Inventory.PickupSound "weapons/getstomperbox";
+		Inventory.PickupSound "pickups/stomperbox";
 	}
 	States
 	{
@@ -539,6 +539,27 @@ class GWM_LargeWandCrystal : GWM_WandCrystal replaces GoldWandHefty
 	{
 		Spawn:
 			WANC BCDB -1;
+			Stop;
+	}
+}
+
+class GWM_NoteBox : Ammo
+{
+	Default
+	{
+		//$Category Ammunition
+		Inventory.PickupMessage "$GOTNOTEBOX";
+		Inventory.Amount 5;
+		Inventory.MaxAmount 50;
+		Ammo.BackpackAmount 1;
+		Ammo.BackpackMaxAmount 100;
+		Inventory.Icon "TRPAA0";
+		Inventory.PickupSound "pickups/notebox";
+	}
+	States
+	{
+		Spawn:
+			TRPA A -1;
 			Stop;
 	}
 }

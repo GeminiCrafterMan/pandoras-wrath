@@ -4,41 +4,41 @@
 script "RandomBoxPicker" (void)
 {
 		int chooser;
-		
-		chooser = random(0,23);
+
+		chooser = random(0,26);
 
 		if (chooser == 0) //TwinPistol
 		{
 		if (CheckInventory("GWM_TwinPistol")) {restart;}
 		GiveInventory("GWM_TwinPistol",1);  Print(s:"You got the Twin Pistol!");
 		}
-		
+
 		if (chooser == 1) //SMG
 		{
 		if (CheckInventory("GWM_MP40")) {restart;}
 		if (CheckInventory("GWM_SMG")) {GiveInventory("GWM_MP40",1);  Print(s:"You got the MP40!");}
 		if (CheckInventory("GWM_SMG")== 0) {GiveInventory("GWM_SMG",1);  Print(s:"You got the SMG!");}
 		}
-		
+
 		if (chooser == 2) //Magnum
 		{
 		if (CheckInventory("GWM_Revolver")) {restart;}
 		GiveInventory("GWM_Revolver",1);  Print(s:"You got the Magnum!");
 		}
-		
+
 		if (chooser == 3) //Shotgun
 		{
 		if (CheckInventory("GWM_SlayersKahuna")) {restart;}
 		if (CheckInventory("GWM_ZombieShotgun")) {GiveInventory("GWM_SlayersKahuna",1);  Print(s:"You got the Slayer's Kahuna!");}
 		if (CheckInventory("GWM_ZombieShotgun")== 0) {GiveInventory("GWM_ZombieShotgun",1);  Print(s:"You got the Shotgun!");}
 		}
-		
+
 		if (chooser == 4) //SSG
 		{
 		if (CheckInventory("GWM_SuperShotgun")) {restart;}
 		GiveInventory("GWM_SuperShotgun",1); Print(s:"You got the Super Shotgun!");
 		}
-		
+
 		if (chooser == 5) //Chainguns
 		{
 		if (CheckInventory("GWM_Basilisk")) {restart;}
@@ -46,13 +46,13 @@ script "RandomBoxPicker" (void)
 		if (CheckInventory("GWM_MiniGun")) {GiveInventory("GWM_MadVulcan",1); Print(s:"You got the Mad Vulcan!");}
 		if (CheckInventory("GWM_MiniGun")== 0) {GiveInventory("GWM_MiniGun",1);  Print(s:"You got the Minigun!");}
 		}
-		
+
 		if (chooser == 6) //Rocket
 		{
 		if (CheckInventory("GWM_RocketLauncher")) {restart;}
 		GiveInventory("GWM_RocketLauncher",1);  Print(s:"You got the Rocket Launcher!");
 		}
-		
+
 		if (chooser == 7) //Grenade
 		{
 		if (CheckInventory("GWM_GoldenBouncer")) {restart;}
@@ -60,55 +60,73 @@ script "RandomBoxPicker" (void)
 		if (CheckInventory("GWM_GrenadeLauncher")) {GiveInventory("GWM_Bouncer",1);  Print(s:"You got the Bouncer!");}
 		if (CheckInventory("GWM_GrenadeLauncher")== 0) {GiveInventory("GWM_GrenadeLauncher",1);  Print(s:"You got the Grenade Launcher!");}
 		}
-		
+
 		if (chooser == 8) //Ice
 		{GiveInventory("IceSlowCount",9999);  Print(s:"There was a blizzard in the box?!");}
-		
+
 		if (chooser == 9) //Fire
 		{GiveInventory("FireBurnCount",9999);  Print(s:"There was fire in the box!");}
-		
+
 		if (chooser == 10) //Acid
 		{GiveInventory("AcidWeakCount",9999);  Print(s:"The box splashed a ton of acid in your face!");}
-		
+
 		if (chooser == 11) //Ice
 		{GiveInventory("IceSlowCount",100);  Print(s:"There was freezing nitrogen in the box!");}
-		
+
 		if (chooser == 12) //Fire
 		{GiveInventory("FireBurnCount",100);  Print(s:"There was a fireball in the box!");}
-		
+
 		if (chooser == 13) //Acid
 		{GiveInventory("AcidWeakCount",100);  Print(s:"The box splashed acid in your face!");}
-		
-		
+
+
 		if (chooser == 14) //Heal
 		{GiveInventory("GWM_HealAmount",1000);  Print(s:"Continuous healing! Lovely!");}
-		
+
 		if (chooser == 15) //HealthUp
 		{GiveInventory("GWM_HPupgrade",10);  Print(s:"+10 Health Upgrade! ");}
-		
+
 		if (chooser == 16) //HealthUp
 		{GiveInventory("GWM_HPupgrade",50);  Print(s:"+50 Health Upgrade!");}
-		
+
 		if (chooser == 17) //HealthUp
 		{GiveInventory("GWM_HPupgrade",100);  Print(s:"+100 Health Upgrade!");}
-		
+
 		if (chooser == 18) //Speed
 		{GiveInventory("GWM_Speedupgrades", 1);  Print(s:"Speed Upgrade!");}
-		
+
 		if (chooser == 19) //Speed2
 		{GiveInventory("GWM_Speedupgrades", 2);  Print(s:"Super Speed Upgrade!");}
-			
+
 		if (chooser == 20) //AlmostDead
 		{SetActorProperty(0,APROP_HEALTH,1);  Print(s:"You've been hurt to 1 HP!");}
-		
+
 		if (chooser == 21) //Hell
 		{GiveInventory("GWM_VBMODE", 1);  Print(s:"The box made your vision virtual, boy!");}
-		
+
 		if (chooser == 22) //Hell
 		{GiveInventory("GWM_GBMODE", 1);  Print(s:"This is no game, boy!");}
-		
+
 		if (chooser == 23) //Hell
 		{GiveInventory("GWM_ASSMODE", 1);  Print(s:"Your eyes hurt...");}
-		
-		
+
+		if (chooser == 24) //Stomper
+		{
+		if (CheckInventory("GWM_Stomper")) {restart;}
+		GiveInventory("GWM_Stomper",1);  Print(s:"You got the Stomper!");
+		}
+
+		if (chooser == 25) //Scrapgun
+		{
+		if (CheckInventory("GWM_Scrapgun")) {restart;}
+		GiveInventory("GWM_Scrapgun",1);  Print(s:"You got the Scrapgun!");
+		}
+
+		if (chooser == 26) // Trumpetbuss & Tromboomer
+		{
+		if (CheckInventory("GWM_Tromboomer")) {restart;}
+		if (CheckInventory("GWM_Trumpetbuss")) {GiveInventory("GWM_Tromboomer",1);  Print(s:"You got the Tromboomer!");}
+		if (CheckInventory("GWM_Trumpetbuss")== 0) {GiveInventory("GWM_Trumpetbuss",1);  Print(s:"You got the Trumpetbuss!");}
+		}
+
 }

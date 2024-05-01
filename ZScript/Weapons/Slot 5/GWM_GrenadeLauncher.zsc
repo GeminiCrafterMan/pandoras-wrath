@@ -120,7 +120,7 @@ class GWM_Grenade : Actor
 			{	
 				let gren = GWM_Grenade(self);
 				let player = GWM_Player(target);
-				if(gren)
+				if (player) // used to be if (gren) but that makes no sense because this IS gren
 				{
 					gren.charge = player.chargedGrenades;
 				}
