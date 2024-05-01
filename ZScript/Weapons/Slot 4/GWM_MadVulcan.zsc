@@ -1,7 +1,7 @@
 class GWM_MadVulcan : GWM_WeaponBase
 {
 	bool raging;
-	
+
 	//action void A_Tick()
 	//{
 	//if (GWM_Player(player.mo).VulcanRage < 1)
@@ -9,8 +9,8 @@ class GWM_MadVulcan : GWM_WeaponBase
 	//			 invoker.raging == false;
 	//			}
 	//}
-	
-	action void A_FireMVulcan2()
+
+	action void A_FireMVulcan2() // identical to FireMVulcan in everything but name
 	{
 		A_SpawnItemEx("GWM_Flash");
 		ZWL_FireHitscan(0, 8, pellets: 2, spread: 11, tracerType: "GWM_Tracer");
@@ -19,7 +19,7 @@ class GWM_MadVulcan : GWM_WeaponBase
 		A_SetPitch(pitch+frandom(-.5,.5));
 		A_Setangle(angle+frandom(-.5,.5));
 	}
-	
+
 	action void A_FireMVulcan()
 	{
 		A_SpawnItemEx("GWM_Flash");
@@ -29,7 +29,7 @@ class GWM_MadVulcan : GWM_WeaponBase
 		A_SetPitch(pitch+frandom(-.5,.5));
 		A_Setangle(angle+frandom(-.5,.5));
 	}
-	
+
 	action void A_FireRagingVulcan()
 	{
 		A_SpawnItemEx("GWM_MuzzleFlashLight3");
@@ -54,7 +54,7 @@ class GWM_MadVulcan : GWM_WeaponBase
 		Inventory.PickupMessage "$GOTMADVULCAN";
 		Obituary "$KILLMADVULCAN";
 		Tag "$TAG_MADVULCAN";
-		
+
 		GWM_WeaponBase.BaseVersion "GWM_Minigun";
 	}
 	States
@@ -63,7 +63,7 @@ class GWM_MadVulcan : GWM_WeaponBase
 			VLCG A 0 A_Jumpif(invoker.raging == true, "ReadyRage");
 			VLCG A 1 A_WeaponReady;
 			Loop;
-			
+
 		ReadyRage:
 			VLCG ABCD 1 A_WeaponReady;
 			VLCG A 0
@@ -76,7 +76,7 @@ class GWM_MadVulcan : GWM_WeaponBase
 			}
 			VLCG A 0 A_Jumpif(invoker.raging == true, "ReadyRage");
 			Goto Release;
-			
+
 		Deselect:
 			TNT1 A 0 A_StopSound(CHAN_BODY);
 			VLCG A 1 A_Lower(18);
@@ -84,7 +84,7 @@ class GWM_MadVulcan : GWM_WeaponBase
 		Select:
 			VLCG A 1 A_Raise(18);
 			Loop;
-		
+
 		Altfire:
 			//rage mode baby
 			VLCG A 1 A_Jumpif(GWM_Player(player.mo).VulcanRage < 50, "Ready");
@@ -93,7 +93,7 @@ class GWM_MadVulcan : GWM_WeaponBase
 			VLCG A 0 A_StartSound("weapons/vulcanloop", CHAN_BODY, CHANF_LOOPING);
 			VLCG A 0 { invoker.raging = true; }
 			goto Ready;
-		
+
 		Fire:
 			// rev the chaingun
 			VLCG A 0 A_Jumpif(invoker.raging == true, "FireRage");
@@ -104,10 +104,10 @@ class GWM_MadVulcan : GWM_WeaponBase
 			Goto Release;
 		Hold:
 			VLCG A 0 A_Jumpif(invoker.raging == true, "FireRage");
-			TNT1 A 0 
+			TNT1 A 0
 				{
-					++ GWM_Player(player.mo).VulcanInc;	
-					if(GWM_Player(player.mo).VulcanInc > 12);
+					++ GWM_Player(player.mo).VulcanInc;
+					if(GWM_Player(player.mo).VulcanInc > 12)
 					{
 						++ GWM_Player(player.mo).VulcanRage;
 						GWM_Player(player.mo).VulcanInc == 0;
@@ -131,14 +131,14 @@ class GWM_MadVulcan : GWM_WeaponBase
 			//VLCG GFFEEDDDCCCBBBBAAA 1;
 			TNT1 A 0 A_CheckReload;
 			Goto Ready;
-			
+
 		FireRage:
 			VLCG EG 1 {
-				A_FireRagingVulcan(); 
+				A_FireRagingVulcan();
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 				return ZWL_JumpIfEmpty("Release");
 			}
-			VLCG E 0 
+			VLCG E 0
 			{
 			 GWM_Player(player.mo).VulcanRage = GWM_Player(player.mo).VulcanRage-1;
 			 if (GWM_Player(player.mo).VulcanRage < 1)
@@ -148,7 +148,7 @@ class GWM_MadVulcan : GWM_WeaponBase
 			 A_ReFire();
 			}
 			Goto Ready;
-			
+
 		Spawn:
 			VLCG Z -1;
 			Stop;
