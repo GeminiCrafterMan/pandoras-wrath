@@ -20,7 +20,7 @@ weapons/plasxpl10	"Sounds/Weapons/Slot 6/Plasma Rifle/PLSDTH10.ogg"
 $random weapons/plasxpl { weapons/plasxpl1 weapons/plasxpl2 weapons/plasxpl3 weapons/plasxpl4 weapons/plasxpl5 weapons/plasxpl6 weapons/plasxpl7 weapons/plasxpl8 weapons/plasxpl9 weapons/plasxpl10 }
 $random weapons/plasfly { weapons/plasfly1 weapons/plasfly2 weapons/plasfly3 }
 
-$attenuation weapons/plasfly 1.5
+$volume weapons/plasfly 0.25
 
 // Noise Crusher
 weapons/noisehit	"Sounds/Weapons/Slot 6/Noise Crusher/shot_d.wav"
