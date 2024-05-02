@@ -1,0 +1,20 @@
+// Trumpetbuss & Tromboomer
+weapons/trumpetnoterip				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTERIP.ogg"
+weapons/trumpetnote1				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRUM.ogg"
+weapons/trumpetnote2				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU2.ogg"
+weapons/trumpetnote3				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU3.ogg"
+weapons/trumpetnote4				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU4.ogg"
+weapons/trumpetnote5				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU5.ogg"
+weapons/trumpetnote6				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU6.ogg"
+weapons/trumpetnote7				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU7.ogg"
+$random weapons/trumpetnote { weapons/trumpetnote1 weapons/trumpetnote2 weapons/trumpetnote3 weapons/trumpetnote4 weapons/trumpetnote5 weapons/trumpetnote6 weapons/trumpetnote7 }
+
+weapons/trombonenoterip				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTERIP.ogg"
+weapons/trombonenote1				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRUM.ogg"
+weapons/trombonenote2				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU2.ogg"
+weapons/trombonenote3				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU3.ogg"
+weapons/trombonenote4				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU4.ogg"
+weapons/trombonenote5				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU5.ogg"
+weapons/trombonenote6				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU6.ogg"
+weapons/trombonenote7				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU7.ogg"
+$random weapons/trombonenote { weapons/trombonenote1 weapons/trombonenote2 weapons/trombonenote3 weapons/trombonenote4 weapons/trombonenote5 weapons/trombonenote6 weapons/trombonenote7 }

@@ -1,7 +1,10 @@
 class GWM_Revolver : GWM_WeaponBase
 {
-
-
+	override void Touch(Actor toucher) {
+		if (toucher.CountInv("GWM_Revolver") == 0)
+			toucher.A_StartSound("weapons/rvlvmagnum", CHAN_AUTO, CHANF_UI|CHANF_NOPAUSE|CHANF_OVERLAP|CHANF_LOCAL);
+		Super.Touch(toucher);
+	}
 	Default
 	{
 		//$Category Weapons

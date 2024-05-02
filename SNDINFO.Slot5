@@ -54,16 +54,29 @@ $random weapons/stomperexplode		{ weapons/stomperexplode1 weapons/stomperexplode
 $limit weapons/stompermissile		0
 $limit weapons/stomperexplode		0
 
-// Trumpetbuss
+// Trumpetbuss & Tromboomer
 weapons/trumpetraise				"Sounds/Weapons/Slot 5/Trumpetbuss/DEPLOYTB.wav"
-weapons/trumpetnoterip				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTERIP.ogg"
-weapons/trumpetnote1				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRUM.ogg"
-weapons/trumpetnote2				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU2.ogg"
-weapons/trumpetnote3				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU3.ogg"
-weapons/trumpetnote4				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU4.ogg"
-weapons/trumpetnote5				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU5.ogg"
-weapons/trumpetnote6				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU6.ogg"
-weapons/trumpetnote7				"Sounds/Weapons/Slot 5/Trumpetbuss/NOTETRU7.ogg"
 weapons/trumpetboom					"Sounds/Weapons/Slot 5/Trumpetbuss/TRUMBOOM.ogg"
 weapons/trumpetpickup				"Sounds/Weapons/Slot 5/Trumpetbuss/TRUMUP.wav"
-$random weapons/trumpetnote { weapons/trumpetnote1 weapons/trumpetnote2 weapons/trumpetnote3 weapons/trumpetnote4 weapons/trumpetnote5 weapons/trumpetnote6 weapons/trumpetnote7 }
+
+weapons/trumpetnoterip				"Sounds/Weapons/Slot 5/Trumpetbuss/trumpet_messy.wav"
+weapons/trumpetnote1				"Sounds/Weapons/Slot 5/Trumpetbuss/trumpet_1.wav"
+weapons/trumpetnote2				"Sounds/Weapons/Slot 5/Trumpetbuss/trumpet_2.wav"
+weapons/trumpetnote3				"Sounds/Weapons/Slot 5/Trumpetbuss/trumpet_3.wav"
+weapons/trumpetnote4				"Sounds/Weapons/Slot 5/Trumpetbuss/trumpet_4.wav"
+weapons/trumpetnote5				"Sounds/Weapons/Slot 5/Trumpetbuss/trumpet_5.wav"
+weapons/trumpetnote6				"Sounds/Weapons/Slot 5/Trumpetbuss/trumpet_6.wav"
+weapons/trumpetnote7				"Sounds/Weapons/Slot 5/Trumpetbuss/trumpet_7.wav"
+weapons/trumpetnote8				"Sounds/Weapons/Slot 5/Trumpetbuss/trumpet_8.wav"
+$random weapons/trumpetnote { weapons/trumpetnote1 weapons/trumpetnote2 weapons/trumpetnote3 weapons/trumpetnote4 weapons/trumpetnote5 weapons/trumpetnote6 weapons/trumpetnote7 weapons/trumpetnote8 }
+
+weapons/trombonenoterip				"Sounds/Weapons/Slot 5/Trumpetbuss/trombone_messy.wav"
+weapons/trombonenote1				"Sounds/Weapons/Slot 5/Trumpetbuss/trombone_1.wav"
+weapons/trombonenote2				"Sounds/Weapons/Slot 5/Trumpetbuss/trombone_2.wav"
+weapons/trombonenote3				"Sounds/Weapons/Slot 5/Trumpetbuss/trombone_3.wav"
+weapons/trombonenote4				"Sounds/Weapons/Slot 5/Trumpetbuss/trombone_4.wav"
+weapons/trombonenote5				"Sounds/Weapons/Slot 5/Trumpetbuss/trombone_5.wav"
+weapons/trombonenote6				"Sounds/Weapons/Slot 5/Trumpetbuss/trombone_6.wav"
+weapons/trombonenote7				"Sounds/Weapons/Slot 5/Trumpetbuss/trombone_7.wav"
+weapons/trombonenote8				"Sounds/Weapons/Slot 5/Trumpetbuss/trombone_8.wav"
+$random weapons/trombonenote { weapons/trombonenote1 weapons/trombonenote2 weapons/trombonenote3 weapons/trombonenote4 weapons/trombonenote5 weapons/trombonenote6 weapons/trombonenote7 weapons/trombonenote8 }

@@ -23,14 +23,13 @@ weapons/rvlvpickup	"Sounds/Weapons/Slot 2/Revolver/revolver_pickup.wav"
 weapons/rvlvreload1	"Sounds/Weapons/Slot 2/Revolver/revolver_reload_cylinder_open.wav"
 weapons/rvlvreload2	"Sounds/Weapons/Slot 2/Revolver/revolver_reload_cylinder_arm.wav"
 weapons/rvlvreload3	"Sounds/Weapons/Slot 2/Revolver/revolver_reload_cylinder_close.wav"
-
+weapons/rvlvmagnum	"Sounds/Weapons/Slot 2/Revolver/magnum_force.wav"
 
 $random weapons/rvlvrico	{ weapons/shell1 weapons/shell2 weapons/shell3 }
 weapons/rvlvric1			"Sounds/Weapons/Slot 2/Revolver/revolver_ricochet1.wav"
 weapons/rvlvric2			"Sounds/Weapons/Slot 2/Revolver/revolver_ricochet2.wav"
 weapons/rvlvric3			"Sounds/Weapons/Slot 2/Revolver/revolver_ricochet3.wav"
 $attenuation weapons/rvlvrico 0.5
-
 
 // MP40
 weapons/mp40fire	"Sounds/Weapons/Slot 2/mp40_fire.wav"

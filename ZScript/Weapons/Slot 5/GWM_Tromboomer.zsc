@@ -59,10 +59,11 @@ class GWM_TromboneNote : GWM_TrumpetNote
 	{
 		Speed 25;
 		DamageFunction (198);
+		SeeSound "weapons/trombonenote";
 		Obituary "$KILLTROMBOOMER";
 	}
 }
-class GWM_TromboneNoteLow : GWM_TromboneNote { Default { SeeSound "weapons/trumpetnoterip"; } }
+class GWM_TromboneNoteLow : GWM_TromboneNote { Default { SeeSound "weapons/trombonenoterip"; } }
 class GWM_TromboneNoteSeeker : GWM_TrumpetNote
 {
 	action void A_NoteWeave()
@@ -76,6 +77,7 @@ class GWM_TromboneNoteSeeker : GWM_TrumpetNote
 		Speed 40;
 		DamageFunction (18);
 		Scale 0.3;
+		SeeSound "weapons/trombonenote";
 		Obituary "$KILLTROMBOOMERALT";
 	}
 }

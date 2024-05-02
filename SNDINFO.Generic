@@ -93,7 +93,10 @@ misc/gibbed2				"Sounds/gib2.wav"
 misc/gibbed3				"Sounds/gib3.wav"
 
 Status/IceHit				"Sounds/IceFreeze.mp3"
+Status/AcidHit				"Sounds/AcidCorrode.wav"
 Status/FireHit				"Sounds/FireBurn.wav"
+
+$attenuation Status/AcidHit 0.2 // G: Somehow, it's still too quiet...
 
 menu/activate MOPEN
 menu/backup MSELECT

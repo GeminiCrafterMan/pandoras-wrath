@@ -12,6 +12,7 @@ $playersound	GWM_Player	male	*land			"Sounds/Player/land.wav"
 $playersounddup	GWM_Player	male	*grunt			*pain100
 $playeralias	GWM_Player	male	*gibbed			misc/gibbed
 $playersound	GWM_Player	male	*drainhealth	"Sounds/Powerups/S_bld_suck.wav"
+$playersound	GWM_Player	male	*falling		"Sounds/Player/mercenary_fallscream01.wav"
 
 $random player/painsharp {
 	player/painsharp1

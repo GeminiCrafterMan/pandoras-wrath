@@ -1,4 +1,3 @@
-class GWM_ChargedRockets : Inventory {Default{Inventory.Maxamount 4;}}
 class GWM_FiringRocket : Inventory {Default{Inventory.Maxamount 1;}}
 class GWM_AltFiringRocket : Inventory {Default{Inventory.Maxamount 1;}}
 

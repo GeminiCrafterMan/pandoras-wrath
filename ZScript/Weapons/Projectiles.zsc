@@ -92,7 +92,7 @@ class GWM_AcidProjectile : Actor // the absolute most basic projectile base poss
 			{
 				victim.A_SpawnProjectile("GWM_AcidStatusThinker");
 			}
-			A_StartSound("Status/IceHit");
+			A_StartSound("Status/AcidHit");
 			victim.A_GiveInventory("AcidWeakCount",AcidWeakCount);
 			
 			
@@ -104,17 +104,5 @@ class GWM_AcidProjectile : Actor // the absolute most basic projectile base poss
 	{
 		Projectile;
 		DamageType "Acid";
-	}
-}
-
-
-class GWM_PoisonProjectile : Actor // the absolute most basic projectile base possible
-{
-	Default
-	{
-		Projectile;
-		DamageType "Poison";
-		//PoisonDamage 12, 123;
-		+ADDITIVEPOISONDAMAGE
 	}
 }
