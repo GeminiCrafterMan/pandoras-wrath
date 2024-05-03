@@ -18,3 +18,16 @@ Medic Bag
 An item that replaces portable medkit. Can collect excess health to use.
 -Pick up more bags to increase capacity, starts at 50, goes up by 25.
 -Only a fraction is gained from items. This fraction can be made larger with upgrades.
+
+Multiplayer version, mostly for Deathmatch, and a lite version further down the line?
+
+Beowulf DMC3 boots upgrade that makes the kick shiny, light, and spammable
+
+Impactor upgrade: Ifrit fist (huge fire punch deals tons of damage and leaves burn effect)
+
+Arch-vile replacements:
+	Only big difference is type of magic used;
+	- LoS electric shots + resurrection
+	- Homing projectiles + healing nearby enemies
+	- Crazy explosive shot that sends you flying + acid rain spell
+

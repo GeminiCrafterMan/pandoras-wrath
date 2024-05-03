@@ -3,6 +3,17 @@ class GWM_BurstRifle : GWM_WeaponBase
 	action void A_FireRifle()
 	{
 		A_SpawnItemEx("GWM_Flash");
+		ZWL_FireHitscan(2, 25, tracerType: "GWM_Tracer");
+		ZWL_EjectCasing("GWM_RifleCasing");
+		A_WeaponOffset(0, 6, WOF_ADD);
+		A_SetPitch(pitch-0.25);
+		A_Setangle(angle+frandom(-.25,.25));
+		A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
+	}
+	action void A_FireRifleBurst()
+	{
+		invoker.ammocount = invoker.ammocount - 2;
+		A_SpawnItemEx("GWM_Flash");
 		A_RailAttack((25),0,true,"",0,RGF_SILENT,0,"ZBulletPuff",3,2,0,0,1,0.5,"none");
 		ZWL_FireHitscan(1, 0, tracerType: "GWM_Tracer");
 		ZWL_EjectCasing("GWM_RifleCasing");
@@ -17,9 +28,11 @@ class GWM_BurstRifle : GWM_WeaponBase
 		//$Title "Burst Rifle"
 		Weapon.SelectionOrder 700;
 		Weapon.SlotNumber 4;
-		Weapon.AmmoUse 1;
-		Weapon.AmmoType "GWM_FMJMagazine";
+		Weapon.AmmoUse1 1;
+		Weapon.AmmoType1 "GWM_FMJMagazine";
 		Weapon.AmmoGive 32; // as opposed to 31, since we're firing in bursts of four now
+		Weapon.AmmoUse2 0;
+		Weapon.AmmoType2 "GWM_FMJMagazine";
 		Weapon.UpSound "weapons/draw_primary";
 
 		ZWeapon.MagazineSize 32;
@@ -33,81 +46,90 @@ class GWM_BurstRifle : GWM_WeaponBase
 		Obituary "$KILLBURSTRIFLE";
 		+ALLOWTHRUFLAGS
 		+THRUGHOST
+
+		GWM_WeaponBase.BaseVersion "GWM_AssaultRifle";
 	}
 	States
 	{
 		Ready:
-			RIFL A 1 ZWL_WeaponReady();
+			BRSG A 1 ZWL_WeaponReady();
 			Loop;
 		Select:
 			TNT1 A 0 {
 				ZWL_QuickRaise();
 				A_WeaponOffset(-64, 160);
 			}
-			RIFL QQQQQQ 1 {
+			BRSG QQQQQQ 1 {
 				A_WeaponOffset(8, -16, WOF_ADD);
 			}
-			RIFL QQ 1 {
+			BRSG QQ 1 {
 				A_WeaponOffset(8, -16, WOF_ADD);
 			}
-			RIFL TTSS 1 ZWL_WeaponReady();
-			RIFL R 4 {A_StartSound("weapons/riflebak"); ZWL_WeaponReady();}
-			RIFL SSTT 1 ZWL_WeaponReady();
-			RIFL Q 1 {A_StartSound("weapons/riflefwd"); ZWL_WeaponReady();}
+			BRSG TTSS 1 ZWL_WeaponReady();
+			BRSG R 4 {A_StartSound("weapons/riflebak"); ZWL_WeaponReady();}
+			BRSG SSTT 1 ZWL_WeaponReady();
+			BRSG Q 1 {A_StartSound("weapons/riflefwd"); ZWL_WeaponReady();}
 			Goto Ready;
 		Deselect:
-			RIFL AA 1 {
+			BRSG AA 1 {
 				A_WeaponOffset(-8, 16, WOF_ADD);
 			}
-			RIFL QQQQQQ 1 {
+			BRSG QQQQQQ 1 {
 				A_WeaponOffset(-8, 16, WOF_ADD);
 			}
 			TNT1 A 0 A_WeaponOffset(0, flags: WOF_KEEPY);
 			TNT1 A 0 ZWL_QuickLower;
 			Stop;
 /*		Deselect:
-			RIFL A 1 A_Lower(18);
+			BRSG A 1 A_Lower(18);
 			Loop;
 		Select:
-			RIFL A 1 A_Raise(18);
+			BRSG A 1 A_Raise(18);
 			Loop;*/
 		Fire:
 			TNT1 A 0 ZWL_CheckReload();
-			RIFL B 1 Bright A_FireRifle;
-			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
-			TNT1 A 0 ZWL_CheckReload();
-			RIFL B 1 Bright A_FireRifle;
-			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
-			TNT1 A 0 ZWL_CheckReload();
-			RIFL B 1 Bright A_FireRifle;
-			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
-			TNT1 A 0 ZWL_CheckReload();
-			RIFL B 1 Bright A_FireRifle;
-			RIFL CA 1 A_WeaponOffset(0, -3, WOF_ADD);
-			TNT1 A 0 ZWL_CheckReload();
-			RIFL A 9;
-			RIFL A 0 ZWL_ReFire(null, true);
+			BRSG B 1 Bright A_FireRifle;
+			BRSG CA 1 Bright A_WeaponOffset(0, -3, WOF_ADD);
+			BRSG A 1;
+			BRSG A 4 ZWL_ReFire(null, true);
+			Goto Ready;
+		AltFire:
+			TNT1 A 0 A_Jumpif(invoker.ammocount < 2,"Reload");
+			BRSG B 1 Bright A_FireRifleBurst;
+			BRSG CA 1 A_WeaponOffset(0, -3, WOF_ADD);
+			TNT1 A 0 A_Jumpif(invoker.ammocount < 2,"Reload");
+			BRSG B 1 Bright A_FireRifleBurst;
+			BRSG CA 1 A_WeaponOffset(0, -3, WOF_ADD);
+			TNT1 A 0 A_Jumpif(invoker.ammocount < 2,"Reload");
+			BRSG B 1 Bright A_FireRifleBurst;
+			BRSG CA 1 A_WeaponOffset(0, -3, WOF_ADD);
+			TNT1 A 0 A_Jumpif(invoker.ammocount < 2,"Reload");
+			BRSG B 1 Bright A_FireRifleBurst;
+			BRSG CA 1 A_WeaponOffset(0, -3, WOF_ADD);
+			TNT1 A 0 A_Jumpif(invoker.ammocount < 2,"Reload");
+			BRSG A 9;
+			BRSG A 0 ZWL_ReFire(null, true);
 			Goto Ready;
 		Spawn:
-			RIFL Z -1;
+			BRSG Z -1;
 			Stop;
 		Reload:
 			TNT1 A 0 {
 				if (!invoker.CheckAmmo(PrimaryFire, false, true))
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
 			}
-			RIFL D 4;
-			RIFL PO 2;
-			RIFL N 4 A_StartSound("weapons/riflebak");
+			BRSG D 4;
+			BRSG PO 2;
+			BRSG N 4 A_StartSound("weapons/riflebak");
 			TNT1 A 0 A_StartSound("weapons/rifleout");
-			RIFL EF 2;
+			BRSG EF 2;
 			TNT1 A 0 ZWL_EjectCasing("GWM_PistolEmptyMag", true, 45, 2, 16, (24, 0, -24));
-			RIFL GHIJK 3;
-			RIFL L 4 ZWL_Reload();
-			RIFL MD 2;
-			RIFL NO 2;
-			RIFL P 4 A_StartSound("weapons/riflefwd");
-			RIFL D 2;
+			BRSG GHIJK 3;
+			BRSG L 4 ZWL_Reload();
+			BRSG MD 2;
+			BRSG NO 2;
+			BRSG P 4 A_StartSound("weapons/riflefwd");
+			BRSG D 2;
 			Goto Ready;
 	}
 }

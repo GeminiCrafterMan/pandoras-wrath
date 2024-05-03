@@ -22,7 +22,8 @@
 #include "ZScript/Weapons/Slot 4/GWM_Minigun.zsc"				// Minigun
 	#include "ZScript/Weapons/Slot 4/GWM_MadVulcan.zsc"				// Mad Vulcan
 		#include "ZScript/Weapons/Slot 4/GWM_Basilisk.zsc"				// Basilisk
-#include "ZScript/Weapons/Slot 4/GWM_BurstRifle.zsc"			// Burst Rifle
+#include "ZScript/Weapons/Slot 4/GWM_AssaultRifle.zsc"			// Assault Rifle
+	#include "ZScript/Weapons/Slot 4/GWM_BurstRifle.zsc"			// Burst Rifle
 #include "ZScript/Weapons/Slot 4/GWM_Scrapgun.zsc"				// Not exactly TangoScrapgun anymore... (from Supercharge)
 #include "ZScript/Weapons/Slot 4/GWM_FrostFang.zsc"				// Frost Fang... Both shit and busted. How???
 

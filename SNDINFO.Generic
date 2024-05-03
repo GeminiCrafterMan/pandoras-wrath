@@ -92,6 +92,14 @@ misc/gibbed1				"Sounds/gib1.wav"
 misc/gibbed2				"Sounds/gib2.wav"
 misc/gibbed3				"Sounds/gib3.wav"
 
+misc/teleport1				"Sounds/r_tele1.wav"
+misc/teleport2				"Sounds/r_tele2.wav"
+misc/teleport3				"Sounds/r_tele3.wav"
+misc/teleport4				"Sounds/r_tele4.wav"
+misc/spawn					"Sounds/Pickups/Respawn.wav"	// Item respawn
+
+$random misc/teleport {misc/teleport1 misc/teleport2 misc/teleport3 misc/teleport4} // Player/monster teleport
+
 Status/IceHit				"Sounds/IceFreeze.mp3"
 Status/AcidHit				"Sounds/AcidCorrode.wav"
 Status/FireHit				"Sounds/FireBurn.wav"
