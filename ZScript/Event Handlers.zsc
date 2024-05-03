@@ -439,13 +439,13 @@ class ThingReplacer : StaticEventHandler
 				e.Replacement = "GWM_ShotgunSpawner";
 				break;
 			case 'TangoAssaultRifle':
-				e.Replacement = "GWM_BurstRifle";
+				e.Replacement = "GWM_AssaultRifle";
 				break;
 			case 'TangoChainsaw':
 				e.Replacement = "GWM_ChainsawSpawner";
 				break;
 			case 'TangoMinigun':
-				e.Replacement = "GWM_MadVulcan";
+				e.Replacement = "GWM_Minigun";
 				break;
 			case 'TangoPlasmaRifle':
 				e.Replacement = "GWM_PlasmaRifleSpawner";

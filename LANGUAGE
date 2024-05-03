@@ -253,6 +253,7 @@ TAG_SLAYERSKAHUNA = "\"Slayer's Kahuna\" Shotgun";
 TAG_WhiteWedding = "White Wedding";
 TAG_ZOMBIESHOTGUN = "Zombie Shotgun";
 TAG_SUPERSHOTGUN = "Super Shotgun";
+TAG_ASSAULTRIFLE = "Assault Rifle";
 TAG_BURSTRIFLE = "Burst Rifle";
 TAG_MINIGUN = "Minigun";
 TAG_MADVULCAN = "\"Mad Vulcan\" Minigun";
