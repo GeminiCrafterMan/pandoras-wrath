@@ -183,19 +183,31 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 				if (!invoker.CheckAmmo(PrimaryFire, false, true))
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
 			}
+			TNT1 A 0 ZWL_JumpIfEmpty("Reload.Empty");
 			SKSG B 5;
-			SKSG CCCDD 1;
-			SKSG E 2 A_StartSound("weapons/skpump1");
+			SKSG CCCTT 1;
+			SKSG U 2;
 			// Fallthrough
 		Reload.Loop:
-			SKSG KLM 2;
+			SKSR ABC 2;
 			TNT1 A 0 ZWL_Reload(1);
-			SKSG NO 2;
+			SKSR DE 2;
 			SKSG E 0 ZWL_JumpIfReloaded("Reload.End", true);
 			Loop;
 		Reload.End:
-			SKSG DDCCC 1;
-			SKSG B 5 A_StartSound("weapons/skpump2");
+			SKSG TTCCC 1;
+			SKSG B 5;
 			Goto Ready;
+
+		Reload.Empty:
+			SKSG B 5;
+			SKSG CCCDD 1;
+			SKSG E 2 A_StartSound("weapons/skpump1");
+			SKSG KLM 2;
+			TNT1 A 0 ZWL_Reload(1);
+			SKSG NO 2;
+			SKSG E 4;
+			SKSG U 5 A_StartSound("weapons/skpump2");
+			Goto Reload.Loop;
 	}
 }
