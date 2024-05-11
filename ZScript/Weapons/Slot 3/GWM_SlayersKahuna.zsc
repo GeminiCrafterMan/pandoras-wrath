@@ -208,6 +208,7 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 			SKSG NO 2;
 			SKSG E 4;
 			SKSG U 5 A_StartSound("weapons/skpump2");
+			ZSHG E 0 ZWL_JumpIfReloaded("Reload.End", true);
 			Goto Reload.Loop;
 	}
 }
