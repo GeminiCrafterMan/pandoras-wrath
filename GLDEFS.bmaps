@@ -270,20 +270,20 @@ Brightmap Sprite SKSFA0 { Map SKSFA0 DisableFullbright }
 Brightmap Sprite SKSFB0 { Map SKSFB0 DisableFullbright }
 // Super Shotgun
 // Burst Rifle
-Brightmap Sprite RIFLA0 { Map RIFLA0 DisableFullbright }
-Brightmap Sprite RIFLB0 { Map RIFLB0 DisableFullbright }
-Brightmap Sprite RIFLC0 { Map RIFLC0 DisableFullbright }
-Brightmap Sprite RIFLD0 { Map RIFLD0 DisableFullbright }
-Brightmap Sprite RIFLE0 { Map RIFLE0 DisableFullbright }
-Brightmap Sprite RIFLF0 { Map RIFLF0 DisableFullbright }
-Brightmap Sprite RIFLG0 { Map RIFLG0 DisableFullbright }
-Brightmap Sprite RIFLH0 { Map RIFLH0 DisableFullbright }
-Brightmap Sprite RIFLI0 { Map RIFLI0 DisableFullbright }
-Brightmap Sprite RIFLJ0 { Map RIFLJ0 DisableFullbright }
-Brightmap Sprite RIFLK0 { Map RIFLK0 DisableFullbright }
-Brightmap Sprite RIFLL0 { Map RIFLL0 DisableFullbright }
-Brightmap Sprite RIFLM0 { Map RIFLM0 DisableFullbright }
-Brightmap Sprite RIFLZ0 { Map BMRIFLZ0 DisableFullbright }
+Brightmap Sprite BRSGA0 { Map BRSGA0 DisableFullbright }
+Brightmap Sprite BRSGB0 { Map BRSGB0 DisableFullbright }
+Brightmap Sprite BRSGC0 { Map BRSGC0 DisableFullbright }
+Brightmap Sprite BRSGD0 { Map BRSGD0 DisableFullbright }
+Brightmap Sprite BRSGE0 { Map BRSGE0 DisableFullbright }
+Brightmap Sprite BRSGF0 { Map BRSGF0 DisableFullbright }
+Brightmap Sprite BRSGG0 { Map BRSGG0 DisableFullbright }
+Brightmap Sprite BRSGH0 { Map BRSGH0 DisableFullbright }
+Brightmap Sprite BRSGI0 { Map BRSGI0 DisableFullbright }
+Brightmap Sprite BRSGJ0 { Map BRSGJ0 DisableFullbright }
+Brightmap Sprite BRSGK0 { Map BRSGK0 DisableFullbright }
+Brightmap Sprite BRSGL0 { Map BRSGL0 DisableFullbright }
+Brightmap Sprite BRSGM0 { Map BRSGM0 DisableFullbright }
+Brightmap Sprite BRSGZ0 { Map BMBRSGZ0 DisableFullbright }
 // Minigun
 Brightmap Sprite MINFA0 { Map MINFA0 DisableFullbright }
 Brightmap Sprite MINFB0 { Map MINFB0 DisableFullbright }

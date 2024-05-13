@@ -3,7 +3,7 @@ class GWM_BurstRifle : GWM_WeaponBase
 	action void A_FireRifle()
 	{
 		A_SpawnItemEx("GWM_Flash");
-		ZWL_FireHitscan(2, 25, tracerType: "GWM_Tracer");
+		ZWL_FireHitscan(2, 20, tracerType: "GWM_Tracer");
 		ZWL_EjectCasing("GWM_RifleCasing");
 		A_WeaponOffset(0, 6, WOF_ADD);
 		A_SetPitch(pitch-0.25);
@@ -90,22 +90,21 @@ class GWM_BurstRifle : GWM_WeaponBase
 			TNT1 A 0 ZWL_CheckReload();
 			BRSG B 1 Bright A_FireRifle;
 			BRSG CA 1 Bright A_WeaponOffset(0, -3, WOF_ADD);
-			BRSG A 1;
 			BRSG A 4 ZWL_ReFire(null, true);
 			Goto Ready;
 		AltFire:
 			TNT1 A 0 A_Jumpif(invoker.ammocount < 2,"Reload");
 			BRSG B 1 Bright A_FireRifleBurst;
-			BRSG CA 1 A_WeaponOffset(0, -3, WOF_ADD);
+			BRSG C 1 A_WeaponOffset(0, -6, WOF_ADD);
 			TNT1 A 0 A_Jumpif(invoker.ammocount < 2,"Reload");
 			BRSG B 1 Bright A_FireRifleBurst;
-			BRSG CA 1 A_WeaponOffset(0, -3, WOF_ADD);
+			BRSG C 1 A_WeaponOffset(0, -6, WOF_ADD);
 			TNT1 A 0 A_Jumpif(invoker.ammocount < 2,"Reload");
 			BRSG B 1 Bright A_FireRifleBurst;
-			BRSG CA 1 A_WeaponOffset(0, -3, WOF_ADD);
+			BRSG C 1 A_WeaponOffset(0, -6, WOF_ADD);
 			TNT1 A 0 A_Jumpif(invoker.ammocount < 2,"Reload");
 			BRSG B 1 Bright A_FireRifleBurst;
-			BRSG CA 1 A_WeaponOffset(0, -3, WOF_ADD);
+			BRSG C 1 A_WeaponOffset(0, -6, WOF_ADD);
 			TNT1 A 0 A_Jumpif(invoker.ammocount < 2,"Reload");
 			BRSG A 9;
 			BRSG A 0 ZWL_ReFire(null, true);

@@ -430,7 +430,7 @@ class ThingReplacer : StaticEventHandler
 			case 'Perforator':
 				e.Replacement = "GWM_Perforator";
 				break;
-		// Godless Night
+		// Paradise, Godless Night, and any other map(set) that uses Supercharge
 			// weapons
 			case 'TangoPistol':
 				e.Replacement = "GWM_Pistol";
@@ -468,8 +468,6 @@ class ThingReplacer : StaticEventHandler
 			// Nailgun seems to be unused and inaccessible
 			// Ammo
 			case 'TangoBulletClip':
-				e.Replacement = "GWM_MagazineSpawner";
-				break;
 			case 'TangoBulletClipHalf':
 				e.Replacement = "GWM_MagazineSpawner";
 				break;

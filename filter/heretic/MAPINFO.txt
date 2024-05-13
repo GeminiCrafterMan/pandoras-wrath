@@ -1,5 +1,5 @@
 GameInfo
 {
 	PlayerClasses = "GWM_HereticPlayer"
-    AddEventHandlers = "PlayerSpawnLines", "PandoraPointsHandler"//, "ThingReplacer"
+    AddEventHandlers = "ZCasingKiller", "ZFlatDecalKiller", "PlayerSpawnLines", /*"ThingReplacer", */"PandoraPointsHandler"
 }
