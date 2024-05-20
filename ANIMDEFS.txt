@@ -6,6 +6,10 @@ texture ZSHGA0 NoTrim
 texture SKSFA0 NoTrim
 texture SKSFB0 NoTrim
 texture SKSGA0 NoTrim
+// White Wedding
+texture WEDFA0 NoTrim
+texture WEDFB0 NoTrim
+texture WEDGA0 NoTrim
 // Super Shotgun
 //texture SSGFA0 NoTrim
 //texture SSGFB0 NoTrim

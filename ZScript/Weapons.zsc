@@ -38,8 +38,7 @@
 #include "ZScript/Weapons/Slot 6/GWM_PlasmaRifle.zsc"			// Plasma Rifle
 #include "ZScript/Weapons/Slot 6/GWM_NoiseCrusher.zsc"			// Noise Crusher! I'll make it good eventually I promise man -mengo
 
-#include "ZScript/Weapons/Slot 7/GWM_BFG9000.zsc"				// BFG9000 (Vanilla)
-#include "ZScript/Weapons/Slot 7/GWM_TwinPlasmaCannons.zsc"		// Twin Plasma Cannons
+#include "ZScript/Weapons/Slot 7/GWM_BFG9000.zsc"				// BFG9000 (Vanilla but kinda shittier)
 
 #include "ZScript/Weapons/Slot 8/GWM_EldritchAnnihilator.zsc"	// Shroine Tew, out now!
 #include "ZScript/Weapons/Slot 8/GWM_Perforator.zsc"			// Evitahnity Tew, out now!
