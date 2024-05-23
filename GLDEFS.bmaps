@@ -219,12 +219,9 @@ Brightmap Sprite MINED3D7 { Map MINED1 DisableFullbright }
 Brightmap Sprite MINED4D6 { Map MINEC1 DisableFullbright }
 Brightmap Sprite MINED5 { Map MINED1 DisableFullbright }
 Brightmap Sprite MINEZ0 { Map BMMINEZ0 DisableFullbright }
-// Pistol
-Brightmap Sprite PSTFA0 { Map PSTFA0 DisableFullbright }
-Brightmap Sprite PSTFB0 { Map PSTFB0 DisableFullbright }
 // SMG
-Brightmap Sprite SMGFA0 { Map SMGFA0 DisableFullbright }
-Brightmap Sprite SMGFB0 { Map SMGFB0 DisableFullbright }
+//Brightmap Sprite SMGFA0 { Map SMGFA0 DisableFullbright }
+//Brightmap Sprite SMGFB0 { Map SMGFB0 DisableFullbright }
 Brightmap Sprite SMGGA0 { Map SMGGA0 DisableFullbright }
 Brightmap Sprite SMGGB0 { Map SMGGB0 DisableFullbright }
 Brightmap Sprite SMGGC0 { Map SMGGC0 DisableFullbright }
@@ -263,11 +260,11 @@ Brightmap Sprite CBOWK0 { Map CBOWK0 DisableFullbright }
 Brightmap Sprite CBOWL0 { Map CBOWL0 DisableFullbright }
 Brightmap Sprite CBOWZ0 { Map BMCBOWZ0 DisableFullbright }
 // Zombie Shotgun
-Brightmap Sprite ZSHFA0 { Map ZSHFA0 DisableFullbright }
+/*Brightmap Sprite ZSHFA0 { Map ZSHFA0 DisableFullbright }
 Brightmap Sprite ZSHFB0 { Map ZSHFB0 DisableFullbright }
 // Slayer's Kahuna
 Brightmap Sprite SKSFA0 { Map SKSFA0 DisableFullbright }
-Brightmap Sprite SKSFB0 { Map SKSFB0 DisableFullbright }
+Brightmap Sprite SKSFB0 { Map SKSFB0 DisableFullbright }*/
 // Super Shotgun
 // Burst Rifle
 Brightmap Sprite BRSGA0 { Map BRSGA0 DisableFullbright }
@@ -345,3 +342,6 @@ Brightmap Sprite BFUGZ0 { Map BMBFUGZ0 DisableFullbright }
 // The Bouncer
 Brightmap Sprite BNCLA0 { Map BNCLA0 DisableFullbright }
 Brightmap Sprite BNCLZ0 { Map BMBNCLZ0 DisableFullbright }
+
+// JM: 5-20 Changes: Removed Zombie SG, Slayer's Kahuna and Pistol brightmaps in favor of the new flashes
+//JM: 5-22 changes: Added SMG, MP40 and Burst Fire new muzzle flashes
