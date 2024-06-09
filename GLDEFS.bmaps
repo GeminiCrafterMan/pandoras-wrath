@@ -284,6 +284,10 @@ Brightmap Sprite MINFE0 { Map MINFE0 DisableFullbright }
 Brightmap Sprite MINFF0 { Map MINFF0 DisableFullbright }
 Brightmap Sprite MINFG0 { Map MINFG0 DisableFullbright }
 Brightmap Sprite MINFH0 { Map MINFH0 DisableFullbright }
+
+// Scrapgun
+Brightmap Sprite SCRAB0 { Map SCRAB0 DisableFullbright }
+Brightmap Sprite SCRAC0 { Map SCRAC0 DisableFullbright }
 // Mad Vulcan
 // Basilisk
 // Frost Fang
