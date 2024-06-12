@@ -268,7 +268,7 @@ class GWM_QuickKickController : CustomInventory
 			{
 //				Console.Printf("Did effect");
 				// Check if +user2 is pressed:
-				if (!player.PlayerState == PST_DEAD && player.cmd.buttons & BT_USER2)
+				if (player.health > 0 && player.cmd.buttons & BT_USER2)
 				{
 					// move to DoKick if so:
 					return ResolveState("DoKick");
