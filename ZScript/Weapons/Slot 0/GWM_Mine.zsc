@@ -17,20 +17,20 @@ class GWM_Mine : GWM_WeaponBase // not that it needs to be this way...
 	States
 	{
 		Spawn:
-			MINE Z -1;
+			MINW Z -1;
 			Stop;
 		Ready:
-			MINE A 1 A_WeaponReady;
+			MINW A 1 A_WeaponReady;
 			Loop;
 		Deselect:
-			MINE A 1 A_Lower(18);
+			MINW A 1 A_Lower(18);
 			Loop;
 		Select:
-			MINE A 1 A_Raise(18);
+			MINW A 1 A_Raise(18);
 			Loop;
 		Fire:
 		// Toss a mine!
-			MINE B 4 A_FireProjectile("GWM_ThrownMine");
+			MINW B 4 A_FireProjectile("GWM_ThrownMine");
 			FIST B 4 A_CheckReload;
 			Goto Select;
 	}
@@ -65,13 +65,13 @@ class GWM_ThrownMine : Actor // Okay, so like, I was going to do this myself, bu
 	States
 	{
 		Spawn:
-			MINE CD 2;
+			MINW CD 2;
 			Loop;
 		Bounce:
-			MINE CD 1;
+			MINW CD 1;
 			Loop;
 		Bounce.Floor:
-			MINE # 0 {
+			MINW # 0 {
 				self.Vel.X = 0;
 				self.Vel.Y = 0;
 				self.Vel.Z = 0;
@@ -82,7 +82,7 @@ class GWM_ThrownMine : Actor // Okay, so like, I was going to do this myself, bu
 				bMOVEWITHSECTOR = true;
 			}
 		Ground:
-			MINE # 1
+			MINW # 1
 			{
 				// Create an iterator to cover the effective radius:
 				BlockThingsIterator it = BlockThingsIterator.Create(self, DETECTRADIUS);
@@ -114,8 +114,8 @@ class GWM_ThrownMine : Actor // Okay, so like, I was going to do this myself, bu
 		Detected:
 			// Make the mine jump up as a visual cue,
 			// then proceed to the explosion sequence:
-			MINE # 2 {vel.z += 8; A_StartSound("weapons/minedet");}
-			MINE ### 2 A_StartSound("weapons/minedet");
+			MINW # 2 {vel.z += 8; A_StartSound("weapons/minedet");}
+			MINW ### 2 A_StartSound("weapons/minedet");
 		Bounce.Actor:
 		Death:
 			XFIR A 1 Bright A_SetRenderstyle(alpha, STYLE_Add); // so it won't explode in timestop

@@ -228,12 +228,12 @@ class GWM_MineAmmo : Ammo
 		Inventory.Amount 1;
 		Inventory.MaxAmount 50;
 		Ammo.BackpackAmount 1;
-		Inventory.Icon "MINEZ0";
+		Inventory.Icon "MINWZ0";
 	}
 	States
 	{
 		Spawn:
-			MINE Z -1;
+			MINW Z -1;
 			Stop;
 	}
 }

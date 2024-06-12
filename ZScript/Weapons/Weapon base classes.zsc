@@ -1,6 +1,10 @@
 // Base weapon class
 class GWM_WeaponBase : ZWeapon
 {
+	action bool JustPressed(int which) // "which" being any BT_* value, mentioned above or not
+	{
+		return player.cmd.buttons & which && !(player.oldbuttons & which);
+	}
 	class<Weapon> baseVersion;
 	class<Weapon> baseVersion2;
 	property BaseVersion : baseVersion;
