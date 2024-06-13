@@ -326,6 +326,7 @@ class GWM_SSGChargedShot : FastProjectile
 		+FORCEPAIN;
 		+HEXENBOUNCE;
 		Bouncecount 3;
+		+FORCEXYBILLBOARD;
 	}
 	States
 	{
@@ -337,17 +338,20 @@ class GWM_SSGChargedShot : FastProjectile
 			Loop;
 		Crash:
 			TNT1 A 0 A_Jump(256,"Death");
+
 		Death:
-			PUFF AA 1 BRIGHT A_SpawnDebris("GWM_TracerSpark");
+			TNT1 AAA 0 A_SpawnDebris("GWM_TracerSpark");
+		Animator:
 			PUFF AA 0 BRIGHT A_SpawnItemEX("GWM_SSGChTrail",frandom(-8,8),frandom(-8,8),frandom(-8,8));
-			PUFF B 1 BRIGHT A_SetTranslucent(0.9,0);
-			PUFF B 1 BRIGHT A_PlaySound("bullet/ricochet",CHAN_BODY,.5);
-			PUFF CD 2 BRIGHT;
+			ZFIR B 2 BRIGHT A_SetScale(1,1); 
+			ZFIR DF 2 BRIGHT;
+			ZFIR HJ 2 BRIGHT A_PlaySound("bullet/ricochet",CHAN_BODY,.5);
+			ZFIR LNP 2 BRIGHT;
 			Stop;
 		XDeath:
-			PUFF AA 0 BRIGHT A_SpawnItemEX("GWM_SSGChTrail",frandom(-8,8),frandom(-8,8),frandom(-8,8));
-			TNT1 A 3 A_PlaySound("bullet/hitFlesh",CHAN_BODY,.5);
-			Stop;
+			TNT1 A 0 A_PlaySound("bullet/hitFlesh",CHAN_BODY,.5);
+			goto Animator;
+	
 	}
 }
 
@@ -401,13 +405,16 @@ class GWM_SSGShot2 : FastProjectile
 		Crash:
 			TNT1 A 0 A_Jump(256,"Death");
 		Death:
-			PUFF A 2 BRIGHT A_SpawnDebris("GWM_TracerSpark");
-			PUFF B 1 BRIGHT A_SetTranslucent(0.9,0);
-			PUFF B 1 BRIGHT A_PlaySound("bullet/ricochet",CHAN_BODY,.5);
-			PUFF CD 2 BRIGHT;
+			TNT1 A 0 A_SpawnDebris("GWM_TracerSpark");
+		Animator:
+			ZFIR B 2 BRIGHT A_SetScale(1,1); 
+			ZFIR DF 2 BRIGHT A_SetTranslucent(0.9,0);
+			ZFIR HJ 2 BRIGHT A_PlaySound("bullet/ricochet",CHAN_BODY,.5);
+			ZFIR LNP 2 BRIGHT;
 			Stop;
 		XDeath:
-			TNT1 A 3 A_PlaySound("bullet/hitFlesh",CHAN_BODY,.5);
-			Stop;
+			TNT1 A 0 A_PlaySound("bullet/hitFlesh",CHAN_BODY,.5);
+			goto Animator;
 	}
 }
+

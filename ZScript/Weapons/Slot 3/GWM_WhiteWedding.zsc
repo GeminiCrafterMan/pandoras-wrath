@@ -67,7 +67,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_StartSound("weapons/wwshot1");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 11, pellets: 15, spread: 6+(Countinv("GWM_KahunaSpread")*0.4), tracerType: "GWM_TracerWhite");
+				ZWL_FireHitscan(0, 11, pellets: 15, spread: 6+(Countinv("GWM_KahunaSpread")*0.4), pufftype: "WWBulletPuff" , tracerType: "GWM_TracerWhite");
 				
 				A_ChangeVelocity(-Cos(pitch)*3, 0, sin(pitch)*3,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
@@ -76,6 +76,11 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_WeaponOffset(0, 42, WOF_INTERPOLATE);
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
 				A_QuakeEx(1.5, 1.5, 1.5, 4, 0, 1, "", QF_SHAKEONLY);
+				
+				if(pitch > 70)
+				{
+				A_ChangeVelocity(0, 0, sin(pitch)*2,CVF_RELATIVE);
+				}
 			}
 			WEDG A 2 Bright;
 			WEDG A 1 Bright {
@@ -115,7 +120,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_Overlay(55, "Recoil");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 11, pellets: 12, spread: 5+(Countinv("GWM_KahunaSpread")*0.8), tracerType: "GWM_TracerWhite");
+				ZWL_FireHitscan(0, 11, pellets: 12, spread: 5+(Countinv("GWM_KahunaSpread")*0.8), pufftype: "WWBulletPuff" ,tracerType: "GWM_TracerWhite");
 				A_ChangeVelocity(-Cos(pitch)*3.1, 0, sin(pitch)*3.1,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
@@ -125,6 +130,11 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_QuakeEx(1.5, 1.5, 1.5, 4, 0, 1, "", QF_SHAKEONLY);
 				A_GiveInventory("GWM_KahunaSpread",2);
 				A_GiveInventory("GWM_WeddingDelay",1);
+				
+				if(pitch > 70)
+				{
+				A_ChangeVelocity(0, 0, sin(pitch)*2,CVF_RELATIVE);
+				}
 			}
 			WEDG A 1 Bright;
 			WEDG A 1 Bright {
@@ -162,7 +172,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_Overlay(55, "Recoil");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 12, pellets: 18, spread: 7, tracerType: "GWM_TracerWhite2");
+				ZWL_FireHitscan(0, 12, pellets: 18, spread: 7, pufftype: "WWBulletPuff2" , tracerType: "GWM_TracerWhite2");
 				A_ChangeVelocity(-Cos(pitch)*3.5, 0, sin(pitch)*3.5,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
@@ -172,6 +182,13 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_QuakeEx(1.5, 1.5, 1.5, 4, 0, 1, "", QF_SHAKEONLY);
 				A_GiveInventory("GWM_KahunaSpread",2);
 				GWM_Player(player.mo).WeddingCharges = GWM_Player(player.mo).WeddingCharges-1;
+			
+				if(pitch > 70)
+				{
+					if(vel.x < 0)
+					{A_ChangeVelocity(vel.x, vel.y, 0,CVF_REPLACE);}
+				A_ChangeVelocity(0, 0, sin(pitch)*3,CVF_RELATIVE);
+				}
 			}
 			WEDG A 1 Bright {
 				A_WeaponOffset(0, -10, WOF_ADD);
@@ -262,5 +279,65 @@ class GWM_WhiteWedding : GWM_WeaponBase
 			WEDG DDCCC 1;
 			WEDG B 5 A_StartSound("weapons/skpump2");
 			Goto Ready;
+	}
+}
+
+class WWBulletPuff : ZBulletPuff
+{
+    Default
+    {
+        Decal "BulletChip";
+        Height 8;
+		Renderstyle "Add";
+		Alpha 1.0;
+		Scale 0.15;
+    }
+
+	States
+	{
+	Spawn:
+	Melee:
+	Crash:
+		TNT1 AA 1 A_SpawnItemEx("ZBulletChip");
+		
+		
+		WEFX AAAAAAA 1 Bright 
+		{
+		A_Stop();
+		A_FadeOut(0.1);
+		A_Setscale(scalex*0.8,scalex*0.8);
+		}
+		
+        stop;
+	}
+}
+
+class WWBulletPuff2 : ZBulletPuff
+{
+    Default
+    {
+        Decal "BulletChip";
+        Height 8;
+		Renderstyle "Add";
+		Alpha 1.0;
+		Scale 0.25;
+    }
+
+	States
+	{
+	Spawn:
+	Melee:
+	Crash:
+		TNT1 AA 1 A_SpawnItemEx("ZBulletChip");
+		
+		
+		WEFX AAAAAAAAA 1 Bright 
+		{
+		A_Stop();
+		A_FadeOut(0.1);
+		A_Setscale(scalex*0.8,scalex*0.8);
+		}
+		
+        stop;
 	}
 }

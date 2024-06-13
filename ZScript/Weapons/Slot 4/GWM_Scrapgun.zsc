@@ -49,6 +49,14 @@ class GWM_Scrapgun : GWM_WeaponBase
 				Radius_Quake(6, 3, 0, 1, 0);
 				A_SetPitch(pitch - 1.0);
 				A_Overlay(55,"Recoil");
+				
+				if(pitch > 70)
+				{
+					if(vel.x < 0)
+					{A_ChangeVelocity(vel.x, vel.y, 0,CVF_REPLACE);}
+				A_ChangeVelocity(0, 0, sin(pitch)*3,CVF_RELATIVE);
+				}
+				
 				A_ChangeVelocity(-Cos(pitch)*5, 0, sin(pitch)*5,CVF_RELATIVE);
 				
 			}
