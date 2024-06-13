@@ -481,6 +481,12 @@ class GWM_ShotgunIceTrail : Actor
 
 class GWM_ShotgunIceWallGenerator : GWM_IceProjectile
 {
+	override void Tick()
+	{
+		if (waterlevel > 0 && InStateSequence(CurState, ResolveState('Spawn')))
+			SetStateLabel("WaterSpawn");
+		Super.Tick();
+	}
 	Default
 	{
 		Radius 3;
@@ -501,7 +507,7 @@ class GWM_ShotgunIceWallGenerator : GWM_IceProjectile
 	States
 	{
 		Spawn:
-			SHGI AAAAAA 1 Bright A_Jumpif(waterlevel>0,"WaterSpawn");
+			SHGI AAAAAA 1 Bright;
 			SHGI A 0 Bright A_SpawnItemEx("GWM_ShotgunIceTrail");
 			loop;
 		Death:
