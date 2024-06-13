@@ -501,7 +501,8 @@ class GWM_ShotgunIceWallGenerator : GWM_IceProjectile
 	States
 	{
 		Spawn:
-			SHGI A 6 Bright A_SpawnItemEx("GWM_ShotgunIceTrail");
+			SHGI AAAAAA 1 Bright A_Jumpif(waterlevel>0,"WaterSpawn");
+			SHGI A 0 Bright A_SpawnItemEx("GWM_ShotgunIceTrail");
 			loop;
 		Death:
 			TNT1 A 5
@@ -570,6 +571,102 @@ class GWM_ShotgunIceWallGenerator : GWM_IceProjectile
 			A_SpawnItemEX("GWM_ShotgunIceTrail",frandom(0,15),frandom(-22.5,22.5),frandom(60,80));
 			}
 			stop;
+		WaterSpawn:
+			TNT1 A 0 A_Die();
+			TNT1 A 0 A_Stop();
+			TNT1 A 0 {bNOINTERACTION = true;}
+			TNT1 A 5
+			{
+			A_SpawnItemEX("IceWallColumn",0,0,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			}
+			
+			TNT1 A 5
+			{
+			A_SpawnItemEX("IceWallColumn",0,0,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",15,0,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-15,0,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",0,-15,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",0,15,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			}
+			
+			TNT1 A 5
+			{
+			A_SpawnItemEX("IceWallColumn",15,0,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-15,0,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",0,-15,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",0,15,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",15,15,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-15,15,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-15,-15,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",15,-15,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",30,0,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-30,0,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",0,-30,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",0,30,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			}
+			
+			TNT1 A 5
+			{
+			A_SpawnItemEX("IceWallColumn",15,15,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-15,15,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-15,-15,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",15,-15,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",15,-30,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-15,-30,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-15,30,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",15,30,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-30,15,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",30,15,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-30,-15,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",30,-15,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",45,0,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-45,0,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",0,-45,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",0,45,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			}
+			
+			TNT1 A 5
+			{
+			
+			A_SpawnItemEX("IceWallColumn",45,-15,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-45,15,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-15,-45,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",15,45,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",45,15,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-45,-15,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",15,-45,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-15,45,00,0,0,0,0,SXF_NOCHECKPOSITION);
+			
+			A_SpawnItemEX("IceWallColumn",30,30,0,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-30,30,0,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",30,-30,0,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-30,-30,0,0,0,0,0,SXF_NOCHECKPOSITION);
+			
+			A_SpawnItemEX("IceWallColumn",-30,15,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",30,-15,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-30,-15,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",30,15,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			
+			A_SpawnItemEX("IceWallColumn",-15,30,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",15,-30,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-15,-30,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",15,30,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			
+			A_SpawnItemEX("IceWallColumn",0,-30,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",0,30,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",-30,0,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("IceWallColumn",30,0,-20,0,0,0,0,SXF_NOCHECKPOSITION);
+			
+			}
+			
+			TNT1 A 0
+			{
+			A_SpawnItemEX("GWM_ShotgunIceTrail",frandom(0,15),frandom(-22.5,22.5),frandom(0,20));
+			A_SpawnItemEX("GWM_ShotgunIceTrail",frandom(0,15),frandom(-22.5,22.5),frandom(0,20));
+			A_SpawnItemEX("GWM_ShotgunIceTrail",frandom(0,15),frandom(-22.5,22.5),frandom(0,20));
+			A_SpawnItemEX("GWM_ShotgunIceTrail",frandom(0,15),frandom(-22.5,22.5),frandom(0,20));
+
+			}
 		XDeath:
 			SHGI FBCDE 4 Bright;
 			Stop;
