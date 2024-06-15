@@ -1,6 +1,7 @@
 class GWM_StatusBar : BaseStatusBar
 {
 	HUDFont mHUDFont;
+	HUDFont mSmallFont;
 	HUDFont mIndexFont;
 	HUDFont mAmountFont;
 	InventoryBarState diparms;
@@ -18,6 +19,7 @@ class GWM_StatusBar : BaseStatusBar
 		fnt = "INDEXFONT_DOOM";
 		mIndexFont = HUDFont.Create(fnt, fnt.GetCharWidth("0"), Mono_CellLeft);
 		mAmountFont = HUDFont.Create("INDEXFONT");
+		mSmallFont = HUDFont.Create("SmallFONT");
 		diparms = InventoryBarState.Create();
 	}
 
@@ -143,26 +145,27 @@ class GWM_StatusBar : BaseStatusBar
 
 	protected void DrawFullScreenStuff ()
 	{
+	
+	
+	
 		Vector2 iconbox = (40, 20);
 		// Draw health
-		let berserk = CPlayer.mo.FindInventory("GWM_PowerStrength");
-		DrawImage(berserk? "PSTRA0" : "MEDIA0", (20, -2));
-/*		if (CPlayer.Health == 0)
-			DrawBar("STBAROFF", "STBAROFF", CPlayer.Health, 0, (44, -20), 0, 0);
-		else if (CPlayer.Health > 0 && CPlayer.Health <= 100)
-			DrawBar("STBARON", "STBAROFF", CPlayer.Health, 100, (44, -20), 0, 0);
-		else if (CPlayer.Health > 100 && CPlayer.Health <= 200)
-			DrawBar("STBAR200", "STBARON", CPlayer.Health-100, 100, (44, -20), 0, 0);
-		else if (CPlayer.Health > 200)
-			DrawBar("STBAR300", "STBAR200", CPlayer.Health-200, 100, (44, -20), 0, 0);
-*/
-		DrawString(mHUDFont, FormatNumber(CPlayer.health, 3), (44, -20), translation: Font.CR_Sapphire);
+		DrawImage("PWHUD1", (1, 0),DI_ITEM_BOTTOM|DI_ITEM_LEFT|DI_SCREEN_LEFT_BOTTOM);
+
+		int hpmax;
+		hpmax = CPlayer.mo.CountInv("GWM_HPupgrade") +100;
+		DrawString(mHUDFont, FormatNumber(CPlayer.health, 5), (44, -40), translation: Font.CR_Sapphire);
+		DrawString(mSmallFont, FormatNumber(hpmax, 5), (50, -20), translation: Font.CR_Sapphire);
+		
+		
+	//DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+	
 		
 		let armor = CPlayer.mo.FindInventory("BasicArmor");
 		if (armor != null && armor.Amount > 0)
 		{
-			DrawInventoryIcon(armor, (20, -22));
-			DrawString(mHUDFont, FormatNumber(armor.Amount, 3), (44, -40), translation: Font.CR_Sapphire);
+			//DrawInventoryIcon(armor, (20, -22));
+			DrawString(mHUDFont, FormatNumber(armor.Amount, 3), (74, -80), translation: Font.CR_Sapphire);
 		}
 		
 		
@@ -170,7 +173,7 @@ class GWM_StatusBar : BaseStatusBar
 
 		amt1 = GetAmount("GWM_PandoraPoints");
 		amt2 = GetAmount("GWM_PandoraPointsCap");
-		DrawString(mHUDFont, StringStruct.Format("%d/%d", amt1, amt2), (-10, -74), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Purple);
+		DrawString(mSmallFont, StringStruct.Format("%d / %d", amt1, amt2), (85, -64), DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Purple);
 		
 		
 		
@@ -197,11 +200,11 @@ class GWM_StatusBar : BaseStatusBar
 		if (armor != null && armor.Amount > 0)
 		{
 			mtexname2.Replace("STF", "STX");
-			DrawImage(mtexname2, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+			DrawImage(mtexname2, (8, -40), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
 		}
 		else
 		{
-			DrawTexture(GetMugShot(5,MugShot.STANDARD,"STF"), (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+			DrawTexture(GetMugShot(5,MugShot.STANDARD,"STF"), (8, -40), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
 		}
 		
 			 
@@ -225,7 +228,7 @@ class GWM_StatusBar : BaseStatusBar
 					mtexname.Replace("STF", "CA3");
 				else if (armor.Amount > 0)
 					mtexname.Replace("STF", "CA4");
-					DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+					//DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
 			}
 			else
 			if (arm.armortype == "GWM_AssaultArmor" ||arm.armortype == "BlueArmor")
@@ -238,7 +241,7 @@ class GWM_StatusBar : BaseStatusBar
 					mtexname.Replace("STF", "XA3");
 				else if (armor.Amount > 0)
 					mtexname.Replace("STF", "XA4");
-					DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+					//DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
 			}
 			else
 			{
@@ -250,8 +253,10 @@ class GWM_StatusBar : BaseStatusBar
 					mtexname.Replace("STF", "CA3");
 				else if (armor.Amount > 0)
 					mtexname.Replace("STF", "CA4");
-					DrawImage(mtexname, (90, -36), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
+					
 			}
+			
+			DrawImage(mtexname, (8, -40), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM);
 		}
 		
 		Inventory ammotype1, ammotype2;

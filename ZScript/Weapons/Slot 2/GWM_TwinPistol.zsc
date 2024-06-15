@@ -32,6 +32,11 @@ class GWM_TwinPistol : GWM_WeaponBase
 	}
 	States
 	{
+		Recoil:
+			TNT1 A 2 A_Setpitch(pitch-0.6);
+			TNT1 A 1;
+			TNT1 AAAA 1 A_Setpitch(pitch+0.15);
+			Stop;
 		Spawn:
 			PSTG Z -1;
 			Stop;
@@ -83,18 +88,13 @@ class GWM_TwinPistol : GWM_WeaponBase
 				
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,5);
-				A_Setpitch(pitch-0.6);
 				A_GunFlash();
+				A_Overlay(55, "Recoil");
 			}
 			PSTG C 1 {
 				ZWL_EjectCasing("GWM_PistolCasing", offset: (24, 0, -6));
 			}
-			PSTG DEEE 1
-			{
-				A_Setpitch(pitch+0.15);
-				ZWL_WeaponReady(ZRF_NoBob);
-			}
-			PSTG DDCCBB 1 ZWL_WeaponReady(ZRF_NoBob);
+			PSTG DEEEDDCCBB 1 A_JumpIf(JustPressed(BT_ATTACK), "Fire");
 			TNT1 A 0 ZWL_ReFire(null, true);
 			Goto Ready;
 			
@@ -129,7 +129,7 @@ class GWM_TwinPistol : GWM_WeaponBase
 			}
 			PSTG DEEE 1
 			{A_Setpitch(pitch+0.20);}
-			PSTG DDCCBB 1 ZWL_WeaponReady(ZRF_NoBob);
+			PSTG DDCCBB 1 A_JumpIf(JustPressed(BT_ATTACK), "Fire");
 			TNT1 A 0 ZWL_ReFire(null, true);
 			Goto Ready;
 		
