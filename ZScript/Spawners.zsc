@@ -122,7 +122,8 @@ class GWM_ChaingunSpawner : GWM_WeaponSpawner replaces Chaingun
 	Default
 	{
 		DropItem "GWM_Minigun", 255, 6;
-		DropItem "GWM_BurstRifle", 255, 8;
+		DropItem "GWM_AssaultRifle", 255, 8;
+		DropItem "GWM_BurstRifle", 255, 1;
 		DropItem "GWM_Flamethrower", 255, 2;
 	}
 }
