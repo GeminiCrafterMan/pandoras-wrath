@@ -247,9 +247,6 @@ class GWM_IceShotgun : GWM_WeaponBase
 			{
 				if (invoker.chargeLevel < 10 && invoker.ammoCount < 2)
 					A_Refire();
-			}
-			ISHT A 0
-			{
 				if (invoker.chargeLevel > 10 && invoker.ammoCount < 3)
 					A_Refire();
 			}

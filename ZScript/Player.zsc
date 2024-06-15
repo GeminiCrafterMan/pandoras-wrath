@@ -241,6 +241,7 @@ class GWM_QuickKickController : CustomInventory
 			psp.caller = self;
 			psp.bAddBob = false;
 			psp.bAddWeapon = false;
+			psp.bPlayerTranslated = true;
 			psp.SetState(ResolveState("ReadyKick"));
 		}
 	}
