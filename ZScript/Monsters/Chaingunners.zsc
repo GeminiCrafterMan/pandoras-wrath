@@ -211,8 +211,6 @@ class GWM_HeavyRifleman : ChaingunGuy
 		DropItem "GWM_BurstRifle", 100;
 		DropItem "GWM_FMJMagazine", 100;
 		DropItem "GWM_FMJBelt", 55;
-		
-		
 	}
 	States
 	{

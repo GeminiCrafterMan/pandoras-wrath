@@ -26,12 +26,6 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 		Spawn:
 			ZSHG Z -1;
 			Stop;
-/*		Select:
-			ZSHG A 1 A_Raise(18);
-			Loop;
-		Deselect:
-			ZSHG A 1 A_Lower(18);
-			Loop;*/
 		Select:
 			TNT1 A 0 {
 				ZWL_QuickRaise();
@@ -43,9 +37,9 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 			ZSHG AA 1 {
 				A_WeaponOffset(-8, -16, WOF_ADD);
 			}
-			ZSHG H 4 {A_StartSound("weapons/zsgpump1"); ZWL_WeaponReady( );}
-			ZSHG GGFF 1 ZWL_WeaponReady( );
-			ZSHG A 1 {A_StartSound("weapons/zsgpump2"); ZWL_WeaponReady( );}
+			ZSHG H 4 {A_StartSound("weapons/zsgpump1"); ZWL_WeaponReady();}
+			ZSHG GGFF 1 ZWL_WeaponReady();
+			ZSHG A 1 {A_StartSound("weapons/zsgpump2"); ZWL_WeaponReady();}
 			Goto Ready;
 		Deselect:
 			ZSHG AA 1 {
@@ -55,16 +49,16 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 				A_WeaponOffset(8, 16, WOF_ADD);
 			}
 			TNT1 A 0 A_WeaponOffset(0, flags: WOF_KEEPY);
-			TNT1 A 0 ZWL_QuickLower;
+			TNT1 A 0 ZWL_QuickLower();
 			Stop;
 		Ready:
-			ZSHG A 1 ZWL_WeaponReady( );
+			ZSHG A 1 ZWL_WeaponReady();
 			Loop;
 		Fire:
 			ZSHG A 1 {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 10, pellets: 7, spread: 5.6, tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(0, 10, pellets: 8, spread: 5.6, tracerType: "GWM_Tracer"); // G: SLIGHT buff
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 				A_GunFlash();
@@ -88,7 +82,7 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 				A_StartSound("weapons/zsgpump1");
 				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, -6, -14));
 			}
-			ZSHG DDCCC 1; // These two play on CHAN_BODY because the firing sound is just too fucking long
+			ZSHG DDCCC 1;
 			ZSHG B 6 A_StartSound("weapons/zsgpump2");
 			ZSHG A 3;
 			ZSHG A 0 ZWL_ReFire();
