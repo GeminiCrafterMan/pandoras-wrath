@@ -20,10 +20,9 @@ class GWM_PlasmaRifle : GWM_WeaponBase
 		Weapon.SelectionOrder 100;
 		Weapon.AmmoType "GWM_Cell";
 		Weapon.AmmoType2 "GWM_Cell";
-		Decal "RailScorch";
 		Tag "$TAG_PLASMARIFLE";
 		Inventory.PickupMessage "$GOTPLASMARIFLE";
-		Obituary "$KILLPLASMARIFLE_RAIL";
+		Obituary "$KILLPLASMARIFLE";
 		ZWeapon.MaxCharge 100;
 	}
 	States
@@ -245,7 +244,6 @@ class GWM_PlasmaBall : PlasmaBall
 	Default
 	{
 		Decal "PlasmaScorch";
-		Obituary "$KILLPLASMARIFLE";
 		DamageFunction (23);
 		Renderstyle "Add";
 		Alpha 1.0;
@@ -284,7 +282,7 @@ class GWM_PlasmaBallLevel2 : GWM_PlasmaBall
 	{
 		Scale 1.5;
 		+SHOOTABLE
-		Obituary "$KILLPLASMARIFLE";
+		Obituary "$KILLPLASMARIFLE_CHARGE";
 		DamageFunction (115);
 	}
 	States
