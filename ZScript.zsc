@@ -2,9 +2,7 @@ version "4.1.0"
 
 #include "ZScript/Event Handlers.zsc" // Event handlers. Mostly for spawn voices and berserk voices.
 #include "ZScript/Player.zsc" // Player class
-#include "ZScript/Pickups.zsc" // Pickups
-#include "ZScript/Ammo.zsc" // Ammo
-#include "ZScript/Armor.zsc" // Armor
+#include "ZScript/Items.zsc" // Items
 #include "ZScript/Spawners.zsc" // Spawners
 
 #include "ZScript/status_bar.zs"

@@ -98,19 +98,14 @@ Model GWM_ShotgunIceShard // Name of actor
 
 Model IceWallColumn
 {
-   Path "Models"   
-   Model 0 "icebox1.md2"   
-   Skin 0 "icebox1.png"    
-   Skin 0 "icebox2.png"    
-   Skin 0 "icebox3.png"    
-   Skin 0 "icebox4.png"    
-   Scale 0.45 0.45 0.64          
+   Path "Models/Ice Wall"
+   Model 0 "IceWallColumn.obj"
+   Skin 0 "icebox1.png"
+   Scale 17 17 20.23
    PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
-	Offset 0 0 1
-	
-	//Disable these comments for model replacing
-	//FrameIndex ICWL A 0 0
-	//FrameIndex ICWL B 0 1
-	//FrameIndex ICWL C 0 2
-	//FrameIndex ICWL D 0 3
+
+	FrameIndex ICWL A 0 0
+	FrameIndex ICWL B 0 0
+	FrameIndex ICWL C 0 0
+	FrameIndex ICWL D 0 0
 }

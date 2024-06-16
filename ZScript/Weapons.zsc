@@ -48,6 +48,3 @@
 #include "./Weapons/Slot 9/GWM_Flamethrower.zsc"			// Flamethrower
 #include "./Weapons/Slot 9/GWM_AcidCannon.zsc"			// Acid Cannon (corrosive goop gun)
 #include "./Weapons/Slot 9/GWM_Melter.zsc"				// Melter
-
-#include "./Weapons/Slot 0/GWM_Mine.zsc"					// Land mine
-#include "./Weapons/Slot 0/GWM_Dynamite.zsc"				// Dynamite bundle

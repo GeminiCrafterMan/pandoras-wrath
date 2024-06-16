@@ -9,8 +9,6 @@ class GWM_WeaponSpawner : RandomSpawner
 		Super.BeginPlay();
 		if (random(0,4) == 4)
 			Spawn("GWM_Mine", self.pos);
-		else if (random(0,4) == 3)
-			Spawn("GWM_Dynamite", self.pos);
 	}
 }
 
@@ -181,7 +179,7 @@ class GWM_SoulsphereSpawner : RandomSpawner replaces Soulsphere
 	Default
 	{
 		DropItem "GWM_Soulsphere";
-		DropItem "GWM_PortableMedkit";
+		DropItem "GWM_MedicBag";
 	}
 }
 
@@ -190,7 +188,6 @@ class GWM_BerserkSpawner : RandomSpawner replaces Berserk
 	Default
 	{
 		DropItem "GWM_Berserk";
-//		DropItem "GWM_KnightSphere";
 	}
 }
 

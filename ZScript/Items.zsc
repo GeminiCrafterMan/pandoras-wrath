@@ -1,0 +1,8 @@
+// Generic powerups and items
+#include "./Items/Generic Items.zsc"
+#include "./Items/Ammo.zsc" // Ammo
+#include "./Items/Armor.zsc" // Armor
+// Special items
+#include "./Items/GWM_MedicBag.zsc"
+#include "./Items/GWM_Mine.zsc"
+#include "./Items/GWM_Stopwatch.zsc"

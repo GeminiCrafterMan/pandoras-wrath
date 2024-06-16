@@ -1,0 +1,43 @@
+class GWM_MedicBag : Inventory
+{
+    override bool Use(bool pickup)
+    {
+		int firstAidAmount;
+		firstAidAmount = owner.CountInv("GWM_MedicBag");
+
+		if (!owner || !owner.player || owner.player.Health > owner.GetMaxHealth(true) || !owner.FindInventory("GWM_MedicBag"))
+		return false;
+
+		if (owner.player.Health < owner.GetMaxHealth(true) && firstAidAmount != 0)
+		{
+			owner.A_StartSound("items/portable_medkit", CHAN_ITEM); 
+			int toheal = owner.GetMaxHealth(true) - owner.player.Health; //Check how much to heal
+
+			If(toheal > firstAidAmount)  //If that amount is larger than the amount of charge, set it to be equal
+			{
+				toheal = firstAidAmount;
+			}
+			owner.GiveBody(toheal); //Heal the player that amount
+			owner.A_TakeInventory("GWM_MedicBag", toheal); //Take that amount of charge
+		}
+		return Super.Use(pickup);
+	}
+	Default
+	{
+		//$Category Pickups
+		//$Title "Medic Bag
+		+INVENTORY.INVBAR;
+		Inventory.Amount 100;
+		Inventory.MaxAmount 300;
+		Inventory.InterHubAmount 300;
+		Inventory.PickUpMessage "$GOTMEDICBAG";
+		Inventory.Icon "PKITA0";
+		Tag "$TAG_MEDICBAG";
+	}
+	States
+	{
+		Spawn:
+			PKIT A -1;
+			Stop;
+	}
+}

@@ -54,11 +54,6 @@ bullet/hitFlesh5	"Sounds/Weapons/Bullets/hit5.wav"
 // Explosive barrel
 objects/barrel_explode		"Sounds/Objects/barrel_explode.wav"
 
-// Pickups
-pickups/healthbonus			"Sounds/Pickups/Health Bonus.wav"
-pickups/armorbonus			"Sounds/Pickups/Armor Bonus.wav"
-pickups/healthitem		"Sounds/Pickups/HealthItem.wav"
-
 // Ammo
 pickups/magazine			"Sounds/Pickups/Ammo/Magazine.wav"
 pickups/magazinebox			"Sounds/Pickups/Ammo/Magazine Box.wav"
@@ -67,18 +62,13 @@ pickups/shells				"Sounds/Pickups/Ammo/Shells.wav"
 pickups/gas					"Sounds/Pickups/Ammo/Gas.wav"
 pickups/notebox				"Sounds/Pickups/Ammo/Note Box.wav"
 pickups/scrapdrum			"Sounds/Pickups/Ammo/Scrap Drum.ogg"
-pickups/scrappack			"Sounds/Pickups/Ammo/Scrap Drum Pack.ogg"
+pickups/scrapdrumpack		"Sounds/Pickups/Ammo/Scrap Drum Pack.ogg"
 pickups/stompermissile		"Sounds/Pickups/Ammo/Stomper Missile.ogg"
 pickups/stomperbox			"Sounds/Pickups/Ammo/Stomper Box.ogg"
 pickups/backpack			"Sounds/Pickups/Ammo/Backpack.wav"
 
 // Weapons
 misc/w_pkup					"Sounds/Pickups/Weapon.wav"
-
-// Powerups
-powerups/time_stop_start	"Sounds/Powerups/time_stop_start.wav"
-powerups/time_stop_end		"Sounds/Powerups/time_stop_end.wav"
-powerups/portable_medkit	"Sounds/Powerups/portable_medkit.wav"
 
 // Keys
 $random misc/k_pkup	{ misc/k_pkup1 misc/k_pkup2 misc/k_pkup3 misc/k_pkup4 }

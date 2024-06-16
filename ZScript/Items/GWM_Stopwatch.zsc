@@ -1,0 +1,111 @@
+//you dont really need custom inventory for this
+Class GWM_Stopwatch : Inventory
+{
+	default
+	{
+		//$Category Pickups
+		//$Title "Stopwatch
+		//$Sprite WTCHA0
+		+NOGRAVITY
+		+FLOATBOB
+		+INVENTORY.INVBAR
+		+NOTIMEFREEZE
+		Inventory.Icon "WTCHA0";
+		Tag "$TAG_STOPWATCH";
+		Inventory.MaxAmount 4;
+		Inventory.PickupMessage "$GOTSTOPWATCH";
+	}
+	states
+	{
+		Spawn:
+			WTCH A 1 Bright A_SpawnItemEx("GWM_StopwatchSparkle", 12, xvel: 0.5, zvel: 1, angle: random(0, 359), flags: SXF_NOCHECKPOSITION);
+			Loop;
+	}
+	
+	override Bool Use(bool pickup)
+	{
+		//get the previous weapon
+		weapon prev = owner.player.readyweapon;
+		
+		//you dont want to set the animation weapon as the prev weapon
+		if(prev is "GWM_StopwatchAnimation")
+			return false;
+		
+		//give the animation weapon to the player
+		owner.Giveinventory("GWM_StopwatchAnimation",1);
+		//cast it to that specific weapon class type to access its prevweapon variable and assign it
+		GWM_StopwatchAnimation watch = GWM_StopwatchAnimation(owner.findinventory("GWM_StopwatchAnimation"));
+		if(watch)
+			watch.prevweapon = prev;
+			
+		//set the new weapon as the selected weapon
+		owner.player.readyweapon = null;
+		owner.player.pendingweapon = watch;
+		return true;
+	}
+}
+class GWM_StopwatchAnimation : Weapon
+{
+	Default
+	{
+		+NOTIMEFREEZE
+		Tag "Stopwatch";
+	}
+	weapon prevweapon;
+	States
+	{
+		Select:
+			WTCH B 1 A_Raise(18);
+			Loop; // goes to Ready
+		Ready:
+		Fire:
+			WTCH B 40 A_StartSound("powerups/time_stop_start");
+			WTCH B 7 A_GiveInventory("GWM_StopwatchStopper",1);
+			TNT1 A 0 {
+				player.pendingweapon = invoker.prevweapon;
+				A_TakeInventory("GWM_StopwatchAnimation");
+			}
+			Stop;
+		Deselect:
+			WTCH B 1 A_Lower(18);
+			Loop;
+	}
+}
+class GWM_StopwatchStopper : PowerupGiver
+{
+	Default
+	{
+		+NOTIMEFREEZE
+		-INVENTORY.INVBAR
+		+INVENTORY.QUIET
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.UNDROPPABLE
+		Powerup.Type "GWM_PowerTimeFreezer";
+//		Powerup.Color "888888", 0.5;
+		Powerup.Colormap 0.0, 0.0, 0.0, 0.5, 0.5, 0.5;
+		Powerup.Duration -15; // 15 seconds
+	}
+}
+class GWM_PowerTimeFreezer : PowerTimeFreezer
+{
+	override void EndEffect()
+	{
+		Super.EndEffect();
+		if(owner)
+			owner.A_StartSound("powerups/time_stop_end");
+	}
+}
+class GWM_StopwatchSparkle : Actor
+{
+	Default
+	{
+		+NOTIMEFREEZE
+		+NOINTERACTION
+	}
+	States
+	{
+		Spawn:
+			WTCH DEFGH 2 Bright;
+			Stop;
+	}
+}

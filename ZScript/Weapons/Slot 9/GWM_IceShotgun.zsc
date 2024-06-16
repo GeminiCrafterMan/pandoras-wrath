@@ -715,16 +715,16 @@ class IceWallColumn : Actor
 					return ResolveState("Spawn2");
 				return ResolveState(null);
 			}
-			ICWL A 1 Bright;
+			ICWL A 1 Bright A_ChangeModel("", skinpath: "Models/Ice Wall", skin: "icebox1.png");
 			loop;
 			Spawn2:
-			ICWL B 1 Bright;
+			ICWL B 1 Bright A_ChangeModel("", skinpath: "Models/Ice Wall", skin: "icebox2.png");
 			goto Spawny;
 			Spawn3:
-			ICWL C 1 Bright;
+			ICWL C 1 Bright A_ChangeModel("", skinpath: "Models/Ice Wall", skin: "icebox3.png");
 			goto Spawny;
 			Spawn4:
-			ICWL D 1 Bright;
+			ICWL D 1 Bright A_ChangeModel("", skinpath: "Models/Ice Wall", skin: "icebox4.png");
 			goto Spawny;
 
 		Death:

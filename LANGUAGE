@@ -2,9 +2,6 @@
 PLACEHOLDER = "You shouldn't see this.";
 
 // Weapon pickup messages
-// Slot 0
-GOTMINES = "\c[White]You picked up some \c[DarkGray]land mines\c[White]! (Slot 0)";
-GOTDYNAMITE = "\c[White]You picked up some \c[DarkGray]dynamite\c[White]! (Slot 0)";
 // Slot 1
 GOTLUMBERJACK = "\c[White]You picked up the \c[Black]Lumberjack\c[White]! (Slot 1)";
 GOTIMPACTOR = "\c[White]You picked up the \c[Black]Impactor Gauntlet\c[White]! (Slot 1)";
@@ -54,7 +51,6 @@ GOTICESHOTGUN = "\c[White]You picked up the \c[Sapphire]Ice Shotgun\c[White]! (S
 GOTPFMISSILELAUNCHER = "\c[White]You picked up the \c[Sapphire]Perfect Freeze Missile Launcher\c[White]! (Slot 9)";
 
 // Ammo pickup messages
-DISARMEDMINE = "\c[White]Disarmed and retrieved a \c[DarkGray]mine\c[White].";
 // Bullets
 GOTHOLLOWPOINTMAG = "\c[White]Picked up a \c[Yellow]magazine of hollow point rounds\c[White].";
 GOTFULLMETALMAG = "\c[White]Picked up a \c[Gold]magazine of full metal jacket rounds\c[White].";
@@ -95,14 +91,16 @@ GOTNOTEBOX = "\c[White]Picked up a \c[Purple]note box\c[White].";
 // Powerup messages
 GOTLIFEDRAIN = "Life drain!";
 GOTREFLECTIVE = "Reflective shots!";
-GOTSTOPWATCH = "Stopwatch!";
-GOTPORTABLEMEDKIT = "Portable medkit!";
 GOTHEALTHBONUS = "\c[White]Picked up a \c[Blue]health bonus\c[White]. (+1 health)";
 GOTARMORBONUS = "\c[White]Picked up an \c[Green]armor bonus\c[White]. (+1 armor)";
 GOTSTIMPACK = "\c[White]Picked up a \c[Red]stimpack\c[White].";
 GOTSTIMPACKNEED = "\c[White]Picked up a \c[Red]stimpack\c[White] that you REALLY need!";
 GOTMEDKIT = "\c[White]Picked up a \c[Red]medkit\c[White].";
 GOTMEDKITNEED = "\c[White]Picked up a \c[Red]medkit\c[White] that you REALLY need!";
+// Usable items
+GOTSTOPWATCH = "\c[White]Picked up a \c[Gold]Stopwatch\c[White].";
+GOTMEDICBAG = "\c[White]Picked up a \c[Red]Medic Bag\c[White].";
+GOTMINES = "\c[White]Picked up a \c[DarkGray]land mine\c[White].";
 
 // Armor pickups
 GOTARMOR = "\c[White]You obtained some \c[Green]Combat Armor\c[White]!";
@@ -116,7 +114,6 @@ GOTHELLARMOR = "\c[White]You got the \c[Red]Hellfire Armor\c[White]!";
 
 // Obituaries
 KILLMINES = "%o didn't see %k's land mine.";
-KILLDYNAMITE = "%o was blown to bits by %k's dynamite bundle.";
 KILLFISTS = "%o was punched in %p snout by %k to establish superiority.";
 KILLLUMBERJACK = "%o had their insides shredded by %k's Lumberjack.";
 KILLIMPACTOR = "%o's face was smashed in by %k's Impactor Gauntlet.";
@@ -235,8 +232,6 @@ TAG_WOLFENSTEINSS = "Nazi";
 TAG_SPIDERMASTERMIND = "Spider Mastermind";
 
 // Weapon tags
-TAG_MINE = "Mine";
-TAG_DYNAMITE = "Dynamite";
 TAG_FISTS = "Fists";
 TAG_IMPACTOR = "Impactor Gauntlet";
 TAG_LEVENBRECH = "Levenbrech";
@@ -277,3 +272,8 @@ TAG_SCRAPGUN = "Scrapgun";
 TAG_STOMPER = "The Stomper";
 TAG_TRUMPETBUSS = "Trumpetbuss";
 TAG_TROMBOOMER = "Tromboomer";
+
+// Item tags
+TAG_MINE = "Mine";
+TAG_STOPWATCH = "Stopwatch";
+TAG_MEDICBAG = "Medic Bag";

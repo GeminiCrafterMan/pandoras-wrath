@@ -220,41 +220,6 @@ class GWM_LargeAcidVial : GWM_AcidVial
 	}
 }
 
-class GWM_MineAmmo : Ammo
-{
-	Default
-	{
-		Inventory.PickupMessage "$DISARMEDMINE";
-		Inventory.Amount 1;
-		Inventory.MaxAmount 50;
-		Ammo.BackpackAmount 1;
-		Inventory.Icon "MINWZ0";
-	}
-	States
-	{
-		Spawn:
-			MINW Z -1;
-			Stop;
-	}
-}
-class GWM_DynamiteAmmo : Ammo
-{
-	Default
-	{
-		Inventory.PickupMessage "$PLACEHOLDER";
-		Inventory.Amount 1;
-		Inventory.MaxAmount 50;
-		Ammo.BackpackAmount 1;
-		Inventory.Icon "DYNWZ0";
-	}
-	States
-	{
-		Spawn:
-			DYNW Z -1;
-			Stop;
-	}
-}
-
 class GWM_Cell : Ammo
 {
 	Default

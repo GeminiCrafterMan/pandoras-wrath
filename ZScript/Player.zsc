@@ -200,8 +200,6 @@ class GWM_DoomPlayer : GWM_Player
 		Player.StartItem "GWM_IsPlayer";
 		Player.StartItem "GWM_Pistol";
 		Player.StartItem "GWM_Fist";
-		Player.StartItem "GWM_Mine";
-		Player.StartItem "GWM_Dynamite";
 		Player.StartItem "GWM_HollowPointMagazine", 50;
 		Player.StartItem "GWM_QuickKickController";
 		Player.StartItem "GWM_PandoraPointsCap", 250;

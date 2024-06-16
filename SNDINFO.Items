@@ -1,0 +1,12 @@
+// Pickups
+pickups/healthbonus			"Sounds/Pickups/Health Bonus.wav"
+pickups/armorbonus			"Sounds/Pickups/Armor Bonus.wav"
+pickups/healthitem			"Sounds/Pickups/HealthItem.wav"
+// Powerups
+items/time_stop_start		"Sounds/Items/Stopwatch/time_stop_start.wav"
+items/time_stop_end			"Sounds/Items/Stopwatch/time_stop_end.wav"
+// Mine
+items/minewait				"Sounds/Items/Mine/mine_wait.wav"
+items/minedet				"Sounds/Items/Mine/mine_det.wav"
+// Portable Medkit
+items/portable_medkit		"Sounds/Items/portable_medkit.wav"
