@@ -90,7 +90,7 @@ class GWM_ThrownMine : Actor // Okay, so like, I was going to do this myself, bu
 				// Once a second it'll play a DSTINK sound to emulate beeping:
 				if (GetAge() % 35 == 0)
 				{
-					A_StartSound("weapons/minewait", volume: 0.8, attenuation: 5);
+					A_StartSound("items/minewait", volume: 0.8, attenuation: 5);
 				}
 				
 				// If the jump didn't happen, proceed to loop:
@@ -100,8 +100,8 @@ class GWM_ThrownMine : Actor // Okay, so like, I was going to do this myself, bu
 		Detected:
 			// Make the mine jump up as a visual cue,
 			// then proceed to the explosion sequence:
-			MINW B 2 {vel.z += 8; A_StartSound("weapons/minedet");}
-			MINW BBB 2 A_StartSound("weapons/minedet");
+			MINW B 2 {vel.z += 8; A_StartSound("items/minedet");}
+			MINW BBB 2 A_StartSound("items/minedet");
 		Bounce.Actor:
 		Death:
 			XFIR A 1 Bright A_SetRenderstyle(alpha, STYLE_Add); // so it won't explode in timestop

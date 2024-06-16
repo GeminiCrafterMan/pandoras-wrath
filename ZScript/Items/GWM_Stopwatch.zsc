@@ -59,7 +59,7 @@ class GWM_StopwatchAnimation : Weapon
 			Loop; // goes to Ready
 		Ready:
 		Fire:
-			WTCH B 40 A_StartSound("powerups/time_stop_start");
+			WTCH B 40 A_StartSound("items/time_stop_start");
 			WTCH B 7 A_GiveInventory("GWM_StopwatchStopper",1);
 			TNT1 A 0 {
 				player.pendingweapon = invoker.prevweapon;
@@ -92,7 +92,7 @@ class GWM_PowerTimeFreezer : PowerTimeFreezer
 	{
 		Super.EndEffect();
 		if(owner)
-			owner.A_StartSound("powerups/time_stop_end");
+			owner.A_StartSound("items/time_stop_end");
 	}
 }
 class GWM_StopwatchSparkle : Actor
