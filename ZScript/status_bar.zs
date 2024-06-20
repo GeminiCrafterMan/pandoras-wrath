@@ -386,7 +386,7 @@ class GWM_StatusBar : BaseStatusBar
 			if (ammotype1 && weapon && weapon.magazineSize > 0)
 			{
 				DrawInventoryIcon(ammotype1, (-14, -4));
-				DrawString(mHUDFont, StringStruct.Format("%d/%d", weapon.ammoCount, ammoType1.amount), (-30, -30),
+				DrawString(mHUDFont, StringStruct.Format("%d", ammoType1.amount), (-30, -30),
 						   DI_TEXT_ALIGN_RIGHT, translation: Font.CR_Sapphire);
 				invY -= 30;
 			}
