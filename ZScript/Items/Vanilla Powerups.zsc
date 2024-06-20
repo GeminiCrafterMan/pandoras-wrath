@@ -1,0 +1,50 @@
+class GWM_Radsuit : Radsuit
+{}
+
+class GWM_Backpack : Backpack replaces Backpack
+{
+	Default
+	{
+		//$Category Pickups
+		//$Title "Backpack
+		Inventory.PickupSound "pickups/backpack";
+	}
+}
+
+class GWM_Soulsphere : Soulsphere
+{
+	Default
+	{
+		//$Category Pickups
+		//$Title "Soulsphere
+	}
+}
+
+class GWM_BlurSphere : BlurSphere
+{
+	Default
+	{
+		//$Category Pickups
+		//$Title "Partial Invisibility
+	}
+}
+
+class GWM_InvulnerabilitySphere : InvulnerabilitySphere
+{
+	Default
+	{
+		//$Category Pickups
+		//$Title "Invulnerability
+	}
+}
+
+class GWM_LightAmpVisor : Infrared // Exists solely to free up the PVIS sprite name for mapsets like Valiant, so Pyro Knights don't turn into light-amp goggles.
+{
+	States
+	{
+		Spawn:
+			AMPV A 6 Bright;
+			AMPV B 6;
+			Loop;
+	}
+}

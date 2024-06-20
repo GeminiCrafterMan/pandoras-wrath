@@ -143,6 +143,7 @@ class GWM_PlasmaRifleSpawner : GWM_WeaponSpawner replaces PlasmaRifle
 		DropItem "GWM_PlasmaRifle";
 		DropItem "GWM_Melter";
 		DropItem "GWM_NoiseCrusher";
+		DropItem "GWM_Railgun";
 	}
 }
 
@@ -151,6 +152,7 @@ class GWM_BFG9000Spawner : GWM_WeaponSpawner replaces BFG9000
 	Default
 	{
 		DropItem "GWM_BFG9000";
+//		DropItem "GWM_BFG10000";
 		DropItem "GWM_Bouncer";
 	}
 }

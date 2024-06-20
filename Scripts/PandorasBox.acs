@@ -28,7 +28,7 @@ script "PandorasBox" (void)
 		SetActorProperty(0,1,APROP_Invulnerable);
 		
 		SetHudSize(360,256,0);
-		wepslot = random(-1,24); // G: -1? Why? So you can pull *nothing*...?
+		wepslot = random(-1,25); // G: -1? Why? So you can pull *nothing*...?
 		weprarity = random(0,40);
 		
 		upgslot = random(0,13);
@@ -208,6 +208,12 @@ script "PandorasBox" (void)
 		if (CheckInventory("GWM_SlayersKahuna")==0) {if (weprarity < 40) {restart;}}
 		if (CheckInventory("GWM_WhiteWedding")) {restart;}
 		if (weprarity < 36) {restart;}
+		}
+		
+		if (wepslot == 25) // Railgun
+		{
+		if (CheckInventory("GWM_Railgun")) {restart;}
+		if (weprarity < 12) {restart;}
 		}
 
 		while(1)
@@ -403,6 +409,7 @@ script "PandorasBox" (void)
 				if (wepslot == 22) { SetFont("SMALLFONT"); HudMessage(s:"Phoenix";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 23) { SetFont("SMALLFONT"); HudMessage(s:"Basilisk";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 24) { SetFont("SMALLFONT"); HudMessage(s:"White Wedding";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 25) { SetFont("SMALLFONT"); HudMessage(s:"Railgun";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				
 				if (buttons & BT_ATTACK && !(oldbuttons & BT_ATTACK) || buttons & BT_USE && !(oldbuttons & BT_USE))
 				{
@@ -488,6 +495,7 @@ script "PandorasBox" (void)
 						if (wepslot == 22) { GiveInventory("GWM_GoldenBouncer",1);}
 						if (wepslot == 23) { GiveInventory("GWM_Basilisk",1);}
 						if (wepslot == 24) { GiveInventory("GWM_WhiteWedding",1);}
+						if (wepslot == 25) { GiveInventory("GWM_Railgun",1);}
 						
 					}
 					

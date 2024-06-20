@@ -1,6 +1,4 @@
 // Plasma Rifle
-weapons/railshot	"Sounds/Weapons/Slot 6/Plasma Rifle/railgun_shoot.wav"
-weapons/railchrg	"Sounds/Weapons/Slot 6/Plasma Rifle/railgun_charge.wav"
 weapons/plasshot	"Sounds/Weapons/Slot 6/Plasma Rifle/PLSFIRE.ogg"
 
 weapons/plasfly1	"Sounds/Weapons/Slot 6/Plasma Rifle/PLASFLY1.ogg"
@@ -28,3 +26,9 @@ weapons/noisecharge	"Sounds/Weapons/Slot 6/Noise Crusher/charge.wav"
 weapons/noisebounce	"Sounds/Weapons/Slot 6/Noise Crusher/tingle.wav"
 weapons/noisefire	"Sounds/Weapons/Slot 6/Noise Crusher/tingle_down.wav"
 weapons/noisecfire	"Sounds/Weapons/Slot 6/Noise Crusher/tingle_big.wav"
+
+// Railgun
+weapons/railshot	"Sounds/Weapons/Slot 6/Railgun/fire.wav"
+weapons/railcharge	"Sounds/Weapons/Slot 6/Railgun/charge.wav"
+weapons/railout		"Sounds/Weapons/Slot 6/Railgun/box_out.wav"
+weapons/railin		"Sounds/Weapons/Slot 6/Railgun/box_in.wav"

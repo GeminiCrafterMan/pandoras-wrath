@@ -36,7 +36,8 @@
 	#include "./Weapons/Slot 5/GWM_Tromboomer.zsc"			// Tromboomer (originally Golden Trumpetbuss) (from Golden Souls 2)
 
 #include "./Weapons/Slot 6/GWM_PlasmaRifle.zsc"			// Plasma Rifle
-#include "./Weapons/Slot 6/GWM_NoiseCrusher.zsc"			// Noise Crusher! I'll make it good eventually I promise man -mengo
+#include "./Weapons/Slot 6/GWM_NoiseCrusher.zsc"		// Noise Crusher! I'll make it good eventually I promise man -mengo
+#include "./Weapons/Slot 6/GWM_Railgun.zsc"				// Railgun, from Skulltag
 
 #include "./Weapons/Slot 7/GWM_BFG9000.zsc"				// BFG9000 (Vanilla but kinda shittier)
 

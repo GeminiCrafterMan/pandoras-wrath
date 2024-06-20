@@ -39,5 +39,6 @@ class GWM_EnemyPlasma : ArachnotronPlasma
 	Default
 	{
 		DamageFunction (23);
+		DamageType "Plasma";
 	}
 }

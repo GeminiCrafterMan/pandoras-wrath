@@ -1,0 +1,82 @@
+class GWM_Railgun : GWM_WeaponBase
+{
+	Default
+	{
+		//$Category Weapons
+		//$Title "Railgun
+		Weapon.UpSound "weapons/draw_primary";
+		Weapon.SelectionOrder 100;
+		Weapon.AmmoUse 10;
+		Weapon.AmmoGive 40;
+		Weapon.AmmoType "GWM_Cell";
+
+		ZWeapon.MagazineSize 40;
+		ZWeapon.ReloadSound "weapons/railin";
+
+		Weapon.SlotNumber 6;
+		Inventory.PickupMessage "$GOTRAILGUN";
+		Tag "$TAG_RAILGUN";
+		Obituary "$KILLRAILGUN";
+		AttackSound "weapons/railshot";
+	}
+	States
+	{
+		Ready:
+			RALG A 1 ZWL_WeaponReady();
+			Loop;
+		Deselect:
+			RALG A 1 A_Lower(18);
+			Loop;
+		Select:
+			RALG A 1 A_Raise(18);
+			Loop;
+		Fire:
+			RALF A 3 {
+				A_RailAttack(150, color1:"0", color2:"0", pufftype: "GWM_RailPuff");
+				A_QuakeEx(3, 3, 3, 4, 0, 1, "", QF_SHAKEONLY);
+			}
+			RALF B 3;
+			RALG B 12;
+			RALG B 6 ZWL_CheckReload();
+			Goto Ready;
+		Reload:
+			TNT1 A 0 {
+				if (!invoker.CheckAmmo(PrimaryFire, false, true))
+					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // G: Disallow reloading if there's no more ammo
+			}
+			RALG C 6;
+			RALG D 6 A_StartSound("weapons/railout");
+			RALG E 6;
+			RALG F 6 {ZWL_EjectCasing("GWM_CellCasing", true, offset: (24, 0, -30));}
+			RALG GH 6;
+			RALG I 3 ZWL_Reload();
+			RALG J 3 A_StartSound("weapons/railcharge");
+			RALG AAAAAAAAAAAAAAAA 2 A_WeaponOffset(random(-2,2), random(-2,2), WOF_ADD);
+			Goto Ready;
+		Flash:
+			TNT1 A 3 bright A_Light1;
+			TNT1 A 3 bright A_Light2;
+			TNT1 A 0 bright A_Light0;
+			Goto LightDone;
+		Spawn:
+			RALG Z -1;
+			Stop;
+	}
+}
+class GWM_RailPuff : BulletPuff
+{
+	Default
+	{
+		DamageType "Plasma";
+		+PIERCEARMOR
+		+FORCEDECAL
+		Decal "RailScorch";
+	}
+	States
+	{
+		Spawn:
+		Melee:
+			TNT1 A 1;
+			stop;
+	}
+}

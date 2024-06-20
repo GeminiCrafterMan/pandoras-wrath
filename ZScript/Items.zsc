@@ -1,5 +1,7 @@
 // Generic powerups and items
 #include "./Items/Generic Items.zsc"
+#include "./Items/Powerups.zsc"
+#include "./Items/Vanilla Powerups.zsc"
 #include "./Items/Ammo.zsc" // Ammo
 #include "./Items/Armor.zsc" // Armor
 // Special items

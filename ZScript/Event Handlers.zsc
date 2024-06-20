@@ -418,6 +418,10 @@ class ThingReplacer : StaticEventHandler
 				case 'CellPack':
 					e.Replacement = "GWM_CellPack";
 					break;
+			// Skulltag (Invasion)
+				case 'PlasmaRifle2':
+					e.Replacement = "GWM_PlasmaRifle";
+					break;
 			}
 		}
 
@@ -528,6 +532,28 @@ class ThingReplacer : StaticEventHandler
 				break;
 			case 'TangoMedkit':
 				e.Replacement = "GWM_Medkit";
+				break;
+		// Skulltag (Invasion)
+			case 'PlasmaRifleSpawner':
+				e.Replacement = "GWM_PlasmaRifleSpawner";
+				break;
+			case 'ChaingunSpawner':
+				e.Replacement = "GWM_ChaingunSpawner";
+				break;
+			case 'RocketLauncherSpawner':
+				e.Replacement = "GWM_RocketLauncherSpawner";
+				break;
+			case 'BFGSpawner':
+				e.Replacement = "GWM_BFG9000Spawner";
+				break;
+			case 'BlueArmorSpawner':
+				e.Replacement = "GWM_Lv2ArmorSpawner";
+				break;
+			case 'ArmorBonus2':
+				e.Replacement = "GWM_ArmorBonus";
+				break;
+			case 'HealthBonus2':
+				e.Replacement = "GWM_HealthBonus";
 				break;
 		}
     }

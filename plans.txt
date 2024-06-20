@@ -32,11 +32,9 @@ Arch-vile replacements:
 	- Crazy explosive shot that sends you flying + acid rain spell
 
 IMMEDIATE TODO LIST:
-- Buff Zombie Shotgun
 - Make fire damage faster
 - Give Ice a wider spread, maybe make mist more damaging/faster as well
-- Fix both pistols to use JustPressed instead of WeaponReady for fast firing
 
 Stuff to pull from Kegan's mods:
-- Hunter's Knives (and the holy water part) from Combined_Arms GAIDEN, turned into instantly-usable items, recolored to be 
+- Hunter's Knives (and the holy water part) from Combined_Arms GAIDEN, turned into instantly-usable items, recolored to be 16-bit
 - Sword and staff from Past-Linked class in Combined_Arms

@@ -40,11 +40,11 @@ class GWM_DoomImp : DoomImp // literally just a normal imp
 			Stop;
 			
 		Death2:
-			DIMP A 8;
-			DIMP B 6 A_Scream;
-			DIMP C 5;
-			DIMP D 4 A_NoBlocking;
-			DIMP E -1;
+			TRO0 A 8;
+			TRO0 B 6 A_Scream;
+			TRO0 C 5;
+			TRO0 D 4 A_NoBlocking;
+			TRO0 E -1;
 			Stop;
 		Raise:
 			TNT1 A 0 {bNOBLOOD = false;}

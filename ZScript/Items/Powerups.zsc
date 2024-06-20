@@ -1,0 +1,81 @@
+class GWM_Berserk : Berserk
+{
+	override void Touch(Actor toucher) {
+		if (CVar.GetCVar('gwm_shutupmerc', toucher.player).GetBool() == false) 
+			toucher.A_StartSound("player/berserk", CHAN_VOICE);
+		Super.Touch(toucher);
+	}
+	Default
+	{
+		//$Category Pickups
+		//$Title "Berserk
+	}
+	States
+	{
+		Pickup:
+			TNT1 A 0 {
+				A_GiveInventory("GWM_PowerStrength");
+				HealThing(100, 0);
+				A_SetBlend("Red", .25, 35); // from Supercharge
+			}
+			Stop;
+	}
+}
+class GWM_PowerStrength : PowerStrength replaces PowerStrength
+{
+	Default
+	{
+		Powerup.Duration 1;
+		Powerup.Color "000000", 0.0;
+		+INVENTORY.HUBPOWER
+	}
+}
+
+class GWM_DrainSphere : PowerupGiver
+{
+	Default
+	{
+		//$Category Pickups
+		//$Title "Life Drain
+		Inventory.PickupMessage "$GOTLIFEDRAIN";
+		Inventory.Icon "VAMPA0";
+		Powerup.Color "FF0000", 0.25;
+		Inventory.MaxAmount 0;
+		Inventory.UseSound "pickups/slowmo";
+		Powerup.Type "PowerDrain";
+		Powerup.Duration 1000;
+		+INVENTORY.AUTOACTIVATE
+		+RANDOMIZE
+	}
+	States
+	{
+		Spawn:
+			VAMP ABCD 4 Bright;
+			Loop;
+	}
+}
+
+class GWM_ReflectSphere : PowerupGiver
+{
+	Default
+	{
+		//$Category Pickups
+		//$Title "Reflective Shots
+		Inventory.PickupMessage "$GOTREFLECTIVE";
+		Inventory.Icon "REFLA0";
+		Powerup.Color "0011FF", 0.25;
+		Inventory.MaxAmount 0;
+		Inventory.UseSound "pickups/slowmo";
+		Powerup.Type "PowerInvulnerable";
+		Powerup.Mode "Reflective";
+		Powerup.Duration -30; // 30 seconds
+		+INVENTORY.AUTOACTIVATE
+		+RANDOMIZE
+	}
+	States
+	{
+		Spawn:
+			REFL ABCD 4 Bright;
+			Loop;
+	}
+}

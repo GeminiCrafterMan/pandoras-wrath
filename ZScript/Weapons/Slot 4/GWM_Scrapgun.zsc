@@ -5,7 +5,6 @@ class GWM_Scrapgun : GWM_WeaponBase
 		//$Category Weapons
 		Weapon.SlotNumber 4;
 		Tag "$TAG_SCRAPGUN";
-		Decal "bulletchip";
 		Weapon.KickBack 150;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoType "GWM_ScrapDrum";
