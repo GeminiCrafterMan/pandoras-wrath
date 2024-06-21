@@ -24,6 +24,7 @@ class GWM_SuperShotgun : GWM_WeaponBase
 		Weapon.AmmoType2 "GWM_Shell";
 		Weapon.AmmoUse2 2;
 
+		GWM_WeaponBase.BaseVersion "GWM_SawedOffShotgun";
 		Inventory.PickupMessage "$GOTSUPERSHOTGUN";
 		Obituary "$KILLSUPERSHOTGUN";
 		Tag "$TAG_SUPERSHOTGUN";

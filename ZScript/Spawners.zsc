@@ -107,7 +107,7 @@ class GWM_SuperShotgunSpawner : GWM_WeaponSpawner replaces SuperShotgun
 {
 	Default
 	{
-		DropItem "GWM_SuperShotgun", 255, 6;
+		DropItem "GWM_SawedoffShotgun", 255, 6;
 		DropItem "GWM_Melter", 255, 2;
 		DropItem "GWM_Flamethrower", 255, 2;
 		DropItem "GWM_AcidCannon", 255, 2;

@@ -27,6 +27,13 @@ weapons/zsgpump1	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pump1.wav"
 weapons/zsgpump2	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pump2.wav"
 weapons/zsgpickup	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pickup.wav"
 
+// Sawed-Off Shotgun
+weapons/SOGshot	"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/Fire.ogg"
+weapons/SOGo		"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/Open.ogg"
+weapons/SOGl		"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/Load.ogg"
+weapons/SOGc		"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/Close.ogg"
+weapons/SOGpickup	"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/pickup.ogg"
+
 // Super Shotgun
 weapons/ssgshot1	"Sounds/Weapons/Slot 3/Super Shotgun/Fire (Both Barrels).wav"
 weapons/ssgshot2	"Sounds/Weapons/Slot 3/Super Shotgun/Fire (One Barrel).wav"

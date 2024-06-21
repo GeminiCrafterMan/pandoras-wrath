@@ -156,3 +156,16 @@ ChillerSoul/Death		CHLSDETH
 ChillerSoul/Attack		CHLSATK
 ChillerSoul/Ball		CHLSICEB
 ChillerSoul/BallDie		SHARDS1B
+
+// hey soul sister
+Sister/See SISTRSEE
+Sister/Act SISTRACT
+Sister/Die SISTRDIE
+Sister/Hurt SISTRHUR
+Sister/Fireball SISTRFIR
+Sister/Impact SISTRBOM
+Sister/Comet1 SISCOMT1
+Sister/Comet2 SISCOMT2
+Sister/Comet3 SISCOMT3
+Sister/Melee SISTRHIT
+Sister/Strike SISTRLIT

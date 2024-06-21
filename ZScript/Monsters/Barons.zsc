@@ -136,3 +136,267 @@ class GWM_Annihilator : Actor
 			Goto See;
 	}
 }
+
+
+
+Class GWM_Sister : Actor
+{ 
+Default
+{
+//$Category Monsters
+Health 1500;
+Radius 24 ;
+Height 64 ;
+Mass 1000 ;
+Speed 25 ;
+PainChance 20; 
+MONSTER;
+PainChance "madness", 255;
+MeleeDamage 10;
+Obituary "%o fell in love with a Sister.";
+HitObituary "%o got a little to close to the Sister.";
+BloodColor "20 60 20";
++NOTARGET;
++FLOORCLIP ;
++MISSILEMORE;
++NORADIUSDMG;
++BOSS;
+Scale 1.2;
++NOBLOODDECALS;
+Bloodtype "Blue_Blood";
+SeeSound "Sister/See" ;
+PainSound "Sister/Hurt";
+activesound "Sister/Act";
+DeathSound "Sister/Die";
+MeleeSound "Sister/Melee";
+//Dropitem "LargeDrop";
+  }
+States 
+   { 
+   Spawn: 
+       SIST AB 10 A_Look ;
+       Loop ;
+   See:
+       SIST AABBCCDD 3 A_Chase ;
+       Loop ;
+   Missile:
+       SIST B 0 A_Jump(256,"TriShot","Comet","HexShot");
+   TriShot:
+       SIST E 6 A_FaceTarget ;
+	   
+	   SIST F 6;
+	   	
+       SIST G 0 A_SpawnProjectile("SisterBallshot",28,0,0,0);
+       SIST G 0 A_SpawnProjectile("SisterBallshot",28,0,-4,0);
+       SIST G 6 A_SpawnProjectile("SisterBallshot",28,0,4,0);
+       SIST E 0 A_Jump(64,"See");
+       SIST SS 3 A_FaceTarget ;
+       
+	   SIST T 4;
+	   
+	   SIST U 0 A_SpawnProjectile("SisterBallshot",28,0,0,0);
+       SIST U 0 A_SpawnProjectile("SisterBallshot",28,0,-4,0);
+       SIST U 6 A_SpawnProjectile("SisterBallshot",28,0,4,0);
+       Goto See;
+   Comet:
+	   SIST A 0 A_StartSound("Sister/Comet1", CHAN_AUTO);
+       SIST HHH 4 A_FaceTarget();
+	   SIST HH 4 A_FaceTarget();
+       
+	   SIST I 4;
+	   
+       SIST J 6 A_SpawnProjectile("SisterComet",28,0,0,0);
+       Goto See;
+   HexShot:
+	   SIST H 8 A_FaceTarget;
+	   
+	   SIST I 4;
+	   
+       SIST J 0 A_SpawnProjectile("SisterBallshot",28,0,-6,0);
+       SIST J 0 A_SpawnProjectile("SisterBallshot",28,0,-4,0);
+       SIST J 0 A_SpawnProjectile("SisterBallshot",28,0,-2,0);
+       SIST J 0 A_SpawnProjectile("SisterBallshot",28,0,2,0);
+       SIST J 0 A_SpawnProjectile("SisterBallshot",28,0,4,0);
+       SIST J 6 A_SpawnProjectile("SisterBallshot",28,0,6,0);
+       Goto See;
+   Melee:
+       SIST A 0 A_StartSound("Sister/Act", CHAN_AUTO);
+       TNT1 A 0 A_Recoil(-5);
+	   SIST EEE 2 A_FaceTarget ;
+	   
+	   SIST A 0 A_StartSound("Sister/Melee", CHAN_AUTO);
+       SIST G 8 A_CustomMeleeAttack(35, "Sister/melee");
+       
+	   TNT1 A 0 A_Recoil(-5);
+	   SIST SSS 2 A_FaceTarget ;
+	   
+       SIST A 0 A_StartSound("Sister/Melee", CHAN_AUTO);
+       SIST U 8 A_CustomMeleeAttack(35, "Sister/melee");
+	   
+	   TNT1 A 0 A_Recoil(-5);
+	   SIST EEE 2 A_FaceTarget ;
+	   
+	   SIST A 0 A_StartSound("Sister/Melee", CHAN_AUTO);
+       SIST G 8 A_CustomMeleeAttack(35, "Sister/melee");
+       
+       Goto See;
+	   
+   Pain: 
+       SIST K 2 ;
+       SIST K 2 A_Pain ;
+       Goto See ;
+	   
+	   
+   Death: 
+       SIST LLLLLLLL 1;// A_SpawnitemEX("BlueBloodTrail",0,0,0,random(-6,6),random(-6,6),random(7,14));
+       SIST M 0 A_Scream ;
+       SIST MMMMMMMMNNNNNNNN 1;// 1 A_SpawnitemEX("BlueBloodTrail",0,0,0,random(-6,6),random(-6,6),random(7,14));
+       SIST O 0  ;
+       SIST OOOOOOOOPPPPPPPPQQQQQQQQ 1;// 1 A_SpawnitemEX("BlueBloodTrail",0,0,0,random(-6,6),random(-6,6),random(7,14));
+      SIST R -1 A_Fall ;
+       Stop;
+   Raise: 
+       SIST RQPONML 8 ;
+       Goto See ;
+   } 
+}
+
+Class SisterBallshot : Actor
+{
+Default
+{
+Radius 6;
+  Height 16;
+  Speed 15;
+  FastSpeed 20;
+  Damagefunction (50);
+  Projectile;
+  SeeSound "Sister/Fireball";
+  DeathSound "Sister/Impact";
+  Decal "SisterScorch";
+Damage 10;
+Scale 0.75;
+Renderstyle "add";
+}
+States
+{
+Spawn:
+FRPG A 1 bright;
+TNT1 AAA 0 A_Spawnitemex("SmallGreenFire2",random(-2,2),random(-2,2),random(-2,2),random(-1,1),random(-1,1),random(-1,1));
+loop;
+Death:
+TNT1 AAAAAA 0 A_Spawnitemex("SmallGreenFire2",random(-2,2),random(-2,2),random(-2,2),random(-5,5),random(-5,5),random(-5,5));
+stop;
+}
+}
+
+Class SmallGreenFire2 : Actor
+{
+Default
+{
+Speed 20;
+Scale 0.55;
++NOINTERACTION;
++FORCEXYBILLBOARD;
++NOGRAVITY;
+renderstyle "Add";
+}
+States
+{
+Spawn:
+FRPG ABCDEFGH 2 bright;
+stop;
+}
+}
+
+Class SisterComet : Actor
+{
+  Default
+  {
+   Radius 8;
+   Height 12;
+   Speed 25;
+   Damagefunction (80);
+   Scale 1.0;
+   PROJECTILE;
+   +THRUGHOST;
+   SeeSound "Sister/Comet2";
+   DeathSound "Sister/Comet3";
+   DONTHURTSHOOTER;
+   }
+   States
+   {
+   Spawn: 
+      ARCB AAAABBBBCCCC 1 Bright A_SpawnItem("SisterCometTrail",0,0);
+      loop;
+   Death:
+      ARCB J 0 Bright A_SetTranslucent (0.67,1);
+	  ARCB AAAABBBBCCCC 0 Bright A_SpawnItemEX("SisterCometCloud",0,0,0,random(-8,8),random(-8,8),random(-8,8));
+      TNT1 A 0 A_Spawnitemex("MortarExplosionShockwave");
+      ARCB J 3 Bright;
+      ARCB K 3 Bright A_Explode(128,128,0);
+      TNT1 A 0 A_SpawnItemEX("ShakeItBaby",0,0,5);
+	  ARCB LMN 3 Bright A_Quake(50,8,0,150);
+      stop;
+   }
+}
+
+Class SisterCometTrail : Actor
+{
+   Default
+   {
+   Radius 3;
+   Height 3;
+   Scale 0.75;
+   Speed 0;
+   PROJECTILE;
+   RENDERSTYLE "ADD";
+   ALPHA 0.67;
+   +NOINTERACTION;
+   }
+   States
+   {
+   Spawn:
+      NULL A 3 Bright;
+      ARCB DEFGHI 3 BRIGHT;
+      Stop ;
+   }
+}
+
+Class SisterCometCloud : SisterCometTrail
+{
+   Default
+   {
+   Scale 1.25;
+   ALPHA 1.0;
+   }
+   States
+   {
+   Spawn:
+      ARCB DEFGHI 3 BRIGHT;
+      Stop ;
+   }
+}
+
+Class MortarExplosionShockwave : Actor
+{
+Default
+{
+speed 1;
+renderstyle "ADD";
+alpha 0.75;
+scale .5;
++NOINTERACTION;
++FORCEXYBILLBOARD;
++NOGRAVITY;
+}
+states
+{
+Spawn:
+SHKW A 1 BRIGHT A_Fadeout(0.1);
+TNT1 A 0 A_Setscale(scale.x + 2, scale.y + 2);
+loop;
+Death:
+Stop;
+	}
+}

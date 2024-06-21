@@ -36,7 +36,8 @@ script "RandomBoxPicker" (void)
 		if (chooser == 4) //SSG
 		{
 		if (CheckInventory("GWM_SuperShotgun")) {restart;}
-		GiveInventory("GWM_SuperShotgun",1); Print(s:"You got the Super Shotgun!");
+		if (CheckInventory("GWM_SawedOffShotgun")) {GiveInventory("GWM_SuperShotgun",1);  Print(s:"You got the Super Shotgun!");}
+		if (CheckInventory("GWM_SawedOffShotgun")== 0) {GiveInventory("GWM_SawedOffShotgun",1);  Print(s:"You got the Sawed-Off Shotgun!");}
 		}
 
 		if (chooser == 5) //Chainguns
@@ -127,6 +128,12 @@ script "RandomBoxPicker" (void)
 		if (CheckInventory("GWM_Tromboomer")) {restart;}
 		if (CheckInventory("GWM_Trumpetbuss")) {GiveInventory("GWM_Tromboomer",1);  Print(s:"You got the Tromboomer!");}
 		if (CheckInventory("GWM_Trumpetbuss")== 0) {GiveInventory("GWM_Trumpetbuss",1);  Print(s:"You got the Trumpetbuss!");}
+		}
+		
+		if (chooser == 80) //Magnum
+		{
+		if (CheckInventory("GWM_WhiteWedding")) {restart;}
+		GiveInventory("GWM_WhiteWedding",1);  Print(s:"It's a nice day to START AGAIIIIIIIN!");
 		}
 
 }
