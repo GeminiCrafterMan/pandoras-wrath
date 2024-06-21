@@ -223,17 +223,8 @@ class ThingReplacer : StaticEventHandler
 							else
 								e.Replacement = "GWM_Annihilator";
 						}
-						
-						else
-						
-						if (random(0, 12) == 12)
-						{
-							if (annihilatorAlreadyExists)
-								e.Replacement = "GWM_BaronOfHell";
-							else
-								e.Replacement = "GWM_Sister";
-						}
-						
+						else if (random(0, 12) == 12)
+							e.Replacement = "GWM_Sister";
 						else
 							e.Replacement = "GWM_BaronOfHell";
 						break;

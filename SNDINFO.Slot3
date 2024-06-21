@@ -1,3 +1,9 @@
+// Zombie Shotgun
+weapons/zsgshot		"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_fire.ogg"
+weapons/zsgpump1	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pump1.wav"
+weapons/zsgpump2	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pump2.wav"
+weapons/zsgpickup	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pickup.wav"
+
 // Slayer's Kahuna Shotgun
 weapons/skshot1		"Sounds/Weapons/Slot 3/Slayer's Kahuna/CSGFIRE1.ogg"
 weapons/skshot2		"Sounds/Weapons/Slot 3/Slayer's Kahuna/CSGFIRE2.ogg"
@@ -13,26 +19,20 @@ weapons/skempty		"Sounds/Weapons/Slot 3/Slayer's Kahuna/CSGDRY.ogg"
 weapons/skpickup	"Sounds/Weapons/Slot 3/Slayer's Kahuna/pickup.wav"
 weapons/shell_load	"Sounds/Weapons/Slot 3/Slayer's Kahuna/load.wav"
 
-$random weapons/skshot { weapons/skshot1 weapons/skshot2 weapons/skshot3 weapons/skshot4 weapons/skshot5 }
-$random weapons/skpump1 { weapons/skpump11 weapons/skpump12 }
-$random weapons/skpump2 { weapons/skpump21 weapons/skpump22 }
+$random weapons/skshot	{ weapons/skshot1 weapons/skshot2 weapons/skshot3 weapons/skshot4 weapons/skshot5 }
+$random weapons/skpump1	{ weapons/skpump11 weapons/skpump12 }
+$random weapons/skpump2	{ weapons/skpump21 weapons/skpump22 }
 
 // White Wedding. Silk Shedding. Fancy shower, white wedding day.
 weapons/wwshot1		"Sounds/Weapons/Slot 3/White Wedding/billyfire1"
-weapons/wwshot2 	"Sounds/Weapons/Slot 3/White Wedding/billyfire2"
-
-// Zombie Shotgun
-weapons/zsgshot		"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_fire.ogg"
-weapons/zsgpump1	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pump1.wav"
-weapons/zsgpump2	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pump2.wav"
-weapons/zsgpickup	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pickup.wav"
+weapons/wwshot2		"Sounds/Weapons/Slot 3/White Wedding/billyfire2"
 
 // Sawed-Off Shotgun
-weapons/SOGshot	"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/Fire.ogg"
+weapons/SOGshot		"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/Fire.ogg"
 weapons/SOGo		"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/Open.ogg"
 weapons/SOGl		"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/Load.ogg"
 weapons/SOGc		"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/Close.ogg"
-weapons/SOGpickup	"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/pickup.ogg"
+weapons/SOGpickup	"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/pickup.wav"
 
 // Super Shotgun
 weapons/ssgshot1	"Sounds/Weapons/Slot 3/Super Shotgun/Fire (Both Barrels).wav"
@@ -55,4 +55,4 @@ weapons/xbowfire4	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_shot4.wav"
 weapons/xbowdraw	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_draw.wav"
 weapons/xbowhit		"Sounds/Weapons/Slot 3/Impaler Crossbow/NAILHIT.ogg"
 
-$random weapons/xbowfire { weapons/xbowfire1 weapons/xbowfire2 weapons/xbowfire3 weapons/xbowfire4 }
+$random weapons/xbowfire	{ weapons/xbowfire1 weapons/xbowfire2 weapons/xbowfire3 weapons/xbowfire4 }
