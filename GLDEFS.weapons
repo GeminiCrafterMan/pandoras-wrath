@@ -69,3 +69,42 @@ pointlight GWM_GBounce3
 	size 11670
 	attenuate 1
 }
+
+PointLight BFG10kShot
+{
+Color 0.0 1.0 0.0
+Size 80
+}
+
+FlickerLight BFG10KSHOT_X1
+{
+Color 0.0 1.0 0.0
+Size 80
+SecondarySize 88
+Chance 0.3
+}
+
+FlickerLight BFG10KSHOT_X2
+{
+Color 0.0 1.0 0.0
+Size 104
+SecondarySize 112
+Chance 0.3
+}
+
+FlickerLight BFG10KSHOT_X3
+{
+Color 0.0 1.0 0.0
+Size 120
+SecondarySize 128
+Chance 0.3
+}
+
+Object GWM_BFG10kShot
+{
+Frame BFE1A0 { Light BFG10KSHOT }
+Frame BFE1B0 { Light BFG10KSHOT }
+Frame BFE1C0 { Light BFG10KSHOT_X1 }
+Frame BFE1D0 { Light BFG10KSHOT_X2 }
+Frame BFE1E0 { Light BFG10KSHOT_X3 }
+}

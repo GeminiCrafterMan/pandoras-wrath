@@ -1,0 +1,85 @@
+class GWM_BFG10K : GWM_WeaponBase
+{
+	Default
+	{
+		Radius 20;
+		Height 20;
+		Weapon.Selectionorder 2800;
+		Weapon.AmmoUse 5;
+		Weapon.AmmoGive 40;
+		Weapon.AmmoType "GWM_Cell";
+		Weapon.SlotNumber 7;
+		Inventory.Pickupmessage "$GOTBFG10K";
+		Decal "BFGLightning";
+		Obituary "$KILLBFG10K";
+		Tag "$TAG_BFG10K";
+		+Weapon.NoAutoFire
+	}
+
+	States
+	{
+		Spawn:
+			B10G Z -1;
+			Stop;
+		Ready:
+			B10G A 0 A_StartSound("Weapons/BFG10KIdle");
+			B10G AAABBBCCCDDD 1 A_WeaponReady();
+			Loop;
+		Deselect:
+			B10G E 1 A_Lower(18);
+			Loop;
+		Select:
+			B10G E 1 A_Raise(18);
+			Loop;
+		Fire:
+			B10G E 20 A_StartSound("Weapons/BFG10KF");
+			B10G F 4;
+			B10G GHIJ 1;
+			Goto Hold;
+		Hold:
+			B10G K 2 A_GunFlash();
+			B10G L 2 A_FireBullets(0, 0, 1, 0, "GWM_BFG10kShot");
+			B10G M 2;
+			B10G N 2 A_ReFire();
+			B10G O 35 A_StartSound("Weapons/BFG10KCool");
+			Goto Ready;
+		Flash:
+			TNT1 A 2 Bright A_Light1();
+			TNT1 A 3 bright;
+			Goto LightDone;
+	}
+}
+
+
+Class GWM_BFG10kShot : Actor
+{
+	Default
+	{
+		Radius 11;
+		Height 8;
+		Speed 20;
+		Damage 160;
+		DamageType "BFG10K";
+		Renderstyle "Add";
+		Alpha 0.75;
+		SeeSound "Weapons/BFG10KX";
+		AttackSound "Weapons/BFG10KX";
+		+NoBlockMap
+		+NoGravity
+		+ActivateImpact
+		+ActivatePCross
+		+NoTeleport
+		+PuffOnActors
+		+PuffGetsOwner
+		+ForceRadiusDmg
+	}
+
+	States
+	{
+		Spawn:
+			BFE1 A 0 Bright;
+			BFE1 A 3 Bright A_Explode(160, 128, XF_HURTSOURCE);
+			BFE1 BCDEF 3 Bright;
+			Stop;
+	}
+}

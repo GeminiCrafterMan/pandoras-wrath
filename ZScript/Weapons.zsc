@@ -41,6 +41,7 @@
 #include "./Weapons/Slot 6/GWM_Railgun.zsc"				// Railgun, from Skulltag
 
 #include "./Weapons/Slot 7/GWM_BFG9000.zsc"				// BFG9000 (Vanilla but kinda shittier)
+#include "./Weapons/Slot 7/GWM_BFG10K.zsc"				// BFG10K (newer but not necessarily better in every situation)
 
 #include "./Weapons/Slot 8/GWM_EldritchAnnihilator.zsc"	// Shroine Tew, out now!
 #include "./Weapons/Slot 8/GWM_Perforator.zsc"			// Evitahnity Tew, out now!
