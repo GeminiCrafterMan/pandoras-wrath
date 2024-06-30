@@ -18,6 +18,7 @@
 	#include "./Weapons/Slot 3/GWM_WhiteWedding.zsc"			// ITS A NICE DAY TO START AGAAAAAAAAIN
 #include "./Weapons/Slot 3/GWM_SawedOffShotgun.zsc"			// Sawed Off Shotgun
 	#include "./Weapons/Slot 3/GWM_SuperShotgun.zsc"			// Super Shotgun
+	#include "./Weapons/Slot 3/GWM_Hydra.zsc"					// Shocking
 #include "./Weapons/Slot 3/GWM_ImpalerCrossbow.zsc"		// Impaler Crossbow
 
 #include "./Weapons/Slot 4/GWM_Minigun.zsc"				// Minigun
