@@ -45,6 +45,9 @@ weapons/ssgcshot	"Sounds/Weapons/Slot 3/Super Shotgun/Charged.wav"
 weapons/ssgcEcho	"Sounds/Weapons/Slot 3/Super Shotgun/ChargeEcho.wav"
 weapons/SSGCharge	"Sounds/Weapons/Slot 3/Super Shotgun/ChargeUp.wav"
 
+//Hydra
+weapons/hydrChSh	"Sounds/Weapons/Slot 3/Hydra/HYCHSH.wav"
+weapons/hydrStun	"Sounds/Weapons/Slot 3/Hydra/HYSTUN.wav"
 
 // Impaler Crossbow
 weapons/xbowrelease	"Sounds/Weapons/Slot 3/Impaler Crossbow/xbow_release.wav"

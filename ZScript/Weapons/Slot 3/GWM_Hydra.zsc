@@ -1,0 +1,426 @@
+class GWM_Hydra : GWM_WeaponBase
+{	
+	int SSGShellstoEject;
+	
+	double xoffset;
+	double yoffset;
+	
+	action void A_EjectHSGCasings()
+	{
+		ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, 4, -12));
+		ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, 4, -12));
+		ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, 8, -12));
+	}
+
+	action void A_EjectSSGCasings()
+	{
+		ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, 4, -12));
+		ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, 8, -12));
+	}
+	
+	Default
+	{
+		//$Category Weapons
+		//$Title "Super Shotgun
+		Weapon.SelectionOrder 1300;
+		Inventory.PickupSound "weapons/ssgpickup";
+		Weapon.UpSound "weapons/draw_primary";
+		Weapon.AmmoType1 "GWM_Shell";
+		Weapon.AmmoUse1 3;
+		Weapon.AmmoGive1 8;
+		Weapon.AmmoType2 "GWM_Shell";
+		Weapon.AmmoUse2 2;
+		
+		Weapon.Slotnumber 3;
+
+		GWM_WeaponBase.BaseVersion2 "GWM_SuperShotgun";
+		GWM_WeaponBase.BaseVersion "GWM_SawedOffShotgun";
+		Inventory.PickupMessage "$GOTHYDRA";
+		Obituary "$KILLHYDRA";
+		Tag "$TAG_HYDRA";
+	}
+	States
+	{
+		Ready:
+			SSGG A 1 A_WeaponReady;
+			Loop;
+		Select:
+			TNT1 A 0 {
+				ZWL_QuickRaise();
+				
+			}
+			SSGG V 1 Offset(-4,40);
+			SSGG V 1;
+			SSGG W 3 {
+				A_StartSound("weapons/ssgc");
+				A_WeaponReady();
+			}
+			SSGG XYZZ 2 A_WeaponReady;
+			SSG2 ABCDE 2 A_WeaponReady;
+			Goto Ready;
+		Deselect:
+			SSGG AA 1 {
+				A_WeaponOffset(8, 16, WOF_ADD);
+			}
+			SSGG AAAAAA 1 {
+				A_WeaponOffset(8, 16, WOF_ADD);
+			}
+			TNT1 A 0 A_WeaponOffset(0, flags: WOF_KEEPY);
+			TNT1 A 0 ZWL_QuickLower;
+			Stop;
+		Recoil:
+			TNT1 AAA 1 A_SetPitch(pitch+1.5);
+			TNT1 AAAAAA 1 A_SetPitch(pitch-0.75);
+			Stop;
+			
+		Recoil2:
+			TNT1 AA 1 A_SetPitch(pitch+0.80);
+			TNT1 AAAAAA 1 A_SetPitch(pitch-0.40);
+			Stop;
+		
+		Recoil3:
+			TNT1 AAAA 1 A_SetPitch(pitch+2.5);
+			TNT1 AAAAAAAA 1 A_SetPitch(pitch-1.25);
+			Stop;
+			
+		
+		ChgLv1:
+		SSG3 A 1;
+		goto Refire2;
+		
+		ChgLv2:
+		SSG3 B 1;
+		goto Refire2;
+			
+		ChgLv3:
+		SSG3 C 1;
+		goto Refire2;
+			
+		ChgLv4:
+		SSG3 D 1;
+		goto Refire2;
+			
+		ChgLv5:
+		SSG3 E 1;
+		goto Refire2;
+			
+		
+		Fire:
+			TNT1 A 0 {
+				invoker.yoffset = 32+frandom(0,0.1)*invoker.chargeLevel;
+				A_StartSound("weapons/SSGCharge",CHAN_BODY);
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_TOP);
+			}
+			
+			Refire:
+				TNT1 A 0 A_Jumpif(invoker.chargelevel > 31,"ChgLv5");
+				TNT1 A 0 A_Jumpif(invoker.chargelevel > 24,"ChgLv4");
+				TNT1 A 0 A_Jumpif(invoker.chargelevel > 17,"ChgLv3");
+				TNT1 A 0 A_Jumpif(invoker.chargelevel > 10,"ChgLv2");
+				TNT1 A 0 A_Jumpif(invoker.chargelevel > 3,"ChgLv1");
+				
+				SSGG A 1;
+				
+			Refire2:
+				SSGG A 0
+				{
+					A_WeaponOffset(invoker.xoffset, invoker.yoffset, WOF_INTERPOLATE);	// G: edited the second frandom call to not allow edges of the weapon to be seen
+					A_OverlayScale(OverlayID(), 0.0001*invoker.chargeLevel, 0.0001*invoker.chargeLevel, WOF_ADD);
+					invoker.xoffset = 0+frandom(-0.1,0.1)*invoker.chargeLevel;
+					invoker.yoffset = 32+frandom(0,0.1)*invoker.chargeLevel;
+					++invoker.chargelevel;
+				}
+				TNT1 A 0 A_Jumpif(Invoker.Chargelevel > 35, "ChargedShot");
+				TNT1 A 0 A_Refire("Refire");
+			WimpFire:
+				TNT1 A 0 A_StopSound(CHAN_BODY);
+				TNT1 A 0 A_Overlay(3,"SSGFlash");
+				SSGG A 2 {
+					ZWL_FireHitscan(0, 0, pellets: 36, spread: 12, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_SSGShot");
+					invoker.chargelevel = 0;
+					A_StartSound("weapons/ssgshot1", CHAN_WEAPON);
+					A_SpawnItemEx("GWM_MuzzleFlashLight3",0,0,5);
+					A_SpawnItemEx("GWM_Flash");
+					A_Overlay(55,"Recoil");
+					A_ChangeVelocity(-Cos(pitch)*4, 0, sin(pitch)*4,CVF_RELATIVE);
+					A_QuakeEx(3, 3, 3, 4, 0, 1, "", QF_SHAKEONLY);
+					A_OverlayScale(OverlayID(), 1, 1, WOF_INTERPOLATE);
+				//invoker.SSGShellstoEject = invoker.SSGShellstoEject+1;
+				}
+				SSGG BCDEEE 1;
+				goto reload;
+			
+			AltFire:
+				TNT1 A 0 A_StopSound(CHAN_BODY);
+				TNT1 A 0 A_Overlay(3,"SSGFlash");
+				SSGG A 2 {
+					ZWL_FireHitscan(0, 0, pellets: 24, spread: 12, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_SSGShot");
+					invoker.chargelevel = 0;
+					A_StartSound("weapons/ssgshot1", CHAN_WEAPON);
+					A_SpawnItemEx("GWM_MuzzleFlashLight3",0,0,5);
+					A_SpawnItemEx("GWM_Flash");
+					A_Overlay(55,"Recoil");
+					A_ChangeVelocity(-Cos(pitch)*4, 0, sin(pitch)*4,CVF_RELATIVE);
+					A_QuakeEx(3, 3, 3, 4, 0, 1, "", QF_SHAKEONLY);
+					A_OverlayScale(OverlayID(), 1, 1, WOF_INTERPOLATE);
+				//invoker.SSGShellstoEject = invoker.SSGShellstoEject+1;
+				}
+				SSGG BCDEEE 1;
+				goto reload;
+			
+		Reload:
+			TNT1 A 0 A_CheckReload;
+			SSGG FGHIJK 3;
+			SSGG L 3 A_StartSound("weapons/ssgo", CHAN_BODY);
+			SSGG M 2 A_EjectSSGCasings;
+			SSGG N 6;
+			SSGG OPQRS 2;
+			SSGG S 3 A_StartSound("weapons/ssgl", CHAN_BODY);
+			SSGG TUVV 2;
+			SSGG W 3 A_StartSound("weapons/ssgc", CHAN_BODY);
+			SSGG XYZZ 2;
+			SSG2 ABCDE 2;
+			Goto Ready;
+			
+		SSGFlash:
+			SSGF AABC 1 BRIGHT;
+			stop;
+		
+		ChargedShot:
+			SSG2 Y 1 {
+				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
+				ZWL_FireHitscan(0, 0, pellets: 40, spread: 18, pufftype: "ZBulletPuff_SSG", tracertype: "GWM_HSGChargedShot");
+				invoker.ammoCount = 0;
+				invoker.chargelevel = 0;
+				A_StartSound("weapons/hydrChSh", CHAN_AUTO);
+				A_StartSound("weapons/hydrChSh", CHAN_AUTO);
+				A_StartSound("weapons/hydrChSh", CHAN_AUTO);
+				A_StartSound("weapons/hydrChSh", CHAN_AUTO);
+				A_SpawnItemEx("GWM_MuzzleFlashLight3",0,0,5);
+				A_SpawnItemEx("GWM_MuzzleFlashLight3",0,0,5);
+				A_SpawnItemEx("GWM_MuzzleFlashLight3",0,0,5);
+				A_SpawnItemEx("GWM_Flash");
+				A_Overlay(55,"Recoil3");
+				A_ChangeVelocity(-Cos(pitch)*8, 0, sin(pitch)*8,CVF_RELATIVE);
+				A_WeaponOffset(0, 25, WOF_ADD);
+				A_OverlayScale(OverlayID(), 1.3, 0, WOF_INTERPOLATE);
+				A_QuakeEx(6, 6, 8, 7, 0, 1, "", QF_SHAKEONLY);
+				//invoker.SSGShellstoEject = invoker.SSGShellstoEject+1;
+			}
+			
+				//TNT1 A 0 A_JumpifInventory("PowerWeaponLevel2",1,"Ready");
+			SSGG JHHII 1 
+			{
+			A_OverlayScale(OverlayID(), 0.02, 0, WOF_ADD);
+			A_WeaponOffset(8, -4, WOF_ADD);
+			}
+			SSGG I 2 {A_WeaponOffset(47, 0, WOF_KEEPY);} SSGG I 2 {A_WeaponOffset(44, 0, WOF_KEEPY);}
+			SSGG I 2 {A_WeaponOffset(46, 0, WOF_KEEPY);} SSGG I 2 {A_WeaponOffset(44, 0, WOF_KEEPY);}
+			SSGG I 2 {A_WeaponOffset(45, 0, WOF_KEEPY);} SSGG I 2 {A_WeaponOffset(44, 0, WOF_KEEPY);}
+			SSGG I 5 
+			{
+			A_WeaponOffset(30, 36, WOF_INTERPOLATE);
+			A_OverlayScale(OverlayID(), -0.03, 0, WOF_ADD);
+			}
+			SSGG H 3 
+			{
+			A_WeaponOffset(13, 36, WOF_INTERPOLATE);
+			A_OverlayScale(OverlayID(), -0.03, 0, WOF_ADD);
+			}
+			SSGG H 4
+			{
+			A_WeaponOffset(0, 36, WOF_INTERPOLATE);
+			A_OverlayScale(OverlayID(), 1, 1, WOF_INTERPOLATE);
+			}
+			
+			Goto Reload.ChargeShot;
+
+		Reload.ChargeShot:
+			SSGG HIJK 3;
+			SSGG L 3 A_StartSound("weapons/ssgo", CHAN_BODY);
+			SSGG M 2 A_EjectHSGCasings;
+			SSGG N 6;
+			SSGG OPQRS 2;
+			SSGG S 3 A_StartSound("weapons/ssgl", CHAN_BODY);
+			SSGG TUVVV 2;
+			SSGG W 3 A_StartSound("weapons/ssgc", CHAN_BODY);
+			SSGG XYZZ 2;
+			SSG2 ABCDE 2;
+			Goto Ready;
+
+		Spawn:
+			SSGG [ -1;
+			Stop;
+	}
+}
+class ZBulletPuff_HSG : ZBulletPuff
+{
+	Default
+	{
+		+PUFFGETSOWNER
+		+PUFFONACTORS
+		+HITTRACER
+	}
+	States
+	{
+		XDeath:
+			TNT1 A 1
+			{
+				if (tracer && target && target.Distance3D(tracer) < 80)
+				{
+					bExtremeDeath = true;
+				}
+			}
+			Stop;
+	}
+}
+
+
+class GWM_HSGChargedShot : FastProjectile
+{
+
+	actor victim;
+	override int SpecialMissileHit(actor victim) // An actor it hits is labelled "victim".
+    {
+        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
+        {
+			victim.A_Spawnitemex("GWM_ElectricDamage",0,0,12,0,0,0,0,SXF_SETMASTER);
+        }
+        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
+    }
+
+	Default
+	{
+		RenderStyle "Add";
+		Radius 5;
+		Height 5;
+		Speed 130;
+		+BLOODSPLATTER
+		+HITTRACER
+		+NOINTERACTION
+		Scale 1.15;
+		DamageFunction (15);
+		MissileType "GWM_HydraTrail";
+		MissileHeight 8;
+		+EXTREMEDEATH;
+		+FORCEPAIN;
+		+HEXENBOUNCE;
+		Bouncecount 3;
+		+FORCEXYBILLBOARD;
+	}
+	States
+	{
+		Dummy:
+			HYSH A 1 Bright;
+			Loop;
+		Spawn:
+			HYSH AAAAA 0 BRIGHT A_Spawnitemex("GWM_ElectricSparkFX",frandom(-44,44),frandom(-44,44),frandom(-44,44));
+			HYSH A 1 BRIGHT;
+			Loop;
+		Crash:
+			TNT1 A 0 A_Jump(256,"Death");
+
+		Death:
+			TNT1 AAA 0 A_SpawnDebris("GWM_TracerSpark");
+		Animator:
+			PUFF AA 0 BRIGHT A_SpawnItemEX("GWM_HSGChTrail",frandom(-8,8),frandom(-8,8),frandom(-8,8));
+			ZFIR B 2 BRIGHT A_SetScale(1,1); 
+			ZFIR DF 2 BRIGHT;
+			ZFIR HJ 2 BRIGHT A_PlaySound("bullet/ricochet",CHAN_BODY,.5);
+			ZFIR LNP 2 BRIGHT;
+			Stop;
+		XDeath:
+			TNT1 A 0 A_PlaySound("bullet/hitFlesh",CHAN_BODY,.5);
+			goto Animator;
+	
+	}
+}
+
+Class GWM_HSGChTrail : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		+ALLOWPARTICLES;
+		+RANDOMIZE;
+		+FORCEXYBILLBOARD;
+		RenderStyle "Add";
+		Alpha 0.2;
+		Scale 0.52;
+		Mass 5;
+	}
+	States
+	{
+		Spawn:
+			TNT1 AAA 0 A_Changevelocity(frandom(-1,1),frandom(-1,1),frandom(-1,1));
+			ZFIR BDFHJLNP 1 Bright;
+			Stop;
+	}
+}
+
+Class GWM_HydraTrail : Actor
+{
+Default
+{
++NOINTERACTION;
++FORCEXYBILLBOARD;
+Renderstyle "Add";
+scale .45;
+Alpha 0.8;
+  }
+States
+{
+Spawn:
+HYSH A 2 bright A_Fadeout(0.04);
+loop;
+}
+}
+
+class GWM_ElectricDamage : Actor
+{
+  Default
+  {
+  Projectile;
+  +RIPPER;
+  Scale 1.75;
+  Reactiontime 120;
+  }
+  
+  States
+  {
+  Spawn:
+	MSPK ABCD 1 Bright 
+	{
+		A_Playsound("weapons/hydrStun");
+		A_Warp(AAPTR_MASTER,0,0,15);
+		if (master != null && master.Health > 0 && master.Findstate("Pain")) 
+			{ master.SetStateLabel("pain"); master.A_Pain();}
+		else {}
+		A_Countdown();
+		A_Spawnitemex("GWM_ElectricSparkFX",frandom(-master.radius,master.radius),frandom(-master.radius,master.radius),frandom(2,master.height));
+		
+	}
+	loop;
+	
+  Death:
+	TNT1 A 0;
+	stop;
+  }
+}
+
+class GWM_ElectricSparkFX : Actor
+{
+	Default
+	{
+	+NOINTERACTION;
+	Scale 0.26;
+	}
+	
+	States
+	{
+	Spawn:
+	MSPK ABCD random(1,4) Bright;
+	stop;
+	}
+}
