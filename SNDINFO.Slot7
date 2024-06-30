@@ -1,0 +1,10 @@
+// BFG10K
+weapons/BFG10KF		"Sounds/Weapons/Slot 7/BFG10K/fire.ogg"
+weapons/BFG10KCool	"Sounds/Weapons/Slot 7/BFG10K/cooldown.ogg"
+weapons/BFG10KIdle	"Sounds/Weapons/Slot 7/BFG10K/idle.ogg"
+
+weapons/BFG10KX1	"Sounds/Weapons/Slot 7/mlg_explode1.wav"
+weapons/BFG10KX2	"Sounds/Weapons/Slot 7/mlg_explode2.wav"
+weapons/BFG10KX3	"Sounds/Weapons/Slot 7/mlg_explode3.wav"
+$random	weapons/BFG10KX	{ weapons/BFG10KX1 weapons/BFG10KX2 weapons/BFG10KX3 }
+$limit	weapons/BFG10KX	0

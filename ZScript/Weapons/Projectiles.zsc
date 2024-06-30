@@ -15,13 +15,16 @@ class GWM_IceProjectile : Actor // the absolute most basic projectile base possi
 				return 1;
 			}
 
-			if (victim.CountInv("IceSlowCount")== 0 && victim.CountInv("GWM_IsPlayer")== 0 )
+			if (victim.GetClassName() != "IceWallColumn")
 			{
-				victim.A_SpawnProjectile("GWM_IceStatusThinker");
-			}
-			A_StartSound("Status/IceHit");
+				if (victim.CountInv("IceSlowCount")== 0 && victim.CountInv("GWM_IsPlayer")== 0 )
+				{
+					victim.A_SpawnProjectile("GWM_IceStatusThinker");
+				}
+				A_StartSound("Status/IceHit");
 
-			victim.A_GiveInventory("IceSlowCount",iceSlowCount);
+				victim.A_GiveInventory("IceSlowCount",iceSlowCount);
+			}
 
 		}
         return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
@@ -53,13 +56,14 @@ class GWM_FlameProjectile : Actor // the absolute most basic projectile base pos
 				return 1;
 			}
 
-			if (victim.CountInv("FireBurnCount")== 0 && victim.CountInv("GWM_IsPlayer")== 0 )
+			if (victim.GetClassName() != "IceWallColumn")
 			{
-				victim.A_SpawnProjectile("GWM_FlameStatusThinker");
+				if (victim.CountInv("FireBurnCount")== 0 && victim.CountInv("GWM_IsPlayer")== 0 )
+				{
+					victim.A_SpawnProjectile("GWM_FlameStatusThinker");
+				}
+				A_StartSound("Status/FireHit");
 			}
-			A_StartSound("Status/FireHit");
-
-			
 		}
         return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
     }
@@ -88,14 +92,15 @@ class GWM_AcidProjectile : Actor // the absolute most basic projectile base poss
 				return 1;
 			}
 
-			if (victim.CountInv("AcidWeakCount")== 0 && victim.CountInv("GWM_IsPlayer")== 0)
+			if (victim.GetClassName() != "IceWallColumn")
 			{
-				victim.A_SpawnProjectile("GWM_AcidStatusThinker");
+				if (victim.CountInv("AcidWeakCount")== 0 && victim.CountInv("GWM_IsPlayer")== 0)
+				{
+					victim.A_SpawnProjectile("GWM_AcidStatusThinker");
+				}
+				A_StartSound("Status/AcidHit");
+				victim.A_GiveInventory("AcidWeakCount",AcidWeakCount);
 			}
-			A_StartSound("Status/AcidHit");
-			victim.A_GiveInventory("AcidWeakCount",AcidWeakCount);
-			
-			
 		}
         return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
     }
