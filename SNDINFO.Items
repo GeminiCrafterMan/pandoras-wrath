@@ -1,7 +1,8 @@
 // Pickups
 pickups/healthbonus			"Sounds/Pickups/Health Bonus.wav"
 pickups/armorbonus			"Sounds/Pickups/Armor Bonus.wav"
-pickups/healthitem			"Sounds/Pickups/HealthItem.wav"
+pickups/healthitem			"Sounds/Pickups/Health Item.wav"
+pickups/armoritem			"Sounds/Pickups/Armor Item.wav"
 // Powerups
 items/time_stop_start		"Sounds/Items/Stopwatch/time_stop_start.wav"
 items/time_stop_end			"Sounds/Items/Stopwatch/time_stop_end.wav"

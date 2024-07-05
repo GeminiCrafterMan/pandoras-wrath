@@ -7,6 +7,7 @@ Class GWM_CombatArmor : GreenArmor
 		Armor.SavePercent 35;
 		Armor.SaveAmount 125;
 		Inventory.Icon "ARMRA0";
+		Inventory.PickupSound "pickups/armoritem";
 	}
 	States
 	{
@@ -30,6 +31,7 @@ Class GWM_BioSuit : BasicArmorPickup
 		Inventory.Icon "ARMRG0";
 		Armor.SavePercent 20;
 		Armor.SaveAmount 100;
+		Inventory.PickupSound "pickups/armoritem";
 	}
 	States
 	{
@@ -50,6 +52,7 @@ Class GWM_ThermoSuit : BasicArmorPickup
 		Inventory.Icon "ARMRI0";
 		Armor.SavePercent 20;
 		Armor.SaveAmount 100;
+		Inventory.PickupSound "pickups/armoritem";
 	}
 	States
 	{
@@ -79,6 +82,7 @@ Default
 		Inventory.Icon "ARMRK0";
 		Armor.SavePercent 30;
 		Armor.SaveAmount 100;
+		Inventory.PickupSound "pickups/armoritem";
 	}
 	States
 	{
@@ -98,6 +102,7 @@ Class GWM_AssaultArmor : BlueArmor
 		Armor.SavePercent 65;
 		Armor.SaveAmount 250;
 		Inventory.Icon "ARMRC0";
+		Inventory.PickupSound "pickups/armoritem";
 	}
 	States
 	{
@@ -124,6 +129,7 @@ Class GWM_BombSuit : BasicArmorPickup
 		Inventory.Icon "ARMRE0";
 		Armor.SavePercent 45;
 		Armor.SaveAmount 175;
+		Inventory.PickupSound "pickups/armoritem";
 	}
 	States
 	{
@@ -153,6 +159,7 @@ Class GWM_HellArmor : BasicArmorPickup
 		Inventory.Icon "ARMRM0";
 		Armor.SavePercent 40;
 		Armor.SaveAmount 200;
+		Inventory.PickupSound "pickups/armoritem";
 	}
 	States
 	{
