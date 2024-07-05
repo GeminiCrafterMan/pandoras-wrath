@@ -1,7 +1,7 @@
 // Weapon bases
 #include "./Weapons/Weapon base classes.zsc"
 
-#include "./Weapons/Slot 1/GWM_Fist.zsc"					// Fist, taken from Super Skulltag and rewritten slightly, then damage randomization was removed
+#include "./Weapons/Slot 1/GWM_Fist.zsc"					// Fists, taken from Super Skulltag and rewritten slightly, then damage randomization was removed
 #include "./Weapons/Slot 1/GWM_Impactor.zsc"				// Impactor Gauntlet, taken from Realm667.
 #include "./Weapons/Slot 1/GWM_Lumberjack.zsc"			// "Lumberjack" Chainsaw, sprites by Captain J
 #include "./Weapons/Slot 1/GWM_Levenbrech.zsc"			// Levenbrech
