@@ -381,6 +381,34 @@ class GWM_StatusBar : BaseStatusBar
 			}
 		}
 		
+		
+		int amt, maxamt;
+		[amt, maxamt] = GetAmount("GWM_HollowPointMagazine");
+		DrawString(mIndexFont, FormatNumber(amt, 3), (-55, -60), DI_TEXT_ALIGN_RIGHT);
+		DrawString(mIndexFont, FormatNumber(maxamt, 3), (-30, -60), DI_TEXT_ALIGN_RIGHT);
+		DrawImage("AMICO0", (-30, -60), DI_ITEM_OFFSETS);
+		
+		[amt, maxamt] = GetAmount("GWM_Shell");
+		DrawString(mIndexFont, FormatNumber(amt, 3), (-55, -70), DI_TEXT_ALIGN_RIGHT);
+		DrawString(mIndexFont, FormatNumber(maxamt, 3), (-30, -70), DI_TEXT_ALIGN_RIGHT);
+		DrawImage("AMICO1", (-30, -70), DI_ITEM_OFFSETS);
+		
+		[amt, maxamt] = GetAmount("GWM_FMJMagazine");
+		DrawString(mIndexFont, FormatNumber(amt, 3), (-55, -80), DI_TEXT_ALIGN_RIGHT);
+		DrawString(mIndexFont, FormatNumber(maxamt, 3), (-30, -80), DI_TEXT_ALIGN_RIGHT);
+		DrawImage("AMICO2", (-30, -80), DI_ITEM_OFFSETS);
+		
+		[amt, maxamt] = GetAmount("GWM_RocketAmmo");
+		DrawString(mIndexFont, FormatNumber(amt, 3), (-55, -90), DI_TEXT_ALIGN_RIGHT);
+		DrawString(mIndexFont, FormatNumber(maxamt, 3), (-30, -90), DI_TEXT_ALIGN_RIGHT);
+		DrawImage("AMICO3", (-30, -90), DI_ITEM_OFFSETS);
+		
+		[amt, maxamt] = GetAmount("GWM_Cell");
+		DrawString(mIndexFont, FormatNumber(amt, 3), (-55, -100), DI_TEXT_ALIGN_RIGHT);
+		DrawString(mIndexFont, FormatNumber(maxamt, 3), (-30, -100), DI_TEXT_ALIGN_RIGHT);
+		DrawImage("AMICO4", (-30, -100), DI_ITEM_OFFSETS);
+		
+		
 		if (ammotype1 != null)
 		{
 			if (ammotype1 && weapon && weapon.magazineSize > 0)
