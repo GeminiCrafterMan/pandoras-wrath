@@ -1,5 +1,4 @@
-// Super Skulltag's fist weapon rewritten in ZScript.
-class GWM_Fist : GWM_WeaponBase replaces Fist
+class GWM_Fist : GWM_AkimboWeaponBase replaces Fist
 {
 	Default
 	{
@@ -11,85 +10,82 @@ class GWM_Fist : GWM_WeaponBase replaces Fist
 		+WEAPON.WIMPY_WEAPON
 		+WEAPON.MELEEWEAPON
 		+WEAPON.NOAUTOSWITCHTO
+		GWM_AkimboWeaponBase.raisespeed 18;
+		GWM_AkimboWeaponBase.lowerspeed 18;
 		Obituary "$KILLFISTS";
 		Tag "$TAG_FISTS";
-		AttackSound "weapons/fist_hit";
+		AttackSound "weapons/punch";
 	}
 	States
 	{
-		Ready:
-			FIST B 1 A_WeaponReady;
-			Loop;
-		Deselect:
-			FIST B 1 A_Lower(18);
-			Loop;
+		// Normally Select can be left as is in weapons based on this one.
+		// Redefine only if you want to significantly change selection animation
 		Select:
-			FIST B 1 A_Raise(18);
+			TNT1 A 0
+			{
+				A_overlay(PSP_RIGHTGUN, "Select.Right");
+				A_Overlay(PSP_LEFTGUN, "Select.Left");
+				A_OverlayFlags(PSP_LEFTGUN, PSPF_FLIP|PSPF_MIRROR, true);
+			}
+			TNT1 A 1 A_Raise(invoker.raisespeed);
+			wait;
+		/*////////////////////////
+			LEFT HAND STATES
+		*/////////////////////////
+		Ready.Left:
+			FIST C 1 Left_WeaponReady();
 			Loop;
-		Fire:
-			FIST C 0 A_JumpIfInventory("GWM_PowerStrength", 1, "Fire.Berserk");
-		Fire1:
+		Deselect.Left:
+			FIST C 1;
+			Loop;
+		Select.Left:
+			FIST C 1 Left_Raise();
+			Loop;
+		Fire.Left:
+			FIST C 0 A_JumpIfInventory("GWM_PowerStrength", 1, "Fire.Left.Berserk");
 			FIST TC 1;
-			FIST D 0 A_StartSound("weapons/fistjab", CHAN_WEAPON);
-			FIST G 1 A_CustomPunch(11, 1, CPF_NOTURN, "GWM_FistPuff");
-		Hold:
-			FIST C 0 A_JumpIfInventory("GWM_PowerStrength", 1, "Hold.Berserk");
-			PLA3 A 0 A_JumpIf((Vel.X+Vel.Y+Vel.Z > 10) || (Vel.X+Vel.Y+Vel.Z < -10), "RunningPunch");
-			FIST G 1;
-			FIST G 0 A_ReFire;
-			FIST FE 1;
-			FIST D 1 A_WeaponReady;
-			FIST CC 35 A_WeaponReady;
-			Goto Ready;
-		RunningPunch:
-			FIST G 3 A_CustomPunch(11, 1, CPF_NOTURN, "GWM_FistPuff");
-			FIST G 0 A_ReFire;
-			FIST FE 1;
-			FIST D 1 A_WeaponReady;
-			FIST CC 35 A_WeaponReady;
-			Goto Ready;
-		Fire.Berserk:
+			FIST D 0 A_StartSound("weapons/fistjab", CHAN_LEFTGUN);
+			FIST G 2 Left_CustomPunch(11, 1, 0, "GWM_FistPuff");
+			FIST FEDDCCC 2;
+			TNT1 A 0 Left_ReFire();
+			Goto Ready.Left;
+		Fire.Left.Berserk:
 			FIST TC 1;
-			FIST D 0 A_StartSound("weapons/fistjab", CHAN_WEAPON);
-			FIST G 1 A_CustomPunch(125, 1, CPF_NOTURN, "GWM_BerserkPuff");
-		Hold.Berserk:
-			PLA3 A 0 A_JumpIf((Vel.X+Vel.Y+Vel.Z > 10) || (Vel.X+Vel.Y+Vel.Z < -10), "RunningBerserk");
-			FIST G 1;
-			FIST G 0 A_ReFire;
-			FIST FE 1;
-			FIST D 1 A_WeaponReady;
-			FIST CC 35 A_WeaponReady;
-			Goto Ready;
-		RunningBerserk:
-			FIST G 3 A_CustomPunch(125, 1, CPF_NOTURN, "GWM_BerserkPuff");
-			FIST G 0 A_ReFire;
-			FIST FE 1;
-			FIST D 1 A_WeaponReady;
-			FIST CC 35 A_WeaponReady;
-			Goto Ready;
-		AltFire:
-			FIST QRST 1;
-		AltHold:
-			FIST U 1;
-			TNT1 A 0 A_ReFire;
-			FIST C 0 Bright A_StartSound("weapons/fistwhoosh", CHAN_WEAPON);
-			FIST C 0 A_JumpIfInventory("GWM_PowerStrength", 1, "SlugBerserk");
-			FIST CDE 1;
-			FIST F 1 A_CustomPunch(20, 1, CPF_NOTURN, "GWM_FistPuff");
-			FIST HIJKLMNOP 1;
-			FIST CC 35 A_WeaponReady;
-			Goto Ready;
-		SlugBerserk:
-			FIST CDE 1;
-			FIST F 1 A_CustomPunch(200, 1, CPF_NOTURN, "GWM_BerserkPuff");
-			FIST HIJKLMNOP 1;
-			FIST CC 35 A_WeaponReady;
-			Goto Ready;
-		Spawn:
-			TNT1 A -1;
-			Stop;
+			FIST D 0 A_StartSound("weapons/fistjab", CHAN_LEFTGUN);
+			FIST G 2 Left_CustomPunch(125, 1, 0, "GWM_BerserkPuff");
+			FIST FEDDCCC 2;
+			TNT1 A 0 Left_ReFire();
+			Goto Ready.Left;
+		/*////////////////////////
+			RIGHT HAND STATES
+		*/////////////////////////
+		Ready.Right:
+			FIST B 1 Right_WeaponReady();
+			Loop;
+		Deselect.Right:
+			FIST B 1;
+			Loop;
+		Select.Right:
+			FIST B 1 Right_Raise();
+			Loop;
+		Fire.Right:
+			FIST C 0 A_JumpIfInventory("GWM_PowerStrength", 1, "Fire.Right.Berserk");
+			FIST TC 1;
+			FIST D 0 A_StartSound("weapons/fistjab", CHAN_RIGHTGUN);
+			FIST G 2 Right_CustomPunch(11, 1, 0, "GWM_FistPuff");
+			FIST FEDDCCC 2;
+			TNT1 A 0 Right_ReFire();
+			Goto Ready.Right;
+		Fire.Right.Berserk:
+			FIST TC 1;
+			FIST D 0 A_StartSound("weapons/fistjab", CHAN_RIGHTGUN);
+			FIST G 2 Right_CustomPunch(125, 1, 0, "GWM_BerserkPuff");
+			FIST FEDDCCC 2;
+			TNT1 A 0 Right_ReFire();
+			Goto Ready.Right;
 	}
 }
+
 class GWM_FistPuff : Actor
 {
 	Default

@@ -111,7 +111,7 @@ class ZWeapon : Weapon
 		if (!invoker.CheckMagazine(false) && invoker.JustPressed(BT_Attack)                     // Primary
 				|| invoker.GetAltAtkState(false) && !invoker.CheckAmmo(AltFire, false, true)    // Alt
 				&& invoker.JustPressed(BT_AltAttack))
-			A_PlaySound(invoker.clickSound, CHAN_Auto);
+			A_StartSound(invoker.clickSound, CHAN_Auto);
 
 		// Weapon ready flags
 		int wrf = 0;
@@ -446,7 +446,7 @@ class ZWeapon : Weapon
 				rounds = invoker.magazineSize - invoker.ammoCount - rounds;
 			}
 
-			A_PlaySound(invoker.reloadSound, CHAN_Weapon);
+			A_StartSound(invoker.reloadSound, CHAN_Weapon);
 
 			int tradeAmt = Min(rounds, playerAmmo.amount);
 
@@ -479,14 +479,14 @@ class ZWeapon : Weapon
 				if (invoker.attackAttack)
 				{
 					// Loop w/ attack
-					A_PlaySound(invoker.attackAttack, CHAN_Weapon);
+					A_StartSound(invoker.attackAttack, CHAN_Weapon);
 					invoker.attackSoundState = ALS_Attack;
 					invoker.attackSoundStartTic = gameTic;
 				}
 				else
 				{
 					// Loop w/o attack
-					A_PlaySound(invoker.attackSound, CHAN_Weapon, 1.0, true);
+					A_StartSound(invoker.attackSound, CHAN_Weapon, 1.0, true);
 					invoker.attackSoundState = ALS_Sustain;
 					invoker.attackSoundStartTic = gameTic;
 				}
@@ -494,7 +494,7 @@ class ZWeapon : Weapon
 			else
 			{
 				// Non-looping attack sound
-				A_PlaySound(invoker.attackSound, CHAN_Weapon);
+				A_StartSound(invoker.attackSound, CHAN_Weapon);
 				invoker.attackSoundState = ALS_Release;
 			}
 		}
@@ -559,14 +559,14 @@ class ZWeapon : Weapon
 			if (attackSoundState == ALS_Attack && ticsSinceStart >= attackAttackTics)
 			{
 				// Attack is over
-				owner.A_PlaySound(attackSound, CHAN_Weapon, 1.0, true);
+				owner.A_StartSound(attackSound, CHAN_Weapon, 1.0, true);
 				attackSoundState = ALS_Sustain;
 				attackSoundStartTic = gameTic;
 			}
 			else if (attackSoundState == ALS_ReadyRelease && onBeat)
 			{
 				// Time to end loop
-				owner.A_PlaySound(attackRelease, CHAN_Weapon);
+				owner.A_StartSound(attackRelease, CHAN_Weapon);
 				attackSoundState = ALS_Release;
 			}
 		}

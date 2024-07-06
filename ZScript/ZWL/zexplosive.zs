@@ -172,7 +172,7 @@ class ZExplosive : Actor
 
         if (trace.hitType == Trace_HitActor)
         {
-            A_PlaySound(deathSound);
+            A_StartSound(deathSound);
             return ResolveState(st);
         }
 
@@ -202,7 +202,7 @@ class ZExplosive : Actor
                 if (flags & ZPF_DetectEnemies && src.isHostile(it.thing)
                     || flags & ZPF_DetectFriends && src.isFriend(it.thing))
                 {
-                    A_PlaySound(deathSound);
+                    A_StartSound(deathSound);
                     return ResolveState(st);
                 }
             }
