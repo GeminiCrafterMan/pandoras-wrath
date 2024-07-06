@@ -400,7 +400,7 @@ class GWM_AkimboWeaponBase : GWM_WeaponBase
 			
 		
 		state targetState = null;
-		bool pressingFire = player.cmd.buttons & (left ? BT_ALTATTACK : BT_ATTACK);
+		bool pressingFire = player.cmd.buttons & (left ? BT_ATTACK : BT_ALTATTACK);
 		if (pressingFire)
 		{
 			if (Right_CheckAmmo(left))
@@ -479,7 +479,7 @@ class GWM_AkimboWeaponBase : GWM_WeaponBase
 			return;
 		let s_fire = left ? invoker.s_fireLeft : invoker.s_fireRight; //pointer to Fire
 		let s_hold = left ? invoker.s_holdLeft : invoker.s_holdright; //pointer to Hold
-		int atkbutton = left ? BT_ALTATTACK : BT_ATTACK; //check attack button is being held
+		int atkbutton = left ? BT_ATTACK : BT_ALTATTACK; //check attack button is being held
 		state targetState = null;
 		//check if this is being called from Fire or Hold:
 		if (s_fire && (InStateSequence(psp.curstate,s_fire) || InStateSequence(psp.curstate,s_hold)))

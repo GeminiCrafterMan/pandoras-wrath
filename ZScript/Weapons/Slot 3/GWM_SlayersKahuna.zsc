@@ -62,7 +62,7 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 			SKSG A 1 Bright {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 10, pellets: 12, spread: 6+(Countinv("GWM_KahunaSpread")*0.4), tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(0, 10, pellets: 12, spread: 5+(Countinv("GWM_KahunaSpread")*0.4), tracerType: "GWM_Tracer");
 				
 				A_ChangeVelocity(-Cos(pitch)*2, 0, sin(pitch)*2,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
@@ -105,7 +105,7 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 				A_Overlay(55, "Recoil");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 11, pellets: 12, spread: 5+(Countinv("GWM_KahunaSpread")*0.8), tracerType: "GWM_Tracer");
+				ZWL_FireHitscan(0, 11, pellets: 12, spread: 4+(Countinv("GWM_KahunaSpread")*0.8), tracerType: "GWM_Tracer");
 				A_ChangeVelocity(-Cos(pitch)*2.5, 0, sin(pitch)*2.5,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
@@ -119,11 +119,11 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
-			SKSG A 1 {
+			SKSG A 1 Bright {
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
-			SKSG A 1 Bright;
+			SKSG AA 1;
 			SKSG QRSSAA 1;
 			TNT1 A 0 {
 				ZWL_CheckReload();

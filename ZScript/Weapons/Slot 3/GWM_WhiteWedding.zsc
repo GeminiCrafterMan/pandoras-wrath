@@ -61,7 +61,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_StartSound("weapons/wwshot1");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 11, pellets: 15, spread: 6+(Countinv("GWM_KahunaSpread")*0.4), pufftype: "GWM_WeddingBulletPuff" , tracerType: "GWM_TracerWhite");
+				ZWL_FireHitscan(0, 11, pellets: 15, spread: 5+(Countinv("GWM_KahunaSpread")*0.4), pufftype: "GWM_WeddingBulletPuff" , tracerType: "GWM_TracerWhite");
 				
 				A_ChangeVelocity(-Cos(pitch)*3, 0, sin(pitch)*3,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
@@ -114,7 +114,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_Overlay(55, "Recoil");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 12, pellets: 15, spread: 5+(Countinv("GWM_KahunaSpread")*0.8), pufftype: "GWM_WeddingBulletPuff" ,tracerType: "GWM_TracerWhite");
+				ZWL_FireHitscan(0, 12, pellets: 15, spread: 4+(Countinv("GWM_KahunaSpread")*0.8), pufftype: "GWM_WeddingBulletPuff" ,tracerType: "GWM_TracerWhite");
 				A_ChangeVelocity(-Cos(pitch)*3.1, 0, sin(pitch)*3.1,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
@@ -166,7 +166,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_Overlay(55, "Recoil");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
-				ZWL_FireHitscan(0, 12, pellets: 18, spread: 7, pufftype: "GWM_WeddingBulletPuff2" , tracerType: "GWM_TracerWhite2");
+				ZWL_FireHitscan(0, 12, pellets: 18, spread: 6, pufftype: "GWM_WeddingBulletPuff2" , tracerType: "GWM_TracerWhite2");
 				A_ChangeVelocity(-Cos(pitch)*3.5, 0, sin(pitch)*3.5,CVF_RELATIVE);
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);

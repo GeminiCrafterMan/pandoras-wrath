@@ -1,0 +1,6 @@
+// Sawed-Off Shotgun
+weapons/SOGshot		"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/Fire.wav"
+weapons/SOGo		"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/Open.wav"
+weapons/SOGl		"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/Load.wav"
+weapons/SOGc		"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/Close.wav"
+weapons/SOGpickup	"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/pickup.wav"
