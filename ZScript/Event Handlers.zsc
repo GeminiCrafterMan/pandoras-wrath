@@ -390,7 +390,7 @@ class ThingReplacer : StaticEventHandler
 					e.Replacement = "GWM_SuperShotgun";
 					break;
 				case 'Chaingun':
-					e.Replacement = "GWM_MadVulcan";
+					e.Replacement = "GWM_BurstRifle";
 					break;
 				case 'RocketLauncher':
 					e.Replacement = "GWM_RocketLauncher";
@@ -420,7 +420,10 @@ class ThingReplacer : StaticEventHandler
 				case 'CellPack':
 					e.Replacement = "GWM_CellPack";
 					break;
-			// Skulltag (Invasion)
+			// Skulltag
+				case 'Minigun':
+					e.Replacement = "GWM_MadVulcan";
+					break;
 				case 'PlasmaRifle2':
 					e.Replacement = "GWM_PlasmaRifle";
 					break;
@@ -535,7 +538,7 @@ class ThingReplacer : StaticEventHandler
 			case 'TangoMedkit':
 				e.Replacement = "GWM_Medkit";
 				break;
-		// Skulltag (Invasion)
+		// Skulltag
 			case 'PlasmaRifleSpawner':
 				e.Replacement = "GWM_PlasmaRifleSpawner";
 				break;
@@ -556,6 +559,21 @@ class ThingReplacer : StaticEventHandler
 				break;
 			case 'HealthBonus2':
 				e.Replacement = "GWM_HealthBonus";
+				break;
+			case 'Minigun':
+				e.Replacement = "GWM_Minigun";
+				break;
+			case 'GrenadeLauncher':
+				e.Replacement = "GWM_GrenadeLauncher";
+				break;
+			case 'Railgun':
+				e.Replacement = "GWM_Railgun";
+				break;
+			case 'BFG10K':
+				e.Replacement = "GWM_BFG10K";
+				break;
+			case 'RedArmor':
+				e.Replacement = "GWM_Lv1and2ArmorSpawner";
 				break;
 		}
     }
