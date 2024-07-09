@@ -422,10 +422,16 @@ class ThingReplacer : StaticEventHandler
 					break;
 			// Skulltag
 				case 'Minigun':
-					e.Replacement = "GWM_MadVulcan";
+					e.Replacement = "GWM_Minigun";
 					break;
-				case 'PlasmaRifle2':
-					e.Replacement = "GWM_PlasmaRifle";
+				case 'GrenadeLauncher':
+					e.Replacement = "GWM_GrenadeLauncher";
+					break;
+				case 'Railgun':
+					e.Replacement = "GWM_Railgun";
+					break;
+				case 'BFG10K':
+					e.Replacement = "GWM_BFG10K";
 					break;
 			}
 		}
