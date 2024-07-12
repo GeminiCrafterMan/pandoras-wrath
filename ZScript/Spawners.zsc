@@ -76,7 +76,7 @@ class GWM_CellPackSpawner : RandomSpawner replaces CellPack
 {
 	Default
 	{
-		DropItem "GWM_CellPack_SpawnHeatsink";
+		DropItem "GWM_CellPack";
 		DropItem "GWM_GasPack";
 	}
 }
@@ -108,7 +108,7 @@ class GWM_SuperShotgunSpawner : GWM_WeaponSpawner replaces SuperShotgun
 	Default
 	{
 		DropItem "GWM_SawedoffShotgun", 255, 6;
-		DropItem "GWM_Melter", 255, 2;
+		DropItem "GWM_Volcannon", 255, 2;
 		DropItem "GWM_Flamethrower", 255, 2;
 		DropItem "GWM_AcidCannon", 255, 2;
 		DropItem "GWM_PFMissileLauncher", 255, 2;
@@ -141,7 +141,7 @@ class GWM_PlasmaRifleSpawner : GWM_WeaponSpawner replaces PlasmaRifle
 	Default
 	{
 		DropItem "GWM_PlasmaRifle";
-		DropItem "GWM_Melter";
+		DropItem "GWM_Volcannon";
 		DropItem "GWM_NoiseCrusher";
 		DropItem "GWM_Railgun";
 	}

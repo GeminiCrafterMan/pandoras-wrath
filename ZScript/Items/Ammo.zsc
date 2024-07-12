@@ -255,15 +255,6 @@ class GWM_CellPack : GWM_Cell
 			Stop;
 	}
 }
-//class GWM_CellPack_SpawnHeatsink : GWM_CellPack // optionally spawns a Melter heatsink
-//{
-//	override void BeginPlay()
-//	{
-//		Super.BeginPlay();
-//		if (random(0,4) == 4)
-//			Spawn("GWM_MelterHeatsink", self.pos);
-//	}
-//}
 
 class GWM_GasCanister : Ammo
 {
