@@ -13,7 +13,7 @@ class GWM_Volcannon : GWM_WeaponBase
 		Obituary "$KILLVolcannon";
 		Weapon.AmmoType "GWM_GasCanister";
 		Weapon.AmmoGive 9;
-		Weapon.AmmoUse 3;
+		Weapon.AmmoUse 5;
 		+Weapon.Explosive
 	}
 	States
@@ -35,18 +35,25 @@ class GWM_Volcannon : GWM_WeaponBase
 		Fire:
 			TNT1 A 0 A_StartSound("weapons/ftfiring", CHAN_WEAPON);
 			FLTG A 2 A_StartSound("weapons/ftsqueak", CHAN_BODY);
-			FLGG E 0 {
+			FLGG EEEE 1 {
 				A_GunFlash();
-				A_FireProjectile("GWM_VOLCMAGMA", frandom(-18,18), false, 0, 0,0,frandom(-9,9));
-				A_FireProjectile("GWM_VOLCMAGMA", frandom(-18,18), false, 0, 0,0,frandom(-9,9));
-				A_FireProjectile("GWM_VOLCMAGMA", frandom(-18,18), false, 0, 0,0,frandom(-9,9));
-				A_FireProjectile("GWM_VOLCMAGMA", frandom(-18,18), false, 0, 0,0,frandom(-9,9));
-				A_FireProjectile("GWM_VOLCMAGMA", frandom(-18,18), false, 0, 0,0,frandom(-9,9));
-				A_FireProjectile("GWM_VOLCMAGMA", frandom(-18,18), false, 0, 0,0,frandom(-9,9));
-				A_FireProjectile("GWM_VOLCMAGMA", frandom(-18,18), false, 0, 0,0,frandom(-9,9));
 				
+				A_FireProjectile("GWM_VOLCMAGMA", frandom(-22,22), false, 0, 0,0,frandom(-12,12));
+				A_FireProjectile("GWM_VOLCMAGMA", frandom(-22,22), false, 0, 0,0,frandom(-12,12));
+				A_FireProjectile("GWM_VOLCMAGMA", frandom(-22,22), false, 0, 0,0,frandom(-12,12));
+				A_FireProjectile("GWM_VOLCMAGMA", frandom(-22,22), false, 0, 0,0,frandom(-12,12));
+				A_FireProjectile("GWM_VOLCMAGMA", frandom(-22,22), false, 0, 0,0,frandom(-12,12));
+				A_FireProjectile("GWM_VOLCMAGMA", frandom(-22,22), false, 0, 0,0,frandom(-12,12));
+				A_FireProjectile("GWM_VOLCMAGMA", frandom(-22,22), false, 0, 0,0,frandom(-12,12));
+				
+				A_FireProjectile("GWM_VolcFX2", frandom(-18,18), false, 0, 0,0,frandom(-9,9));
+				A_FireProjectile("GWM_VolcFX2", frandom(-18,18), false, 0, 0,0,frandom(-9,9));
+				A_FireProjectile("GWM_VolcFX2", frandom(-18,18), false, 0, 0,0,frandom(-9,9));
+				A_FireProjectile("GWM_VolcFX2", frandom(-18,18), false, 0, 0,0,frandom(-9,9));
+				A_FireProjectile("GWM_VolcFX2", frandom(-18,18), false, 0, 0,0,frandom(-9,9));
+				A_FireProjectile("GWM_VolcFX2", frandom(-18,18), false, 0, 0,0,frandom(-9,9));
 				}
-			FLTG E 1 bright;
+			FLTG E 1 bright A_FireProjectile("GWM_VOLCMAGMA", frandom(-18,18), true, 0, 0,0,frandom(-9,9));
 			FLTG BC 1 bright A_setpitch(pitch-2);
 			FLTG D 2 A_StartSound("weapons/ftend", CHAN_WEAPON);
 			FLTG EEEAA 2;
@@ -77,8 +84,8 @@ Class GWM_VolcFX : Actor
 		+NoInteraction;
 		RenderStyle "Add";
 		DamageType "Fire";
-		Alpha 0.67;
-		Scale 1;
+		Alpha 0.27;
+		Scale 0.75;
 		Speed 10;
 	}
 	States
@@ -86,6 +93,60 @@ Class GWM_VolcFX : Actor
 	Spawn:
 		ZFIR ABCDEFGHIJKLMNOP 1 bright A_ScaleVelocity(0.9);
 		stop;
+	}
+}
+
+Class GWM_VolcFX2 : Actor
+{
+	override void Tick()
+	{
+		Super.Tick();
+		if (self.waterlevel > 0)
+		{
+			self.Destroy();
+		}
+	}
+	
+
+	Default
+	{
+		RenderStyle "Add";
+		DamageType "Fire";
+		Scale 0.75;
+		Speed 10;
+	}
+	States
+	{
+	Spawn:
+		YFIR A 1 bright A_Fadeout(0.01);
+		loop;
+	}
+}
+
+Class GWM_VolcFX3 : Actor
+{
+	override void Tick()
+	{
+		Super.Tick();
+		if (self.waterlevel > 0)
+		{
+			self.Destroy();
+		}
+	}
+	
+
+	Default
+	{
+		RenderStyle "Add";
+		DamageType "Fire";
+		Scale 0.15;
+		Speed 10;
+	}
+	States
+	{
+	Spawn:
+		YFIR A 1 bright A_Fadeout(0.01);
+		loop;
 	}
 }
 
@@ -115,7 +176,7 @@ class GWM_VOLCMAGMA : GWM_FlameProjectile
 			}
 			A_StartSound("Status/FireHit");
 			
-			victim.A_GiveInventory("FireBurnCount",50);
+			victim.A_GiveInventory("FireBurnCount",20);
             victim.DamageMobj(self,target,5,'Fire');
             hitlist.Push(victim);
         }
@@ -125,12 +186,11 @@ class GWM_VOLCMAGMA : GWM_FlameProjectile
 	Default
 	{
 		Speed 20;
-		DamageFunction (20);
+		DamageFunction (4);
 		GWM_FlameProjectile.FireBurnCount 40;
-		Height 24;
-		Radius 24;
-		BounceCount 11;
-		Scale 0.25;
+		Height 18;
+		Radius 18;
+		Scale 2.75;
 		Gravity 0.43;
 		-NOGRAVITY
 		+FORCEXYBILLBOARD
@@ -141,22 +201,47 @@ class GWM_VOLCMAGMA : GWM_FlameProjectile
 		DeathSound "weapons/acdcbomb";
 		Obituary "$KILLACIDCANNONBALL";
 		-NoGravity;
+		Renderstyle "Add";
 	}
 	States
 	{
 		Spawn:
-			MAGP A 2 {
-				A_SetScale(0.45, 0.45);
+			YFIR A 2 bright {
 				A_SpawnItemEX("GWM_VolcFX",0,0,12,frandom(-2,2),frandom(-2,2),frandom(-2,2));
+				A_SpawnItemEX("GWM_VolcFX3",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-2,2),frandom(-2,2),frandom(-2,2));
 			}
 			Loop;
 		Death:
 			TNT1 A 0 {
 				A_Scream();
-				A_SetScale(0.25, 0.25);
-				A_SpawnItemEx("GWM_FloorMagmaPuddle");
+				A_SpawnItemEX("GWM_VolcFX2",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX2",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX2",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX2",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX2",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX2",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX2",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				
+				A_SpawnItemEX("GWM_VolcFX3",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX3",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX3",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX3",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX3",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX3",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX3",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX3",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX3",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX3",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				A_SpawnItemEX("GWM_VolcFX3",frandom(-22,22),frandom(-22,22),frandom(-22,22),frandom(-12,12),frandom(-12,12),frandom(-12,12));
+				
+				A_SpawnItemEX("GWM_VolcFX",0,0,12,frandom(-2,2),frandom(-2,2),frandom(-2,2));
+				A_SpawnItemEX("GWM_VolcFX",0,0,12,frandom(-2,2),frandom(-2,2),frandom(-2,2));
+				A_SpawnItemEX("GWM_VolcFX",0,0,12,frandom(-2,2),frandom(-2,2),frandom(-2,2));
+				A_SpawnItemEX("GWM_VolcFX",0,0,12,frandom(-2,2),frandom(-2,2),frandom(-2,2));
+				
+				
+				A_SpawnItemEx("GWM_MagmaPuddle",0,0,5,0,0,0,0,SXF_NOCHECKPOSITION);
 			}
-			MAGP BCDEF 1;
 			Stop;
 			
 	}
@@ -164,7 +249,7 @@ class GWM_VOLCMAGMA : GWM_FlameProjectile
 
 
 
-class GWM_FloorMagmaPuddle : GWM_FlameProjectile
+class GWM_MagmaPuddle : GWM_FlameProjectile
 {
 	
 	override void Tick()
@@ -189,7 +274,7 @@ class GWM_FloorMagmaPuddle : GWM_FlameProjectile
 			}
 			A_StartSound("Status/FireHit");
 			
-			victim.A_GiveInventory("FireBurnCount",50);
+			victim.A_GiveInventory("FireBurnCount",20);
             victim.DamageMobj(self,target,5,'Fire');
             hitlist.Push(victim);
         }
@@ -201,38 +286,25 @@ class GWM_FloorMagmaPuddle : GWM_FlameProjectile
 		Height 2;
 		Projectile;
 		Radius 16;
-		-NOGRAVITY
 		+NOTELEPORT
-		+FLATSPRITE
-		+FLOORHUGGER
 		+MOVEWITHSECTOR
-		Scale 0.8;
+		+FORCEXYBILLBOARD
+		Scale 2.75;
 		DamageFunction (8);
 		GWM_FlameProjectile.FireBurnCount 40;
 		Obituary "$KILLACIDCANNONPUDDLE";
+		Renderstyle "Add";
 	}
 	States
 	{
 		Spawn:
-			TNT1 A 0 NoDelay A_JumpIf(random(0, 1), "Puddle3");
-			TNT1 A 0 A_JumpIf(random(0, 1), "Puddle2");
-		Puddle1:
-			MAGP G 1 {self.Vel.X = 0; self.Vel.Y = 0;
-			if (Scale.X < 3.1) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
-			if (Scale.X < 2.8) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
-			if (Scale.X < 2.6) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
-			Loop;
-		Puddle2:
-			MAGP H 1 {self.Vel.X = 0; self.Vel.Y = 0;
-			if (Scale.X < 3.1) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
-			if (Scale.X < 2.8) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
-			if (Scale.X < 2.6) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
-			Loop;
-		Puddle3:
-			MAGP I 1 {self.Vel.X = 0; self.Vel.Y = 0;
-			if (Scale.X < 3.1) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
-			if (Scale.X < 2.8) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}
-			if (Scale.X < 2.6) {A_Setscale(Scale.X+0.001,Scale.X+0.001);}}
+			YFIR A 5 bright 
+			{
+			self.Vel.X = 0; 
+			self.Vel.Y = 0; 
+			A_SpawnItemEX("GWM_VolcFX",0,0,12,frandom(-2,2),frandom(-2,2),frandom(-2,2));
+			}
+			TNT1 A 0 A_Fadeout(0.0075);
 			Loop;
 	}
 }
