@@ -371,7 +371,7 @@ script "PandorasBox" (void)
 				if (itmslot == 1) { SetFont("SMALLFONT"); HudMessage(s:"Assault Armor";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
 				if (itmslot == 2) { SetFont("SMALLFONT"); HudMessage(s:"HellFire Armor";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
 				if (itmslot == 3) { SetFont("SMALLFONT"); HudMessage(s:"Bomb Suit";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
-				if (itmslot == 4) { SetFont("SMALLFONT"); HudMessage(s:"Melter Heatsink";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
+				if (itmslot == 4) { SetFont("SMALLFONT"); HudMessage(s:"Volcannon Heatsink";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
 				if (itmslot == 5) { SetFont("SMALLFONT"); HudMessage(s:"Blursphere";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
 				if (itmslot == 6) { SetFont("SMALLFONT"); HudMessage(s:"Drainsphere";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
 				if (itmslot == 7) { SetFont("SMALLFONT"); HudMessage(s:"Stopwatch";HUDMSG_PLAIN,3,0,280.0,140.0,0.06);}
@@ -452,7 +452,6 @@ script "PandorasBox" (void)
 						if (itmslot == 1) {GiveInventory("GWM_AssaultArmor",1);}
 						if (itmslot == 2) {GiveInventory("GWM_HellArmor",1);}
 						if (itmslot == 3) {GiveInventory("GWM_Bombsuit",1);}
-						if (itmslot == 4) {GiveInventory("GWM_MelterHeatsink",1);}
 						if (itmslot == 5) {GiveInventory("GWM_Blursphere",1);}
 						if (itmslot == 6) {GiveInventory("GWM_Drainsphere",1);}
 						if (itmslot == 7) {GiveInventory("GWM_Stopwatch",1);}

@@ -3,9 +3,9 @@
 
 script "GWM_FireWepSwitch" (void) 
 {
-	if (Checkinventory("GWM_Melter")==1&&CheckWeapon("GWM_Melter")==0)
+	if (Checkinventory("GWM_Volcannon")==1&&CheckWeapon("GWM_Volcannon")==0)
 			{
-				SetWeapon("GWM_Melter");
+				SetWeapon("GWM_Volcannon");
 			}			
 	if (Checkinventory("GWM_FlameThrower")==1&&CheckWeapon("GWM_FlameThrower")==0)
 			{

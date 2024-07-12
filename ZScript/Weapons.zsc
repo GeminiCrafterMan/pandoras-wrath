@@ -49,6 +49,10 @@
 
 #include "./Weapons/Slot 9/GWM_IceShotgun.zsc"			// Ice Shotgun
 #include "./Weapons/Slot 9/GWM_PFMissileLauncher.zsc"		// Perfect Freeze Missile Launcher
+
 #include "./Weapons/Slot 9/GWM_Flamethrower.zsc"			// Flamethrower
+#include "./Weapons/Slot 9/GWM_Volcannon.zsc"			// Volcannon
+
 #include "./Weapons/Slot 9/GWM_AcidCannon.zsc"			// Acid Cannon (corrosive goop gun)
-#include "./Weapons/Slot 9/GWM_Melter.zsc"				// Melter
+
+//#include "./Weapons/Slot 9/GWM_Melter.zsc"				// Melter
