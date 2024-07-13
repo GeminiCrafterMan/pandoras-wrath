@@ -7,7 +7,7 @@ $playeralias	GWM_Player	male	*death			player/paincriticaldeath
 $playersounddup	GWM_Player	male	*crazydeath		*death
 $playeralias	GWM_Player	male	*jump			player/jump
 $playeralias	GWM_Player	male	*usefail		player/no
-$playeralias	GWM_Player	male	*taunt			player/battlecry
+$playeralias	GWM_Player	male	*taunt			player/taunt
 $playersound	GWM_Player	male	*land			"Sounds/Player/land.wav"
 $playersounddup	GWM_Player	male	*grunt			*pain100
 $playeralias	GWM_Player	male	*gibbed			misc/gibbed
@@ -82,6 +82,14 @@ $random player/hot {
 	player/hot3
 }
 
+$random player/taunt {
+	player/taunt1
+	player/taunt2
+	player/taunt3
+	player/taunt4
+	player/taunt5
+}
+
 player/painsharp1			"Sounds/Player/mercenary_painsharp01.wav"
 player/painsharp2			"Sounds/Player/mercenary_painsharp02.wav"
 player/painsharp3			"Sounds/Player/mercenary_painsharp03.wav"
@@ -131,3 +139,9 @@ player/berserk4				"Sounds/Player/mercenary_berserk04.wav"
 player/hot1					"Sounds/Player/mercenary_autoonfire01.wav"
 player/hot2					"Sounds/Player/mercenary_autoonfire02.wav"
 player/hot3					"Sounds/Player/mercenary_autoonfire03.wav"
+
+player/taunt1				"Sounds/Player/mercenary_taunts01.wav"
+player/taunt2				"Sounds/Player/mercenary_taunts02.wav"
+player/taunt3				"Sounds/Player/mercenary_taunts03.wav"
+player/taunt4				"Sounds/Player/mercenary_taunts04.wav"
+player/taunt5				"Sounds/Player/mercenary_taunts05.wav"
