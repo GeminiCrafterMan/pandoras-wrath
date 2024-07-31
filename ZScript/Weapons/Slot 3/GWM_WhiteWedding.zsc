@@ -5,7 +5,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 		//$Category Weapons
 		//$Title "\"White Wedding\" Shotgun
 		Weapon.SelectionOrder 1300;
-		Inventory.PickupSound "weapons/skpickup";
+		Inventory.PickupSound "weapons/wwpickup";
 		Weapon.UpSound "weapons/draw_secondary";
 		Weapon.AmmoType "GWM_Shell";
 		Weapon.AmmoUse 1;
@@ -38,9 +38,9 @@ class GWM_WhiteWedding : GWM_WeaponBase
 			WEDG AA 1 {
 				A_WeaponOffset(-8, -16, WOF_ADD);
 			}
-			WEDG H 4 {A_StartSound("weapons/skpump1"); ZWL_WeaponReady();}
+			WEDG H 4 {A_StartSound("weapons/wwpump1"); ZWL_WeaponReady();}
 			WEDG GGFF 1 ZWL_WeaponReady();
-			WEDG A 1 {A_StartSound("weapons/skpump2"); ZWL_WeaponReady();}
+			WEDG A 1 {A_StartSound("weapons/wwpump2"); ZWL_WeaponReady();}
 			Goto Ready;
 		Deselect:
 			WEDG AA 1 {
@@ -53,12 +53,17 @@ class GWM_WhiteWedding : GWM_WeaponBase
 			TNT1 A 0 ZWL_QuickLower();
 			Stop;
 		Recoil:
+			TNT1 AA 1 A_SetPitch(pitch+0.40);
+			TNT1 AAAAAA 1 A_SetPitch(pitch-0.20);
+			Stop;
+		Recoil2:
 			TNT1 AA 1 A_SetPitch(pitch+0.80);
 			TNT1 AAAAAA 1 A_SetPitch(pitch-0.40);
 			Stop;
 		Fire:
 			WEDG A 1 Bright {
 				A_StartSound("weapons/wwshot1");
+				A_Overlay(55, "Recoil");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
 				ZWL_FireHitscan(0, 11, pellets: 15, spread: 5+(Countinv("GWM_KahunaSpread")*0.4), pufftype: "GWM_WeddingBulletPuff" , tracerType: "GWM_TracerWhite");
@@ -90,11 +95,11 @@ class GWM_WhiteWedding : GWM_WeaponBase
 			WEDG B 5;
 			WEDG CCCDD 1;
 			WEDG E 4 {
-				A_StartSound("weapons/skpump1");
+				A_StartSound("weapons/wwpump1");
 				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, -6, -14));
 			}
 			WEDG DDCCC 1;
-			WEDG B 5 A_StartSound("weapons/skpump2");
+			WEDG B 5 A_StartSound("weapons/wwpump2");
 			WEDG A 3;
 			WEDG A 0 ZWL_ReFire();
 			Goto Ready;
@@ -111,7 +116,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 			}
 			WEDG A 1 Bright {
 				A_StartSound("weapons/wwshot1");
-				A_Overlay(55, "Recoil");
+				A_Overlay(55, "Recoil2");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
 				ZWL_FireHitscan(0, 12, pellets: 15, spread: 4+(Countinv("GWM_KahunaSpread")*0.8), pufftype: "GWM_WeddingBulletPuff" ,tracerType: "GWM_TracerWhite");
@@ -147,9 +152,9 @@ class GWM_WhiteWedding : GWM_WeaponBase
 			}
 			TNT1 A 0 ZWL_ReFire();
 			WEDG FG 1;
-			WEDG H 3 A_StartSound("weapons/skpump1");
+			WEDG H 3 A_StartSound("weapons/wwpump1");
 			WEDG GGFF 1;
-			WEDG A 3 A_StartSound("weapons/skpump2");
+			WEDG A 3 A_StartSound("weapons/wwpump2");
 			WEDG A 0 ZWL_ReFire();
 			Goto Ready;
 			
@@ -163,7 +168,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 			}
 			WEDG A 1 Bright {
 				A_StartSound("weapons/wwshot2");
-				A_Overlay(55, "Recoil");
+				A_Overlay(55, "Recoil2");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
 				ZWL_FireHitscan(0, 12, pellets: 18, spread: 6, pufftype: "GWM_WeddingBulletPuff2" , tracerType: "GWM_TracerWhite2");
@@ -199,9 +204,9 @@ class GWM_WhiteWedding : GWM_WeaponBase
 			}
 			TNT1 A 0 ZWL_ReFire();
 			WEDG FG 1 A_GiveInventory("GWM_WeddingDelay",1); 
-			WEDG H 3 A_StartSound("weapons/skpump1");
+			WEDG H 3 A_StartSound("weapons/wwpump1");
 			WEDG GGFF 1;
-			WEDG A 3 A_StartSound("weapons/skpump2");
+			WEDG A 3 A_StartSound("weapons/wwpump2");
 			WEDG A 0 ZWL_ReFire();
 			Goto Ready;
 			
@@ -262,7 +267,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 			TNT1 A 0 ZWL_JumpIfEmpty("Reload.Empty");
 			WEDG B 5;
 			WEDG CCCNN 1;
-			WEDG O 2 A_StartSound("weapons/skpump1");
+			WEDG O 2;
 			// Fallthrough
 		Reload.Loop:
 			WEDG PQR 2;
@@ -272,18 +277,18 @@ class GWM_WhiteWedding : GWM_WeaponBase
 			Loop;
 		Reload.End:
 			WEDG NNCCC 1;
-			WEDG B 5 A_StartSound("weapons/skpump2");
+			WEDG B 5;
 			Goto Ready;
 
 		Reload.Empty:
 			WEDG B 5;
 			WEDG CCCDD 1;
-			WEDG E 2 A_StartSound("weapons/skpump1");
+			WEDG E 2 A_StartSound("weapons/wwpump1");
 			WEDG IJK 2;
 			TNT1 A 0 ZWL_Reload(1);
 			WEDG LM 2;
 			WEDG E 4;
-			WEDG O 5 A_StartSound("weapons/skpump2");
+			WEDG O 5 A_StartSound("weapons/wwpump2");
 			ZSHG E 0 ZWL_JumpIfReloaded("Reload.End", true);
 			Goto Reload.Loop;
 	}

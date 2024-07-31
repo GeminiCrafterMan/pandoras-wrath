@@ -30,6 +30,7 @@
 #include "./Weapons/Slot 4/GWM_FrostFang.zsc"				// Frost Fang... Both shit and busted. How???
 
 #include "./Weapons/Slot 5/GWM_RocketLauncher.zsc"		// Rocket Launcher
+	#include "./Weapons/Slot 5/GWM_Striker.zsc"			// Striker
 #include "./Weapons/Slot 5/GWM_GrenadeLauncher.zsc"		// Yep, they're split again... -g     For the better tbh -m
 	#include "./Weapons/Slot 5/GWM_THE_BOUNCERRR.zsc"	    	// I was gonna copy the wikipedia article on the BOUNCERRRRRR here but it fucked stuff up. :( -Mengo
 	#include "./Weapons/Slot 5/GWM_GoldenBouncer.zsc"	    	// A ratchet and clank AND gundam reference at once? I've outdone myself -Mengo
@@ -48,11 +49,8 @@
 #include "./Weapons/Slot 8/GWM_Perforator.zsc"			// Evitahnity Tew, out now!
 
 #include "./Weapons/Slot 9/GWM_IceShotgun.zsc"			// Ice Shotgun
-#include "./Weapons/Slot 9/GWM_PFMissileLauncher.zsc"		// Perfect Freeze Missile Launcher
+#include "./Weapons/Slot 9/GWM_PFMissileLauncher.zsc"	// Perfect Freeze Missile Launcher
 
-#include "./Weapons/Slot 9/GWM_Flamethrower.zsc"			// Flamethrower
 #include "./Weapons/Slot 9/GWM_Volcannon.zsc"			// Volcannon
 
 #include "./Weapons/Slot 9/GWM_AcidCannon.zsc"			// Acid Cannon (corrosive goop gun)
-
-//#include "./Weapons/Slot 9/GWM_Melter.zsc"				// Melter

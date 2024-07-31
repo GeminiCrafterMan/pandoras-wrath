@@ -30,7 +30,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 				ZWL_QuickRaise();
 				A_WeaponOffset(64, 160);
 			}
-			ISHT NNNNNN 1 {
+			ISHT FFFFFF 1 {
 				A_WeaponOffset(-8, -16, WOF_ADD);
 			}
 			ISHT AA 1 {
@@ -41,7 +41,7 @@ class GWM_IceShotgun : GWM_WeaponBase
 			ISHT AA 1 {
 				A_WeaponOffset(8, 16, WOF_ADD);
 			}
-			ISHT NNNNNN 1 {
+			ISHT FFFFFF 1 {
 				A_WeaponOffset(8, 16, WOF_ADD);
 			}
 			TNT1 A 0 A_WeaponOffset(0, flags: WOF_KEEPY);

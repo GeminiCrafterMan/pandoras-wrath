@@ -1,8 +1,13 @@
 // Zombie Shotgun
-weapons/zsgshot		"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_fire.ogg"
-weapons/zsgpump1	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pump1.wav"
-weapons/zsgpump2	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pump2.wav"
-weapons/zsgpickup	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pickup.wav"
+weapons/zsgpump1	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pump1.ogg"
+weapons/zsgpump2	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pump2.ogg"
+weapons/zsgpickup	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_pickup.ogg"
+
+weapons/zsgshot1	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_fire1.ogg"
+weapons/zsgshot2	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_fire2.ogg"
+weapons/zsgshot3	"Sounds/Weapons/Slot 3/Zombie Shotgun/zshotgun_fire3.ogg"
+
+$random weapons/zsgshot { weapons/zsgshot1 weapons/zsgshot2 weapons/zsgshot3 }
 
 // Slayer's Kahuna Shotgun
 weapons/skshot1		"Sounds/Weapons/Slot 3/Slayer's Kahuna/CSGFIRE1.ogg"
@@ -24,8 +29,11 @@ $random weapons/skpump1	{ weapons/skpump11 weapons/skpump12 }
 $random weapons/skpump2	{ weapons/skpump21 weapons/skpump22 }
 
 // White Wedding. Silk Shedding. Fancy shower, white wedding day.
-weapons/wwshot1		"Sounds/Weapons/Slot 3/White Wedding/billyfire1"
-weapons/wwshot2		"Sounds/Weapons/Slot 3/White Wedding/billyfire2"
+weapons/wwshot1		"Sounds/Weapons/Slot 3/White Wedding/BillyFire1.ogg"
+weapons/wwshot2		"Sounds/Weapons/Slot 3/White Wedding/BillyFire2.wav"
+weapons/wwpump1		"Sounds/Weapons/Slot 3/White Wedding/BillyPump1.ogg"
+weapons/wwpump2		"Sounds/Weapons/Slot 3/White Wedding/BillyPump2.ogg"
+weapons/wwpickup	"Sounds/Weapons/Slot 3/White Wedding/BillyPickup.ogg"
 
 // Sawed-Off Shotgun
 weapons/SOGshot		"Sounds/Weapons/Slot 3/Sawed-Off Shotgun/Fire.ogg"

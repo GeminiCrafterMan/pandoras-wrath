@@ -44,23 +44,23 @@ class GWM_Minigun : GWM_WeaponBase
 			MING A 0 A_ReFire("Hold");
 			Goto Release;
 		Hold:
-			MING A 2 {A_FireMinigun(); A_Overlay(PSP_FLASH, "FlashAB");A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
-			MING B 2 {A_FireMinigun(); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
+			MING A 1 {A_FireMinigun(); A_Overlay(PSP_FLASH, "FlashAB");A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
+			MING B 1 {A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
 			MING E 0 A_ReFire("Hold2");
 			Goto Release;
 		Hold2:
-			MING C 2 {A_FireMinigun(); A_Overlay(PSP_FLASH, "FlashCD"); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
-			MING D 2 {A_FireMinigun(); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
+			MING C 1 {A_FireMinigun(); A_Overlay(PSP_FLASH, "FlashCD"); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
+			MING D 1 {A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
 			MING E 0 A_ReFire("Hold3");
 			Goto Release;
 		Hold3:
-			MING E 2 {A_FireMinigun(); A_Overlay(PSP_FLASH, "FlashEF");A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
-			MING F 2 {A_FireMinigun(); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
+			MING E 1 {A_FireMinigun(); A_Overlay(PSP_FLASH, "FlashEF");A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
+			MING F 1 {A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
 			MING E 0 A_ReFire("Hold4");
 			Goto Release;
 		Hold4:
-			MING G 2 {A_FireMinigun(); A_Overlay(PSP_FLASH, "FlashGH");A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
-			MING H 2 {A_FireMinigun(); A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
+			MING G 1 {A_FireMinigun(); A_Overlay(PSP_FLASH, "FlashGH");A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
+			MING H 1 {A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5); return ZWL_JumpIfEmpty("Release");}
 			MING H 0 A_ReFire;
 			Goto Release;
 		Release:
@@ -71,27 +71,19 @@ class GWM_Minigun : GWM_WeaponBase
 			Goto Ready;
 		FlashAB:
 			MINF A 1 Bright A_Light1;
-			TNT1 A 1;
-			MINF B 1 Bright A_Light1;
-			TNT1 A 1;
+			MINF B 1 Bright A_Light2;
 			Stop;
 		FlashCD:
 			MINF C 1 Bright A_Light1;
-			TNT1 A 1;
-			MINF D 1 Bright A_Light1;
-			TNT1 A 1;
+			MINF D 1 Bright A_Light2;
 			Stop;
 		FlashEF:
 			MINF E 1 Bright A_Light1;
-			TNT1 A 1;
-			MINF F 1 Bright A_Light1;
-			TNT1 A 1;
+			MINF F 1 Bright A_Light2;
 			Stop;
 		FlashGH:
 			MINF G 1 Bright A_Light1;
-			TNT1 A 1;
-			MINF H 1 Bright A_Light1;
-			TNT1 A 1;
+			MINF H 1 Bright A_Light2;
 			Stop;
 		Spawn:
 			MING Z -1;

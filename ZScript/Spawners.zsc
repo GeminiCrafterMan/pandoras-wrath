@@ -87,7 +87,7 @@ class GWM_ChainsawSpawner : GWM_WeaponSpawner replaces Chainsaw
 	{
 //		DropItem "GWM_EldritchAnnihilator", 255, 1;	// G: taking this out until it's at least a little more finished, sorry man lol
 		DropItem "GWM_AcidCannon", 255, 4;
-		DropItem "GWM_FlameThrower", 255, 4;
+		DropItem "GWM_Volcannon", 255, 2;
 		DropItem "GWM_Impactor", 255, 8;
 		DropItem "GWM_Lumberjack", 255, 8;
 	}
@@ -109,7 +109,6 @@ class GWM_SuperShotgunSpawner : GWM_WeaponSpawner replaces SuperShotgun
 	{
 		DropItem "GWM_SawedoffShotgun", 255, 6;
 		DropItem "GWM_Volcannon", 255, 2;
-		DropItem "GWM_Flamethrower", 255, 2;
 		DropItem "GWM_AcidCannon", 255, 2;
 		DropItem "GWM_PFMissileLauncher", 255, 2;
 	}
@@ -122,7 +121,7 @@ class GWM_ChaingunSpawner : GWM_WeaponSpawner replaces Chaingun
 		DropItem "GWM_Minigun", 255, 6;
 		DropItem "GWM_AssaultRifle", 255, 8;
 		DropItem "GWM_BurstRifle", 255, 1;
-		DropItem "GWM_Flamethrower", 255, 2;
+		DropItem "GWM_Volcannon", 255, 1;
 	}
 }
 

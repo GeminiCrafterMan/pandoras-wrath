@@ -34,6 +34,18 @@ object GWM_Rocket {
 object GWM_ChargedRocket {
 	frame RCKT { light SuperRocketLight }
 }
+object GWM_RocketWeave1 {
+	frame RCKT { light SmallSuperRocketLight }
+}
+object GWM_RocketWeave2 {
+	frame RCKT { light SmallSuperRocketLight }
+}
+object GWM_RocketWeave3 {
+	frame RCKT { light SmallSuperRocketLight }
+}
+object GWM_RocketWeave4 {
+	frame RCKT { light SmallSuperRocketLight }
+}
 
 PulseLight RocketLight
 {
@@ -48,6 +60,14 @@ PulseLight SuperRocketLight
 	Color 1.0 0.1 0.2
 	Size 88
 	SecondarySize 125
+	Interval 0.1
+}
+
+PulseLight SmallSuperRocketLight
+{
+	Color 1.0 0.1 0.2
+	Size 44
+	SecondarySize 62
 	Interval 0.1
 }
 
@@ -181,20 +201,6 @@ Object GWM_FrostFangBall
 	Frame FFBLG { Light GWM_FrostFangBall6 }
 }
 
-Flickerlight MelterBeamLight
-{
-	color 1.0 0.7 0.2
-	size 24
-	secondarysize 28
-	chance 0.5
-	offset 0 0 0
-	dontlightself 1
-}
-Object MelterBeam
-{
-	Frame VMLP {Light MelterBeamLight}
-}
-
 Object GWM_HeavyRifleman
 {
 	Frame HEVYF { Light HeavyGuyAttack1 }
@@ -271,7 +277,7 @@ object GWM_SuperDemonBall
     frame BAL9E { light SDEMONBALL_X3 }
 }
 
-object GWM_FTFireShot
+object GWM_VCFireShot
 {
 	frame ZFIRA { light RocketLight }
 	frame ZFIRB { light RocketLight }
@@ -290,7 +296,7 @@ object GWM_FTFireShot
 	frame ZFIRO { light RocketLight }
 	frame ZFIRP { light RocketLight }
 }
-object GWM_FTFIREFX
+object GWM_VCFIREFX
 {
 	frame ZFIRA { light RocketLight }
 	frame ZFIRB { light RocketLight }

@@ -207,18 +207,12 @@ Brightmap Sprite LBREN0 { Map LBREN0 DisableFullbright }
 Brightmap Sprite LBREO0 { Map LBREO0 DisableFullbright }
 Brightmap Sprite LBREP0 { Map LBREP0 DisableFullbright }
 // Mines
-Brightmap Sprite MINEA0 { Map MINEA0 DisableFullbright }
-Brightmap Sprite MINEC1 { Map MINEC1 DisableFullbright }
-Brightmap Sprite MINEC2C8 { Map MINED1 DisableFullbright }
-Brightmap Sprite MINEC3C7 { Map MINEC1 DisableFullbright }
-Brightmap Sprite MINEC4C6 { Map MINED1 DisableFullbright }
-Brightmap Sprite MINEC5 { Map MINEC1 DisableFullbright }
-Brightmap Sprite MINED1 { Map MINED1 DisableFullbright }
-Brightmap Sprite MINED2D8 { Map MINEC1 DisableFullbright }
-Brightmap Sprite MINED3D7 { Map MINED1 DisableFullbright }
-Brightmap Sprite MINED4D6 { Map MINEC1 DisableFullbright }
-Brightmap Sprite MINED5 { Map MINED1 DisableFullbright }
-Brightmap Sprite MINEZ0 { Map BMMINEZ0 DisableFullbright }
+Brightmap Sprite MINWA0 { Map BMMINWA0 DisableFullbright }
+Brightmap Sprite MINWB1 { Map MINWB1 DisableFullbright }
+Brightmap Sprite MINWB2B8 { Map MINWB2B8 DisableFullbright }
+Brightmap Sprite MINWB3B7 { Map MINWB1 DisableFullbright }
+Brightmap Sprite MINWB4B6 { Map MINWB2B8 DisableFullbright }
+Brightmap Sprite MINWB5 { Map MINWB1 DisableFullbright }
 // SMG
 Brightmap Sprite SMGGA0 { Map SMGGA0 DisableFullbright }
 Brightmap Sprite SMGGB0 { Map SMGGB0 DisableFullbright }
@@ -317,17 +311,6 @@ Brightmap Sprite PLSGG0 { Map PLSGG0 DisableFullbright }
 Brightmap Sprite PLSGH0 { Map PLSGH0 DisableFullbright }
 Brightmap Sprite PLSGI0 { Map PLSGI0 DisableFullbright }
 Brightmap Sprite PLSGZ0 { Map BMPLSGZ0 DisableFullbright }
-// Melter
-Brightmap Sprite VMLTA0 { Map VMLTA0 DisableFullbright }
-Brightmap Sprite VMLTB0 { Map VMLTB0 DisableFullbright }
-Brightmap Sprite VMLTC0 { Map VMLTC0 DisableFullbright }
-Brightmap Sprite VMLTD0 { Map VMLTD0 DisableFullbright }
-Brightmap Sprite VMLTE0 { Map VMLTE0 DisableFullbright }
-Brightmap Sprite VMLTF0 { Map VMLTF0 DisableFullbright }
-Brightmap Sprite VMLTG0 { Map VMLTG0 DisableFullbright }
-Brightmap Sprite VMLTH0 { Map VMLTH0 DisableFullbright }
-Brightmap Sprite VMLTI0 { Map VMLTI0 DisableFullbright }
-Brightmap Sprite VMLTJ0 { Map VMLTJ0 DisableFullbright }
 // Noise Crusher
 Brightmap Sprite NCRGA0 { Map NCRGA0 DisableFullbright }
 Brightmap Sprite NCRGB0 { Map NCRGB0 DisableFullbright }

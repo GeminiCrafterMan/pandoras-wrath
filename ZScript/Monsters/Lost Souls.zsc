@@ -158,6 +158,9 @@ class GWM_ChillerSoul : Actor
 {
 	Default
 	{
+		//$Category Monsters
+		//$Title "Chiller Soul
+		Tag "$TAG_CHILLERSOUL";
 		Health 100;
 		Radius 16;
 		Height 56;

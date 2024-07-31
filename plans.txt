@@ -3,7 +3,7 @@ Tome of Power effects:
 - SMG shots ricochet and fire two shots at once
 - Shotgun/Kahuna shots fire ricocheting pellets that explode upon contact with an enemy
 - SSG charges really fast and shots pierce. You do not need to reload between regular shots
-- Rocket fires charged shots normally, charged shots do flash bomb explosions
+- Rocket fires charged shots normally, charged shots do Sparkle Bomber flash bomb explosions
 - Grenade launcher shots make a smaller explosion with each bounce. It charges faster too.
 - Fists turn into the Hokuto Hyakuretsu-ken
 

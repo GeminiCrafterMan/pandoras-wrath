@@ -1,30 +1,15 @@
-// FlameShooter
-weapons/ftready		"Sounds/Weapons/Slot 9/Flamethrower/flame_thrower_pilot.wav"
-weapons/ftfiring	"Sounds/Weapons/Slot 9/Flamethrower/flame_thrower_dm_fire.ogg" // unfortunately .wav didn't work for the loop section
-weapons/ftend		"Sounds/Weapons/Slot 9/Flamethrower/flame_thrower_dm_end.wav"
-weapons/ftburn		"Sounds/Weapons/Slot 9/Flamethrower/flame_thrower_fire_hit.wav"
-weapons/fthit		"Sounds/Weapons/Slot 9/Flamethrower/flame_thrower_fire_hitloop.wav"
-Weapons/ftsqueak	"Sounds/Weapons/Slot 9/Flamethrower/flame_thrower_squeak.mp3"
-$volume weapons/ftready 0.5
-$volume weapons/ftfiring 0.5
-$volume weapons/ftend 0.5
-$volume weapons/ftburn 0.5
-$volume weapons/fthit 0.5
-
-// Melter
-Melter/fire	VMELTER
-Melter/cooldown VMELTCD
-Melter/warning VMELTWRN
-Melter/heatsink VMELTHS
-$pitchset Melter/warning 1.7
-$volume Melter/warning 0.5
-$random Melter/melt	{ melt1 melt2 }
-$limit Melter/melt 0
-$volume Melter/melt 0.1
-$pitchset Melter/melt 0.8 1.2
-$attenuation Melter/melt 1.5
-melt1 VMELT1
-melt2 VMELT2
+// Volcannon
+weapons/vcready		"Sounds/Weapons/Slot 9/Volcannon/flame_thrower_pilot.wav"
+weapons/vcfiring	"Sounds/Weapons/Slot 9/Volcannon/flame_thrower_dm_fire.ogg" // unfortunately .wav didn't work for the loop section
+weapons/vcend		"Sounds/Weapons/Slot 9/Volcannon/flame_thrower_dm_end.wav"
+weapons/vcburn		"Sounds/Weapons/Slot 9/Volcannon/flame_thrower_fire_hit.wav"
+weapons/vchit		"Sounds/Weapons/Slot 9/Volcannon/flame_thrower_fire_hitloop.wav"
+Weapons/vcsqueak	"Sounds/Weapons/Slot 9/Volcannon/flame_thrower_squeak.mp3"
+$volume weapons/vcready 0.5
+$volume weapons/vcfiring 0.5
+$volume weapons/vcend 0.5
+$volume weapons/vcburn 0.5
+$volume weapons/vchit 0.5
 
 // Acid Cannon
 weapons/acdcfire1	"Sounds/Weapons/Slot 9/Acid Cannon/paint_blob_inception_01.wav"

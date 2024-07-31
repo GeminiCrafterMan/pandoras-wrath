@@ -109,7 +109,7 @@ class GWM_DisCacodemon : Actor
 			Goto See;
 	}
 }
-class GWM_DisCacodemonFire : GWM_FTFireShot
+class GWM_DisCacodemonFire : GWM_VCFireShot
 {
 	Default
 	{
@@ -128,7 +128,7 @@ class GWM_DisCacodemonFire : GWM_FTFireShot
 			Stop;
 	}
 }
-class GWM_DisCacodemonFireFX : GWM_FTFIREFX
+class GWM_DisCacodemonFireFX : GWM_VCFIREFX
 {
 	Default
 	{

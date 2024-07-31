@@ -581,6 +581,19 @@ class ThingReplacer : StaticEventHandler
 			case 'RedArmor':
 				e.Replacement = "GWM_Lv1and2ArmorSpawner";
 				break;
+			// PhoenixTag in particular
+			case 'PTag_Minigun':
+				e.Replacement = "GWM_Minigun";
+				break;
+			case 'PTag_GrenadeLauncher':
+				e.Replacement = "GWM_GrenadeLauncher";
+				break;
+			case 'PTag_Railgun':
+				e.Replacement = "GWM_Railgun";
+				break;
+			case 'PTag_BFG10K':
+				e.Replacement = "GWM_BFG10K";
+				break;
 		}
     }
 	override void CheckReplacee(ReplacedEvent e)

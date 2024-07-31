@@ -54,8 +54,13 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 		Ready:
 			ZSHG A 1 ZWL_WeaponReady();
 			Loop;
+		Recoil:
+			TNT1 AA 1 A_SetPitch(pitch+0.40);
+			TNT1 AAAAAA 1 A_SetPitch(pitch-0.20);
+			Stop;
 		Fire:
 			ZSHG A 1 {
+				A_Overlay(55, "Recoil");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
 				ZWL_FireHitscan(0, 10, pellets: 8, spread: 4.6, tracerType: "GWM_Tracer"); // G: SLIGHT buff
@@ -66,25 +71,21 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
 				A_QuakeEx(1.5, 1.5, 1.5, 4, 0, 1, "", QF_SHAKEONLY);
 			}
-			ZSHG A 1 {
-				A_WeaponOffset(0, -5, WOF_ADD);
-				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
-			}
-			ZSHG A 1 {
+			ZSHG AA 1 {
 				A_WeaponOffset(0, -5, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
 			}
 			ZSHG A 1;
 			TNT1 A 0 ZWL_CheckReload();		
-			ZSHG B 6;
-			ZSHG CCCDDD 1;
-			ZSHG E 5 {
+			ZSHG B 5;
+			ZSHG CCCDD 1;
+			ZSHG E 4 {
 				A_StartSound("weapons/zsgpump1");
 				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, -6, -14));
 			}
-			ZSHG DDCCC 1;
-			ZSHG B 6 A_StartSound("weapons/zsgpump2");
-			ZSHG A 3;
+			ZSHG DDDCC 1;
+			ZSHG B 5 A_StartSound("weapons/zsgpump2");
+			ZSHG A 4;
 			ZSHG A 0 ZWL_ReFire();
 			Goto Ready;
 		Reload:

@@ -31,7 +31,7 @@ class GWM_SMG : GWM_WeaponBase
 				ZWL_QuickRaise();
 				A_WeaponOffset(-64, 160);
 			}
-			SMGG LLLLLL 1 {
+			SMGG NNNNNN 1 {
 				A_WeaponOffset(8, -16, WOF_ADD);
 			}
 			SMGG AA 1 {
@@ -42,30 +42,23 @@ class GWM_SMG : GWM_WeaponBase
 			SMGG AA 1 {
 				A_WeaponOffset(-8, 16, WOF_ADD);
 			}
-			SMGG LLLLLL 1 {
+			SMGG NNNNNN 1 {
 				A_WeaponOffset(-8, 16, WOF_ADD);
 			}
 			TNT1 A 0 A_WeaponOffset(0, flags: WOF_KEEPY);
 			TNT1 A 0 ZWL_QuickLower;
 			Stop;
-/*		Deselect:
-			SMGG A 1 A_Lower(18);
-			Loop;
-		Select:
-			SMGG A 1 A_Raise(18);
-			Loop;*/
 		Fire:
 			SMGG A 1 {
 				ZWL_FireHitscan(0, 10, spread: 6, tracerType: "GWM_Tracer");
 				A_SpawnItemEx("GWM_MuzzleFlashLight",0,0,5);
 				A_SpawnItemEx("GWM_Flash");
 				A_GunFlash();
-				A_Setpitch(pitch+0.75);
+				A_Setpitch(pitch+0.66);
 				A_WeaponOffset(0, 2, WOF_ADD);
 				ZWL_EjectCasing("GWM_PistolCasing");
 			}
-			SMGG AA 1 {A_WeaponOffset(0, -1, WOF_ADD); A_Setpitch(pitch-.25);}
-			SMGG A 1 A_Setpitch(pitch-.25);
+			SMGG AA 1 {A_WeaponOffset(0, -1, WOF_ADD); A_Setpitch(pitch-.33);}
 			SMGG A 0 ZWL_CheckReload();
 			SMGG A 1 ZWL_ReFire(null, true);
 			Goto Ready;
@@ -82,13 +75,13 @@ class GWM_SMG : GWM_WeaponBase
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // Disallow reloading if there's no more ammo
 			}
 			SMGG BCDEF 2;
-			SMGG G 2 A_StartSound("weapons/smgclipout");
-			SMGG HIJK 2;
-			SMGG K 2 ZWL_EjectCasing("GWM_PistolEmptyMag", true, 45, 2, 16, (24, 0, -24));
-			SMGG KJIH 2;
-			SMGG G 2 ZWL_Reload();
-			SMGG FE 2;
-			TNT1 A 0 A_StartSound("weapons/smgclipend");
+			SMGG FFGGGHHHH 1;
+			SMGG I 1 A_StartSound("weapons/smgclipout");
+			SMGG JKLM 1;
+			SMGG M 2 ZWL_EjectCasing("GWM_PistolEmptyMag", true, 45, 2, 16, (24, 0, -24));
+			SMGG LKJI 2;
+			SMGG F 4 ZWL_Reload();
+			SMGG E 2 A_StartSound("weapons/smgclipend");
 			SMGG DCB 2;
 			Goto Ready;
 	}

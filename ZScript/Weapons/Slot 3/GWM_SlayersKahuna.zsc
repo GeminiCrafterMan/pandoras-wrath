@@ -55,11 +55,16 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 			TNT1 A 0 ZWL_QuickLower;
 			Stop;
 		Recoil:
+			TNT1 AA 1 A_SetPitch(pitch+0.40);
+			TNT1 AAAAAA 1 A_SetPitch(pitch-0.20);
+			Stop;
+		Recoil2:
 			TNT1 AA 1 A_SetPitch(pitch+0.80);
 			TNT1 AAAAAA 1 A_SetPitch(pitch-0.40);
 			Stop;
 		Fire:
 			SKSG A 1 Bright {
+				A_Overlay(55, "Recoil");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
 				ZWL_FireHitscan(0, 10, pellets: 12, spread: 5+(Countinv("GWM_KahunaSpread")*0.4), tracerType: "GWM_Tracer");
@@ -83,7 +88,7 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 			SKSG A 1 BRIGHT;
 			TNT1 A 0 ZWL_CheckReload();
 			SKSG B 5;
-			SKSG CCCDDD 1;
+			SKSG CCCDD 1;
 			SKSG E 4 {
 				A_StartSound("weapons/skpump1");
 				ZWL_EjectCasing("GWM_ShotgunCasing", offset: (24, -6, -14));
@@ -102,7 +107,7 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 				}
 			}
 			SKSG A 1 Bright {
-				A_Overlay(55, "Recoil");
+				A_Overlay(55, "Recoil2");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
 				ZWL_FireHitscan(0, 11, pellets: 12, spread: 4+(Countinv("GWM_KahunaSpread")*0.8), tracerType: "GWM_Tracer");

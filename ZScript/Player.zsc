@@ -134,7 +134,7 @@ class GWM_Player : DoomPlayer
 			if (self.ChargedRockets < 4)
 				{++ self.ChargedRockets;}
 		}
-		if (self.player.ReadyWeapon.GetClassName() == "GWM_RocketLauncher")
+		if (self.player.ReadyWeapon.GetClassName() == "GWM_RocketLauncher" || self.player.ReadyWeapon.GetClassName() == "GWM_Striker" || self.player.ReadyWeapon.GetClassName() == "GWM_SparkleBomber")
 			self.ChargedRocketDelay += 2;
 		else
 			self.ChargedRocketDelay += 3;
