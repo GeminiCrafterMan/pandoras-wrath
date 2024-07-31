@@ -234,6 +234,9 @@ Brightmap Sprite WNDWB0 { Map WNDWB0 DisableFullbright }
 Brightmap Sprite WNDWC0 { Map WNDWC0 DisableFullbright }
 Brightmap Sprite WNDWD0 { Map WNDWD0 DisableFullbright }
 Brightmap Sprite WNDWZ0 { Map BMWNDWZ0 DisableFullbright }
+//White Wedding
+Brightmap Sprite WEDFA0 { Map WEDFAB DisableFullbright }
+Brightmap Sprite WEDFB0 { Map WEDFBB DisableFullbright }
 // Impaler Crossbow
 Brightmap Sprite ARRWB1 { Map ARRWB1 DisableFullbright }
 Brightmap Sprite ARRWB2B8 { Map ARRWB2B8 DisableFullbright }
