@@ -174,9 +174,9 @@ script "PandorasBox" (void)
 		if (weprarity < 5) {restart;}
 		}
 		
-		if (wepslot == 20) //FlameShot
+		if (wepslot == 20) //Volcannon
 		{
-		if (CheckInventory("GWM_Flamethrower")) {restart;}
+		if (CheckInventory("GWM_Volcannon")) {restart;}
 		if (weprarity < 9) {restart;}
 		}
 		
@@ -329,7 +329,7 @@ script "PandorasBox" (void)
 				if (wepslot == 12 && CheckInventory("GWM_NoiseCrusher")) {restart;}
 				if (wepslot == 13 && CheckInventory("GWM_AcidCannon")) {restart;}
 				if (wepslot == 14 && CheckInventory("GWM_IceShotgun")) {restart;}
-				if (wepslot == 15 && CheckInventory("GWM_Flamethrower")) {restart;}
+				if (wepslot == 15 && CheckInventory("GWM_Volcannon")) {restart;}
 				if (wepslot == 16 && CheckInventory("GWM_Perforator")) {restart;}
 				if (wepslot == 17 && CheckInventory("GWM_GoldWand")) {restart;}
 */				
@@ -409,7 +409,7 @@ script "PandorasBox" (void)
 				if (wepslot == 17) { SetFont("SMALLFONT"); HudMessage(s:"Noise Crusher";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 18) { SetFont("SMALLFONT"); HudMessage(s:"Acid Cannon";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 19) { SetFont("SMALLFONT"); HudMessage(s:"Ice Shotgun";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
-				if (wepslot == 20) { SetFont("SMALLFONT"); HudMessage(s:"Flame Shot";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
+				if (wepslot == 20) { SetFont("SMALLFONT"); HudMessage(s:"Volcannon";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 21) { SetFont("SMALLFONT"); HudMessage(s:"Perforator";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 22) { SetFont("SMALLFONT"); HudMessage(s:"Gold Wand";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
 				if (wepslot == 23) { SetFont("SMALLFONT"); HudMessage(s:"Phoenix";HUDMSG_PLAIN,1,0,80.0,140.0,0.06);}
@@ -495,7 +495,7 @@ script "PandorasBox" (void)
 						if (wepslot == 17) { GiveInventory("GWM_NoiseCrusher",1);}
 						if (wepslot == 18) { GiveInventory("GWM_AcidCannon",1);}
 						if (wepslot == 19) { GiveInventory("GWM_IceShotgun",1);}
-						if (wepslot == 20) { GiveInventory("GWM_Flamethrower",1);}
+						if (wepslot == 20) { GiveInventory("GWM_Volcannon",1);}
 						if (wepslot == 21) { GiveInventory("GWM_Perforator",1);}
 						if (wepslot == 22) { GiveInventory("GWM_GoldWand",1);}
 						if (wepslot == 23) { GiveInventory("GWM_GoldenBouncer",1);}
