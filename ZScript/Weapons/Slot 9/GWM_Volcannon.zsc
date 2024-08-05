@@ -95,26 +95,6 @@ Class GWM_VCFireShot : GWM_FlameProjectile
 			self.Destroy();
 		}
 	}
-	
-	//actor victim;
-    array<actor> hitList;
-
-    override int SpecialMissileHit(actor victim) //G: This is weird. REALLY weird.
-    {
-        if (hitList.Find(victim) == hitList.Size() && !self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
-        {
-			if (victim.CountInv("FireBurnCount")== 0)
-			{
-				victim.A_SpawnProjectile("GWM_FlameStatusThinker");
-			}
-			A_StartSound("Status/FireHit");
-			
-			victim.A_GiveInventory("FireBurnCount",50);
-            victim.DamageMobj(self,target,5,'Fire');
-            hitlist.Push(victim);
-        }
-        return 1;
-    }
 	Default
 	{
 		Radius 24;
@@ -126,6 +106,7 @@ Class GWM_VCFireShot : GWM_FlameProjectile
 		Alpha 0.75;
 		Scale 1.17;
 		Obituary "$KILLFLAMETHROWER";
+		GWM_FlameProjectile.FireBurnCount 50;
 	}
 	States
 	{
@@ -253,7 +234,6 @@ Class GWM_VolcFX3 : Actor
 
 class GWM_VOLCMAGMA : GWM_FlameProjectile
 {
-	
 	override void Tick()
 	{
 		Super.Tick();
@@ -261,28 +241,7 @@ class GWM_VOLCMAGMA : GWM_FlameProjectile
 		{
 			self.Destroy();
 		}
-	}
-	
-	//actor victim;
-    array<actor> hitList;
-
-    override int SpecialMissileHit(actor victim) //G: This is weird. REALLY weird.
-    {
-        if (hitList.Find(victim) == hitList.Size() && !self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
-        {
-			if (victim.CountInv("FireBurnCount")== 0)
-			{
-				victim.A_SpawnProjectile("GWM_FlameStatusThinker");
-			}
-			A_StartSound("Status/FireHit");
-			
-			victim.A_GiveInventory("FireBurnCount",20);
-            victim.DamageMobj(self,target,5,'Fire');
-            hitlist.Push(victim);
-        }
-        return 1;
-    }
-	
+	}	
 	Default
 	{
 		Speed 20;
@@ -360,27 +319,6 @@ class GWM_MagmaPuddle : GWM_FlameProjectile
 			self.Destroy();
 		}
 	}
-	
-	//actor victim;
-    array<actor> hitList;
-
-    override int SpecialMissileHit(actor victim) //G: This is weird. REALLY weird.
-    {
-        if (hitList.Find(victim) == hitList.Size() && !self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
-        {
-			if (victim.CountInv("FireBurnCount")== 0)
-			{
-				victim.A_SpawnProjectile("GWM_FlameStatusThinker");
-			}
-			A_StartSound("Status/FireHit");
-			
-			victim.A_GiveInventory("FireBurnCount",20);
-            victim.DamageMobj(self,target,5,'Fire');
-            hitlist.Push(victim);
-        }
-        return 1;
-    }
-	
 	Default
 	{
 		Height 2;
