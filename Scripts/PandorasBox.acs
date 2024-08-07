@@ -211,9 +211,9 @@ script "PandorasBox" (void)
 		if (wepslot == 25) //The WHITE WEDDING
 		{
 		if (CheckInventory("GWM_ZombieShotgun")==0) {restart;}
-		if (CheckInventory("GWM_SlayersKahuna")==0) {if (weprarity < 40) {restart;}}
+		if (CheckInventory("GWM_SlayersKahuna")==0) {if (weprarity < 35) {restart;}}
 		if (CheckInventory("GWM_WhiteWedding")) {restart;}
-		if (weprarity < 36) {restart;}
+		if (weprarity < 33) {restart;}
 		}
 		
 		if (wepslot == 26) // Railgun
