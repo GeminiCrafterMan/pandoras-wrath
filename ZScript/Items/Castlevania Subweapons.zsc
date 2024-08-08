@@ -219,7 +219,6 @@ class GWM_HolyFire2 : GWM_FlameProjectile
 		Speed 0;
 		RenderStyle "Add";
 		Alpha 0.6;
-		Obituary "%o was scorched by a Lantern Ghoul"; // change later
 		GWM_FlameProjectile.FireBurnCount 30;
 		DamageFunction (1);
 	}

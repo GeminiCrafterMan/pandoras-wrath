@@ -7,8 +7,24 @@ class GWM_WeaponSpawner : RandomSpawner
 	override void BeginPlay()
 	{
 		Super.BeginPlay();
-		if (random(0,4) == 4)
-			Spawn("GWM_Mine", self.pos);
+		switch (random(0,9))
+		{
+			case 5:
+				Spawn("GWM_Mine", self.pos);
+				break;
+			case 6:
+				Spawn("GWM_Dagger", self.pos);
+				break;
+			case 7:
+				Spawn("GWM_Axe", self.pos);
+				break;
+			case 8:
+				Spawn("GWM_HolyWater", self.pos);
+				break;
+			case 9:
+				Spawn("GWM_BoomerangCross", self.pos);
+				break;
+		}
 	}
 }
 
