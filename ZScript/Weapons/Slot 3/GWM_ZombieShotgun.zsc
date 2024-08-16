@@ -135,11 +135,6 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 				A_Light1();
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
 			}
-			ZSHF A 1 BRIGHT
-			{
-				A_Light1();
-				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
-			}
 			ZSHF B 1 Bright {
 				A_Light2();
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);

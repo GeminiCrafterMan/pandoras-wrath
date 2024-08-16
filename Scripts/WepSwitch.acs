@@ -6,10 +6,6 @@ script "GWM_FireWepSwitch" (void)
 	if (Checkinventory("GWM_Volcannon")==1&&CheckWeapon("GWM_Volcannon")==0)
 			{
 				SetWeapon("GWM_Volcannon");
-			}			
-	if (Checkinventory("GWM_FlameThrower")==1&&CheckWeapon("GWM_FlameThrower")==0)
-			{
-				SetWeapon("GWM_FlameThrower");
 			}
 }
 
@@ -27,7 +23,6 @@ script "GWM_IceWepSwitch" (void)
 
 script "GWM_AcidWepSwitch" (void) 
 {
-
 	if (Checkinventory("GWM_AcidCannon")==1&&CheckWeapon("GWM_AcidCannon")==0)
 			{
 				SetWeapon("GWM_AcidCannon");

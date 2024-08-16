@@ -61,7 +61,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 			TNT1 AAAAAA 1 A_SetPitch(pitch-0.40);
 			Stop;
 		Fire:
-			WEDG A 1 Bright {
+			WEDG A 1 {
 				A_StartSound("weapons/wwshot1");
 				A_Overlay(55, "Recoil");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
@@ -81,12 +81,12 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_ChangeVelocity(0, 0, sin(pitch)*2,CVF_RELATIVE);
 				}
 			}
-			WEDG A 2 Bright;
-			WEDG A 1 Bright {
+			WEDG A 2;
+			WEDG A 1 {
 				A_WeaponOffset(0, -5, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
 			}
-			WEDG AA 1 Bright;
+			WEDG AA 1;
 			WEDG A 1 {
 				A_WeaponOffset(0, -5, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
@@ -114,7 +114,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // G: Weird, fucked-up way of making it click instead.
 				}
 			}
-			WEDG A 1 Bright {
+			WEDG A 1 {
 				A_StartSound("weapons/wwshot1");
 				A_Overlay(55, "Recoil2");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
@@ -135,12 +135,12 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_ChangeVelocity(0, 0, sin(pitch)*2,CVF_RELATIVE);
 				}
 			}
-			WEDG A 1 Bright;
-			WEDG A 1 Bright {
+			WEDG A 1;
+			WEDG A 1 {
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
-			WEDG A 1 Bright;
+			WEDG A 1;
 			WEDG A 1 {
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
@@ -166,7 +166,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // G: Weird, fucked-up way of making it click instead.
 				}
 			}
-			WEDG A 1 Bright {
+			WEDG A 1 {
 				A_StartSound("weapons/wwshot2");
 				A_Overlay(55, "Recoil2");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
@@ -189,7 +189,7 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_ChangeVelocity(0, 0, sin(pitch)*3,CVF_RELATIVE);
 				}
 			}
-			WEDG A 1 Bright {
+			WEDG A 1 {
 				A_WeaponOffset(0, -10, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
@@ -220,12 +220,9 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
 				A_Light1();
 			}
-			WEDF A 2 Bright A_Light1;
-			WEDF B 3 Bright {
-				A_Light2();
-				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
-			}
+			WEDF B 1 Bright A_Light2();
 			Goto LightDone;
+	//THIS FLASH STATE WAS A FUCKING BITCH TO GET IT LOOK GOOD -JM
 		Flash2:
 			WEDF A 1 Bright {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
@@ -233,18 +230,9 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_Light1();
 				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
 			}
-			WEDF A 1 Bright A_Light1;
-			WEDF A 1 Bright {
-				A_Light1();
-				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
-			}
-			WEDF A 1 Bright A_Light1;
-			WEDF B 1 Bright {
-				A_Light2();
-				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
-			}
-			WEDF B 2 Bright A_Light2;
+			WEDF B 1 Bright A_Light2();
 			Goto LightDone;
+	//THIS TOO -JM
 		Flash3:
 			WEDF A 1 Bright {
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
@@ -252,12 +240,10 @@ class GWM_WhiteWedding : GWM_WeaponBase
 				A_Light1();
 				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
 			}
-			WEDF AA 1 Bright {
-				A_Light1();
+			WEDF B 1 Bright {
+				A_Light2();
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
-			WEDF A 2 Bright A_Light1;
-			WEDF B 3 Bright A_Light2;
 			Goto LightDone;
 		Reload:
 			TNT1 A 0 {

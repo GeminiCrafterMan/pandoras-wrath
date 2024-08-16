@@ -6,8 +6,8 @@ class GWM_IceProjectile : Actor // the absolute most basic projectile base possi
 	Property IceSlowCount: iceSlowCount;
 
 	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
-    {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
+	{
+		if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
 		{
 			if (victim.health <= self.Damage)
 			{
@@ -27,8 +27,8 @@ class GWM_IceProjectile : Actor // the absolute most basic projectile base possi
 			}
 
 		}
-        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
-    }
+		return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
+	}
 	Default
 	{
 		Projectile;
@@ -42,31 +42,29 @@ class GWM_FlameProjectile : Actor // the absolute most basic projectile base pos
 {
 	int FireBurnCount;
 	actor victim;
+	array<actor> hitList;
 
 	Property FireBurnCount: FireBurnCount;
 
-	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
-    {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
+	override int SpecialMissileHit(actor victim) //G: This is weird. REALLY weird.
+	{
+		if (hitList.Find(victim) == hitList.Size() && !self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
 		{
-			victim.A_GiveInventory("FireBurnCount",FireBurnCount);
-			if (victim.health <= self.Damage)
-			{
-				victim.A_Die("Fire");
-				return 1;
-			}
-
 			if (victim.GetClassName() != "IceWallColumn")
 			{
-				if (victim.CountInv("FireBurnCount")== 0 && victim.CountInv("GWM_IsPlayer")== 0 )
+				if (victim.CountInv("FireBurnCount")== 0)
 				{
 					victim.A_SpawnProjectile("GWM_FlameStatusThinker");
 				}
-				A_StartSound("Status/FireHit");
 			}
+			A_StartSound("Status/FireHit");
+			
+			victim.A_GiveInventory("FireBurnCount",20);
+			victim.DamageMobj(self,target,5,'Fire');
+			hitlist.Push(victim);
 		}
-        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
-    }
+		return 1;
+	}
 	Default
 	{
 		Projectile;
@@ -82,8 +80,8 @@ class GWM_AcidProjectile : Actor // the absolute most basic projectile base poss
 	Property AcidWeakCount: AcidWeakCount;
 
 	override int SpecialMissileHit(actor victim) //decides how to spawn the ice thinker
-    {
-        if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
+	{
+		if (!self.victim && victim.bSHOOTABLE && victim != target && victim.bDORMANT == 0)
 		{
 			if (victim.health <= self.Damage)
 			{
@@ -102,8 +100,8 @@ class GWM_AcidProjectile : Actor // the absolute most basic projectile base poss
 				victim.A_GiveInventory("AcidWeakCount",AcidWeakCount);
 			}
 		}
-        return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
-    }
+		return -1; // 1 to keep going on, -1 to die the appropriate death (XDeath in this case, since ideally it hit a bleeding actor)
+	}
 	
 	Default
 	{

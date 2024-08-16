@@ -3,7 +3,7 @@ class GWM_BurstRifle : GWM_WeaponBase
 	action void A_FireRifle()
 	{
 		A_SpawnItemEx("GWM_Flash");
-		ZWL_FireHitscan(2, 20, tracerType: "GWM_Tracer");
+		ZWL_FireHitscan(3, 20, tracerType: "GWM_Tracer");
 		ZWL_EjectCasing("GWM_RifleCasing");
 		A_WeaponOffset(0, 6, WOF_ADD);
 		A_SetPitch(pitch-0.25);

@@ -8,3 +8,4 @@
 #include "./Items/GWM_MedicBag.zsc"
 #include "./Items/GWM_Mine.zsc"
 #include "./Items/GWM_Stopwatch.zsc"
+#include "./Items/Castlevania Subweapons.zsc"
