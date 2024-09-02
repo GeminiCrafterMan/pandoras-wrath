@@ -205,6 +205,8 @@ OB_FROSTSOULBALL = "%o was frozen solid by a Frost Soul's ice ball.";
 OB_DRAUGR = "%o couldn't avoid a Draugr's cannonball.";
 OB_DISCACO = "%o was roasted by a Dis Cacodemon's fireball.";
 OB_DISCACOHIT = "%o was chowed down on by a Dis Cacodemon.";
+// Special boss kill messages
+OB_QUINT = "%o was erased from time by \c[Green]Quint\c-.";
 
 // Enemy tags
 TAG_ARACHNOTRON = "Arachnotron";
@@ -244,6 +246,8 @@ TAG_REVENANT = "Revenant";
 TAG_DRAUGR = "Draugr";
 TAG_WOLFENSTEINSS = "Nazi";
 TAG_SPIDERMASTERMIND = "Spider Mastermind";
+// Special boss tags
+TAG_QUINT = "Quint";
 
 // Weapon tags
 TAG_FISTS = "Fists";
@@ -301,3 +305,14 @@ TAG_HOLYWATER = "Holy Water";
 TAG_BOOMERANGCROSS = "Boomerang Cross";
 TAG_AXE = "Axe";
 TAG_HOLYBIBLE = "Holy Bible"; // When I finish converting it... Eventually?
+
+// Special boss dialogue
+MESG_QUINT1 = "\cdQuint\c*: I will fix the timeline, by removing you from it!"; // MUS: Temporanomaly phase 1
+MESG_QUINT2 = "\cdQuint\c*: I won't give up. I know the truth."; // MUS: Temporanomaly phase 2, but he doesn't say "the past betrays you!" because this is just him getting knocked down for a sec, not actually a phase change
+MESG_QUINT3A = "\cdQuint\c*: Do you think the fighting will end?";
+MESG_QUINT3B = "\cdQuint\c*: It won't. Not while you live!"; // MUS: Temporanomaly phase 3
+MESG_QUINT4A = "\cdQuint\c*: Only I can make a difference. I have seen the future...";
+MESG_QUINT4B = "\cdQuint\c*: And you are not in it!"; // MUS: Temporanomaly phase 4
+MESG_QUINT5A = "\cdQuint\c*: I know why I was created. Why I became who I am.";
+MESG_QUINT5B = "\cdQuint\c*: It's time to end this!"; // MUS: Temporanomaly phase 5
+MESG_QUINT6 = "\cdQuint\c*: Wait... You're not \cdMaestro\c*...! What am I doing here...?"; // and then he unceremoniously dies because it'll be funny
