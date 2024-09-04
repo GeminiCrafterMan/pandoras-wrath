@@ -1,5 +1,4 @@
 // Volcannon
-weapons/vcready		"Sounds/Weapons/Slot 9/Volcannon/flame_thrower_pilot.wav"
 weapons/vcfiring	"Sounds/Weapons/Slot 9/Volcannon/flame_thrower_dm_fire.ogg" // unfortunately .wav didn't work for the loop section
 weapons/vcend		"Sounds/Weapons/Slot 9/Volcannon/flame_thrower_dm_end.wav"
 weapons/vcburn		"Sounds/Weapons/Slot 9/Volcannon/flame_thrower_fire_hit.wav"
