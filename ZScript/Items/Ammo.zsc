@@ -376,13 +376,12 @@ class GWM_ANNIHILATORAMMO : Ammo
 		Inventory.PickupMessage "$GOTANNIHILATORAMMO";
 		Inventory.Amount 5;
 		Inventory.MaxAmount 2500;
-		Scale 0.4;
 	}
 
 	States
 	{
 		Spawn:
-			EICE A 6;
+			BF27 Y 6;
 			Loop;
 	}
 }
