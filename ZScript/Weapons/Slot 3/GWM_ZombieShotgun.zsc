@@ -11,7 +11,7 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 		Weapon.AmmoType "GWM_Shell";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 7;
-		
+
 		ZWeapon.MagazineSize 7;
 		ZWeapon.ReloadSound "weapons/shell_load";
 		ZWeapon.ClickSound "weapons/skempty";
@@ -67,16 +67,17 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 				A_GunFlash();
-				A_WeaponOffset(0, 42, WOF_INTERPOLATE);
+				A_WeaponOffset(0, 52, WOF_INTERPOLATE);
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
 				A_QuakeEx(1.5, 1.5, 1.5, 4, 0, 1, "", QF_SHAKEONLY);
 			}
-			ZSHG AA 1 {
+			ZSHG A 2;
+			ZSHG AAAA 1 {
 				A_WeaponOffset(0, -5, WOF_ADD);
-				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.0375, 0, WOF_ADD);
 			}
-			ZSHG A 1;
-			TNT1 A 0 ZWL_CheckReload();		
+			ZSHG A 2;
+			TNT1 A 0 ZWL_CheckReload();
 			ZSHG B 5;
 			ZSHG CCCDD 1;
 			ZSHG E 4 {
@@ -137,7 +138,7 @@ class GWM_ZombieShotgun : GWM_WeaponBase
 			}
 			ZSHF B 1 Bright {
 				A_Light2();
-				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+				//A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
 			}
 			Goto LightDone;
 	}

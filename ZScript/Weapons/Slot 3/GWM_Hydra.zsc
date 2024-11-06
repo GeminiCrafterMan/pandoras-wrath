@@ -29,7 +29,7 @@ class GWM_Hydra : GWM_WeaponBase
 		Weapon.AmmoUse1 3;
 		Weapon.AmmoGive1 8;
 		Weapon.AmmoType2 "GWM_Shell";
-		Weapon.AmmoUse2 2;
+		Weapon.AmmoUse2 3;
 		
 		Weapon.Slotnumber 3;
 

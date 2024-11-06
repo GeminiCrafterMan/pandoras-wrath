@@ -63,7 +63,7 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 			TNT1 AAAAAA 1 A_SetPitch(pitch-0.40);
 			Stop;
 		Fire:
-			SKSG A 1 Bright {
+			SKSG A 1 {
 				A_Overlay(55, "Recoil");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
@@ -73,19 +73,16 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 				A_GunFlash();
-				A_WeaponOffset(0, 42, WOF_INTERPOLATE);
+				A_WeaponOffset(0, 52, WOF_INTERPOLATE);
 				A_OverlayScale(OverlayID(), 1.15, 0, WOF_INTERPOLATE);
 				A_QuakeEx(1.5, 1.5, 1.5, 4, 0, 1, "", QF_SHAKEONLY);
 			}
-			SKSG A 1 Bright {
+			SKSG A 2;
+			SKSG AAAA 1 {
 				A_WeaponOffset(0, -5, WOF_ADD);
-				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+				A_OverlayScale(OverlayID(), -0.0375, 0, WOF_ADD);
 			}
-			SKSG A 1 {
-				A_WeaponOffset(0, -5, WOF_ADD);
-				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
-			}
-			SKSG A 1 BRIGHT;
+			SKSG A 2;
 			TNT1 A 0 ZWL_CheckReload();
 			SKSG B 5;
 			SKSG CCCDD 1;
@@ -106,7 +103,7 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 					player.SetPSPrite(OverlayID(), ResolveState("Ready")); // G: Weird, fucked-up way of making it click instead.
 				}
 			}
-			SKSG A 1 Bright {
+			SKSG A 1 {
 				A_Overlay(55, "Recoil2");
 				A_OverlayPivotAlign(OverlayID(), PSPA_CENTER, PSPA_BOTTOM);
 				A_OverlayPivot(OverlayID(), 0.2, flags: WOF_KEEPY);
@@ -115,20 +112,17 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 				A_SpawnItemEx("GWM_Flash");
 				A_SpawnItemEx("GWM_MuzzleFlashLight2",0,0,5);
 				A_GunFlash("Flash2");
-				A_WeaponOffset(0, 52, WOF_INTERPOLATE);
+				A_WeaponOffset(0, 57, WOF_INTERPOLATE);
 				A_OverlayScale(OverlayID(), 1.30, 0, WOF_INTERPOLATE);
 				A_QuakeEx(1.5, 1.5, 1.5, 4, 0, 1, "", QF_SHAKEONLY);
 				A_GiveInventory("GWM_KahunaSpread",2);
 			}
-			SKSG A 1 Bright {
-				A_WeaponOffset(0, -10, WOF_ADD);
+			SKSG A 1;
+			SKSG AA 1 Bright {
+				A_WeaponOffset(0, -12.5, WOF_ADD);
 				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
 			}
-			SKSG A 1 Bright {
-				A_WeaponOffset(0, -10, WOF_ADD);
-				A_OverlayScale(OverlayID(), -0.15, 0, WOF_ADD);
-			}
-			SKSG AA 1;
+			SKSG A 1;
 			SKSG QRSSAA 1;
 			TNT1 A 0 {
 				ZWL_CheckReload();
@@ -158,7 +152,7 @@ class GWM_SlayersKahuna : GWM_WeaponBase
 			}
 			SKSF B 1 Bright {
 				A_Light2();
-				A_OverlayScale(OverlayID(), -0.075, 0, WOF_ADD);
+				//A_OverlayScale(OverlayID(), -0.0375, 0, WOF_ADD);
 			}
 			Goto LightDone;
 		Flash2:
